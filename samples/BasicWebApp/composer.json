@@ -7,12 +7,6 @@
         "laravel"
     ],
     "license": "MIT",
-    "repositories": [
-        {
-            "type": "github",
-            "url": "git@github.com:C-FO/freee-accounting-sdk-php.git"
-        }
-    ],
     "require": {
         "php": "^7.2",
         "fideloper/proxy": "^4.0",
