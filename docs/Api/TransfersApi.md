@@ -5,13 +5,16 @@ All URIs are relative to *https://api.freee.co.jp/api/1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createTransfer**](TransfersApi.md#createTransfer) | **POST** /transfers | 取引（振替）の作成
+[**destroyTransfer**](TransfersApi.md#destroyTransfer) | **DELETE** /transfers/{id} | 取引（振替）の削除する
+[**getTransfer**](TransfersApi.md#getTransfer) | **GET** /transfers/{id} | 取引（振替）の取得
 [**getTransfers**](TransfersApi.md#getTransfers) | **GET** /transfers | 取引（振替）一覧の取得
+[**updateTransfer**](TransfersApi.md#updateTransfer) | **PUT** /transfers/{id} | 取引（振替）の更新
 
 
 
 ## createTransfer
 
-> \Freee\Accounting\Model\TransfersCreateResponse createTransfer($inline_object1)
+> \Freee\Accounting\Model\TransfersResponse createTransfer($parameter)
 
 取引（振替）の作成
 
@@ -34,10 +37,10 @@ $apiInstance = new Freee\Accounting\Api\TransfersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object1 = new \Freee\Accounting\Model\InlineObject1(); // \Freee\Accounting\Model\InlineObject1 | 
+$parameter = new \Freee\Accounting\Model\TransferParams(); // \Freee\Accounting\Model\TransferParams | 取引（振替）の作成
 
 try {
-    $result = $apiInstance->createTransfer($inline_object1);
+    $result = $apiInstance->createTransfer($parameter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransfersApi->createTransfer: ', $e->getMessage(), PHP_EOL;
@@ -50,11 +53,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object1** | [**\Freee\Accounting\Model\InlineObject1**](../Model/InlineObject1.md)|  | [optional]
+ **parameter** | [**\Freee\Accounting\Model\TransferParams**](../Model/TransferParams.md)| 取引（振替）の作成 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\TransfersCreateResponse**](../Model/TransfersCreateResponse.md)
+[**\Freee\Accounting\Model\TransfersResponse**](../Model/TransfersResponse.md)
 
 ### Authorization
 
@@ -63,6 +66,131 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
+
+
+## destroyTransfer
+
+> destroyTransfer($id, $company_id)
+
+取引（振替）の削除する
+
+<h2 id=\"\">概要</h2>  <p>指定した事業所の取引（振替）を削除する</p>
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2
+$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Freee\Accounting\Api\TransfersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int | 取引(振替)ID
+$company_id = 56; // int | 事業所ID
+
+try {
+    $apiInstance->destroyTransfer($id, $company_id);
+} catch (Exception $e) {
+    echo 'Exception when calling TransfersApi->destroyTransfer: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| 取引(振替)ID |
+ **company_id** | **int**| 事業所ID |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
+
+
+## getTransfer
+
+> \Freee\Accounting\Model\TransfersResponse getTransfer($id, $company_id)
+
+取引（振替）の取得
+
+<h2 id=\"\">概要</h2>  <p>指定した事業所の取引（振替）を取得する</p>  <h2 id=\"_2\">定義</h2>  <ul> <li> <p>amount : 振替金額</p> </li>  <li> <p>from_walletable_type, to_walletable_type</p>  <ul> <li>bank_account : 銀行口座</li>  <li>credit_card : クレジットカード</li>  <li>wallet : その他の決済口座</li> </ul> </li> </ul>
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2
+$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Freee\Accounting\Api\TransfersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int | 取引(振替)ID
+$company_id = 56; // int | 事業所ID
+
+try {
+    $result = $apiInstance->getTransfer($id, $company_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling TransfersApi->getTransfer: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| 取引(振替)ID |
+ **company_id** | **int**| 事業所ID |
+
+### Return type
+
+[**\Freee\Accounting\Model\TransfersResponse**](../Model/TransfersResponse.md)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -132,6 +260,69 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
+
+
+## updateTransfer
+
+> \Freee\Accounting\Model\TransfersResponse updateTransfer($id, $parameter)
+
+取引（振替）の更新
+
+<h2 id=\"\">概要</h2>  <p>指定した事業所の取引（振替）を更新する</p>  <h2 id=\"_2\">定義</h2>  <ul> <li> <p>amount : 振替金額</p> </li>  <li> <p>from_walletable_type, to_walletable_type</p>  <ul> <li>bank_account : 銀行口座</li>  <li>credit_card : クレジットカード</li>  <li>wallet : その他の決済口座</li> </ul> </li> </ul>
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2
+$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Freee\Accounting\Api\TransfersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int | 取引(振替)ID
+$parameter = new \Freee\Accounting\Model\TransferParams(); // \Freee\Accounting\Model\TransferParams | 取引（振替）の更新
+
+try {
+    $result = $apiInstance->updateTransfer($id, $parameter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling TransfersApi->updateTransfer: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| 取引(振替)ID |
+ **parameter** | [**\Freee\Accounting\Model\TransferParams**](../Model/TransferParams.md)| 取引（振替）の更新 |
+
+### Return type
+
+[**\Freee\Accounting\Model\TransfersResponse**](../Model/TransfersResponse.md)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

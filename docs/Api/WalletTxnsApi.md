@@ -5,13 +5,15 @@ All URIs are relative to *https://api.freee.co.jp/api/1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createWalletTxn**](WalletTxnsApi.md#createWalletTxn) | **POST** /wallet_txns | 明細の作成
+[**destroyWalletTxn**](WalletTxnsApi.md#destroyWalletTxn) | **DELETE** /wallet_txns/{id} | 明細の削除
+[**getWalletTxn**](WalletTxnsApi.md#getWalletTxn) | **GET** /wallet_txns/{id} | 明細の取得
 [**getWalletTxns**](WalletTxnsApi.md#getWalletTxns) | **GET** /wallet_txns | 明細一覧の取得
 
 
 
 ## createWalletTxn
 
-> \Freee\Accounting\Model\WalletTxnsCreateResponse createWalletTxn($create_wallet_txn_params)
+> \Freee\Accounting\Model\WalletTxnsShowResponse createWalletTxn($parameters)
 
 明細の作成
 
@@ -34,10 +36,10 @@ $apiInstance = new Freee\Accounting\Api\WalletTxnsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$create_wallet_txn_params = new \Freee\Accounting\Model\CreateWalletTxnParams(); // \Freee\Accounting\Model\CreateWalletTxnParams | 明細の作成
+$parameters = new \Freee\Accounting\Model\CreateWalletTxnParams(); // \Freee\Accounting\Model\CreateWalletTxnParams | 明細の作成
 
 try {
-    $result = $apiInstance->createWalletTxn($create_wallet_txn_params);
+    $result = $apiInstance->createWalletTxn($parameters);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WalletTxnsApi->createWalletTxn: ', $e->getMessage(), PHP_EOL;
@@ -50,11 +52,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_wallet_txn_params** | [**\Freee\Accounting\Model\CreateWalletTxnParams**](../Model/CreateWalletTxnParams.md)| 明細の作成 | [optional]
+ **parameters** | [**\Freee\Accounting\Model\CreateWalletTxnParams**](../Model/CreateWalletTxnParams.md)| 明細の作成 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\WalletTxnsCreateResponse**](../Model/WalletTxnsCreateResponse.md)
+[**\Freee\Accounting\Model\WalletTxnsShowResponse**](../Model/WalletTxnsShowResponse.md)
 
 ### Authorization
 
@@ -63,6 +65,131 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
+
+
+## destroyWalletTxn
+
+> destroyWalletTxn($id, $company_id)
+
+明細の削除
+
+<h2 id=\"\">概要</h2>  <p>指定した事業所の明細を削除する</p>
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2
+$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Freee\Accounting\Api\WalletTxnsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int | 明細ID
+$company_id = 56; // int | 事業所ID
+
+try {
+    $apiInstance->destroyWalletTxn($id, $company_id);
+} catch (Exception $e) {
+    echo 'Exception when calling WalletTxnsApi->destroyWalletTxn: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| 明細ID |
+ **company_id** | **int**| 事業所ID |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
+
+
+## getWalletTxn
+
+> \Freee\Accounting\Model\WalletTxnsShowResponse getWalletTxn($id, $company_id)
+
+明細の取得
+
+<h2 id=\"\">概要</h2>  <p>指定した事業所の明細を取得する</p>  <h2 id=\"_2\">定義</h2>  <ul> <li> <p>amount : 明細金額</p> </li>  <li> <p>due_amount : 取引登録待ち金額</p> </li>  <li> <p>balance : 残高</p> </li>  <li> <p>entry_side</p>  <ul> <li>income : 入金</li>  <li>expense : 出金</li> </ul> </li>  <li> <p>walletable_type</p>  <ul> <li>bank_account : 銀行口座</li>  <li>credit_card : クレジットカード</li>  <li>wallet : その他の決済口座</li> </ul> </li> </ul>
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2
+$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Freee\Accounting\Api\WalletTxnsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int | 明細ID
+$company_id = 56; // int | 事業所ID
+
+try {
+    $result = $apiInstance->getWalletTxn($id, $company_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling WalletTxnsApi->getWalletTxn: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| 明細ID |
+ **company_id** | **int**| 事業所ID |
+
+### Return type
+
+[**\Freee\Accounting\Model\WalletTxnsShowResponse**](../Model/WalletTxnsShowResponse.md)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

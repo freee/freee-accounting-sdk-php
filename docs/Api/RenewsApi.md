@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## createDealRenew
 
-> \Freee\Accounting\Model\RenewsResponse createDealRenew($id, $renews_create_params)
+> \Freee\Accounting\Model\RenewsResponse createDealRenew($id, $parameters)
 
 取引（収入／支出）に対する+更新の作成
 
@@ -36,10 +36,10 @@ $apiInstance = new Freee\Accounting\Api\RenewsApi(
     $config
 );
 $id = 56; // int | 取引ID
-$renews_create_params = new \Freee\Accounting\Model\RenewsCreateParams(); // \Freee\Accounting\Model\RenewsCreateParams | 取引（収入／支出）に対する+更新の情報
+$parameters = new \Freee\Accounting\Model\RenewsCreateParams(); // \Freee\Accounting\Model\RenewsCreateParams | 取引（収入／支出）に対する+更新の情報
 
 try {
-    $result = $apiInstance->createDealRenew($id, $renews_create_params);
+    $result = $apiInstance->createDealRenew($id, $parameters);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RenewsApi->createDealRenew: ', $e->getMessage(), PHP_EOL;
@@ -53,7 +53,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 取引ID |
- **renews_create_params** | [**\Freee\Accounting\Model\RenewsCreateParams**](../Model/RenewsCreateParams.md)| 取引（収入／支出）に対する+更新の情報 |
+ **parameters** | [**\Freee\Accounting\Model\RenewsCreateParams**](../Model/RenewsCreateParams.md)| 取引（収入／支出）に対する+更新の情報 |
 
 ### Return type
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ## updateDealRenew
 
-> \Freee\Accounting\Model\RenewsResponse updateDealRenew($id, $renew_id, $renews_update_params)
+> \Freee\Accounting\Model\RenewsResponse updateDealRenew($id, $renew_id, $parameters)
 
 取引（収入／支出）の+更新の更新
 
@@ -165,10 +165,10 @@ $apiInstance = new Freee\Accounting\Api\RenewsApi(
 );
 $id = 56; // int | 取引ID
 $renew_id = 56; // int | +更新ID
-$renews_update_params = new \Freee\Accounting\Model\RenewsUpdateParams(); // \Freee\Accounting\Model\RenewsUpdateParams | +更新の更新情報
+$parameters = new \Freee\Accounting\Model\RenewsUpdateParams(); // \Freee\Accounting\Model\RenewsUpdateParams | +更新の更新情報
 
 try {
-    $result = $apiInstance->updateDealRenew($id, $renew_id, $renews_update_params);
+    $result = $apiInstance->updateDealRenew($id, $renew_id, $parameters);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RenewsApi->updateDealRenew: ', $e->getMessage(), PHP_EOL;
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 取引ID |
  **renew_id** | **int**| +更新ID |
- **renews_update_params** | [**\Freee\Accounting\Model\RenewsUpdateParams**](../Model/RenewsUpdateParams.md)| +更新の更新情報 |
+ **parameters** | [**\Freee\Accounting\Model\RenewsUpdateParams**](../Model/RenewsUpdateParams.md)| +更新の更新情報 |
 
 ### Return type
 

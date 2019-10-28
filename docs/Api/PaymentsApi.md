@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## createDealPayment
 
-> \Freee\Accounting\Model\DealsResponse createDealPayment($id, $deal_payment_params)
+> \Freee\Accounting\Model\DealsResponse createDealPayment($id, $parameters)
 
 取引（収入／支出）の支払行作成
 
@@ -36,10 +36,10 @@ $apiInstance = new Freee\Accounting\Api\PaymentsApi(
     $config
 );
 $id = 56; // int | 取引ID
-$deal_payment_params = new \Freee\Accounting\Model\DealPaymentParams(); // \Freee\Accounting\Model\DealPaymentParams | 取引（収入／支出）の支払行作成
+$parameters = new \Freee\Accounting\Model\DealPaymentParams(); // \Freee\Accounting\Model\DealPaymentParams | 取引（収入／支出）の支払行作成
 
 try {
-    $result = $apiInstance->createDealPayment($id, $deal_payment_params);
+    $result = $apiInstance->createDealPayment($id, $parameters);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PaymentsApi->createDealPayment: ', $e->getMessage(), PHP_EOL;
@@ -53,7 +53,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 取引ID |
- **deal_payment_params** | [**\Freee\Accounting\Model\DealPaymentParams**](../Model/DealPaymentParams.md)| 取引（収入／支出）の支払行作成 |
+ **parameters** | [**\Freee\Accounting\Model\DealPaymentParams**](../Model/DealPaymentParams.md)| 取引（収入／支出）の支払行作成 |
 
 ### Return type
 
@@ -139,7 +139,7 @@ void (empty response body)
 
 ## updateDealPayment
 
-> \Freee\Accounting\Model\DealsResponse updateDealPayment($id, $payment_id, $deal_payment_params)
+> \Freee\Accounting\Model\DealsResponse updateDealPayment($id, $payment_id, $parameters)
 
 取引（収入／支出）の支払行更新
 
@@ -164,10 +164,10 @@ $apiInstance = new Freee\Accounting\Api\PaymentsApi(
 );
 $id = 56; // int | 取引ID
 $payment_id = 56; // int | 決済ID
-$deal_payment_params = new \Freee\Accounting\Model\DealPaymentParams(); // \Freee\Accounting\Model\DealPaymentParams | 取引（収入／支出）の支払行更新
+$parameters = new \Freee\Accounting\Model\DealPaymentParams(); // \Freee\Accounting\Model\DealPaymentParams | 取引（収入／支出）の支払行更新
 
 try {
-    $result = $apiInstance->updateDealPayment($id, $payment_id, $deal_payment_params);
+    $result = $apiInstance->updateDealPayment($id, $payment_id, $parameters);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PaymentsApi->updateDealPayment: ', $e->getMessage(), PHP_EOL;
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 取引ID |
  **payment_id** | **int**| 決済ID |
- **deal_payment_params** | [**\Freee\Accounting\Model\DealPaymentParams**](../Model/DealPaymentParams.md)| 取引（収入／支出）の支払行更新 |
+ **parameters** | [**\Freee\Accounting\Model\DealPaymentParams**](../Model/DealPaymentParams.md)| 取引（収入／支出）の支払行更新 |
 
 ### Return type
 

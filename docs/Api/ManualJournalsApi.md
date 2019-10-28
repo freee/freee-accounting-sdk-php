@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## createManualJournal
 
-> \Freee\Accounting\Model\ManualJournalsCreateResponse createManualJournal($manual_journals_create_params)
+> \Freee\Accounting\Model\ManualJournalsCreateResponse createManualJournal($parameters)
 
 振替伝票の作成
 
@@ -37,10 +37,10 @@ $apiInstance = new Freee\Accounting\Api\ManualJournalsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$manual_journals_create_params = new \Freee\Accounting\Model\ManualJournalsCreateParams(); // \Freee\Accounting\Model\ManualJournalsCreateParams | 振替伝票の作成
+$parameters = new \Freee\Accounting\Model\ManualJournalsCreateParams(); // \Freee\Accounting\Model\ManualJournalsCreateParams | 振替伝票の作成
 
 try {
-    $result = $apiInstance->createManualJournal($manual_journals_create_params);
+    $result = $apiInstance->createManualJournal($parameters);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ManualJournalsApi->createManualJournal: ', $e->getMessage(), PHP_EOL;
@@ -53,7 +53,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **manual_journals_create_params** | [**\Freee\Accounting\Model\ManualJournalsCreateParams**](../Model/ManualJournalsCreateParams.md)| 振替伝票の作成 | [optional]
+ **parameters** | [**\Freee\Accounting\Model\ManualJournalsCreateParams**](../Model/ManualJournalsCreateParams.md)| 振替伝票の作成 | [optional]
 
 ### Return type
 
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 
 ## updateManualJournal
 
-> \Freee\Accounting\Model\ManualJournalsUpdateResponse updateManualJournal($id, $manual_journals_update_params)
+> \Freee\Accounting\Model\ManualJournalsUpdateResponse updateManualJournal($id, $parameters)
 
 振替伝票の更新
 
@@ -323,10 +323,10 @@ $apiInstance = new Freee\Accounting\Api\ManualJournalsApi(
     $config
 );
 $id = 56; // int | 
-$manual_journals_update_params = new \Freee\Accounting\Model\ManualJournalsUpdateParams(); // \Freee\Accounting\Model\ManualJournalsUpdateParams | 振替伝票の更新
+$parameters = new \Freee\Accounting\Model\ManualJournalsUpdateParams(); // \Freee\Accounting\Model\ManualJournalsUpdateParams | 振替伝票の更新
 
 try {
-    $result = $apiInstance->updateManualJournal($id, $manual_journals_update_params);
+    $result = $apiInstance->updateManualJournal($id, $parameters);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ManualJournalsApi->updateManualJournal: ', $e->getMessage(), PHP_EOL;
@@ -340,7 +340,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **manual_journals_update_params** | [**\Freee\Accounting\Model\ManualJournalsUpdateParams**](../Model/ManualJournalsUpdateParams.md)| 振替伝票の更新 | [optional]
+ **parameters** | [**\Freee\Accounting\Model\ManualJournalsUpdateParams**](../Model/ManualJournalsUpdateParams.md)| 振替伝票の更新 | [optional]
 
 ### Return type
 
