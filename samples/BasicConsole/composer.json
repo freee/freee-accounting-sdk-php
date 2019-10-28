@@ -12,7 +12,7 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
-        "freee/freee-accounting-sdk": "dev-master"
+        "freee/freee-accounting-sdk": "^1.0.0"
     },
     "require-dev": {
         "facade/ignition": "^1.4",
