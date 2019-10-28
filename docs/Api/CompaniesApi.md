@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ## updateCompany
 
-> \Freee\Accounting\Model\CompaniesUpdateResponse updateCompany($id, $update_company_params)
+> \Freee\Accounting\Model\CompaniesUpdateResponse updateCompany($id, $parameters)
 
 事業所情報の更新
 
@@ -170,10 +170,10 @@ $apiInstance = new Freee\Accounting\Api\CompaniesApi(
     $config
 );
 $id = 56; // int | 事業所ID
-$update_company_params = new \Freee\Accounting\Model\UpdateCompanyParams(); // \Freee\Accounting\Model\UpdateCompanyParams | 
+$parameters = new \Freee\Accounting\Model\UpdateCompanyParams(); // \Freee\Accounting\Model\UpdateCompanyParams | 
 
 try {
-    $result = $apiInstance->updateCompany($id, $update_company_params);
+    $result = $apiInstance->updateCompany($id, $parameters);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CompaniesApi->updateCompany: ', $e->getMessage(), PHP_EOL;
@@ -187,7 +187,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 事業所ID |
- **update_company_params** | [**\Freee\Accounting\Model\UpdateCompanyParams**](../Model/UpdateCompanyParams.md)|  | [optional]
+ **parameters** | [**\Freee\Accounting\Model\UpdateCompanyParams**](../Model/UpdateCompanyParams.md)|  | [optional]
 
 ### Return type
 

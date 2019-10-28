@@ -5,6 +5,7 @@ All URIs are relative to *https://api.freee.co.jp/api/1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createDeal**](DealsApi.md#createDeal) | **POST** /deals | 取引（収入／支出）の作成
+[**destroyDeal**](DealsApi.md#destroyDeal) | **DELETE** /deals/{id} | 取引（収入／支出）の削除
 [**getDeal**](DealsApi.md#getDeal) | **GET** /deals/{id} | 取引（収入／支出）の取得
 [**getDeals**](DealsApi.md#getDeals) | **GET** /deals | 取引（収入／支出）一覧の取得
 [**updateDeal**](DealsApi.md#updateDeal) | **PUT** /deals/{id} | 取引（収入／支出）の更新
@@ -13,7 +14,7 @@ Method | HTTP request | Description
 
 ## createDeal
 
-> \Freee\Accounting\Model\DealsCreateResponse createDeal($create_deal_params)
+> \Freee\Accounting\Model\DealsCreateResponse createDeal($parameters)
 
 取引（収入／支出）の作成
 
@@ -36,10 +37,10 @@ $apiInstance = new Freee\Accounting\Api\DealsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$create_deal_params = new \Freee\Accounting\Model\CreateDealParams(); // \Freee\Accounting\Model\CreateDealParams | 取引（収入／支出）の作成
+$parameters = new \Freee\Accounting\Model\CreateDealParams(); // \Freee\Accounting\Model\CreateDealParams | 取引（収入／支出）の作成
 
 try {
-    $result = $apiInstance->createDeal($create_deal_params);
+    $result = $apiInstance->createDeal($parameters);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DealsApi->createDeal: ', $e->getMessage(), PHP_EOL;
@@ -52,7 +53,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_deal_params** | [**\Freee\Accounting\Model\CreateDealParams**](../Model/CreateDealParams.md)| 取引（収入／支出）の作成 | [optional]
+ **parameters** | [**\Freee\Accounting\Model\CreateDealParams**](../Model/CreateDealParams.md)| 取引（収入／支出）の作成 | [optional]
 
 ### Return type
 
@@ -65,6 +66,66 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
+
+
+## destroyDeal
+
+> destroyDeal($id, $company_id)
+
+取引（収入／支出）の削除
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2
+$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Freee\Accounting\Api\DealsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int | 取引ID
+$company_id = 56; // int | 事業所ID
+
+try {
+    $apiInstance->destroyDeal($id, $company_id);
+} catch (Exception $e) {
+    echo 'Exception when calling DealsApi->destroyDeal: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| 取引ID |
+ **company_id** | **int**| 事業所ID |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -230,7 +291,7 @@ Name | Type | Description  | Notes
 
 ## updateDeal
 
-> \Freee\Accounting\Model\DealsResponse updateDeal($id, $update_deal_params)
+> \Freee\Accounting\Model\DealsResponse updateDeal($id, $parameters)
 
 取引（収入／支出）の更新
 
@@ -254,10 +315,10 @@ $apiInstance = new Freee\Accounting\Api\DealsApi(
     $config
 );
 $id = 56; // int | 取引ID
-$update_deal_params = new \Freee\Accounting\Model\UpdateDealParams(); // \Freee\Accounting\Model\UpdateDealParams | 取引（収入／支出）の更新
+$parameters = new \Freee\Accounting\Model\UpdateDealParams(); // \Freee\Accounting\Model\UpdateDealParams | 取引（収入／支出）の更新
 
 try {
-    $result = $apiInstance->updateDeal($id, $update_deal_params);
+    $result = $apiInstance->updateDeal($id, $parameters);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DealsApi->updateDeal: ', $e->getMessage(), PHP_EOL;
@@ -271,7 +332,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 取引ID |
- **update_deal_params** | [**\Freee\Accounting\Model\UpdateDealParams**](../Model/UpdateDealParams.md)| 取引（収入／支出）の更新 | [optional]
+ **parameters** | [**\Freee\Accounting\Model\UpdateDealParams**](../Model/UpdateDealParams.md)| 取引（収入／支出）の更新 | [optional]
 
 ### Return type
 

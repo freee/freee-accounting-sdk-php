@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createInvoice**](InvoicesApi.md#createInvoice) | **POST** /invoices | 請求書の作成
 [**destroyInvoice**](InvoicesApi.md#destroyInvoice) | **DELETE** /invoices/{id} | 請求書の削除
+[**getInvoice**](InvoicesApi.md#getInvoice) | **GET** /invoices/{id} | 請求書の取得
 [**getInvoices**](InvoicesApi.md#getInvoices) | **GET** /invoices | 請求書一覧の取得
 [**updateInvoice**](InvoicesApi.md#updateInvoice) | **PUT** /invoices/{id} | 請求書の更新
 
@@ -13,11 +14,11 @@ Method | HTTP request | Description
 
 ## createInvoice
 
-> \Freee\Accounting\Model\InvoicesResponse createInvoice($invoices_create_params)
+> \Freee\Accounting\Model\InvoicesResponse createInvoice($parameters)
 
 請求書の作成
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所の請求書を作成する</p>  <h2 id=\"_1\">注意点</h2> <ul> <li> <p>取引先ID（partner_id）と取引先の名称項目（partner_name, partner_long_name, partner_zipcode, partner_prefecture_code, partner_address1, partner_address2）を同時に指定することはできません。名称項目のみ指定した場合は新規取引先として登録されます。</p> </li> <li> <p>請求書ステータス(invoice_status)を発行(issue)で利用した場合、請求内容の合計金額が0円以上になる必要があります。</p> </li> <li><p>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。また「partner_code、partner_id、partner_name」は同時に指定することはできません。</p></li></ul>
+<h2 id=\"\">概要</h2>  <p>指定した事業所の請求書を作成する</p>  <h2 id=\"_1\">注意点</h2> <ul> <li> <p>取引先ID（partner_id）と取引先の名称項目（partner_name, partner_long_name, partner_zipcode, partner_prefecture_code, partner_address1, partner_address2）を同時に指定することはできません。名称項目のみ指定した場合は新規取引先として登録されます。</p> </li> <li> <p>[重要] <a rel=\"noopener noreferrer\" href=\"https://developer.freee.co.jp/news/1783\" target=\"_blank\">parnter_idは必須化予定</a>です。parnter_idを必ず指定してご利用ください。</p> </li> <li> <p>請求書ステータス(invoice_status)を発行(issue)で利用した場合、請求内容の合計金額が0円以上になる必要があります。</p> </li> <li><p>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。また「partner_code、partner_id、partner_name」は同時に指定することはできません。</p></li></ul>
 
 ### Example
 
@@ -36,10 +37,10 @@ $apiInstance = new Freee\Accounting\Api\InvoicesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$invoices_create_params = new \Freee\Accounting\Model\InvoicesCreateParams(); // \Freee\Accounting\Model\InvoicesCreateParams | 請求書の作成
+$parameters = new \Freee\Accounting\Model\InvoicesCreateParams(); // \Freee\Accounting\Model\InvoicesCreateParams | 請求書の作成
 
 try {
-    $result = $apiInstance->createInvoice($invoices_create_params);
+    $result = $apiInstance->createInvoice($parameters);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoicesApi->createInvoice: ', $e->getMessage(), PHP_EOL;
@@ -52,7 +53,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invoices_create_params** | [**\Freee\Accounting\Model\InvoicesCreateParams**](../Model/InvoicesCreateParams.md)| 請求書の作成 | [optional]
+ **parameters** | [**\Freee\Accounting\Model\InvoicesCreateParams**](../Model/InvoicesCreateParams.md)| 請求書の作成 | [optional]
 
 ### Return type
 
@@ -119,6 +120,69 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
+
+
+## getInvoice
+
+> \Freee\Accounting\Model\InvoicesResponse getInvoice($company_id, $id)
+
+請求書の取得
+
+<h2 id=\"\">概要</h2>  <p>指定した事業所の請求書詳細を取得する</p>
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2
+$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Freee\Accounting\Api\InvoicesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 56; // int | 事業所ID
+$id = 56; // int | 請求書ID
+
+try {
+    $result = $apiInstance->getInvoice($company_id, $id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling InvoicesApi->getInvoice: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **company_id** | **int**| 事業所ID |
+ **id** | **int**| 請求書ID |
+
+### Return type
+
+[**\Freee\Accounting\Model\InvoicesResponse**](../Model/InvoicesResponse.md)
 
 ### Authorization
 
@@ -221,11 +285,11 @@ Name | Type | Description  | Notes
 
 ## updateInvoice
 
-> \Freee\Accounting\Model\InvoicesResponse updateInvoice($id, $invoices_update_params)
+> \Freee\Accounting\Model\InvoicesResponse updateInvoice($id, $parameters)
 
 請求書の更新
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所の請求書を更新する</p>  <h2 id=\"_1\">注意点</h2> <ul> <li> <p>取引先ID（partner_id）と取引先の名称項目（partner_name, partner_long_name, partner_zipcode, partner_prefecture_code, partner_address1, partner_address2）の更新はできません。名称項目を変更したい場合は取引先APIをご利用ください。</p> </li> <li> <p>入金済みの請求書に対する金額関連の変更はできません。</p> </li> <li> <p>請求書ステータスは確定(issue)のみ指定可能です。請求書ステータスを確定する時のみ指定してください。</p> </li> <li> <p>請求書WFを利用している場合、承認済み請求書は承認権限を持たないユーザーでは更新できません。</p> </li> <li> <p>更新後の請求書ステータス(invoice_status)が下書き以外の場合、請求内容の合計金額が0円以上になる必要があります。</p></li><li><p>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。また「partner_code、partner_id、partner_name」は同時に指定することはできません。</p></li></ul>
+<h2 id=\"\">概要</h2>  <p>指定した事業所の請求書を更新する</p>  <h2 id=\"_1\">注意点</h2> <ul> <li> <p>取引先ID（partner_id）と取引先の名称項目（partner_name, partner_long_name, partner_zipcode, partner_prefecture_code, partner_address1, partner_address2）の更新はできません。名称項目を変更したい場合は取引先APIをご利用ください。</p> </li>  <li> <p>[重要] <a rel=\"noopener noreferrer\" href=\"https://developer.freee.co.jp/news/1783\" target=\"_blank\">parnter_idは必須化予定</a>です。parnter_idを必ず指定してご利用ください。</p> </li> <li> <p>入金済みの請求書に対する金額関連の変更はできません。</p> </li>  <li> <p>請求書ステータスは確定(issue)のみ指定可能です。請求書ステータスを確定する時のみ指定してください。</p> </li>  <li> <p>請求書WFを利用している場合、承認済み請求書は承認権限を持たないユーザーでは更新できません。</p> </li>  <li> <p>更新後の請求書ステータス(invoice_status)が下書き以外の場合、請求内容の合計金額が0円以上になる必要があります。</p></li> <li><p>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。また「partner_code、partner_id、partner_name」は同時に指定することはできません。</p></li></ul>
 
 ### Example
 
@@ -245,10 +309,10 @@ $apiInstance = new Freee\Accounting\Api\InvoicesApi(
     $config
 );
 $id = 56; // int | 請求書ID
-$invoices_update_params = new \Freee\Accounting\Model\InvoicesUpdateParams(); // \Freee\Accounting\Model\InvoicesUpdateParams | 請求書の更新
+$parameters = new \Freee\Accounting\Model\InvoicesUpdateParams(); // \Freee\Accounting\Model\InvoicesUpdateParams | 請求書の更新
 
 try {
-    $result = $apiInstance->updateInvoice($id, $invoices_update_params);
+    $result = $apiInstance->updateInvoice($id, $parameters);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoicesApi->updateInvoice: ', $e->getMessage(), PHP_EOL;
@@ -262,7 +326,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 請求書ID |
- **invoices_update_params** | [**\Freee\Accounting\Model\InvoicesUpdateParams**](../Model/InvoicesUpdateParams.md)| 請求書の更新 | [optional]
+ **parameters** | [**\Freee\Accounting\Model\InvoicesUpdateParams**](../Model/InvoicesUpdateParams.md)| 請求書の更新 | [optional]
 
 ### Return type
 

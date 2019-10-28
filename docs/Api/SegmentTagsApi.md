@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## createSegmentTag
 
-> \Freee\Accounting\Model\SegmentTagsResponse createSegmentTag($segment_id, $segment_tag_params)
+> \Freee\Accounting\Model\SegmentTagsResponse createSegmentTag($segment_id, $parameters)
 
 セグメントの作成
 
@@ -37,10 +37,10 @@ $apiInstance = new Freee\Accounting\Api\SegmentTagsApi(
     $config
 );
 $segment_id = 56; // int | セグメントID
-$segment_tag_params = new \Freee\Accounting\Model\SegmentTagParams(); // \Freee\Accounting\Model\SegmentTagParams | セグメントタグの作成
+$parameters = new \Freee\Accounting\Model\SegmentTagParams(); // \Freee\Accounting\Model\SegmentTagParams | セグメントタグの作成
 
 try {
-    $result = $apiInstance->createSegmentTag($segment_id, $segment_tag_params);
+    $result = $apiInstance->createSegmentTag($segment_id, $parameters);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SegmentTagsApi->createSegmentTag: ', $e->getMessage(), PHP_EOL;
@@ -54,7 +54,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **segment_id** | **int**| セグメントID |
- **segment_tag_params** | [**\Freee\Accounting\Model\SegmentTagParams**](../Model/SegmentTagParams.md)| セグメントタグの作成 |
+ **parameters** | [**\Freee\Accounting\Model\SegmentTagParams**](../Model/SegmentTagParams.md)| セグメントタグの作成 |
 
 ### Return type
 
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 ## updateSegmentTag
 
-> \Freee\Accounting\Model\SegmentTagsResponse updateSegmentTag($segment_id, $id, $segment_tag_params)
+> \Freee\Accounting\Model\SegmentTagsResponse updateSegmentTag($segment_id, $id, $parameters)
 
 セグメントタグの更新
 
@@ -232,10 +232,10 @@ $apiInstance = new Freee\Accounting\Api\SegmentTagsApi(
 );
 $segment_id = 56; // int | セグメントID
 $id = 56; // int | セグメントタグID
-$segment_tag_params = new \Freee\Accounting\Model\SegmentTagParams(); // \Freee\Accounting\Model\SegmentTagParams | セグメントタグの作成
+$parameters = new \Freee\Accounting\Model\SegmentTagParams(); // \Freee\Accounting\Model\SegmentTagParams | セグメントタグの作成
 
 try {
-    $result = $apiInstance->updateSegmentTag($segment_id, $id, $segment_tag_params);
+    $result = $apiInstance->updateSegmentTag($segment_id, $id, $parameters);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SegmentTagsApi->updateSegmentTag: ', $e->getMessage(), PHP_EOL;
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **segment_id** | **int**| セグメントID |
  **id** | **int**| セグメントタグID |
- **segment_tag_params** | [**\Freee\Accounting\Model\SegmentTagParams**](../Model/SegmentTagParams.md)| セグメントタグの作成 |
+ **parameters** | [**\Freee\Accounting\Model\SegmentTagParams**](../Model/SegmentTagParams.md)| セグメントタグの作成 |
 
 ### Return type
 

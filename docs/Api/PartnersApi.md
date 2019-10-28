@@ -5,6 +5,8 @@ All URIs are relative to *https://api.freee.co.jp/api/1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createPartner**](PartnersApi.md#createPartner) | **POST** /partners | 取引先の作成
+[**destroyPartner**](PartnersApi.md#destroyPartner) | **DELETE** /partners/{id} | 取引先の削除
+[**getPartner**](PartnersApi.md#getPartner) | **GET** /partners/{id} | 取引先の取得
 [**getPartners**](PartnersApi.md#getPartners) | **GET** /partners | 取引先一覧の取得
 [**updatePartner**](PartnersApi.md#updatePartner) | **PUT** /partners/{id} | 取引先の更新
 [**updatePartnerByCode**](PartnersApi.md#updatePartnerByCode) | **PUT** /partners/code/{code} | 取引先の更新
@@ -13,7 +15,7 @@ Method | HTTP request | Description
 
 ## createPartner
 
-> \Freee\Accounting\Model\PartnersResponse createPartner($partner_create_params)
+> \Freee\Accounting\Model\PartnersResponse createPartner($parameters)
 
 取引先の作成
 
@@ -36,10 +38,10 @@ $apiInstance = new Freee\Accounting\Api\PartnersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$partner_create_params = new \Freee\Accounting\Model\PartnerCreateParams(); // \Freee\Accounting\Model\PartnerCreateParams | 取引先の作成
+$parameters = new \Freee\Accounting\Model\PartnerCreateParams(); // \Freee\Accounting\Model\PartnerCreateParams | 取引先の作成
 
 try {
-    $result = $apiInstance->createPartner($partner_create_params);
+    $result = $apiInstance->createPartner($parameters);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PartnersApi->createPartner: ', $e->getMessage(), PHP_EOL;
@@ -52,7 +54,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **partner_create_params** | [**\Freee\Accounting\Model\PartnerCreateParams**](../Model/PartnerCreateParams.md)| 取引先の作成 |
+ **parameters** | [**\Freee\Accounting\Model\PartnerCreateParams**](../Model/PartnerCreateParams.md)| 取引先の作成 |
 
 ### Return type
 
@@ -65,6 +67,131 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
+
+
+## destroyPartner
+
+> destroyPartner($id, $company_id)
+
+取引先の削除
+
+<h2 id=\"\">概要</h2>  <p>指定した事業所の取引先を削除する</p>
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2
+$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Freee\Accounting\Api\PartnersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int | 取引先ID
+$company_id = 56; // int | 事業所ID
+
+try {
+    $apiInstance->destroyPartner($id, $company_id);
+} catch (Exception $e) {
+    echo 'Exception when calling PartnersApi->destroyPartner: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| 取引先ID |
+ **company_id** | **int**| 事業所ID |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
+
+
+## getPartner
+
+> \Freee\Accounting\Model\PartnersResponse getPartner($id, $company_id)
+
+取引先の取得
+
+<h2 id=\"\">概要</h2>  <p>指定した事業所の取引先を取得する</p>
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2
+$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Freee\Accounting\Api\PartnersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int | 取引先ID
+$company_id = 56; // int | 事業所ID
+
+try {
+    $result = $apiInstance->getPartner($id, $company_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PartnersApi->getPartner: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| 取引先ID |
+ **company_id** | **int**| 事業所ID |
+
+### Return type
+
+[**\Freee\Accounting\Model\PartnersResponse**](../Model/PartnersResponse.md)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -141,7 +268,7 @@ Name | Type | Description  | Notes
 
 ## updatePartner
 
-> \Freee\Accounting\Model\PartnersResponse updatePartner($id, $partner_update_params)
+> \Freee\Accounting\Model\PartnersResponse updatePartner($id, $parameters)
 
 取引先の更新
 
@@ -165,10 +292,10 @@ $apiInstance = new Freee\Accounting\Api\PartnersApi(
     $config
 );
 $id = 56; // int | 取引先ID
-$partner_update_params = new \Freee\Accounting\Model\PartnerUpdateParams(); // \Freee\Accounting\Model\PartnerUpdateParams | 取引先の更新
+$parameters = new \Freee\Accounting\Model\PartnerUpdateParams(); // \Freee\Accounting\Model\PartnerUpdateParams | 取引先の更新
 
 try {
-    $result = $apiInstance->updatePartner($id, $partner_update_params);
+    $result = $apiInstance->updatePartner($id, $parameters);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PartnersApi->updatePartner: ', $e->getMessage(), PHP_EOL;
@@ -182,7 +309,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 取引先ID |
- **partner_update_params** | [**\Freee\Accounting\Model\PartnerUpdateParams**](../Model/PartnerUpdateParams.md)| 取引先の更新 |
+ **parameters** | [**\Freee\Accounting\Model\PartnerUpdateParams**](../Model/PartnerUpdateParams.md)| 取引先の更新 |
 
 ### Return type
 
@@ -204,7 +331,7 @@ Name | Type | Description  | Notes
 
 ## updatePartnerByCode
 
-> \Freee\Accounting\Model\PartnersResponse updatePartnerByCode($code, $partner_code_params)
+> \Freee\Accounting\Model\PartnersResponse updatePartnerByCode($code, $parameters)
 
 取引先の更新
 
@@ -228,10 +355,10 @@ $apiInstance = new Freee\Accounting\Api\PartnersApi(
     $config
 );
 $code = 'code_example'; // string | 取引先コード
-$partner_code_params = new \Freee\Accounting\Model\PartnerCodeParams(); // \Freee\Accounting\Model\PartnerCodeParams | 取引先の更新
+$parameters = new \Freee\Accounting\Model\PartnerCodeParams(); // \Freee\Accounting\Model\PartnerCodeParams | 取引先の更新
 
 try {
-    $result = $apiInstance->updatePartnerByCode($code, $partner_code_params);
+    $result = $apiInstance->updatePartnerByCode($code, $parameters);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PartnersApi->updatePartnerByCode: ', $e->getMessage(), PHP_EOL;
@@ -245,7 +372,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **code** | **string**| 取引先コード |
- **partner_code_params** | [**\Freee\Accounting\Model\PartnerCodeParams**](../Model/PartnerCodeParams.md)| 取引先の更新 |
+ **parameters** | [**\Freee\Accounting\Model\PartnerCodeParams**](../Model/PartnerCodeParams.md)| 取引先の更新 |
 
 ### Return type
 
