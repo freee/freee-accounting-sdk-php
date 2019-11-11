@@ -4,10 +4,6 @@
 
 会計freee API の詳細については、[会計API 概要 | freee Developers Community](https://developer.freee.co.jp/docs/accounting) をご参照ください。
 
-## ステータス: WIP
-
-本SDKは主要な機能が含まれていますが、制限およびバグがある可能性があります。また、このステータスの記載が更新されるまでは、APIは変更される可能性がありますので、ご利用の際はご留意ください。
-
 ## 目次
 
 - [チュートリアル](#チュートリアル)
@@ -486,7 +482,7 @@ class EventServiceProvider extends ServiceProvider
 そして、 `app/Extensions` ディレクトリを作成し、このリポジトリの `samples/BasicWebApp/app/Extensions` 配下のすべてのファイルを、 `app/Extensions` にコピーします。
 
 ```bash
-mkdir app/Extensions
+mkdir -p app/Extensions
 
 # 前述のようにファイルをコピーする
 ```
@@ -569,7 +565,7 @@ Route::get('/account/me', 'AccountController@me')->name('me');
 次にビューを用意しましょう。 `resources/views/account` ディレクトリを作成し、本リポジトリの `samples/BasicWebApp/resources/views/account` 配下のファイルをコピーします。
 
 ```bash
-mkdir resources/views/account
+mkdir -p resources/views/account
 
 # 前述のようにファイルをコピーする
 ```
