@@ -486,7 +486,7 @@ class EventServiceProvider extends ServiceProvider
 そして、 `app/Extensions` ディレクトリを作成し、このリポジトリの `samples/BasicWebApp/app/Extensions` 配下のすべてのファイルを、 `app/Extensions` にコピーします。
 
 ```bash
-mkdir app/Extensions
+mkdir -p app/Extensions
 
 # 前述のようにファイルをコピーする
 ```
@@ -569,7 +569,7 @@ Route::get('/account/me', 'AccountController@me')->name('me');
 次にビューを用意しましょう。 `resources/views/account` ディレクトリを作成し、本リポジトリの `samples/BasicWebApp/resources/views/account` 配下のファイルをコピーします。
 
 ```bash
-mkdir resources/views/account
+mkdir -p resources/views/account
 
 # 前述のようにファイルをコピーする
 ```
