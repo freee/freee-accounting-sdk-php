@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Auth\GenericUser;
-use Illuminate\Support\Facades\Auth;
-use Socialite;
+use Laravel\Socialite\Facades\Socialite;
+use App\User;
 
 class LoginController extends Controller
 {
@@ -46,7 +45,7 @@ class LoginController extends Controller
      */
     public function redirectToProvider()
     {
-        return Socialite::driver('freeeaccounting')->redirect();
+        return Socialite::driver('freee')->redirect();
     }
 
     /**
@@ -56,19 +55,30 @@ class LoginController extends Controller
      */
     public function handleProviderCallback()
     {
-        $user = Socialite::driver('freeeaccounting')->user();
+        $user = Socialite::driver('freee')->user();
 
-        $genericUser = $user->getRaw();
-        $genericUser['token'] = $user->token;
-        $genericUser['remember_token'] = '';
-        Auth::login(new GenericUser($genericUser));
+        $loginUser = User::updateOrCreate(
+            [
+                'freee_id' => $user->id,
+            ],
+            [
+                'name' => $user->name,
+                'email' => $user->email,
+                'first_name' => $user->first_name,
+                'last_name' => $user->last_name,
+                'token' => $user->token,
+            ]
+        );
+
+        auth()->login($loginUser, true);
 
         return redirect()->intended($this->redirectTo);
     }
 
     public function logout()
     {
-        Auth::logout();
+        auth()->logout();
+
         return redirect()->intended('/');
     }
 }

@@ -109,6 +109,10 @@ composer install
 # Application encryption key を発行する
 php artisan key:generate
 
+# データベースはSQLiteを使用
+touch database/database.sqlite
+php artisan migrate
+
 # Laravel の内蔵サーバーを実行する
 php artisan serve
 

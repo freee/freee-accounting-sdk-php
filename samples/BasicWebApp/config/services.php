@@ -30,10 +30,10 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
-    'freeeaccounting' => [
+    'freee' => [
         'client_id' => env('FREEE_ACCOUNTING_CLIENT_ID'),
         'client_secret' => env('FREEE_ACCOUNTING_CLIENT_SECRET'),
-        'redirect' => 'http://localhost:8000/auth-callback',
+        'redirect' => env('FREEE_ACCOUNTING_REDIRECT', '/auth-callback'),
     ],
 
 ];
