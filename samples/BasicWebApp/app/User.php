@@ -6,9 +6,12 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+use Freee\Accounting\Laravel\Traits\FreeeAccounting;
+
 class User extends Authenticatable
 {
     use Notifiable;
+    use FreeeAccounting;
 
     /**
      * The attributes that are mass assignable.
@@ -22,6 +25,8 @@ class User extends Authenticatable
         'first_name',
         'last_name',
         'token',
+        'refresh_token',
+        'expired_at',
     ];
 
     /**
@@ -41,5 +46,14 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'expired_at' => 'datetime',
     ];
+
+    /**
+     * @return string
+     */
+    protected function tokenForFreeeAccounting()
+    {
+        return $this->token;
+    }
 }

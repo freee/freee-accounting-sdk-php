@@ -1,16 +1,17 @@
 {
-  "name": "freee/socialite-freee",
-  "description": "Socialite for Freee",
+  "name": "freee/laravel-freee-sdk",
+  "description": "Freee SDK for Laravel",
   "keywords": [
     "freee",
-    "socialite",
     "laravel"
   ],
   "license": "MIT",
   "require": {
     "php": "^7.2||^8.0",
     "ext-json": "*",
-    "laravel/socialite": "*"
+    "illuminate/support": "*",
+    "illuminate/container": "*",
+    "freee/freee-accounting-sdk": "^1.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^8.0",
@@ -19,7 +20,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Freee\\Socialite\\": "src"
+      "Freee\\Accounting\\Laravel\\": "src/"
     }
   },
   "autoload-dev": {
@@ -30,7 +31,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Freee\\Socialite\\FreeeServiceProvider"
+        "Freee\\Accounting\\Laravel\\Providers\\FreeeServiceProvider"
       ]
     }
   }

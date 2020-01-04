@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Tokyo',
 
     /*
     |--------------------------------------------------------------------------
@@ -166,6 +166,7 @@ return [
          * Package Service Providers...
          */
         Freee\Socialite\FreeeServiceProvider::class,
+        Freee\Accounting\Laravel\Providers\FreeeServiceProvider::class,
 
         /*
          * Application Service Providers...

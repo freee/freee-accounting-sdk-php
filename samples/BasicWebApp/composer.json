@@ -36,7 +36,8 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
-            "Freee\\Socialite\\": "lib/socialite-freee/src/"
+            "Freee\\Socialite\\": "lib/socialite-freee/src/",
+            "Freee\\Accounting\\Laravel\\": "lib/laravel-freee-sdk/src/"
         },
         "classmap": [
             "database/seeds",

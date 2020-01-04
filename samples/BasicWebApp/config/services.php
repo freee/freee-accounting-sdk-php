@@ -34,6 +34,7 @@ return [
         'client_id' => env('FREEE_ACCOUNTING_CLIENT_ID'),
         'client_secret' => env('FREEE_ACCOUNTING_CLIENT_SECRET'),
         'redirect' => env('FREEE_ACCOUNTING_REDIRECT', '/auth-callback'),
+        'default_company_id' => env('FREEE_COMPANY_ID', 0),
     ],
 
 ];
