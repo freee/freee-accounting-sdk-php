@@ -13,8 +13,7 @@
         "freee/freee-accounting-sdk": "^1.0.0",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
-        "socialiteproviders/generators": "^4.5",
-        "socialiteproviders/manager": "^3.4"
+        "socialiteproviders/freeeaccounting": "dev-master"
     },
     "require-dev": {
         "facade/ignition": "^1.4",
@@ -36,8 +35,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/",
-            "SocialiteProviders\\FreeeAccounting\\": "SocialiteProviders/src/FreeeAccounting/"
+            "App\\": "app/"
         },
         "classmap": [
             "database/seeds",

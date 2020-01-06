@@ -148,16 +148,25 @@ php artisan serve --host 0.0.0.0
 # 内蔵サーバーを停止するには、 Ctrl + c を押下します
 ```
 
-データベースの設定を sqlite に変更します。 `.env` を下記のように編集します。 `DB_DATABASE` はプロジェクト内の `database/database.sqlite` への絶対パスを設定します。適宜調整してください。
+データベースの設定を sqlite に変更します。 `.env` を下記のように編集します。 `DB_DATABASE` はプロジェクト内の `database/database.sqlite` への絶対パスを設定します。適宜調整してください。`<client_id>`, `<client_secret>` は、それぞれ [freeeアプリストアへのアプリケーション登録](#freeeアプリストアへのアプリケーション登録) で取得した値を設定します。
 
 ```
+# ↓↓ ここから ↓↓
 #DB_CONNECTION=mysql
 DB_CONNECTION=sqlite
+# ↑↑ ここまで編集 ↑↑
 
-...
+#  ... 中略 ...
 
+# ↓↓ ここから ↓↓
 #DB_DATABASE=laravel
 DB_DATABASE=/usr/src/app/sampleapp/database/database.sqlite
+# ↑↑ ここまで編集 ↑↑
+
+# ↓↓ ここから ↓↓
+FREEE_ACCOUNTING_CLIENT_ID=<client_id>
+FREEE_ACCOUNTING_CLIENT_SECRET=<client_secret>
+#  ↑↑ ここまで追加 ↑↑
 ```
 
 つぎに、sqlite ファイルを作成し、マイグレーションを実行します。
@@ -201,7 +210,7 @@ php artisan migrate
     protected $fillable = [
         // ↓↓ ここから ↓↓
         // 'name', 'email', 'password',
-        'name', 'email', 'freee_id', 'first_name', 'last_name', 'token'
+        'name', 'email', 'freee_id', 'first_name', 'last_name', 'token',
         // ↑↑ ここまで編集 ↑↑
     ];
 ```
@@ -209,13 +218,11 @@ php artisan migrate
 プロジェクトの準備ができたら、パッケージのインストールを行います。本SDK のコアである会計freee APIは OAuth2 による認証を行うため、 Laravel オフィシャルパッケージである [Socialite](https://socialiteproviders.netlify.com/) も利用します。
 
 - `freee/freee-accounting-sdk`: 本SDK
-- `socialiteproviders/generators`: Socialite のカスタムプロバイダのベースコードを生成するためのパッケージ（参考: https://github.com/SocialiteProviders/Generators)
-- `socialiteproviders/manager`: Socialite のカスタムプロバイダを扱うためのパッケージ
+- `socialiteproviders/freeeaccounting`: 会計 freee API の Socialite プロバイダ
 
 ```bash
 composer require freee/freee-accounting-sdk
-composer require socialiteproviders/generators
-composer require socialiteproviders/manager
+composer require socialiteproviders/freeeaccounting
 ```
 
 そして `config/app.php` の `providers` に、下記を参考にプロバイダを追記します。
@@ -223,20 +230,9 @@ composer require socialiteproviders/manager
 ```php
     'providers' => [
         // ... 中略 ...
-        SocialiteProviders\Generators\GeneratorsServiceProvider::class,
         SocialiteProviders\Manager\ServiceProvider::class,
         // ... 中略 ...
     ],
-```
-
-`socialiteproviders/generators` の artisan コマンドを利用して、ベースコードを作成します。
-
-```bash
-# freee の OAuth2 認証を処理するコードを作成する
-php artisan make:socialite FreeeAccounting --spec=oauth2 --authorize_url=https://accounts.secure.freee.co.jp/public_api/authorize --access_token_url=https://accounts.secure.freee.co.jp/public_api/token --user_details_url=https://api.freee.co.jp/api/1/users/me
-
-# 作成したファイルを読み込む
-composer dumpautoload
 ```
 
 つぎに、認証用の画面を用意します。今回は `laravel/ui` を導入し、その画面を流用します。詳細は [Authentication - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/authentication#authentication-quickstart) をご参照ください。
@@ -283,47 +279,6 @@ return [
     ],
     // ↑↑ ここまで編集 ↑↑
 ];
-```
-
-つぎに、 `SocialiteProviders` 配下のコードを少し修正します。
-
-`SocialiteProviders/src/FreeeAccounting/Provider.php`
-
-```php
-    protected function getUserByToken($token)
-    {
-        // ... 中略 ...
-
-        // ↓↓ ここから ↓↓
-        // return json_decode($response->getBody(), true);
-        $body = json_decode($response->getBody(), true);
-        return $body['user'];
-        // ↑↑ ここまで編集 ↑↑
-    }
-```
-
-```php
-    protected function mapUserToObject(array $user)
-    {
-        // ↓↓ ここから ↓↓
-        $user['name'] = $user['last_name'] . ' ' . $user['first_name'];
-        // ↑↑ ここまで追加 ↑↑
-
-        return (new User())->setRaw($user)->map([
-            'id'       => $user['id'],
-            // 'nickname' => $user['username'],
-            'name'     => $user['name'],
-            'email'    => $user['email'],
-            // 'avatar'   => $user['avatar'],
-            // ↓↓ ここから ↓↓
-            'display_name' => $user['display_name'],
-            'first_name' => $user['first_name'],
-            'last_name' => $user['last_name'],
-            'first_name_kana' => $user['first_name_kana'],
-            'last_name_kana' => $user['last_name_kana'],
-            // ↑↑ ここまで追加 ↑↑
-        ]);
-    }
 ```
 
 それでは、つぎにコントローラを整備しましょう。まず、 `app\Http\Auth\LoginController.php` を編集し、 会計freee API にログインできるようにします。
