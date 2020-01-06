@@ -109,6 +109,10 @@ composer install
 # Application encryption key を発行する
 php artisan key:generate
 
+# sqlite ファイルを作成し、マイグレーションを実行する
+touch database/database.sqlite
+php artisan migrate
+
 # Laravel の内蔵サーバーを実行する
 php artisan serve
 
@@ -142,6 +146,64 @@ php artisan serve
 php artisan serve --host 0.0.0.0
 
 # 内蔵サーバーを停止するには、 Ctrl + c を押下します
+```
+
+データベースの設定を sqlite に変更します。 `.env` を下記のように編集します。 `DB_DATABASE` はプロジェクト内の `database/database.sqlite` への絶対パスを設定します。適宜調整してください。
+
+```
+#DB_CONNECTION=mysql
+DB_CONNECTION=sqlite
+
+...
+
+#DB_DATABASE=laravel
+DB_DATABASE=/usr/src/app/sampleapp/database/database.sqlite
+```
+
+つぎに、sqlite ファイルを作成し、マイグレーションを実行します。
+
+```bash
+# 自動作成されたマイグレーションファイルを削除する
+rm database/migrations/2014_10_12_000000_create_users_table.php
+
+# マイグレーションを作成する
+php artisan make:migration create_users_table --create=users
+```
+
+作成したマイグレーションファイルを下記のように編集します。
+
+```php
+        Schema::create('users', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            // ↓↓ ここから ↓↓
+            $table->unsignedBigInteger('freee_id')->unique();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->string('token')->nullable();
+            $table->rememberToken();
+            // ↑↑ ここまで編集 ↑↑
+            $table->timestamps();
+        });
+```
+
+```bash
+# sqlite ファイルを作成し、マイグレーションを実行する
+touch database/database.sqlite
+php artisan migrate
+```
+
+`app/User.php` を編集します。
+
+```php
+    protected $fillable = [
+        // ↓↓ ここから ↓↓
+        // 'name', 'email', 'password',
+        'name', 'email', 'freee_id', 'first_name', 'last_name', 'token'
+        // ↑↑ ここまで編集 ↑↑
+    ];
 ```
 
 プロジェクトの準備ができたら、パッケージのインストールを行います。本SDK のコアである会計freee APIは OAuth2 による認証を行うため、 Laravel オフィシャルパッケージである [Socialite](https://socialiteproviders.netlify.com/) も利用します。
@@ -223,51 +285,6 @@ return [
 ];
 ```
 
-`config/auth.php` も更新します。
-
-```php
-<?php
-
-return [
-
-    // ... 中略 ...
-
-    'defaults' => [
-        // ↓↓ ここから ↓↓
-        // 'guard' => 'web',
-        'guard' => 'freee',
-        // ↑↑ ここまで編集 ↑↑
-        'passwords' => 'users',
-    ],
-
-    // ... 中略 ...
-
-    'guards' => [
-        // ... 中略 ...
-
-        // ↓↓ ここから ↓↓
-        'freee' => [
-            'driver' => 'freee',
-            'provider' => 'freee',
-        ],
-        // ↑↑ ここまで追加 ↑↑
-    ],
-
-    // ... 中略 ...
-
-    'providers' => [
-        // ... 中略 ...
-
-        // ↓↓ ここから ↓↓
-        'freee' => [
-            'driver' => 'freee',
-        ],
-        // ↑↑ ここまで追加 ↑↑
-    ],
-
-    // ... 略 ...
-```
-
 つぎに、 `SocialiteProviders` 配下のコードを少し修正します。
 
 `SocialiteProviders/src/FreeeAccounting/Provider.php`
@@ -317,46 +334,17 @@ return [
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
 // ↓↓ ここから ↓↓
-// use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Auth\GenericUser;
-use Illuminate\Support\Facades\Auth;
+use App\User;
 use Socialite;
-// ↑↑ ここまで編集 ↑↑
+// ↑↑ ここまで追加 ↑↑
 
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
-
-    // ↓↓ ここから ↓↓
-    // use AuthenticatesUsers;
-    // ↑↑ ここまで編集 ↑↑
-
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/home';
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
-    }
+    // ... 中略 ...
 
     // ↓↓ ここから ↓↓
     /**
@@ -378,67 +366,30 @@ class LoginController extends Controller
     {
         $user = Socialite::driver('freeeaccounting')->user();
 
-        $genericUser = $user->getRaw();
-        $genericUser['token'] = $user->token;
-        $genericUser['remember_token'] = '';
-        Auth::login(new GenericUser($genericUser));
+        $loggedInUser = User::updateOrCreate(
+            [
+                'freee_id' => $user->id,
+            ],
+            [
+                'name' => $user->name,
+                'email' => $user->email,
+                'first_name' => $user->first_name,
+                'last_name' => $user->last_name,
+                'token' => $user->token,
+            ]
+        );
 
-        return redirect()->intended($this->redirectTo);
+        auth()->login($loggedInUser);
+
+        return redirect($this->redirectTo);
     }
 
     public function logout()
     {
-        Auth::logout();
-        return redirect()->intended('/');
+        auth()->logout();
+        return redirect('/');
     }
     // ↑↑ ここまで追加 ↑↑
-}
-```
-
-つぎに、 `app/Providers/AuthServiceProvider.php` を下記のように編集します。
-
-```php
-<?php
-
-namespace App\Providers;
-
-use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
-// ↓↓ ここから ↓↓
-// use Illuminate\Support\Facades\Gate;
-use App\Extensions\SampleSessionGuard;
-use App\Extensions\FreeeUserProvider;
-use Illuminate\Support\Facades\Auth;
-// ↑↑ ここまで編集 ↑↑
-
-class AuthServiceProvider extends ServiceProvider
-{
-    // ... 中略 ...
-
-    /**
-     * Register any authentication / authorization services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        $this->registerPolicies();
-
-        //
-
-        // ↓↓ ここから ↓↓
-        Auth::extend('freee', function ($app, $name, array $config) {
-            return new SampleSessionGuard(
-                $name,
-                Auth::createUserProvider($config['provider']),
-                $app['session.store']
-            );
-        });
-
-        Auth::provider('freee', function ($app, array $config) {
-            return new FreeeUserProvider();
-        });
-        // ↑↑ ここまで追加 ↑↑
-    }
 }
 ```
 
@@ -479,14 +430,6 @@ class EventServiceProvider extends ServiceProvider
 
 ```
 
-そして、 `app/Extensions` ディレクトリを作成し、このリポジトリの `samples/BasicWebApp/app/Extensions` 配下のすべてのファイルを、 `app/Extensions` にコピーします。
-
-```bash
-mkdir -p app/Extensions
-
-# 前述のようにファイルをコピーする
-```
-
 ここまでの手順により、Laravel プロジェクトで会計freee APIにログインできるようになりました。
 
 次に、本SDK を利用して情報を取得する部分も作成してみましょう。
@@ -509,7 +452,6 @@ namespace App\Http\Controllers;
 use Freee\Accounting\Configuration;
 use Freee\Accounting\Api\CompaniesApi;
 use Freee\Accounting\Api\DealsApi;
-use Illuminate\Support\Facades\Auth;
 // ↑↑ ここまで編集 ↑↑
 
 class AccountController extends Controller
