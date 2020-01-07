@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Laravel\Socialite\Facades\Socialite;
 use Laravel\Socialite\Two\User;
-use Freee\Socialite\FreeeProvider;
+use Freee\Accounting\Socialite\FreeeAccountingProvider;
 
 class SocialiteTest extends TestCase
 {
@@ -23,9 +23,9 @@ class SocialiteTest extends TestCase
 
     public function testInstance()
     {
-        $provider = Socialite::driver('freee');
+        $provider = Socialite::driver('freee-accounting');
 
-        $this->assertInstanceOf(FreeeProvider::class, $provider);
+        $this->assertInstanceOf(FreeeAccountingProvider::class, $provider);
     }
 
     public function testRedirect()
@@ -34,7 +34,7 @@ class SocialiteTest extends TestCase
         $request->setLaravelSession($session = m::mock(Session::class));
         $session->shouldReceive('put')->once();
 
-        $provider = new FreeeProvider($request, 'client_id', 'client_secret', 'redirect');
+        $provider = new FreeeAccountingProvider($request, 'client_id', 'client_secret', 'redirect');
         $response = $provider->redirect();
 
         $this->assertInstanceOf(RedirectResponse::class, $response);
@@ -47,7 +47,7 @@ class SocialiteTest extends TestCase
         $request->setLaravelSession($session = m::mock(Session::class));
         $session->shouldReceive('pull')->once()->with('state')->andReturn(str_repeat('A', 40));
 
-        $provider = new FreeeProviderStub($request, 'client_id', 'client_secret', 'redirect_uri');
+        $provider = new FreeeAccountingProviderStub($request, 'client_id', 'client_secret', 'redirect_uri');
 
         $provider->http = m::mock(stdClass::class);
 

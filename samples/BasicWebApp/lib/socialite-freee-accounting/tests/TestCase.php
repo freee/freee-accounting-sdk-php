@@ -3,7 +3,7 @@
 namespace Tests;
 
 use Laravel\Socialite\SocialiteServiceProvider;
-use Freee\Socialite\FreeeServiceProvider;
+use Freee\Accounting\Socialite\FreeeServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {
@@ -32,7 +32,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
     protected function getEnvironmentSetUp($app)
     {
         $app['config']->set(
-            'services.freee',
+            'services.freee-accounting',
             [
                 'client_id'     => 'test',
                 'client_secret' => 'test',

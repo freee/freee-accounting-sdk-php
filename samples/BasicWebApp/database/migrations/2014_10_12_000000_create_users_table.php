@@ -22,6 +22,8 @@ class CreateUsersTable extends Migration
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('token')->nullable();
+            $table->string('refresh_token')->nullable();
+            $table->timestamp('expired_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

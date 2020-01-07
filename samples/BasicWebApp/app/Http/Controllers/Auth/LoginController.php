@@ -45,7 +45,7 @@ class LoginController extends Controller
      */
     public function redirectToProvider()
     {
-        return Socialite::driver('freee')->redirect();
+        return Socialite::driver('freee-accounting')->redirect();
     }
 
     /**
@@ -55,7 +55,7 @@ class LoginController extends Controller
      */
     public function handleProviderCallback()
     {
-        $user = Socialite::driver('freee')->user();
+        $user = Socialite::driver('freee-accounting')->user();
 
         $loginUser = User::updateOrCreate(
             [
@@ -67,6 +67,8 @@ class LoginController extends Controller
                 'first_name' => $user->first_name,
                 'last_name' => $user->last_name,
                 'token' => $user->token,
+                'refresh_token' => $user->refreshToken,
+                'expired_at' => now()->addSeconds($user->expiresIn),
             ]
         );
 

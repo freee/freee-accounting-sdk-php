@@ -1,6 +1,6 @@
 {
-  "name": "freee/socialite-freee",
-  "description": "Socialite for Freee",
+  "name": "freee/socialite-freee-accounting",
+  "description": "Socialite for Freee Accounting",
   "keywords": [
     "freee",
     "socialite",
@@ -8,7 +8,7 @@
   ],
   "license": "MIT",
   "require": {
-    "php": "^7.2",
+    "php": "^7.2||^8.0",
     "ext-json": "*",
     "laravel/socialite": "*"
   },
@@ -19,7 +19,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Freee\\Socialite\\": "src"
+      "Freee\\Accounting\\Socialite\\": "src"
     }
   },
   "autoload-dev": {
@@ -30,7 +30,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Freee\\Socialite\\FreeeServiceProvider"
+        "Freee\\Accounting\\Socialite\\FreeeServiceProvider"
       ]
     }
   }

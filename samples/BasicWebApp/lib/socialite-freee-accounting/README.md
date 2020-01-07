@@ -1,4 +1,4 @@
-# Laravel Socialite for Freee
+# Laravel Socialite for Freee Accounting
 
 https://developer.freee.co.jp/
 
@@ -7,13 +7,13 @@ https://developer.freee.co.jp/
 
 ## Installation
 ```
-composer require freee/socialite-freee
+composer require freee/socialite-freee-accounting
 ```
 
 ### config/services.php
 
 ```
-    'freee' => [
+    'freee-accounting' => [
         'client_id' => env('FREEE_ACCOUNTING_CLIENT_ID'),
         'client_secret' => env('FREEE_ACCOUNTING_CLIENT_SECRET'),
         'redirect' => env('FREEE_ACCOUNTING_REDIRECT', '/auth-callback'),
@@ -46,12 +46,12 @@ class LoginController extends Controller
 {
     public function redirect()
     {
-        return Socialite::driver('freee')->redirect();
+        return Socialite::driver('freee-accounting')->redirect();
     }
 
     public function callback()
     {
-        $user = Socialite::driver('freee')->user();
+        $user = Socialite::driver('freee-accounting')->user();
         dd($user);
     }
 }

@@ -36,7 +36,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
-            "Freee\\Socialite\\": "lib/socialite-freee/src/"
+            "Freee\\Accounting\\Socialite\\": "lib/socialite-freee-accounting/src/"
         },
         "classmap": [
             "database/seeds",

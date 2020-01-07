@@ -1,6 +1,6 @@
 <?php
 
-namespace Freee\Socialite;
+namespace Freee\Accounting\Socialite;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Socialite\Facades\Socialite;
@@ -14,10 +14,10 @@ class FreeeServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Socialite::extend('freee', function ($app) {
-            $config = $app['config']['services.freee'];
+        Socialite::extend('freee-accounting', function ($app) {
+            $config = $app['config']['services.freee-accounting'];
 
-            return Socialite::buildProvider(FreeeProvider::class, $config);
+            return Socialite::buildProvider(FreeeAccountingProvider::class, $config);
         });
     }
 }

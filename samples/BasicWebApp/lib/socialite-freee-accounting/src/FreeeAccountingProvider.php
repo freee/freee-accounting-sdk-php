@@ -1,12 +1,12 @@
 <?php
 
-namespace Freee\Socialite;
+namespace Freee\Accounting\Socialite;
 
 use Laravel\Socialite\Two\AbstractProvider;
 use Laravel\Socialite\Two\ProviderInterface;
 use Laravel\Socialite\Two\User;
 
-class FreeeProvider extends AbstractProvider implements ProviderInterface
+class FreeeAccountingProvider extends AbstractProvider implements ProviderInterface
 {
     /**
      * The scopes being requested.

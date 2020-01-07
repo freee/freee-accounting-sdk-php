@@ -5,9 +5,9 @@ namespace Tests;
 
 use Mockery as m;
 use stdClass;
-use Freee\Socialite\FreeeProvider;
+use Freee\Accounting\Socialite\FreeeAccountingProvider;
 
-class FreeeProviderStub extends FreeeProvider
+class FreeeAccountingProviderStub extends FreeeAccountingProvider
 {
     /**
      * @var \GuzzleHttp\Client|\Mockery\MockInterface
