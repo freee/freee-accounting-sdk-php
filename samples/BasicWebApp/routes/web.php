@@ -25,8 +25,3 @@ Route::get('auth-callback', 'Auth\LoginController@handleProviderCallback')->name
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/account/me', 'AccountController@me')->name('me');
-Route::get('/account/me_facade', 'AccountController@meFacade')->name('me_facade');
-Route::get('/account/me_trait', 'AccountController@meTrait')->name('me_trait');
-Route::get('/account/me_macro', 'AccountController@meMacro')->name('me_macro');
-
-Route::get('refresh', 'RefreshController')->name('refresh_token')->middleware('auth');

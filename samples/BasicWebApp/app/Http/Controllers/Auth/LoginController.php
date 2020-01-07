@@ -67,8 +67,6 @@ class LoginController extends Controller
                 'first_name' => $user->first_name,
                 'last_name' => $user->last_name,
                 'token' => $user->token,
-                'refresh_token' => $user->refreshToken,
-                'expired_at' => now()->addSeconds($user->expiresIn),
             ]
         );
 

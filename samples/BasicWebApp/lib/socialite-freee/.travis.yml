@@ -5,14 +5,9 @@ php:
   - 7.2
   - 7.3
   - 7.4
-  - nightly
-
-cache:
-  directories:
-    - vendor
 
 before_script:
-  - travis_retry composer install --no-interaction --ignore-platform-reqs
+  - travis_retry composer install --no-interaction
 
 script:
   - vendor/bin/phpunit
