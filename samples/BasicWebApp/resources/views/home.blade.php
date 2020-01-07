@@ -15,10 +15,6 @@
                         @endif
 
                         You are logged in!
-
-                        <div>
-                            <a href="{{ route('me') }}" class="btn btn-primary">Me</a>
-                        </div>
                     </div>
                 </div>
             </div>
