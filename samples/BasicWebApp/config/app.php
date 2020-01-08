@@ -165,7 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
-        Freee\Accounting\Socialite\FreeeServiceProvider::class,
+        Freee\Socialite\FreeeServiceProvider::class,
 
         /*
          * Application Service Providers...
