@@ -1,9 +1,10 @@
 <?php
 
-namespace Freee\Accounting\Socialite;
+namespace Freee\Socialite;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Socialite\Facades\Socialite;
+use Freee\Socialite\Drivers\FreeeAccountingProvider;
 
 class FreeeServiceProvider extends ServiceProvider
 {

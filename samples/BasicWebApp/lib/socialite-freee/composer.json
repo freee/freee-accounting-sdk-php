@@ -1,6 +1,6 @@
 {
-  "name": "freee/socialite-freee-accounting",
-  "description": "Socialite for Freee Accounting",
+  "name": "freee/socialite-freee",
+  "description": "Socialite for Freee",
   "keywords": [
     "freee",
     "socialite",
@@ -19,7 +19,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Freee\\Accounting\\Socialite\\": "src"
+      "Freee\\Socialite\\": "src"
     }
   },
   "autoload-dev": {
@@ -30,7 +30,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Freee\\Accounting\\Socialite\\FreeeServiceProvider"
+        "Freee\\Socialite\\FreeeServiceProvider"
       ]
     }
   }

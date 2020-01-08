@@ -5,7 +5,7 @@ namespace Tests;
 
 use Mockery as m;
 use stdClass;
-use Freee\Accounting\Socialite\FreeeAccountingProvider;
+use Freee\Socialite\Drivers\FreeeAccountingProvider;
 
 class FreeeAccountingProviderStub extends FreeeAccountingProvider
 {

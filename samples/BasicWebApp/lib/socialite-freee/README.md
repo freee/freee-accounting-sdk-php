@@ -1,4 +1,4 @@
-# Laravel Socialite for Freee Accounting
+# Laravel Socialite for Freee
 
 https://developer.freee.co.jp/
 
@@ -7,7 +7,7 @@ https://developer.freee.co.jp/
 
 ## Installation
 ```
-composer require freee/socialite-freee-accounting
+composer require freee/socialite-freee
 ```
 
 ### config/services.php

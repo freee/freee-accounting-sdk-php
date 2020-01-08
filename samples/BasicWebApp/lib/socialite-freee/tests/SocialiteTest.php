@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Laravel\Socialite\Facades\Socialite;
 use Laravel\Socialite\Two\User;
-use Freee\Accounting\Socialite\FreeeAccountingProvider;
+use Freee\Socialite\Drivers\FreeeAccountingProvider;
 
 class SocialiteTest extends TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Freee\Accounting\Socialite;
+namespace Freee\Socialite\Drivers;
 
 use Laravel\Socialite\Two\AbstractProvider;
 use Laravel\Socialite\Two\ProviderInterface;

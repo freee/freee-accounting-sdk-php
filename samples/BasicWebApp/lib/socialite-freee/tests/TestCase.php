@@ -3,7 +3,7 @@
 namespace Tests;
 
 use Laravel\Socialite\SocialiteServiceProvider;
-use Freee\Accounting\Socialite\FreeeServiceProvider;
+use Freee\Socialite\FreeeServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {
