@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Freee\Accounting\Configuration;
 use Freee\Accounting\Api\CompaniesApi;
 use Freee\Accounting\Api\DealsApi;
-use Illuminate\Support\Facades\Auth;
 
 class AccountController extends Controller
 {
@@ -26,7 +25,7 @@ class AccountController extends Controller
      */
     public function me()
     {
-        $user = Auth::user();
+        $user = auth()->user();
 
         $config = Configuration::getDefaultConfiguration()->setAccessToken($user->token);
 
