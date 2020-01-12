@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace Freee\Socialite\Tests;
 
 use Laravel\Socialite\SocialiteServiceProvider;
 use Freee\Socialite\FreeeServiceProvider;

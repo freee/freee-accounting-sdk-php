@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Tests;
+namespace Freee\Socialite\Tests;
 
 use Mockery as m;
 use stdClass;
