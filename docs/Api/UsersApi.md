@@ -1,13 +1,13 @@
 # Freee\Accounting\UsersApi
 
-All URIs are relative to *https://api.freee.co.jp/api/1*
+All URIs are relative to *https://api.freee.co.jp*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getUsers**](UsersApi.md#getUsers) | **GET** /users | 事業所に所属するユーザー一覧の取得
-[**getUsersCapabilities**](UsersApi.md#getUsersCapabilities) | **GET** /users/capabilities | ログインユーザの権限の取得
-[**getUsersMe**](UsersApi.md#getUsersMe) | **GET** /users/me | ログインユーザ情報の取得
-[**updateUser**](UsersApi.md#updateUser) | **PUT** /users/me | ユーザー情報の更新
+[**getUsers**](UsersApi.md#getUsers) | **GET** /api/1/users | 事業所に所属するユーザー一覧の取得
+[**getUsersCapabilities**](UsersApi.md#getUsersCapabilities) | **GET** /api/1/users/capabilities | ログインユーザの権限の取得
+[**getUsersMe**](UsersApi.md#getUsersMe) | **GET** /api/1/users/me | ログインユーザ情報の取得
+[**updateUser**](UsersApi.md#updateUser) | **PUT** /api/1/users/me | ユーザー情報の更新
 
 
 
@@ -36,8 +36,8 @@ $apiInstance = new Freee\Accounting\Api\UsersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = new \stdClass; // object | 事業所ID
-$limit = new \stdClass; // object | 取得上限数,最大3000件
+$company_id = 56; // int | 事業所ID
+$limit = 56; // int | 取得上限数,最大3000件
 
 try {
     $result = $apiInstance->getUsers($company_id, $limit);
@@ -53,8 +53,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | [**object**](../Model/.md)| 事業所ID |
- **limit** | [**object**](../Model/.md)| 取得上限数,最大3000件 | [optional]
+ **company_id** | **int**| 事業所ID |
+ **limit** | **int**| 取得上限数,最大3000件 | [optional]
 
 ### Return type
 
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

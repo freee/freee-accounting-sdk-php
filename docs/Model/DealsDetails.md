@@ -8,7 +8,12 @@ Name | Type | Description | Notes
 **account_item_id** | **int** | 勘定科目ID | 
 **tax_id** | **int** | 税区分ID（廃止予定） | [optional] 
 **tax_code** | **int** | 税区分コード | 
+**item_id** | **int** | 品目ID | [optional] 
+**section_id** | **int** | 部門ID | [optional] 
 **tag_ids** | **int[]** | メモタグID | [optional] 
+**segment_1_tag_id** | **int** | セグメント１ID | [optional] 
+**segment_2_tag_id** | **int** | セグメント２ID | [optional] 
+**segment_3_tag_id** | **int** | セグメント３ID | [optional] 
 **amount** | **int** | 取引金額 | 
 **vat** | **int** | 消費税額 | 
 **description** | **string** | 備考 | [optional] 

@@ -1,10 +1,10 @@
 # Freee\Accounting\SelectablesApi
 
-All URIs are relative to *https://api.freee.co.jp/api/1*
+All URIs are relative to *https://api.freee.co.jp*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getFormsSelectables**](SelectablesApi.md#getFormsSelectables) | **GET** /forms/selectables | フォーム用選択項目情報の取得
+[**getFormsSelectables**](SelectablesApi.md#getFormsSelectables) | **GET** /api/1/forms/selectables | フォーム用選択項目情報の取得
 
 
 

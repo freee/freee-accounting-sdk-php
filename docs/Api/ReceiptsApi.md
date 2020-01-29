@@ -1,14 +1,14 @@
 # Freee\Accounting\ReceiptsApi
 
-All URIs are relative to *https://api.freee.co.jp/api/1*
+All URIs are relative to *https://api.freee.co.jp*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createReceipt**](ReceiptsApi.md#createReceipt) | **POST** /receipts | ファイルボックス 証憑ファイルアップロード
-[**destroyReceipt**](ReceiptsApi.md#destroyReceipt) | **DELETE** /receipts/{id} | ファイルボックス 証憑ファイルを削除する
-[**getReceipt**](ReceiptsApi.md#getReceipt) | **GET** /receipts/{id} | ファイルボックス 証憑ファイルの取得
-[**getReceipts**](ReceiptsApi.md#getReceipts) | **GET** /receipts | ファイルボックス 証憑ファイル一覧の取得
-[**updateReceipt**](ReceiptsApi.md#updateReceipt) | **PUT** /receipts/{id} | ファイルボックス 証憑ファイル情報更新
+[**createReceipt**](ReceiptsApi.md#createReceipt) | **POST** /api/1/receipts | ファイルボックス 証憑ファイルアップロード
+[**destroyReceipt**](ReceiptsApi.md#destroyReceipt) | **DELETE** /api/1/receipts/{id} | ファイルボックス 証憑ファイルを削除する
+[**getReceipt**](ReceiptsApi.md#getReceipt) | **GET** /api/1/receipts/{id} | ファイルボックス 証憑ファイルの取得
+[**getReceipts**](ReceiptsApi.md#getReceipts) | **GET** /api/1/receipts | ファイルボックス 証憑ファイル一覧の取得
+[**updateReceipt**](ReceiptsApi.md#updateReceipt) | **PUT** /api/1/receipts/{id} | ファイルボックス 証憑ファイル情報更新
 
 
 
@@ -308,7 +308,7 @@ $apiInstance = new Freee\Accounting\Api\ReceiptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = new \stdClass; // object | 証憑ID
+$id = 56; // int | 証憑ID
 $parameters = new \Freee\Accounting\Model\ReceiptUpdateParams(); // \Freee\Accounting\Model\ReceiptUpdateParams | 経費申請の更新
 
 try {
@@ -325,7 +325,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](../Model/.md)| 証憑ID |
+ **id** | **int**| 証憑ID |
  **parameters** | [**\Freee\Accounting\Model\ReceiptUpdateParams**](../Model/ReceiptUpdateParams.md)| 経費申請の更新 |
 
 ### Return type
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

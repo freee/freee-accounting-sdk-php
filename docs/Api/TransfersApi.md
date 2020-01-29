@@ -1,14 +1,14 @@
 # Freee\Accounting\TransfersApi
 
-All URIs are relative to *https://api.freee.co.jp/api/1*
+All URIs are relative to *https://api.freee.co.jp*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createTransfer**](TransfersApi.md#createTransfer) | **POST** /transfers | 取引（振替）の作成
-[**destroyTransfer**](TransfersApi.md#destroyTransfer) | **DELETE** /transfers/{id} | 取引（振替）の削除する
-[**getTransfer**](TransfersApi.md#getTransfer) | **GET** /transfers/{id} | 取引（振替）の取得
-[**getTransfers**](TransfersApi.md#getTransfers) | **GET** /transfers | 取引（振替）一覧の取得
-[**updateTransfer**](TransfersApi.md#updateTransfer) | **PUT** /transfers/{id} | 取引（振替）の更新
+[**createTransfer**](TransfersApi.md#createTransfer) | **POST** /api/1/transfers | 取引（振替）の作成
+[**destroyTransfer**](TransfersApi.md#destroyTransfer) | **DELETE** /api/1/transfers/{id} | 取引（振替）の削除する
+[**getTransfer**](TransfersApi.md#getTransfer) | **GET** /api/1/transfers/{id} | 取引（振替）の取得
+[**getTransfers**](TransfersApi.md#getTransfers) | **GET** /api/1/transfers | 取引（振替）一覧の取得
+[**updateTransfer**](TransfersApi.md#updateTransfer) | **PUT** /api/1/transfers/{id} | 取引（振替）の更新
 
 
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

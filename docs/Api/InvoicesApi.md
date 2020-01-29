@@ -1,14 +1,14 @@
 # Freee\Accounting\InvoicesApi
 
-All URIs are relative to *https://api.freee.co.jp/api/1*
+All URIs are relative to *https://api.freee.co.jp*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createInvoice**](InvoicesApi.md#createInvoice) | **POST** /invoices | 請求書の作成
-[**destroyInvoice**](InvoicesApi.md#destroyInvoice) | **DELETE** /invoices/{id} | 請求書の削除
-[**getInvoice**](InvoicesApi.md#getInvoice) | **GET** /invoices/{id} | 請求書の取得
-[**getInvoices**](InvoicesApi.md#getInvoices) | **GET** /invoices | 請求書一覧の取得
-[**updateInvoice**](InvoicesApi.md#updateInvoice) | **PUT** /invoices/{id} | 請求書の更新
+[**createInvoice**](InvoicesApi.md#createInvoice) | **POST** /api/1/invoices | 請求書の作成
+[**destroyInvoice**](InvoicesApi.md#destroyInvoice) | **DELETE** /api/1/invoices/{id} | 請求書の削除
+[**getInvoice**](InvoicesApi.md#getInvoice) | **GET** /api/1/invoices/{id} | 請求書の取得
+[**getInvoices**](InvoicesApi.md#getInvoices) | **GET** /api/1/invoices | 請求書一覧の取得
+[**updateInvoice**](InvoicesApi.md#updateInvoice) | **PUT** /api/1/invoices/{id} | 請求書の更新
 
 
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -289,7 +289,7 @@ Name | Type | Description  | Notes
 
 請求書の更新
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所の請求書を更新する</p>  <h2 id=\"_1\">注意点</h2> <ul> <li> <p>取引先ID（partner_id）と取引先の名称項目（partner_name, partner_long_name, partner_zipcode, partner_prefecture_code, partner_address1, partner_address2）の更新はできません。名称項目を変更したい場合は取引先APIをご利用ください。</p> </li>  <li> <p>[重要] <a rel=\"noopener noreferrer\" href=\"https://developer.freee.co.jp/news/1783\" target=\"_blank\">parnter_idは必須化予定</a>です。parnter_idを必ず指定してご利用ください。</p> </li> <li> <p>入金済みの請求書に対する金額関連の変更はできません。</p> </li>  <li> <p>請求書ステータスは確定(issue)のみ指定可能です。請求書ステータスを確定する時のみ指定してください。</p> </li>  <li> <p>請求書WFを利用している場合、承認済み請求書は承認権限を持たないユーザーでは更新できません。</p> </li>  <li> <p>更新後の請求書ステータス(invoice_status)が下書き以外の場合、請求内容の合計金額が0円以上になる必要があります。</p></li> <li><p>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。また「partner_code、partner_id、partner_name」は同時に指定することはできません。</p></li></ul>
+<h2 id=\"\">概要</h2>  <p>指定した事業所の請求書を更新する</p>  <h2 id=\"_1\">注意点</h2> <ul> <li> <p>取引先ID（partner_id）と取引先の名称項目（partner_name, partner_long_name, partner_zipcode, partner_prefecture_code, partner_address1, partner_address2）の更新はできません。名称項目を変更したい場合は取引先APIをご利用ください。</p> </li> <li> <p>[重要] <a rel=\"noopener noreferrer\" href=\"https://developer.freee.co.jp/news/1783\" target=\"_blank\">parnter_idは必須化予定</a>です。parnter_idを必ず指定してご利用ください。</p> </li> <li> <p>入金済みの請求書に対する金額関連の変更はできません。</p> </li> <li> <p>請求書ステータスは確定(issue)のみ指定可能です。請求書ステータスを確定する時のみ指定してください。</p> </li> <li> <p>請求書WFを利用している場合、承認済み請求書は承認権限を持たないユーザーでは更新できません。</p> </li> <li> <p>更新後の請求書ステータス(invoice_status)が下書き以外の場合、請求内容の合計金額が0円以上になる必要があります。</p></li> <li><p>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。また「partner_code、partner_id、partner_name」は同時に指定することはできません。</p></li></ul>
 
 ### Example
 
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

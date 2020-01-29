@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **ref_number** | **string** | 管理番号 | [optional] 
 **details** | [**\Freee\Accounting\Model\CreateDealParamsDetails[]**](CreateDealParamsDetails.md) |  | 
 **payments** | [**\Freee\Accounting\Model\CreateDealParamsPayments[]**](CreateDealParamsPayments.md) | 支払行一覧（配列）：未指定の場合、未決済の取引を作成します。 | [optional] 
+**receipt_ids** | **int[]** | 証憑ファイルID（配列） | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -1,12 +1,12 @@
 # Freee\Accounting\CompaniesApi
 
-All URIs are relative to *https://api.freee.co.jp/api/1*
+All URIs are relative to *https://api.freee.co.jp*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCompanies**](CompaniesApi.md#getCompanies) | **GET** /companies | 事業所一覧の取得
-[**getCompany**](CompaniesApi.md#getCompany) | **GET** /companies/{id} | 事業所の詳細情報の取得
-[**updateCompany**](CompaniesApi.md#updateCompany) | **PUT** /companies/{id} | 事業所情報の更新
+[**getCompanies**](CompaniesApi.md#getCompanies) | **GET** /api/1/companies | 事業所一覧の取得
+[**getCompany**](CompaniesApi.md#getCompany) | **GET** /api/1/companies/{id} | 事業所の詳細情報の取得
+[**updateCompany**](CompaniesApi.md#updateCompany) | **PUT** /api/1/companies/{id} | 事業所情報の更新
 
 
 
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

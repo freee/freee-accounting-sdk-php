@@ -1,12 +1,12 @@
 # Freee\Accounting\JournalsApi
 
-All URIs are relative to *https://api.freee.co.jp/api/1*
+All URIs are relative to *https://api.freee.co.jp*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**downloadJournal**](JournalsApi.md#downloadJournal) | **GET** /journals/reports/{id}/download | ダウンロード実行
-[**getJournalStatus**](JournalsApi.md#getJournalStatus) | **GET** /journals/reports/{id}/status | ステータス確認
-[**getJournals**](JournalsApi.md#getJournals) | **GET** /journals | ダウンロード要求
+[**downloadJournal**](JournalsApi.md#downloadJournal) | **GET** /api/1/journals/reports/{id}/download | ダウンロード実行
+[**getJournalStatus**](JournalsApi.md#getJournalStatus) | **GET** /api/1/journals/reports/{id}/status | ステータス確認
+[**getJournals**](JournalsApi.md#getJournals) | **GET** /api/1/journals | ダウンロード要求
 
 
 
@@ -65,7 +65,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/pdf, text/csv; charset=sjis; header=present
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../../README.md#documentation-for-models)

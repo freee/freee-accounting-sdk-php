@@ -1,14 +1,14 @@
 # Freee\Accounting\AccountItemsApi
 
-All URIs are relative to *https://api.freee.co.jp/api/1*
+All URIs are relative to *https://api.freee.co.jp*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAccountItem**](AccountItemsApi.md#createAccountItem) | **POST** /account_items | 勘定科目の作成
-[**destroyAccountItem**](AccountItemsApi.md#destroyAccountItem) | **DELETE** /account_items/{id} | 勘定科目の削除
-[**getAccountItem**](AccountItemsApi.md#getAccountItem) | **GET** /account_items/{id} | 勘定科目の詳細情報の取得
-[**getAccountItems**](AccountItemsApi.md#getAccountItems) | **GET** /account_items | 勘定科目一覧の取得
-[**updateAccountItem**](AccountItemsApi.md#updateAccountItem) | **PUT** /account_items/{id} | 勘定科目の更新
+[**createAccountItem**](AccountItemsApi.md#createAccountItem) | **POST** /api/1/account_items | 勘定科目の作成
+[**destroyAccountItem**](AccountItemsApi.md#destroyAccountItem) | **DELETE** /api/1/account_items/{id} | 勘定科目の削除
+[**getAccountItem**](AccountItemsApi.md#getAccountItem) | **GET** /api/1/account_items/{id} | 勘定科目の詳細情報の取得
+[**getAccountItems**](AccountItemsApi.md#getAccountItems) | **GET** /api/1/account_items | 勘定科目一覧の取得
+[**updateAccountItem**](AccountItemsApi.md#updateAccountItem) | **PUT** /api/1/account_items/{id} | 勘定科目の更新
 
 
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -128,7 +128,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../../README.md#documentation-for-models)
@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

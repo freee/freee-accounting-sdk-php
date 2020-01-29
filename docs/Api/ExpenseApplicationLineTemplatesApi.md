@@ -1,14 +1,14 @@
 # Freee\Accounting\ExpenseApplicationLineTemplatesApi
 
-All URIs are relative to *https://api.freee.co.jp/api/1*
+All URIs are relative to *https://api.freee.co.jp*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createExpenseApplicationLineTemplate**](ExpenseApplicationLineTemplatesApi.md#createExpenseApplicationLineTemplate) | **POST** /expense_application_line_templates | 経費科目の作成
-[**destroyExpenseApplicationLineTemplate**](ExpenseApplicationLineTemplatesApi.md#destroyExpenseApplicationLineTemplate) | **DELETE** /expense_application_line_templates/{id} | 経費科目の削除
-[**getExpenseApplicationLineTemplate**](ExpenseApplicationLineTemplatesApi.md#getExpenseApplicationLineTemplate) | **GET** /expense_application_line_templates/{id} | 経費科目の取得
-[**getExpenseApplicationLineTemplates**](ExpenseApplicationLineTemplatesApi.md#getExpenseApplicationLineTemplates) | **GET** /expense_application_line_templates | 経費科目一覧の取得
-[**updateExpenseApplicationLineTemplate**](ExpenseApplicationLineTemplatesApi.md#updateExpenseApplicationLineTemplate) | **PUT** /expense_application_line_templates/{id} | 経費科目の更新
+[**createExpenseApplicationLineTemplate**](ExpenseApplicationLineTemplatesApi.md#createExpenseApplicationLineTemplate) | **POST** /api/1/expense_application_line_templates | 経費科目の作成
+[**destroyExpenseApplicationLineTemplate**](ExpenseApplicationLineTemplatesApi.md#destroyExpenseApplicationLineTemplate) | **DELETE** /api/1/expense_application_line_templates/{id} | 経費科目の削除
+[**getExpenseApplicationLineTemplate**](ExpenseApplicationLineTemplatesApi.md#getExpenseApplicationLineTemplate) | **GET** /api/1/expense_application_line_templates/{id} | 経費科目の取得
+[**getExpenseApplicationLineTemplates**](ExpenseApplicationLineTemplatesApi.md#getExpenseApplicationLineTemplates) | **GET** /api/1/expense_application_line_templates | 経費科目一覧の取得
+[**updateExpenseApplicationLineTemplate**](ExpenseApplicationLineTemplatesApi.md#updateExpenseApplicationLineTemplate) | **PUT** /api/1/expense_application_line_templates/{id} | 経費科目の更新
 
 
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -95,7 +95,7 @@ $apiInstance = new Freee\Accounting\Api\ExpenseApplicationLineTemplatesApi(
     $config
 );
 $id = 56; // int | 経費科目ID
-$company_id = new \stdClass; // object | 事業所ID
+$company_id = 56; // int | 事業所ID
 
 try {
     $apiInstance->destroyExpenseApplicationLineTemplate($id, $company_id);
@@ -111,7 +111,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 経費科目ID |
- **company_id** | [**object**](../Model/.md)| 事業所ID |
+ **company_id** | **int**| 事業所ID |
 
 ### Return type
 
@@ -154,8 +154,8 @@ $apiInstance = new Freee\Accounting\Api\ExpenseApplicationLineTemplatesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = new \stdClass; // object | 経費科目ID
-$company_id = new \stdClass; // object | 事業所ID
+$id = 56; // int | 経費科目ID
+$company_id = 56; // int | 事業所ID
 
 try {
     $result = $apiInstance->getExpenseApplicationLineTemplate($id, $company_id);
@@ -171,8 +171,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](../Model/.md)| 経費科目ID |
- **company_id** | [**object**](../Model/.md)| 事業所ID |
+ **id** | **int**| 経費科目ID |
+ **company_id** | **int**| 事業所ID |
 
 ### Return type
 
@@ -280,7 +280,7 @@ $apiInstance = new Freee\Accounting\Api\ExpenseApplicationLineTemplatesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = new \stdClass; // object | 経費科目ID
+$id = 56; // int | 経費科目ID
 $parameters = new \Freee\Accounting\Model\ExpenseApplicationLineTemplateParams(); // \Freee\Accounting\Model\ExpenseApplicationLineTemplateParams | 経費科目の更新
 
 try {
@@ -297,7 +297,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](../Model/.md)| 経費科目ID |
+ **id** | **int**| 経費科目ID |
  **parameters** | [**\Freee\Accounting\Model\ExpenseApplicationLineTemplateParams**](../Model/ExpenseApplicationLineTemplateParams.md)| 経費科目の更新 |
 
 ### Return type
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

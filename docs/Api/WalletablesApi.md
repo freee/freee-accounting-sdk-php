@@ -1,14 +1,14 @@
 # Freee\Accounting\WalletablesApi
 
-All URIs are relative to *https://api.freee.co.jp/api/1*
+All URIs are relative to *https://api.freee.co.jp*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createWalletable**](WalletablesApi.md#createWalletable) | **POST** /walletables | 口座の作成
-[**destroyWalletable**](WalletablesApi.md#destroyWalletable) | **DELETE** /walletables/{type}/{id} | 口座の削除
-[**getWalletable**](WalletablesApi.md#getWalletable) | **GET** /walletables/{type}/{id} | 口座情報の取得
-[**getWalletables**](WalletablesApi.md#getWalletables) | **GET** /walletables | 口座一覧の取得
-[**updateWalletable**](WalletablesApi.md#updateWalletable) | **PUT** /walletables/{type}/{id} | 口座の更新
+[**createWalletable**](WalletablesApi.md#createWalletable) | **POST** /api/1/walletables | 口座の作成
+[**destroyWalletable**](WalletablesApi.md#destroyWalletable) | **DELETE** /api/1/walletables/{type}/{id} | 口座の削除
+[**getWalletable**](WalletablesApi.md#getWalletable) | **GET** /api/1/walletables/{type}/{id} | 口座情報の取得
+[**getWalletables**](WalletablesApi.md#getWalletables) | **GET** /api/1/walletables | 口座一覧の取得
+[**updateWalletable**](WalletablesApi.md#updateWalletable) | **PUT** /api/1/walletables/{type}/{id} | 口座の更新
 
 
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -130,7 +130,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../../README.md#documentation-for-models)
@@ -162,9 +162,9 @@ $apiInstance = new Freee\Accounting\Api\WalletablesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = new \stdClass; // object | 口座ID
+$id = 56; // int | 口座ID
 $type = 'type_example'; // string | 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座）
-$company_id = new \stdClass; // object | 事業所ID
+$company_id = 56; // int | 事業所ID
 
 try {
     $result = $apiInstance->getWalletable($id, $type, $company_id);
@@ -180,9 +180,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](../Model/.md)| 口座ID |
+ **id** | **int**| 口座ID |
  **type** | **string**| 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） |
- **company_id** | [**object**](../Model/.md)| 事業所ID |
+ **company_id** | **int**| 事業所ID |
 
 ### Return type
 
@@ -292,7 +292,7 @@ $apiInstance = new Freee\Accounting\Api\WalletablesApi(
 );
 $id = 56; // int | 
 $type = 'type_example'; // string | 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座）
-$company_id = new \stdClass; // object | 事業所ID
+$company_id = 56; // int | 事業所ID
 $parameters = new \Freee\Accounting\Model\WalletableUpdateParams(); // \Freee\Accounting\Model\WalletableUpdateParams | 口座の作成
 
 try {
@@ -311,7 +311,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
  **type** | **string**| 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） |
- **company_id** | [**object**](../Model/.md)| 事業所ID |
+ **company_id** | **int**| 事業所ID |
  **parameters** | [**\Freee\Accounting\Model\WalletableUpdateParams**](../Model/WalletableUpdateParams.md)| 口座の作成 | [optional]
 
 ### Return type
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

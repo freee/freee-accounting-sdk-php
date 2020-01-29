@@ -1,12 +1,12 @@
 # Freee\Accounting\RenewsApi
 
-All URIs are relative to *https://api.freee.co.jp/api/1*
+All URIs are relative to *https://api.freee.co.jp*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createDealRenew**](RenewsApi.md#createDealRenew) | **POST** /deals/{id}/renews | 取引（収入／支出）に対する+更新の作成
-[**deleteDealRenew**](RenewsApi.md#deleteDealRenew) | **DELETE** /deals/{id}/renews/{renew_id} | 取引（収入／支出）の+更新の削除
-[**updateDealRenew**](RenewsApi.md#updateDealRenew) | **PUT** /deals/{id}/renews/{renew_id} | 取引（収入／支出）の+更新の更新
+[**createDealRenew**](RenewsApi.md#createDealRenew) | **POST** /api/1/deals/{id}/renews | 取引（収入／支出）に対する+更新の作成
+[**deleteDealRenew**](RenewsApi.md#deleteDealRenew) | **DELETE** /api/1/deals/{id}/renews/{renew_id} | 取引（収入／支出）の+更新の削除
+[**updateDealRenew**](RenewsApi.md#updateDealRenew) | **PUT** /api/1/deals/{id}/renews/{renew_id} | 取引（収入／支出）の+更新の更新
 
 
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

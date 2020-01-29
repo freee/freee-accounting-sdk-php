@@ -1,14 +1,14 @@
 # Freee\Accounting\ItemsApi
 
-All URIs are relative to *https://api.freee.co.jp/api/1*
+All URIs are relative to *https://api.freee.co.jp*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createItem**](ItemsApi.md#createItem) | **POST** /items | 品目の作成
-[**destroyItem**](ItemsApi.md#destroyItem) | **DELETE** /items/{id} | 品目の削除
-[**getItem**](ItemsApi.md#getItem) | **GET** /items/{id} | 品目の取得
-[**getItems**](ItemsApi.md#getItems) | **GET** /items | 品目一覧の取得
-[**updateItem**](ItemsApi.md#updateItem) | **PUT** /items/{id} | 品目の更新
+[**createItem**](ItemsApi.md#createItem) | **POST** /api/1/items | 品目の作成
+[**destroyItem**](ItemsApi.md#destroyItem) | **DELETE** /api/1/items/{id} | 品目の削除
+[**getItem**](ItemsApi.md#getItem) | **GET** /api/1/items/{id} | 品目の取得
+[**getItems**](ItemsApi.md#getItems) | **GET** /api/1/items | 品目一覧の取得
+[**updateItem**](ItemsApi.md#updateItem) | **PUT** /api/1/items/{id} | 品目の更新
 
 
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -314,7 +314,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
