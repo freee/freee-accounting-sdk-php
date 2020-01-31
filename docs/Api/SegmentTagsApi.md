@@ -1,13 +1,13 @@
 # Freee\Accounting\SegmentTagsApi
 
-All URIs are relative to *https://api.freee.co.jp/api/1*
+All URIs are relative to *https://api.freee.co.jp*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createSegmentTag**](SegmentTagsApi.md#createSegmentTag) | **POST** /segments/{segment_id}/tags | セグメントの作成
-[**destroySegmentsTag**](SegmentTagsApi.md#destroySegmentsTag) | **DELETE** /segments/{segment_id}/tags/{id} | セグメントタグの削除
-[**getSegmentTags**](SegmentTagsApi.md#getSegmentTags) | **GET** /segments/{segment_id}/tags | セグメントタグ一覧の取得
-[**updateSegmentTag**](SegmentTagsApi.md#updateSegmentTag) | **PUT** /segments/{segment_id}/tags/{id} | セグメントタグの更新
+[**createSegmentTag**](SegmentTagsApi.md#createSegmentTag) | **POST** /api/1/segments/{segment_id}/tags | セグメントの作成
+[**destroySegmentsTag**](SegmentTagsApi.md#destroySegmentsTag) | **DELETE** /api/1/segments/{segment_id}/tags/{id} | セグメントタグの削除
+[**getSegmentTags**](SegmentTagsApi.md#getSegmentTags) | **GET** /api/1/segments/{segment_id}/tags | セグメントタグ一覧の取得
+[**updateSegmentTag**](SegmentTagsApi.md#updateSegmentTag) | **PUT** /api/1/segments/{segment_id}/tags/{id} | セグメントタグの更新
 
 
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -262,7 +262,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

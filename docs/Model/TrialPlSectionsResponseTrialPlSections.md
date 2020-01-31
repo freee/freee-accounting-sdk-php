@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **company_id** | **int** | 事業所ID | 
+**up_to_date** | **bool** | 集計結果が最新かどうか | 
 **section_ids** | **string** | 出力する部門の指定 | 
 **fiscal_year** | **int** | 会計年度(条件に指定した時、または条件に月、日条件がない時のみ含まれる） | [optional] 
 **start_month** | **int** | 発生月で絞込：開始会計月(mm)(条件に指定した時のみ含まれる） | [optional] 

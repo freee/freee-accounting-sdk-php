@@ -1,14 +1,14 @@
 # Freee\Accounting\ExpenseApplicationsApi
 
-All URIs are relative to *https://api.freee.co.jp/api/1*
+All URIs are relative to *https://api.freee.co.jp*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createExpenseApplication**](ExpenseApplicationsApi.md#createExpenseApplication) | **POST** /expense_applications | 経費申請の作成
-[**destroyExpenseApplication**](ExpenseApplicationsApi.md#destroyExpenseApplication) | **DELETE** /expense_applications/{id} | 経費申請の削除
-[**getExpenseApplication**](ExpenseApplicationsApi.md#getExpenseApplication) | **GET** /expense_applications/{id} | 経費申請詳細の取得
-[**getExpenseApplications**](ExpenseApplicationsApi.md#getExpenseApplications) | **GET** /expense_applications | 経費申請一覧の取得
-[**updateExpenseApplication**](ExpenseApplicationsApi.md#updateExpenseApplication) | **PUT** /expense_applications/{id} | 経費申請の更新
+[**createExpenseApplication**](ExpenseApplicationsApi.md#createExpenseApplication) | **POST** /api/1/expense_applications | 経費申請の作成
+[**destroyExpenseApplication**](ExpenseApplicationsApi.md#destroyExpenseApplication) | **DELETE** /api/1/expense_applications/{id} | 経費申請の削除
+[**getExpenseApplication**](ExpenseApplicationsApi.md#getExpenseApplication) | **GET** /api/1/expense_applications/{id} | 経費申請詳細の取得
+[**getExpenseApplications**](ExpenseApplicationsApi.md#getExpenseApplications) | **GET** /api/1/expense_applications | 経費申請一覧の取得
+[**updateExpenseApplication**](ExpenseApplicationsApi.md#updateExpenseApplication) | **PUT** /api/1/expense_applications/{id} | 経費申請の更新
 
 
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -314,7 +314,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

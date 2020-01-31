@@ -42,7 +42,7 @@ class ShowCompanyInfo extends Command
     public function handle()
     {
         // Set your company id and access token
-        $companyId = '';
+        $companyId = 0;
         $accessToken = '';
 
         // アクセストークンを指定して、クライアントを作成する

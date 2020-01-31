@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **partner_code** | **string** | 取引先コード | [optional] 
 **ref_number** | **string** | 管理番号 | [optional] 
 **details** | [**\Freee\Accounting\Model\UpdateDealParamsDetails[]**](UpdateDealParamsDetails.md) |  | 
+**receipt_ids** | **int[]** | 証憑ファイルID（配列） | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

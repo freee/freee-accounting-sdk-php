@@ -1,14 +1,14 @@
 # Freee\Accounting\ManualJournalsApi
 
-All URIs are relative to *https://api.freee.co.jp/api/1*
+All URIs are relative to *https://api.freee.co.jp*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createManualJournal**](ManualJournalsApi.md#createManualJournal) | **POST** /manual_journals | 振替伝票の作成
-[**destroyManualJournal**](ManualJournalsApi.md#destroyManualJournal) | **DELETE** /manual_journals/{id} | 振替伝票の削除
-[**getManualJournal**](ManualJournalsApi.md#getManualJournal) | **GET** /manual_journals/{id} | 振替伝票の取得
-[**getManualJournals**](ManualJournalsApi.md#getManualJournals) | **GET** /manual_journals | 振替伝票一覧の取得
-[**updateManualJournal**](ManualJournalsApi.md#updateManualJournal) | **PUT** /manual_journals/{id} | 振替伝票の更新
+[**createManualJournal**](ManualJournalsApi.md#createManualJournal) | **POST** /api/1/manual_journals | 振替伝票の作成
+[**destroyManualJournal**](ManualJournalsApi.md#destroyManualJournal) | **DELETE** /api/1/manual_journals/{id} | 振替伝票の削除
+[**getManualJournal**](ManualJournalsApi.md#getManualJournal) | **GET** /api/1/manual_journals/{id} | 振替伝票の取得
+[**getManualJournals**](ManualJournalsApi.md#getManualJournals) | **GET** /api/1/manual_journals | 振替伝票一覧の取得
+[**updateManualJournal**](ManualJournalsApi.md#updateManualJournal) | **PUT** /api/1/manual_journals/{id} | 振替伝票の更新
 
 
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

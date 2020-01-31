@@ -1,14 +1,14 @@
 # Freee\Accounting\TagsApi
 
-All URIs are relative to *https://api.freee.co.jp/api/1*
+All URIs are relative to *https://api.freee.co.jp*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createTag**](TagsApi.md#createTag) | **POST** /tags | メモタグの作成
-[**destroyTag**](TagsApi.md#destroyTag) | **DELETE** /tags/{id} | メモタグの削除
-[**getTag**](TagsApi.md#getTag) | **GET** /tags/{id} | メモタグの詳細情報の取得
-[**getTags**](TagsApi.md#getTags) | **GET** /tags | メモタグ一覧の取得
-[**updateTag**](TagsApi.md#updateTag) | **PUT** /tags/{id} | メモタグの更新
+[**createTag**](TagsApi.md#createTag) | **POST** /api/1/tags | メモタグの作成
+[**destroyTag**](TagsApi.md#destroyTag) | **DELETE** /api/1/tags/{id} | メモタグの削除
+[**getTag**](TagsApi.md#getTag) | **GET** /api/1/tags/{id} | メモタグの詳細情報の取得
+[**getTags**](TagsApi.md#getTags) | **GET** /api/1/tags | メモタグ一覧の取得
+[**updateTag**](TagsApi.md#updateTag) | **PUT** /api/1/tags/{id} | メモタグの更新
 
 
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -314,7 +314,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

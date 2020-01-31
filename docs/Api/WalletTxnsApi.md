@@ -1,13 +1,13 @@
 # Freee\Accounting\WalletTxnsApi
 
-All URIs are relative to *https://api.freee.co.jp/api/1*
+All URIs are relative to *https://api.freee.co.jp*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createWalletTxn**](WalletTxnsApi.md#createWalletTxn) | **POST** /wallet_txns | 明細の作成
-[**destroyWalletTxn**](WalletTxnsApi.md#destroyWalletTxn) | **DELETE** /wallet_txns/{id} | 明細の削除
-[**getWalletTxn**](WalletTxnsApi.md#getWalletTxn) | **GET** /wallet_txns/{id} | 明細の取得
-[**getWalletTxns**](WalletTxnsApi.md#getWalletTxns) | **GET** /wallet_txns | 明細一覧の取得
+[**createWalletTxn**](WalletTxnsApi.md#createWalletTxn) | **POST** /api/1/wallet_txns | 明細の作成
+[**destroyWalletTxn**](WalletTxnsApi.md#destroyWalletTxn) | **DELETE** /api/1/wallet_txns/{id} | 明細の削除
+[**getWalletTxn**](WalletTxnsApi.md#getWalletTxn) | **GET** /api/1/wallet_txns/{id} | 明細の取得
+[**getWalletTxns**](WalletTxnsApi.md#getWalletTxns) | **GET** /api/1/wallet_txns | 明細一覧の取得
 
 
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

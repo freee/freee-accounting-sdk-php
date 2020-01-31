@@ -1,11 +1,11 @@
 # Freee\Accounting\BanksApi
 
-All URIs are relative to *https://api.freee.co.jp/api/1*
+All URIs are relative to *https://api.freee.co.jp*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getBank**](BanksApi.md#getBank) | **GET** /banks/{id} | 連携サービスの取得
-[**getBanks**](BanksApi.md#getBanks) | **GET** /banks | 連携サービス一覧の取得
+[**getBank**](BanksApi.md#getBank) | **GET** /api/1/banks/{id} | 連携サービスの取得
+[**getBanks**](BanksApi.md#getBanks) | **GET** /api/1/banks | 連携サービス一覧の取得
 
 
 

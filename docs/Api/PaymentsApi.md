@@ -1,12 +1,12 @@
 # Freee\Accounting\PaymentsApi
 
-All URIs are relative to *https://api.freee.co.jp/api/1*
+All URIs are relative to *https://api.freee.co.jp*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createDealPayment**](PaymentsApi.md#createDealPayment) | **POST** /deals/{id}/payments | 取引（収入／支出）の支払行作成
-[**destroyDealPayment**](PaymentsApi.md#destroyDealPayment) | **DELETE** /deals/{id}/payments/{payment_id} | 取引（収入／支出）の支払行削除
-[**updateDealPayment**](PaymentsApi.md#updateDealPayment) | **PUT** /deals/{id}/payments/{payment_id} | 取引（収入／支出）の支払行更新
+[**createDealPayment**](PaymentsApi.md#createDealPayment) | **POST** /api/1/deals/{id}/payments | 取引（収入／支出）の支払行作成
+[**destroyDealPayment**](PaymentsApi.md#destroyDealPayment) | **DELETE** /api/1/deals/{id}/payments/{payment_id} | 取引（収入／支出）の支払行削除
+[**updateDealPayment**](PaymentsApi.md#updateDealPayment) | **PUT** /api/1/deals/{id}/payments/{payment_id} | 取引（収入／支出）の支払行更新
 
 
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

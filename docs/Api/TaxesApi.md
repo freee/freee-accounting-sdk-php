@@ -1,12 +1,12 @@
 # Freee\Accounting\TaxesApi
 
-All URIs are relative to *https://api.freee.co.jp/api/1*
+All URIs are relative to *https://api.freee.co.jp*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getTaxCode**](TaxesApi.md#getTaxCode) | **GET** /taxes/codes/{code} | 税区分コードの取得
-[**getTaxCodes**](TaxesApi.md#getTaxCodes) | **GET** /taxes/codes | 税区分コード一覧の取得
-[**getTaxesCompanies**](TaxesApi.md#getTaxesCompanies) | **GET** /taxes/companies/{company_id} | 税区分コード詳細一覧の取得
+[**getTaxCode**](TaxesApi.md#getTaxCode) | **GET** /api/1/taxes/codes/{code} | 税区分コードの取得
+[**getTaxCodes**](TaxesApi.md#getTaxCodes) | **GET** /api/1/taxes/codes | 税区分コード一覧の取得
+[**getTaxesCompanies**](TaxesApi.md#getTaxesCompanies) | **GET** /api/1/taxes/companies/{company_id} | 税区分コード詳細一覧の取得
 
 
 

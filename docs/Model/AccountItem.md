@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **items** | [**\Freee\Accounting\Model\AccountItemItems[]**](AccountItemItems.md) |  | [optional] 
 **partners** | [**\Freee\Accounting\Model\AccountItemPartners[]**](AccountItemPartners.md) |  | [optional] 
 **available** | **bool** | 勘定科目の使用設定（true: 使用する、false: 使用しない） | 
+**walletable_id** | **int** | 口座ID | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

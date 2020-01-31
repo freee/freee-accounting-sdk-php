@@ -1,15 +1,15 @@
 # Freee\Accounting\PartnersApi
 
-All URIs are relative to *https://api.freee.co.jp/api/1*
+All URIs are relative to *https://api.freee.co.jp*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createPartner**](PartnersApi.md#createPartner) | **POST** /partners | 取引先の作成
-[**destroyPartner**](PartnersApi.md#destroyPartner) | **DELETE** /partners/{id} | 取引先の削除
-[**getPartner**](PartnersApi.md#getPartner) | **GET** /partners/{id} | 取引先の取得
-[**getPartners**](PartnersApi.md#getPartners) | **GET** /partners | 取引先一覧の取得
-[**updatePartner**](PartnersApi.md#updatePartner) | **PUT** /partners/{id} | 取引先の更新
-[**updatePartnerByCode**](PartnersApi.md#updatePartnerByCode) | **PUT** /partners/code/{code} | 取引先の更新
+[**createPartner**](PartnersApi.md#createPartner) | **POST** /api/1/partners | 取引先の作成
+[**destroyPartner**](PartnersApi.md#destroyPartner) | **DELETE** /api/1/partners/{id} | 取引先の削除
+[**getPartner**](PartnersApi.md#getPartner) | **GET** /api/1/partners/{id} | 取引先の取得
+[**getPartners**](PartnersApi.md#getPartners) | **GET** /api/1/partners | 取引先一覧の取得
+[**updatePartner**](PartnersApi.md#updatePartner) | **PUT** /api/1/partners/{id} | 取引先の更新
+[**updatePartnerByCode**](PartnersApi.md#updatePartnerByCode) | **PUT** /api/1/partners/code/{code} | 取引先の更新
 
 
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -129,7 +129,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../../README.md#documentation-for-models)
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
