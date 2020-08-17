@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'freee',
+        'guard' => 'web',
         'passwords' => 'users',
     ],
 
@@ -46,11 +46,6 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
-
-        'freee' => [
-            'driver' => 'freee',
-            'provider' => 'freee',
-        ],
     ],
 
     /*
@@ -80,10 +75,6 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
-
-        'freee' => [
-            'driver' => 'freee',
-        ],
     ],
 
     /*

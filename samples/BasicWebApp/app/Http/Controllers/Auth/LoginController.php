@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Auth\GenericUser;
 use Illuminate\Support\Facades\Auth;
-use Socialite;
+use Laravel\Socialite\Facades\Socialite;
+use App\User;
 
 class LoginController extends Controller
 {
@@ -19,8 +19,6 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
-
-    // use AuthenticatesUsers;
 
     /**
      * Where to redirect users after login.
@@ -58,12 +56,21 @@ class LoginController extends Controller
     {
         $user = Socialite::driver('freeeaccounting')->user();
 
-        $genericUser = $user->getRaw();
-        $genericUser['token'] = $user->token;
-        $genericUser['remember_token'] = '';
-        Auth::login(new GenericUser($genericUser));
+        $loggedInUser = User::updateOrCreate(
+            [
+                'freee_id' => $user->id,
+            ],
+            [
+                'name' => $user->name,
+                'email' => $user->email,
+                'first_name' => $user->first_name,
+                'last_name' => $user->last_name,
+                'token' => $user->token,
+            ]
+        );
 
-        return redirect()->intended($this->redirectTo);
+        Auth::login($loggedInUser);
+        return redirect($this->redirectTo);
     }
 
     public function logout()
