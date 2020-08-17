@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## createManualJournal
 
-> \Freee\Accounting\Model\ManualJournalsCreateResponse createManualJournal($parameters)
+> \Freee\Accounting\Model\ManualJournalResponse createManualJournal($manual_journal_create_params)
 
 振替伝票の作成
 
@@ -37,10 +37,10 @@ $apiInstance = new Freee\Accounting\Api\ManualJournalsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$parameters = new \Freee\Accounting\Model\ManualJournalsCreateParams(); // \Freee\Accounting\Model\ManualJournalsCreateParams | 振替伝票の作成
+$manual_journal_create_params = new \Freee\Accounting\Model\ManualJournalCreateParams(); // \Freee\Accounting\Model\ManualJournalCreateParams | 振替伝票の作成
 
 try {
-    $result = $apiInstance->createManualJournal($parameters);
+    $result = $apiInstance->createManualJournal($manual_journal_create_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ManualJournalsApi->createManualJournal: ', $e->getMessage(), PHP_EOL;
@@ -53,11 +53,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parameters** | [**\Freee\Accounting\Model\ManualJournalsCreateParams**](../Model/ManualJournalsCreateParams.md)| 振替伝票の作成 | [optional]
+ **manual_journal_create_params** | [**\Freee\Accounting\Model\ManualJournalCreateParams**](../Model/ManualJournalCreateParams.md)| 振替伝票の作成 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\ManualJournalsCreateResponse**](../Model/ManualJournalsCreateResponse.md)
+[**\Freee\Accounting\Model\ManualJournalResponse**](../Model/ManualJournalResponse.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -137,7 +137,7 @@ void (empty response body)
 
 ## getManualJournal
 
-> \Freee\Accounting\Model\ManualJournalsShowResponse getManualJournal($company_id, $id)
+> \Freee\Accounting\Model\ManualJournalResponse getManualJournal($company_id, $id)
 
 振替伝票の取得
 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\ManualJournalsShowResponse**](../Model/ManualJournalsShowResponse.md)
+[**\Freee\Accounting\Model\ManualJournalResponse**](../Model/ManualJournalResponse.md)
 
 ### Authorization
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ## getManualJournals
 
-> \Freee\Accounting\Model\ManualJournalsIndexResponse getManualJournals($company_id, $start_issue_date, $end_issue_date, $entry_side, $account_item_id, $min_amount, $max_amount, $partner_id, $partner_code, $item_id, $section_id, $segment_1_tag_id, $segment_2_tag_id, $segment_3_tag_id, $comment_status, $comment_important, $adjustment, $txn_number, $offset, $limit)
+> \Freee\Accounting\Model\InlineResponse2006 getManualJournals($company_id, $start_issue_date, $end_issue_date, $entry_side, $account_item_id, $min_amount, $max_amount, $partner_id, $partner_code, $item_id, $section_id, $segment_1_tag_id, $segment_2_tag_id, $segment_3_tag_id, $comment_status, $comment_important, $adjustment, $txn_number, $offset, $limit)
 
 振替伝票一覧の取得
 
@@ -242,7 +242,7 @@ $comment_important = True; // bool | 重要コメント付きの振替伝票を�
 $adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
 $txn_number = 'txn_number_example'; // string | 仕訳番号で絞込（事業所の仕訳番号形式が有効な場合のみ）
 $offset = 56; // int | 取得レコードのオフセット (デフォルト: 0)
-$limit = 56; // int | 取得レコードの件数 (デフォルト: 20, 最大: 500)
+$limit = 56; // int | 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500)
 
 try {
     $result = $apiInstance->getManualJournals($company_id, $start_issue_date, $end_issue_date, $entry_side, $account_item_id, $min_amount, $max_amount, $partner_id, $partner_code, $item_id, $section_id, $segment_1_tag_id, $segment_2_tag_id, $segment_3_tag_id, $comment_status, $comment_important, $adjustment, $txn_number, $offset, $limit);
@@ -277,11 +277,11 @@ Name | Type | Description  | Notes
  **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
  **txn_number** | **string**| 仕訳番号で絞込（事業所の仕訳番号形式が有効な場合のみ） | [optional]
  **offset** | **int**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **int**| 取得レコードの件数 (デフォルト: 20, 最大: 500) | [optional]
+ **limit** | **int**| 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500) | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\ManualJournalsIndexResponse**](../Model/ManualJournalsIndexResponse.md)
+[**\Freee\Accounting\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
 
 ### Authorization
 
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 
 ## updateManualJournal
 
-> \Freee\Accounting\Model\ManualJournalsUpdateResponse updateManualJournal($id, $parameters)
+> \Freee\Accounting\Model\ManualJournalResponse updateManualJournal($id, $manual_journal_update_params)
 
 振替伝票の更新
 
@@ -323,10 +323,10 @@ $apiInstance = new Freee\Accounting\Api\ManualJournalsApi(
     $config
 );
 $id = 56; // int | 
-$parameters = new \Freee\Accounting\Model\ManualJournalsUpdateParams(); // \Freee\Accounting\Model\ManualJournalsUpdateParams | 振替伝票の更新
+$manual_journal_update_params = new \Freee\Accounting\Model\ManualJournalUpdateParams(); // \Freee\Accounting\Model\ManualJournalUpdateParams | 振替伝票の更新
 
 try {
-    $result = $apiInstance->updateManualJournal($id, $parameters);
+    $result = $apiInstance->updateManualJournal($id, $manual_journal_update_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ManualJournalsApi->updateManualJournal: ', $e->getMessage(), PHP_EOL;
@@ -340,11 +340,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **parameters** | [**\Freee\Accounting\Model\ManualJournalsUpdateParams**](../Model/ManualJournalsUpdateParams.md)| 振替伝票の更新 | [optional]
+ **manual_journal_update_params** | [**\Freee\Accounting\Model\ManualJournalUpdateParams**](../Model/ManualJournalUpdateParams.md)| 振替伝票の更新 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\ManualJournalsUpdateResponse**](../Model/ManualJournalsUpdateResponse.md)
+[**\Freee\Accounting\Model\ManualJournalResponse**](../Model/ManualJournalResponse.md)
 
 ### Authorization
 
@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

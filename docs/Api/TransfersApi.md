@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## createTransfer
 
-> \Freee\Accounting\Model\TransfersResponse createTransfer($parameter)
+> \Freee\Accounting\Model\TransferResponse createTransfer($transfer_params)
 
 取引（振替）の作成
 
@@ -37,10 +37,10 @@ $apiInstance = new Freee\Accounting\Api\TransfersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$parameter = new \Freee\Accounting\Model\TransferParams(); // \Freee\Accounting\Model\TransferParams | 取引（振替）の作成
+$transfer_params = new \Freee\Accounting\Model\TransferParams(); // \Freee\Accounting\Model\TransferParams | 取引（振替）の作成
 
 try {
-    $result = $apiInstance->createTransfer($parameter);
+    $result = $apiInstance->createTransfer($transfer_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransfersApi->createTransfer: ', $e->getMessage(), PHP_EOL;
@@ -53,11 +53,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parameter** | [**\Freee\Accounting\Model\TransferParams**](../Model/TransferParams.md)| 取引（振替）の作成 | [optional]
+ **transfer_params** | [**\Freee\Accounting\Model\TransferParams**](../Model/TransferParams.md)| 取引（振替）の作成 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\TransfersResponse**](../Model/TransfersResponse.md)
+[**\Freee\Accounting\Model\TransferResponse**](../Model/TransferResponse.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -137,7 +137,7 @@ void (empty response body)
 
 ## getTransfer
 
-> \Freee\Accounting\Model\TransfersResponse getTransfer($id, $company_id)
+> \Freee\Accounting\Model\TransferResponse getTransfer($id, $company_id)
 
 取引（振替）の取得
 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\TransfersResponse**](../Model/TransfersResponse.md)
+[**\Freee\Accounting\Model\TransferResponse**](../Model/TransferResponse.md)
 
 ### Authorization
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ## getTransfers
 
-> \Freee\Accounting\Model\TransfersIndexResponse getTransfers($company_id, $start_date, $end_date, $offset, $limit)
+> \Freee\Accounting\Model\InlineResponse20014 getTransfers($company_id, $start_date, $end_date, $offset, $limit)
 
 取引（振替）一覧の取得
 
@@ -227,7 +227,7 @@ $company_id = 56; // int | 事業所ID
 $start_date = 'start_date_example'; // string | 振替日で絞込：開始日 (yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 振替日で絞込：終了日 (yyyy-mm-dd)
 $offset = 56; // int | 取得レコードのオフセット (デフォルト: 0)
-$limit = 56; // int | 取得レコードの件数 (デフォルト: 20, 最大: 100)
+$limit = 56; // int | 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)
 
 try {
     $result = $apiInstance->getTransfers($company_id, $start_date, $end_date, $offset, $limit);
@@ -247,11 +247,11 @@ Name | Type | Description  | Notes
  **start_date** | **string**| 振替日で絞込：開始日 (yyyy-mm-dd) | [optional]
  **end_date** | **string**| 振替日で絞込：終了日 (yyyy-mm-dd) | [optional]
  **offset** | **int**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **int**| 取得レコードの件数 (デフォルト: 20, 最大: 100) | [optional]
+ **limit** | **int**| 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100) | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\TransfersIndexResponse**](../Model/TransfersIndexResponse.md)
+[**\Freee\Accounting\Model\InlineResponse20014**](../Model/InlineResponse20014.md)
 
 ### Authorization
 
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 
 ## updateTransfer
 
-> \Freee\Accounting\Model\TransfersResponse updateTransfer($id, $parameter)
+> \Freee\Accounting\Model\TransferResponse updateTransfer($id, $transfer_params)
 
 取引（振替）の更新
 
@@ -293,10 +293,10 @@ $apiInstance = new Freee\Accounting\Api\TransfersApi(
     $config
 );
 $id = 56; // int | 取引(振替)ID
-$parameter = new \Freee\Accounting\Model\TransferParams(); // \Freee\Accounting\Model\TransferParams | 取引（振替）の更新
+$transfer_params = new \Freee\Accounting\Model\TransferParams(); // \Freee\Accounting\Model\TransferParams | 取引（振替）の更新
 
 try {
-    $result = $apiInstance->updateTransfer($id, $parameter);
+    $result = $apiInstance->updateTransfer($id, $transfer_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransfersApi->updateTransfer: ', $e->getMessage(), PHP_EOL;
@@ -310,11 +310,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 取引(振替)ID |
- **parameter** | [**\Freee\Accounting\Model\TransferParams**](../Model/TransferParams.md)| 取引（振替）の更新 |
+ **transfer_params** | [**\Freee\Accounting\Model\TransferParams**](../Model/TransferParams.md)| 取引（振替）の更新 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\TransfersResponse**](../Model/TransfersResponse.md)
+[**\Freee\Accounting\Model\TransferResponse**](../Model/TransferResponse.md)
 
 ### Authorization
 
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

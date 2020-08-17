@@ -15,11 +15,11 @@ Method | HTTP request | Description
 
 ## createPartner
 
-> \Freee\Accounting\Model\PartnersResponse createPartner($parameters)
+> \Freee\Accounting\Model\PartnerResponse createPartner($partner_create_params)
 
 取引先の作成
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所の取引先を作成する</p> <ul> <li>codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。</li> <li>取引先コードの利用を有効にしている場合は、codeの指定は必須です。</li></ul>
+<h2 id=\"\">概要</h2>  <p>指定した事業所の取引先を作成する</p> <ul> <li>codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。</li> <li>取引先コードの利用を有効にしている場合は、codeの指定は必須です。</li> <li>振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。</li></ul>
 
 ### Example
 
@@ -38,10 +38,10 @@ $apiInstance = new Freee\Accounting\Api\PartnersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$parameters = new \Freee\Accounting\Model\PartnerCreateParams(); // \Freee\Accounting\Model\PartnerCreateParams | 取引先の作成
+$partner_create_params = new \Freee\Accounting\Model\PartnerCreateParams(); // \Freee\Accounting\Model\PartnerCreateParams | 取引先の作成
 
 try {
-    $result = $apiInstance->createPartner($parameters);
+    $result = $apiInstance->createPartner($partner_create_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PartnersApi->createPartner: ', $e->getMessage(), PHP_EOL;
@@ -54,11 +54,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parameters** | [**\Freee\Accounting\Model\PartnerCreateParams**](../Model/PartnerCreateParams.md)| 取引先の作成 |
+ **partner_create_params** | [**\Freee\Accounting\Model\PartnerCreateParams**](../Model/PartnerCreateParams.md)| 取引先の作成 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\PartnersResponse**](../Model/PartnersResponse.md)
+[**\Freee\Accounting\Model\PartnerResponse**](../Model/PartnerResponse.md)
 
 ### Authorization
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -138,11 +138,11 @@ void (empty response body)
 
 ## getPartner
 
-> \Freee\Accounting\Model\PartnersResponse getPartner($id, $company_id)
+> \Freee\Accounting\Model\PartnerResponse getPartner($id, $company_id)
 
 取引先の取得
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所の取引先を取得する</p>
+<h2 id=\"\">概要</h2>  <p>指定した事業所の取引先を取得する</p> <ul> <li>振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。</li></ul>
 
 ### Example
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\PartnersResponse**](../Model/PartnersResponse.md)
+[**\Freee\Accounting\Model\PartnerResponse**](../Model/PartnerResponse.md)
 
 ### Authorization
 
@@ -201,11 +201,11 @@ Name | Type | Description  | Notes
 
 ## getPartners
 
-> \Freee\Accounting\Model\PartnersIndexResponse getPartners($company_id, $offset, $limit, $keyword)
+> \Freee\Accounting\Model\PartnersResponse getPartners($company_id, $offset, $limit, $keyword)
 
 取引先一覧の取得
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所の取引先一覧を取得する</p>
+<h2 id=\"\">概要</h2>  <p>指定した事業所の取引先一覧を取得する</p> <ul> <li>振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）は法人向けのプロフェッショナルプラン以上で利用可能です。</li></ul>
 
 ### Example
 
@@ -226,7 +226,7 @@ $apiInstance = new Freee\Accounting\Api\PartnersApi(
 );
 $company_id = 56; // int | 事業所ID
 $offset = 56; // int | 取得レコードのオフセット (デフォルト: 0)
-$limit = 56; // int | 取得レコードの件数 (デフォルト: 50, 最大: 3000)
+$limit = 56; // int | 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000)
 $keyword = 'keyword_example'; // string | 検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致
 
 try {
@@ -245,12 +245,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| 事業所ID |
  **offset** | **int**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **int**| 取得レコードの件数 (デフォルト: 50, 最大: 3000) | [optional]
+ **limit** | **int**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) | [optional]
  **keyword** | **string**| 検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\PartnersIndexResponse**](../Model/PartnersIndexResponse.md)
+[**\Freee\Accounting\Model\PartnersResponse**](../Model/PartnersResponse.md)
 
 ### Authorization
 
@@ -268,11 +268,11 @@ Name | Type | Description  | Notes
 
 ## updatePartner
 
-> \Freee\Accounting\Model\PartnersResponse updatePartner($id, $parameters)
+> \Freee\Accounting\Model\PartnerResponse updatePartner($id, $partner_update_params)
 
 取引先の更新
 
-<h2 id=\"\">概要</h2>  <p>指定した取引先の情報を更新する</p> <ul> <li>codeを指定、更新することはできません。</li></ul>
+<h2 id=\"\">概要</h2>  <p>指定した取引先の情報を更新する</p> <ul> <li>codeを指定、更新することはできません。</li> <li>振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。</li></ul>
 
 ### Example
 
@@ -292,10 +292,10 @@ $apiInstance = new Freee\Accounting\Api\PartnersApi(
     $config
 );
 $id = 56; // int | 取引先ID
-$parameters = new \Freee\Accounting\Model\PartnerUpdateParams(); // \Freee\Accounting\Model\PartnerUpdateParams | 取引先の更新
+$partner_update_params = new \Freee\Accounting\Model\PartnerUpdateParams(); // \Freee\Accounting\Model\PartnerUpdateParams | 取引先の更新
 
 try {
-    $result = $apiInstance->updatePartner($id, $parameters);
+    $result = $apiInstance->updatePartner($id, $partner_update_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PartnersApi->updatePartner: ', $e->getMessage(), PHP_EOL;
@@ -309,11 +309,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 取引先ID |
- **parameters** | [**\Freee\Accounting\Model\PartnerUpdateParams**](../Model/PartnerUpdateParams.md)| 取引先の更新 |
+ **partner_update_params** | [**\Freee\Accounting\Model\PartnerUpdateParams**](../Model/PartnerUpdateParams.md)| 取引先の更新 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\PartnersResponse**](../Model/PartnersResponse.md)
+[**\Freee\Accounting\Model\PartnerResponse**](../Model/PartnerResponse.md)
 
 ### Authorization
 
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -331,11 +331,11 @@ Name | Type | Description  | Notes
 
 ## updatePartnerByCode
 
-> \Freee\Accounting\Model\PartnersResponse updatePartnerByCode($code, $parameters)
+> \Freee\Accounting\Model\PartnerResponse updatePartnerByCode($code, $partner_update_params)
 
 取引先の更新
 
-<h2 id=\"\">概要</h2>  <p>取引先コードをキーに、指定した取引先の情報を更新する</p> <ul> <li>このAPIを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。</li> <li>コードを日本語に設定している場合は、URLエンコードしてURLに含めるようにしてください。</li></ul>
+<h2 id=\"\">概要</h2>  <p>取引先コードをキーに、指定した取引先の情報を更新する</p> <ul> <li>このAPIを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。</li> <li>コードを日本語に設定している場合は、URLエンコードしてURLに含めるようにしてください。</li> <li>振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。</li></ul>
 
 ### Example
 
@@ -355,10 +355,10 @@ $apiInstance = new Freee\Accounting\Api\PartnersApi(
     $config
 );
 $code = 'code_example'; // string | 取引先コード
-$parameters = new \Freee\Accounting\Model\PartnerCodeParams(); // \Freee\Accounting\Model\PartnerCodeParams | 取引先の更新
+$partner_update_params = new \Freee\Accounting\Model\PartnerUpdateParams(); // \Freee\Accounting\Model\PartnerUpdateParams | 取引先の更新
 
 try {
-    $result = $apiInstance->updatePartnerByCode($code, $parameters);
+    $result = $apiInstance->updatePartnerByCode($code, $partner_update_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PartnersApi->updatePartnerByCode: ', $e->getMessage(), PHP_EOL;
@@ -372,11 +372,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **code** | **string**| 取引先コード |
- **parameters** | [**\Freee\Accounting\Model\PartnerCodeParams**](../Model/PartnerCodeParams.md)| 取引先の更新 |
+ **partner_update_params** | [**\Freee\Accounting\Model\PartnerUpdateParams**](../Model/PartnerUpdateParams.md)| 取引先の更新 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\PartnersResponse**](../Model/PartnersResponse.md)
+[**\Freee\Accounting\Model\PartnerResponse**](../Model/PartnerResponse.md)
 
 ### Authorization
 
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

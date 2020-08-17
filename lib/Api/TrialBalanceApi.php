@@ -12,12 +12,12 @@
 /**
  * freee API
  *
- * <h1 id=\"freee_api\">freee API</h1> <hr /> <h2 id=\"\">スタートガイド</h2> <p>1. セットアップ</p> <ol> <ul><li><a href=\"https://support.freee.co.jp/hc/ja/articles/202847230\" class=\"external-link\" rel=\"nofollow\">freeeアカウント（無料）</a>を<a href=\"https://secure.freee.co.jp/users/sign_up\" class=\"external-link\" rel=\"nofollow\">作成</a>します（すでにお持ちの場合は次へ）</li><li><a href=\"https://app.secure.freee.co.jp/developers/demo_companies/description\" class=\"external-link\" rel=\"nofollow\">開発者向け事業所・環境を作成</a>します</li><li><span><a href=\"https://app.secure.freee.co.jp/developers/applications\" class=\"external-link\" rel=\"nofollow\">前のステップで作成した事業所を選択してfreeeアプリを追加</a>します</span></li><li>Client IDをCopyしておきます</li> </ul> </ol>  <p>2. 実際にAPIを叩いてみる（ブラウザからAPIのレスポンスを確認する）</p> <ol> <ul><li><span><span>以下のURLの●をclient_idに入れ替えて<a href=\"https://app.secure.freee.co.jp/developers/tutorials/3-%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B#%E8%AA%8D%E5%8F%AF%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B\" class=\"external-link\" rel=\"nofollow\">アクセストークンを取得</a>します</span></span><ul><li><span><span><pre><code>https://accounts.secure.freee.co.jp/public_api/authorize?client_id=●&amp;redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&amp;response_type=token</a></code></pre></span></span></li></ul></li><li><span><a href=\"https://developer.freee.co.jp/docs/accounting/reference#/%E9%80%A3%E7%B5%A1%E5%85%88\" class=\"external-link\" rel=\"nofollow\">APIリファレンス</a>で<code>Authorize</code>を押下します</span></li><li><span>アクセストークン<span><span>を入力して</span></span>&nbsp;もう一度<span><code>Authorize</code>を押下して<code>Close</code>を押下します</span></span></li><li>リファレンス内のCompanies（事業所）に移動し、<code>Try it out</code>を押下し、<code>Execute</code>を押下します</li><li>Response bodyを参照し、事業所ID(id属性)を活用して、Companies以外のエンドポイントでどのようなデータのやりとりできるのか確認します</li></ul> </ol> <p>3. 連携を実装する</p> <ol> <ul><li><a href=\"https://developer.freee.co.jp/tips\" class=\"external-link\" rel=\"nofollow\">API TIPS</a>を参考に、ユースケースごとの連携の概要を学びます。<span>例えば</span><span>&nbsp;</span><a href=\"https://developer.freee.co.jp/tips/how-to-cooperate-salesmanegement-system\" class=\"external-link\" rel=\"nofollow\">SFA、CRM、販売管理システムから会計freeeへの連携</a>や<a href=\"https://developer.freee.co.jp/tips/how-to-cooperate-excel-and-spreadsheet\" class=\"external-link\" rel=\"nofollow\">エクセルやgoogle spreadsheetからの連携</a>です</li><li>実利用向け事業所がすでにある場合は利用、ない場合は作成します（セットアップで作成したのは開発者向け環境のため活用不可）</li><li><a href=\"https://developer.freee.co.jp/docs/accounting/reference\" class=\"external-link\" rel=\"nofollow\">API documentation</a><span>&nbsp;を参照し、躓いた場合は</span><span>&nbsp;</span><a href=\"https://developer.freee.co.jp/community/forum/community\" class=\"external-link\" rel=\"nofollow\">Community</a><span>&nbsp;で質問してみましょう</span></li></ul> </ol> <p>アプリケーションの登録方法や認証方法、またはAPIの活用方法でご不明な点がある場合は<a href=\"https://support.freee.co.jp/hc/ja/sections/115000030743\">ヘルプセンター</a>もご確認ください</p> <hr /> <h2 id=\"_2\">仕様</h2>  <h3 id=\"api\">APIエンドポイント</h3>  <p>https://api.freee.co.jp/ (httpsのみ)</p>  <h3 id=\"_3\">認証方式</h3>  <p><a href=\"http://tools.ietf.org/html/rfc6749\">OAuth2</a>に対応</p>  <ul> <li>Authorization Code Flow (Webアプリ向け)</li>  <li>Implicit Flow (Mobileアプリ向け)</li> </ul>  <h3 id=\"_4\">認証エンドポイント</h3>  <p>https://accounts.secure.freee.co.jp/</p>  <ul> <li>authorize : https://accounts.secure.freee.co.jp/public_api/authorize</li>  <li>token : https://accounts.secure.freee.co.jp/public_api/token</li> </ul>  <h3 id=\"_5\">アクセストークンのリフレッシュ</h3>  <p>認証時に得たrefresh_token を使ってtoken の期限をリフレッシュして新規に発行することが出来ます。</p>  <p>grant_type=refresh_token で https://accounts.secure.freee.co.jp/public_api/token にアクセスすればリフレッシュされます。</p>  <p>e.g.)</p>  <p>POST: https://accounts.secure.freee.co.jp/public_api/token</p>  <p>params: grant_type=refresh_token&amp;client_id=UID&amp;client_secret=SECRET&amp;refresh_token=REFRESH_TOKEN</p>  <p>詳細は<a href=\"https://github.com/applicake/doorkeeper/wiki/Enable-Refresh-Token-Credentials#flow\">refresh_token</a>を参照下さい。</p>  <h3 id=\"_6\">アクセストークンの破棄</h3>  <p>認証時に得たaccess_tokenまたはrefresh_tokenを使って、tokenを破棄することができます。 token=access_tokenまたはtoken=refresh_tokenでhttps://accounts.secure.freee.co.jp/public_api/revokeにアクセスすると破棄されます。token_type_hintでaccess_tokenまたはrefresh_tokenを陽に指定できます。</p>  <p>e.g.)</p>  <p>POST: https://accounts.secure.freee.co.jp/public_api/revoke</p>  <p>params: token=ACCESS_TOKEN</p>  <p>または</p>  <p>params: token=REFRESH_TOKEN</p>  <p>または</p>  <p>params: token=ACCESS_TOKEN&amp;token_type_hint=access_token</p>  <p>または</p>  <p>params: token=REFRESH_TOKEN&amp;token_type_hint=refresh_token</p>  <p>詳細は <a href=\"https://tools.ietf.org/html/rfc7009\">OAuth 2.0 Token revocation</a> をご参照ください。</p>  <h3 id=\"_7\">データフォーマット</h3>  <p>リクエスト、レスポンスともにJSON形式をサポート</p>  <h3 id=\"_8\">共通レスポンスヘッダー</h3>  <p>すべてのAPIのレスポンスには以下のHTTPヘッダーが含まれます。</p>  <ul> <li> <p>X-Freee-Request-ID</p> <ul> <li>各リクエスト毎に発行されるID</li> </ul> </li> </ul>  <h3 id=\"_9\">共通エラーレスポンス</h3>  <ul> <li> <p>ステータスコードはレスポンス内のJSONに含まれる他、HTTPヘッダにも含まれる</p> </li>  <li> <p>type</p>  <ul> <li>status : HTTPステータスコードの説明</li>  <li>validation : エラーの詳細の説明（開発者向け）</li> </ul> </li> </ul>  <p>レスポンスの例</p>  <pre><code>  {     &quot;status_code&quot; : 400,     &quot;errors&quot; : [       {         &quot;type&quot; : &quot;status&quot;,         &quot;messages&quot; : [&quot;不正なリクエストです。&quot;]       },       {         &quot;type&quot; : &quot;validation&quot;,         &quot;messages&quot; : [&quot;Date は不正な日付フォーマットです。入力例：2013-01-01&quot;]       }     ]   }</code></pre> <hr /> <h2 id=\"_10\">連絡先</h2>  <p>ご不明点、ご要望等は <a href=\"https://support.freee.co.jp/hc/ja/requests/new\">freee サポートデスクへのお問い合わせフォーム</a> からご連絡ください。</p> <hr />&copy; Since 2013 freee K.K.
+ * <h1 id=\"freee_api\">freee API</h1> <hr /> <h2 id=\"start_guide\">スタートガイド</h2>  <p>freee API開発がはじめての方は<a href=\"https://developer.freee.co.jp/getting-started\">freee API スタートガイド</a>を参照してください。</p>  <hr /> <h2 id=\"specification\">仕様</h2>  <pre><code>【重要】会計freee APIの新バージョンについて 2020年12月まで、2つのバージョンが利用できる状態です。古いものは2020年12月に利用不可となります。<br> 新しいAPIを利用するにはリクエストヘッダーに以下を指定します。 X-Api-Version: 2020-06-15<br> 指定がない場合は2020年12月に廃止予定のAPIを利用することとなります。<br> 【重要】APIのバージョン指定をせずに利用し続ける場合 2020年12月に新しいバージョンのAPIに自動的に切り替わります。 詳細は、<a href=\"https://developer.freee.co.jp/release-note/2948\" target=\"_blank\">リリースノート</a>をご覧ください。<br> 旧バージョンのAPIリファレンスを確認したい場合は、<a href=\"https://freee.github.io/freee-api-schema/\" target=\"_blank\">旧バージョンのAPIリファレンスページ</a>をご覧ください。 </code></pre>  <h3 id=\"api_endpoint\">APIエンドポイント</h3>  <p>https://api.freee.co.jp/ (httpsのみ)</p>  <h3 id=\"about_authorize\">認証について</h3> <p>OAuth2.0を利用します。詳細は<a href=\"https://developer.freee.co.jp/docs\" target=\"_blank\">ドキュメントの認証</a>パートを参照してください。</p>  <h3 id=\"data_format\">データフォーマット</h3>  <p>リクエスト、レスポンスともにJSON形式をサポートしていますが、詳細は、API毎の説明欄（application/jsonなど）を確認してください。</p>  <h3 id=\"compatibility\">後方互換性ありの変更</h3>  <p>freeeでは、APIを改善していくために以下のような変更は後方互換性ありとして通知なく変更を入れることがあります。アプリケーション実装者は以下を踏まえて開発を行ってください。</p>  <ul> <li>新しいAPIリソース・エンドポイントの追加</li> <li>既存のAPIに対して必須ではない新しいリクエストパラメータの追加</li> <li>既存のAPIレスポンスに対する新しいプロパティの追加</li> <li>既存のAPIレスポンスに対するプロパティの順番の入れ変え</li> <li>keyとなっているidやcodeの長さの変更（長くする）</li> </ul>  <h3 id=\"common_response_header\">共通レスポンスヘッダー</h3>  <p>すべてのAPIのレスポンスには以下のHTTPヘッダーが含まれます。</p>  <ul> <li> <p>X-Freee-Request-ID</p> <ul> <li>各リクエスト毎に発行されるID</li> </ul> </li> </ul>  <h3 id=\"common_error_response\">共通エラーレスポンス</h3>  <ul> <li> <p>ステータスコードはレスポンス内のJSONに含まれる他、HTTPヘッダにも含まれる</p> </li> <li> <p>一部のエラーレスポンスにはエラーコードが含まれます。<br>詳細は、<a href=\"https://developer.freee.co.jp/tips/faq/40x-checkpoint\">HTTPステータスコード400台エラー時のチェックポイント</a>を参照してください</p> </li> <p>type</p>  <ul> <li>status : HTTPステータスコードの説明</li>  <li>validation : エラーの詳細の説明（開発者向け）</li> </ul> </li> </ul>  <p>レスポンスの例</p>  <pre><code>  {     &quot;status_code&quot; : 400,     &quot;errors&quot; : [       {         &quot;type&quot; : &quot;status&quot;,         &quot;messages&quot; : [&quot;不正なリクエストです。&quot;]       },       {         &quot;type&quot; : &quot;validation&quot;,         &quot;messages&quot; : [&quot;Date は不正な日付フォーマットです。入力例：2013-01-01&quot;]       }     ]   }</code></pre>  </br>  <h3 id=\"api_rate_limit\">API使用制限</h3>    <p>freeeは一定期間に過度のアクセスを検知した場合、APIアクセスをコントロールする場合があります。</p>   <p>その際のhttp status codeは403となります。制限がかかってから10分程度が過ぎると再度使用することができるようになります。</p>  <h4 id=\"reports_api_endpoint\">/reportsエンドポイント</h4>  <p>freeeは/reportsエンドポイントに対して1秒間に10以上のアクセスを検知した場合、APIアクセスをコントロールする場合があります。その際のhttp status codeは429（too many requests）となります。</p>  <p>レスポンスボディのmetaプロパティに以下を含めます。</p>  <ul>   <li>設定されている上限値</li>   <li>上限に達するまでの使用可能回数</li>   <li>（上限値に達した場合）使用回数がリセットされる時刻</li> </ul>  <h3 id=\"plan_api_rate_limit\">プラン別のAPI Rate Limit</h3>   <table border=\"1\">     <tbody>       <tr>         <th style=\"padding: 10px\"><strong>会計freeeプラン名</strong></th>         <th style=\"padding: 10px\"><strong>事業所とアプリケーション毎に1日でのAPIコール数</strong></th>       </tr>       <tr>         <td style=\"padding: 10px\">エンタープライズ</td>         <td style=\"padding: 10px\">10,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">プロフェッショナル</td>         <td style=\"padding: 10px\">5,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">ベーシック</td>         <td style=\"padding: 10px\">3,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">ミニマム</td>         <td style=\"padding: 10px\">3,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">上記以外</td>         <td style=\"padding: 10px\">3,000</td>       </tr>     </tbody>   </table>  <h3 id=\"webhook\">Webhookについて</h3>  <p>詳細は<a href=\"https://developer.freee.co.jp/docs/accounting/webhook\" target=\"_blank\">会計Webhook概要</a>を参照してください。</p>  <hr /> <h2 id=\"contact\">連絡先</h2>  <p>ご不明点、ご要望等は <a href=\"https://support.freee.co.jp/hc/ja/requests/new\">freee サポートデスクへのお問い合わせフォーム</a> からご連絡ください。</p> <hr />&copy; Since 2013 freee K.K.
  *
  * The version of the OpenAPI document: v1.0
  * 
  * Generated by: https://openapi-generator.tech
- * OpenAPI Generator version: 4.2.2
+ * OpenAPI Generator version: 4.3.1
  */
 
 /**
@@ -122,8 +122,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -135,7 +135,7 @@ class TrialBalanceApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\TrialBsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\InternalServerError
+     * @return \Freee\Accounting\Model\TrialBsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\TooManyRequestsError|\Freee\Accounting\Model\InternalServerError
      */
     public function getTrialBs($company_id, $fiscal_year = null, $start_month = null, $end_month = null, $start_date = null, $end_date = null, $account_item_display_type = null, $breakdown_display_type = null, $partner_id = null, $partner_code = null, $item_id = null, $adjustment = null)
     {
@@ -150,8 +150,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -163,7 +163,7 @@ class TrialBalanceApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\TrialBsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Freee\Accounting\Model\TrialBsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\TooManyRequestsError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTrialBsWithHttpInfo($company_id, $fiscal_year = null, $start_month = null, $end_month = null, $start_date = null, $end_date = null, $account_item_display_type = null, $breakdown_display_type = null, $partner_id = null, $partner_code = null, $item_id = null, $adjustment = null)
     {
@@ -178,7 +178,7 @@ class TrialBalanceApi
                     "[{$e->getCode()}] {$e->getMessage()}",
                     $e->getCode(),
                     $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
                 );
             }
 
@@ -203,7 +203,7 @@ class TrialBalanceApi
                     if ('\Freee\Accounting\Model\TrialBsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -215,7 +215,7 @@ class TrialBalanceApi
                     if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -227,7 +227,7 @@ class TrialBalanceApi
                     if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -235,11 +235,35 @@ class TrialBalanceApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 403:
+                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Freee\Accounting\Model\TooManyRequestsError' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\TooManyRequestsError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 case 500:
                     if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -254,7 +278,7 @@ class TrialBalanceApi
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
             } else {
-                $content = $responseBody->getContents();
+                $content = (string) $responseBody;
             }
 
             return [
@@ -289,6 +313,22 @@ class TrialBalanceApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Freee\Accounting\Model\ForbiddenError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Freee\Accounting\Model\TooManyRequestsError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -309,8 +349,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -340,8 +380,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -367,7 +407,7 @@ class TrialBalanceApi
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -398,8 +438,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -420,8 +460,8 @@ class TrialBalanceApi
                 'Missing the required parameter $company_id when calling getTrialBs'
             );
         }
-        if ($company_id > 999999999999) {
-            throw new \InvalidArgumentException('invalid value for "$company_id" when calling TrialBalanceApi.getTrialBs, must be smaller than or equal to 999999999999.');
+        if ($company_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$company_id" when calling TrialBalanceApi.getTrialBs, must be smaller than or equal to 2147483647.');
         }
         if ($company_id < 1) {
             throw new \InvalidArgumentException('invalid value for "$company_id" when calling TrialBalanceApi.getTrialBs, must be bigger than or equal to 1.');
@@ -441,10 +481,16 @@ class TrialBalanceApi
             throw new \InvalidArgumentException('invalid value for "$end_month" when calling TrialBalanceApi.getTrialBs, must be bigger than or equal to 1.');
         }
 
+        if ($partner_id !== null && $partner_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$partner_id" when calling TrialBalanceApi.getTrialBs, must be smaller than or equal to 2147483647.');
+        }
         if ($partner_id !== null && $partner_id < 0) {
             throw new \InvalidArgumentException('invalid value for "$partner_id" when calling TrialBalanceApi.getTrialBs, must be bigger than or equal to 0.');
         }
 
+        if ($item_id !== null && $item_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$item_id" when calling TrialBalanceApi.getTrialBs, must be smaller than or equal to 2147483647.');
+        }
         if ($item_id !== null && $item_id < 0) {
             throw new \InvalidArgumentException('invalid value for "$item_id" when calling TrialBalanceApi.getTrialBs, must be bigger than or equal to 0.');
         }
@@ -459,52 +505,137 @@ class TrialBalanceApi
 
         // query params
         if ($company_id !== null) {
-            $queryParams['company_id'] = ObjectSerializer::toQueryValue($company_id);
+            if('form' === 'form' && is_array($company_id)) {
+                foreach($company_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['company_id'] = $company_id;
+            }
         }
         // query params
         if ($fiscal_year !== null) {
-            $queryParams['fiscal_year'] = ObjectSerializer::toQueryValue($fiscal_year);
+            if('form' === 'form' && is_array($fiscal_year)) {
+                foreach($fiscal_year as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['fiscal_year'] = $fiscal_year;
+            }
         }
         // query params
         if ($start_month !== null) {
-            $queryParams['start_month'] = ObjectSerializer::toQueryValue($start_month);
+            if('form' === 'form' && is_array($start_month)) {
+                foreach($start_month as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['start_month'] = $start_month;
+            }
         }
         // query params
         if ($end_month !== null) {
-            $queryParams['end_month'] = ObjectSerializer::toQueryValue($end_month);
+            if('form' === 'form' && is_array($end_month)) {
+                foreach($end_month as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['end_month'] = $end_month;
+            }
         }
         // query params
         if ($start_date !== null) {
-            $queryParams['start_date'] = ObjectSerializer::toQueryValue($start_date);
+            if('form' === 'form' && is_array($start_date)) {
+                foreach($start_date as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['start_date'] = $start_date;
+            }
         }
         // query params
         if ($end_date !== null) {
-            $queryParams['end_date'] = ObjectSerializer::toQueryValue($end_date);
+            if('form' === 'form' && is_array($end_date)) {
+                foreach($end_date as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['end_date'] = $end_date;
+            }
         }
         // query params
         if ($account_item_display_type !== null) {
-            $queryParams['account_item_display_type'] = ObjectSerializer::toQueryValue($account_item_display_type);
+            if('form' === 'form' && is_array($account_item_display_type)) {
+                foreach($account_item_display_type as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['account_item_display_type'] = $account_item_display_type;
+            }
         }
         // query params
         if ($breakdown_display_type !== null) {
-            $queryParams['breakdown_display_type'] = ObjectSerializer::toQueryValue($breakdown_display_type);
+            if('form' === 'form' && is_array($breakdown_display_type)) {
+                foreach($breakdown_display_type as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['breakdown_display_type'] = $breakdown_display_type;
+            }
         }
         // query params
         if ($partner_id !== null) {
-            $queryParams['partner_id'] = ObjectSerializer::toQueryValue($partner_id);
+            if('form' === 'form' && is_array($partner_id)) {
+                foreach($partner_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['partner_id'] = $partner_id;
+            }
         }
         // query params
         if ($partner_code !== null) {
-            $queryParams['partner_code'] = ObjectSerializer::toQueryValue($partner_code);
+            if('form' === 'form' && is_array($partner_code)) {
+                foreach($partner_code as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['partner_code'] = $partner_code;
+            }
         }
         // query params
         if ($item_id !== null) {
-            $queryParams['item_id'] = ObjectSerializer::toQueryValue($item_id);
+            if('form' === 'form' && is_array($item_id)) {
+                foreach($item_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['item_id'] = $item_id;
+            }
         }
         // query params
         if ($adjustment !== null) {
-            $queryParams['adjustment'] = ObjectSerializer::toQueryValue($adjustment);
+            if('form' === 'form' && is_array($adjustment)) {
+                foreach($adjustment as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['adjustment'] = $adjustment;
+            }
         }
+
 
 
         // body params
@@ -582,8 +713,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -595,7 +726,7 @@ class TrialBalanceApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\TrialBsThreeYearsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\InternalServerError
+     * @return \Freee\Accounting\Model\TrialBsThreeYearsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\TooManyRequestsError|\Freee\Accounting\Model\InternalServerError
      */
     public function getTrialBsThreeYears($company_id, $fiscal_year = null, $start_month = null, $end_month = null, $start_date = null, $end_date = null, $account_item_display_type = null, $breakdown_display_type = null, $partner_id = null, $partner_code = null, $item_id = null, $adjustment = null)
     {
@@ -610,8 +741,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -623,7 +754,7 @@ class TrialBalanceApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\TrialBsThreeYearsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Freee\Accounting\Model\TrialBsThreeYearsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\TooManyRequestsError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTrialBsThreeYearsWithHttpInfo($company_id, $fiscal_year = null, $start_month = null, $end_month = null, $start_date = null, $end_date = null, $account_item_display_type = null, $breakdown_display_type = null, $partner_id = null, $partner_code = null, $item_id = null, $adjustment = null)
     {
@@ -638,7 +769,7 @@ class TrialBalanceApi
                     "[{$e->getCode()}] {$e->getMessage()}",
                     $e->getCode(),
                     $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
                 );
             }
 
@@ -663,7 +794,7 @@ class TrialBalanceApi
                     if ('\Freee\Accounting\Model\TrialBsThreeYearsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -675,7 +806,7 @@ class TrialBalanceApi
                     if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -687,7 +818,7 @@ class TrialBalanceApi
                     if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -695,11 +826,35 @@ class TrialBalanceApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 403:
+                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Freee\Accounting\Model\TooManyRequestsError' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\TooManyRequestsError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 case 500:
                     if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -714,7 +869,7 @@ class TrialBalanceApi
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
             } else {
-                $content = $responseBody->getContents();
+                $content = (string) $responseBody;
             }
 
             return [
@@ -749,6 +904,22 @@ class TrialBalanceApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Freee\Accounting\Model\ForbiddenError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Freee\Accounting\Model\TooManyRequestsError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -769,8 +940,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -800,8 +971,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -827,7 +998,7 @@ class TrialBalanceApi
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -858,8 +1029,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -880,8 +1051,8 @@ class TrialBalanceApi
                 'Missing the required parameter $company_id when calling getTrialBsThreeYears'
             );
         }
-        if ($company_id > 999999999999) {
-            throw new \InvalidArgumentException('invalid value for "$company_id" when calling TrialBalanceApi.getTrialBsThreeYears, must be smaller than or equal to 999999999999.');
+        if ($company_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$company_id" when calling TrialBalanceApi.getTrialBsThreeYears, must be smaller than or equal to 2147483647.');
         }
         if ($company_id < 1) {
             throw new \InvalidArgumentException('invalid value for "$company_id" when calling TrialBalanceApi.getTrialBsThreeYears, must be bigger than or equal to 1.');
@@ -901,10 +1072,16 @@ class TrialBalanceApi
             throw new \InvalidArgumentException('invalid value for "$end_month" when calling TrialBalanceApi.getTrialBsThreeYears, must be bigger than or equal to 1.');
         }
 
+        if ($partner_id !== null && $partner_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$partner_id" when calling TrialBalanceApi.getTrialBsThreeYears, must be smaller than or equal to 2147483647.');
+        }
         if ($partner_id !== null && $partner_id < 0) {
             throw new \InvalidArgumentException('invalid value for "$partner_id" when calling TrialBalanceApi.getTrialBsThreeYears, must be bigger than or equal to 0.');
         }
 
+        if ($item_id !== null && $item_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$item_id" when calling TrialBalanceApi.getTrialBsThreeYears, must be smaller than or equal to 2147483647.');
+        }
         if ($item_id !== null && $item_id < 0) {
             throw new \InvalidArgumentException('invalid value for "$item_id" when calling TrialBalanceApi.getTrialBsThreeYears, must be bigger than or equal to 0.');
         }
@@ -919,52 +1096,137 @@ class TrialBalanceApi
 
         // query params
         if ($company_id !== null) {
-            $queryParams['company_id'] = ObjectSerializer::toQueryValue($company_id);
+            if('form' === 'form' && is_array($company_id)) {
+                foreach($company_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['company_id'] = $company_id;
+            }
         }
         // query params
         if ($fiscal_year !== null) {
-            $queryParams['fiscal_year'] = ObjectSerializer::toQueryValue($fiscal_year);
+            if('form' === 'form' && is_array($fiscal_year)) {
+                foreach($fiscal_year as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['fiscal_year'] = $fiscal_year;
+            }
         }
         // query params
         if ($start_month !== null) {
-            $queryParams['start_month'] = ObjectSerializer::toQueryValue($start_month);
+            if('form' === 'form' && is_array($start_month)) {
+                foreach($start_month as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['start_month'] = $start_month;
+            }
         }
         // query params
         if ($end_month !== null) {
-            $queryParams['end_month'] = ObjectSerializer::toQueryValue($end_month);
+            if('form' === 'form' && is_array($end_month)) {
+                foreach($end_month as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['end_month'] = $end_month;
+            }
         }
         // query params
         if ($start_date !== null) {
-            $queryParams['start_date'] = ObjectSerializer::toQueryValue($start_date);
+            if('form' === 'form' && is_array($start_date)) {
+                foreach($start_date as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['start_date'] = $start_date;
+            }
         }
         // query params
         if ($end_date !== null) {
-            $queryParams['end_date'] = ObjectSerializer::toQueryValue($end_date);
+            if('form' === 'form' && is_array($end_date)) {
+                foreach($end_date as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['end_date'] = $end_date;
+            }
         }
         // query params
         if ($account_item_display_type !== null) {
-            $queryParams['account_item_display_type'] = ObjectSerializer::toQueryValue($account_item_display_type);
+            if('form' === 'form' && is_array($account_item_display_type)) {
+                foreach($account_item_display_type as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['account_item_display_type'] = $account_item_display_type;
+            }
         }
         // query params
         if ($breakdown_display_type !== null) {
-            $queryParams['breakdown_display_type'] = ObjectSerializer::toQueryValue($breakdown_display_type);
+            if('form' === 'form' && is_array($breakdown_display_type)) {
+                foreach($breakdown_display_type as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['breakdown_display_type'] = $breakdown_display_type;
+            }
         }
         // query params
         if ($partner_id !== null) {
-            $queryParams['partner_id'] = ObjectSerializer::toQueryValue($partner_id);
+            if('form' === 'form' && is_array($partner_id)) {
+                foreach($partner_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['partner_id'] = $partner_id;
+            }
         }
         // query params
         if ($partner_code !== null) {
-            $queryParams['partner_code'] = ObjectSerializer::toQueryValue($partner_code);
+            if('form' === 'form' && is_array($partner_code)) {
+                foreach($partner_code as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['partner_code'] = $partner_code;
+            }
         }
         // query params
         if ($item_id !== null) {
-            $queryParams['item_id'] = ObjectSerializer::toQueryValue($item_id);
+            if('form' === 'form' && is_array($item_id)) {
+                foreach($item_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['item_id'] = $item_id;
+            }
         }
         // query params
         if ($adjustment !== null) {
-            $queryParams['adjustment'] = ObjectSerializer::toQueryValue($adjustment);
+            if('form' === 'form' && is_array($adjustment)) {
+                foreach($adjustment as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['adjustment'] = $adjustment;
+            }
         }
+
 
 
         // body params
@@ -1042,8 +1304,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -1055,7 +1317,7 @@ class TrialBalanceApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\TrialBsTwoYearsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\InternalServerError
+     * @return \Freee\Accounting\Model\TrialBsTwoYearsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\TooManyRequestsError|\Freee\Accounting\Model\InternalServerError
      */
     public function getTrialBsTwoYears($company_id, $fiscal_year = null, $start_month = null, $end_month = null, $start_date = null, $end_date = null, $account_item_display_type = null, $breakdown_display_type = null, $partner_id = null, $partner_code = null, $item_id = null, $adjustment = null)
     {
@@ -1070,8 +1332,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -1083,7 +1345,7 @@ class TrialBalanceApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\TrialBsTwoYearsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Freee\Accounting\Model\TrialBsTwoYearsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\TooManyRequestsError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTrialBsTwoYearsWithHttpInfo($company_id, $fiscal_year = null, $start_month = null, $end_month = null, $start_date = null, $end_date = null, $account_item_display_type = null, $breakdown_display_type = null, $partner_id = null, $partner_code = null, $item_id = null, $adjustment = null)
     {
@@ -1098,7 +1360,7 @@ class TrialBalanceApi
                     "[{$e->getCode()}] {$e->getMessage()}",
                     $e->getCode(),
                     $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
                 );
             }
 
@@ -1123,7 +1385,7 @@ class TrialBalanceApi
                     if ('\Freee\Accounting\Model\TrialBsTwoYearsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -1135,7 +1397,7 @@ class TrialBalanceApi
                     if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -1147,7 +1409,7 @@ class TrialBalanceApi
                     if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -1155,11 +1417,35 @@ class TrialBalanceApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 403:
+                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Freee\Accounting\Model\TooManyRequestsError' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\TooManyRequestsError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 case 500:
                     if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -1174,7 +1460,7 @@ class TrialBalanceApi
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
             } else {
-                $content = $responseBody->getContents();
+                $content = (string) $responseBody;
             }
 
             return [
@@ -1209,6 +1495,22 @@ class TrialBalanceApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Freee\Accounting\Model\ForbiddenError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Freee\Accounting\Model\TooManyRequestsError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -1229,8 +1531,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -1260,8 +1562,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -1287,7 +1589,7 @@ class TrialBalanceApi
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -1318,8 +1620,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -1340,8 +1642,8 @@ class TrialBalanceApi
                 'Missing the required parameter $company_id when calling getTrialBsTwoYears'
             );
         }
-        if ($company_id > 999999999999) {
-            throw new \InvalidArgumentException('invalid value for "$company_id" when calling TrialBalanceApi.getTrialBsTwoYears, must be smaller than or equal to 999999999999.');
+        if ($company_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$company_id" when calling TrialBalanceApi.getTrialBsTwoYears, must be smaller than or equal to 2147483647.');
         }
         if ($company_id < 1) {
             throw new \InvalidArgumentException('invalid value for "$company_id" when calling TrialBalanceApi.getTrialBsTwoYears, must be bigger than or equal to 1.');
@@ -1361,10 +1663,16 @@ class TrialBalanceApi
             throw new \InvalidArgumentException('invalid value for "$end_month" when calling TrialBalanceApi.getTrialBsTwoYears, must be bigger than or equal to 1.');
         }
 
+        if ($partner_id !== null && $partner_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$partner_id" when calling TrialBalanceApi.getTrialBsTwoYears, must be smaller than or equal to 2147483647.');
+        }
         if ($partner_id !== null && $partner_id < 0) {
             throw new \InvalidArgumentException('invalid value for "$partner_id" when calling TrialBalanceApi.getTrialBsTwoYears, must be bigger than or equal to 0.');
         }
 
+        if ($item_id !== null && $item_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$item_id" when calling TrialBalanceApi.getTrialBsTwoYears, must be smaller than or equal to 2147483647.');
+        }
         if ($item_id !== null && $item_id < 0) {
             throw new \InvalidArgumentException('invalid value for "$item_id" when calling TrialBalanceApi.getTrialBsTwoYears, must be bigger than or equal to 0.');
         }
@@ -1379,52 +1687,137 @@ class TrialBalanceApi
 
         // query params
         if ($company_id !== null) {
-            $queryParams['company_id'] = ObjectSerializer::toQueryValue($company_id);
+            if('form' === 'form' && is_array($company_id)) {
+                foreach($company_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['company_id'] = $company_id;
+            }
         }
         // query params
         if ($fiscal_year !== null) {
-            $queryParams['fiscal_year'] = ObjectSerializer::toQueryValue($fiscal_year);
+            if('form' === 'form' && is_array($fiscal_year)) {
+                foreach($fiscal_year as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['fiscal_year'] = $fiscal_year;
+            }
         }
         // query params
         if ($start_month !== null) {
-            $queryParams['start_month'] = ObjectSerializer::toQueryValue($start_month);
+            if('form' === 'form' && is_array($start_month)) {
+                foreach($start_month as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['start_month'] = $start_month;
+            }
         }
         // query params
         if ($end_month !== null) {
-            $queryParams['end_month'] = ObjectSerializer::toQueryValue($end_month);
+            if('form' === 'form' && is_array($end_month)) {
+                foreach($end_month as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['end_month'] = $end_month;
+            }
         }
         // query params
         if ($start_date !== null) {
-            $queryParams['start_date'] = ObjectSerializer::toQueryValue($start_date);
+            if('form' === 'form' && is_array($start_date)) {
+                foreach($start_date as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['start_date'] = $start_date;
+            }
         }
         // query params
         if ($end_date !== null) {
-            $queryParams['end_date'] = ObjectSerializer::toQueryValue($end_date);
+            if('form' === 'form' && is_array($end_date)) {
+                foreach($end_date as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['end_date'] = $end_date;
+            }
         }
         // query params
         if ($account_item_display_type !== null) {
-            $queryParams['account_item_display_type'] = ObjectSerializer::toQueryValue($account_item_display_type);
+            if('form' === 'form' && is_array($account_item_display_type)) {
+                foreach($account_item_display_type as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['account_item_display_type'] = $account_item_display_type;
+            }
         }
         // query params
         if ($breakdown_display_type !== null) {
-            $queryParams['breakdown_display_type'] = ObjectSerializer::toQueryValue($breakdown_display_type);
+            if('form' === 'form' && is_array($breakdown_display_type)) {
+                foreach($breakdown_display_type as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['breakdown_display_type'] = $breakdown_display_type;
+            }
         }
         // query params
         if ($partner_id !== null) {
-            $queryParams['partner_id'] = ObjectSerializer::toQueryValue($partner_id);
+            if('form' === 'form' && is_array($partner_id)) {
+                foreach($partner_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['partner_id'] = $partner_id;
+            }
         }
         // query params
         if ($partner_code !== null) {
-            $queryParams['partner_code'] = ObjectSerializer::toQueryValue($partner_code);
+            if('form' === 'form' && is_array($partner_code)) {
+                foreach($partner_code as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['partner_code'] = $partner_code;
+            }
         }
         // query params
         if ($item_id !== null) {
-            $queryParams['item_id'] = ObjectSerializer::toQueryValue($item_id);
+            if('form' === 'form' && is_array($item_id)) {
+                foreach($item_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['item_id'] = $item_id;
+            }
         }
         // query params
         if ($adjustment !== null) {
-            $queryParams['adjustment'] = ObjectSerializer::toQueryValue($adjustment);
+            if('form' === 'form' && is_array($adjustment)) {
+                foreach($adjustment as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['adjustment'] = $adjustment;
+            }
         }
+
 
 
         // body params
@@ -1502,8 +1895,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -1517,7 +1910,7 @@ class TrialBalanceApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\TrialPlResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\InternalServerError
+     * @return \Freee\Accounting\Model\TrialPlResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\TooManyRequestsError|\Freee\Accounting\Model\InternalServerError
      */
     public function getTrialPl($company_id, $fiscal_year = null, $start_month = null, $end_month = null, $start_date = null, $end_date = null, $account_item_display_type = null, $breakdown_display_type = null, $partner_id = null, $partner_code = null, $item_id = null, $section_id = null, $adjustment = null, $cost_allocation = null)
     {
@@ -1532,8 +1925,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -1547,7 +1940,7 @@ class TrialBalanceApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\TrialPlResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Freee\Accounting\Model\TrialPlResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\TooManyRequestsError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTrialPlWithHttpInfo($company_id, $fiscal_year = null, $start_month = null, $end_month = null, $start_date = null, $end_date = null, $account_item_display_type = null, $breakdown_display_type = null, $partner_id = null, $partner_code = null, $item_id = null, $section_id = null, $adjustment = null, $cost_allocation = null)
     {
@@ -1562,7 +1955,7 @@ class TrialBalanceApi
                     "[{$e->getCode()}] {$e->getMessage()}",
                     $e->getCode(),
                     $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
                 );
             }
 
@@ -1587,7 +1980,7 @@ class TrialBalanceApi
                     if ('\Freee\Accounting\Model\TrialPlResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -1599,7 +1992,7 @@ class TrialBalanceApi
                     if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -1611,7 +2004,7 @@ class TrialBalanceApi
                     if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -1619,11 +2012,35 @@ class TrialBalanceApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 403:
+                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Freee\Accounting\Model\TooManyRequestsError' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\TooManyRequestsError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 case 500:
                     if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -1638,7 +2055,7 @@ class TrialBalanceApi
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
             } else {
-                $content = $responseBody->getContents();
+                $content = (string) $responseBody;
             }
 
             return [
@@ -1673,6 +2090,22 @@ class TrialBalanceApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Freee\Accounting\Model\ForbiddenError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Freee\Accounting\Model\TooManyRequestsError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -1693,8 +2126,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -1726,8 +2159,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -1755,7 +2188,7 @@ class TrialBalanceApi
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -1786,8 +2219,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -1810,8 +2243,8 @@ class TrialBalanceApi
                 'Missing the required parameter $company_id when calling getTrialPl'
             );
         }
-        if ($company_id > 999999999999) {
-            throw new \InvalidArgumentException('invalid value for "$company_id" when calling TrialBalanceApi.getTrialPl, must be smaller than or equal to 999999999999.');
+        if ($company_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$company_id" when calling TrialBalanceApi.getTrialPl, must be smaller than or equal to 2147483647.');
         }
         if ($company_id < 1) {
             throw new \InvalidArgumentException('invalid value for "$company_id" when calling TrialBalanceApi.getTrialPl, must be bigger than or equal to 1.');
@@ -1831,14 +2264,23 @@ class TrialBalanceApi
             throw new \InvalidArgumentException('invalid value for "$end_month" when calling TrialBalanceApi.getTrialPl, must be bigger than or equal to 1.');
         }
 
+        if ($partner_id !== null && $partner_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$partner_id" when calling TrialBalanceApi.getTrialPl, must be smaller than or equal to 2147483647.');
+        }
         if ($partner_id !== null && $partner_id < 0) {
             throw new \InvalidArgumentException('invalid value for "$partner_id" when calling TrialBalanceApi.getTrialPl, must be bigger than or equal to 0.');
         }
 
+        if ($item_id !== null && $item_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$item_id" when calling TrialBalanceApi.getTrialPl, must be smaller than or equal to 2147483647.');
+        }
         if ($item_id !== null && $item_id < 0) {
             throw new \InvalidArgumentException('invalid value for "$item_id" when calling TrialBalanceApi.getTrialPl, must be bigger than or equal to 0.');
         }
 
+        if ($section_id !== null && $section_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$section_id" when calling TrialBalanceApi.getTrialPl, must be smaller than or equal to 2147483647.');
+        }
         if ($section_id !== null && $section_id < 0) {
             throw new \InvalidArgumentException('invalid value for "$section_id" when calling TrialBalanceApi.getTrialPl, must be bigger than or equal to 0.');
         }
@@ -1853,60 +2295,159 @@ class TrialBalanceApi
 
         // query params
         if ($company_id !== null) {
-            $queryParams['company_id'] = ObjectSerializer::toQueryValue($company_id);
+            if('form' === 'form' && is_array($company_id)) {
+                foreach($company_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['company_id'] = $company_id;
+            }
         }
         // query params
         if ($fiscal_year !== null) {
-            $queryParams['fiscal_year'] = ObjectSerializer::toQueryValue($fiscal_year);
+            if('form' === 'form' && is_array($fiscal_year)) {
+                foreach($fiscal_year as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['fiscal_year'] = $fiscal_year;
+            }
         }
         // query params
         if ($start_month !== null) {
-            $queryParams['start_month'] = ObjectSerializer::toQueryValue($start_month);
+            if('form' === 'form' && is_array($start_month)) {
+                foreach($start_month as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['start_month'] = $start_month;
+            }
         }
         // query params
         if ($end_month !== null) {
-            $queryParams['end_month'] = ObjectSerializer::toQueryValue($end_month);
+            if('form' === 'form' && is_array($end_month)) {
+                foreach($end_month as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['end_month'] = $end_month;
+            }
         }
         // query params
         if ($start_date !== null) {
-            $queryParams['start_date'] = ObjectSerializer::toQueryValue($start_date);
+            if('form' === 'form' && is_array($start_date)) {
+                foreach($start_date as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['start_date'] = $start_date;
+            }
         }
         // query params
         if ($end_date !== null) {
-            $queryParams['end_date'] = ObjectSerializer::toQueryValue($end_date);
+            if('form' === 'form' && is_array($end_date)) {
+                foreach($end_date as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['end_date'] = $end_date;
+            }
         }
         // query params
         if ($account_item_display_type !== null) {
-            $queryParams['account_item_display_type'] = ObjectSerializer::toQueryValue($account_item_display_type);
+            if('form' === 'form' && is_array($account_item_display_type)) {
+                foreach($account_item_display_type as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['account_item_display_type'] = $account_item_display_type;
+            }
         }
         // query params
         if ($breakdown_display_type !== null) {
-            $queryParams['breakdown_display_type'] = ObjectSerializer::toQueryValue($breakdown_display_type);
+            if('form' === 'form' && is_array($breakdown_display_type)) {
+                foreach($breakdown_display_type as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['breakdown_display_type'] = $breakdown_display_type;
+            }
         }
         // query params
         if ($partner_id !== null) {
-            $queryParams['partner_id'] = ObjectSerializer::toQueryValue($partner_id);
+            if('form' === 'form' && is_array($partner_id)) {
+                foreach($partner_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['partner_id'] = $partner_id;
+            }
         }
         // query params
         if ($partner_code !== null) {
-            $queryParams['partner_code'] = ObjectSerializer::toQueryValue($partner_code);
+            if('form' === 'form' && is_array($partner_code)) {
+                foreach($partner_code as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['partner_code'] = $partner_code;
+            }
         }
         // query params
         if ($item_id !== null) {
-            $queryParams['item_id'] = ObjectSerializer::toQueryValue($item_id);
+            if('form' === 'form' && is_array($item_id)) {
+                foreach($item_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['item_id'] = $item_id;
+            }
         }
         // query params
         if ($section_id !== null) {
-            $queryParams['section_id'] = ObjectSerializer::toQueryValue($section_id);
+            if('form' === 'form' && is_array($section_id)) {
+                foreach($section_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['section_id'] = $section_id;
+            }
         }
         // query params
         if ($adjustment !== null) {
-            $queryParams['adjustment'] = ObjectSerializer::toQueryValue($adjustment);
+            if('form' === 'form' && is_array($adjustment)) {
+                foreach($adjustment as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['adjustment'] = $adjustment;
+            }
         }
         // query params
         if ($cost_allocation !== null) {
-            $queryParams['cost_allocation'] = ObjectSerializer::toQueryValue($cost_allocation);
+            if('form' === 'form' && is_array($cost_allocation)) {
+                foreach($cost_allocation as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['cost_allocation'] = $cost_allocation;
+            }
         }
+
 
 
         // body params
@@ -1985,12 +2526,12 @@ class TrialBalanceApi
      * @param  int $company_id 事業所ID (required)
      * @param  string $section_ids 出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください） (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
-     * @param  string $breakdown_display_type 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)
+     * @param  string $breakdown_display_type 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)
      * @param  int $partner_id 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)
      * @param  string $partner_code 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)
      * @param  int $item_id 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)
@@ -1999,7 +2540,7 @@ class TrialBalanceApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\TrialPlSectionsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\InternalServerError
+     * @return \Freee\Accounting\Model\TrialPlSectionsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\TooManyRequestsError|\Freee\Accounting\Model\InternalServerError
      */
     public function getTrialPlSections($company_id, $section_ids, $fiscal_year = null, $start_month = null, $end_month = null, $start_date = null, $end_date = null, $account_item_display_type = null, $breakdown_display_type = null, $partner_id = null, $partner_code = null, $item_id = null, $adjustment = null, $cost_allocation = null)
     {
@@ -2015,12 +2556,12 @@ class TrialBalanceApi
      * @param  int $company_id 事業所ID (required)
      * @param  string $section_ids 出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください） (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
-     * @param  string $breakdown_display_type 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)
+     * @param  string $breakdown_display_type 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)
      * @param  int $partner_id 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)
      * @param  string $partner_code 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)
      * @param  int $item_id 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)
@@ -2029,7 +2570,7 @@ class TrialBalanceApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\TrialPlSectionsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Freee\Accounting\Model\TrialPlSectionsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\TooManyRequestsError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTrialPlSectionsWithHttpInfo($company_id, $section_ids, $fiscal_year = null, $start_month = null, $end_month = null, $start_date = null, $end_date = null, $account_item_display_type = null, $breakdown_display_type = null, $partner_id = null, $partner_code = null, $item_id = null, $adjustment = null, $cost_allocation = null)
     {
@@ -2044,7 +2585,7 @@ class TrialBalanceApi
                     "[{$e->getCode()}] {$e->getMessage()}",
                     $e->getCode(),
                     $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
                 );
             }
 
@@ -2069,7 +2610,7 @@ class TrialBalanceApi
                     if ('\Freee\Accounting\Model\TrialPlSectionsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -2081,7 +2622,7 @@ class TrialBalanceApi
                     if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -2093,7 +2634,7 @@ class TrialBalanceApi
                     if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -2101,11 +2642,35 @@ class TrialBalanceApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 403:
+                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Freee\Accounting\Model\TooManyRequestsError' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\TooManyRequestsError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 case 500:
                     if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -2120,7 +2685,7 @@ class TrialBalanceApi
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
             } else {
-                $content = $responseBody->getContents();
+                $content = (string) $responseBody;
             }
 
             return [
@@ -2155,6 +2720,22 @@ class TrialBalanceApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Freee\Accounting\Model\ForbiddenError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Freee\Accounting\Model\TooManyRequestsError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -2176,12 +2757,12 @@ class TrialBalanceApi
      * @param  int $company_id 事業所ID (required)
      * @param  string $section_ids 出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください） (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
-     * @param  string $breakdown_display_type 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)
+     * @param  string $breakdown_display_type 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)
      * @param  int $partner_id 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)
      * @param  string $partner_code 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)
      * @param  int $item_id 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)
@@ -2209,12 +2790,12 @@ class TrialBalanceApi
      * @param  int $company_id 事業所ID (required)
      * @param  string $section_ids 出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください） (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
-     * @param  string $breakdown_display_type 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)
+     * @param  string $breakdown_display_type 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)
      * @param  int $partner_id 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)
      * @param  string $partner_code 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)
      * @param  int $item_id 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)
@@ -2237,7 +2818,7 @@ class TrialBalanceApi
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -2269,12 +2850,12 @@ class TrialBalanceApi
      * @param  int $company_id 事業所ID (required)
      * @param  string $section_ids 出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください） (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
-     * @param  string $breakdown_display_type 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)
+     * @param  string $breakdown_display_type 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)
      * @param  int $partner_id 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)
      * @param  string $partner_code 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)
      * @param  int $item_id 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)
@@ -2292,8 +2873,8 @@ class TrialBalanceApi
                 'Missing the required parameter $company_id when calling getTrialPlSections'
             );
         }
-        if ($company_id > 999999999999) {
-            throw new \InvalidArgumentException('invalid value for "$company_id" when calling TrialBalanceApi.getTrialPlSections, must be smaller than or equal to 999999999999.');
+        if ($company_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$company_id" when calling TrialBalanceApi.getTrialPlSections, must be smaller than or equal to 2147483647.');
         }
         if ($company_id < 1) {
             throw new \InvalidArgumentException('invalid value for "$company_id" when calling TrialBalanceApi.getTrialPlSections, must be bigger than or equal to 1.');
@@ -2319,10 +2900,16 @@ class TrialBalanceApi
             throw new \InvalidArgumentException('invalid value for "$end_month" when calling TrialBalanceApi.getTrialPlSections, must be bigger than or equal to 1.');
         }
 
+        if ($partner_id !== null && $partner_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$partner_id" when calling TrialBalanceApi.getTrialPlSections, must be smaller than or equal to 2147483647.');
+        }
         if ($partner_id !== null && $partner_id < 0) {
             throw new \InvalidArgumentException('invalid value for "$partner_id" when calling TrialBalanceApi.getTrialPlSections, must be bigger than or equal to 0.');
         }
 
+        if ($item_id !== null && $item_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$item_id" when calling TrialBalanceApi.getTrialPlSections, must be smaller than or equal to 2147483647.');
+        }
         if ($item_id !== null && $item_id < 0) {
             throw new \InvalidArgumentException('invalid value for "$item_id" when calling TrialBalanceApi.getTrialPlSections, must be bigger than or equal to 0.');
         }
@@ -2337,60 +2924,159 @@ class TrialBalanceApi
 
         // query params
         if ($company_id !== null) {
-            $queryParams['company_id'] = ObjectSerializer::toQueryValue($company_id);
+            if('form' === 'form' && is_array($company_id)) {
+                foreach($company_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['company_id'] = $company_id;
+            }
         }
         // query params
         if ($section_ids !== null) {
-            $queryParams['section_ids'] = ObjectSerializer::toQueryValue($section_ids);
+            if('form' === 'form' && is_array($section_ids)) {
+                foreach($section_ids as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['section_ids'] = $section_ids;
+            }
         }
         // query params
         if ($fiscal_year !== null) {
-            $queryParams['fiscal_year'] = ObjectSerializer::toQueryValue($fiscal_year);
+            if('form' === 'form' && is_array($fiscal_year)) {
+                foreach($fiscal_year as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['fiscal_year'] = $fiscal_year;
+            }
         }
         // query params
         if ($start_month !== null) {
-            $queryParams['start_month'] = ObjectSerializer::toQueryValue($start_month);
+            if('form' === 'form' && is_array($start_month)) {
+                foreach($start_month as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['start_month'] = $start_month;
+            }
         }
         // query params
         if ($end_month !== null) {
-            $queryParams['end_month'] = ObjectSerializer::toQueryValue($end_month);
+            if('form' === 'form' && is_array($end_month)) {
+                foreach($end_month as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['end_month'] = $end_month;
+            }
         }
         // query params
         if ($start_date !== null) {
-            $queryParams['start_date'] = ObjectSerializer::toQueryValue($start_date);
+            if('form' === 'form' && is_array($start_date)) {
+                foreach($start_date as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['start_date'] = $start_date;
+            }
         }
         // query params
         if ($end_date !== null) {
-            $queryParams['end_date'] = ObjectSerializer::toQueryValue($end_date);
+            if('form' === 'form' && is_array($end_date)) {
+                foreach($end_date as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['end_date'] = $end_date;
+            }
         }
         // query params
         if ($account_item_display_type !== null) {
-            $queryParams['account_item_display_type'] = ObjectSerializer::toQueryValue($account_item_display_type);
+            if('form' === 'form' && is_array($account_item_display_type)) {
+                foreach($account_item_display_type as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['account_item_display_type'] = $account_item_display_type;
+            }
         }
         // query params
         if ($breakdown_display_type !== null) {
-            $queryParams['breakdown_display_type'] = ObjectSerializer::toQueryValue($breakdown_display_type);
+            if('form' === 'form' && is_array($breakdown_display_type)) {
+                foreach($breakdown_display_type as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['breakdown_display_type'] = $breakdown_display_type;
+            }
         }
         // query params
         if ($partner_id !== null) {
-            $queryParams['partner_id'] = ObjectSerializer::toQueryValue($partner_id);
+            if('form' === 'form' && is_array($partner_id)) {
+                foreach($partner_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['partner_id'] = $partner_id;
+            }
         }
         // query params
         if ($partner_code !== null) {
-            $queryParams['partner_code'] = ObjectSerializer::toQueryValue($partner_code);
+            if('form' === 'form' && is_array($partner_code)) {
+                foreach($partner_code as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['partner_code'] = $partner_code;
+            }
         }
         // query params
         if ($item_id !== null) {
-            $queryParams['item_id'] = ObjectSerializer::toQueryValue($item_id);
+            if('form' === 'form' && is_array($item_id)) {
+                foreach($item_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['item_id'] = $item_id;
+            }
         }
         // query params
         if ($adjustment !== null) {
-            $queryParams['adjustment'] = ObjectSerializer::toQueryValue($adjustment);
+            if('form' === 'form' && is_array($adjustment)) {
+                foreach($adjustment as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['adjustment'] = $adjustment;
+            }
         }
         // query params
         if ($cost_allocation !== null) {
-            $queryParams['cost_allocation'] = ObjectSerializer::toQueryValue($cost_allocation);
+            if('form' === 'form' && is_array($cost_allocation)) {
+                foreach($cost_allocation as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['cost_allocation'] = $cost_allocation;
+            }
         }
+
 
 
         // body params
@@ -2468,8 +3154,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -2483,7 +3169,7 @@ class TrialBalanceApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\TrialPlThreeYearsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\InternalServerError
+     * @return \Freee\Accounting\Model\TrialPlThreeYearsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\TooManyRequestsError|\Freee\Accounting\Model\InternalServerError
      */
     public function getTrialPlThreeYears($company_id, $fiscal_year = null, $start_month = null, $end_month = null, $start_date = null, $end_date = null, $account_item_display_type = null, $breakdown_display_type = null, $partner_id = null, $partner_code = null, $item_id = null, $section_id = null, $adjustment = null, $cost_allocation = null)
     {
@@ -2498,8 +3184,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -2513,7 +3199,7 @@ class TrialBalanceApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\TrialPlThreeYearsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Freee\Accounting\Model\TrialPlThreeYearsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\TooManyRequestsError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTrialPlThreeYearsWithHttpInfo($company_id, $fiscal_year = null, $start_month = null, $end_month = null, $start_date = null, $end_date = null, $account_item_display_type = null, $breakdown_display_type = null, $partner_id = null, $partner_code = null, $item_id = null, $section_id = null, $adjustment = null, $cost_allocation = null)
     {
@@ -2528,7 +3214,7 @@ class TrialBalanceApi
                     "[{$e->getCode()}] {$e->getMessage()}",
                     $e->getCode(),
                     $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
                 );
             }
 
@@ -2553,7 +3239,7 @@ class TrialBalanceApi
                     if ('\Freee\Accounting\Model\TrialPlThreeYearsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -2565,7 +3251,7 @@ class TrialBalanceApi
                     if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -2577,7 +3263,7 @@ class TrialBalanceApi
                     if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -2585,11 +3271,35 @@ class TrialBalanceApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 403:
+                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Freee\Accounting\Model\TooManyRequestsError' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\TooManyRequestsError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 case 500:
                     if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -2604,7 +3314,7 @@ class TrialBalanceApi
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
             } else {
-                $content = $responseBody->getContents();
+                $content = (string) $responseBody;
             }
 
             return [
@@ -2639,6 +3349,22 @@ class TrialBalanceApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Freee\Accounting\Model\ForbiddenError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Freee\Accounting\Model\TooManyRequestsError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -2659,8 +3385,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -2692,8 +3418,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -2721,7 +3447,7 @@ class TrialBalanceApi
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -2752,8 +3478,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -2776,8 +3502,8 @@ class TrialBalanceApi
                 'Missing the required parameter $company_id when calling getTrialPlThreeYears'
             );
         }
-        if ($company_id > 999999999999) {
-            throw new \InvalidArgumentException('invalid value for "$company_id" when calling TrialBalanceApi.getTrialPlThreeYears, must be smaller than or equal to 999999999999.');
+        if ($company_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$company_id" when calling TrialBalanceApi.getTrialPlThreeYears, must be smaller than or equal to 2147483647.');
         }
         if ($company_id < 1) {
             throw new \InvalidArgumentException('invalid value for "$company_id" when calling TrialBalanceApi.getTrialPlThreeYears, must be bigger than or equal to 1.');
@@ -2797,14 +3523,23 @@ class TrialBalanceApi
             throw new \InvalidArgumentException('invalid value for "$end_month" when calling TrialBalanceApi.getTrialPlThreeYears, must be bigger than or equal to 1.');
         }
 
+        if ($partner_id !== null && $partner_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$partner_id" when calling TrialBalanceApi.getTrialPlThreeYears, must be smaller than or equal to 2147483647.');
+        }
         if ($partner_id !== null && $partner_id < 0) {
             throw new \InvalidArgumentException('invalid value for "$partner_id" when calling TrialBalanceApi.getTrialPlThreeYears, must be bigger than or equal to 0.');
         }
 
+        if ($item_id !== null && $item_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$item_id" when calling TrialBalanceApi.getTrialPlThreeYears, must be smaller than or equal to 2147483647.');
+        }
         if ($item_id !== null && $item_id < 0) {
             throw new \InvalidArgumentException('invalid value for "$item_id" when calling TrialBalanceApi.getTrialPlThreeYears, must be bigger than or equal to 0.');
         }
 
+        if ($section_id !== null && $section_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$section_id" when calling TrialBalanceApi.getTrialPlThreeYears, must be smaller than or equal to 2147483647.');
+        }
         if ($section_id !== null && $section_id < 0) {
             throw new \InvalidArgumentException('invalid value for "$section_id" when calling TrialBalanceApi.getTrialPlThreeYears, must be bigger than or equal to 0.');
         }
@@ -2819,60 +3554,159 @@ class TrialBalanceApi
 
         // query params
         if ($company_id !== null) {
-            $queryParams['company_id'] = ObjectSerializer::toQueryValue($company_id);
+            if('form' === 'form' && is_array($company_id)) {
+                foreach($company_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['company_id'] = $company_id;
+            }
         }
         // query params
         if ($fiscal_year !== null) {
-            $queryParams['fiscal_year'] = ObjectSerializer::toQueryValue($fiscal_year);
+            if('form' === 'form' && is_array($fiscal_year)) {
+                foreach($fiscal_year as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['fiscal_year'] = $fiscal_year;
+            }
         }
         // query params
         if ($start_month !== null) {
-            $queryParams['start_month'] = ObjectSerializer::toQueryValue($start_month);
+            if('form' === 'form' && is_array($start_month)) {
+                foreach($start_month as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['start_month'] = $start_month;
+            }
         }
         // query params
         if ($end_month !== null) {
-            $queryParams['end_month'] = ObjectSerializer::toQueryValue($end_month);
+            if('form' === 'form' && is_array($end_month)) {
+                foreach($end_month as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['end_month'] = $end_month;
+            }
         }
         // query params
         if ($start_date !== null) {
-            $queryParams['start_date'] = ObjectSerializer::toQueryValue($start_date);
+            if('form' === 'form' && is_array($start_date)) {
+                foreach($start_date as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['start_date'] = $start_date;
+            }
         }
         // query params
         if ($end_date !== null) {
-            $queryParams['end_date'] = ObjectSerializer::toQueryValue($end_date);
+            if('form' === 'form' && is_array($end_date)) {
+                foreach($end_date as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['end_date'] = $end_date;
+            }
         }
         // query params
         if ($account_item_display_type !== null) {
-            $queryParams['account_item_display_type'] = ObjectSerializer::toQueryValue($account_item_display_type);
+            if('form' === 'form' && is_array($account_item_display_type)) {
+                foreach($account_item_display_type as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['account_item_display_type'] = $account_item_display_type;
+            }
         }
         // query params
         if ($breakdown_display_type !== null) {
-            $queryParams['breakdown_display_type'] = ObjectSerializer::toQueryValue($breakdown_display_type);
+            if('form' === 'form' && is_array($breakdown_display_type)) {
+                foreach($breakdown_display_type as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['breakdown_display_type'] = $breakdown_display_type;
+            }
         }
         // query params
         if ($partner_id !== null) {
-            $queryParams['partner_id'] = ObjectSerializer::toQueryValue($partner_id);
+            if('form' === 'form' && is_array($partner_id)) {
+                foreach($partner_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['partner_id'] = $partner_id;
+            }
         }
         // query params
         if ($partner_code !== null) {
-            $queryParams['partner_code'] = ObjectSerializer::toQueryValue($partner_code);
+            if('form' === 'form' && is_array($partner_code)) {
+                foreach($partner_code as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['partner_code'] = $partner_code;
+            }
         }
         // query params
         if ($item_id !== null) {
-            $queryParams['item_id'] = ObjectSerializer::toQueryValue($item_id);
+            if('form' === 'form' && is_array($item_id)) {
+                foreach($item_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['item_id'] = $item_id;
+            }
         }
         // query params
         if ($section_id !== null) {
-            $queryParams['section_id'] = ObjectSerializer::toQueryValue($section_id);
+            if('form' === 'form' && is_array($section_id)) {
+                foreach($section_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['section_id'] = $section_id;
+            }
         }
         // query params
         if ($adjustment !== null) {
-            $queryParams['adjustment'] = ObjectSerializer::toQueryValue($adjustment);
+            if('form' === 'form' && is_array($adjustment)) {
+                foreach($adjustment as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['adjustment'] = $adjustment;
+            }
         }
         // query params
         if ($cost_allocation !== null) {
-            $queryParams['cost_allocation'] = ObjectSerializer::toQueryValue($cost_allocation);
+            if('form' === 'form' && is_array($cost_allocation)) {
+                foreach($cost_allocation as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['cost_allocation'] = $cost_allocation;
+            }
         }
+
 
 
         // body params
@@ -2950,8 +3784,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -2965,7 +3799,7 @@ class TrialBalanceApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\TrialPlTwoYearsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\InternalServerError
+     * @return \Freee\Accounting\Model\TrialPlTwoYearsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\TooManyRequestsError|\Freee\Accounting\Model\InternalServerError
      */
     public function getTrialPlTwoYears($company_id, $fiscal_year = null, $start_month = null, $end_month = null, $start_date = null, $end_date = null, $account_item_display_type = null, $breakdown_display_type = null, $partner_id = null, $partner_code = null, $item_id = null, $section_id = null, $adjustment = null, $cost_allocation = null)
     {
@@ -2980,8 +3814,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -2995,7 +3829,7 @@ class TrialBalanceApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\TrialPlTwoYearsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Freee\Accounting\Model\TrialPlTwoYearsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\TooManyRequestsError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTrialPlTwoYearsWithHttpInfo($company_id, $fiscal_year = null, $start_month = null, $end_month = null, $start_date = null, $end_date = null, $account_item_display_type = null, $breakdown_display_type = null, $partner_id = null, $partner_code = null, $item_id = null, $section_id = null, $adjustment = null, $cost_allocation = null)
     {
@@ -3010,7 +3844,7 @@ class TrialBalanceApi
                     "[{$e->getCode()}] {$e->getMessage()}",
                     $e->getCode(),
                     $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
                 );
             }
 
@@ -3035,7 +3869,7 @@ class TrialBalanceApi
                     if ('\Freee\Accounting\Model\TrialPlTwoYearsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -3047,7 +3881,7 @@ class TrialBalanceApi
                     if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -3059,7 +3893,7 @@ class TrialBalanceApi
                     if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -3067,11 +3901,35 @@ class TrialBalanceApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 403:
+                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Freee\Accounting\Model\TooManyRequestsError' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\TooManyRequestsError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 case 500:
                     if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -3086,7 +3944,7 @@ class TrialBalanceApi
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
             } else {
-                $content = $responseBody->getContents();
+                $content = (string) $responseBody;
             }
 
             return [
@@ -3121,6 +3979,22 @@ class TrialBalanceApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Freee\Accounting\Model\ForbiddenError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Freee\Accounting\Model\TooManyRequestsError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -3141,8 +4015,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -3174,8 +4048,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -3203,7 +4077,7 @@ class TrialBalanceApi
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -3234,8 +4108,8 @@ class TrialBalanceApi
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $fiscal_year 会計年度 (optional)
-     * @param  int $start_month 発生月で絞込：開始会計月(mm) (optional)
-     * @param  int $end_month 発生月で絞込：終了会計月(mm) (optional)
+     * @param  int $start_month 発生月で絞込：開始会計月(1-12) (optional)
+     * @param  int $end_month 発生月で絞込：終了会計月(1-12) (optional)
      * @param  string $start_date 発生日で絞込：開始日(yyyy-mm-dd) (optional)
      * @param  string $end_date 発生日で絞込：終了日(yyyy-mm-dd) (optional)
      * @param  string $account_item_display_type 勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)
@@ -3258,8 +4132,8 @@ class TrialBalanceApi
                 'Missing the required parameter $company_id when calling getTrialPlTwoYears'
             );
         }
-        if ($company_id > 999999999999) {
-            throw new \InvalidArgumentException('invalid value for "$company_id" when calling TrialBalanceApi.getTrialPlTwoYears, must be smaller than or equal to 999999999999.');
+        if ($company_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$company_id" when calling TrialBalanceApi.getTrialPlTwoYears, must be smaller than or equal to 2147483647.');
         }
         if ($company_id < 1) {
             throw new \InvalidArgumentException('invalid value for "$company_id" when calling TrialBalanceApi.getTrialPlTwoYears, must be bigger than or equal to 1.');
@@ -3279,14 +4153,23 @@ class TrialBalanceApi
             throw new \InvalidArgumentException('invalid value for "$end_month" when calling TrialBalanceApi.getTrialPlTwoYears, must be bigger than or equal to 1.');
         }
 
+        if ($partner_id !== null && $partner_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$partner_id" when calling TrialBalanceApi.getTrialPlTwoYears, must be smaller than or equal to 2147483647.');
+        }
         if ($partner_id !== null && $partner_id < 0) {
             throw new \InvalidArgumentException('invalid value for "$partner_id" when calling TrialBalanceApi.getTrialPlTwoYears, must be bigger than or equal to 0.');
         }
 
+        if ($item_id !== null && $item_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$item_id" when calling TrialBalanceApi.getTrialPlTwoYears, must be smaller than or equal to 2147483647.');
+        }
         if ($item_id !== null && $item_id < 0) {
             throw new \InvalidArgumentException('invalid value for "$item_id" when calling TrialBalanceApi.getTrialPlTwoYears, must be bigger than or equal to 0.');
         }
 
+        if ($section_id !== null && $section_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$section_id" when calling TrialBalanceApi.getTrialPlTwoYears, must be smaller than or equal to 2147483647.');
+        }
         if ($section_id !== null && $section_id < 0) {
             throw new \InvalidArgumentException('invalid value for "$section_id" when calling TrialBalanceApi.getTrialPlTwoYears, must be bigger than or equal to 0.');
         }
@@ -3301,60 +4184,159 @@ class TrialBalanceApi
 
         // query params
         if ($company_id !== null) {
-            $queryParams['company_id'] = ObjectSerializer::toQueryValue($company_id);
+            if('form' === 'form' && is_array($company_id)) {
+                foreach($company_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['company_id'] = $company_id;
+            }
         }
         // query params
         if ($fiscal_year !== null) {
-            $queryParams['fiscal_year'] = ObjectSerializer::toQueryValue($fiscal_year);
+            if('form' === 'form' && is_array($fiscal_year)) {
+                foreach($fiscal_year as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['fiscal_year'] = $fiscal_year;
+            }
         }
         // query params
         if ($start_month !== null) {
-            $queryParams['start_month'] = ObjectSerializer::toQueryValue($start_month);
+            if('form' === 'form' && is_array($start_month)) {
+                foreach($start_month as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['start_month'] = $start_month;
+            }
         }
         // query params
         if ($end_month !== null) {
-            $queryParams['end_month'] = ObjectSerializer::toQueryValue($end_month);
+            if('form' === 'form' && is_array($end_month)) {
+                foreach($end_month as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['end_month'] = $end_month;
+            }
         }
         // query params
         if ($start_date !== null) {
-            $queryParams['start_date'] = ObjectSerializer::toQueryValue($start_date);
+            if('form' === 'form' && is_array($start_date)) {
+                foreach($start_date as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['start_date'] = $start_date;
+            }
         }
         // query params
         if ($end_date !== null) {
-            $queryParams['end_date'] = ObjectSerializer::toQueryValue($end_date);
+            if('form' === 'form' && is_array($end_date)) {
+                foreach($end_date as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['end_date'] = $end_date;
+            }
         }
         // query params
         if ($account_item_display_type !== null) {
-            $queryParams['account_item_display_type'] = ObjectSerializer::toQueryValue($account_item_display_type);
+            if('form' === 'form' && is_array($account_item_display_type)) {
+                foreach($account_item_display_type as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['account_item_display_type'] = $account_item_display_type;
+            }
         }
         // query params
         if ($breakdown_display_type !== null) {
-            $queryParams['breakdown_display_type'] = ObjectSerializer::toQueryValue($breakdown_display_type);
+            if('form' === 'form' && is_array($breakdown_display_type)) {
+                foreach($breakdown_display_type as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['breakdown_display_type'] = $breakdown_display_type;
+            }
         }
         // query params
         if ($partner_id !== null) {
-            $queryParams['partner_id'] = ObjectSerializer::toQueryValue($partner_id);
+            if('form' === 'form' && is_array($partner_id)) {
+                foreach($partner_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['partner_id'] = $partner_id;
+            }
         }
         // query params
         if ($partner_code !== null) {
-            $queryParams['partner_code'] = ObjectSerializer::toQueryValue($partner_code);
+            if('form' === 'form' && is_array($partner_code)) {
+                foreach($partner_code as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['partner_code'] = $partner_code;
+            }
         }
         // query params
         if ($item_id !== null) {
-            $queryParams['item_id'] = ObjectSerializer::toQueryValue($item_id);
+            if('form' === 'form' && is_array($item_id)) {
+                foreach($item_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['item_id'] = $item_id;
+            }
         }
         // query params
         if ($section_id !== null) {
-            $queryParams['section_id'] = ObjectSerializer::toQueryValue($section_id);
+            if('form' === 'form' && is_array($section_id)) {
+                foreach($section_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['section_id'] = $section_id;
+            }
         }
         // query params
         if ($adjustment !== null) {
-            $queryParams['adjustment'] = ObjectSerializer::toQueryValue($adjustment);
+            if('form' === 'form' && is_array($adjustment)) {
+                foreach($adjustment as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['adjustment'] = $adjustment;
+            }
         }
         // query params
         if ($cost_allocation !== null) {
-            $queryParams['cost_allocation'] = ObjectSerializer::toQueryValue($cost_allocation);
+            if('form' === 'form' && is_array($cost_allocation)) {
+                foreach($cost_allocation as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['cost_allocation'] = $cost_allocation;
+            }
         }
+
 
 
         // body params

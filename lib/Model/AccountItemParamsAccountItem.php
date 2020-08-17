@@ -13,12 +13,12 @@
 /**
  * freee API
  *
- * <h1 id=\"freee_api\">freee API</h1> <hr /> <h2 id=\"\">スタートガイド</h2> <p>1. セットアップ</p> <ol> <ul><li><a href=\"https://support.freee.co.jp/hc/ja/articles/202847230\" class=\"external-link\" rel=\"nofollow\">freeeアカウント（無料）</a>を<a href=\"https://secure.freee.co.jp/users/sign_up\" class=\"external-link\" rel=\"nofollow\">作成</a>します（すでにお持ちの場合は次へ）</li><li><a href=\"https://app.secure.freee.co.jp/developers/demo_companies/description\" class=\"external-link\" rel=\"nofollow\">開発者向け事業所・環境を作成</a>します</li><li><span><a href=\"https://app.secure.freee.co.jp/developers/applications\" class=\"external-link\" rel=\"nofollow\">前のステップで作成した事業所を選択してfreeeアプリを追加</a>します</span></li><li>Client IDをCopyしておきます</li> </ul> </ol>  <p>2. 実際にAPIを叩いてみる（ブラウザからAPIのレスポンスを確認する）</p> <ol> <ul><li><span><span>以下のURLの●をclient_idに入れ替えて<a href=\"https://app.secure.freee.co.jp/developers/tutorials/3-%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B#%E8%AA%8D%E5%8F%AF%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B\" class=\"external-link\" rel=\"nofollow\">アクセストークンを取得</a>します</span></span><ul><li><span><span><pre><code>https://accounts.secure.freee.co.jp/public_api/authorize?client_id=●&amp;redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&amp;response_type=token</a></code></pre></span></span></li></ul></li><li><span><a href=\"https://developer.freee.co.jp/docs/accounting/reference#/%E9%80%A3%E7%B5%A1%E5%85%88\" class=\"external-link\" rel=\"nofollow\">APIリファレンス</a>で<code>Authorize</code>を押下します</span></li><li><span>アクセストークン<span><span>を入力して</span></span>&nbsp;もう一度<span><code>Authorize</code>を押下して<code>Close</code>を押下します</span></span></li><li>リファレンス内のCompanies（事業所）に移動し、<code>Try it out</code>を押下し、<code>Execute</code>を押下します</li><li>Response bodyを参照し、事業所ID(id属性)を活用して、Companies以外のエンドポイントでどのようなデータのやりとりできるのか確認します</li></ul> </ol> <p>3. 連携を実装する</p> <ol> <ul><li><a href=\"https://developer.freee.co.jp/tips\" class=\"external-link\" rel=\"nofollow\">API TIPS</a>を参考に、ユースケースごとの連携の概要を学びます。<span>例えば</span><span>&nbsp;</span><a href=\"https://developer.freee.co.jp/tips/how-to-cooperate-salesmanegement-system\" class=\"external-link\" rel=\"nofollow\">SFA、CRM、販売管理システムから会計freeeへの連携</a>や<a href=\"https://developer.freee.co.jp/tips/how-to-cooperate-excel-and-spreadsheet\" class=\"external-link\" rel=\"nofollow\">エクセルやgoogle spreadsheetからの連携</a>です</li><li>実利用向け事業所がすでにある場合は利用、ない場合は作成します（セットアップで作成したのは開発者向け環境のため活用不可）</li><li><a href=\"https://developer.freee.co.jp/docs/accounting/reference\" class=\"external-link\" rel=\"nofollow\">API documentation</a><span>&nbsp;を参照し、躓いた場合は</span><span>&nbsp;</span><a href=\"https://developer.freee.co.jp/community/forum/community\" class=\"external-link\" rel=\"nofollow\">Community</a><span>&nbsp;で質問してみましょう</span></li></ul> </ol> <p>アプリケーションの登録方法や認証方法、またはAPIの活用方法でご不明な点がある場合は<a href=\"https://support.freee.co.jp/hc/ja/sections/115000030743\">ヘルプセンター</a>もご確認ください</p> <hr /> <h2 id=\"_2\">仕様</h2>  <h3 id=\"api\">APIエンドポイント</h3>  <p>https://api.freee.co.jp/ (httpsのみ)</p>  <h3 id=\"_3\">認証方式</h3>  <p><a href=\"http://tools.ietf.org/html/rfc6749\">OAuth2</a>に対応</p>  <ul> <li>Authorization Code Flow (Webアプリ向け)</li>  <li>Implicit Flow (Mobileアプリ向け)</li> </ul>  <h3 id=\"_4\">認証エンドポイント</h3>  <p>https://accounts.secure.freee.co.jp/</p>  <ul> <li>authorize : https://accounts.secure.freee.co.jp/public_api/authorize</li>  <li>token : https://accounts.secure.freee.co.jp/public_api/token</li> </ul>  <h3 id=\"_5\">アクセストークンのリフレッシュ</h3>  <p>認証時に得たrefresh_token を使ってtoken の期限をリフレッシュして新規に発行することが出来ます。</p>  <p>grant_type=refresh_token で https://accounts.secure.freee.co.jp/public_api/token にアクセスすればリフレッシュされます。</p>  <p>e.g.)</p>  <p>POST: https://accounts.secure.freee.co.jp/public_api/token</p>  <p>params: grant_type=refresh_token&amp;client_id=UID&amp;client_secret=SECRET&amp;refresh_token=REFRESH_TOKEN</p>  <p>詳細は<a href=\"https://github.com/applicake/doorkeeper/wiki/Enable-Refresh-Token-Credentials#flow\">refresh_token</a>を参照下さい。</p>  <h3 id=\"_6\">アクセストークンの破棄</h3>  <p>認証時に得たaccess_tokenまたはrefresh_tokenを使って、tokenを破棄することができます。 token=access_tokenまたはtoken=refresh_tokenでhttps://accounts.secure.freee.co.jp/public_api/revokeにアクセスすると破棄されます。token_type_hintでaccess_tokenまたはrefresh_tokenを陽に指定できます。</p>  <p>e.g.)</p>  <p>POST: https://accounts.secure.freee.co.jp/public_api/revoke</p>  <p>params: token=ACCESS_TOKEN</p>  <p>または</p>  <p>params: token=REFRESH_TOKEN</p>  <p>または</p>  <p>params: token=ACCESS_TOKEN&amp;token_type_hint=access_token</p>  <p>または</p>  <p>params: token=REFRESH_TOKEN&amp;token_type_hint=refresh_token</p>  <p>詳細は <a href=\"https://tools.ietf.org/html/rfc7009\">OAuth 2.0 Token revocation</a> をご参照ください。</p>  <h3 id=\"_7\">データフォーマット</h3>  <p>リクエスト、レスポンスともにJSON形式をサポート</p>  <h3 id=\"_8\">共通レスポンスヘッダー</h3>  <p>すべてのAPIのレスポンスには以下のHTTPヘッダーが含まれます。</p>  <ul> <li> <p>X-Freee-Request-ID</p> <ul> <li>各リクエスト毎に発行されるID</li> </ul> </li> </ul>  <h3 id=\"_9\">共通エラーレスポンス</h3>  <ul> <li> <p>ステータスコードはレスポンス内のJSONに含まれる他、HTTPヘッダにも含まれる</p> </li>  <li> <p>type</p>  <ul> <li>status : HTTPステータスコードの説明</li>  <li>validation : エラーの詳細の説明（開発者向け）</li> </ul> </li> </ul>  <p>レスポンスの例</p>  <pre><code>  {     &quot;status_code&quot; : 400,     &quot;errors&quot; : [       {         &quot;type&quot; : &quot;status&quot;,         &quot;messages&quot; : [&quot;不正なリクエストです。&quot;]       },       {         &quot;type&quot; : &quot;validation&quot;,         &quot;messages&quot; : [&quot;Date は不正な日付フォーマットです。入力例：2013-01-01&quot;]       }     ]   }</code></pre> <hr /> <h2 id=\"_10\">連絡先</h2>  <p>ご不明点、ご要望等は <a href=\"https://support.freee.co.jp/hc/ja/requests/new\">freee サポートデスクへのお問い合わせフォーム</a> からご連絡ください。</p> <hr />&copy; Since 2013 freee K.K.
+ * <h1 id=\"freee_api\">freee API</h1> <hr /> <h2 id=\"start_guide\">スタートガイド</h2>  <p>freee API開発がはじめての方は<a href=\"https://developer.freee.co.jp/getting-started\">freee API スタートガイド</a>を参照してください。</p>  <hr /> <h2 id=\"specification\">仕様</h2>  <pre><code>【重要】会計freee APIの新バージョンについて 2020年12月まで、2つのバージョンが利用できる状態です。古いものは2020年12月に利用不可となります。<br> 新しいAPIを利用するにはリクエストヘッダーに以下を指定します。 X-Api-Version: 2020-06-15<br> 指定がない場合は2020年12月に廃止予定のAPIを利用することとなります。<br> 【重要】APIのバージョン指定をせずに利用し続ける場合 2020年12月に新しいバージョンのAPIに自動的に切り替わります。 詳細は、<a href=\"https://developer.freee.co.jp/release-note/2948\" target=\"_blank\">リリースノート</a>をご覧ください。<br> 旧バージョンのAPIリファレンスを確認したい場合は、<a href=\"https://freee.github.io/freee-api-schema/\" target=\"_blank\">旧バージョンのAPIリファレンスページ</a>をご覧ください。 </code></pre>  <h3 id=\"api_endpoint\">APIエンドポイント</h3>  <p>https://api.freee.co.jp/ (httpsのみ)</p>  <h3 id=\"about_authorize\">認証について</h3> <p>OAuth2.0を利用します。詳細は<a href=\"https://developer.freee.co.jp/docs\" target=\"_blank\">ドキュメントの認証</a>パートを参照してください。</p>  <h3 id=\"data_format\">データフォーマット</h3>  <p>リクエスト、レスポンスともにJSON形式をサポートしていますが、詳細は、API毎の説明欄（application/jsonなど）を確認してください。</p>  <h3 id=\"compatibility\">後方互換性ありの変更</h3>  <p>freeeでは、APIを改善していくために以下のような変更は後方互換性ありとして通知なく変更を入れることがあります。アプリケーション実装者は以下を踏まえて開発を行ってください。</p>  <ul> <li>新しいAPIリソース・エンドポイントの追加</li> <li>既存のAPIに対して必須ではない新しいリクエストパラメータの追加</li> <li>既存のAPIレスポンスに対する新しいプロパティの追加</li> <li>既存のAPIレスポンスに対するプロパティの順番の入れ変え</li> <li>keyとなっているidやcodeの長さの変更（長くする）</li> </ul>  <h3 id=\"common_response_header\">共通レスポンスヘッダー</h3>  <p>すべてのAPIのレスポンスには以下のHTTPヘッダーが含まれます。</p>  <ul> <li> <p>X-Freee-Request-ID</p> <ul> <li>各リクエスト毎に発行されるID</li> </ul> </li> </ul>  <h3 id=\"common_error_response\">共通エラーレスポンス</h3>  <ul> <li> <p>ステータスコードはレスポンス内のJSONに含まれる他、HTTPヘッダにも含まれる</p> </li> <li> <p>一部のエラーレスポンスにはエラーコードが含まれます。<br>詳細は、<a href=\"https://developer.freee.co.jp/tips/faq/40x-checkpoint\">HTTPステータスコード400台エラー時のチェックポイント</a>を参照してください</p> </li> <p>type</p>  <ul> <li>status : HTTPステータスコードの説明</li>  <li>validation : エラーの詳細の説明（開発者向け）</li> </ul> </li> </ul>  <p>レスポンスの例</p>  <pre><code>  {     &quot;status_code&quot; : 400,     &quot;errors&quot; : [       {         &quot;type&quot; : &quot;status&quot;,         &quot;messages&quot; : [&quot;不正なリクエストです。&quot;]       },       {         &quot;type&quot; : &quot;validation&quot;,         &quot;messages&quot; : [&quot;Date は不正な日付フォーマットです。入力例：2013-01-01&quot;]       }     ]   }</code></pre>  </br>  <h3 id=\"api_rate_limit\">API使用制限</h3>    <p>freeeは一定期間に過度のアクセスを検知した場合、APIアクセスをコントロールする場合があります。</p>   <p>その際のhttp status codeは403となります。制限がかかってから10分程度が過ぎると再度使用することができるようになります。</p>  <h4 id=\"reports_api_endpoint\">/reportsエンドポイント</h4>  <p>freeeは/reportsエンドポイントに対して1秒間に10以上のアクセスを検知した場合、APIアクセスをコントロールする場合があります。その際のhttp status codeは429（too many requests）となります。</p>  <p>レスポンスボディのmetaプロパティに以下を含めます。</p>  <ul>   <li>設定されている上限値</li>   <li>上限に達するまでの使用可能回数</li>   <li>（上限値に達した場合）使用回数がリセットされる時刻</li> </ul>  <h3 id=\"plan_api_rate_limit\">プラン別のAPI Rate Limit</h3>   <table border=\"1\">     <tbody>       <tr>         <th style=\"padding: 10px\"><strong>会計freeeプラン名</strong></th>         <th style=\"padding: 10px\"><strong>事業所とアプリケーション毎に1日でのAPIコール数</strong></th>       </tr>       <tr>         <td style=\"padding: 10px\">エンタープライズ</td>         <td style=\"padding: 10px\">10,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">プロフェッショナル</td>         <td style=\"padding: 10px\">5,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">ベーシック</td>         <td style=\"padding: 10px\">3,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">ミニマム</td>         <td style=\"padding: 10px\">3,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">上記以外</td>         <td style=\"padding: 10px\">3,000</td>       </tr>     </tbody>   </table>  <h3 id=\"webhook\">Webhookについて</h3>  <p>詳細は<a href=\"https://developer.freee.co.jp/docs/accounting/webhook\" target=\"_blank\">会計Webhook概要</a>を参照してください。</p>  <hr /> <h2 id=\"contact\">連絡先</h2>  <p>ご不明点、ご要望等は <a href=\"https://support.freee.co.jp/hc/ja/requests/new\">freee サポートデスクへのお問い合わせフォーム</a> からご連絡ください。</p> <hr />&copy; Since 2013 freee K.K.
  *
  * The version of the OpenAPI document: v1.0
  * 
  * Generated by: https://openapi-generator.tech
- * OpenAPI Generator version: 4.2.2
+ * OpenAPI Generator version: 4.3.1
  */
 
 /**
@@ -57,18 +57,18 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
+        'account_category_id' => 'int',
+        'accumulated_dep_account_item_id' => 'int',
+        'corresponding_expense_id' => 'int',
+        'corresponding_income_id' => 'int',
+        'group_name' => 'string',
+        'items' => '\Freee\Accounting\Model\AccountItemParamsAccountItemItems[]',
         'name' => 'string',
+        'partners' => '\Freee\Accounting\Model\AccountItemParamsAccountItemItems[]',
+        'searchable' => 'int',
         'shortcut' => 'string',
         'shortcut_num' => 'string',
-        'tax_name' => 'string',
-        'group_name' => 'string',
-        'account_category' => 'string',
-        'corresponding_income_name' => 'string',
-        'corresponding_expense_name' => 'string',
-        'accumulated_dep_account_item_name' => 'string',
-        'searchable' => 'int',
-        'items' => '\Freee\Accounting\Model\AccountItemParamsAccountItemItems[]',
-        'partners' => '\Freee\Accounting\Model\AccountItemParamsAccountItemItems[]'
+        'tax_code' => 'int'
     ];
 
     /**
@@ -77,18 +77,18 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
+        'account_category_id' => null,
+        'accumulated_dep_account_item_id' => null,
+        'corresponding_expense_id' => null,
+        'corresponding_income_id' => null,
+        'group_name' => null,
+        'items' => null,
         'name' => null,
+        'partners' => null,
+        'searchable' => null,
         'shortcut' => null,
         'shortcut_num' => null,
-        'tax_name' => null,
-        'group_name' => null,
-        'account_category' => null,
-        'corresponding_income_name' => null,
-        'corresponding_expense_name' => null,
-        'accumulated_dep_account_item_name' => null,
-        'searchable' => null,
-        'items' => null,
-        'partners' => null
+        'tax_code' => null
     ];
 
     /**
@@ -118,18 +118,18 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'account_category_id' => 'account_category_id',
+        'accumulated_dep_account_item_id' => 'accumulated_dep_account_item_id',
+        'corresponding_expense_id' => 'corresponding_expense_id',
+        'corresponding_income_id' => 'corresponding_income_id',
+        'group_name' => 'group_name',
+        'items' => 'items',
         'name' => 'name',
+        'partners' => 'partners',
+        'searchable' => 'searchable',
         'shortcut' => 'shortcut',
         'shortcut_num' => 'shortcut_num',
-        'tax_name' => 'tax_name',
-        'group_name' => 'group_name',
-        'account_category' => 'account_category',
-        'corresponding_income_name' => 'corresponding_income_name',
-        'corresponding_expense_name' => 'corresponding_expense_name',
-        'accumulated_dep_account_item_name' => 'accumulated_dep_account_item_name',
-        'searchable' => 'searchable',
-        'items' => 'items',
-        'partners' => 'partners'
+        'tax_code' => 'tax_code'
     ];
 
     /**
@@ -138,18 +138,18 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'account_category_id' => 'setAccountCategoryId',
+        'accumulated_dep_account_item_id' => 'setAccumulatedDepAccountItemId',
+        'corresponding_expense_id' => 'setCorrespondingExpenseId',
+        'corresponding_income_id' => 'setCorrespondingIncomeId',
+        'group_name' => 'setGroupName',
+        'items' => 'setItems',
         'name' => 'setName',
+        'partners' => 'setPartners',
+        'searchable' => 'setSearchable',
         'shortcut' => 'setShortcut',
         'shortcut_num' => 'setShortcutNum',
-        'tax_name' => 'setTaxName',
-        'group_name' => 'setGroupName',
-        'account_category' => 'setAccountCategory',
-        'corresponding_income_name' => 'setCorrespondingIncomeName',
-        'corresponding_expense_name' => 'setCorrespondingExpenseName',
-        'accumulated_dep_account_item_name' => 'setAccumulatedDepAccountItemName',
-        'searchable' => 'setSearchable',
-        'items' => 'setItems',
-        'partners' => 'setPartners'
+        'tax_code' => 'setTaxCode'
     ];
 
     /**
@@ -158,18 +158,18 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'account_category_id' => 'getAccountCategoryId',
+        'accumulated_dep_account_item_id' => 'getAccumulatedDepAccountItemId',
+        'corresponding_expense_id' => 'getCorrespondingExpenseId',
+        'corresponding_income_id' => 'getCorrespondingIncomeId',
+        'group_name' => 'getGroupName',
+        'items' => 'getItems',
         'name' => 'getName',
+        'partners' => 'getPartners',
+        'searchable' => 'getSearchable',
         'shortcut' => 'getShortcut',
         'shortcut_num' => 'getShortcutNum',
-        'tax_name' => 'getTaxName',
-        'group_name' => 'getGroupName',
-        'account_category' => 'getAccountCategory',
-        'corresponding_income_name' => 'getCorrespondingIncomeName',
-        'corresponding_expense_name' => 'getCorrespondingExpenseName',
-        'accumulated_dep_account_item_name' => 'getAccumulatedDepAccountItemName',
-        'searchable' => 'getSearchable',
-        'items' => 'getItems',
-        'partners' => 'getPartners'
+        'tax_code' => 'getTaxCode'
     ];
 
     /**
@@ -232,18 +232,18 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['account_category_id'] = isset($data['account_category_id']) ? $data['account_category_id'] : null;
+        $this->container['accumulated_dep_account_item_id'] = isset($data['accumulated_dep_account_item_id']) ? $data['accumulated_dep_account_item_id'] : null;
+        $this->container['corresponding_expense_id'] = isset($data['corresponding_expense_id']) ? $data['corresponding_expense_id'] : null;
+        $this->container['corresponding_income_id'] = isset($data['corresponding_income_id']) ? $data['corresponding_income_id'] : null;
+        $this->container['group_name'] = isset($data['group_name']) ? $data['group_name'] : null;
+        $this->container['items'] = isset($data['items']) ? $data['items'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['partners'] = isset($data['partners']) ? $data['partners'] : null;
+        $this->container['searchable'] = isset($data['searchable']) ? $data['searchable'] : null;
         $this->container['shortcut'] = isset($data['shortcut']) ? $data['shortcut'] : null;
         $this->container['shortcut_num'] = isset($data['shortcut_num']) ? $data['shortcut_num'] : null;
-        $this->container['tax_name'] = isset($data['tax_name']) ? $data['tax_name'] : null;
-        $this->container['group_name'] = isset($data['group_name']) ? $data['group_name'] : null;
-        $this->container['account_category'] = isset($data['account_category']) ? $data['account_category'] : null;
-        $this->container['corresponding_income_name'] = isset($data['corresponding_income_name']) ? $data['corresponding_income_name'] : null;
-        $this->container['corresponding_expense_name'] = isset($data['corresponding_expense_name']) ? $data['corresponding_expense_name'] : null;
-        $this->container['accumulated_dep_account_item_name'] = isset($data['accumulated_dep_account_item_name']) ? $data['accumulated_dep_account_item_name'] : null;
-        $this->container['searchable'] = isset($data['searchable']) ? $data['searchable'] : null;
-        $this->container['items'] = isset($data['items']) ? $data['items'] : null;
-        $this->container['partners'] = isset($data['partners']) ? $data['partners'] : null;
+        $this->container['tax_code'] = isset($data['tax_code']) ? $data['tax_code'] : null;
     }
 
     /**
@@ -255,24 +255,60 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
+        if ($this->container['account_category_id'] === null) {
+            $invalidProperties[] = "'account_category_id' can't be null";
         }
-        if ($this->container['tax_name'] === null) {
-            $invalidProperties[] = "'tax_name' can't be null";
+        if (($this->container['account_category_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'account_category_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['account_category_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'account_category_id', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['corresponding_expense_id'] === null) {
+            $invalidProperties[] = "'corresponding_expense_id' can't be null";
+        }
+        if ($this->container['corresponding_income_id'] === null) {
+            $invalidProperties[] = "'corresponding_income_id' can't be null";
         }
         if ($this->container['group_name'] === null) {
             $invalidProperties[] = "'group_name' can't be null";
         }
-        if ($this->container['account_category'] === null) {
-            $invalidProperties[] = "'account_category' can't be null";
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
         }
-        if ($this->container['corresponding_income_name'] === null) {
-            $invalidProperties[] = "'corresponding_income_name' can't be null";
+        if ((mb_strlen($this->container['name']) > 30)) {
+            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 30.";
         }
-        if ($this->container['corresponding_expense_name'] === null) {
-            $invalidProperties[] = "'corresponding_expense_name' can't be null";
+
+        if (!is_null($this->container['searchable']) && ($this->container['searchable'] > 3)) {
+            $invalidProperties[] = "invalid value for 'searchable', must be smaller than or equal to 3.";
         }
+
+        if (!is_null($this->container['searchable']) && ($this->container['searchable'] < 2)) {
+            $invalidProperties[] = "invalid value for 'searchable', must be bigger than or equal to 2.";
+        }
+
+        if (!is_null($this->container['shortcut']) && (mb_strlen($this->container['shortcut']) > 20)) {
+            $invalidProperties[] = "invalid value for 'shortcut', the character length must be smaller than or equal to 20.";
+        }
+
+        if (!is_null($this->container['shortcut_num']) && (mb_strlen($this->container['shortcut_num']) > 20)) {
+            $invalidProperties[] = "invalid value for 'shortcut_num', the character length must be smaller than or equal to 20.";
+        }
+
+        if ($this->container['tax_code'] === null) {
+            $invalidProperties[] = "'tax_code' can't be null";
+        }
+        if (($this->container['tax_code'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'tax_code', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['tax_code'] < 0)) {
+            $invalidProperties[] = "invalid value for 'tax_code', must be bigger than or equal to 0.";
+        }
+
         return $invalidProperties;
     }
 
@@ -289,97 +325,105 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets name
+     * Gets account_category_id
      *
-     * @return string
+     * @return int
      */
-    public function getName()
+    public function getAccountCategoryId()
     {
-        return $this->container['name'];
+        return $this->container['account_category_id'];
     }
 
     /**
-     * Sets name
+     * Sets account_category_id
      *
-     * @param string $name 勘定科目名 (30文字以内)
+     * @param int $account_category_id 勘定科目カテゴリーID Selectablesフォーム用選択項目情報エンドポイント(account_groups.account_category_id)で取得可能です
      *
      * @return $this
      */
-    public function setName($name)
+    public function setAccountCategoryId($account_category_id)
     {
-        $this->container['name'] = $name;
+
+        if (($account_category_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $account_category_id when calling AccountItemParamsAccountItem., must be smaller than or equal to 2147483647.');
+        }
+        if (($account_category_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $account_category_id when calling AccountItemParamsAccountItem., must be bigger than or equal to 1.');
+        }
+
+        $this->container['account_category_id'] = $account_category_id;
 
         return $this;
     }
 
     /**
-     * Gets shortcut
+     * Gets accumulated_dep_account_item_id
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getShortcut()
+    public function getAccumulatedDepAccountItemId()
     {
-        return $this->container['shortcut'];
+        return $this->container['accumulated_dep_account_item_id'];
     }
 
     /**
-     * Sets shortcut
+     * Sets accumulated_dep_account_item_id
      *
-     * @param string|null $shortcut ショートカット1 (20文字以内)
+     * @param int|null $accumulated_dep_account_item_id 減価償却累計額勘定科目ID（法人のみ利用可能）
      *
      * @return $this
      */
-    public function setShortcut($shortcut)
+    public function setAccumulatedDepAccountItemId($accumulated_dep_account_item_id)
     {
-        $this->container['shortcut'] = $shortcut;
+        $this->container['accumulated_dep_account_item_id'] = $accumulated_dep_account_item_id;
 
         return $this;
     }
 
     /**
-     * Gets shortcut_num
+     * Gets corresponding_expense_id
      *
-     * @return string|null
+     * @return int
      */
-    public function getShortcutNum()
+    public function getCorrespondingExpenseId()
     {
-        return $this->container['shortcut_num'];
+        return $this->container['corresponding_expense_id'];
     }
 
     /**
-     * Sets shortcut_num
+     * Sets corresponding_expense_id
      *
-     * @param string|null $shortcut_num ショートカット2(勘定科目コード)(20文字以内)
+     * @param int $corresponding_expense_id 支出取引相手勘定科目ID
      *
      * @return $this
      */
-    public function setShortcutNum($shortcut_num)
+    public function setCorrespondingExpenseId($corresponding_expense_id)
     {
-        $this->container['shortcut_num'] = $shortcut_num;
+        $this->container['corresponding_expense_id'] = $corresponding_expense_id;
 
         return $this;
     }
 
     /**
-     * Gets tax_name
+     * Gets corresponding_income_id
      *
-     * @return string
+     * @return int
      */
-    public function getTaxName()
+    public function getCorrespondingIncomeId()
     {
-        return $this->container['tax_name'];
+        return $this->container['corresponding_income_id'];
     }
 
     /**
-     * Sets tax_name
+     * Sets corresponding_income_id
      *
-     * @param string $tax_name 税区分
+     * @param int $corresponding_income_id 収入取引相手勘定科目ID
      *
      * @return $this
      */
-    public function setTaxName($tax_name)
+    public function setCorrespondingIncomeId($corresponding_income_id)
     {
-        $this->container['tax_name'] = $tax_name;
+        $this->container['corresponding_income_id'] = $corresponding_income_id;
 
         return $this;
     }
@@ -397,133 +441,13 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess
     /**
      * Sets group_name
      *
-     * @param string $group_name 決算書表示名
+     * @param string $group_name 決算書表示名（小カテゴリー） Selectablesフォーム用選択項目情報エンドポイント(account_groups.name)で取得可能です
      *
      * @return $this
      */
     public function setGroupName($group_name)
     {
         $this->container['group_name'] = $group_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets account_category
-     *
-     * @return string
-     */
-    public function getAccountCategory()
-    {
-        return $this->container['account_category'];
-    }
-
-    /**
-     * Sets account_category
-     *
-     * @param string $account_category 勘定科目カテゴリー
-     *
-     * @return $this
-     */
-    public function setAccountCategory($account_category)
-    {
-        $this->container['account_category'] = $account_category;
-
-        return $this;
-    }
-
-    /**
-     * Gets corresponding_income_name
-     *
-     * @return string
-     */
-    public function getCorrespondingIncomeName()
-    {
-        return $this->container['corresponding_income_name'];
-    }
-
-    /**
-     * Sets corresponding_income_name
-     *
-     * @param string $corresponding_income_name 収入取引相手勘定科目
-     *
-     * @return $this
-     */
-    public function setCorrespondingIncomeName($corresponding_income_name)
-    {
-        $this->container['corresponding_income_name'] = $corresponding_income_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets corresponding_expense_name
-     *
-     * @return string
-     */
-    public function getCorrespondingExpenseName()
-    {
-        return $this->container['corresponding_expense_name'];
-    }
-
-    /**
-     * Sets corresponding_expense_name
-     *
-     * @param string $corresponding_expense_name 支出取引相手勘定科目
-     *
-     * @return $this
-     */
-    public function setCorrespondingExpenseName($corresponding_expense_name)
-    {
-        $this->container['corresponding_expense_name'] = $corresponding_expense_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets accumulated_dep_account_item_name
-     *
-     * @return string|null
-     */
-    public function getAccumulatedDepAccountItemName()
-    {
-        return $this->container['accumulated_dep_account_item_name'];
-    }
-
-    /**
-     * Sets accumulated_dep_account_item_name
-     *
-     * @param string|null $accumulated_dep_account_item_name 減価償却累計額勘定科目
-     *
-     * @return $this
-     */
-    public function setAccumulatedDepAccountItemName($accumulated_dep_account_item_name)
-    {
-        $this->container['accumulated_dep_account_item_name'] = $accumulated_dep_account_item_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets searchable
-     *
-     * @return int|null
-     */
-    public function getSearchable()
-    {
-        return $this->container['searchable'];
-    }
-
-    /**
-     * Sets searchable
-     *
-     * @param int|null $searchable 検索可能:2, 検索不可：3
-     *
-     * @return $this
-     */
-    public function setSearchable($searchable)
-    {
-        $this->container['searchable'] = $searchable;
 
         return $this;
     }
@@ -553,6 +477,34 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name 勘定科目名 (30文字以内)
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        if ((mb_strlen($name) > 30)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling AccountItemParamsAccountItem., must be smaller than or equal to 30.');
+        }
+
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
      * Gets partners
      *
      * @return \Freee\Accounting\Model\AccountItemParamsAccountItemItems[]|null
@@ -572,6 +524,126 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess
     public function setPartners($partners)
     {
         $this->container['partners'] = $partners;
+
+        return $this;
+    }
+
+    /**
+     * Gets searchable
+     *
+     * @return int|null
+     */
+    public function getSearchable()
+    {
+        return $this->container['searchable'];
+    }
+
+    /**
+     * Sets searchable
+     *
+     * @param int|null $searchable 検索可能:2, 検索不可：3(登録時未指定の場合は2で登録されます。更新時未指定の場合はsearchableは変更されません。)
+     *
+     * @return $this
+     */
+    public function setSearchable($searchable)
+    {
+
+        if (!is_null($searchable) && ($searchable > 3)) {
+            throw new \InvalidArgumentException('invalid value for $searchable when calling AccountItemParamsAccountItem., must be smaller than or equal to 3.');
+        }
+        if (!is_null($searchable) && ($searchable < 2)) {
+            throw new \InvalidArgumentException('invalid value for $searchable when calling AccountItemParamsAccountItem., must be bigger than or equal to 2.');
+        }
+
+        $this->container['searchable'] = $searchable;
+
+        return $this;
+    }
+
+    /**
+     * Gets shortcut
+     *
+     * @return string|null
+     */
+    public function getShortcut()
+    {
+        return $this->container['shortcut'];
+    }
+
+    /**
+     * Sets shortcut
+     *
+     * @param string|null $shortcut ショートカット1 (20文字以内)
+     *
+     * @return $this
+     */
+    public function setShortcut($shortcut)
+    {
+        if (!is_null($shortcut) && (mb_strlen($shortcut) > 20)) {
+            throw new \InvalidArgumentException('invalid length for $shortcut when calling AccountItemParamsAccountItem., must be smaller than or equal to 20.');
+        }
+
+        $this->container['shortcut'] = $shortcut;
+
+        return $this;
+    }
+
+    /**
+     * Gets shortcut_num
+     *
+     * @return string|null
+     */
+    public function getShortcutNum()
+    {
+        return $this->container['shortcut_num'];
+    }
+
+    /**
+     * Sets shortcut_num
+     *
+     * @param string|null $shortcut_num ショートカット2(勘定科目コード)(20文字以内)
+     *
+     * @return $this
+     */
+    public function setShortcutNum($shortcut_num)
+    {
+        if (!is_null($shortcut_num) && (mb_strlen($shortcut_num) > 20)) {
+            throw new \InvalidArgumentException('invalid length for $shortcut_num when calling AccountItemParamsAccountItem., must be smaller than or equal to 20.');
+        }
+
+        $this->container['shortcut_num'] = $shortcut_num;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_code
+     *
+     * @return int
+     */
+    public function getTaxCode()
+    {
+        return $this->container['tax_code'];
+    }
+
+    /**
+     * Sets tax_code
+     *
+     * @param int $tax_code 税区分コード
+     *
+     * @return $this
+     */
+    public function setTaxCode($tax_code)
+    {
+
+        if (($tax_code > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling AccountItemParamsAccountItem., must be smaller than or equal to 2147483647.');
+        }
+        if (($tax_code < 0)) {
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling AccountItemParamsAccountItem., must be bigger than or equal to 0.');
+        }
+
+        $this->container['tax_code'] = $tax_code;
 
         return $this;
     }

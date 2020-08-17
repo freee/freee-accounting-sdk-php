@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## getTaxCode
 
-> \Freee\Accounting\Model\TaxesCodesShowResponse getTaxCode($code)
+> \Freee\Accounting\Model\TaxResponse getTaxCode($code)
 
 税区分コードの取得
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\TaxesCodesShowResponse**](../Model/TaxesCodesShowResponse.md)
+[**\Freee\Accounting\Model\TaxResponse**](../Model/TaxResponse.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ## getTaxCodes
 
-> \Freee\Accounting\Model\TaxesCodesIndexResponse getTaxCodes()
+> \Freee\Accounting\Model\InlineResponse20012 getTaxCodes()
 
 税区分コード一覧の取得
 
@@ -112,7 +112,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Freee\Accounting\Model\TaxesCodesIndexResponse**](../Model/TaxesCodesIndexResponse.md)
+[**\Freee\Accounting\Model\InlineResponse20012**](../Model/InlineResponse20012.md)
 
 ### Authorization
 
@@ -130,7 +130,7 @@ This endpoint does not need any parameter.
 
 ## getTaxesCompanies
 
-> \Freee\Accounting\Model\TaxesCompaniesResponse getTaxesCompanies($company_id)
+> \Freee\Accounting\Model\InlineResponse20013 getTaxesCompanies($company_id)
 
 税区分コード詳細一覧の取得
 
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\TaxesCompaniesResponse**](../Model/TaxesCompaniesResponse.md)
+[**\Freee\Accounting\Model\InlineResponse20013**](../Model/InlineResponse20013.md)
 
 ### Authorization
 

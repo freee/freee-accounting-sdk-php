@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## getBank
 
-> \Freee\Accounting\Model\BanksShowResponse getBank($id)
+> \Freee\Accounting\Model\BankResponse getBank($id)
 
 連携サービスの取得
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\BanksShowResponse**](../Model/BanksShowResponse.md)
+[**\Freee\Accounting\Model\BankResponse**](../Model/BankResponse.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 ## getBanks
 
-> \Freee\Accounting\Model\BanksIndexResponse getBanks($offset, $limit, $type)
+> \Freee\Accounting\Model\InlineResponse2001 getBanks($offset, $limit, $type)
 
 連携サービス一覧の取得
 
@@ -95,8 +95,8 @@ $apiInstance = new Freee\Accounting\Api\BanksApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 56; // int | 開始位置
-$limit = 56; // int | 取得上限数,最大500件
+$offset = 56; // int | 取得レコードのオフセット (デフォルト: 0)
+$limit = 56; // int | 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500)
 $type = 'type_example'; // string | サービス種別
 
 try {
@@ -113,13 +113,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **offset** | **int**| 開始位置 | [optional]
- **limit** | **int**| 取得上限数,最大500件 | [optional]
+ **offset** | **int**| 取得レコードのオフセット (デフォルト: 0) | [optional]
+ **limit** | **int**| 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500) | [optional]
  **type** | **string**| サービス種別 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\BanksIndexResponse**](../Model/BanksIndexResponse.md)
+[**\Freee\Accounting\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
 
 ### Authorization
 

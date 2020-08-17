@@ -14,11 +14,11 @@ Method | HTTP request | Description
 
 ## createInvoice
 
-> \Freee\Accounting\Model\InvoicesResponse createInvoice($parameters)
+> \Freee\Accounting\Model\InvoiceResponse createInvoice($invoice_create_params)
 
 請求書の作成
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所の請求書を作成する</p>  <h2 id=\"_1\">注意点</h2> <ul> <li> <p>取引先ID（partner_id）と取引先の名称項目（partner_name, partner_long_name, partner_zipcode, partner_prefecture_code, partner_address1, partner_address2）を同時に指定することはできません。名称項目のみ指定した場合は新規取引先として登録されます。</p> </li> <li> <p>[重要] <a rel=\"noopener noreferrer\" href=\"https://developer.freee.co.jp/news/1783\" target=\"_blank\">parnter_idは必須化予定</a>です。parnter_idを必ず指定してご利用ください。</p> </li> <li> <p>請求書ステータス(invoice_status)を発行(issue)で利用した場合、請求内容の合計金額が0円以上になる必要があります。</p> </li> <li><p>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。また「partner_code、partner_id、partner_name」は同時に指定することはできません。</p></li></ul>
+<h2 id=\"\">概要</h2>  <p>指定した事業所の請求書を作成する</p>  <h2 id=\"_1\">注意点</h2> <ul> <li> <p>partner_code, partner_idはどちらかの指定が必須です。ただし両方同時に指定することはできません。</p> </li> <li> <p>請求書ステータス(invoice_status)を発行(issue)で利用した場合、請求内容の合計金額が0円以上になる必要があります。</p> </li> <li> <p>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。</p> </li> </ul>
 
 ### Example
 
@@ -37,10 +37,10 @@ $apiInstance = new Freee\Accounting\Api\InvoicesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$parameters = new \Freee\Accounting\Model\InvoicesCreateParams(); // \Freee\Accounting\Model\InvoicesCreateParams | 請求書の作成
+$invoice_create_params = new \Freee\Accounting\Model\InvoiceCreateParams(); // \Freee\Accounting\Model\InvoiceCreateParams | 請求書の作成
 
 try {
-    $result = $apiInstance->createInvoice($parameters);
+    $result = $apiInstance->createInvoice($invoice_create_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoicesApi->createInvoice: ', $e->getMessage(), PHP_EOL;
@@ -53,11 +53,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parameters** | [**\Freee\Accounting\Model\InvoicesCreateParams**](../Model/InvoicesCreateParams.md)| 請求書の作成 | [optional]
+ **invoice_create_params** | [**\Freee\Accounting\Model\InvoiceCreateParams**](../Model/InvoiceCreateParams.md)| 請求書の作成 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\InvoicesResponse**](../Model/InvoicesResponse.md)
+[**\Freee\Accounting\Model\InvoiceResponse**](../Model/InvoiceResponse.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -137,7 +137,7 @@ void (empty response body)
 
 ## getInvoice
 
-> \Freee\Accounting\Model\InvoicesResponse getInvoice($company_id, $id)
+> \Freee\Accounting\Model\InvoiceResponse getInvoice($company_id, $id)
 
 請求書の取得
 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InvoicesResponse**](../Model/InvoicesResponse.md)
+[**\Freee\Accounting\Model\InvoiceResponse**](../Model/InvoiceResponse.md)
 
 ### Authorization
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ## getInvoices
 
-> \Freee\Accounting\Model\InvoicesIndexResponse getInvoices($company_id, $partner_id, $partner_code, $issue_date_start, $issue_date_end, $due_date_start, $due_date_end, $invoice_number, $description, $invoice_status, $payment_status, $offset, $limit)
+> \Freee\Accounting\Model\InlineResponse2004 getInvoices($company_id, $partner_id, $partner_code, $start_issue_date, $end_issue_date, $start_due_date, $end_due_date, $invoice_number, $description, $invoice_status, $payment_status, $offset, $limit)
 
 請求書一覧の取得
 
@@ -226,19 +226,19 @@ $apiInstance = new Freee\Accounting\Api\InvoicesApi(
 $company_id = 56; // int | 事業所ID
 $partner_id = 56; // int | 取引先IDで絞込
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込
-$issue_date_start = 'issue_date_start_example'; // string | 請求日の開始日(yyyy-mm-dd)
-$issue_date_end = 'issue_date_end_example'; // string | 請求日の終了日(yyyy-mm-dd)
-$due_date_start = 'due_date_start_example'; // string | 期日の開始日(yyyy-mm-dd)
-$due_date_end = 'due_date_end_example'; // string | 期日の終了日(yyyy-mm-dd)
+$start_issue_date = 'start_issue_date_example'; // string | 請求日の開始日(yyyy-mm-dd)
+$end_issue_date = 'end_issue_date_example'; // string | 請求日の終了日(yyyy-mm-dd)
+$start_due_date = 'start_due_date_example'; // string | 期日の開始日(yyyy-mm-dd)
+$end_due_date = 'end_due_date_example'; // string | 期日の終了日(yyyy-mm-dd)
 $invoice_number = 'invoice_number_example'; // string | 請求書番号
 $description = 'description_example'; // string | 概要
-$invoice_status = 'invoice_status_example'; // string | 請求書ステータス  (draft: 下書き, applying: 申請中, remanded: 差し戻し, rejected: 却下, approved: 承認済み, issued: 発行済み)
+$invoice_status = 'invoice_status_example'; // string | 請求書ステータス  (draft: 下書き, applying: 申請中, remanded: 差し戻し, rejected: 却下, approved: 承認済み, unsubmitted: 送付待ち, submitted: 送付済み)
 $payment_status = 'payment_status_example'; // string | 入金ステータス  (unsettled: 入金待ち, settled: 入金済み)
 $offset = 56; // int | 取得レコードのオフセット (デフォルト: 0)
 $limit = 56; // int | 取得レコードの件数 (デフォルト: 20, 最大: 100)
 
 try {
-    $result = $apiInstance->getInvoices($company_id, $partner_id, $partner_code, $issue_date_start, $issue_date_end, $due_date_start, $due_date_end, $invoice_number, $description, $invoice_status, $payment_status, $offset, $limit);
+    $result = $apiInstance->getInvoices($company_id, $partner_id, $partner_code, $start_issue_date, $end_issue_date, $start_due_date, $end_due_date, $invoice_number, $description, $invoice_status, $payment_status, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoicesApi->getInvoices: ', $e->getMessage(), PHP_EOL;
@@ -254,20 +254,20 @@ Name | Type | Description  | Notes
  **company_id** | **int**| 事業所ID |
  **partner_id** | **int**| 取引先IDで絞込 | [optional]
  **partner_code** | **string**| 取引先コードで絞込 | [optional]
- **issue_date_start** | **string**| 請求日の開始日(yyyy-mm-dd) | [optional]
- **issue_date_end** | **string**| 請求日の終了日(yyyy-mm-dd) | [optional]
- **due_date_start** | **string**| 期日の開始日(yyyy-mm-dd) | [optional]
- **due_date_end** | **string**| 期日の終了日(yyyy-mm-dd) | [optional]
+ **start_issue_date** | **string**| 請求日の開始日(yyyy-mm-dd) | [optional]
+ **end_issue_date** | **string**| 請求日の終了日(yyyy-mm-dd) | [optional]
+ **start_due_date** | **string**| 期日の開始日(yyyy-mm-dd) | [optional]
+ **end_due_date** | **string**| 期日の終了日(yyyy-mm-dd) | [optional]
  **invoice_number** | **string**| 請求書番号 | [optional]
  **description** | **string**| 概要 | [optional]
- **invoice_status** | **string**| 請求書ステータス  (draft: 下書き, applying: 申請中, remanded: 差し戻し, rejected: 却下, approved: 承認済み, issued: 発行済み) | [optional]
+ **invoice_status** | **string**| 請求書ステータス  (draft: 下書き, applying: 申請中, remanded: 差し戻し, rejected: 却下, approved: 承認済み, unsubmitted: 送付待ち, submitted: 送付済み) | [optional]
  **payment_status** | **string**| 入金ステータス  (unsettled: 入金待ち, settled: 入金済み) | [optional]
  **offset** | **int**| 取得レコードのオフセット (デフォルト: 0) | [optional]
  **limit** | **int**| 取得レコードの件数 (デフォルト: 20, 最大: 100) | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\InvoicesIndexResponse**](../Model/InvoicesIndexResponse.md)
+[**\Freee\Accounting\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
 
 ### Authorization
 
@@ -285,11 +285,11 @@ Name | Type | Description  | Notes
 
 ## updateInvoice
 
-> \Freee\Accounting\Model\InvoicesResponse updateInvoice($id, $parameters)
+> \Freee\Accounting\Model\InvoiceResponse updateInvoice($id, $invoice_update_params)
 
 請求書の更新
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所の請求書を更新する</p>  <h2 id=\"_1\">注意点</h2> <ul> <li> <p>取引先ID（partner_id）と取引先の名称項目（partner_name, partner_long_name, partner_zipcode, partner_prefecture_code, partner_address1, partner_address2）の更新はできません。名称項目を変更したい場合は取引先APIをご利用ください。</p> </li> <li> <p>[重要] <a rel=\"noopener noreferrer\" href=\"https://developer.freee.co.jp/news/1783\" target=\"_blank\">parnter_idは必須化予定</a>です。parnter_idを必ず指定してご利用ください。</p> </li> <li> <p>入金済みの請求書に対する金額関連の変更はできません。</p> </li> <li> <p>請求書ステータスは確定(issue)のみ指定可能です。請求書ステータスを確定する時のみ指定してください。</p> </li> <li> <p>請求書WFを利用している場合、承認済み請求書は承認権限を持たないユーザーでは更新できません。</p> </li> <li> <p>更新後の請求書ステータス(invoice_status)が下書き以外の場合、請求内容の合計金額が0円以上になる必要があります。</p></li> <li><p>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。また「partner_code、partner_id、partner_name」は同時に指定することはできません。</p></li></ul>
+<h2 id=\"\">概要</h2>  <p>指定した事業所の請求書を更新する</p>  <h2 id=\"_1\">注意点</h2> <ul> <li> <p>入金済みの請求書に対する金額関連の変更はできません。</p> </li> <li> <p>請求書ステータスは確定(issue)のみ指定可能です。請求書ステータスを確定する時のみ指定してください。</p> </li> <li> <p>請求書WFを利用している場合、承認済み請求書は承認権限を持たないユーザーでは更新できません。</p> </li> <li> <p>更新後の請求書ステータス(invoice_status)が下書き以外の場合、請求内容の合計金額が0円以上になる必要があります。</p> </li> <li> <p>partner_code, partner_idを両方同時に指定することはできません。</p> </li> <li> <p>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。</p> </li> </ul>
 
 ### Example
 
@@ -309,10 +309,10 @@ $apiInstance = new Freee\Accounting\Api\InvoicesApi(
     $config
 );
 $id = 56; // int | 請求書ID
-$parameters = new \Freee\Accounting\Model\InvoicesUpdateParams(); // \Freee\Accounting\Model\InvoicesUpdateParams | 請求書の更新
+$invoice_update_params = new \Freee\Accounting\Model\InvoiceUpdateParams(); // \Freee\Accounting\Model\InvoiceUpdateParams | 請求書の更新
 
 try {
-    $result = $apiInstance->updateInvoice($id, $parameters);
+    $result = $apiInstance->updateInvoice($id, $invoice_update_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoicesApi->updateInvoice: ', $e->getMessage(), PHP_EOL;
@@ -326,11 +326,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 請求書ID |
- **parameters** | [**\Freee\Accounting\Model\InvoicesUpdateParams**](../Model/InvoicesUpdateParams.md)| 請求書の更新 | [optional]
+ **invoice_update_params** | [**\Freee\Accounting\Model\InvoiceUpdateParams**](../Model/InvoiceUpdateParams.md)| 請求書の更新 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\InvoicesResponse**](../Model/InvoicesResponse.md)
+[**\Freee\Accounting\Model\InvoiceResponse**](../Model/InvoiceResponse.md)
 
 ### Authorization
 
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

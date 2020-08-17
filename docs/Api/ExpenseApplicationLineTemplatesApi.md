@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## createExpenseApplicationLineTemplate
 
-> \Freee\Accounting\Model\ExpenseApplicationLineTemplatesResponse createExpenseApplicationLineTemplate($parameters)
+> \Freee\Accounting\Model\ExpenseApplicationLineTemplateResponse createExpenseApplicationLineTemplate($expense_application_line_template_params)
 
 経費科目の作成
 
@@ -35,10 +35,10 @@ $apiInstance = new Freee\Accounting\Api\ExpenseApplicationLineTemplatesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$parameters = new \Freee\Accounting\Model\ExpenseApplicationLineTemplateParams(); // \Freee\Accounting\Model\ExpenseApplicationLineTemplateParams | 経費科目の作成
+$expense_application_line_template_params = new \Freee\Accounting\Model\ExpenseApplicationLineTemplateParams(); // \Freee\Accounting\Model\ExpenseApplicationLineTemplateParams | 経費科目の作成
 
 try {
-    $result = $apiInstance->createExpenseApplicationLineTemplate($parameters);
+    $result = $apiInstance->createExpenseApplicationLineTemplate($expense_application_line_template_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ExpenseApplicationLineTemplatesApi->createExpenseApplicationLineTemplate: ', $e->getMessage(), PHP_EOL;
@@ -51,11 +51,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parameters** | [**\Freee\Accounting\Model\ExpenseApplicationLineTemplateParams**](../Model/ExpenseApplicationLineTemplateParams.md)| 経費科目の作成 |
+ **expense_application_line_template_params** | [**\Freee\Accounting\Model\ExpenseApplicationLineTemplateParams**](../Model/ExpenseApplicationLineTemplateParams.md)| 経費科目の作成 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\ExpenseApplicationLineTemplatesResponse**](../Model/ExpenseApplicationLineTemplatesResponse.md)
+[**\Freee\Accounting\Model\ExpenseApplicationLineTemplateResponse**](../Model/ExpenseApplicationLineTemplateResponse.md)
 
 ### Authorization
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -133,7 +133,7 @@ void (empty response body)
 
 ## getExpenseApplicationLineTemplate
 
-> \Freee\Accounting\Model\ExpenseApplicationLineTemplatesResponse getExpenseApplicationLineTemplate($id, $company_id)
+> \Freee\Accounting\Model\ExpenseApplicationLineTemplateResponse getExpenseApplicationLineTemplate($id, $company_id)
 
 経費科目の取得
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\ExpenseApplicationLineTemplatesResponse**](../Model/ExpenseApplicationLineTemplatesResponse.md)
+[**\Freee\Accounting\Model\ExpenseApplicationLineTemplateResponse**](../Model/ExpenseApplicationLineTemplateResponse.md)
 
 ### Authorization
 
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ## getExpenseApplicationLineTemplates
 
-> \Freee\Accounting\Model\ExpenseApplicationLineTemplatesIndexResponse getExpenseApplicationLineTemplates($company_id, $offset, $limit)
+> \Freee\Accounting\Model\InlineResponse2003 getExpenseApplicationLineTemplates($company_id, $offset, $limit)
 
 経費科目一覧の取得
 
@@ -219,7 +219,7 @@ $apiInstance = new Freee\Accounting\Api\ExpenseApplicationLineTemplatesApi(
 );
 $company_id = 56; // int | 事業所ID
 $offset = 56; // int | 取得レコードのオフセット (デフォルト: 0)
-$limit = 56; // int | 取得レコードの件数 (デフォルト: 20, 最大: 100)
+$limit = 56; // int | 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)
 
 try {
     $result = $apiInstance->getExpenseApplicationLineTemplates($company_id, $offset, $limit);
@@ -237,11 +237,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| 事業所ID |
  **offset** | **int**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **int**| 取得レコードの件数 (デフォルト: 20, 最大: 100) | [optional]
+ **limit** | **int**| 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100) | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\ExpenseApplicationLineTemplatesIndexResponse**](../Model/ExpenseApplicationLineTemplatesIndexResponse.md)
+[**\Freee\Accounting\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
 
 ### Authorization
 
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 ## updateExpenseApplicationLineTemplate
 
-> \Freee\Accounting\Model\ExpenseApplicationLineTemplatesResponse updateExpenseApplicationLineTemplate($id, $parameters)
+> \Freee\Accounting\Model\ExpenseApplicationLineTemplateResponse updateExpenseApplicationLineTemplate($id, $expense_application_line_template_params)
 
 経費科目の更新
 
@@ -281,10 +281,10 @@ $apiInstance = new Freee\Accounting\Api\ExpenseApplicationLineTemplatesApi(
     $config
 );
 $id = 56; // int | 経費科目ID
-$parameters = new \Freee\Accounting\Model\ExpenseApplicationLineTemplateParams(); // \Freee\Accounting\Model\ExpenseApplicationLineTemplateParams | 経費科目の更新
+$expense_application_line_template_params = new \Freee\Accounting\Model\ExpenseApplicationLineTemplateParams(); // \Freee\Accounting\Model\ExpenseApplicationLineTemplateParams | 経費科目の更新
 
 try {
-    $result = $apiInstance->updateExpenseApplicationLineTemplate($id, $parameters);
+    $result = $apiInstance->updateExpenseApplicationLineTemplate($id, $expense_application_line_template_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ExpenseApplicationLineTemplatesApi->updateExpenseApplicationLineTemplate: ', $e->getMessage(), PHP_EOL;
@@ -298,11 +298,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 経費科目ID |
- **parameters** | [**\Freee\Accounting\Model\ExpenseApplicationLineTemplateParams**](../Model/ExpenseApplicationLineTemplateParams.md)| 経費科目の更新 |
+ **expense_application_line_template_params** | [**\Freee\Accounting\Model\ExpenseApplicationLineTemplateParams**](../Model/ExpenseApplicationLineTemplateParams.md)| 経費科目の更新 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\ExpenseApplicationLineTemplatesResponse**](../Model/ExpenseApplicationLineTemplatesResponse.md)
+[**\Freee\Accounting\Model\ExpenseApplicationLineTemplateResponse**](../Model/ExpenseApplicationLineTemplateResponse.md)
 
 ### Authorization
 
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

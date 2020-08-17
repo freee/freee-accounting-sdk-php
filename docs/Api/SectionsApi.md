@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## createSection
 
-> \Freee\Accounting\Model\SectionsCreateResponse createSection($parameters)
+> \Freee\Accounting\Model\SectionResponse createSection($section_params)
 
 部門の作成
 
@@ -37,10 +37,10 @@ $apiInstance = new Freee\Accounting\Api\SectionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$parameters = new \Freee\Accounting\Model\SectionParams(); // \Freee\Accounting\Model\SectionParams | 部門の作成
+$section_params = new \Freee\Accounting\Model\SectionParams(); // \Freee\Accounting\Model\SectionParams | 部門の作成
 
 try {
-    $result = $apiInstance->createSection($parameters);
+    $result = $apiInstance->createSection($section_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SectionsApi->createSection: ', $e->getMessage(), PHP_EOL;
@@ -53,11 +53,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parameters** | [**\Freee\Accounting\Model\SectionParams**](../Model/SectionParams.md)| 部門の作成 | [optional]
+ **section_params** | [**\Freee\Accounting\Model\SectionParams**](../Model/SectionParams.md)| 部門の作成 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\SectionsCreateResponse**](../Model/SectionsCreateResponse.md)
+[**\Freee\Accounting\Model\SectionResponse**](../Model/SectionResponse.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -137,7 +137,7 @@ void (empty response body)
 
 ## getSection
 
-> \Freee\Accounting\Model\SectionsShowResponse getSection($id, $company_id)
+> \Freee\Accounting\Model\SectionResponse getSection($id, $company_id)
 
 
 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\SectionsShowResponse**](../Model/SectionsShowResponse.md)
+[**\Freee\Accounting\Model\SectionResponse**](../Model/SectionResponse.md)
 
 ### Authorization
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ## getSections
 
-> \Freee\Accounting\Model\SectionsIndexResponse getSections($company_id)
+> \Freee\Accounting\Model\InlineResponse2009 getSections($company_id)
 
 部門一覧の取得
 
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\SectionsIndexResponse**](../Model/SectionsIndexResponse.md)
+[**\Freee\Accounting\Model\InlineResponse2009**](../Model/InlineResponse2009.md)
 
 ### Authorization
 
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 ## updateSection
 
-> \Freee\Accounting\Model\SectionsUpdateResponse updateSection($id, $parameters)
+> \Freee\Accounting\Model\SectionResponse updateSection($id, $section_params)
 
 部門の更新
 
@@ -285,10 +285,10 @@ $apiInstance = new Freee\Accounting\Api\SectionsApi(
     $config
 );
 $id = 56; // int | 
-$parameters = new \Freee\Accounting\Model\SectionParams(); // \Freee\Accounting\Model\SectionParams | 部門の更新
+$section_params = new \Freee\Accounting\Model\SectionParams(); // \Freee\Accounting\Model\SectionParams | 部門の更新
 
 try {
-    $result = $apiInstance->updateSection($id, $parameters);
+    $result = $apiInstance->updateSection($id, $section_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SectionsApi->updateSection: ', $e->getMessage(), PHP_EOL;
@@ -302,11 +302,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **parameters** | [**\Freee\Accounting\Model\SectionParams**](../Model/SectionParams.md)| 部門の更新 | [optional]
+ **section_params** | [**\Freee\Accounting\Model\SectionParams**](../Model/SectionParams.md)| 部門の更新 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\SectionsUpdateResponse**](../Model/SectionsUpdateResponse.md)
+[**\Freee\Accounting\Model\SectionResponse**](../Model/SectionResponse.md)
 
 ### Authorization
 
@@ -314,7 +314,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

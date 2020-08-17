@@ -5,15 +5,15 @@ All URIs are relative to *https://api.freee.co.jp*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getUsers**](UsersApi.md#getUsers) | **GET** /api/1/users | 事業所に所属するユーザー一覧の取得
-[**getUsersCapabilities**](UsersApi.md#getUsersCapabilities) | **GET** /api/1/users/capabilities | ログインユーザの権限の取得
-[**getUsersMe**](UsersApi.md#getUsersMe) | **GET** /api/1/users/me | ログインユーザ情報の取得
+[**getUsersCapabilities**](UsersApi.md#getUsersCapabilities) | **GET** /api/1/users/capabilities | ログインユーザーの権限の取得
+[**getUsersMe**](UsersApi.md#getUsersMe) | **GET** /api/1/users/me | ログインユーザー情報の取得
 [**updateUser**](UsersApi.md#updateUser) | **PUT** /api/1/users/me | ユーザー情報の更新
 
 
 
 ## getUsers
 
-> \Freee\Accounting\Model\UsersIndexResponse getUsers($company_id, $limit)
+> \Freee\Accounting\Model\InlineResponse20015 getUsers($company_id, $limit)
 
 事業所に所属するユーザー一覧の取得
 
@@ -37,7 +37,7 @@ $apiInstance = new Freee\Accounting\Api\UsersApi(
     $config
 );
 $company_id = 56; // int | 事業所ID
-$limit = 56; // int | 取得上限数,最大3000件
+$limit = 56; // int | 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000)
 
 try {
     $result = $apiInstance->getUsers($company_id, $limit);
@@ -54,11 +54,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| 事業所ID |
- **limit** | **int**| 取得上限数,最大3000件 | [optional]
+ **limit** | **int**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\UsersIndexResponse**](../Model/UsersIndexResponse.md)
+[**\Freee\Accounting\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
 
 ### Authorization
 
@@ -76,11 +76,11 @@ Name | Type | Description  | Notes
 
 ## getUsersCapabilities
 
-> \Freee\Accounting\Model\UsersCapabilitiesResponse getUsersCapabilities($company_id)
+> \Freee\Accounting\Model\InlineResponse20016 getUsersCapabilities($company_id)
 
-ログインユーザの権限の取得
+ログインユーザーの権限の取得
 
-<h2 id=\"\">概要</h2>  <p>ユーザの権限情報を取得する</p>
+<h2 id=\"\">概要</h2>  <p>ユーザーの権限情報を取得する</p>
 
 ### Example
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\UsersCapabilitiesResponse**](../Model/UsersCapabilitiesResponse.md)
+[**\Freee\Accounting\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
 
 ### Authorization
 
@@ -137,11 +137,11 @@ Name | Type | Description  | Notes
 
 ## getUsersMe
 
-> \Freee\Accounting\Model\UsersMeResponse getUsersMe($companies)
+> \Freee\Accounting\Model\MeResponse getUsersMe($companies)
 
-ログインユーザ情報の取得
+ログインユーザー情報の取得
 
-<h2 id=\"\">概要</h2>  <p>ユーザの情報を取得する</p>
+<h2 id=\"\">概要</h2>  <p>ユーザーの情報を取得する</p>
 
 ### Example
 
@@ -160,7 +160,7 @@ $apiInstance = new Freee\Accounting\Api\UsersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$companies = True; // bool | 取得情報にユーザが所属する事業所一覧を含める
+$companies = True; // bool | 取得情報にユーザーが所属する事業所一覧を含める
 
 try {
     $result = $apiInstance->getUsersMe($companies);
@@ -176,11 +176,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **companies** | **bool**| 取得情報にユーザが所属する事業所一覧を含める | [optional]
+ **companies** | **bool**| 取得情報にユーザーが所属する事業所一覧を含める | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\UsersMeResponse**](../Model/UsersMeResponse.md)
+[**\Freee\Accounting\Model\MeResponse**](../Model/MeResponse.md)
 
 ### Authorization
 
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 
 ## updateUser
 
-> \Freee\Accounting\Model\UsersUpdateResponse updateUser($parameters)
+> \Freee\Accounting\Model\UserResponse updateUser($user_params)
 
 ユーザー情報の更新
 
@@ -221,10 +221,10 @@ $apiInstance = new Freee\Accounting\Api\UsersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$parameters = new \Freee\Accounting\Model\UserUpdateParams(); // \Freee\Accounting\Model\UserUpdateParams | ユーザー情報の更新
+$user_params = new \Freee\Accounting\Model\UserParams(); // \Freee\Accounting\Model\UserParams | ユーザー情報の更新
 
 try {
-    $result = $apiInstance->updateUser($parameters);
+    $result = $apiInstance->updateUser($user_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->updateUser: ', $e->getMessage(), PHP_EOL;
@@ -237,11 +237,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parameters** | [**\Freee\Accounting\Model\UserUpdateParams**](../Model/UserUpdateParams.md)| ユーザー情報の更新 | [optional]
+ **user_params** | [**\Freee\Accounting\Model\UserParams**](../Model/UserParams.md)| ユーザー情報の更新 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\UsersUpdateResponse**](../Model/UsersUpdateResponse.md)
+[**\Freee\Accounting\Model\UserResponse**](../Model/UserResponse.md)
 
 ### Authorization
 
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

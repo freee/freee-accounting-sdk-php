@@ -1,11 +1,160 @@
 # OpenAPIClient-php
 
-<h1 id=\"freee_api\">freee API</h1> <hr /> <h2 id=\"\">スタートガイド</h2> <p>1. セットアップ</p> <ol> <ul><li><a href=\"https://support.freee.co.jp/hc/ja/articles/202847230\" class=\"external-link\" rel=\"nofollow\">freeeアカウント（無料）</a>を<a href=\"https://secure.freee.co.jp/users/sign_up\" class=\"external-link\" rel=\"nofollow\">作成</a>します（すでにお持ちの場合は次へ）</li><li><a href=\"https://app.secure.freee.co.jp/developers/demo_companies/description\" class=\"external-link\" rel=\"nofollow\">開発者向け事業所・環境を作成</a>します</li><li><span><a href=\"https://app.secure.freee.co.jp/developers/applications\" class=\"external-link\" rel=\"nofollow\">前のステップで作成した事業所を選択してfreeeアプリを追加</a>します</span></li><li>Client IDをCopyしておきます</li> </ul> </ol>  <p>2. 実際にAPIを叩いてみる（ブラウザからAPIのレスポンスを確認する）</p> <ol> <ul><li><span><span>以下のURLの●をclient_idに入れ替えて<a href=\"https://app.secure.freee.co.jp/developers/tutorials/3-%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B#%E8%AA%8D%E5%8F%AF%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B\" class=\"external-link\" rel=\"nofollow\">アクセストークンを取得</a>します</span></span><ul><li><span><span><pre><code>https://accounts.secure.freee.co.jp/public_api/authorize?client_id=●&amp;redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&amp;response_type=token</a></code></pre></span></span></li></ul></li><li><span><a href=\"https://developer.freee.co.jp/docs/accounting/reference#/%E9%80%A3%E7%B5%A1%E5%85%88\" class=\"external-link\" rel=\"nofollow\">APIリファレンス</a>で<code>Authorize</code>を押下します</span></li><li><span>アクセストークン<span><span>を入力して</span></span>&nbsp;もう一度<span><code>Authorize</code>を押下して<code>Close</code>を押下します</span></span></li><li>リファレンス内のCompanies（事業所）に移動し、<code>Try it out</code>を押下し、<code>Execute</code>を押下します</li><li>Response bodyを参照し、事業所ID(id属性)を活用して、Companies以外のエンドポイントでどのようなデータのやりとりできるのか確認します</li></ul> </ol> <p>3. 連携を実装する</p> <ol> <ul><li><a href=\"https://developer.freee.co.jp/tips\" class=\"external-link\" rel=\"nofollow\">API TIPS</a>を参考に、ユースケースごとの連携の概要を学びます。<span>例えば</span><span>&nbsp;</span><a href=\"https://developer.freee.co.jp/tips/how-to-cooperate-salesmanegement-system\" class=\"external-link\" rel=\"nofollow\">SFA、CRM、販売管理システムから会計freeeへの連携</a>や<a href=\"https://developer.freee.co.jp/tips/how-to-cooperate-excel-and-spreadsheet\" class=\"external-link\" rel=\"nofollow\">エクセルやgoogle spreadsheetからの連携</a>です</li><li>実利用向け事業所がすでにある場合は利用、ない場合は作成します（セットアップで作成したのは開発者向け環境のため活用不可）</li><li><a href=\"https://developer.freee.co.jp/docs/accounting/reference\" class=\"external-link\" rel=\"nofollow\">API documentation</a><span>&nbsp;を参照し、躓いた場合は</span><span>&nbsp;</span><a href=\"https://developer.freee.co.jp/community/forum/community\" class=\"external-link\" rel=\"nofollow\">Community</a><span>&nbsp;で質問してみましょう</span></li></ul> </ol> <p>アプリケーションの登録方法や認証方法、またはAPIの活用方法でご不明な点がある場合は<a href=\"https://support.freee.co.jp/hc/ja/sections/115000030743\">ヘルプセンター</a>もご確認ください</p> <hr /> <h2 id=\"_2\">仕様</h2>  <h3 id=\"api\">APIエンドポイント</h3>  <p>https://api.freee.co.jp/ (httpsのみ)</p>  <h3 id=\"_3\">認証方式</h3>  <p><a href=\"http://tools.ietf.org/html/rfc6749\">OAuth2</a>に対応</p>  <ul> <li>Authorization Code Flow (Webアプリ向け)</li>  <li>Implicit Flow (Mobileアプリ向け)</li> </ul>  <h3 id=\"_4\">認証エンドポイント</h3>  <p>https://accounts.secure.freee.co.jp/</p>  <ul> <li>authorize : https://accounts.secure.freee.co.jp/public_api/authorize</li>  <li>token : https://accounts.secure.freee.co.jp/public_api/token</li> </ul>  <h3 id=\"_5\">アクセストークンのリフレッシュ</h3>  <p>認証時に得たrefresh_token を使ってtoken の期限をリフレッシュして新規に発行することが出来ます。</p>  <p>grant_type=refresh_token で https://accounts.secure.freee.co.jp/public_api/token にアクセスすればリフレッシュされます。</p>  <p>e.g.)</p>  <p>POST: https://accounts.secure.freee.co.jp/public_api/token</p>  <p>params: grant_type=refresh_token&amp;client_id=UID&amp;client_secret=SECRET&amp;refresh_token=REFRESH_TOKEN</p>  <p>詳細は<a href=\"https://github.com/applicake/doorkeeper/wiki/Enable-Refresh-Token-Credentials#flow\">refresh_token</a>を参照下さい。</p>  <h3 id=\"_6\">アクセストークンの破棄</h3>  <p>認証時に得たaccess_tokenまたはrefresh_tokenを使って、tokenを破棄することができます。 token=access_tokenまたはtoken=refresh_tokenでhttps://accounts.secure.freee.co.jp/public_api/revokeにアクセスすると破棄されます。token_type_hintでaccess_tokenまたはrefresh_tokenを陽に指定できます。</p>  <p>e.g.)</p>  <p>POST: https://accounts.secure.freee.co.jp/public_api/revoke</p>  <p>params: token=ACCESS_TOKEN</p>  <p>または</p>  <p>params: token=REFRESH_TOKEN</p>  <p>または</p>  <p>params: token=ACCESS_TOKEN&amp;token_type_hint=access_token</p>  <p>または</p>  <p>params: token=REFRESH_TOKEN&amp;token_type_hint=refresh_token</p>  <p>詳細は <a href=\"https://tools.ietf.org/html/rfc7009\">OAuth 2.0 Token revocation</a> をご参照ください。</p>  <h3 id=\"_7\">データフォーマット</h3>  <p>リクエスト、レスポンスともにJSON形式をサポート</p>  <h3 id=\"_8\">共通レスポンスヘッダー</h3>  <p>すべてのAPIのレスポンスには以下のHTTPヘッダーが含まれます。</p>  <ul> <li> <p>X-Freee-Request-ID</p> <ul> <li>各リクエスト毎に発行されるID</li> </ul> </li> </ul>  <h3 id=\"_9\">共通エラーレスポンス</h3>  <ul> <li> <p>ステータスコードはレスポンス内のJSONに含まれる他、HTTPヘッダにも含まれる</p> </li>  <li> <p>type</p>  <ul> <li>status : HTTPステータスコードの説明</li>  <li>validation : エラーの詳細の説明（開発者向け）</li> </ul> </li> </ul>  <p>レスポンスの例</p>  <pre><code>  {     &quot;status_code&quot; : 400,     &quot;errors&quot; : [       {         &quot;type&quot; : &quot;status&quot;,         &quot;messages&quot; : [&quot;不正なリクエストです。&quot;]       },       {         &quot;type&quot; : &quot;validation&quot;,         &quot;messages&quot; : [&quot;Date は不正な日付フォーマットです。入力例：2013-01-01&quot;]       }     ]   }</code></pre> <hr /> <h2 id=\"_10\">連絡先</h2>  <p>ご不明点、ご要望等は <a href=\"https://support.freee.co.jp/hc/ja/requests/new\">freee サポートデスクへのお問い合わせフォーム</a> からご連絡ください。</p> <hr />&copy; Since 2013 freee K.K.
+
+<h1 id=\"freee_api\">freee API</h1>
+<hr />
+<h2 id=\"start_guide\">スタートガイド</h2>
+
+<p>freee API開発がはじめての方は<a href=\"https://developer.freee.co.jp/getting-started\">freee API スタートガイド</a>を参照してください。</p>
+
+<hr />
+<h2 id=\"specification\">仕様</h2>
+
+<pre><code>【重要】会計freee APIの新バージョンについて
+2020年12月まで、2つのバージョンが利用できる状態です。古いものは2020年12月に利用不可となります。<br>
+新しいAPIを利用するにはリクエストヘッダーに以下を指定します。
+X-Api-Version: 2020-06-15<br>
+指定がない場合は2020年12月に廃止予定のAPIを利用することとなります。<br>
+【重要】APIのバージョン指定をせずに利用し続ける場合
+2020年12月に新しいバージョンのAPIに自動的に切り替わります。
+詳細は、<a href=\"https://developer.freee.co.jp/release-note/2948\" target=\"_blank\">リリースノート</a>をご覧ください。<br>
+旧バージョンのAPIリファレンスを確認したい場合は、<a href=\"https://freee.github.io/freee-api-schema/\" target=\"_blank\">旧バージョンのAPIリファレンスページ</a>をご覧ください。
+</code></pre>
+
+<h3 id=\"api_endpoint\">APIエンドポイント</h3>
+
+<p>https://api.freee.co.jp/ (httpsのみ)</p>
+
+<h3 id=\"about_authorize\">認証について</h3>
+<p>OAuth2.0を利用します。詳細は<a href=\"https://developer.freee.co.jp/docs\" target=\"_blank\">ドキュメントの認証</a>パートを参照してください。</p>
+
+<h3 id=\"data_format\">データフォーマット</h3>
+
+<p>リクエスト、レスポンスともにJSON形式をサポートしていますが、詳細は、API毎の説明欄（application/jsonなど）を確認してください。</p>
+
+<h3 id=\"compatibility\">後方互換性ありの変更</h3>
+
+<p>freeeでは、APIを改善していくために以下のような変更は後方互換性ありとして通知なく変更を入れることがあります。アプリケーション実装者は以下を踏まえて開発を行ってください。</p>
+
+<ul>
+<li>新しいAPIリソース・エンドポイントの追加</li>
+<li>既存のAPIに対して必須ではない新しいリクエストパラメータの追加</li>
+<li>既存のAPIレスポンスに対する新しいプロパティの追加</li>
+<li>既存のAPIレスポンスに対するプロパティの順番の入れ変え</li>
+<li>keyとなっているidやcodeの長さの変更（長くする）</li>
+</ul>
+
+<h3 id=\"common_response_header\">共通レスポンスヘッダー</h3>
+
+<p>すべてのAPIのレスポンスには以下のHTTPヘッダーが含まれます。</p>
+
+<ul>
+<li>
+<p>X-Freee-Request-ID</p>
+<ul>
+<li>各リクエスト毎に発行されるID</li>
+</ul>
+</li>
+</ul>
+
+<h3 id=\"common_error_response\">共通エラーレスポンス</h3>
+
+<ul>
+<li>
+<p>ステータスコードはレスポンス内のJSONに含まれる他、HTTPヘッダにも含まれる</p>
+</li>
+<li>
+<p>一部のエラーレスポンスにはエラーコードが含まれます。<br>詳細は、<a href=\"https://developer.freee.co.jp/tips/faq/40x-checkpoint\">HTTPステータスコード400台エラー時のチェックポイント</a>を参照してください</p>
+</li>
+<p>type</p>
+
+<ul>
+<li>status : HTTPステータスコードの説明</li>
+
+<li>validation : エラーの詳細の説明（開発者向け）</li>
+</ul>
+</li>
+</ul>
+
+<p>レスポンスの例</p>
+
+<pre><code>  {
+    &quot;status_code&quot; : 400,
+    &quot;errors&quot; : [
+      {
+        &quot;type&quot; : &quot;status&quot;,
+        &quot;messages&quot; : [&quot;不正なリクエストです。&quot;]
+      },
+      {
+        &quot;type&quot; : &quot;validation&quot;,
+        &quot;messages&quot; : [&quot;Date は不正な日付フォーマットです。入力例：2013-01-01&quot;]
+      }
+    ]
+  }</code></pre>
+
+</br>
+
+<h3 id=\"api_rate_limit\">API使用制限</h3>
+
+  <p>freeeは一定期間に過度のアクセスを検知した場合、APIアクセスをコントロールする場合があります。</p>
+  <p>その際のhttp status codeは403となります。制限がかかってから10分程度が過ぎると再度使用することができるようになります。</p>
+
+<h4 id=\"reports_api_endpoint\">/reportsエンドポイント</h4>
+
+<p>freeeは/reportsエンドポイントに対して1秒間に10以上のアクセスを検知した場合、APIアクセスをコントロールする場合があります。その際のhttp status codeは429（too many requests）となります。</p>
+
+<p>レスポンスボディのmetaプロパティに以下を含めます。</p>
+
+<ul>
+  <li>設定されている上限値</li>
+  <li>上限に達するまでの使用可能回数</li>
+  <li>（上限値に達した場合）使用回数がリセットされる時刻</li>
+</ul>
+
+<h3 id=\"plan_api_rate_limit\">プラン別のAPI Rate Limit</h3>
+  <table border=\"1\">
+    <tbody>
+      <tr>
+        <th style=\"padding: 10px\"><strong>会計freeeプラン名</strong></th>
+        <th style=\"padding: 10px\"><strong>事業所とアプリケーション毎に1日でのAPIコール数</strong></th>
+      </tr>
+      <tr>
+        <td style=\"padding: 10px\">エンタープライズ</td>
+        <td style=\"padding: 10px\">10,000</td>
+      </tr>
+      <tr>
+        <td style=\"padding: 10px\">プロフェッショナル</td>
+        <td style=\"padding: 10px\">5,000</td>
+      </tr>
+      <tr>
+        <td style=\"padding: 10px\">ベーシック</td>
+        <td style=\"padding: 10px\">3,000</td>
+      </tr>
+      <tr>
+        <td style=\"padding: 10px\">ミニマム</td>
+        <td style=\"padding: 10px\">3,000</td>
+      </tr>
+      <tr>
+        <td style=\"padding: 10px\">上記以外</td>
+        <td style=\"padding: 10px\">3,000</td>
+      </tr>
+    </tbody>
+  </table>
+
+<h3 id=\"webhook\">Webhookについて</h3>
+
+<p>詳細は<a href=\"https://developer.freee.co.jp/docs/accounting/webhook\" target=\"_blank\">会計Webhook概要</a>を参照してください。</p>
+
+<hr />
+<h2 id=\"contact\">連絡先</h2>
+
+<p>ご不明点、ご要望等は <a href=\"https://support.freee.co.jp/hc/ja/requests/new\">freee サポートデスクへのお問い合わせフォーム</a> からご連絡ください。</p>
+<hr />&copy; Since 2013 freee K.K.
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
 - API version: v1.0
-- Package version: v2.0.0-alpha
+- Package version: v2.0.0-beta
 - Build package: org.openapitools.codegen.languages.PhpClientCodegen
 
 ## Requirements
@@ -71,10 +220,10 @@ $apiInstance = new Freee\Accounting\Api\AccountItemsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$parameters = new \Freee\Accounting\Model\AccountItemParams(); // \Freee\Accounting\Model\AccountItemParams | 勘定科目の作成
+$account_item_params = new \Freee\Accounting\Model\AccountItemParams(); // \Freee\Accounting\Model\AccountItemParams | 勘定科目の作成
 
 try {
-    $result = $apiInstance->createAccountItem($parameters);
+    $result = $apiInstance->createAccountItem($account_item_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountItemsApi->createAccountItem: ', $e->getMessage(), PHP_EOL;
@@ -94,6 +243,16 @@ Class | Method | HTTP request | Description
 *AccountItemsApi* | [**getAccountItem**](docs/Api/AccountItemsApi.md#getaccountitem) | **GET** /api/1/account_items/{id} | 勘定科目の詳細情報の取得
 *AccountItemsApi* | [**getAccountItems**](docs/Api/AccountItemsApi.md#getaccountitems) | **GET** /api/1/account_items | 勘定科目一覧の取得
 *AccountItemsApi* | [**updateAccountItem**](docs/Api/AccountItemsApi.md#updateaccountitem) | **PUT** /api/1/account_items/{id} | 勘定科目の更新
+*ApprovalFlowRoutesApi* | [**getApprovalFlowRoute**](docs/Api/ApprovalFlowRoutesApi.md#getapprovalflowroute) | **GET** /api/1/approval_flow_routes/{id} | 申請経路の取得
+*ApprovalFlowRoutesApi* | [**getApprovalFlowRoutes**](docs/Api/ApprovalFlowRoutesApi.md#getapprovalflowroutes) | **GET** /api/1/approval_flow_routes | 申請経路一覧の取得
+*ApprovalRequestsApi* | [**createApprovalRequest**](docs/Api/ApprovalRequestsApi.md#createapprovalrequest) | **POST** /api/1/approval_requests | 各種申請の作成
+*ApprovalRequestsApi* | [**destroyApprovalRequest**](docs/Api/ApprovalRequestsApi.md#destroyapprovalrequest) | **DELETE** /api/1/approval_requests/{id} | 各種申請の削除
+*ApprovalRequestsApi* | [**getApprovalRequest**](docs/Api/ApprovalRequestsApi.md#getapprovalrequest) | **GET** /api/1/approval_requests/{id} | 各種申請の取得
+*ApprovalRequestsApi* | [**getApprovalRequestForm**](docs/Api/ApprovalRequestsApi.md#getapprovalrequestform) | **GET** /api/1/approval_requests/forms/{id} | 各種申請の申請フォームの取得
+*ApprovalRequestsApi* | [**getApprovalRequestForms**](docs/Api/ApprovalRequestsApi.md#getapprovalrequestforms) | **GET** /api/1/approval_requests/forms | 各種申請の申請フォーム一覧の取得
+*ApprovalRequestsApi* | [**getApprovalRequests**](docs/Api/ApprovalRequestsApi.md#getapprovalrequests) | **GET** /api/1/approval_requests | 各種申請の一覧
+*ApprovalRequestsApi* | [**updateApprovalRequest**](docs/Api/ApprovalRequestsApi.md#updateapprovalrequest) | **PUT** /api/1/approval_requests/{id} | 各種申請の更新
+*ApprovalRequestsApi* | [**updateApprovalRequestAction**](docs/Api/ApprovalRequestsApi.md#updateapprovalrequestaction) | **POST** /api/1/approval_requests/{id}/actions | 各種申請の承認操作
 *BanksApi* | [**getBank**](docs/Api/BanksApi.md#getbank) | **GET** /api/1/banks/{id} | 連携サービスの取得
 *BanksApi* | [**getBanks**](docs/Api/BanksApi.md#getbanks) | **GET** /api/1/banks | 連携サービス一覧の取得
 *CompaniesApi* | [**getCompanies**](docs/Api/CompaniesApi.md#getcompanies) | **GET** /api/1/companies | 事業所一覧の取得
@@ -141,6 +300,11 @@ Class | Method | HTTP request | Description
 *PaymentsApi* | [**createDealPayment**](docs/Api/PaymentsApi.md#createdealpayment) | **POST** /api/1/deals/{id}/payments | 取引（収入／支出）の支払行作成
 *PaymentsApi* | [**destroyDealPayment**](docs/Api/PaymentsApi.md#destroydealpayment) | **DELETE** /api/1/deals/{id}/payments/{payment_id} | 取引（収入／支出）の支払行削除
 *PaymentsApi* | [**updateDealPayment**](docs/Api/PaymentsApi.md#updatedealpayment) | **PUT** /api/1/deals/{id}/payments/{payment_id} | 取引（収入／支出）の支払行更新
+*QuotationsApi* | [**createQuotation**](docs/Api/QuotationsApi.md#createquotation) | **POST** /api/1/quotations | 見積書の作成
+*QuotationsApi* | [**destroyQuotation**](docs/Api/QuotationsApi.md#destroyquotation) | **DELETE** /api/1/quotations/{id} | 見積書の削除
+*QuotationsApi* | [**getQuotation**](docs/Api/QuotationsApi.md#getquotation) | **GET** /api/1/quotations/{id} | 見積書の取得
+*QuotationsApi* | [**getQuotations**](docs/Api/QuotationsApi.md#getquotations) | **GET** /api/1/quotations | 見積書一覧の取得
+*QuotationsApi* | [**updateQuotation**](docs/Api/QuotationsApi.md#updatequotation) | **PUT** /api/1/quotations/{id} | 見積書の更新
 *ReceiptsApi* | [**createReceipt**](docs/Api/ReceiptsApi.md#createreceipt) | **POST** /api/1/receipts | ファイルボックス 証憑ファイルアップロード
 *ReceiptsApi* | [**destroyReceipt**](docs/Api/ReceiptsApi.md#destroyreceipt) | **DELETE** /api/1/receipts/{id} | ファイルボックス 証憑ファイルを削除する
 *ReceiptsApi* | [**getReceipt**](docs/Api/ReceiptsApi.md#getreceipt) | **GET** /api/1/receipts/{id} | ファイルボックス 証憑ファイルの取得
@@ -180,8 +344,8 @@ Class | Method | HTTP request | Description
 *TrialBalanceApi* | [**getTrialPlThreeYears**](docs/Api/TrialBalanceApi.md#gettrialplthreeyears) | **GET** /api/1/reports/trial_pl_three_years | 損益計算書(３期間比較)の取得
 *TrialBalanceApi* | [**getTrialPlTwoYears**](docs/Api/TrialBalanceApi.md#gettrialpltwoyears) | **GET** /api/1/reports/trial_pl_two_years | 損益計算書(前年比較)の取得
 *UsersApi* | [**getUsers**](docs/Api/UsersApi.md#getusers) | **GET** /api/1/users | 事業所に所属するユーザー一覧の取得
-*UsersApi* | [**getUsersCapabilities**](docs/Api/UsersApi.md#getuserscapabilities) | **GET** /api/1/users/capabilities | ログインユーザの権限の取得
-*UsersApi* | [**getUsersMe**](docs/Api/UsersApi.md#getusersme) | **GET** /api/1/users/me | ログインユーザ情報の取得
+*UsersApi* | [**getUsersCapabilities**](docs/Api/UsersApi.md#getuserscapabilities) | **GET** /api/1/users/capabilities | ログインユーザーの権限の取得
+*UsersApi* | [**getUsersMe**](docs/Api/UsersApi.md#getusersme) | **GET** /api/1/users/me | ログインユーザー情報の取得
 *UsersApi* | [**updateUser**](docs/Api/UsersApi.md#updateuser) | **PUT** /api/1/users/me | ユーザー情報の更新
 *WalletTxnsApi* | [**createWalletTxn**](docs/Api/WalletTxnsApi.md#createwallettxn) | **POST** /api/1/wallet_txns | 明細の作成
 *WalletTxnsApi* | [**destroyWalletTxn**](docs/Api/WalletTxnsApi.md#destroywallettxn) | **DELETE** /api/1/wallet_txns/{id} | 明細の削除
@@ -196,126 +360,169 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [AccountItem](docs/Model/AccountItem.md)
- - [AccountItemItems](docs/Model/AccountItemItems.md)
  - [AccountItemParams](docs/Model/AccountItemParams.md)
  - [AccountItemParamsAccountItem](docs/Model/AccountItemParamsAccountItem.md)
  - [AccountItemParamsAccountItemItems](docs/Model/AccountItemParamsAccountItemItems.md)
- - [AccountItemPartners](docs/Model/AccountItemPartners.md)
- - [AccountItemsCreateResponse](docs/Model/AccountItemsCreateResponse.md)
- - [AccountItemsIndexResponse](docs/Model/AccountItemsIndexResponse.md)
- - [AccountItemsIndexResponseAccountItems](docs/Model/AccountItemsIndexResponseAccountItems.md)
- - [AccountItemsShowResponse](docs/Model/AccountItemsShowResponse.md)
- - [AccountItemsUpdateResponse](docs/Model/AccountItemsUpdateResponse.md)
- - [ApprovalRequest](docs/Model/ApprovalRequest.md)
- - [ApprovalRequestRequestItems](docs/Model/ApprovalRequestRequestItems.md)
- - [ApprovalRequestsResponse](docs/Model/ApprovalRequestsResponse.md)
+ - [AccountItemResponse](docs/Model/AccountItemResponse.md)
+ - [AccountItemResponseAccountItem](docs/Model/AccountItemResponseAccountItem.md)
+ - [AccountItemResponseAccountItemItems](docs/Model/AccountItemResponseAccountItemItems.md)
+ - [AccountItemResponseAccountItemPartners](docs/Model/AccountItemResponseAccountItemPartners.md)
+ - [AccountItemsResponse](docs/Model/AccountItemsResponse.md)
+ - [AccountItemsResponseAccountItems](docs/Model/AccountItemsResponseAccountItems.md)
+ - [ApprovalFlowRouteResponse](docs/Model/ApprovalFlowRouteResponse.md)
+ - [ApprovalFlowRouteResponseApprovalFlowRoute](docs/Model/ApprovalFlowRouteResponseApprovalFlowRoute.md)
+ - [ApprovalFlowRouteResponseApprovalFlowRouteSteps](docs/Model/ApprovalFlowRouteResponseApprovalFlowRouteSteps.md)
+ - [ApprovalFlowRoutesIndexResponse](docs/Model/ApprovalFlowRoutesIndexResponse.md)
+ - [ApprovalFlowRoutesIndexResponseApprovalFlowRoutes](docs/Model/ApprovalFlowRoutesIndexResponseApprovalFlowRoutes.md)
+ - [ApprovalRequestActionCreateParams](docs/Model/ApprovalRequestActionCreateParams.md)
+ - [ApprovalRequestCreateParams](docs/Model/ApprovalRequestCreateParams.md)
+ - [ApprovalRequestCreateParamsRequestItems](docs/Model/ApprovalRequestCreateParamsRequestItems.md)
+ - [ApprovalRequestForm](docs/Model/ApprovalRequestForm.md)
+ - [ApprovalRequestFormParts](docs/Model/ApprovalRequestFormParts.md)
+ - [ApprovalRequestFormResponse](docs/Model/ApprovalRequestFormResponse.md)
+ - [ApprovalRequestFormValues](docs/Model/ApprovalRequestFormValues.md)
+ - [ApprovalRequestResponse](docs/Model/ApprovalRequestResponse.md)
+ - [ApprovalRequestResponseApprovalRequest](docs/Model/ApprovalRequestResponseApprovalRequest.md)
+ - [ApprovalRequestResponseApprovalRequestApprovalFlowLogs](docs/Model/ApprovalRequestResponseApprovalRequestApprovalFlowLogs.md)
+ - [ApprovalRequestResponseApprovalRequestApprovalRequestForm](docs/Model/ApprovalRequestResponseApprovalRequestApprovalRequestForm.md)
+ - [ApprovalRequestResponseApprovalRequestApprovers](docs/Model/ApprovalRequestResponseApprovalRequestApprovers.md)
+ - [ApprovalRequestResponseApprovalRequestComments](docs/Model/ApprovalRequestResponseApprovalRequestComments.md)
+ - [ApprovalRequestResponseApprovalRequestRequestItems](docs/Model/ApprovalRequestResponseApprovalRequestRequestItems.md)
+ - [ApprovalRequestUpdateParams](docs/Model/ApprovalRequestUpdateParams.md)
+ - [ApprovalRequestsIndexResponse](docs/Model/ApprovalRequestsIndexResponse.md)
+ - [ApprovalRequestsIndexResponseApprovalRequests](docs/Model/ApprovalRequestsIndexResponseApprovalRequests.md)
  - [BadRequestError](docs/Model/BadRequestError.md)
  - [BadRequestErrorErrors](docs/Model/BadRequestErrorErrors.md)
  - [BadRequestNotFoundError](docs/Model/BadRequestNotFoundError.md)
  - [BadRequestNotFoundErrorErrors](docs/Model/BadRequestNotFoundErrorErrors.md)
  - [Bank](docs/Model/Bank.md)
- - [BanksIndexResponse](docs/Model/BanksIndexResponse.md)
- - [BanksShowResponse](docs/Model/BanksShowResponse.md)
- - [CompaniesIndexResponse](docs/Model/CompaniesIndexResponse.md)
- - [CompaniesIndexResponseCompanies](docs/Model/CompaniesIndexResponseCompanies.md)
- - [CompaniesShowResponse](docs/Model/CompaniesShowResponse.md)
- - [CompaniesShowResponseCompany](docs/Model/CompaniesShowResponseCompany.md)
- - [CompaniesUpdateResponse](docs/Model/CompaniesUpdateResponse.md)
- - [CompaniesUpdateResponseCompany](docs/Model/CompaniesUpdateResponseCompany.md)
- - [CreateDealParams](docs/Model/CreateDealParams.md)
- - [CreateDealParamsDetails](docs/Model/CreateDealParamsDetails.md)
- - [CreateDealParamsPayments](docs/Model/CreateDealParamsPayments.md)
- - [CreateExpenseApplicationParams](docs/Model/CreateExpenseApplicationParams.md)
- - [CreateExpenseApplicationParamsExpenseApplicationLines](docs/Model/CreateExpenseApplicationParamsExpenseApplicationLines.md)
- - [CreateItemParams](docs/Model/CreateItemParams.md)
- - [CreateWalletTxnParams](docs/Model/CreateWalletTxnParams.md)
- - [DealPaymentParams](docs/Model/DealPaymentParams.md)
- - [Deals](docs/Model/Deals.md)
- - [DealsCreateResponse](docs/Model/DealsCreateResponse.md)
- - [DealsDetails](docs/Model/DealsDetails.md)
- - [DealsIndexResponse](docs/Model/DealsIndexResponse.md)
- - [DealsIndexResponseMeta](docs/Model/DealsIndexResponseMeta.md)
- - [DealsPayments](docs/Model/DealsPayments.md)
- - [DealsRenews](docs/Model/DealsRenews.md)
- - [DealsRenewsDetails](docs/Model/DealsRenewsDetails.md)
- - [DealsResponse](docs/Model/DealsResponse.md)
- - [DealsWithoutRenews](docs/Model/DealsWithoutRenews.md)
- - [ExpenseApplication](docs/Model/ExpenseApplication.md)
- - [ExpenseApplicationExpenseApplicationLines](docs/Model/ExpenseApplicationExpenseApplicationLines.md)
+ - [BankResponse](docs/Model/BankResponse.md)
+ - [CompaniesPlanResponse](docs/Model/CompaniesPlanResponse.md)
+ - [CompanyIndexResponse](docs/Model/CompanyIndexResponse.md)
+ - [CompanyIndexResponseCompanies](docs/Model/CompanyIndexResponseCompanies.md)
+ - [CompanyParams](docs/Model/CompanyParams.md)
+ - [CompanyParamsFiscalYears](docs/Model/CompanyParamsFiscalYears.md)
+ - [CompanyResponse](docs/Model/CompanyResponse.md)
+ - [CompanyResponseCompany](docs/Model/CompanyResponseCompany.md)
+ - [CompanyUpdateResponse](docs/Model/CompanyUpdateResponse.md)
+ - [CompanyUpdateResponseCompany](docs/Model/CompanyUpdateResponseCompany.md)
+ - [CompanyUpdateResponseCompanyFiscalYears](docs/Model/CompanyUpdateResponseCompanyFiscalYears.md)
+ - [Deal](docs/Model/Deal.md)
+ - [DealCreateParams](docs/Model/DealCreateParams.md)
+ - [DealCreateParamsDetails](docs/Model/DealCreateParamsDetails.md)
+ - [DealCreateParamsPayments](docs/Model/DealCreateParamsPayments.md)
+ - [DealCreateResponse](docs/Model/DealCreateResponse.md)
+ - [DealCreateResponseDeal](docs/Model/DealCreateResponseDeal.md)
+ - [DealCreateResponseDealDetails](docs/Model/DealCreateResponseDealDetails.md)
+ - [DealCreateResponseDealPayments](docs/Model/DealCreateResponseDealPayments.md)
+ - [DealDetails](docs/Model/DealDetails.md)
+ - [DealReceipts](docs/Model/DealReceipts.md)
+ - [DealRenews](docs/Model/DealRenews.md)
+ - [DealResponse](docs/Model/DealResponse.md)
+ - [DealUpdateParams](docs/Model/DealUpdateParams.md)
+ - [DealUpdateParamsDetails](docs/Model/DealUpdateParamsDetails.md)
+ - [DealUser](docs/Model/DealUser.md)
+ - [DeprecatedApprovalRequestParams](docs/Model/DeprecatedApprovalRequestParams.md)
+ - [DeprecatedApprovalRequestParamsRequestItems](docs/Model/DeprecatedApprovalRequestParamsRequestItems.md)
+ - [DeprecatedApprovalRequestResponse](docs/Model/DeprecatedApprovalRequestResponse.md)
+ - [DeprecatedApprovalRequestResponseApprovalRequest](docs/Model/DeprecatedApprovalRequestResponseApprovalRequest.md)
+ - [DeprecatedApprovalRequestResponseApprovalRequestRequestItems](docs/Model/DeprecatedApprovalRequestResponseApprovalRequestRequestItems.md)
+ - [ExpenseApplicationCreateParams](docs/Model/ExpenseApplicationCreateParams.md)
+ - [ExpenseApplicationCreateParamsExpenseApplicationLines](docs/Model/ExpenseApplicationCreateParamsExpenseApplicationLines.md)
  - [ExpenseApplicationLineTemplate](docs/Model/ExpenseApplicationLineTemplate.md)
  - [ExpenseApplicationLineTemplateParams](docs/Model/ExpenseApplicationLineTemplateParams.md)
- - [ExpenseApplicationLineTemplatesIndexResponse](docs/Model/ExpenseApplicationLineTemplatesIndexResponse.md)
- - [ExpenseApplicationLineTemplatesResponse](docs/Model/ExpenseApplicationLineTemplatesResponse.md)
+ - [ExpenseApplicationLineTemplateResponse](docs/Model/ExpenseApplicationLineTemplateResponse.md)
+ - [ExpenseApplicationResponse](docs/Model/ExpenseApplicationResponse.md)
+ - [ExpenseApplicationResponseExpenseApplication](docs/Model/ExpenseApplicationResponseExpenseApplication.md)
+ - [ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines](docs/Model/ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines.md)
+ - [ExpenseApplicationUpdateParams](docs/Model/ExpenseApplicationUpdateParams.md)
+ - [ExpenseApplicationUpdateParamsExpenseApplicationLines](docs/Model/ExpenseApplicationUpdateParamsExpenseApplicationLines.md)
  - [ExpenseApplicationsIndexResponse](docs/Model/ExpenseApplicationsIndexResponse.md)
- - [ExpenseApplicationsResponse](docs/Model/ExpenseApplicationsResponse.md)
  - [FiscalYears](docs/Model/FiscalYears.md)
+ - [ForbiddenError](docs/Model/ForbiddenError.md)
+ - [InlineResponse200](docs/Model/InlineResponse200.md)
+ - [InlineResponse2001](docs/Model/InlineResponse2001.md)
+ - [InlineResponse20010](docs/Model/InlineResponse20010.md)
+ - [InlineResponse20011](docs/Model/InlineResponse20011.md)
+ - [InlineResponse20012](docs/Model/InlineResponse20012.md)
+ - [InlineResponse20013](docs/Model/InlineResponse20013.md)
+ - [InlineResponse20013Taxes](docs/Model/InlineResponse20013Taxes.md)
+ - [InlineResponse20014](docs/Model/InlineResponse20014.md)
+ - [InlineResponse20015](docs/Model/InlineResponse20015.md)
+ - [InlineResponse20016](docs/Model/InlineResponse20016.md)
+ - [InlineResponse20017](docs/Model/InlineResponse20017.md)
+ - [InlineResponse20018](docs/Model/InlineResponse20018.md)
+ - [InlineResponse20018Meta](docs/Model/InlineResponse20018Meta.md)
+ - [InlineResponse20019](docs/Model/InlineResponse20019.md)
+ - [InlineResponse2002](docs/Model/InlineResponse2002.md)
+ - [InlineResponse2002Meta](docs/Model/InlineResponse2002Meta.md)
+ - [InlineResponse2003](docs/Model/InlineResponse2003.md)
+ - [InlineResponse2004](docs/Model/InlineResponse2004.md)
+ - [InlineResponse2005](docs/Model/InlineResponse2005.md)
+ - [InlineResponse2006](docs/Model/InlineResponse2006.md)
+ - [InlineResponse2007](docs/Model/InlineResponse2007.md)
+ - [InlineResponse2008](docs/Model/InlineResponse2008.md)
+ - [InlineResponse2009](docs/Model/InlineResponse2009.md)
  - [InternalServerError](docs/Model/InternalServerError.md)
  - [InternalServerErrorErrors](docs/Model/InternalServerErrorErrors.md)
  - [Invoice](docs/Model/Invoice.md)
+ - [InvoiceCreateParams](docs/Model/InvoiceCreateParams.md)
+ - [InvoiceCreateParamsInvoiceContents](docs/Model/InvoiceCreateParamsInvoiceContents.md)
  - [InvoiceInvoiceContents](docs/Model/InvoiceInvoiceContents.md)
+ - [InvoiceResponse](docs/Model/InvoiceResponse.md)
  - [InvoiceTotalAmountPerVatRate](docs/Model/InvoiceTotalAmountPerVatRate.md)
- - [InvoicesCreateParams](docs/Model/InvoicesCreateParams.md)
- - [InvoicesCreateParamsInvoiceContents](docs/Model/InvoicesCreateParamsInvoiceContents.md)
- - [InvoicesIndexResponse](docs/Model/InvoicesIndexResponse.md)
- - [InvoicesResponse](docs/Model/InvoicesResponse.md)
- - [InvoicesUpdateParams](docs/Model/InvoicesUpdateParams.md)
- - [InvoicesUpdateParamsInvoiceContents](docs/Model/InvoicesUpdateParamsInvoiceContents.md)
+ - [InvoiceUpdateParams](docs/Model/InvoiceUpdateParams.md)
+ - [InvoiceUpdateParamsInvoiceContents](docs/Model/InvoiceUpdateParamsInvoiceContents.md)
+ - [Item](docs/Model/Item.md)
+ - [ItemParams](docs/Model/ItemParams.md)
  - [ItemResponse](docs/Model/ItemResponse.md)
- - [ItemResponseItem](docs/Model/ItemResponseItem.md)
- - [ItemsIndexResponse](docs/Model/ItemsIndexResponse.md)
- - [ItemsIndexResponseItems](docs/Model/ItemsIndexResponseItems.md)
- - [JournalsDownloadNotFoundError](docs/Model/JournalsDownloadNotFoundError.md)
- - [JournalsEnqueueJournalsResponse](docs/Model/JournalsEnqueueJournalsResponse.md)
- - [JournalsEnqueueJournalsResponseJournals](docs/Model/JournalsEnqueueJournalsResponseJournals.md)
- - [JournalsStatusNotFoundError](docs/Model/JournalsStatusNotFoundError.md)
- - [JournalsStatusResponse](docs/Model/JournalsStatusResponse.md)
- - [JournalsStatusResponseJournals](docs/Model/JournalsStatusResponseJournals.md)
+ - [JournalStatusResponse](docs/Model/JournalStatusResponse.md)
+ - [JournalStatusResponseJournals](docs/Model/JournalStatusResponseJournals.md)
+ - [JournalsResponse](docs/Model/JournalsResponse.md)
+ - [JournalsResponseJournals](docs/Model/JournalsResponseJournals.md)
  - [ManualJournal](docs/Model/ManualJournal.md)
+ - [ManualJournalCreateParams](docs/Model/ManualJournalCreateParams.md)
+ - [ManualJournalCreateParamsDetails](docs/Model/ManualJournalCreateParamsDetails.md)
  - [ManualJournalDetails](docs/Model/ManualJournalDetails.md)
- - [ManualJournalsCreateParams](docs/Model/ManualJournalsCreateParams.md)
- - [ManualJournalsCreateParamsDetails](docs/Model/ManualJournalsCreateParamsDetails.md)
- - [ManualJournalsCreateResponse](docs/Model/ManualJournalsCreateResponse.md)
- - [ManualJournalsIndexResponse](docs/Model/ManualJournalsIndexResponse.md)
- - [ManualJournalsShowResponse](docs/Model/ManualJournalsShowResponse.md)
- - [ManualJournalsUpdateParams](docs/Model/ManualJournalsUpdateParams.md)
- - [ManualJournalsUpdateParamsDetails](docs/Model/ManualJournalsUpdateParamsDetails.md)
- - [ManualJournalsUpdateResponse](docs/Model/ManualJournalsUpdateResponse.md)
- - [Partner](docs/Model/Partner.md)
- - [PartnerAllOf](docs/Model/PartnerAllOf.md)
- - [PartnerAllOf1](docs/Model/PartnerAllOf1.md)
- - [PartnerCodeParams](docs/Model/PartnerCodeParams.md)
+ - [ManualJournalResponse](docs/Model/ManualJournalResponse.md)
+ - [ManualJournalUpdateParams](docs/Model/ManualJournalUpdateParams.md)
+ - [ManualJournalUpdateParamsDetails](docs/Model/ManualJournalUpdateParamsDetails.md)
+ - [MeResponse](docs/Model/MeResponse.md)
+ - [MeResponseUser](docs/Model/MeResponseUser.md)
+ - [MeResponseUserCompanies](docs/Model/MeResponseUserCompanies.md)
  - [PartnerCreateParams](docs/Model/PartnerCreateParams.md)
  - [PartnerCreateParamsAddressAttributes](docs/Model/PartnerCreateParamsAddressAttributes.md)
+ - [PartnerCreateParamsInvoicePaymentTermAttributes](docs/Model/PartnerCreateParamsInvoicePaymentTermAttributes.md)
  - [PartnerCreateParamsPartnerBankAccountAttributes](docs/Model/PartnerCreateParamsPartnerBankAccountAttributes.md)
  - [PartnerCreateParamsPartnerDocSettingAttributes](docs/Model/PartnerCreateParamsPartnerDocSettingAttributes.md)
+ - [PartnerResponse](docs/Model/PartnerResponse.md)
+ - [PartnerResponsePartner](docs/Model/PartnerResponsePartner.md)
+ - [PartnerResponsePartnerAddressAttributes](docs/Model/PartnerResponsePartnerAddressAttributes.md)
  - [PartnerUpdateParams](docs/Model/PartnerUpdateParams.md)
- - [PartnersIndexResponse](docs/Model/PartnersIndexResponse.md)
  - [PartnersResponse](docs/Model/PartnersResponse.md)
+ - [PartnersResponseAddressAttributes](docs/Model/PartnersResponseAddressAttributes.md)
+ - [PartnersResponsePartners](docs/Model/PartnersResponsePartners.md)
+ - [PaymentParams](docs/Model/PaymentParams.md)
+ - [Quotation](docs/Model/Quotation.md)
+ - [QuotationCreateParams](docs/Model/QuotationCreateParams.md)
+ - [QuotationQuotationContents](docs/Model/QuotationQuotationContents.md)
+ - [QuotationResponse](docs/Model/QuotationResponse.md)
+ - [QuotationUpdateParams](docs/Model/QuotationUpdateParams.md)
+ - [QuotationUpdateParamsQuotationContents](docs/Model/QuotationUpdateParamsQuotationContents.md)
  - [Receipt](docs/Model/Receipt.md)
+ - [ReceiptCreateParams](docs/Model/ReceiptCreateParams.md)
+ - [ReceiptResponse](docs/Model/ReceiptResponse.md)
  - [ReceiptUpdateParams](docs/Model/ReceiptUpdateParams.md)
- - [ReceiptUser](docs/Model/ReceiptUser.md)
- - [ReceiptsIndexResponse](docs/Model/ReceiptsIndexResponse.md)
- - [ReceiptsResponse](docs/Model/ReceiptsResponse.md)
- - [RenewsCreateDetailParams](docs/Model/RenewsCreateDetailParams.md)
- - [RenewsCreateParams](docs/Model/RenewsCreateParams.md)
- - [RenewsResponse](docs/Model/RenewsResponse.md)
- - [RenewsUpdateDetailParams](docs/Model/RenewsUpdateDetailParams.md)
- - [RenewsUpdateParams](docs/Model/RenewsUpdateParams.md)
+ - [RenewCreateParams](docs/Model/RenewCreateParams.md)
+ - [RenewCreateParamsDetails](docs/Model/RenewCreateParamsDetails.md)
+ - [RenewUpdateParams](docs/Model/RenewUpdateParams.md)
+ - [RenewUpdateParamsDetails](docs/Model/RenewUpdateParamsDetails.md)
  - [Section](docs/Model/Section.md)
  - [SectionParams](docs/Model/SectionParams.md)
- - [SectionsCreateResponse](docs/Model/SectionsCreateResponse.md)
- - [SectionsCreateResponseSection](docs/Model/SectionsCreateResponseSection.md)
- - [SectionsIndexResponse](docs/Model/SectionsIndexResponse.md)
- - [SectionsResponse](docs/Model/SectionsResponse.md)
- - [SectionsShowResponse](docs/Model/SectionsShowResponse.md)
- - [SectionsShowResponseSection](docs/Model/SectionsShowResponseSection.md)
- - [SectionsUpdateResponse](docs/Model/SectionsUpdateResponse.md)
- - [SectionsUpdateResponseSection](docs/Model/SectionsUpdateResponseSection.md)
+ - [SectionResponse](docs/Model/SectionResponse.md)
  - [SegmentTag](docs/Model/SegmentTag.md)
  - [SegmentTagParams](docs/Model/SegmentTagParams.md)
- - [SegmentTagsIndexResponse](docs/Model/SegmentTagsIndexResponse.md)
- - [SegmentTagsResponse](docs/Model/SegmentTagsResponse.md)
+ - [SegmentTagResponse](docs/Model/SegmentTagResponse.md)
  - [SelectablesIndexResponse](docs/Model/SelectablesIndexResponse.md)
  - [SelectablesIndexResponseAccountCategories](docs/Model/SelectablesIndexResponseAccountCategories.md)
  - [SelectablesIndexResponseAccountGroups](docs/Model/SelectablesIndexResponseAccountGroups.md)
@@ -326,20 +533,15 @@ Class | Method | HTTP request | Description
  - [ServiceUnavailableError](docs/Model/ServiceUnavailableError.md)
  - [ServiceUnavailableErrorErrors](docs/Model/ServiceUnavailableErrorErrors.md)
  - [Tag](docs/Model/Tag.md)
- - [TagsIndexResponse](docs/Model/TagsIndexResponse.md)
- - [TagsParams](docs/Model/TagsParams.md)
- - [TagsResponse](docs/Model/TagsResponse.md)
- - [TaxesCode](docs/Model/TaxesCode.md)
- - [TaxesCodesIndexResponse](docs/Model/TaxesCodesIndexResponse.md)
- - [TaxesCodesShowResponse](docs/Model/TaxesCodesShowResponse.md)
- - [TaxesCompaniesResponse](docs/Model/TaxesCompaniesResponse.md)
- - [TaxesCompaniesResponseTaxes](docs/Model/TaxesCompaniesResponseTaxes.md)
- - [TaxesIndexResponse](docs/Model/TaxesIndexResponse.md)
- - [TaxesIndexResponseTaxes](docs/Model/TaxesIndexResponseTaxes.md)
+ - [TagParams](docs/Model/TagParams.md)
+ - [TagResponse](docs/Model/TagResponse.md)
+ - [Tax](docs/Model/Tax.md)
+ - [TaxResponse](docs/Model/TaxResponse.md)
+ - [TooManyRequestsError](docs/Model/TooManyRequestsError.md)
+ - [TooManyRequestsErrorMeta](docs/Model/TooManyRequestsErrorMeta.md)
  - [Transfer](docs/Model/Transfer.md)
  - [TransferParams](docs/Model/TransferParams.md)
- - [TransfersIndexResponse](docs/Model/TransfersIndexResponse.md)
- - [TransfersResponse](docs/Model/TransfersResponse.md)
+ - [TransferResponse](docs/Model/TransferResponse.md)
  - [TrialBsResponse](docs/Model/TrialBsResponse.md)
  - [TrialBsResponseTrialBs](docs/Model/TrialBsResponseTrialBs.md)
  - [TrialBsResponseTrialBsBalances](docs/Model/TrialBsResponseTrialBsBalances.md)
@@ -374,34 +576,19 @@ Class | Method | HTTP request | Description
  - [TrialPlTwoYearsResponseTrialPlTwoYearsBalances](docs/Model/TrialPlTwoYearsResponseTrialPlTwoYearsBalances.md)
  - [TrialPlTwoYearsResponseTrialPlTwoYearsSections](docs/Model/TrialPlTwoYearsResponseTrialPlTwoYearsSections.md)
  - [UnauthorizedError](docs/Model/UnauthorizedError.md)
- - [UpdateCompanyParams](docs/Model/UpdateCompanyParams.md)
- - [UpdateCompanyParamsAddressAttributes](docs/Model/UpdateCompanyParamsAddressAttributes.md)
- - [UpdateCompanyParamsDocTemplate](docs/Model/UpdateCompanyParamsDocTemplate.md)
- - [UpdateCompanyParamsFiscalYearsAttributes](docs/Model/UpdateCompanyParamsFiscalYearsAttributes.md)
- - [UpdateCompanyParamsSalesInformationAttributes](docs/Model/UpdateCompanyParamsSalesInformationAttributes.md)
- - [UpdateDealParams](docs/Model/UpdateDealParams.md)
- - [UpdateDealParamsDetails](docs/Model/UpdateDealParamsDetails.md)
- - [UpdateExpenseApplicationParams](docs/Model/UpdateExpenseApplicationParams.md)
- - [UpdateExpenseApplicationParamsExpenseApplicationLines](docs/Model/UpdateExpenseApplicationParamsExpenseApplicationLines.md)
- - [UpdateItemParams](docs/Model/UpdateItemParams.md)
  - [User](docs/Model/User.md)
- - [UserUpdateParams](docs/Model/UserUpdateParams.md)
- - [UsersCapabilitiesResponse](docs/Model/UsersCapabilitiesResponse.md)
- - [UsersCapability](docs/Model/UsersCapability.md)
- - [UsersIndexResponse](docs/Model/UsersIndexResponse.md)
- - [UsersMeResponse](docs/Model/UsersMeResponse.md)
- - [UsersMeResponseUser](docs/Model/UsersMeResponseUser.md)
- - [UsersMeResponseUserCompanies](docs/Model/UsersMeResponseUserCompanies.md)
- - [UsersUpdateResponse](docs/Model/UsersUpdateResponse.md)
+ - [UserCapability](docs/Model/UserCapability.md)
+ - [UserParams](docs/Model/UserParams.md)
+ - [UserResponse](docs/Model/UserResponse.md)
  - [WalletTxn](docs/Model/WalletTxn.md)
- - [WalletTxnsIndexResponse](docs/Model/WalletTxnsIndexResponse.md)
- - [WalletTxnsShowResponse](docs/Model/WalletTxnsShowResponse.md)
+ - [WalletTxnParams](docs/Model/WalletTxnParams.md)
+ - [WalletTxnResponse](docs/Model/WalletTxnResponse.md)
  - [Walletable](docs/Model/Walletable.md)
  - [WalletableCreateParams](docs/Model/WalletableCreateParams.md)
+ - [WalletableCreateResponse](docs/Model/WalletableCreateResponse.md)
+ - [WalletableCreateResponseWalletable](docs/Model/WalletableCreateResponseWalletable.md)
+ - [WalletableResponse](docs/Model/WalletableResponse.md)
  - [WalletableUpdateParams](docs/Model/WalletableUpdateParams.md)
- - [WalletablesCreateResponse](docs/Model/WalletablesCreateResponse.md)
- - [WalletablesIndexResponse](docs/Model/WalletablesIndexResponse.md)
- - [WalletablesResponse](docs/Model/WalletablesResponse.md)
 
 
 ## Documentation For Authorization
@@ -415,8 +602,8 @@ Class | Method | HTTP request | Description
 - **Flow**: accessCode
 - **Authorization URL**: https://accounts.secure.freee.co.jp/public_api/authorize
 - **Scopes**: 
-- **write**: データの書き込み
 - **read**: データの読み取り
+- **write**: データの書き込み
 
 
 ## Author

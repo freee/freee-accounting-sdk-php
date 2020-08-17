@@ -13,12 +13,12 @@
 /**
  * freee API
  *
- * <h1 id=\"freee_api\">freee API</h1> <hr /> <h2 id=\"\">スタートガイド</h2> <p>1. セットアップ</p> <ol> <ul><li><a href=\"https://support.freee.co.jp/hc/ja/articles/202847230\" class=\"external-link\" rel=\"nofollow\">freeeアカウント（無料）</a>を<a href=\"https://secure.freee.co.jp/users/sign_up\" class=\"external-link\" rel=\"nofollow\">作成</a>します（すでにお持ちの場合は次へ）</li><li><a href=\"https://app.secure.freee.co.jp/developers/demo_companies/description\" class=\"external-link\" rel=\"nofollow\">開発者向け事業所・環境を作成</a>します</li><li><span><a href=\"https://app.secure.freee.co.jp/developers/applications\" class=\"external-link\" rel=\"nofollow\">前のステップで作成した事業所を選択してfreeeアプリを追加</a>します</span></li><li>Client IDをCopyしておきます</li> </ul> </ol>  <p>2. 実際にAPIを叩いてみる（ブラウザからAPIのレスポンスを確認する）</p> <ol> <ul><li><span><span>以下のURLの●をclient_idに入れ替えて<a href=\"https://app.secure.freee.co.jp/developers/tutorials/3-%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B#%E8%AA%8D%E5%8F%AF%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B\" class=\"external-link\" rel=\"nofollow\">アクセストークンを取得</a>します</span></span><ul><li><span><span><pre><code>https://accounts.secure.freee.co.jp/public_api/authorize?client_id=●&amp;redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&amp;response_type=token</a></code></pre></span></span></li></ul></li><li><span><a href=\"https://developer.freee.co.jp/docs/accounting/reference#/%E9%80%A3%E7%B5%A1%E5%85%88\" class=\"external-link\" rel=\"nofollow\">APIリファレンス</a>で<code>Authorize</code>を押下します</span></li><li><span>アクセストークン<span><span>を入力して</span></span>&nbsp;もう一度<span><code>Authorize</code>を押下して<code>Close</code>を押下します</span></span></li><li>リファレンス内のCompanies（事業所）に移動し、<code>Try it out</code>を押下し、<code>Execute</code>を押下します</li><li>Response bodyを参照し、事業所ID(id属性)を活用して、Companies以外のエンドポイントでどのようなデータのやりとりできるのか確認します</li></ul> </ol> <p>3. 連携を実装する</p> <ol> <ul><li><a href=\"https://developer.freee.co.jp/tips\" class=\"external-link\" rel=\"nofollow\">API TIPS</a>を参考に、ユースケースごとの連携の概要を学びます。<span>例えば</span><span>&nbsp;</span><a href=\"https://developer.freee.co.jp/tips/how-to-cooperate-salesmanegement-system\" class=\"external-link\" rel=\"nofollow\">SFA、CRM、販売管理システムから会計freeeへの連携</a>や<a href=\"https://developer.freee.co.jp/tips/how-to-cooperate-excel-and-spreadsheet\" class=\"external-link\" rel=\"nofollow\">エクセルやgoogle spreadsheetからの連携</a>です</li><li>実利用向け事業所がすでにある場合は利用、ない場合は作成します（セットアップで作成したのは開発者向け環境のため活用不可）</li><li><a href=\"https://developer.freee.co.jp/docs/accounting/reference\" class=\"external-link\" rel=\"nofollow\">API documentation</a><span>&nbsp;を参照し、躓いた場合は</span><span>&nbsp;</span><a href=\"https://developer.freee.co.jp/community/forum/community\" class=\"external-link\" rel=\"nofollow\">Community</a><span>&nbsp;で質問してみましょう</span></li></ul> </ol> <p>アプリケーションの登録方法や認証方法、またはAPIの活用方法でご不明な点がある場合は<a href=\"https://support.freee.co.jp/hc/ja/sections/115000030743\">ヘルプセンター</a>もご確認ください</p> <hr /> <h2 id=\"_2\">仕様</h2>  <h3 id=\"api\">APIエンドポイント</h3>  <p>https://api.freee.co.jp/ (httpsのみ)</p>  <h3 id=\"_3\">認証方式</h3>  <p><a href=\"http://tools.ietf.org/html/rfc6749\">OAuth2</a>に対応</p>  <ul> <li>Authorization Code Flow (Webアプリ向け)</li>  <li>Implicit Flow (Mobileアプリ向け)</li> </ul>  <h3 id=\"_4\">認証エンドポイント</h3>  <p>https://accounts.secure.freee.co.jp/</p>  <ul> <li>authorize : https://accounts.secure.freee.co.jp/public_api/authorize</li>  <li>token : https://accounts.secure.freee.co.jp/public_api/token</li> </ul>  <h3 id=\"_5\">アクセストークンのリフレッシュ</h3>  <p>認証時に得たrefresh_token を使ってtoken の期限をリフレッシュして新規に発行することが出来ます。</p>  <p>grant_type=refresh_token で https://accounts.secure.freee.co.jp/public_api/token にアクセスすればリフレッシュされます。</p>  <p>e.g.)</p>  <p>POST: https://accounts.secure.freee.co.jp/public_api/token</p>  <p>params: grant_type=refresh_token&amp;client_id=UID&amp;client_secret=SECRET&amp;refresh_token=REFRESH_TOKEN</p>  <p>詳細は<a href=\"https://github.com/applicake/doorkeeper/wiki/Enable-Refresh-Token-Credentials#flow\">refresh_token</a>を参照下さい。</p>  <h3 id=\"_6\">アクセストークンの破棄</h3>  <p>認証時に得たaccess_tokenまたはrefresh_tokenを使って、tokenを破棄することができます。 token=access_tokenまたはtoken=refresh_tokenでhttps://accounts.secure.freee.co.jp/public_api/revokeにアクセスすると破棄されます。token_type_hintでaccess_tokenまたはrefresh_tokenを陽に指定できます。</p>  <p>e.g.)</p>  <p>POST: https://accounts.secure.freee.co.jp/public_api/revoke</p>  <p>params: token=ACCESS_TOKEN</p>  <p>または</p>  <p>params: token=REFRESH_TOKEN</p>  <p>または</p>  <p>params: token=ACCESS_TOKEN&amp;token_type_hint=access_token</p>  <p>または</p>  <p>params: token=REFRESH_TOKEN&amp;token_type_hint=refresh_token</p>  <p>詳細は <a href=\"https://tools.ietf.org/html/rfc7009\">OAuth 2.0 Token revocation</a> をご参照ください。</p>  <h3 id=\"_7\">データフォーマット</h3>  <p>リクエスト、レスポンスともにJSON形式をサポート</p>  <h3 id=\"_8\">共通レスポンスヘッダー</h3>  <p>すべてのAPIのレスポンスには以下のHTTPヘッダーが含まれます。</p>  <ul> <li> <p>X-Freee-Request-ID</p> <ul> <li>各リクエスト毎に発行されるID</li> </ul> </li> </ul>  <h3 id=\"_9\">共通エラーレスポンス</h3>  <ul> <li> <p>ステータスコードはレスポンス内のJSONに含まれる他、HTTPヘッダにも含まれる</p> </li>  <li> <p>type</p>  <ul> <li>status : HTTPステータスコードの説明</li>  <li>validation : エラーの詳細の説明（開発者向け）</li> </ul> </li> </ul>  <p>レスポンスの例</p>  <pre><code>  {     &quot;status_code&quot; : 400,     &quot;errors&quot; : [       {         &quot;type&quot; : &quot;status&quot;,         &quot;messages&quot; : [&quot;不正なリクエストです。&quot;]       },       {         &quot;type&quot; : &quot;validation&quot;,         &quot;messages&quot; : [&quot;Date は不正な日付フォーマットです。入力例：2013-01-01&quot;]       }     ]   }</code></pre> <hr /> <h2 id=\"_10\">連絡先</h2>  <p>ご不明点、ご要望等は <a href=\"https://support.freee.co.jp/hc/ja/requests/new\">freee サポートデスクへのお問い合わせフォーム</a> からご連絡ください。</p> <hr />&copy; Since 2013 freee K.K.
+ * <h1 id=\"freee_api\">freee API</h1> <hr /> <h2 id=\"start_guide\">スタートガイド</h2>  <p>freee API開発がはじめての方は<a href=\"https://developer.freee.co.jp/getting-started\">freee API スタートガイド</a>を参照してください。</p>  <hr /> <h2 id=\"specification\">仕様</h2>  <pre><code>【重要】会計freee APIの新バージョンについて 2020年12月まで、2つのバージョンが利用できる状態です。古いものは2020年12月に利用不可となります。<br> 新しいAPIを利用するにはリクエストヘッダーに以下を指定します。 X-Api-Version: 2020-06-15<br> 指定がない場合は2020年12月に廃止予定のAPIを利用することとなります。<br> 【重要】APIのバージョン指定をせずに利用し続ける場合 2020年12月に新しいバージョンのAPIに自動的に切り替わります。 詳細は、<a href=\"https://developer.freee.co.jp/release-note/2948\" target=\"_blank\">リリースノート</a>をご覧ください。<br> 旧バージョンのAPIリファレンスを確認したい場合は、<a href=\"https://freee.github.io/freee-api-schema/\" target=\"_blank\">旧バージョンのAPIリファレンスページ</a>をご覧ください。 </code></pre>  <h3 id=\"api_endpoint\">APIエンドポイント</h3>  <p>https://api.freee.co.jp/ (httpsのみ)</p>  <h3 id=\"about_authorize\">認証について</h3> <p>OAuth2.0を利用します。詳細は<a href=\"https://developer.freee.co.jp/docs\" target=\"_blank\">ドキュメントの認証</a>パートを参照してください。</p>  <h3 id=\"data_format\">データフォーマット</h3>  <p>リクエスト、レスポンスともにJSON形式をサポートしていますが、詳細は、API毎の説明欄（application/jsonなど）を確認してください。</p>  <h3 id=\"compatibility\">後方互換性ありの変更</h3>  <p>freeeでは、APIを改善していくために以下のような変更は後方互換性ありとして通知なく変更を入れることがあります。アプリケーション実装者は以下を踏まえて開発を行ってください。</p>  <ul> <li>新しいAPIリソース・エンドポイントの追加</li> <li>既存のAPIに対して必須ではない新しいリクエストパラメータの追加</li> <li>既存のAPIレスポンスに対する新しいプロパティの追加</li> <li>既存のAPIレスポンスに対するプロパティの順番の入れ変え</li> <li>keyとなっているidやcodeの長さの変更（長くする）</li> </ul>  <h3 id=\"common_response_header\">共通レスポンスヘッダー</h3>  <p>すべてのAPIのレスポンスには以下のHTTPヘッダーが含まれます。</p>  <ul> <li> <p>X-Freee-Request-ID</p> <ul> <li>各リクエスト毎に発行されるID</li> </ul> </li> </ul>  <h3 id=\"common_error_response\">共通エラーレスポンス</h3>  <ul> <li> <p>ステータスコードはレスポンス内のJSONに含まれる他、HTTPヘッダにも含まれる</p> </li> <li> <p>一部のエラーレスポンスにはエラーコードが含まれます。<br>詳細は、<a href=\"https://developer.freee.co.jp/tips/faq/40x-checkpoint\">HTTPステータスコード400台エラー時のチェックポイント</a>を参照してください</p> </li> <p>type</p>  <ul> <li>status : HTTPステータスコードの説明</li>  <li>validation : エラーの詳細の説明（開発者向け）</li> </ul> </li> </ul>  <p>レスポンスの例</p>  <pre><code>  {     &quot;status_code&quot; : 400,     &quot;errors&quot; : [       {         &quot;type&quot; : &quot;status&quot;,         &quot;messages&quot; : [&quot;不正なリクエストです。&quot;]       },       {         &quot;type&quot; : &quot;validation&quot;,         &quot;messages&quot; : [&quot;Date は不正な日付フォーマットです。入力例：2013-01-01&quot;]       }     ]   }</code></pre>  </br>  <h3 id=\"api_rate_limit\">API使用制限</h3>    <p>freeeは一定期間に過度のアクセスを検知した場合、APIアクセスをコントロールする場合があります。</p>   <p>その際のhttp status codeは403となります。制限がかかってから10分程度が過ぎると再度使用することができるようになります。</p>  <h4 id=\"reports_api_endpoint\">/reportsエンドポイント</h4>  <p>freeeは/reportsエンドポイントに対して1秒間に10以上のアクセスを検知した場合、APIアクセスをコントロールする場合があります。その際のhttp status codeは429（too many requests）となります。</p>  <p>レスポンスボディのmetaプロパティに以下を含めます。</p>  <ul>   <li>設定されている上限値</li>   <li>上限に達するまでの使用可能回数</li>   <li>（上限値に達した場合）使用回数がリセットされる時刻</li> </ul>  <h3 id=\"plan_api_rate_limit\">プラン別のAPI Rate Limit</h3>   <table border=\"1\">     <tbody>       <tr>         <th style=\"padding: 10px\"><strong>会計freeeプラン名</strong></th>         <th style=\"padding: 10px\"><strong>事業所とアプリケーション毎に1日でのAPIコール数</strong></th>       </tr>       <tr>         <td style=\"padding: 10px\">エンタープライズ</td>         <td style=\"padding: 10px\">10,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">プロフェッショナル</td>         <td style=\"padding: 10px\">5,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">ベーシック</td>         <td style=\"padding: 10px\">3,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">ミニマム</td>         <td style=\"padding: 10px\">3,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">上記以外</td>         <td style=\"padding: 10px\">3,000</td>       </tr>     </tbody>   </table>  <h3 id=\"webhook\">Webhookについて</h3>  <p>詳細は<a href=\"https://developer.freee.co.jp/docs/accounting/webhook\" target=\"_blank\">会計Webhook概要</a>を参照してください。</p>  <hr /> <h2 id=\"contact\">連絡先</h2>  <p>ご不明点、ご要望等は <a href=\"https://support.freee.co.jp/hc/ja/requests/new\">freee サポートデスクへのお問い合わせフォーム</a> からご連絡ください。</p> <hr />&copy; Since 2013 freee K.K.
  *
  * The version of the OpenAPI document: v1.0
  * 
  * Generated by: https://openapi-generator.tech
- * OpenAPI Generator version: 4.2.2
+ * OpenAPI Generator version: 4.3.1
  */
 
 /**
@@ -57,13 +57,13 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
+        'account_item_id' => 'int',
         'company_id' => 'int',
-        'name' => 'string',
-        'account_items_id' => 'int',
-        'item_id' => 'int',
-        'tax_code' => 'int',
         'description' => 'string',
-        'line_description' => 'string'
+        'item_id' => 'int',
+        'line_description' => 'string',
+        'name' => 'string',
+        'tax_code' => 'int'
     ];
 
     /**
@@ -72,13 +72,13 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPIFormats = [
+        'account_item_id' => null,
         'company_id' => null,
-        'name' => null,
-        'account_items_id' => null,
-        'item_id' => null,
-        'tax_code' => null,
         'description' => null,
-        'line_description' => null
+        'item_id' => null,
+        'line_description' => null,
+        'name' => null,
+        'tax_code' => null
     ];
 
     /**
@@ -108,13 +108,13 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
+        'account_item_id' => 'account_item_id',
         'company_id' => 'company_id',
-        'name' => 'name',
-        'account_items_id' => 'account_items_id',
-        'item_id' => 'item_id',
-        'tax_code' => 'tax_code',
         'description' => 'description',
-        'line_description' => 'line_description'
+        'item_id' => 'item_id',
+        'line_description' => 'line_description',
+        'name' => 'name',
+        'tax_code' => 'tax_code'
     ];
 
     /**
@@ -123,13 +123,13 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
+        'account_item_id' => 'setAccountItemId',
         'company_id' => 'setCompanyId',
-        'name' => 'setName',
-        'account_items_id' => 'setAccountItemsId',
-        'item_id' => 'setItemId',
-        'tax_code' => 'setTaxCode',
         'description' => 'setDescription',
-        'line_description' => 'setLineDescription'
+        'item_id' => 'setItemId',
+        'line_description' => 'setLineDescription',
+        'name' => 'setName',
+        'tax_code' => 'setTaxCode'
     ];
 
     /**
@@ -138,13 +138,13 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $getters = [
+        'account_item_id' => 'getAccountItemId',
         'company_id' => 'getCompanyId',
-        'name' => 'getName',
-        'account_items_id' => 'getAccountItemsId',
-        'item_id' => 'getItemId',
-        'tax_code' => 'getTaxCode',
         'description' => 'getDescription',
-        'line_description' => 'getLineDescription'
+        'item_id' => 'getItemId',
+        'line_description' => 'getLineDescription',
+        'name' => 'getName',
+        'tax_code' => 'getTaxCode'
     ];
 
     /**
@@ -207,13 +207,13 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
      */
     public function __construct(array $data = null)
     {
+        $this->container['account_item_id'] = isset($data['account_item_id']) ? $data['account_item_id'] : null;
         $this->container['company_id'] = isset($data['company_id']) ? $data['company_id'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['account_items_id'] = isset($data['account_items_id']) ? $data['account_items_id'] : null;
-        $this->container['item_id'] = isset($data['item_id']) ? $data['item_id'] : null;
-        $this->container['tax_code'] = isset($data['tax_code']) ? $data['tax_code'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['item_id'] = isset($data['item_id']) ? $data['item_id'] : null;
         $this->container['line_description'] = isset($data['line_description']) ? $data['line_description'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['tax_code'] = isset($data['tax_code']) ? $data['tax_code'] : null;
     }
 
     /**
@@ -225,15 +225,42 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
     {
         $invalidProperties = [];
 
+        if ($this->container['account_item_id'] === null) {
+            $invalidProperties[] = "'account_item_id' can't be null";
+        }
+        if (($this->container['account_item_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'account_item_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['account_item_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'account_item_id', must be bigger than or equal to 1.";
+        }
+
         if ($this->container['company_id'] === null) {
             $invalidProperties[] = "'company_id' can't be null";
         }
-        if (($this->container['company_id'] > 999999999999)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 999999999999.";
+        if (($this->container['company_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
         }
 
         if (($this->container['company_id'] < 1)) {
             $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['description']) && (mb_strlen($this->container['description']) > 1000)) {
+            $invalidProperties[] = "invalid value for 'description', the character length must be smaller than or equal to 1000.";
+        }
+
+        if (!is_null($this->container['item_id']) && ($this->container['item_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'item_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (!is_null($this->container['item_id']) && ($this->container['item_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'item_id', must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['line_description']) && (mb_strlen($this->container['line_description']) > 1000)) {
+            $invalidProperties[] = "invalid value for 'line_description', the character length must be smaller than or equal to 1000.";
         }
 
         if ($this->container['name'] === null) {
@@ -246,12 +273,12 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
         if ($this->container['tax_code'] === null) {
             $invalidProperties[] = "'tax_code' can't be null";
         }
-        if (!is_null($this->container['description']) && (mb_strlen($this->container['description']) > 1000)) {
-            $invalidProperties[] = "invalid value for 'description', the character length must be smaller than or equal to 1000.";
+        if (($this->container['tax_code'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'tax_code', must be smaller than or equal to 2147483647.";
         }
 
-        if (!is_null($this->container['line_description']) && (mb_strlen($this->container['line_description']) > 1000)) {
-            $invalidProperties[] = "invalid value for 'line_description', the character length must be smaller than or equal to 1000.";
+        if (($this->container['tax_code'] < 0)) {
+            $invalidProperties[] = "invalid value for 'tax_code', must be bigger than or equal to 0.";
         }
 
         return $invalidProperties;
@@ -268,6 +295,38 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets account_item_id
+     *
+     * @return int
+     */
+    public function getAccountItemId()
+    {
+        return $this->container['account_item_id'];
+    }
+
+    /**
+     * Sets account_item_id
+     *
+     * @param int $account_item_id 勘定科目ID
+     *
+     * @return $this
+     */
+    public function setAccountItemId($account_item_id)
+    {
+
+        if (($account_item_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $account_item_id when calling ExpenseApplicationLineTemplateParams., must be smaller than or equal to 2147483647.');
+        }
+        if (($account_item_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $account_item_id when calling ExpenseApplicationLineTemplateParams., must be bigger than or equal to 1.');
+        }
+
+        $this->container['account_item_id'] = $account_item_id;
+
+        return $this;
+    }
 
     /**
      * Gets company_id
@@ -289,8 +348,8 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
     public function setCompanyId($company_id)
     {
 
-        if (($company_id > 999999999999)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling ExpenseApplicationLineTemplateParams., must be smaller than or equal to 999999999999.');
+        if (($company_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $company_id when calling ExpenseApplicationLineTemplateParams., must be smaller than or equal to 2147483647.');
         }
         if (($company_id < 1)) {
             throw new \InvalidArgumentException('invalid value for $company_id when calling ExpenseApplicationLineTemplateParams., must be bigger than or equal to 1.');
@@ -302,53 +361,29 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets name
+     * Gets description
      *
-     * @return string
+     * @return string|null
      */
-    public function getName()
+    public function getDescription()
     {
-        return $this->container['name'];
+        return $this->container['description'];
     }
 
     /**
-     * Sets name
+     * Sets description
      *
-     * @param string $name 経費科目名
+     * @param string|null $description 経費科目の説明 (1000文字以内)
      *
      * @return $this
      */
-    public function setName($name)
+    public function setDescription($description)
     {
-        if ((mb_strlen($name) > 1000)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling ExpenseApplicationLineTemplateParams., must be smaller than or equal to 1000.');
+        if (!is_null($description) && (mb_strlen($description) > 1000)) {
+            throw new \InvalidArgumentException('invalid length for $description when calling ExpenseApplicationLineTemplateParams., must be smaller than or equal to 1000.');
         }
 
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets account_items_id
-     *
-     * @return int|null
-     */
-    public function getAccountItemsId()
-    {
-        return $this->container['account_items_id'];
-    }
-
-    /**
-     * Sets account_items_id
-     *
-     * @param int|null $account_items_id 勘定科目ID
-     *
-     * @return $this
-     */
-    public function setAccountItemsId($account_items_id)
-    {
-        $this->container['account_items_id'] = $account_items_id;
+        $this->container['description'] = $description;
 
         return $this;
     }
@@ -372,7 +407,71 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
      */
     public function setItemId($item_id)
     {
+
+        if (!is_null($item_id) && ($item_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $item_id when calling ExpenseApplicationLineTemplateParams., must be smaller than or equal to 2147483647.');
+        }
+        if (!is_null($item_id) && ($item_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $item_id when calling ExpenseApplicationLineTemplateParams., must be bigger than or equal to 1.');
+        }
+
         $this->container['item_id'] = $item_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets line_description
+     *
+     * @return string|null
+     */
+    public function getLineDescription()
+    {
+        return $this->container['line_description'];
+    }
+
+    /**
+     * Sets line_description
+     *
+     * @param string|null $line_description 内容の補足 (1000文字以内)
+     *
+     * @return $this
+     */
+    public function setLineDescription($line_description)
+    {
+        if (!is_null($line_description) && (mb_strlen($line_description) > 1000)) {
+            throw new \InvalidArgumentException('invalid length for $line_description when calling ExpenseApplicationLineTemplateParams., must be smaller than or equal to 1000.');
+        }
+
+        $this->container['line_description'] = $line_description;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name 経費科目名 (100文字以内)
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        if ((mb_strlen($name) > 1000)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling ExpenseApplicationLineTemplateParams., must be smaller than or equal to 1000.');
+        }
+
+        $this->container['name'] = $name;
 
         return $this;
     }
@@ -396,63 +495,15 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
      */
     public function setTaxCode($tax_code)
     {
+
+        if (($tax_code > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling ExpenseApplicationLineTemplateParams., must be smaller than or equal to 2147483647.');
+        }
+        if (($tax_code < 0)) {
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling ExpenseApplicationLineTemplateParams., must be bigger than or equal to 0.');
+        }
+
         $this->container['tax_code'] = $tax_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string|null
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string|null $description 経費科目の説明
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        if (!is_null($description) && (mb_strlen($description) > 1000)) {
-            throw new \InvalidArgumentException('invalid length for $description when calling ExpenseApplicationLineTemplateParams., must be smaller than or equal to 1000.');
-        }
-
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets line_description
-     *
-     * @return string|null
-     */
-    public function getLineDescription()
-    {
-        return $this->container['line_description'];
-    }
-
-    /**
-     * Sets line_description
-     *
-     * @param string|null $line_description 内容の補足
-     *
-     * @return $this
-     */
-    public function setLineDescription($line_description)
-    {
-        if (!is_null($line_description) && (mb_strlen($line_description) > 1000)) {
-            throw new \InvalidArgumentException('invalid length for $line_description when calling ExpenseApplicationLineTemplateParams., must be smaller than or equal to 1000.');
-        }
-
-        $this->container['line_description'] = $line_description;
 
         return $this;
     }
