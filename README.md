@@ -55,9 +55,9 @@ PHP の基礎については、 [PHP: PHP マニュアル - Manual ](https://www
 
 ##### WebApp のサンプルの実行環境
 
-サンプルは [Laravel](https://laravel.com/) をベースに作成しています。サンプルを実行する際は、前述の実行環境に加え、下記も併せてご準備ください。
+サンプルは [Laravel](https://laravel.com/) 7.x をベースに作成しています。サンプルを実行する際は、前述の実行環境に加え、下記も併せてご準備ください。
 
-- PHP 7.2 以上
+- PHP 7.2.5 以上
   - BCMath PHP Extension
   - Ctype PHP Extension
   - JSON PHP Extension
@@ -132,7 +132,7 @@ php artisan serve --host 0.0.0.0
 
 この項では、本 SDK の導入の参考として、 Laravel で利用する方法を記述します。
 
-まず、 Laravel のプロジェクトを新規作成します。既存のプロジェクトに導入する場合は、読み飛ばしてください。まず、Laravel のプロジェクトを作成するため、`laravel` コマンドを [Installing Laravel](https://laravel.com/docs/6.x#installing-laravel) を参考にインストールします。なお、前述の Dockerfile を利用する場合は、すでにインストール済みです。
+まず、 Laravel のプロジェクトを新規作成します。既存のプロジェクトに導入する場合は、読み飛ばしてください。まず、Laravel のプロジェクトを作成するため、`laravel` コマンドを [Installing Laravel](https://laravel.com/docs/7.x#installing-laravel) を参考にインストールします。なお、前述の Dockerfile を利用する場合は、すでにインストール済みです。
 
 ```bash
 # Laravel のプロジェクトを新規作成し、そのディレクトリに移動する
@@ -148,14 +148,21 @@ php artisan serve --host 0.0.0.0
 # 内蔵サーバーを停止するには、 Ctrl + c を押下します
 ```
 
-データベースの設定を sqlite に変更します。 `.env` を下記のように編集します。 `DB_DATABASE` はプロジェクト内の `database/database.sqlite` への絶対パスを設定します。適宜調整してください。
+`.env` に下記を追加し、[WebApp のサンプルの実行手順](#webapp-%E3%81%AE%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AE%E5%AE%9F%E8%A1%8C%E6%89%8B%E9%A0%86) に倣い `<client_id>`, `<client-secret>` を設定してください。
+
+```env
+FREEE_ACCOUNTING_CLIENT_ID=<client_id>
+FREEE_ACCOUNTING_CLIENT_SECRET=<client_secret>
+```
+
+つぎに、データベースの設定を sqlite に変更します。 `.env` を下記のように編集します。 `DB_DATABASE` はプロジェクト内の `database/database.sqlite` への絶対パスを設定します。適宜調整してください。
 
 ```
 #DB_CONNECTION=mysql
 DB_CONNECTION=sqlite
 ...
 #DB_DATABASE=laravel
-DB_DATABASE=/usr/src/app/sampleapp/database/database.sqlite
+DB_DATABASE=/usr/src/app/database/database.sqlite
 ```
 
 つぎに、sqlite ファイルを作成し、マイグレーションを実行します。
@@ -236,10 +243,10 @@ php artisan make:socialite FreeeAccounting --spec=oauth2 --authorize_url=https:/
 composer dumpautoload
 ```
 
-つぎに、認証用の画面を用意します。今回は `laravel/ui` を導入し、その画面を流用します。詳細は [Authentication - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/authentication#authentication-quickstart) をご参照ください。
+つぎに、認証用の画面を用意します。今回は `laravel/ui` を導入し、その画面を流用します。詳細は [Authentication - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/7.x/authentication#authentication-quickstart) をご参照ください。
 
 ```bash
-composer require laravel/ui --dev
+composer require laravel/ui
 php artisan ui vue --auth
 npm install && npm run dev
 ```
