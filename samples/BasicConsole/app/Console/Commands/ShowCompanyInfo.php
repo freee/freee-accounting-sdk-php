@@ -37,7 +37,7 @@ class ShowCompanyInfo extends Command
     /**
      * Execute the console command.
      *
-     * @return mixed
+     * @return int
      */
     public function handle()
     {
@@ -69,5 +69,7 @@ class ShowCompanyInfo extends Command
         foreach ($invoices->getInvoices() as $invoice) {
             $this->line('請求日 : ' . $invoice->getIssueDate() . ' / 合計金額 : ' . $invoice->getTotalAmount());
         }
+
+        return 0;
     }
 }
