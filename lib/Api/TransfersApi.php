@@ -1476,8 +1476,8 @@ class TransfersApi
             throw new \InvalidArgumentException('invalid value for "$company_id" when calling TransfersApi.getTransfers, must be bigger than or equal to 1.');
         }
 
-        if ($offset !== null && $offset > -9223372036854775616) {
-            throw new \InvalidArgumentException('invalid value for "$offset" when calling TransfersApi.getTransfers, must be smaller than or equal to -9223372036854775616.');
+        if ($offset !== null && $offset > 9223372036854775807) {
+            throw new \InvalidArgumentException('invalid value for "$offset" when calling TransfersApi.getTransfers, must be smaller than or equal to 9223372036854775807.');
         }
         if ($offset !== null && $offset < 0) {
             throw new \InvalidArgumentException('invalid value for "$offset" when calling TransfersApi.getTransfers, must be bigger than or equal to 0.');

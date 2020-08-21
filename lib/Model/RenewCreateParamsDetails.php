@@ -263,12 +263,12 @@ class RenewCreateParamsDetails implements ModelInterface, ArrayAccess
         if ($this->container['amount'] === null) {
             $invalidProperties[] = "'amount' can't be null";
         }
-        if (($this->container['amount'] > -9223372036854775616)) {
-            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to -9223372036854775616.";
+        if (($this->container['amount'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 9223372036854775807.";
         }
 
-        if (($this->container['amount'] < 9223372036854775616)) {
-            $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to 9223372036854775616.";
+        if (($this->container['amount'] < -9223372036854775808)) {
+            $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to -9223372036854775808.";
         }
 
         if (!is_null($this->container['item_id']) && ($this->container['item_id'] > 2147483647)) {
@@ -322,12 +322,12 @@ class RenewCreateParamsDetails implements ModelInterface, ArrayAccess
             $invalidProperties[] = "invalid value for 'tax_code', must be bigger than or equal to 0.";
         }
 
-        if (!is_null($this->container['vat']) && ($this->container['vat'] > -9223372036854775616)) {
-            $invalidProperties[] = "invalid value for 'vat', must be smaller than or equal to -9223372036854775616.";
+        if (!is_null($this->container['vat']) && ($this->container['vat'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'vat', must be smaller than or equal to 9223372036854775807.";
         }
 
-        if (!is_null($this->container['vat']) && ($this->container['vat'] < 9223372036854775616)) {
-            $invalidProperties[] = "invalid value for 'vat', must be bigger than or equal to 9223372036854775616.";
+        if (!is_null($this->container['vat']) && ($this->container['vat'] < -9223372036854775808)) {
+            $invalidProperties[] = "invalid value for 'vat', must be bigger than or equal to -9223372036854775808.";
         }
 
         return $invalidProperties;
@@ -397,11 +397,11 @@ class RenewCreateParamsDetails implements ModelInterface, ArrayAccess
     public function setAmount($amount)
     {
 
-        if (($amount > -9223372036854775616)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling RenewCreateParamsDetails., must be smaller than or equal to -9223372036854775616.');
+        if (($amount > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling RenewCreateParamsDetails., must be smaller than or equal to 9223372036854775807.');
         }
-        if (($amount < 9223372036854775616)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling RenewCreateParamsDetails., must be bigger than or equal to 9223372036854775616.');
+        if (($amount < -9223372036854775808)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling RenewCreateParamsDetails., must be bigger than or equal to -9223372036854775808.');
         }
 
         $this->container['amount'] = $amount;
@@ -669,11 +669,11 @@ class RenewCreateParamsDetails implements ModelInterface, ArrayAccess
     public function setVat($vat)
     {
 
-        if (!is_null($vat) && ($vat > -9223372036854775616)) {
-            throw new \InvalidArgumentException('invalid value for $vat when calling RenewCreateParamsDetails., must be smaller than or equal to -9223372036854775616.');
+        if (!is_null($vat) && ($vat > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $vat when calling RenewCreateParamsDetails., must be smaller than or equal to 9223372036854775807.');
         }
-        if (!is_null($vat) && ($vat < 9223372036854775616)) {
-            throw new \InvalidArgumentException('invalid value for $vat when calling RenewCreateParamsDetails., must be bigger than or equal to 9223372036854775616.');
+        if (!is_null($vat) && ($vat < -9223372036854775808)) {
+            throw new \InvalidArgumentException('invalid value for $vat when calling RenewCreateParamsDetails., must be bigger than or equal to -9223372036854775808.');
         }
 
         $this->container['vat'] = $vat;

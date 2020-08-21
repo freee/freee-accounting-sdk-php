@@ -297,8 +297,8 @@ class ManualJournalCreateParamsDetails implements ModelInterface, ArrayAccess
         if ($this->container['amount'] === null) {
             $invalidProperties[] = "'amount' can't be null";
         }
-        if (($this->container['amount'] > -9223372036854775616)) {
-            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to -9223372036854775616.";
+        if (($this->container['amount'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 9223372036854775807.";
         }
 
         if (($this->container['amount'] < 1)) {
@@ -442,8 +442,8 @@ class ManualJournalCreateParamsDetails implements ModelInterface, ArrayAccess
     public function setAmount($amount)
     {
 
-        if (($amount > -9223372036854775616)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling ManualJournalCreateParamsDetails., must be smaller than or equal to -9223372036854775616.');
+        if (($amount > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling ManualJournalCreateParamsDetails., must be smaller than or equal to 9223372036854775807.');
         }
         if (($amount < 1)) {
             throw new \InvalidArgumentException('invalid value for $amount when calling ManualJournalCreateParamsDetails., must be bigger than or equal to 1.');

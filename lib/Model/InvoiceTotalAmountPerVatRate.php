@@ -210,29 +210,29 @@ class InvoiceTotalAmountPerVatRate implements ModelInterface, ArrayAccess
         if ($this->container['reduced_vat_8'] === null) {
             $invalidProperties[] = "'reduced_vat_8' can't be null";
         }
-        if (($this->container['reduced_vat_8'] > -9223372036854775616)) {
-            $invalidProperties[] = "invalid value for 'reduced_vat_8', must be smaller than or equal to -9223372036854775616.";
+        if (($this->container['reduced_vat_8'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'reduced_vat_8', must be smaller than or equal to 9223372036854775807.";
         }
 
         if ($this->container['vat_10'] === null) {
             $invalidProperties[] = "'vat_10' can't be null";
         }
-        if (($this->container['vat_10'] > -9223372036854775616)) {
-            $invalidProperties[] = "invalid value for 'vat_10', must be smaller than or equal to -9223372036854775616.";
+        if (($this->container['vat_10'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'vat_10', must be smaller than or equal to 9223372036854775807.";
         }
 
         if ($this->container['vat_5'] === null) {
             $invalidProperties[] = "'vat_5' can't be null";
         }
-        if (($this->container['vat_5'] > -9223372036854775616)) {
-            $invalidProperties[] = "invalid value for 'vat_5', must be smaller than or equal to -9223372036854775616.";
+        if (($this->container['vat_5'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'vat_5', must be smaller than or equal to 9223372036854775807.";
         }
 
         if ($this->container['vat_8'] === null) {
             $invalidProperties[] = "'vat_8' can't be null";
         }
-        if (($this->container['vat_8'] > -9223372036854775616)) {
-            $invalidProperties[] = "invalid value for 'vat_8', must be smaller than or equal to -9223372036854775616.";
+        if (($this->container['vat_8'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'vat_8', must be smaller than or equal to 9223372036854775807.";
         }
 
         return $invalidProperties;
@@ -270,8 +270,8 @@ class InvoiceTotalAmountPerVatRate implements ModelInterface, ArrayAccess
     public function setReducedVat8($reduced_vat_8)
     {
 
-        if (($reduced_vat_8 > -9223372036854775616)) {
-            throw new \InvalidArgumentException('invalid value for $reduced_vat_8 when calling InvoiceTotalAmountPerVatRate., must be smaller than or equal to -9223372036854775616.');
+        if (($reduced_vat_8 > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $reduced_vat_8 when calling InvoiceTotalAmountPerVatRate., must be smaller than or equal to 9223372036854775807.');
         }
 
         $this->container['reduced_vat_8'] = $reduced_vat_8;
@@ -299,8 +299,8 @@ class InvoiceTotalAmountPerVatRate implements ModelInterface, ArrayAccess
     public function setVat10($vat_10)
     {
 
-        if (($vat_10 > -9223372036854775616)) {
-            throw new \InvalidArgumentException('invalid value for $vat_10 when calling InvoiceTotalAmountPerVatRate., must be smaller than or equal to -9223372036854775616.');
+        if (($vat_10 > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $vat_10 when calling InvoiceTotalAmountPerVatRate., must be smaller than or equal to 9223372036854775807.');
         }
 
         $this->container['vat_10'] = $vat_10;
@@ -328,8 +328,8 @@ class InvoiceTotalAmountPerVatRate implements ModelInterface, ArrayAccess
     public function setVat5($vat_5)
     {
 
-        if (($vat_5 > -9223372036854775616)) {
-            throw new \InvalidArgumentException('invalid value for $vat_5 when calling InvoiceTotalAmountPerVatRate., must be smaller than or equal to -9223372036854775616.');
+        if (($vat_5 > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $vat_5 when calling InvoiceTotalAmountPerVatRate., must be smaller than or equal to 9223372036854775807.');
         }
 
         $this->container['vat_5'] = $vat_5;
@@ -357,8 +357,8 @@ class InvoiceTotalAmountPerVatRate implements ModelInterface, ArrayAccess
     public function setVat8($vat_8)
     {
 
-        if (($vat_8 > -9223372036854775616)) {
-            throw new \InvalidArgumentException('invalid value for $vat_8 when calling InvoiceTotalAmountPerVatRate., must be smaller than or equal to -9223372036854775616.');
+        if (($vat_8 > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $vat_8 when calling InvoiceTotalAmountPerVatRate., must be smaller than or equal to 9223372036854775807.');
         }
 
         $this->container['vat_8'] = $vat_8;

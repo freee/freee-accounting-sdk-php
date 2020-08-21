@@ -269,12 +269,12 @@ class DealUpdateParamsDetails implements ModelInterface, ArrayAccess
         if ($this->container['amount'] === null) {
             $invalidProperties[] = "'amount' can't be null";
         }
-        if (($this->container['amount'] > -9223372036854775616)) {
-            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to -9223372036854775616.";
+        if (($this->container['amount'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 9223372036854775807.";
         }
 
-        if (($this->container['amount'] < 9223372036854775616)) {
-            $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to 9223372036854775616.";
+        if (($this->container['amount'] < -9223372036854775808)) {
+            $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to -9223372036854775808.";
         }
 
         if (!is_null($this->container['id']) && ($this->container['id'] > 2147483647)) {
@@ -403,11 +403,11 @@ class DealUpdateParamsDetails implements ModelInterface, ArrayAccess
     public function setAmount($amount)
     {
 
-        if (($amount > -9223372036854775616)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling DealUpdateParamsDetails., must be smaller than or equal to -9223372036854775616.');
+        if (($amount > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling DealUpdateParamsDetails., must be smaller than or equal to 9223372036854775807.');
         }
-        if (($amount < 9223372036854775616)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling DealUpdateParamsDetails., must be bigger than or equal to 9223372036854775616.');
+        if (($amount < -9223372036854775808)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling DealUpdateParamsDetails., must be bigger than or equal to -9223372036854775808.');
         }
 
         $this->container['amount'] = $amount;
