@@ -56,6 +56,9 @@ class HeaderSelector
         }
 
         $headers['Content-Type'] = $this->selectContentTypeHeader($contentTypes);
+
+        $headers = $this->appendFreeApiVersionHeader($headers);
+
         return $headers;
     }
 
@@ -68,6 +71,9 @@ class HeaderSelector
         $headers = $this->selectHeaders($accept, []);
 
         unset($headers['Content-Type']);
+
+        $headers = $this->appendFreeApiVersionHeader($headers);
+
         return $headers;
     }
 
@@ -105,6 +111,18 @@ class HeaderSelector
         } else {
             return implode(',', $contentType);
         }
+    }
+
+    /**
+     * Append freee API version header to the array of headers
+     * 
+     * @param mixed[] $headers Array of headers
+     * 
+     * @return mixed[] Array of headers
+     */
+    private function appendFreeApiVersionHeader($headers)
+    {
+        return array_merge($headers, ['X-Api-Version' => '2020-06-15']);
     }
 }
 
