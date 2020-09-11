@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address_attributes** | [**\Freee\Accounting\Model\PartnersResponseAddressAttributes**](PartnersResponseAddressAttributes.md) |  | [optional] 
+**address_attributes** | [**\Freee\Accounting\Model\PartnerResponsePartnerAddressAttributes**](PartnerResponsePartnerAddressAttributes.md) |  | [optional] 
 **code** | **string** | 取引先コード | 
 **company_id** | **int** | 事業所ID | 
 **contact_name** | **string** | 担当者 氏名 | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **partner_bank_account_attributes_bank_code** | **string** | 銀行番号 | [optional] 
 **partner_bank_account_attributes_bank_name** | **string** | 銀行名 | [optional] 
 **partner_bank_account_attributes_bank_name_kana** | **string** | 銀行名（カナ） | [optional] 
-**partner_bank_account_attributes_branch_code** | **string** | 受取人名（カナ） | [optional] 
+**partner_bank_account_attributes_branch_code** | **string** | 支店番号 | [optional] 
 **partner_bank_account_attributes_branch_kana** | **string** | 支店名（カナ） | [optional] 
 **partner_bank_account_attributes_branch_name** | **string** | 支店名 | [optional] 
 **partner_bank_account_attributes_long_account_name** | **string** | 受取人名 | [optional] 

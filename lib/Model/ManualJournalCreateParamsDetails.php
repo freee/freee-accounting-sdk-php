@@ -340,24 +340,24 @@ class ManualJournalCreateParamsDetails implements ModelInterface, ArrayAccess
             $invalidProperties[] = "invalid value for 'section_id', must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['segment_1_tag_id']) && ($this->container['segment_1_tag_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'segment_1_tag_id', must be smaller than or equal to 2147483647.";
+        if (!is_null($this->container['segment_1_tag_id']) && ($this->container['segment_1_tag_id'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'segment_1_tag_id', must be smaller than or equal to 9223372036854775807.";
         }
 
         if (!is_null($this->container['segment_1_tag_id']) && ($this->container['segment_1_tag_id'] < 1)) {
             $invalidProperties[] = "invalid value for 'segment_1_tag_id', must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['segment_2_tag_id']) && ($this->container['segment_2_tag_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'segment_2_tag_id', must be smaller than or equal to 2147483647.";
+        if (!is_null($this->container['segment_2_tag_id']) && ($this->container['segment_2_tag_id'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'segment_2_tag_id', must be smaller than or equal to 9223372036854775807.";
         }
 
         if (!is_null($this->container['segment_2_tag_id']) && ($this->container['segment_2_tag_id'] < 1)) {
             $invalidProperties[] = "invalid value for 'segment_2_tag_id', must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['segment_3_tag_id']) && ($this->container['segment_3_tag_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'segment_3_tag_id', must be smaller than or equal to 2147483647.";
+        if (!is_null($this->container['segment_3_tag_id']) && ($this->container['segment_3_tag_id'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'segment_3_tag_id', must be smaller than or equal to 9223372036854775807.";
         }
 
         if (!is_null($this->container['segment_3_tag_id']) && ($this->container['segment_3_tag_id'] < 1)) {
@@ -651,8 +651,8 @@ class ManualJournalCreateParamsDetails implements ModelInterface, ArrayAccess
     public function setSegment1TagId($segment_1_tag_id)
     {
 
-        if (!is_null($segment_1_tag_id) && ($segment_1_tag_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $segment_1_tag_id when calling ManualJournalCreateParamsDetails., must be smaller than or equal to 2147483647.');
+        if (!is_null($segment_1_tag_id) && ($segment_1_tag_id > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $segment_1_tag_id when calling ManualJournalCreateParamsDetails., must be smaller than or equal to 9223372036854775807.');
         }
         if (!is_null($segment_1_tag_id) && ($segment_1_tag_id < 1)) {
             throw new \InvalidArgumentException('invalid value for $segment_1_tag_id when calling ManualJournalCreateParamsDetails., must be bigger than or equal to 1.');
@@ -683,8 +683,8 @@ class ManualJournalCreateParamsDetails implements ModelInterface, ArrayAccess
     public function setSegment2TagId($segment_2_tag_id)
     {
 
-        if (!is_null($segment_2_tag_id) && ($segment_2_tag_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $segment_2_tag_id when calling ManualJournalCreateParamsDetails., must be smaller than or equal to 2147483647.');
+        if (!is_null($segment_2_tag_id) && ($segment_2_tag_id > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $segment_2_tag_id when calling ManualJournalCreateParamsDetails., must be smaller than or equal to 9223372036854775807.');
         }
         if (!is_null($segment_2_tag_id) && ($segment_2_tag_id < 1)) {
             throw new \InvalidArgumentException('invalid value for $segment_2_tag_id when calling ManualJournalCreateParamsDetails., must be bigger than or equal to 1.');
@@ -715,8 +715,8 @@ class ManualJournalCreateParamsDetails implements ModelInterface, ArrayAccess
     public function setSegment3TagId($segment_3_tag_id)
     {
 
-        if (!is_null($segment_3_tag_id) && ($segment_3_tag_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $segment_3_tag_id when calling ManualJournalCreateParamsDetails., must be smaller than or equal to 2147483647.');
+        if (!is_null($segment_3_tag_id) && ($segment_3_tag_id > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $segment_3_tag_id when calling ManualJournalCreateParamsDetails., must be smaller than or equal to 9223372036854775807.');
         }
         if (!is_null($segment_3_tag_id) && ($segment_3_tag_id < 1)) {
             throw new \InvalidArgumentException('invalid value for $segment_3_tag_id when calling ManualJournalCreateParamsDetails., must be bigger than or equal to 1.');

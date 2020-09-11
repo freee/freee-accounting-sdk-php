@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **partner_title** | **string** | 敬称（御中、様、(空白)の3つから選択） | 
 **partner_zipcode** | **string** | 取引先郵便番号 (デフォルトはpartner_idもしくははpartner_codeで指定された取引先設定情報が補完されます) | [optional] 
 **quotation_contents** | [**\Freee\Accounting\Model\QuotationUpdateParamsQuotationContents[]**](QuotationUpdateParamsQuotationContents.md) | 見積内容 | [optional] 
-**quotation_layout** | **string** | 請求書レイアウト * &#x60;default_classic&#x60; - レイアウト１/クラシック (デフォルト)  * &#x60;standard_classic&#x60; - レイアウト２/クラシック  * &#x60;envelope_classic&#x60; - 封筒１/クラシック  * &#x60;default_modern&#x60; - レイアウト１/モダン  * &#x60;standard_modern&#x60; - レイアウト２/モダン  * &#x60;envelope_modern&#x60; - 封筒/モダン | [optional] 
+**quotation_layout** | **string** | 見積書レイアウト * &#x60;default_classic&#x60; - レイアウト１/クラシック (デフォルト)  * &#x60;standard_classic&#x60; - レイアウト２/クラシック  * &#x60;envelope_classic&#x60; - 封筒１/クラシック  * &#x60;default_modern&#x60; - レイアウト１/モダン  * &#x60;standard_modern&#x60; - レイアウト２/モダン  * &#x60;envelope_modern&#x60; - 封筒/モダン | [optional] 
 **quotation_number** | **string** | 見積書番号 (デフォルト: 自動採番されます) | [optional] 
 **quotation_status** | **string** | 見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み) | [optional] 
 **tax_entry_method** | **string** | 見積書の消費税計算方法(inclusive: 内税表示, exclusive: 外税表示 (デフォルト)) | [optional] 

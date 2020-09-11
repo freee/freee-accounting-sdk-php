@@ -57,7 +57,7 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'address_attributes' => '\Freee\Accounting\Model\PartnersResponseAddressAttributes',
+        'address_attributes' => '\Freee\Accounting\Model\PartnerResponsePartnerAddressAttributes',
         'code' => 'string',
         'company_id' => 'int',
         'contact_name' => 'string',
@@ -506,7 +506,7 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess
     /**
      * Gets address_attributes
      *
-     * @return \Freee\Accounting\Model\PartnersResponseAddressAttributes|null
+     * @return \Freee\Accounting\Model\PartnerResponsePartnerAddressAttributes|null
      */
     public function getAddressAttributes()
     {
@@ -516,7 +516,7 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess
     /**
      * Sets address_attributes
      *
-     * @param \Freee\Accounting\Model\PartnersResponseAddressAttributes|null $address_attributes address_attributes
+     * @param \Freee\Accounting\Model\PartnerResponsePartnerAddressAttributes|null $address_attributes address_attributes
      *
      * @return $this
      */
@@ -989,7 +989,7 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess
     /**
      * Sets partner_bank_account_attributes_branch_code
      *
-     * @param string|null $partner_bank_account_attributes_branch_code 受取人名（カナ）
+     * @param string|null $partner_bank_account_attributes_branch_code 支店番号
      *
      * @return $this
      */

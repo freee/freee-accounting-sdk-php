@@ -207,6 +207,9 @@ class JournalStatusResponseJournals implements ModelInterface, ArrayAccess
     const VISIBLE_TAGS_DESCRIPTION = 'description';
     const VISIBLE_TAGS_WALLET_TXN_DESCRIPTION = 'wallet_txn_description';
     const VISIBLE_TAGS_ALL = 'all';
+    const VISIBLE_TAGS_SEGMENT_1_TAG = 'segment_1_tag';
+    const VISIBLE_TAGS_SEGMENT_2_TAG = 'segment_2_tag';
+    const VISIBLE_TAGS_SEGMENT_3_TAG = 'segment_3_tag';
     
 
     
@@ -254,6 +257,9 @@ class JournalStatusResponseJournals implements ModelInterface, ArrayAccess
             self::VISIBLE_TAGS_DESCRIPTION,
             self::VISIBLE_TAGS_WALLET_TXN_DESCRIPTION,
             self::VISIBLE_TAGS_ALL,
+            self::VISIBLE_TAGS_SEGMENT_1_TAG,
+            self::VISIBLE_TAGS_SEGMENT_2_TAG,
+            self::VISIBLE_TAGS_SEGMENT_3_TAG,
         ];
     }
     
@@ -342,9 +348,6 @@ class JournalStatusResponseJournals implements ModelInterface, ArrayAccess
             );
         }
 
-        if ($this->container['visible_tags'] === null) {
-            $invalidProperties[] = "'visible_tags' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -565,7 +568,7 @@ class JournalStatusResponseJournals implements ModelInterface, ArrayAccess
     /**
      * Gets visible_tags
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getVisibleTags()
     {
@@ -575,14 +578,14 @@ class JournalStatusResponseJournals implements ModelInterface, ArrayAccess
     /**
      * Sets visible_tags
      *
-     * @param string[] $visible_tags visible_tags
+     * @param string[]|null $visible_tags visible_tags
      *
      * @return $this
      */
     public function setVisibleTags($visible_tags)
     {
         $allowedValues = $this->getVisibleTagsAllowableValues();
-        if (array_diff($visible_tags, $allowedValues)) {
+        if (!is_null($visible_tags) && array_diff($visible_tags, $allowedValues)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'visible_tags', must be one of '%s'",

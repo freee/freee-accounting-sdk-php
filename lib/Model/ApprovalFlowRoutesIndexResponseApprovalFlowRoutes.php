@@ -57,6 +57,7 @@ class ApprovalFlowRoutesIndexResponseApprovalFlowRoutes implements ModelInterfac
       * @var string[]
       */
     protected static $openAPITypes = [
+        'default_route' => 'bool',
         'definition_system' => 'bool',
         'description' => 'string',
         'first_step_id' => 'int',
@@ -73,6 +74,7 @@ class ApprovalFlowRoutesIndexResponseApprovalFlowRoutes implements ModelInterfac
       * @var string[]
       */
     protected static $openAPIFormats = [
+        'default_route' => null,
         'definition_system' => null,
         'description' => null,
         'first_step_id' => null,
@@ -110,6 +112,7 @@ class ApprovalFlowRoutesIndexResponseApprovalFlowRoutes implements ModelInterfac
      * @var string[]
      */
     protected static $attributeMap = [
+        'default_route' => 'default_route',
         'definition_system' => 'definition_system',
         'description' => 'description',
         'first_step_id' => 'first_step_id',
@@ -126,6 +129,7 @@ class ApprovalFlowRoutesIndexResponseApprovalFlowRoutes implements ModelInterfac
      * @var string[]
      */
     protected static $setters = [
+        'default_route' => 'setDefaultRoute',
         'definition_system' => 'setDefinitionSystem',
         'description' => 'setDescription',
         'first_step_id' => 'setFirstStepId',
@@ -142,6 +146,7 @@ class ApprovalFlowRoutesIndexResponseApprovalFlowRoutes implements ModelInterfac
      * @var string[]
      */
     protected static $getters = [
+        'default_route' => 'getDefaultRoute',
         'definition_system' => 'getDefinitionSystem',
         'description' => 'getDescription',
         'first_step_id' => 'getFirstStepId',
@@ -233,6 +238,7 @@ class ApprovalFlowRoutesIndexResponseApprovalFlowRoutes implements ModelInterfac
      */
     public function __construct(array $data = null)
     {
+        $this->container['default_route'] = isset($data['default_route']) ? $data['default_route'] : null;
         $this->container['definition_system'] = isset($data['definition_system']) ? $data['definition_system'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['first_step_id'] = isset($data['first_step_id']) ? $data['first_step_id'] : null;
@@ -252,6 +258,9 @@ class ApprovalFlowRoutesIndexResponseApprovalFlowRoutes implements ModelInterfac
     {
         $invalidProperties = [];
 
+        if ($this->container['default_route'] === null) {
+            $invalidProperties[] = "'default_route' can't be null";
+        }
         if (!is_null($this->container['first_step_id']) && ($this->container['first_step_id'] > 2147483647)) {
             $invalidProperties[] = "invalid value for 'first_step_id', must be smaller than or equal to 2147483647.";
         }
@@ -293,6 +302,30 @@ class ApprovalFlowRoutesIndexResponseApprovalFlowRoutes implements ModelInterfac
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets default_route
+     *
+     * @return bool
+     */
+    public function getDefaultRoute()
+    {
+        return $this->container['default_route'];
+    }
+
+    /**
+     * Sets default_route
+     *
+     * @param bool $default_route 基本経路として設定されているかどうか<br><br> リクエストパラメータusageに下記のいずれかが指定され、かつ、基本経路の場合はtrueになります。 * `TxnApproval` - 仕訳承認 * `ExpenseApplication` - 経費精算 * `PaymentRequest` - 支払依頼 * `ApprovalRequest`(リクエストパラメータrequest_form_idを同時に指定) - 各種申請 * `DocApproval` - 請求書等 (見積書・納品書・請求書・発注書)  <a href=\"https://support.freee.co.jp/hc/ja/articles/900000507963-%E7%94%B3%E8%AB%8B%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%81%AE%E5%9F%BA%E6%9C%AC%E7%B5%8C%E8%B7%AF%E8%A8%AD%E5%AE%9A\" target=\"_blank\">申請フォームの基本経路設定</a>
+     *
+     * @return $this
+     */
+    public function setDefaultRoute($default_route)
+    {
+        $this->container['default_route'] = $default_route;
+
+        return $this;
+    }
 
     /**
      * Gets definition_system

@@ -1169,7 +1169,7 @@ class PartnerResponsePartner implements ModelInterface, ArrayAccess
     /**
      * Sets partner_bank_account_attributes_branch_code
      *
-     * @param string|null $partner_bank_account_attributes_branch_code 受取人名（カナ）
+     * @param string|null $partner_bank_account_attributes_branch_code 支店番号
      *
      * @return $this
      */

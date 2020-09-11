@@ -500,7 +500,6 @@ Class | Method | HTTP request | Description
  - [PartnerResponsePartnerAddressAttributes](docs/Model/PartnerResponsePartnerAddressAttributes.md)
  - [PartnerUpdateParams](docs/Model/PartnerUpdateParams.md)
  - [PartnersResponse](docs/Model/PartnersResponse.md)
- - [PartnersResponseAddressAttributes](docs/Model/PartnersResponseAddressAttributes.md)
  - [PartnersResponsePartners](docs/Model/PartnersResponsePartners.md)
  - [PaymentParams](docs/Model/PaymentParams.md)
  - [Quotation](docs/Model/Quotation.md)

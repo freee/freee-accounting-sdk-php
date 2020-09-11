@@ -1613,22 +1613,22 @@ class ManualJournalsApi
             throw new \InvalidArgumentException('invalid value for "$section_id" when calling ManualJournalsApi.getManualJournals, must be bigger than or equal to 0.');
         }
 
-        if ($segment_1_tag_id !== null && $segment_1_tag_id > 2147483647) {
-            throw new \InvalidArgumentException('invalid value for "$segment_1_tag_id" when calling ManualJournalsApi.getManualJournals, must be smaller than or equal to 2147483647.');
+        if ($segment_1_tag_id !== null && $segment_1_tag_id > 9223372036854775807) {
+            throw new \InvalidArgumentException('invalid value for "$segment_1_tag_id" when calling ManualJournalsApi.getManualJournals, must be smaller than or equal to 9223372036854775807.');
         }
         if ($segment_1_tag_id !== null && $segment_1_tag_id < 0) {
             throw new \InvalidArgumentException('invalid value for "$segment_1_tag_id" when calling ManualJournalsApi.getManualJournals, must be bigger than or equal to 0.');
         }
 
-        if ($segment_2_tag_id !== null && $segment_2_tag_id > 2147483647) {
-            throw new \InvalidArgumentException('invalid value for "$segment_2_tag_id" when calling ManualJournalsApi.getManualJournals, must be smaller than or equal to 2147483647.');
+        if ($segment_2_tag_id !== null && $segment_2_tag_id > 9223372036854775807) {
+            throw new \InvalidArgumentException('invalid value for "$segment_2_tag_id" when calling ManualJournalsApi.getManualJournals, must be smaller than or equal to 9223372036854775807.');
         }
         if ($segment_2_tag_id !== null && $segment_2_tag_id < 0) {
             throw new \InvalidArgumentException('invalid value for "$segment_2_tag_id" when calling ManualJournalsApi.getManualJournals, must be bigger than or equal to 0.');
         }
 
-        if ($segment_3_tag_id !== null && $segment_3_tag_id > 2147483647) {
-            throw new \InvalidArgumentException('invalid value for "$segment_3_tag_id" when calling ManualJournalsApi.getManualJournals, must be smaller than or equal to 2147483647.');
+        if ($segment_3_tag_id !== null && $segment_3_tag_id > 9223372036854775807) {
+            throw new \InvalidArgumentException('invalid value for "$segment_3_tag_id" when calling ManualJournalsApi.getManualJournals, must be smaller than or equal to 9223372036854775807.');
         }
         if ($segment_3_tag_id !== null && $segment_3_tag_id < 0) {
             throw new \InvalidArgumentException('invalid value for "$segment_3_tag_id" when calling ManualJournalsApi.getManualJournals, must be bigger than or equal to 0.');

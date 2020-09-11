@@ -203,6 +203,9 @@ class JournalsResponseJournals implements ModelInterface, ArrayAccess
     const VISIBLE_TAGS_DESCRIPTION = 'description';
     const VISIBLE_TAGS_WALLET_TXN_DESCRIPTION = 'wallet_txn_description';
     const VISIBLE_TAGS_ALL = 'all';
+    const VISIBLE_TAGS_SEGMENT_1_TAG = 'segment_1_tag';
+    const VISIBLE_TAGS_SEGMENT_2_TAG = 'segment_2_tag';
+    const VISIBLE_TAGS_SEGMENT_3_TAG = 'segment_3_tag';
     
 
     
@@ -235,6 +238,9 @@ class JournalsResponseJournals implements ModelInterface, ArrayAccess
             self::VISIBLE_TAGS_DESCRIPTION,
             self::VISIBLE_TAGS_WALLET_TXN_DESCRIPTION,
             self::VISIBLE_TAGS_ALL,
+            self::VISIBLE_TAGS_SEGMENT_1_TAG,
+            self::VISIBLE_TAGS_SEGMENT_2_TAG,
+            self::VISIBLE_TAGS_SEGMENT_3_TAG,
         ];
     }
     

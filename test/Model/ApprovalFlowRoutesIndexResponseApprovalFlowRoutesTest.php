@@ -79,6 +79,13 @@ class ApprovalFlowRoutesIndexResponseApprovalFlowRoutesTest extends TestCase
     }
 
     /**
+     * Test attribute "default_route"
+     */
+    public function testPropertyDefaultRoute()
+    {
+    }
+
+    /**
      * Test attribute "definition_system"
      */
     public function testPropertyDefinitionSystem()

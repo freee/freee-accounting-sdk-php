@@ -103,7 +103,7 @@ class PartnerResponsePartnerAddressAttributes implements ModelInterface, ArrayAc
      */
     protected static $attributeMap = [
         'prefecture_code' => 'prefecture_code',
-        'street_name1' => 'street_name1&#39;',
+        'street_name1' => 'street_name1',
         'street_name2' => 'street_name2',
         'zipcode' => 'zipcode'
     ];

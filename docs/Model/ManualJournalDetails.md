@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **segment_3_tag_name** | **int** | セグメント３ | [optional] 
 **tag_ids** | **int[]** |  | 
 **tag_names** | **string[]** |  | 
-**tax_code** | **int** | 税区分ID | 
+**tax_code** | **int** | 税区分コード | 
 **vat** | **int** | 消費税額（指定しない場合は自動で計算されます） | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)

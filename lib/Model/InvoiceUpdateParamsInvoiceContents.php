@@ -347,24 +347,24 @@ class InvoiceUpdateParamsInvoiceContents implements ModelInterface, ArrayAccess
             $invalidProperties[] = "invalid value for 'section_id', must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['segment_1_tag_id']) && ($this->container['segment_1_tag_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'segment_1_tag_id', must be smaller than or equal to 2147483647.";
+        if (!is_null($this->container['segment_1_tag_id']) && ($this->container['segment_1_tag_id'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'segment_1_tag_id', must be smaller than or equal to 9223372036854775807.";
         }
 
         if (!is_null($this->container['segment_1_tag_id']) && ($this->container['segment_1_tag_id'] < 1)) {
             $invalidProperties[] = "invalid value for 'segment_1_tag_id', must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['segment_2_tag_id']) && ($this->container['segment_2_tag_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'segment_2_tag_id', must be smaller than or equal to 2147483647.";
+        if (!is_null($this->container['segment_2_tag_id']) && ($this->container['segment_2_tag_id'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'segment_2_tag_id', must be smaller than or equal to 9223372036854775807.";
         }
 
         if (!is_null($this->container['segment_2_tag_id']) && ($this->container['segment_2_tag_id'] < 1)) {
             $invalidProperties[] = "invalid value for 'segment_2_tag_id', must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['segment_3_tag_id']) && ($this->container['segment_3_tag_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'segment_3_tag_id', must be smaller than or equal to 2147483647.";
+        if (!is_null($this->container['segment_3_tag_id']) && ($this->container['segment_3_tag_id'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'segment_3_tag_id', must be smaller than or equal to 9223372036854775807.";
         }
 
         if (!is_null($this->container['segment_3_tag_id']) && ($this->container['segment_3_tag_id'] < 1)) {
@@ -390,12 +390,12 @@ class InvoiceUpdateParamsInvoiceContents implements ModelInterface, ArrayAccess
             );
         }
 
-        if (!is_null($this->container['unit_price']) && ($this->container['unit_price'] > 9999999999999)) {
-            $invalidProperties[] = "invalid value for 'unit_price', must be smaller than or equal to 9999999999999.";
+        if (!is_null($this->container['unit_price']) && ($this->container['unit_price'] > 999999999999)) {
+            $invalidProperties[] = "invalid value for 'unit_price', must be smaller than or equal to 999999999999.";
         }
 
-        if (!is_null($this->container['unit_price']) && ($this->container['unit_price'] < -9999999999999)) {
-            $invalidProperties[] = "invalid value for 'unit_price', must be bigger than or equal to -9999999999999.";
+        if (!is_null($this->container['unit_price']) && ($this->container['unit_price'] < -999999999999)) {
+            $invalidProperties[] = "invalid value for 'unit_price', must be bigger than or equal to -999999999999.";
         }
 
         return $invalidProperties;
@@ -649,8 +649,8 @@ class InvoiceUpdateParamsInvoiceContents implements ModelInterface, ArrayAccess
     public function setSegment1TagId($segment_1_tag_id)
     {
 
-        if (!is_null($segment_1_tag_id) && ($segment_1_tag_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $segment_1_tag_id when calling InvoiceUpdateParamsInvoiceContents., must be smaller than or equal to 2147483647.');
+        if (!is_null($segment_1_tag_id) && ($segment_1_tag_id > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $segment_1_tag_id when calling InvoiceUpdateParamsInvoiceContents., must be smaller than or equal to 9223372036854775807.');
         }
         if (!is_null($segment_1_tag_id) && ($segment_1_tag_id < 1)) {
             throw new \InvalidArgumentException('invalid value for $segment_1_tag_id when calling InvoiceUpdateParamsInvoiceContents., must be bigger than or equal to 1.');
@@ -681,8 +681,8 @@ class InvoiceUpdateParamsInvoiceContents implements ModelInterface, ArrayAccess
     public function setSegment2TagId($segment_2_tag_id)
     {
 
-        if (!is_null($segment_2_tag_id) && ($segment_2_tag_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $segment_2_tag_id when calling InvoiceUpdateParamsInvoiceContents., must be smaller than or equal to 2147483647.');
+        if (!is_null($segment_2_tag_id) && ($segment_2_tag_id > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $segment_2_tag_id when calling InvoiceUpdateParamsInvoiceContents., must be smaller than or equal to 9223372036854775807.');
         }
         if (!is_null($segment_2_tag_id) && ($segment_2_tag_id < 1)) {
             throw new \InvalidArgumentException('invalid value for $segment_2_tag_id when calling InvoiceUpdateParamsInvoiceContents., must be bigger than or equal to 1.');
@@ -713,8 +713,8 @@ class InvoiceUpdateParamsInvoiceContents implements ModelInterface, ArrayAccess
     public function setSegment3TagId($segment_3_tag_id)
     {
 
-        if (!is_null($segment_3_tag_id) && ($segment_3_tag_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $segment_3_tag_id when calling InvoiceUpdateParamsInvoiceContents., must be smaller than or equal to 2147483647.');
+        if (!is_null($segment_3_tag_id) && ($segment_3_tag_id > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $segment_3_tag_id when calling InvoiceUpdateParamsInvoiceContents., must be smaller than or equal to 9223372036854775807.');
         }
         if (!is_null($segment_3_tag_id) && ($segment_3_tag_id < 1)) {
             throw new \InvalidArgumentException('invalid value for $segment_3_tag_id when calling InvoiceUpdateParamsInvoiceContents., must be bigger than or equal to 1.');
@@ -762,7 +762,7 @@ class InvoiceUpdateParamsInvoiceContents implements ModelInterface, ArrayAccess
     /**
      * Sets tax_code
      *
-     * @param int|null $tax_code 税区分ID
+     * @param int|null $tax_code 税区分コード
      *
      * @return $this
      */
@@ -858,11 +858,11 @@ class InvoiceUpdateParamsInvoiceContents implements ModelInterface, ArrayAccess
     public function setUnitPrice($unit_price)
     {
 
-        if (!is_null($unit_price) && ($unit_price > 9999999999999)) {
-            throw new \InvalidArgumentException('invalid value for $unit_price when calling InvoiceUpdateParamsInvoiceContents., must be smaller than or equal to 9999999999999.');
+        if (!is_null($unit_price) && ($unit_price > 999999999999)) {
+            throw new \InvalidArgumentException('invalid value for $unit_price when calling InvoiceUpdateParamsInvoiceContents., must be smaller than or equal to 999999999999.');
         }
-        if (!is_null($unit_price) && ($unit_price < -9999999999999)) {
-            throw new \InvalidArgumentException('invalid value for $unit_price when calling InvoiceUpdateParamsInvoiceContents., must be bigger than or equal to -9999999999999.');
+        if (!is_null($unit_price) && ($unit_price < -999999999999)) {
+            throw new \InvalidArgumentException('invalid value for $unit_price when calling InvoiceUpdateParamsInvoiceContents., must be bigger than or equal to -999999999999.');
         }
 
         $this->container['unit_price'] = $unit_price;
