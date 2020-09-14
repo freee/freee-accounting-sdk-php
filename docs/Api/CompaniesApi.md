@@ -12,11 +12,11 @@ Method | HTTP request | Description
 
 ## getCompanies
 
-> \Freee\Accounting\Model\CompaniesIndexResponse getCompanies()
+> \Freee\Accounting\Model\CompanyIndexResponse getCompanies()
 
 事業所一覧の取得
 
-<h2 id=\"\">概要</h2>  <p>ユーザが所属する事業所の一覧を取得する</p>  <h2 id=\"_2\">定義</h2>  <ul> <li>role <ul> <li>admin : 管理者</li>  <li>simple_accounting : 一般</li>  <li>self_only : 取引登録のみ</li>  <li>read_only : 閲覧のみ</li> </ul> </li> </ul>
+<h2 id=\"\">概要</h2>  <p>ユーザーが所属する事業所の一覧を取得する</p>  <h2 id=\"_2\">定義</h2>  <ul> <li>role <ul> <li>admin : 管理者</li>  <li>simple_accounting : 一般</li>  <li>self_only : 取引登録のみ</li>  <li>read_only : 閲覧のみ</li> </ul> </li> </ul>
 
 ### Example
 
@@ -51,7 +51,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Freee\Accounting\Model\CompaniesIndexResponse**](../Model/CompaniesIndexResponse.md)
+[**\Freee\Accounting\Model\CompanyIndexResponse**](../Model/CompanyIndexResponse.md)
 
 ### Authorization
 
@@ -69,11 +69,11 @@ This endpoint does not need any parameter.
 
 ## getCompany
 
-> \Freee\Accounting\Model\CompaniesShowResponse getCompany($id, $details, $account_items, $taxes, $items, $partners, $sections, $tags, $walletables)
+> \Freee\Accounting\Model\CompanyResponse getCompany($id, $details, $account_items, $taxes, $items, $partners, $sections, $tags, $walletables)
 
 事業所の詳細情報の取得
 
-<h2 id=\"\">概要</h2>  <p>ユーザが所属する事業所の詳細を取得する</p>  <h2 id=\"_2\">定義</h2>  <ul> <li>role <ul> <li>admin : 管理者</li>  <li>simple_accounting : 一般</li>  <li>self_only : 取引登録のみ</li>  <li>read_only : 閲覧のみ</li> </ul> </li> </ul>  <h2 id=\"_3\">
+<h2 id=\"\">概要</h2>  <p>ユーザーが所属する事業所の詳細を取得する</p>  <h2 id=\"_2\">定義</h2>  <ul> <li>role <ul> <li>admin : 管理者</li>  <li>simple_accounting : 一般</li>  <li>self_only : 取引登録のみ</li>  <li>read_only : 閲覧のみ</li> </ul> </li> </ul>  <h2 id=\"_3\">
 
 ### Example
 
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\CompaniesShowResponse**](../Model/CompaniesShowResponse.md)
+[**\Freee\Accounting\Model\CompanyResponse**](../Model/CompanyResponse.md)
 
 ### Authorization
 
@@ -146,11 +146,11 @@ Name | Type | Description  | Notes
 
 ## updateCompany
 
-> \Freee\Accounting\Model\CompaniesUpdateResponse updateCompany($id, $parameters)
+> \Freee\Accounting\Model\CompanyUpdateResponse updateCompany($id, $company_params)
 
 事業所情報の更新
 
-<h2 id=\"\">概要</h2>  <p>ユーザが所属する事業所の情報を更新する</p>  <p>※同時に複数のリクエストを受け付けない</p>
+<h2 id=\"\">概要</h2>  <p>ユーザーが所属する事業所の情報を更新する</p>  <p>※同時に複数のリクエストを受け付けない</p>
 
 ### Example
 
@@ -170,10 +170,10 @@ $apiInstance = new Freee\Accounting\Api\CompaniesApi(
     $config
 );
 $id = 56; // int | 事業所ID
-$parameters = new \Freee\Accounting\Model\UpdateCompanyParams(); // \Freee\Accounting\Model\UpdateCompanyParams | 
+$company_params = new \Freee\Accounting\Model\CompanyParams(); // \Freee\Accounting\Model\CompanyParams | 
 
 try {
-    $result = $apiInstance->updateCompany($id, $parameters);
+    $result = $apiInstance->updateCompany($id, $company_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CompaniesApi->updateCompany: ', $e->getMessage(), PHP_EOL;
@@ -187,11 +187,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 事業所ID |
- **parameters** | [**\Freee\Accounting\Model\UpdateCompanyParams**](../Model/UpdateCompanyParams.md)|  | [optional]
+ **company_params** | [**\Freee\Accounting\Model\CompanyParams**](../Model/CompanyParams.md)|  | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\CompaniesUpdateResponse**](../Model/CompaniesUpdateResponse.md)
+[**\Freee\Accounting\Model\CompanyUpdateResponse**](../Model/CompanyUpdateResponse.md)
 
 ### Authorization
 
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

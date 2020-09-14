@@ -12,12 +12,12 @@
 /**
  * freee API
  *
- * <h1 id=\"freee_api\">freee API</h1> <hr /> <h2 id=\"\">スタートガイド</h2> <p>1. セットアップ</p> <ol> <ul><li><a href=\"https://support.freee.co.jp/hc/ja/articles/202847230\" class=\"external-link\" rel=\"nofollow\">freeeアカウント（無料）</a>を<a href=\"https://secure.freee.co.jp/users/sign_up\" class=\"external-link\" rel=\"nofollow\">作成</a>します（すでにお持ちの場合は次へ）</li><li><a href=\"https://app.secure.freee.co.jp/developers/demo_companies/description\" class=\"external-link\" rel=\"nofollow\">開発者向け事業所・環境を作成</a>します</li><li><span><a href=\"https://app.secure.freee.co.jp/developers/applications\" class=\"external-link\" rel=\"nofollow\">前のステップで作成した事業所を選択してfreeeアプリを追加</a>します</span></li><li>Client IDをCopyしておきます</li> </ul> </ol>  <p>2. 実際にAPIを叩いてみる（ブラウザからAPIのレスポンスを確認する）</p> <ol> <ul><li><span><span>以下のURLの●をclient_idに入れ替えて<a href=\"https://app.secure.freee.co.jp/developers/tutorials/3-%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B#%E8%AA%8D%E5%8F%AF%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B\" class=\"external-link\" rel=\"nofollow\">アクセストークンを取得</a>します</span></span><ul><li><span><span><pre><code>https://accounts.secure.freee.co.jp/public_api/authorize?client_id=●&amp;redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&amp;response_type=token</a></code></pre></span></span></li></ul></li><li><span><a href=\"https://developer.freee.co.jp/docs/accounting/reference#/%E9%80%A3%E7%B5%A1%E5%85%88\" class=\"external-link\" rel=\"nofollow\">APIリファレンス</a>で<code>Authorize</code>を押下します</span></li><li><span>アクセストークン<span><span>を入力して</span></span>&nbsp;もう一度<span><code>Authorize</code>を押下して<code>Close</code>を押下します</span></span></li><li>リファレンス内のCompanies（事業所）に移動し、<code>Try it out</code>を押下し、<code>Execute</code>を押下します</li><li>Response bodyを参照し、事業所ID(id属性)を活用して、Companies以外のエンドポイントでどのようなデータのやりとりできるのか確認します</li></ul> </ol> <p>3. 連携を実装する</p> <ol> <ul><li><a href=\"https://developer.freee.co.jp/tips\" class=\"external-link\" rel=\"nofollow\">API TIPS</a>を参考に、ユースケースごとの連携の概要を学びます。<span>例えば</span><span>&nbsp;</span><a href=\"https://developer.freee.co.jp/tips/how-to-cooperate-salesmanegement-system\" class=\"external-link\" rel=\"nofollow\">SFA、CRM、販売管理システムから会計freeeへの連携</a>や<a href=\"https://developer.freee.co.jp/tips/how-to-cooperate-excel-and-spreadsheet\" class=\"external-link\" rel=\"nofollow\">エクセルやgoogle spreadsheetからの連携</a>です</li><li>実利用向け事業所がすでにある場合は利用、ない場合は作成します（セットアップで作成したのは開発者向け環境のため活用不可）</li><li><a href=\"https://developer.freee.co.jp/docs/accounting/reference\" class=\"external-link\" rel=\"nofollow\">API documentation</a><span>&nbsp;を参照し、躓いた場合は</span><span>&nbsp;</span><a href=\"https://developer.freee.co.jp/community/forum/community\" class=\"external-link\" rel=\"nofollow\">Community</a><span>&nbsp;で質問してみましょう</span></li></ul> </ol> <p>アプリケーションの登録方法や認証方法、またはAPIの活用方法でご不明な点がある場合は<a href=\"https://support.freee.co.jp/hc/ja/sections/115000030743\">ヘルプセンター</a>もご確認ください</p> <hr /> <h2 id=\"_2\">仕様</h2>  <h3 id=\"api\">APIエンドポイント</h3>  <p>https://api.freee.co.jp/ (httpsのみ)</p>  <h3 id=\"_3\">認証方式</h3>  <p><a href=\"http://tools.ietf.org/html/rfc6749\">OAuth2</a>に対応</p>  <ul> <li>Authorization Code Flow (Webアプリ向け)</li>  <li>Implicit Flow (Mobileアプリ向け)</li> </ul>  <h3 id=\"_4\">認証エンドポイント</h3>  <p>https://accounts.secure.freee.co.jp/</p>  <ul> <li>authorize : https://accounts.secure.freee.co.jp/public_api/authorize</li>  <li>token : https://accounts.secure.freee.co.jp/public_api/token</li> </ul>  <h3 id=\"_5\">アクセストークンのリフレッシュ</h3>  <p>認証時に得たrefresh_token を使ってtoken の期限をリフレッシュして新規に発行することが出来ます。</p>  <p>grant_type=refresh_token で https://accounts.secure.freee.co.jp/public_api/token にアクセスすればリフレッシュされます。</p>  <p>e.g.)</p>  <p>POST: https://accounts.secure.freee.co.jp/public_api/token</p>  <p>params: grant_type=refresh_token&amp;client_id=UID&amp;client_secret=SECRET&amp;refresh_token=REFRESH_TOKEN</p>  <p>詳細は<a href=\"https://github.com/applicake/doorkeeper/wiki/Enable-Refresh-Token-Credentials#flow\">refresh_token</a>を参照下さい。</p>  <h3 id=\"_6\">アクセストークンの破棄</h3>  <p>認証時に得たaccess_tokenまたはrefresh_tokenを使って、tokenを破棄することができます。 token=access_tokenまたはtoken=refresh_tokenでhttps://accounts.secure.freee.co.jp/public_api/revokeにアクセスすると破棄されます。token_type_hintでaccess_tokenまたはrefresh_tokenを陽に指定できます。</p>  <p>e.g.)</p>  <p>POST: https://accounts.secure.freee.co.jp/public_api/revoke</p>  <p>params: token=ACCESS_TOKEN</p>  <p>または</p>  <p>params: token=REFRESH_TOKEN</p>  <p>または</p>  <p>params: token=ACCESS_TOKEN&amp;token_type_hint=access_token</p>  <p>または</p>  <p>params: token=REFRESH_TOKEN&amp;token_type_hint=refresh_token</p>  <p>詳細は <a href=\"https://tools.ietf.org/html/rfc7009\">OAuth 2.0 Token revocation</a> をご参照ください。</p>  <h3 id=\"_7\">データフォーマット</h3>  <p>リクエスト、レスポンスともにJSON形式をサポート</p>  <h3 id=\"_8\">共通レスポンスヘッダー</h3>  <p>すべてのAPIのレスポンスには以下のHTTPヘッダーが含まれます。</p>  <ul> <li> <p>X-Freee-Request-ID</p> <ul> <li>各リクエスト毎に発行されるID</li> </ul> </li> </ul>  <h3 id=\"_9\">共通エラーレスポンス</h3>  <ul> <li> <p>ステータスコードはレスポンス内のJSONに含まれる他、HTTPヘッダにも含まれる</p> </li>  <li> <p>type</p>  <ul> <li>status : HTTPステータスコードの説明</li>  <li>validation : エラーの詳細の説明（開発者向け）</li> </ul> </li> </ul>  <p>レスポンスの例</p>  <pre><code>  {     &quot;status_code&quot; : 400,     &quot;errors&quot; : [       {         &quot;type&quot; : &quot;status&quot;,         &quot;messages&quot; : [&quot;不正なリクエストです。&quot;]       },       {         &quot;type&quot; : &quot;validation&quot;,         &quot;messages&quot; : [&quot;Date は不正な日付フォーマットです。入力例：2013-01-01&quot;]       }     ]   }</code></pre> <hr /> <h2 id=\"_10\">連絡先</h2>  <p>ご不明点、ご要望等は <a href=\"https://support.freee.co.jp/hc/ja/requests/new\">freee サポートデスクへのお問い合わせフォーム</a> からご連絡ください。</p> <hr />&copy; Since 2013 freee K.K.
+ * <h1 id=\"freee_api\">freee API</h1> <hr /> <h2 id=\"start_guide\">スタートガイド</h2>  <p>freee API開発がはじめての方は<a href=\"https://developer.freee.co.jp/getting-started\">freee API スタートガイド</a>を参照してください。</p>  <hr /> <h2 id=\"specification\">仕様</h2>  <pre><code>【重要】会計freee APIの新バージョンについて 2020年12月まで、2つのバージョンが利用できる状態です。古いものは2020年12月に利用不可となります。<br> 新しいAPIを利用するにはリクエストヘッダーに以下を指定します。 X-Api-Version: 2020-06-15<br> 指定がない場合は2020年12月に廃止予定のAPIを利用することとなります。<br> 【重要】APIのバージョン指定をせずに利用し続ける場合 2020年12月に新しいバージョンのAPIに自動的に切り替わります。 詳細は、<a href=\"https://developer.freee.co.jp/release-note/2948\" target=\"_blank\">リリースノート</a>をご覧ください。<br> 旧バージョンのAPIリファレンスを確認したい場合は、<a href=\"https://freee.github.io/freee-api-schema/\" target=\"_blank\">旧バージョンのAPIリファレンスページ</a>をご覧ください。 </code></pre>  <h3 id=\"api_endpoint\">APIエンドポイント</h3>  <p>https://api.freee.co.jp/ (httpsのみ)</p>  <h3 id=\"about_authorize\">認証について</h3> <p>OAuth2.0を利用します。詳細は<a href=\"https://developer.freee.co.jp/docs\" target=\"_blank\">ドキュメントの認証</a>パートを参照してください。</p>  <h3 id=\"data_format\">データフォーマット</h3>  <p>リクエスト、レスポンスともにJSON形式をサポートしていますが、詳細は、API毎の説明欄（application/jsonなど）を確認してください。</p>  <h3 id=\"compatibility\">後方互換性ありの変更</h3>  <p>freeeでは、APIを改善していくために以下のような変更は後方互換性ありとして通知なく変更を入れることがあります。アプリケーション実装者は以下を踏まえて開発を行ってください。</p>  <ul> <li>新しいAPIリソース・エンドポイントの追加</li> <li>既存のAPIに対して必須ではない新しいリクエストパラメータの追加</li> <li>既存のAPIレスポンスに対する新しいプロパティの追加</li> <li>既存のAPIレスポンスに対するプロパティの順番の入れ変え</li> <li>keyとなっているidやcodeの長さの変更（長くする）</li> </ul>  <h3 id=\"common_response_header\">共通レスポンスヘッダー</h3>  <p>すべてのAPIのレスポンスには以下のHTTPヘッダーが含まれます。</p>  <ul> <li> <p>X-Freee-Request-ID</p> <ul> <li>各リクエスト毎に発行されるID</li> </ul> </li> </ul>  <h3 id=\"common_error_response\">共通エラーレスポンス</h3>  <ul> <li> <p>ステータスコードはレスポンス内のJSONに含まれる他、HTTPヘッダにも含まれる</p> </li> <li> <p>一部のエラーレスポンスにはエラーコードが含まれます。<br>詳細は、<a href=\"https://developer.freee.co.jp/tips/faq/40x-checkpoint\">HTTPステータスコード400台エラー時のチェックポイント</a>を参照してください</p> </li> <p>type</p>  <ul> <li>status : HTTPステータスコードの説明</li>  <li>validation : エラーの詳細の説明（開発者向け）</li> </ul> </li> </ul>  <p>レスポンスの例</p>  <pre><code>  {     &quot;status_code&quot; : 400,     &quot;errors&quot; : [       {         &quot;type&quot; : &quot;status&quot;,         &quot;messages&quot; : [&quot;不正なリクエストです。&quot;]       },       {         &quot;type&quot; : &quot;validation&quot;,         &quot;messages&quot; : [&quot;Date は不正な日付フォーマットです。入力例：2013-01-01&quot;]       }     ]   }</code></pre>  </br>  <h3 id=\"api_rate_limit\">API使用制限</h3>    <p>freeeは一定期間に過度のアクセスを検知した場合、APIアクセスをコントロールする場合があります。</p>   <p>その際のhttp status codeは403となります。制限がかかってから10分程度が過ぎると再度使用することができるようになります。</p>  <h4 id=\"reports_api_endpoint\">/reportsエンドポイント</h4>  <p>freeeは/reportsエンドポイントに対して1秒間に10以上のアクセスを検知した場合、APIアクセスをコントロールする場合があります。その際のhttp status codeは429（too many requests）となります。</p>  <p>レスポンスボディのmetaプロパティに以下を含めます。</p>  <ul>   <li>設定されている上限値</li>   <li>上限に達するまでの使用可能回数</li>   <li>（上限値に達した場合）使用回数がリセットされる時刻</li> </ul>  <h3 id=\"plan_api_rate_limit\">プラン別のAPI Rate Limit</h3>   <table border=\"1\">     <tbody>       <tr>         <th style=\"padding: 10px\"><strong>会計freeeプラン名</strong></th>         <th style=\"padding: 10px\"><strong>事業所とアプリケーション毎に1日でのAPIコール数</strong></th>       </tr>       <tr>         <td style=\"padding: 10px\">エンタープライズ</td>         <td style=\"padding: 10px\">10,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">プロフェッショナル</td>         <td style=\"padding: 10px\">5,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">ベーシック</td>         <td style=\"padding: 10px\">3,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">ミニマム</td>         <td style=\"padding: 10px\">3,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">上記以外</td>         <td style=\"padding: 10px\">3,000</td>       </tr>     </tbody>   </table>  <h3 id=\"webhook\">Webhookについて</h3>  <p>詳細は<a href=\"https://developer.freee.co.jp/docs/accounting/webhook\" target=\"_blank\">会計Webhook概要</a>を参照してください。</p>  <hr /> <h2 id=\"contact\">連絡先</h2>  <p>ご不明点、ご要望等は <a href=\"https://support.freee.co.jp/hc/ja/requests/new\">freee サポートデスクへのお問い合わせフォーム</a> からご連絡ください。</p> <hr />&copy; Since 2013 freee K.K.
  *
  * The version of the OpenAPI document: v1.0
  * 
  * Generated by: https://openapi-generator.tech
- * OpenAPI Generator version: 4.2.2
+ * OpenAPI Generator version: 4.3.1
  */
 
 /**
@@ -120,15 +120,15 @@ class DealsApi
      *
      * 取引（収入／支出）の作成
      *
-     * @param  \Freee\Accounting\Model\CreateDealParams $parameters 取引（収入／支出）の作成 (optional)
+     * @param  \Freee\Accounting\Model\DealCreateParams $deal_create_params 取引（収入／支出）の作成 (optional)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\DealsCreateResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
+     * @return \Freee\Accounting\Model\DealCreateResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
      */
-    public function createDeal($parameters = null)
+    public function createDeal($deal_create_params = null)
     {
-        list($response) = $this->createDealWithHttpInfo($parameters);
+        list($response) = $this->createDealWithHttpInfo($deal_create_params);
         return $response;
     }
 
@@ -137,15 +137,15 @@ class DealsApi
      *
      * 取引（収入／支出）の作成
      *
-     * @param  \Freee\Accounting\Model\CreateDealParams $parameters 取引（収入／支出）の作成 (optional)
+     * @param  \Freee\Accounting\Model\DealCreateParams $deal_create_params 取引（収入／支出）の作成 (optional)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\DealsCreateResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Freee\Accounting\Model\DealCreateResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createDealWithHttpInfo($parameters = null)
+    public function createDealWithHttpInfo($deal_create_params = null)
     {
-        $request = $this->createDealRequest($parameters);
+        $request = $this->createDealRequest($deal_create_params);
 
         try {
             $options = $this->createHttpClientOption();
@@ -156,7 +156,7 @@ class DealsApi
                     "[{$e->getCode()}] {$e->getMessage()}",
                     $e->getCode(),
                     $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
                 );
             }
 
@@ -178,14 +178,14 @@ class DealsApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 201:
-                    if ('\Freee\Accounting\Model\DealsCreateResponse' === '\SplFileObject') {
+                    if ('\Freee\Accounting\Model\DealCreateResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\DealsCreateResponse', []),
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\DealCreateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -193,7 +193,7 @@ class DealsApi
                     if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -205,7 +205,7 @@ class DealsApi
                     if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -213,11 +213,23 @@ class DealsApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 403:
+                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 case 404:
                     if ('\Freee\Accounting\Model\BadRequestNotFoundError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -229,7 +241,7 @@ class DealsApi
                     if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -239,12 +251,12 @@ class DealsApi
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\DealsCreateResponse';
+            $returnType = '\Freee\Accounting\Model\DealCreateResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
             } else {
-                $content = $responseBody->getContents();
+                $content = (string) $responseBody;
             }
 
             return [
@@ -258,7 +270,7 @@ class DealsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\DealsCreateResponse',
+                        '\Freee\Accounting\Model\DealCreateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -275,6 +287,14 @@ class DealsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Freee\Accounting\Model\UnauthorizedError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Freee\Accounting\Model\ForbiddenError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -305,14 +325,14 @@ class DealsApi
      *
      * 取引（収入／支出）の作成
      *
-     * @param  \Freee\Accounting\Model\CreateDealParams $parameters 取引（収入／支出）の作成 (optional)
+     * @param  \Freee\Accounting\Model\DealCreateParams $deal_create_params 取引（収入／支出）の作成 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createDealAsync($parameters = null)
+    public function createDealAsync($deal_create_params = null)
     {
-        return $this->createDealAsyncWithHttpInfo($parameters)
+        return $this->createDealAsyncWithHttpInfo($deal_create_params)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -325,15 +345,15 @@ class DealsApi
      *
      * 取引（収入／支出）の作成
      *
-     * @param  \Freee\Accounting\Model\CreateDealParams $parameters 取引（収入／支出）の作成 (optional)
+     * @param  \Freee\Accounting\Model\DealCreateParams $deal_create_params 取引（収入／支出）の作成 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createDealAsyncWithHttpInfo($parameters = null)
+    public function createDealAsyncWithHttpInfo($deal_create_params = null)
     {
-        $returnType = '\Freee\Accounting\Model\DealsCreateResponse';
-        $request = $this->createDealRequest($parameters);
+        $returnType = '\Freee\Accounting\Model\DealCreateResponse';
+        $request = $this->createDealRequest($deal_create_params);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -343,7 +363,7 @@ class DealsApi
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -372,12 +392,12 @@ class DealsApi
     /**
      * Create request for operation 'createDeal'
      *
-     * @param  \Freee\Accounting\Model\CreateDealParams $parameters 取引（収入／支出）の作成 (optional)
+     * @param  \Freee\Accounting\Model\DealCreateParams $deal_create_params 取引（収入／支出）の作成 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createDealRequest($parameters = null)
+    protected function createDealRequest($deal_create_params = null)
     {
 
         $resourcePath = '/api/1/deals';
@@ -389,10 +409,11 @@ class DealsApi
 
 
 
+
         // body params
         $_tempBody = null;
-        if (isset($parameters)) {
-            $_tempBody = $parameters;
+        if (isset($deal_create_params)) {
+            $_tempBody = $deal_create_params;
         }
 
         if ($multipart) {
@@ -402,7 +423,7 @@ class DealsApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json']
+                ['application/json', 'application/x-www-form-urlencoded']
             );
         }
 
@@ -502,7 +523,7 @@ class DealsApi
                     "[{$e->getCode()}] {$e->getMessage()}",
                     $e->getCode(),
                     $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
                 );
             }
 
@@ -537,6 +558,14 @@ class DealsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Freee\Accounting\Model\UnauthorizedError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Freee\Accounting\Model\ForbiddenError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -639,8 +668,8 @@ class DealsApi
                 'Missing the required parameter $id when calling destroyDeal'
             );
         }
-        if ($id > 999999999999) {
-            throw new \InvalidArgumentException('invalid value for "$id" when calling DealsApi.destroyDeal, must be smaller than or equal to 999999999999.');
+        if ($id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$id" when calling DealsApi.destroyDeal, must be smaller than or equal to 2147483647.');
         }
         if ($id < 1) {
             throw new \InvalidArgumentException('invalid value for "$id" when calling DealsApi.destroyDeal, must be bigger than or equal to 1.');
@@ -652,8 +681,8 @@ class DealsApi
                 'Missing the required parameter $company_id when calling destroyDeal'
             );
         }
-        if ($company_id > 999999999999) {
-            throw new \InvalidArgumentException('invalid value for "$company_id" when calling DealsApi.destroyDeal, must be smaller than or equal to 999999999999.');
+        if ($company_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$company_id" when calling DealsApi.destroyDeal, must be smaller than or equal to 2147483647.');
         }
         if ($company_id < 1) {
             throw new \InvalidArgumentException('invalid value for "$company_id" when calling DealsApi.destroyDeal, must be bigger than or equal to 1.');
@@ -669,8 +698,16 @@ class DealsApi
 
         // query params
         if ($company_id !== null) {
-            $queryParams['company_id'] = ObjectSerializer::toQueryValue($company_id);
+            if('form' === 'form' && is_array($company_id)) {
+                foreach($company_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['company_id'] = $company_id;
+            }
         }
+
 
         // path params
         if ($id !== null) {
@@ -760,7 +797,7 @@ class DealsApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\DealsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
+     * @return \Freee\Accounting\Model\DealResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
      */
     public function getDeal($company_id, $id, $accruals = null)
     {
@@ -779,7 +816,7 @@ class DealsApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\DealsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Freee\Accounting\Model\DealResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDealWithHttpInfo($company_id, $id, $accruals = null)
     {
@@ -794,7 +831,7 @@ class DealsApi
                     "[{$e->getCode()}] {$e->getMessage()}",
                     $e->getCode(),
                     $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
                 );
             }
 
@@ -816,14 +853,14 @@ class DealsApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Freee\Accounting\Model\DealsResponse' === '\SplFileObject') {
+                    if ('\Freee\Accounting\Model\DealResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\DealsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\DealResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -831,7 +868,7 @@ class DealsApi
                     if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -843,7 +880,7 @@ class DealsApi
                     if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -851,11 +888,23 @@ class DealsApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 403:
+                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 case 404:
                     if ('\Freee\Accounting\Model\BadRequestNotFoundError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -867,7 +916,7 @@ class DealsApi
                     if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -877,12 +926,12 @@ class DealsApi
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\DealsResponse';
+            $returnType = '\Freee\Accounting\Model\DealResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
             } else {
-                $content = $responseBody->getContents();
+                $content = (string) $responseBody;
             }
 
             return [
@@ -896,7 +945,7 @@ class DealsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\DealsResponse',
+                        '\Freee\Accounting\Model\DealResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -913,6 +962,14 @@ class DealsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Freee\Accounting\Model\UnauthorizedError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Freee\Accounting\Model\ForbiddenError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -974,7 +1031,7 @@ class DealsApi
      */
     public function getDealAsyncWithHttpInfo($company_id, $id, $accruals = null)
     {
-        $returnType = '\Freee\Accounting\Model\DealsResponse';
+        $returnType = '\Freee\Accounting\Model\DealResponse';
         $request = $this->getDealRequest($company_id, $id, $accruals);
 
         return $this->client
@@ -985,7 +1042,7 @@ class DealsApi
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -1029,8 +1086,8 @@ class DealsApi
                 'Missing the required parameter $company_id when calling getDeal'
             );
         }
-        if ($company_id > 999999999999) {
-            throw new \InvalidArgumentException('invalid value for "$company_id" when calling DealsApi.getDeal, must be smaller than or equal to 999999999999.');
+        if ($company_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$company_id" when calling DealsApi.getDeal, must be smaller than or equal to 2147483647.');
         }
         if ($company_id < 1) {
             throw new \InvalidArgumentException('invalid value for "$company_id" when calling DealsApi.getDeal, must be bigger than or equal to 1.');
@@ -1042,8 +1099,8 @@ class DealsApi
                 'Missing the required parameter $id when calling getDeal'
             );
         }
-        if ($id > 999999999999) {
-            throw new \InvalidArgumentException('invalid value for "$id" when calling DealsApi.getDeal, must be smaller than or equal to 999999999999.');
+        if ($id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$id" when calling DealsApi.getDeal, must be smaller than or equal to 2147483647.');
         }
         if ($id < 1) {
             throw new \InvalidArgumentException('invalid value for "$id" when calling DealsApi.getDeal, must be bigger than or equal to 1.');
@@ -1059,12 +1116,27 @@ class DealsApi
 
         // query params
         if ($company_id !== null) {
-            $queryParams['company_id'] = ObjectSerializer::toQueryValue($company_id);
+            if('form' === 'form' && is_array($company_id)) {
+                foreach($company_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['company_id'] = $company_id;
+            }
         }
         // query params
         if ($accruals !== null) {
-            $queryParams['accruals'] = ObjectSerializer::toQueryValue($accruals);
+            if('form' === 'form' && is_array($accruals)) {
+                foreach($accruals as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['accruals'] = $accruals;
+            }
         }
+
 
         // path params
         if ($id !== null) {
@@ -1167,7 +1239,7 @@ class DealsApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\DealsIndexResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
+     * @return \Freee\Accounting\Model\InlineResponse2002|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
      */
     public function getDeals($company_id, $partner_id = null, $account_item_id = null, $partner_code = null, $status = null, $type = null, $start_issue_date = null, $end_issue_date = null, $start_due_date = null, $end_due_date = null, $start_renew_date = null, $end_renew_date = null, $offset = null, $limit = null, $registered_from = null, $accruals = null)
     {
@@ -1199,7 +1271,7 @@ class DealsApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\DealsIndexResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Freee\Accounting\Model\InlineResponse2002|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDealsWithHttpInfo($company_id, $partner_id = null, $account_item_id = null, $partner_code = null, $status = null, $type = null, $start_issue_date = null, $end_issue_date = null, $start_due_date = null, $end_due_date = null, $start_renew_date = null, $end_renew_date = null, $offset = null, $limit = null, $registered_from = null, $accruals = null)
     {
@@ -1214,7 +1286,7 @@ class DealsApi
                     "[{$e->getCode()}] {$e->getMessage()}",
                     $e->getCode(),
                     $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
                 );
             }
 
@@ -1236,14 +1308,14 @@ class DealsApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Freee\Accounting\Model\DealsIndexResponse' === '\SplFileObject') {
+                    if ('\Freee\Accounting\Model\InlineResponse2002' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\DealsIndexResponse', []),
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InlineResponse2002', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1251,7 +1323,7 @@ class DealsApi
                     if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -1263,7 +1335,7 @@ class DealsApi
                     if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -1271,11 +1343,23 @@ class DealsApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 403:
+                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 case 404:
                     if ('\Freee\Accounting\Model\BadRequestNotFoundError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -1287,7 +1371,7 @@ class DealsApi
                     if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -1297,12 +1381,12 @@ class DealsApi
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\DealsIndexResponse';
+            $returnType = '\Freee\Accounting\Model\InlineResponse2002';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
             } else {
-                $content = $responseBody->getContents();
+                $content = (string) $responseBody;
             }
 
             return [
@@ -1316,7 +1400,7 @@ class DealsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\DealsIndexResponse',
+                        '\Freee\Accounting\Model\InlineResponse2002',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1333,6 +1417,14 @@ class DealsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Freee\Accounting\Model\UnauthorizedError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Freee\Accounting\Model\ForbiddenError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1420,7 +1512,7 @@ class DealsApi
      */
     public function getDealsAsyncWithHttpInfo($company_id, $partner_id = null, $account_item_id = null, $partner_code = null, $status = null, $type = null, $start_issue_date = null, $end_issue_date = null, $start_due_date = null, $end_due_date = null, $start_renew_date = null, $end_renew_date = null, $offset = null, $limit = null, $registered_from = null, $accruals = null)
     {
-        $returnType = '\Freee\Accounting\Model\DealsIndexResponse';
+        $returnType = '\Freee\Accounting\Model\InlineResponse2002';
         $request = $this->getDealsRequest($company_id, $partner_id, $account_item_id, $partner_code, $status, $type, $start_issue_date, $end_issue_date, $start_due_date, $end_due_date, $start_renew_date, $end_renew_date, $offset, $limit, $registered_from, $accruals);
 
         return $this->client
@@ -1431,7 +1523,7 @@ class DealsApi
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -1488,25 +1580,39 @@ class DealsApi
                 'Missing the required parameter $company_id when calling getDeals'
             );
         }
-        if ($company_id > 999999999999) {
-            throw new \InvalidArgumentException('invalid value for "$company_id" when calling DealsApi.getDeals, must be smaller than or equal to 999999999999.');
+        if ($company_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$company_id" when calling DealsApi.getDeals, must be smaller than or equal to 2147483647.');
         }
         if ($company_id < 1) {
             throw new \InvalidArgumentException('invalid value for "$company_id" when calling DealsApi.getDeals, must be bigger than or equal to 1.');
         }
 
-        if ($partner_id !== null && $partner_id > 999999999999) {
-            throw new \InvalidArgumentException('invalid value for "$partner_id" when calling DealsApi.getDeals, must be smaller than or equal to 999999999999.');
+        if ($partner_id !== null && $partner_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$partner_id" when calling DealsApi.getDeals, must be smaller than or equal to 2147483647.');
         }
         if ($partner_id !== null && $partner_id < 1) {
             throw new \InvalidArgumentException('invalid value for "$partner_id" when calling DealsApi.getDeals, must be bigger than or equal to 1.');
         }
 
-        if ($account_item_id !== null && $account_item_id > 999999999999) {
-            throw new \InvalidArgumentException('invalid value for "$account_item_id" when calling DealsApi.getDeals, must be smaller than or equal to 999999999999.');
+        if ($account_item_id !== null && $account_item_id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$account_item_id" when calling DealsApi.getDeals, must be smaller than or equal to 2147483647.');
         }
         if ($account_item_id !== null && $account_item_id < 1) {
             throw new \InvalidArgumentException('invalid value for "$account_item_id" when calling DealsApi.getDeals, must be bigger than or equal to 1.');
+        }
+
+        if ($offset !== null && $offset > 9223372036854775807) {
+            throw new \InvalidArgumentException('invalid value for "$offset" when calling DealsApi.getDeals, must be smaller than or equal to 9223372036854775807.');
+        }
+        if ($offset !== null && $offset < 0) {
+            throw new \InvalidArgumentException('invalid value for "$offset" when calling DealsApi.getDeals, must be bigger than or equal to 0.');
+        }
+
+        if ($limit !== null && $limit > 100) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling DealsApi.getDeals, must be smaller than or equal to 100.');
+        }
+        if ($limit !== null && $limit < 1) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling DealsApi.getDeals, must be bigger than or equal to 1.');
         }
 
 
@@ -1519,68 +1625,181 @@ class DealsApi
 
         // query params
         if ($company_id !== null) {
-            $queryParams['company_id'] = ObjectSerializer::toQueryValue($company_id);
+            if('form' === 'form' && is_array($company_id)) {
+                foreach($company_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['company_id'] = $company_id;
+            }
         }
         // query params
         if ($partner_id !== null) {
-            $queryParams['partner_id'] = ObjectSerializer::toQueryValue($partner_id);
+            if('form' === 'form' && is_array($partner_id)) {
+                foreach($partner_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['partner_id'] = $partner_id;
+            }
         }
         // query params
         if ($account_item_id !== null) {
-            $queryParams['account_item_id'] = ObjectSerializer::toQueryValue($account_item_id);
+            if('form' === 'form' && is_array($account_item_id)) {
+                foreach($account_item_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['account_item_id'] = $account_item_id;
+            }
         }
         // query params
         if ($partner_code !== null) {
-            $queryParams['partner_code'] = ObjectSerializer::toQueryValue($partner_code);
+            if('form' === 'form' && is_array($partner_code)) {
+                foreach($partner_code as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['partner_code'] = $partner_code;
+            }
         }
         // query params
         if ($status !== null) {
-            $queryParams['status'] = ObjectSerializer::toQueryValue($status);
+            if('form' === 'form' && is_array($status)) {
+                foreach($status as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['status'] = $status;
+            }
         }
         // query params
         if ($type !== null) {
-            $queryParams['type'] = ObjectSerializer::toQueryValue($type);
+            if('form' === 'form' && is_array($type)) {
+                foreach($type as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['type'] = $type;
+            }
         }
         // query params
         if ($start_issue_date !== null) {
-            $queryParams['start_issue_date'] = ObjectSerializer::toQueryValue($start_issue_date);
+            if('form' === 'form' && is_array($start_issue_date)) {
+                foreach($start_issue_date as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['start_issue_date'] = $start_issue_date;
+            }
         }
         // query params
         if ($end_issue_date !== null) {
-            $queryParams['end_issue_date'] = ObjectSerializer::toQueryValue($end_issue_date);
+            if('form' === 'form' && is_array($end_issue_date)) {
+                foreach($end_issue_date as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['end_issue_date'] = $end_issue_date;
+            }
         }
         // query params
         if ($start_due_date !== null) {
-            $queryParams['start_due_date'] = ObjectSerializer::toQueryValue($start_due_date);
+            if('form' === 'form' && is_array($start_due_date)) {
+                foreach($start_due_date as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['start_due_date'] = $start_due_date;
+            }
         }
         // query params
         if ($end_due_date !== null) {
-            $queryParams['end_due_date'] = ObjectSerializer::toQueryValue($end_due_date);
+            if('form' === 'form' && is_array($end_due_date)) {
+                foreach($end_due_date as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['end_due_date'] = $end_due_date;
+            }
         }
         // query params
         if ($start_renew_date !== null) {
-            $queryParams['start_renew_date'] = ObjectSerializer::toQueryValue($start_renew_date);
+            if('form' === 'form' && is_array($start_renew_date)) {
+                foreach($start_renew_date as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['start_renew_date'] = $start_renew_date;
+            }
         }
         // query params
         if ($end_renew_date !== null) {
-            $queryParams['end_renew_date'] = ObjectSerializer::toQueryValue($end_renew_date);
+            if('form' === 'form' && is_array($end_renew_date)) {
+                foreach($end_renew_date as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['end_renew_date'] = $end_renew_date;
+            }
         }
         // query params
         if ($offset !== null) {
-            $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
+            if('form' === 'form' && is_array($offset)) {
+                foreach($offset as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['offset'] = $offset;
+            }
         }
         // query params
         if ($limit !== null) {
-            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
+            if('form' === 'form' && is_array($limit)) {
+                foreach($limit as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['limit'] = $limit;
+            }
         }
         // query params
         if ($registered_from !== null) {
-            $queryParams['registered_from'] = ObjectSerializer::toQueryValue($registered_from);
+            if('form' === 'form' && is_array($registered_from)) {
+                foreach($registered_from as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['registered_from'] = $registered_from;
+            }
         }
         // query params
         if ($accruals !== null) {
-            $queryParams['accruals'] = ObjectSerializer::toQueryValue($accruals);
+            if('form' === 'form' && is_array($accruals)) {
+                foreach($accruals as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['accruals'] = $accruals;
+            }
         }
+
 
 
         // body params
@@ -1657,15 +1876,15 @@ class DealsApi
      * 取引（収入／支出）の更新
      *
      * @param  int $id 取引ID (required)
-     * @param  \Freee\Accounting\Model\UpdateDealParams $parameters 取引（収入／支出）の更新 (optional)
+     * @param  \Freee\Accounting\Model\DealUpdateParams $deal_update_params 取引（収入／支出）の更新 (optional)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\DealsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
+     * @return \Freee\Accounting\Model\DealResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
      */
-    public function updateDeal($id, $parameters = null)
+    public function updateDeal($id, $deal_update_params = null)
     {
-        list($response) = $this->updateDealWithHttpInfo($id, $parameters);
+        list($response) = $this->updateDealWithHttpInfo($id, $deal_update_params);
         return $response;
     }
 
@@ -1675,15 +1894,15 @@ class DealsApi
      * 取引（収入／支出）の更新
      *
      * @param  int $id 取引ID (required)
-     * @param  \Freee\Accounting\Model\UpdateDealParams $parameters 取引（収入／支出）の更新 (optional)
+     * @param  \Freee\Accounting\Model\DealUpdateParams $deal_update_params 取引（収入／支出）の更新 (optional)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\DealsResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Freee\Accounting\Model\DealResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateDealWithHttpInfo($id, $parameters = null)
+    public function updateDealWithHttpInfo($id, $deal_update_params = null)
     {
-        $request = $this->updateDealRequest($id, $parameters);
+        $request = $this->updateDealRequest($id, $deal_update_params);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1694,7 +1913,7 @@ class DealsApi
                     "[{$e->getCode()}] {$e->getMessage()}",
                     $e->getCode(),
                     $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
                 );
             }
 
@@ -1716,14 +1935,14 @@ class DealsApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Freee\Accounting\Model\DealsResponse' === '\SplFileObject') {
+                    if ('\Freee\Accounting\Model\DealResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\DealsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\DealResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1731,7 +1950,7 @@ class DealsApi
                     if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -1743,7 +1962,7 @@ class DealsApi
                     if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -1751,11 +1970,23 @@ class DealsApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 403:
+                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 case 404:
                     if ('\Freee\Accounting\Model\BadRequestNotFoundError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -1767,7 +1998,7 @@ class DealsApi
                     if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -1777,12 +2008,12 @@ class DealsApi
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\DealsResponse';
+            $returnType = '\Freee\Accounting\Model\DealResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
             } else {
-                $content = $responseBody->getContents();
+                $content = (string) $responseBody;
             }
 
             return [
@@ -1796,7 +2027,7 @@ class DealsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\DealsResponse',
+                        '\Freee\Accounting\Model\DealResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1813,6 +2044,14 @@ class DealsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Freee\Accounting\Model\UnauthorizedError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Freee\Accounting\Model\ForbiddenError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1844,14 +2083,14 @@ class DealsApi
      * 取引（収入／支出）の更新
      *
      * @param  int $id 取引ID (required)
-     * @param  \Freee\Accounting\Model\UpdateDealParams $parameters 取引（収入／支出）の更新 (optional)
+     * @param  \Freee\Accounting\Model\DealUpdateParams $deal_update_params 取引（収入／支出）の更新 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateDealAsync($id, $parameters = null)
+    public function updateDealAsync($id, $deal_update_params = null)
     {
-        return $this->updateDealAsyncWithHttpInfo($id, $parameters)
+        return $this->updateDealAsyncWithHttpInfo($id, $deal_update_params)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1865,15 +2104,15 @@ class DealsApi
      * 取引（収入／支出）の更新
      *
      * @param  int $id 取引ID (required)
-     * @param  \Freee\Accounting\Model\UpdateDealParams $parameters 取引（収入／支出）の更新 (optional)
+     * @param  \Freee\Accounting\Model\DealUpdateParams $deal_update_params 取引（収入／支出）の更新 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateDealAsyncWithHttpInfo($id, $parameters = null)
+    public function updateDealAsyncWithHttpInfo($id, $deal_update_params = null)
     {
-        $returnType = '\Freee\Accounting\Model\DealsResponse';
-        $request = $this->updateDealRequest($id, $parameters);
+        $returnType = '\Freee\Accounting\Model\DealResponse';
+        $request = $this->updateDealRequest($id, $deal_update_params);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1883,7 +2122,7 @@ class DealsApi
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
-                        $content = $responseBody->getContents();
+                        $content = (string) $responseBody;
                     }
 
                     return [
@@ -1913,12 +2152,12 @@ class DealsApi
      * Create request for operation 'updateDeal'
      *
      * @param  int $id 取引ID (required)
-     * @param  \Freee\Accounting\Model\UpdateDealParams $parameters 取引（収入／支出）の更新 (optional)
+     * @param  \Freee\Accounting\Model\DealUpdateParams $deal_update_params 取引（収入／支出）の更新 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateDealRequest($id, $parameters = null)
+    protected function updateDealRequest($id, $deal_update_params = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -1926,8 +2165,8 @@ class DealsApi
                 'Missing the required parameter $id when calling updateDeal'
             );
         }
-        if ($id > 999999999999) {
-            throw new \InvalidArgumentException('invalid value for "$id" when calling DealsApi.updateDeal, must be smaller than or equal to 999999999999.');
+        if ($id > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$id" when calling DealsApi.updateDeal, must be smaller than or equal to 2147483647.');
         }
         if ($id < 1) {
             throw new \InvalidArgumentException('invalid value for "$id" when calling DealsApi.updateDeal, must be bigger than or equal to 1.');
@@ -1942,6 +2181,7 @@ class DealsApi
         $multipart = false;
 
 
+
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
@@ -1953,8 +2193,8 @@ class DealsApi
 
         // body params
         $_tempBody = null;
-        if (isset($parameters)) {
-            $_tempBody = $parameters;
+        if (isset($deal_update_params)) {
+            $_tempBody = $deal_update_params;
         }
 
         if ($multipart) {
@@ -1964,7 +2204,7 @@ class DealsApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json']
+                ['application/json', 'application/x-www-form-urlencoded']
             );
         }
 

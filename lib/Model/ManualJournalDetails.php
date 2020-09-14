@@ -13,12 +13,12 @@
 /**
  * freee API
  *
- * <h1 id=\"freee_api\">freee API</h1> <hr /> <h2 id=\"\">スタートガイド</h2> <p>1. セットアップ</p> <ol> <ul><li><a href=\"https://support.freee.co.jp/hc/ja/articles/202847230\" class=\"external-link\" rel=\"nofollow\">freeeアカウント（無料）</a>を<a href=\"https://secure.freee.co.jp/users/sign_up\" class=\"external-link\" rel=\"nofollow\">作成</a>します（すでにお持ちの場合は次へ）</li><li><a href=\"https://app.secure.freee.co.jp/developers/demo_companies/description\" class=\"external-link\" rel=\"nofollow\">開発者向け事業所・環境を作成</a>します</li><li><span><a href=\"https://app.secure.freee.co.jp/developers/applications\" class=\"external-link\" rel=\"nofollow\">前のステップで作成した事業所を選択してfreeeアプリを追加</a>します</span></li><li>Client IDをCopyしておきます</li> </ul> </ol>  <p>2. 実際にAPIを叩いてみる（ブラウザからAPIのレスポンスを確認する）</p> <ol> <ul><li><span><span>以下のURLの●をclient_idに入れ替えて<a href=\"https://app.secure.freee.co.jp/developers/tutorials/3-%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B#%E8%AA%8D%E5%8F%AF%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B\" class=\"external-link\" rel=\"nofollow\">アクセストークンを取得</a>します</span></span><ul><li><span><span><pre><code>https://accounts.secure.freee.co.jp/public_api/authorize?client_id=●&amp;redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&amp;response_type=token</a></code></pre></span></span></li></ul></li><li><span><a href=\"https://developer.freee.co.jp/docs/accounting/reference#/%E9%80%A3%E7%B5%A1%E5%85%88\" class=\"external-link\" rel=\"nofollow\">APIリファレンス</a>で<code>Authorize</code>を押下します</span></li><li><span>アクセストークン<span><span>を入力して</span></span>&nbsp;もう一度<span><code>Authorize</code>を押下して<code>Close</code>を押下します</span></span></li><li>リファレンス内のCompanies（事業所）に移動し、<code>Try it out</code>を押下し、<code>Execute</code>を押下します</li><li>Response bodyを参照し、事業所ID(id属性)を活用して、Companies以外のエンドポイントでどのようなデータのやりとりできるのか確認します</li></ul> </ol> <p>3. 連携を実装する</p> <ol> <ul><li><a href=\"https://developer.freee.co.jp/tips\" class=\"external-link\" rel=\"nofollow\">API TIPS</a>を参考に、ユースケースごとの連携の概要を学びます。<span>例えば</span><span>&nbsp;</span><a href=\"https://developer.freee.co.jp/tips/how-to-cooperate-salesmanegement-system\" class=\"external-link\" rel=\"nofollow\">SFA、CRM、販売管理システムから会計freeeへの連携</a>や<a href=\"https://developer.freee.co.jp/tips/how-to-cooperate-excel-and-spreadsheet\" class=\"external-link\" rel=\"nofollow\">エクセルやgoogle spreadsheetからの連携</a>です</li><li>実利用向け事業所がすでにある場合は利用、ない場合は作成します（セットアップで作成したのは開発者向け環境のため活用不可）</li><li><a href=\"https://developer.freee.co.jp/docs/accounting/reference\" class=\"external-link\" rel=\"nofollow\">API documentation</a><span>&nbsp;を参照し、躓いた場合は</span><span>&nbsp;</span><a href=\"https://developer.freee.co.jp/community/forum/community\" class=\"external-link\" rel=\"nofollow\">Community</a><span>&nbsp;で質問してみましょう</span></li></ul> </ol> <p>アプリケーションの登録方法や認証方法、またはAPIの活用方法でご不明な点がある場合は<a href=\"https://support.freee.co.jp/hc/ja/sections/115000030743\">ヘルプセンター</a>もご確認ください</p> <hr /> <h2 id=\"_2\">仕様</h2>  <h3 id=\"api\">APIエンドポイント</h3>  <p>https://api.freee.co.jp/ (httpsのみ)</p>  <h3 id=\"_3\">認証方式</h3>  <p><a href=\"http://tools.ietf.org/html/rfc6749\">OAuth2</a>に対応</p>  <ul> <li>Authorization Code Flow (Webアプリ向け)</li>  <li>Implicit Flow (Mobileアプリ向け)</li> </ul>  <h3 id=\"_4\">認証エンドポイント</h3>  <p>https://accounts.secure.freee.co.jp/</p>  <ul> <li>authorize : https://accounts.secure.freee.co.jp/public_api/authorize</li>  <li>token : https://accounts.secure.freee.co.jp/public_api/token</li> </ul>  <h3 id=\"_5\">アクセストークンのリフレッシュ</h3>  <p>認証時に得たrefresh_token を使ってtoken の期限をリフレッシュして新規に発行することが出来ます。</p>  <p>grant_type=refresh_token で https://accounts.secure.freee.co.jp/public_api/token にアクセスすればリフレッシュされます。</p>  <p>e.g.)</p>  <p>POST: https://accounts.secure.freee.co.jp/public_api/token</p>  <p>params: grant_type=refresh_token&amp;client_id=UID&amp;client_secret=SECRET&amp;refresh_token=REFRESH_TOKEN</p>  <p>詳細は<a href=\"https://github.com/applicake/doorkeeper/wiki/Enable-Refresh-Token-Credentials#flow\">refresh_token</a>を参照下さい。</p>  <h3 id=\"_6\">アクセストークンの破棄</h3>  <p>認証時に得たaccess_tokenまたはrefresh_tokenを使って、tokenを破棄することができます。 token=access_tokenまたはtoken=refresh_tokenでhttps://accounts.secure.freee.co.jp/public_api/revokeにアクセスすると破棄されます。token_type_hintでaccess_tokenまたはrefresh_tokenを陽に指定できます。</p>  <p>e.g.)</p>  <p>POST: https://accounts.secure.freee.co.jp/public_api/revoke</p>  <p>params: token=ACCESS_TOKEN</p>  <p>または</p>  <p>params: token=REFRESH_TOKEN</p>  <p>または</p>  <p>params: token=ACCESS_TOKEN&amp;token_type_hint=access_token</p>  <p>または</p>  <p>params: token=REFRESH_TOKEN&amp;token_type_hint=refresh_token</p>  <p>詳細は <a href=\"https://tools.ietf.org/html/rfc7009\">OAuth 2.0 Token revocation</a> をご参照ください。</p>  <h3 id=\"_7\">データフォーマット</h3>  <p>リクエスト、レスポンスともにJSON形式をサポート</p>  <h3 id=\"_8\">共通レスポンスヘッダー</h3>  <p>すべてのAPIのレスポンスには以下のHTTPヘッダーが含まれます。</p>  <ul> <li> <p>X-Freee-Request-ID</p> <ul> <li>各リクエスト毎に発行されるID</li> </ul> </li> </ul>  <h3 id=\"_9\">共通エラーレスポンス</h3>  <ul> <li> <p>ステータスコードはレスポンス内のJSONに含まれる他、HTTPヘッダにも含まれる</p> </li>  <li> <p>type</p>  <ul> <li>status : HTTPステータスコードの説明</li>  <li>validation : エラーの詳細の説明（開発者向け）</li> </ul> </li> </ul>  <p>レスポンスの例</p>  <pre><code>  {     &quot;status_code&quot; : 400,     &quot;errors&quot; : [       {         &quot;type&quot; : &quot;status&quot;,         &quot;messages&quot; : [&quot;不正なリクエストです。&quot;]       },       {         &quot;type&quot; : &quot;validation&quot;,         &quot;messages&quot; : [&quot;Date は不正な日付フォーマットです。入力例：2013-01-01&quot;]       }     ]   }</code></pre> <hr /> <h2 id=\"_10\">連絡先</h2>  <p>ご不明点、ご要望等は <a href=\"https://support.freee.co.jp/hc/ja/requests/new\">freee サポートデスクへのお問い合わせフォーム</a> からご連絡ください。</p> <hr />&copy; Since 2013 freee K.K.
+ * <h1 id=\"freee_api\">freee API</h1> <hr /> <h2 id=\"start_guide\">スタートガイド</h2>  <p>freee API開発がはじめての方は<a href=\"https://developer.freee.co.jp/getting-started\">freee API スタートガイド</a>を参照してください。</p>  <hr /> <h2 id=\"specification\">仕様</h2>  <pre><code>【重要】会計freee APIの新バージョンについて 2020年12月まで、2つのバージョンが利用できる状態です。古いものは2020年12月に利用不可となります。<br> 新しいAPIを利用するにはリクエストヘッダーに以下を指定します。 X-Api-Version: 2020-06-15<br> 指定がない場合は2020年12月に廃止予定のAPIを利用することとなります。<br> 【重要】APIのバージョン指定をせずに利用し続ける場合 2020年12月に新しいバージョンのAPIに自動的に切り替わります。 詳細は、<a href=\"https://developer.freee.co.jp/release-note/2948\" target=\"_blank\">リリースノート</a>をご覧ください。<br> 旧バージョンのAPIリファレンスを確認したい場合は、<a href=\"https://freee.github.io/freee-api-schema/\" target=\"_blank\">旧バージョンのAPIリファレンスページ</a>をご覧ください。 </code></pre>  <h3 id=\"api_endpoint\">APIエンドポイント</h3>  <p>https://api.freee.co.jp/ (httpsのみ)</p>  <h3 id=\"about_authorize\">認証について</h3> <p>OAuth2.0を利用します。詳細は<a href=\"https://developer.freee.co.jp/docs\" target=\"_blank\">ドキュメントの認証</a>パートを参照してください。</p>  <h3 id=\"data_format\">データフォーマット</h3>  <p>リクエスト、レスポンスともにJSON形式をサポートしていますが、詳細は、API毎の説明欄（application/jsonなど）を確認してください。</p>  <h3 id=\"compatibility\">後方互換性ありの変更</h3>  <p>freeeでは、APIを改善していくために以下のような変更は後方互換性ありとして通知なく変更を入れることがあります。アプリケーション実装者は以下を踏まえて開発を行ってください。</p>  <ul> <li>新しいAPIリソース・エンドポイントの追加</li> <li>既存のAPIに対して必須ではない新しいリクエストパラメータの追加</li> <li>既存のAPIレスポンスに対する新しいプロパティの追加</li> <li>既存のAPIレスポンスに対するプロパティの順番の入れ変え</li> <li>keyとなっているidやcodeの長さの変更（長くする）</li> </ul>  <h3 id=\"common_response_header\">共通レスポンスヘッダー</h3>  <p>すべてのAPIのレスポンスには以下のHTTPヘッダーが含まれます。</p>  <ul> <li> <p>X-Freee-Request-ID</p> <ul> <li>各リクエスト毎に発行されるID</li> </ul> </li> </ul>  <h3 id=\"common_error_response\">共通エラーレスポンス</h3>  <ul> <li> <p>ステータスコードはレスポンス内のJSONに含まれる他、HTTPヘッダにも含まれる</p> </li> <li> <p>一部のエラーレスポンスにはエラーコードが含まれます。<br>詳細は、<a href=\"https://developer.freee.co.jp/tips/faq/40x-checkpoint\">HTTPステータスコード400台エラー時のチェックポイント</a>を参照してください</p> </li> <p>type</p>  <ul> <li>status : HTTPステータスコードの説明</li>  <li>validation : エラーの詳細の説明（開発者向け）</li> </ul> </li> </ul>  <p>レスポンスの例</p>  <pre><code>  {     &quot;status_code&quot; : 400,     &quot;errors&quot; : [       {         &quot;type&quot; : &quot;status&quot;,         &quot;messages&quot; : [&quot;不正なリクエストです。&quot;]       },       {         &quot;type&quot; : &quot;validation&quot;,         &quot;messages&quot; : [&quot;Date は不正な日付フォーマットです。入力例：2013-01-01&quot;]       }     ]   }</code></pre>  </br>  <h3 id=\"api_rate_limit\">API使用制限</h3>    <p>freeeは一定期間に過度のアクセスを検知した場合、APIアクセスをコントロールする場合があります。</p>   <p>その際のhttp status codeは403となります。制限がかかってから10分程度が過ぎると再度使用することができるようになります。</p>  <h4 id=\"reports_api_endpoint\">/reportsエンドポイント</h4>  <p>freeeは/reportsエンドポイントに対して1秒間に10以上のアクセスを検知した場合、APIアクセスをコントロールする場合があります。その際のhttp status codeは429（too many requests）となります。</p>  <p>レスポンスボディのmetaプロパティに以下を含めます。</p>  <ul>   <li>設定されている上限値</li>   <li>上限に達するまでの使用可能回数</li>   <li>（上限値に達した場合）使用回数がリセットされる時刻</li> </ul>  <h3 id=\"plan_api_rate_limit\">プラン別のAPI Rate Limit</h3>   <table border=\"1\">     <tbody>       <tr>         <th style=\"padding: 10px\"><strong>会計freeeプラン名</strong></th>         <th style=\"padding: 10px\"><strong>事業所とアプリケーション毎に1日でのAPIコール数</strong></th>       </tr>       <tr>         <td style=\"padding: 10px\">エンタープライズ</td>         <td style=\"padding: 10px\">10,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">プロフェッショナル</td>         <td style=\"padding: 10px\">5,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">ベーシック</td>         <td style=\"padding: 10px\">3,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">ミニマム</td>         <td style=\"padding: 10px\">3,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">上記以外</td>         <td style=\"padding: 10px\">3,000</td>       </tr>     </tbody>   </table>  <h3 id=\"webhook\">Webhookについて</h3>  <p>詳細は<a href=\"https://developer.freee.co.jp/docs/accounting/webhook\" target=\"_blank\">会計Webhook概要</a>を参照してください。</p>  <hr /> <h2 id=\"contact\">連絡先</h2>  <p>ご不明点、ご要望等は <a href=\"https://support.freee.co.jp/hc/ja/requests/new\">freee サポートデスクへのお問い合わせフォーム</a> からご連絡ください。</p> <hr />&copy; Since 2013 freee K.K.
  *
  * The version of the OpenAPI document: v1.0
  * 
  * Generated by: https://openapi-generator.tech
- * OpenAPI Generator version: 4.2.2
+ * OpenAPI Generator version: 4.3.1
  */
 
 /**
@@ -49,7 +49,7 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'manualJournal_details';
+    protected static $openAPIModelName = 'manual_journal_details';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,29 +57,29 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'entry_side' => 'string',
         'account_item_id' => 'int',
-        'tax_code' => 'int',
-        'partner_id' => 'int',
-        'partner_name' => 'string',
-        'partner_code' => 'string',
-        'partner_long_name' => 'string',
+        'amount' => 'int',
+        'description' => 'string',
+        'entry_side' => 'string',
+        'id' => 'int',
         'item_id' => 'int',
         'item_name' => 'string',
+        'partner_code' => 'string',
+        'partner_id' => 'int',
+        'partner_long_name' => 'string',
+        'partner_name' => 'string',
         'section_id' => 'int',
         'section_name' => 'string',
-        'tag_ids' => 'int[]',
-        'tag_names' => 'string[]',
         'segment_1_tag_id' => 'int',
         'segment_1_tag_name' => 'int',
         'segment_2_tag_id' => 'int',
         'segment_2_tag_name' => 'int',
         'segment_3_tag_id' => 'int',
         'segment_3_tag_name' => 'int',
-        'amount' => 'int',
-        'vat' => 'int',
-        'description' => 'string'
+        'tag_ids' => 'int[]',
+        'tag_names' => 'string[]',
+        'tax_code' => 'int',
+        'vat' => 'int'
     ];
 
     /**
@@ -88,29 +88,29 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'entry_side' => null,
         'account_item_id' => null,
-        'tax_code' => null,
-        'partner_id' => null,
-        'partner_name' => null,
-        'partner_code' => null,
-        'partner_long_name' => null,
+        'amount' => null,
+        'description' => null,
+        'entry_side' => null,
+        'id' => null,
         'item_id' => null,
         'item_name' => null,
+        'partner_code' => null,
+        'partner_id' => null,
+        'partner_long_name' => null,
+        'partner_name' => null,
         'section_id' => null,
         'section_name' => null,
-        'tag_ids' => null,
-        'tag_names' => null,
         'segment_1_tag_id' => null,
         'segment_1_tag_name' => null,
         'segment_2_tag_id' => null,
         'segment_2_tag_name' => null,
         'segment_3_tag_id' => null,
         'segment_3_tag_name' => null,
-        'amount' => null,
-        'vat' => null,
-        'description' => null
+        'tag_ids' => null,
+        'tag_names' => null,
+        'tax_code' => null,
+        'vat' => null
     ];
 
     /**
@@ -140,29 +140,29 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'entry_side' => 'entry_side',
         'account_item_id' => 'account_item_id',
-        'tax_code' => 'tax_code',
-        'partner_id' => 'partner_id',
-        'partner_name' => 'partner_name',
-        'partner_code' => 'partner_code',
-        'partner_long_name' => 'partner_long_name',
+        'amount' => 'amount',
+        'description' => 'description',
+        'entry_side' => 'entry_side',
+        'id' => 'id',
         'item_id' => 'item_id',
         'item_name' => 'item_name',
+        'partner_code' => 'partner_code',
+        'partner_id' => 'partner_id',
+        'partner_long_name' => 'partner_long_name',
+        'partner_name' => 'partner_name',
         'section_id' => 'section_id',
         'section_name' => 'section_name',
-        'tag_ids' => 'tag_ids',
-        'tag_names' => 'tag_names',
         'segment_1_tag_id' => 'segment_1_tag_id',
         'segment_1_tag_name' => 'segment_1_tag_name',
         'segment_2_tag_id' => 'segment_2_tag_id',
         'segment_2_tag_name' => 'segment_2_tag_name',
         'segment_3_tag_id' => 'segment_3_tag_id',
         'segment_3_tag_name' => 'segment_3_tag_name',
-        'amount' => 'amount',
-        'vat' => 'vat',
-        'description' => 'description'
+        'tag_ids' => 'tag_ids',
+        'tag_names' => 'tag_names',
+        'tax_code' => 'tax_code',
+        'vat' => 'vat'
     ];
 
     /**
@@ -171,29 +171,29 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'entry_side' => 'setEntrySide',
         'account_item_id' => 'setAccountItemId',
-        'tax_code' => 'setTaxCode',
-        'partner_id' => 'setPartnerId',
-        'partner_name' => 'setPartnerName',
-        'partner_code' => 'setPartnerCode',
-        'partner_long_name' => 'setPartnerLongName',
+        'amount' => 'setAmount',
+        'description' => 'setDescription',
+        'entry_side' => 'setEntrySide',
+        'id' => 'setId',
         'item_id' => 'setItemId',
         'item_name' => 'setItemName',
+        'partner_code' => 'setPartnerCode',
+        'partner_id' => 'setPartnerId',
+        'partner_long_name' => 'setPartnerLongName',
+        'partner_name' => 'setPartnerName',
         'section_id' => 'setSectionId',
         'section_name' => 'setSectionName',
-        'tag_ids' => 'setTagIds',
-        'tag_names' => 'setTagNames',
         'segment_1_tag_id' => 'setSegment1TagId',
         'segment_1_tag_name' => 'setSegment1TagName',
         'segment_2_tag_id' => 'setSegment2TagId',
         'segment_2_tag_name' => 'setSegment2TagName',
         'segment_3_tag_id' => 'setSegment3TagId',
         'segment_3_tag_name' => 'setSegment3TagName',
-        'amount' => 'setAmount',
-        'vat' => 'setVat',
-        'description' => 'setDescription'
+        'tag_ids' => 'setTagIds',
+        'tag_names' => 'setTagNames',
+        'tax_code' => 'setTaxCode',
+        'vat' => 'setVat'
     ];
 
     /**
@@ -202,29 +202,29 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'entry_side' => 'getEntrySide',
         'account_item_id' => 'getAccountItemId',
-        'tax_code' => 'getTaxCode',
-        'partner_id' => 'getPartnerId',
-        'partner_name' => 'getPartnerName',
-        'partner_code' => 'getPartnerCode',
-        'partner_long_name' => 'getPartnerLongName',
+        'amount' => 'getAmount',
+        'description' => 'getDescription',
+        'entry_side' => 'getEntrySide',
+        'id' => 'getId',
         'item_id' => 'getItemId',
         'item_name' => 'getItemName',
+        'partner_code' => 'getPartnerCode',
+        'partner_id' => 'getPartnerId',
+        'partner_long_name' => 'getPartnerLongName',
+        'partner_name' => 'getPartnerName',
         'section_id' => 'getSectionId',
         'section_name' => 'getSectionName',
-        'tag_ids' => 'getTagIds',
-        'tag_names' => 'getTagNames',
         'segment_1_tag_id' => 'getSegment1TagId',
         'segment_1_tag_name' => 'getSegment1TagName',
         'segment_2_tag_id' => 'getSegment2TagId',
         'segment_2_tag_name' => 'getSegment2TagName',
         'segment_3_tag_id' => 'getSegment3TagId',
         'segment_3_tag_name' => 'getSegment3TagName',
-        'amount' => 'getAmount',
-        'vat' => 'getVat',
-        'description' => 'getDescription'
+        'tag_ids' => 'getTagIds',
+        'tag_names' => 'getTagNames',
+        'tax_code' => 'getTaxCode',
+        'vat' => 'getVat'
     ];
 
     /**
@@ -302,29 +302,29 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['entry_side'] = isset($data['entry_side']) ? $data['entry_side'] : null;
         $this->container['account_item_id'] = isset($data['account_item_id']) ? $data['account_item_id'] : null;
-        $this->container['tax_code'] = isset($data['tax_code']) ? $data['tax_code'] : null;
-        $this->container['partner_id'] = isset($data['partner_id']) ? $data['partner_id'] : null;
-        $this->container['partner_name'] = isset($data['partner_name']) ? $data['partner_name'] : null;
-        $this->container['partner_code'] = isset($data['partner_code']) ? $data['partner_code'] : null;
-        $this->container['partner_long_name'] = isset($data['partner_long_name']) ? $data['partner_long_name'] : null;
+        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['entry_side'] = isset($data['entry_side']) ? $data['entry_side'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['item_id'] = isset($data['item_id']) ? $data['item_id'] : null;
         $this->container['item_name'] = isset($data['item_name']) ? $data['item_name'] : null;
+        $this->container['partner_code'] = isset($data['partner_code']) ? $data['partner_code'] : null;
+        $this->container['partner_id'] = isset($data['partner_id']) ? $data['partner_id'] : null;
+        $this->container['partner_long_name'] = isset($data['partner_long_name']) ? $data['partner_long_name'] : null;
+        $this->container['partner_name'] = isset($data['partner_name']) ? $data['partner_name'] : null;
         $this->container['section_id'] = isset($data['section_id']) ? $data['section_id'] : null;
         $this->container['section_name'] = isset($data['section_name']) ? $data['section_name'] : null;
-        $this->container['tag_ids'] = isset($data['tag_ids']) ? $data['tag_ids'] : null;
-        $this->container['tag_names'] = isset($data['tag_names']) ? $data['tag_names'] : null;
         $this->container['segment_1_tag_id'] = isset($data['segment_1_tag_id']) ? $data['segment_1_tag_id'] : null;
         $this->container['segment_1_tag_name'] = isset($data['segment_1_tag_name']) ? $data['segment_1_tag_name'] : null;
         $this->container['segment_2_tag_id'] = isset($data['segment_2_tag_id']) ? $data['segment_2_tag_id'] : null;
         $this->container['segment_2_tag_name'] = isset($data['segment_2_tag_name']) ? $data['segment_2_tag_name'] : null;
         $this->container['segment_3_tag_id'] = isset($data['segment_3_tag_id']) ? $data['segment_3_tag_id'] : null;
         $this->container['segment_3_tag_name'] = isset($data['segment_3_tag_name']) ? $data['segment_3_tag_name'] : null;
-        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
+        $this->container['tag_ids'] = isset($data['tag_ids']) ? $data['tag_ids'] : null;
+        $this->container['tag_names'] = isset($data['tag_names']) ? $data['tag_names'] : null;
+        $this->container['tax_code'] = isset($data['tax_code']) ? $data['tax_code'] : null;
         $this->container['vat'] = isset($data['vat']) ? $data['vat'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
     }
 
     /**
@@ -336,8 +336,30 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
+        if ($this->container['account_item_id'] === null) {
+            $invalidProperties[] = "'account_item_id' can't be null";
+        }
+        if (($this->container['account_item_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'account_item_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['account_item_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'account_item_id', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['amount'] === null) {
+            $invalidProperties[] = "'amount' can't be null";
+        }
+        if (($this->container['amount'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['amount'] < 1)) {
+            $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['description'] === null) {
+            $invalidProperties[] = "'description' can't be null";
         }
         if ($this->container['entry_side'] === null) {
             $invalidProperties[] = "'entry_side' can't be null";
@@ -350,47 +372,109 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess
             );
         }
 
-        if ($this->container['account_item_id'] === null) {
-            $invalidProperties[] = "'account_item_id' can't be null";
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
         }
-        if ($this->container['tax_code'] === null) {
-            $invalidProperties[] = "'tax_code' can't be null";
+        if (($this->container['id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['item_id'] === null) {
+            $invalidProperties[] = "'item_id' can't be null";
+        }
+        if (($this->container['item_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'item_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['item_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'item_id', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['item_name'] === null) {
+            $invalidProperties[] = "'item_name' can't be null";
         }
         if ($this->container['partner_id'] === null) {
             $invalidProperties[] = "'partner_id' can't be null";
         }
-        if ($this->container['partner_name'] === null) {
-            $invalidProperties[] = "'partner_name' can't be null";
+        if (($this->container['partner_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'partner_id', must be smaller than or equal to 2147483647.";
         }
+
+        if (($this->container['partner_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'partner_id', must be bigger than or equal to 1.";
+        }
+
         if ($this->container['partner_long_name'] === null) {
             $invalidProperties[] = "'partner_long_name' can't be null";
         }
-        if ($this->container['item_id'] === null) {
-            $invalidProperties[] = "'item_id' can't be null";
+        if ((mb_strlen($this->container['partner_long_name']) > 255)) {
+            $invalidProperties[] = "invalid value for 'partner_long_name', the character length must be smaller than or equal to 255.";
         }
-        if ($this->container['item_name'] === null) {
-            $invalidProperties[] = "'item_name' can't be null";
+
+        if ($this->container['partner_name'] === null) {
+            $invalidProperties[] = "'partner_name' can't be null";
         }
         if ($this->container['section_id'] === null) {
             $invalidProperties[] = "'section_id' can't be null";
         }
+        if (($this->container['section_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'section_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['section_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'section_id', must be bigger than or equal to 1.";
+        }
+
         if ($this->container['section_name'] === null) {
             $invalidProperties[] = "'section_name' can't be null";
         }
+        if (!is_null($this->container['segment_1_tag_id']) && ($this->container['segment_1_tag_id'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'segment_1_tag_id', must be smaller than or equal to 9223372036854775807.";
+        }
+
+        if (!is_null($this->container['segment_1_tag_id']) && ($this->container['segment_1_tag_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'segment_1_tag_id', must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['segment_2_tag_id']) && ($this->container['segment_2_tag_id'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'segment_2_tag_id', must be smaller than or equal to 9223372036854775807.";
+        }
+
+        if (!is_null($this->container['segment_2_tag_id']) && ($this->container['segment_2_tag_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'segment_2_tag_id', must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['segment_3_tag_id']) && ($this->container['segment_3_tag_id'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'segment_3_tag_id', must be smaller than or equal to 9223372036854775807.";
+        }
+
+        if (!is_null($this->container['segment_3_tag_id']) && ($this->container['segment_3_tag_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'segment_3_tag_id', must be bigger than or equal to 1.";
+        }
+
         if ($this->container['tag_ids'] === null) {
             $invalidProperties[] = "'tag_ids' can't be null";
         }
         if ($this->container['tag_names'] === null) {
             $invalidProperties[] = "'tag_names' can't be null";
         }
-        if ($this->container['amount'] === null) {
-            $invalidProperties[] = "'amount' can't be null";
+        if ($this->container['tax_code'] === null) {
+            $invalidProperties[] = "'tax_code' can't be null";
         }
+        if (($this->container['tax_code'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'tax_code', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['tax_code'] < 0)) {
+            $invalidProperties[] = "invalid value for 'tax_code', must be bigger than or equal to 0.";
+        }
+
         if ($this->container['vat'] === null) {
             $invalidProperties[] = "'vat' can't be null";
-        }
-        if ($this->container['description'] === null) {
-            $invalidProperties[] = "'description' can't be null";
         }
         return $invalidProperties;
     }
@@ -408,25 +492,89 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets id
+     * Gets account_item_id
      *
      * @return int
      */
-    public function getId()
+    public function getAccountItemId()
     {
-        return $this->container['id'];
+        return $this->container['account_item_id'];
     }
 
     /**
-     * Sets id
+     * Sets account_item_id
      *
-     * @param int $id 貸借行ID
+     * @param int $account_item_id 勘定科目ID
      *
      * @return $this
      */
-    public function setId($id)
+    public function setAccountItemId($account_item_id)
     {
-        $this->container['id'] = $id;
+
+        if (($account_item_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $account_item_id when calling ManualJournalDetails., must be smaller than or equal to 2147483647.');
+        }
+        if (($account_item_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $account_item_id when calling ManualJournalDetails., must be bigger than or equal to 1.');
+        }
+
+        $this->container['account_item_id'] = $account_item_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount
+     *
+     * @return int
+     */
+    public function getAmount()
+    {
+        return $this->container['amount'];
+    }
+
+    /**
+     * Sets amount
+     *
+     * @param int $amount 金額（税込で指定してください）
+     *
+     * @return $this
+     */
+    public function setAmount($amount)
+    {
+
+        if (($amount > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling ManualJournalDetails., must be smaller than or equal to 2147483647.');
+        }
+        if (($amount < 1)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling ManualJournalDetails., must be bigger than or equal to 1.');
+        }
+
+        $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string $description 備考
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
 
         return $this;
     }
@@ -465,145 +613,33 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets account_item_id
+     * Gets id
      *
      * @return int
      */
-    public function getAccountItemId()
+    public function getId()
     {
-        return $this->container['account_item_id'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets account_item_id
+     * Sets id
      *
-     * @param int $account_item_id 勘定科目ID
+     * @param int $id 貸借行ID
      *
      * @return $this
      */
-    public function setAccountItemId($account_item_id)
+    public function setId($id)
     {
-        $this->container['account_item_id'] = $account_item_id;
 
-        return $this;
-    }
+        if (($id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling ManualJournalDetails., must be smaller than or equal to 2147483647.');
+        }
+        if (($id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling ManualJournalDetails., must be bigger than or equal to 1.');
+        }
 
-    /**
-     * Gets tax_code
-     *
-     * @return int
-     */
-    public function getTaxCode()
-    {
-        return $this->container['tax_code'];
-    }
-
-    /**
-     * Sets tax_code
-     *
-     * @param int $tax_code 税区分ID
-     *
-     * @return $this
-     */
-    public function setTaxCode($tax_code)
-    {
-        $this->container['tax_code'] = $tax_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets partner_id
-     *
-     * @return int
-     */
-    public function getPartnerId()
-    {
-        return $this->container['partner_id'];
-    }
-
-    /**
-     * Sets partner_id
-     *
-     * @param int $partner_id 取引先ID
-     *
-     * @return $this
-     */
-    public function setPartnerId($partner_id)
-    {
-        $this->container['partner_id'] = $partner_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets partner_name
-     *
-     * @return string
-     */
-    public function getPartnerName()
-    {
-        return $this->container['partner_name'];
-    }
-
-    /**
-     * Sets partner_name
-     *
-     * @param string $partner_name 取引先名
-     *
-     * @return $this
-     */
-    public function setPartnerName($partner_name)
-    {
-        $this->container['partner_name'] = $partner_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets partner_code
-     *
-     * @return string|null
-     */
-    public function getPartnerCode()
-    {
-        return $this->container['partner_code'];
-    }
-
-    /**
-     * Sets partner_code
-     *
-     * @param string|null $partner_code 取引先コード
-     *
-     * @return $this
-     */
-    public function setPartnerCode($partner_code)
-    {
-        $this->container['partner_code'] = $partner_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets partner_long_name
-     *
-     * @return string
-     */
-    public function getPartnerLongName()
-    {
-        return $this->container['partner_long_name'];
-    }
-
-    /**
-     * Sets partner_long_name
-     *
-     * @param string $partner_long_name 正式名称（255文字以内）
-     *
-     * @return $this
-     */
-    public function setPartnerLongName($partner_long_name)
-    {
-        $this->container['partner_long_name'] = $partner_long_name;
+        $this->container['id'] = $id;
 
         return $this;
     }
@@ -627,6 +663,14 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess
      */
     public function setItemId($item_id)
     {
+
+        if (($item_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $item_id when calling ManualJournalDetails., must be smaller than or equal to 2147483647.');
+        }
+        if (($item_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $item_id when calling ManualJournalDetails., must be bigger than or equal to 1.');
+        }
+
         $this->container['item_id'] = $item_id;
 
         return $this;
@@ -657,6 +701,114 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets partner_code
+     *
+     * @return string|null
+     */
+    public function getPartnerCode()
+    {
+        return $this->container['partner_code'];
+    }
+
+    /**
+     * Sets partner_code
+     *
+     * @param string|null $partner_code 取引先コード
+     *
+     * @return $this
+     */
+    public function setPartnerCode($partner_code)
+    {
+        $this->container['partner_code'] = $partner_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets partner_id
+     *
+     * @return int
+     */
+    public function getPartnerId()
+    {
+        return $this->container['partner_id'];
+    }
+
+    /**
+     * Sets partner_id
+     *
+     * @param int $partner_id 取引先ID
+     *
+     * @return $this
+     */
+    public function setPartnerId($partner_id)
+    {
+
+        if (($partner_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $partner_id when calling ManualJournalDetails., must be smaller than or equal to 2147483647.');
+        }
+        if (($partner_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $partner_id when calling ManualJournalDetails., must be bigger than or equal to 1.');
+        }
+
+        $this->container['partner_id'] = $partner_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets partner_long_name
+     *
+     * @return string
+     */
+    public function getPartnerLongName()
+    {
+        return $this->container['partner_long_name'];
+    }
+
+    /**
+     * Sets partner_long_name
+     *
+     * @param string $partner_long_name 正式名称（255文字以内）
+     *
+     * @return $this
+     */
+    public function setPartnerLongName($partner_long_name)
+    {
+        if ((mb_strlen($partner_long_name) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $partner_long_name when calling ManualJournalDetails., must be smaller than or equal to 255.');
+        }
+
+        $this->container['partner_long_name'] = $partner_long_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets partner_name
+     *
+     * @return string
+     */
+    public function getPartnerName()
+    {
+        return $this->container['partner_name'];
+    }
+
+    /**
+     * Sets partner_name
+     *
+     * @param string $partner_name 取引先名
+     *
+     * @return $this
+     */
+    public function setPartnerName($partner_name)
+    {
+        $this->container['partner_name'] = $partner_name;
+
+        return $this;
+    }
+
+    /**
      * Gets section_id
      *
      * @return int
@@ -675,6 +827,14 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess
      */
     public function setSectionId($section_id)
     {
+
+        if (($section_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $section_id when calling ManualJournalDetails., must be smaller than or equal to 2147483647.');
+        }
+        if (($section_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $section_id when calling ManualJournalDetails., must be bigger than or equal to 1.');
+        }
+
         $this->container['section_id'] = $section_id;
 
         return $this;
@@ -700,6 +860,174 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess
     public function setSectionName($section_name)
     {
         $this->container['section_name'] = $section_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets segment_1_tag_id
+     *
+     * @return int|null
+     */
+    public function getSegment1TagId()
+    {
+        return $this->container['segment_1_tag_id'];
+    }
+
+    /**
+     * Sets segment_1_tag_id
+     *
+     * @param int|null $segment_1_tag_id セグメント１ID
+     *
+     * @return $this
+     */
+    public function setSegment1TagId($segment_1_tag_id)
+    {
+
+        if (!is_null($segment_1_tag_id) && ($segment_1_tag_id > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $segment_1_tag_id when calling ManualJournalDetails., must be smaller than or equal to 9223372036854775807.');
+        }
+        if (!is_null($segment_1_tag_id) && ($segment_1_tag_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $segment_1_tag_id when calling ManualJournalDetails., must be bigger than or equal to 1.');
+        }
+
+        $this->container['segment_1_tag_id'] = $segment_1_tag_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets segment_1_tag_name
+     *
+     * @return int|null
+     */
+    public function getSegment1TagName()
+    {
+        return $this->container['segment_1_tag_name'];
+    }
+
+    /**
+     * Sets segment_1_tag_name
+     *
+     * @param int|null $segment_1_tag_name セグメント１ID
+     *
+     * @return $this
+     */
+    public function setSegment1TagName($segment_1_tag_name)
+    {
+        $this->container['segment_1_tag_name'] = $segment_1_tag_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets segment_2_tag_id
+     *
+     * @return int|null
+     */
+    public function getSegment2TagId()
+    {
+        return $this->container['segment_2_tag_id'];
+    }
+
+    /**
+     * Sets segment_2_tag_id
+     *
+     * @param int|null $segment_2_tag_id セグメント２ID
+     *
+     * @return $this
+     */
+    public function setSegment2TagId($segment_2_tag_id)
+    {
+
+        if (!is_null($segment_2_tag_id) && ($segment_2_tag_id > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $segment_2_tag_id when calling ManualJournalDetails., must be smaller than or equal to 9223372036854775807.');
+        }
+        if (!is_null($segment_2_tag_id) && ($segment_2_tag_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $segment_2_tag_id when calling ManualJournalDetails., must be bigger than or equal to 1.');
+        }
+
+        $this->container['segment_2_tag_id'] = $segment_2_tag_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets segment_2_tag_name
+     *
+     * @return int|null
+     */
+    public function getSegment2TagName()
+    {
+        return $this->container['segment_2_tag_name'];
+    }
+
+    /**
+     * Sets segment_2_tag_name
+     *
+     * @param int|null $segment_2_tag_name セグメント２
+     *
+     * @return $this
+     */
+    public function setSegment2TagName($segment_2_tag_name)
+    {
+        $this->container['segment_2_tag_name'] = $segment_2_tag_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets segment_3_tag_id
+     *
+     * @return int|null
+     */
+    public function getSegment3TagId()
+    {
+        return $this->container['segment_3_tag_id'];
+    }
+
+    /**
+     * Sets segment_3_tag_id
+     *
+     * @param int|null $segment_3_tag_id セグメント３ID
+     *
+     * @return $this
+     */
+    public function setSegment3TagId($segment_3_tag_id)
+    {
+
+        if (!is_null($segment_3_tag_id) && ($segment_3_tag_id > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $segment_3_tag_id when calling ManualJournalDetails., must be smaller than or equal to 9223372036854775807.');
+        }
+        if (!is_null($segment_3_tag_id) && ($segment_3_tag_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $segment_3_tag_id when calling ManualJournalDetails., must be bigger than or equal to 1.');
+        }
+
+        $this->container['segment_3_tag_id'] = $segment_3_tag_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets segment_3_tag_name
+     *
+     * @return int|null
+     */
+    public function getSegment3TagName()
+    {
+        return $this->container['segment_3_tag_name'];
+    }
+
+    /**
+     * Sets segment_3_tag_name
+     *
+     * @param int|null $segment_3_tag_name セグメント３
+     *
+     * @return $this
+     */
+    public function setSegment3TagName($segment_3_tag_name)
+    {
+        $this->container['segment_3_tag_name'] = $segment_3_tag_name;
 
         return $this;
     }
@@ -753,169 +1081,33 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets segment_1_tag_id
-     *
-     * @return int|null
-     */
-    public function getSegment1TagId()
-    {
-        return $this->container['segment_1_tag_id'];
-    }
-
-    /**
-     * Sets segment_1_tag_id
-     *
-     * @param int|null $segment_1_tag_id セグメント１ID
-     *
-     * @return $this
-     */
-    public function setSegment1TagId($segment_1_tag_id)
-    {
-        $this->container['segment_1_tag_id'] = $segment_1_tag_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets segment_1_tag_name
-     *
-     * @return int|null
-     */
-    public function getSegment1TagName()
-    {
-        return $this->container['segment_1_tag_name'];
-    }
-
-    /**
-     * Sets segment_1_tag_name
-     *
-     * @param int|null $segment_1_tag_name セグメント１ID
-     *
-     * @return $this
-     */
-    public function setSegment1TagName($segment_1_tag_name)
-    {
-        $this->container['segment_1_tag_name'] = $segment_1_tag_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets segment_2_tag_id
-     *
-     * @return int|null
-     */
-    public function getSegment2TagId()
-    {
-        return $this->container['segment_2_tag_id'];
-    }
-
-    /**
-     * Sets segment_2_tag_id
-     *
-     * @param int|null $segment_2_tag_id セグメント２ID
-     *
-     * @return $this
-     */
-    public function setSegment2TagId($segment_2_tag_id)
-    {
-        $this->container['segment_2_tag_id'] = $segment_2_tag_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets segment_2_tag_name
-     *
-     * @return int|null
-     */
-    public function getSegment2TagName()
-    {
-        return $this->container['segment_2_tag_name'];
-    }
-
-    /**
-     * Sets segment_2_tag_name
-     *
-     * @param int|null $segment_2_tag_name セグメント２
-     *
-     * @return $this
-     */
-    public function setSegment2TagName($segment_2_tag_name)
-    {
-        $this->container['segment_2_tag_name'] = $segment_2_tag_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets segment_3_tag_id
-     *
-     * @return int|null
-     */
-    public function getSegment3TagId()
-    {
-        return $this->container['segment_3_tag_id'];
-    }
-
-    /**
-     * Sets segment_3_tag_id
-     *
-     * @param int|null $segment_3_tag_id セグメント３ID
-     *
-     * @return $this
-     */
-    public function setSegment3TagId($segment_3_tag_id)
-    {
-        $this->container['segment_3_tag_id'] = $segment_3_tag_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets segment_3_tag_name
-     *
-     * @return int|null
-     */
-    public function getSegment3TagName()
-    {
-        return $this->container['segment_3_tag_name'];
-    }
-
-    /**
-     * Sets segment_3_tag_name
-     *
-     * @param int|null $segment_3_tag_name セグメント３
-     *
-     * @return $this
-     */
-    public function setSegment3TagName($segment_3_tag_name)
-    {
-        $this->container['segment_3_tag_name'] = $segment_3_tag_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets amount
+     * Gets tax_code
      *
      * @return int
      */
-    public function getAmount()
+    public function getTaxCode()
     {
-        return $this->container['amount'];
+        return $this->container['tax_code'];
     }
 
     /**
-     * Sets amount
+     * Sets tax_code
      *
-     * @param int $amount 金額（税込で指定してください）
+     * @param int $tax_code 税区分コード
      *
      * @return $this
      */
-    public function setAmount($amount)
+    public function setTaxCode($tax_code)
     {
-        $this->container['amount'] = $amount;
+
+        if (($tax_code > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling ManualJournalDetails., must be smaller than or equal to 2147483647.');
+        }
+        if (($tax_code < 0)) {
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling ManualJournalDetails., must be bigger than or equal to 0.');
+        }
+
+        $this->container['tax_code'] = $tax_code;
 
         return $this;
     }
@@ -940,30 +1132,6 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess
     public function setVat($vat)
     {
         $this->container['vat'] = $vat;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string $description 備考
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
 
         return $this;
     }

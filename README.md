@@ -508,14 +508,18 @@ class AccountController extends Controller
 
         $dealsApiInstance = new DealsApi(null, $config);
         $targetCompanyId = $companiesResponse->getCompanies()[0]->getId();
-        $limit = 5;
+        $dealsNumberlimit = 5;
         $dealsResponse = $dealsApiInstance->getDeals(
             $targetCompanyId,
             null, null, null, null, null, null, null, null, null, null, null, null,
-            $limit);
+            $dealsNumberlimit);
         $deals = $dealsResponse->getDeals();
 
-        return view('account.me', compact('user', 'deals'));
+        $invoicesApiInstance = new InvoicesApi(null, $config);
+        $invoicesResponse = $invoicesApiInstance->getInvoices($targetCompanyId);
+        $invoices = $invoicesResponse->getInvoices();
+
+        return view('account.me', compact('user', 'deals', 'invoices'));
     }
     // ↑↑ ここまで追加 ↑↑
 }

@@ -14,11 +14,11 @@ Method | HTTP request | Description
 
 ## createDeal
 
-> \Freee\Accounting\Model\DealsCreateResponse createDeal($parameters)
+> \Freee\Accounting\Model\DealCreateResponse createDeal($deal_create_params)
 
 取引（収入／支出）の作成
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所の取引（収入／支出）を作成する</p>  <h2 id=\"_2\">定義</h2>  <ul> <li> <p>issue_date : 発生日</p> </li>  <li> <p>due_date : 支払期日</p> </li>  <li> <p>amount : 金額</p> </li>  <li> <p>due_amount : 支払残額</p> </li>  <li> <p>type</p>  <ul> <li>income : 収入</li>  <li>expense : 支出</li> </ul> </li>  <li> <p>ref_number : 管理番号</p> </li>  <li> <p>details : 取引の明細行</p> </li>  <li> <p>payments : 取引の支払行</p> </li>  <li> <p>receipt_ids : 証憑ファイルID</p> </li>  <li> <p>from_walletable_type</p>  <ul> <li>bank_account : 銀行口座</li>  <li>credit_card : クレジットカード</li>  <li>wallet : 現金</li>  <li>private_account_item : プライベート資金（法人の場合は役員借入金もしくは役員借入金、個人の場合は事業主貸もしくは事業主借）</li> </ul> </li> </ul>  <h2 id=\"_3\">注意点</h2>  <ul> <li> <p>tax_idは廃止予定です。tax_codeをご利用ください。</p> </li>  <li> <p>tax_code, tax_idはどちらかの指定が必須です。両方指定した場合はtax_codeが優先されます。</p> </li> <p><li>本APIでは+更新行(renews)の操作ができません。+更新行の作成APIをご利用ください。</p></li>  <p><li>セグメントタグ情報は法人向けのプロフェッショナルプラン以上で利用可能です。利用可能なセグメントの数は、法人向けのプロフェッショナルプランの場合は1つ、エンタープライズプランの場合は3つです。</p></li>  <li> <p>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。またpartner_codeとpartner_idは同時に指定することはできません。</p></li> </ul>
+<h2 id=\"\">概要</h2> <p>指定した事業所の取引（収入／支出）を作成する</p> <h2 id=\"_2\">定義</h2> <ul> <li> <p>issue_date : 発生日</p> </li> <li> <p>due_date : 支払期日</p> </li> <li> <p>amount : 金額</p> </li> <li> <p>due_amount : 支払残額</p> </li> <li> <p>type</p> <ul> <li>income : 収入</li> <li>expense : 支出</li> </ul> </li> <li> <p>ref_number : 管理番号</p> </li> <li> <p>details : 取引の明細行(最大40行)</p> </li> <li> <p>payments : 取引の支払行</p> </li> <li> <p>receipt_ids : 証憑ファイルID</p> </li> <li> <p>from_walletable_type</p> <ul> <li>bank_account : 銀行口座</li> <li>credit_card : クレジットカード</li> <li>wallet : 現金</li> <li>private_account_item : プライベート資金（法人の場合は役員借入金もしくは役員借入金、個人の場合は事業主貸もしくは事業主借）</li> </ul> </li> </ul> <h2 id=\"_3\">注意点</h2> <ul>     <li><p>本APIでは+更新行(renews)の操作ができません。+更新行の作成APIをご利用ください。</p></li>     <li><p>セグメントタグ情報は法人向けのプロフェッショナルプラン以上で利用可能です。利用可能なセグメントの数は、法人向けのプロフェッショナルプランの場合は1つ、エンタープライズプランの場合は3つです。</p></li>     <li>         <p>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。またpartner_codeとpartner_idは同時に指定することはできません。</p></li>     <li>         <p>本APIでは取引の明細行(details)は、最大40行までになります。</p>     </li> </ul>
 
 ### Example
 
@@ -37,10 +37,10 @@ $apiInstance = new Freee\Accounting\Api\DealsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$parameters = new \Freee\Accounting\Model\CreateDealParams(); // \Freee\Accounting\Model\CreateDealParams | 取引（収入／支出）の作成
+$deal_create_params = new \Freee\Accounting\Model\DealCreateParams(); // \Freee\Accounting\Model\DealCreateParams | 取引（収入／支出）の作成
 
 try {
-    $result = $apiInstance->createDeal($parameters);
+    $result = $apiInstance->createDeal($deal_create_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DealsApi->createDeal: ', $e->getMessage(), PHP_EOL;
@@ -53,11 +53,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parameters** | [**\Freee\Accounting\Model\CreateDealParams**](../Model/CreateDealParams.md)| 取引（収入／支出）の作成 | [optional]
+ **deal_create_params** | [**\Freee\Accounting\Model\DealCreateParams**](../Model/DealCreateParams.md)| 取引（収入／支出）の作成 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\DealsCreateResponse**](../Model/DealsCreateResponse.md)
+[**\Freee\Accounting\Model\DealCreateResponse**](../Model/DealCreateResponse.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -135,11 +135,11 @@ void (empty response body)
 
 ## getDeal
 
-> \Freee\Accounting\Model\DealsResponse getDeal($company_id, $id, $accruals)
+> \Freee\Accounting\Model\DealResponse getDeal($company_id, $id, $accruals)
 
 取引（収入／支出）の取得
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所の取引（収入／支出）を取得する</p>  <h2 id=\"_2\">定義</h2>  <ul> <li> <p>issue_date : 発生日</p> </li>  <li> <p>due_date : 支払期日</p> </li>  <li> <p>amount : 金額</p> </li>  <li> <p>due_amount : 支払残額</p> </li>  <li> <p>type</p>  <ul> <li>income : 収入</li>  <li>expense : 支出</li> </ul> </li>  <li> <p>details : 取引の明細行</p> </li>  <li> <p>accruals : 取引の債権債務行</p> </li>  <li> <p>renews : 取引の+更新行</p> </li>  <li> <p>payments : 取引の支払行</p> </li>  <li> <p>from_walletable_type</p>  <ul> <li>bank_account : 銀行口座</li>  <li>credit_card : クレジットカード</li>  <li>wallet : 現金</li>  <li>private_account_item : プライベート資金（法人の場合は役員借入金もしくは役員借入金、個人の場合は事業主貸もしくは事業主借）</li> </ul> </li>  <li> <p>registered_from</p>  <ul> <li>all : すべての取引</li>  <li>me : 自身が登録した取引</li> </ul> </li> </ul>  <h2 id=\"_3\">注意点</h2>  <ul> <li>tax_idは廃止予定です。tax_codeをご利用ください。</li>  <li>セグメントタグ情報は法人向けのプロフェッショナルプラン以上で利用可能です。利用可能なセグメントの数は、法人向けのプロフェッショナルプランの場合は1つ、エンタープライズプランの場合は3つです。</li> </ul>
+<h2 id=\"\">概要</h2> <p>指定した事業所の取引（収入／支出）を取得する</p> <h2 id=\"_2\">定義</h2> <ul> <li> <p>issue_date : 発生日</p> </li> <li> <p>due_date : 支払期日</p> </li> <li> <p>amount : 金額</p> </li> <li> <p>due_amount : 支払残額</p> </li> <li> <p>type</p> <ul> <li>income : 収入</li> <li>expense : 支出</li> </ul> </li> <li> <p>details : 取引の明細行</p> </li> <li> <p>accruals : 取引の債権債務行</p> </li> <li> <p>renews : 取引の+更新行</p> </li> <li> <p>payments : 取引の支払行</p> </li> <li> <p>from_walletable_type</p> <ul> <li>bank_account : 銀行口座</li> <li>credit_card : クレジットカード</li> <li>wallet : 現金</li> <li>private_account_item : プライベート資金（法人の場合は役員借入金もしくは役員借入金、個人の場合は事業主貸もしくは事業主借）</li> </ul> </li> <li> <p>registered_from</p> <ul> <li>all : すべての取引</li> <li>me : 自身が登録した取引</li> </ul> </li> </ul> <h2 id=\"_3\">注意点</h2> <ul> <li>セグメントタグ情報は法人向けのプロフェッショナルプラン以上で利用可能です。利用可能なセグメントの数は、法人向けのプロフェッショナルプランの場合は1つ、エンタープライズプランの場合は3つです。</li> </ul>
 
 ### Example
 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\DealsResponse**](../Model/DealsResponse.md)
+[**\Freee\Accounting\Model\DealResponse**](../Model/DealResponse.md)
 
 ### Authorization
 
@@ -200,11 +200,11 @@ Name | Type | Description  | Notes
 
 ## getDeals
 
-> \Freee\Accounting\Model\DealsIndexResponse getDeals($company_id, $partner_id, $account_item_id, $partner_code, $status, $type, $start_issue_date, $end_issue_date, $start_due_date, $end_due_date, $start_renew_date, $end_renew_date, $offset, $limit, $registered_from, $accruals)
+> \Freee\Accounting\Model\InlineResponse2002 getDeals($company_id, $partner_id, $account_item_id, $partner_code, $status, $type, $start_issue_date, $end_issue_date, $start_due_date, $end_due_date, $start_renew_date, $end_renew_date, $offset, $limit, $registered_from, $accruals)
 
 取引（収入／支出）一覧の取得
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所の取引一覧（収入／支出）を取得する</p>  <h2 id=\"_2\">定義</h2>  <ul> <li> <p>issue_date : 発生日</p> </li>  <li> <p>due_date : 支払期日</p> </li>  <li> <p>amount : 金額</p> </li>  <li> <p>due_amount : 支払残額</p> </li>  <li> <p>type</p>  <ul> <li>income : 収入</li>  <li>expense : 支出</li> </ul> </li>  <li> <p>details : 取引の明細行</p> </li>  <li> <p>accruals : 取引の債権債務行</p> </li>  <li> <p>renews : 取引の+更新行</p> </li>  <li> <p>payments : 取引の支払行</p> </li>  <li> <p>from_walletable_type</p>  <ul> <li>bank_account : 銀行口座</li>  <li>credit_card : クレジットカード</li>  <li>wallet : 現金</li>  <li>private_account_item : プライベート資金（法人の場合は役員借入金もしくは役員借入金、個人の場合は事業主貸もしくは事業主借）</li> </ul> </li>  <li> <p>registered_from</p>  <ul> <li>all : すべての取引</li>  <li>me : 自身が登録した取引</li> </ul> </li> </ul>  <h2 id=\"_3\">注意点</h2>  <ul> <li>tax_idは廃止予定です。tax_codeをご利用ください。</li>  <li>セグメントタグ情報は法人向けのプロフェッショナルプラン以上で利用可能です。利用可能なセグメントの数は、法人向けのプロフェッショナルプランの場合は1つ、エンタープライズプランの場合は3つです。</li> <li>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。またpartner_codeとpartner_idは同時に指定することはできません。</li> </ul>
+<h2 id=\"\">概要</h2> <p>指定した事業所の取引一覧（収入／支出）を取得する</p> <h2 id=\"_2\">定義</h2> <ul> <li> <p>issue_date : 発生日</p> </li> <li> <p>due_date : 支払期日</p> </li> <li> <p>amount : 金額</p> </li> <li> <p>due_amount : 支払残額</p> </li> <li> <p>type</p> <ul> <li>income : 収入</li> <li>expense : 支出</li> </ul> </li> <li> <p>details : 取引の明細行</p> </li> <li> <p>accruals : 取引の債権債務行</p> </li> <li> <p>renews : 取引の+更新行</p> </li> <li> <p>payments : 取引の支払行</p> </li> <li> <p>from_walletable_type</p> <ul> <li>bank_account : 銀行口座</li> <li>credit_card : クレジットカード</li> <li>wallet : 現金</li> <li>private_account_item : プライベート資金（法人の場合は役員借入金もしくは役員借入金、個人の場合は事業主貸もしくは事業主借）</li> </ul> </li> <li> <p>registered_from</p> <ul> <li>all : すべての取引</li> <li>me : 自身が登録した取引</li> </ul> </li> </ul> <h2 id=\"_3\">注意点</h2> <ul> <li>セグメントタグ情報は法人向けのプロフェッショナルプラン以上で利用可能です。利用可能なセグメントの数は、法人向けのプロフェッショナルプランの場合は1つ、エンタープライズプランの場合は3つです。</li> <li>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。またpartner_codeとpartner_idは同時に指定することはできません。</li> </ul>
 
 ### Example
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\DealsIndexResponse**](../Model/DealsIndexResponse.md)
+[**\Freee\Accounting\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
 
 ### Authorization
 
@@ -291,11 +291,11 @@ Name | Type | Description  | Notes
 
 ## updateDeal
 
-> \Freee\Accounting\Model\DealsResponse updateDeal($id, $parameters)
+> \Freee\Accounting\Model\DealResponse updateDeal($id, $deal_update_params)
 
 取引（収入／支出）の更新
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所の取引（収入／支出）を更新する</p>  <h2 id=\"_2\">定義</h2>  <ul> <li> <p>issue_date : 発生日</p> </li>  <li> <p>due_date : 支払期日</p> </li>  <li> <p>amount : 金額</p> </li>  <li> <p>due_amount : 支払残額</p> </li>  <li> <p>type</p>  <ul> <li>income : 収入</li>  <li>expense : 支出</li> </ul> </li>  <li> <p>details : 取引の明細行</p> </li> <li> <p>renews : 取引の+更新行</p> </li> <li> <p>payments : 取引の支払行</p> </li> <li> <p>from_walletable_type</p> <ul> <li>bank_account : 銀行口座</li> <li>credit_card : クレジットカード</li> <li>wallet : 現金</li> <li>private_account_item : プライベート資金（法人の場合は役員借入金もしくは役員借入金、個人の場合は事業主貸もしくは事業主借）</li> </ul> </li> <li> <p>receipt_ids : 証憑ファイルID</p> </li> </ul>  <h2 id=\"_3\">注意点</h2>  <ul> <li>本APIでは支払行(payments)の操作ができません。支払行の作成・更新・削除APIをご利用ください。</li> <li>本APIでは+更新行(renews)の操作ができません。+更新行の作成・更新・削除APIをご利用ください。</li>  <li>本APIでは収入／支出の切替えができません。既存の取引を削除後、再度作成してください。</li>  <li>本APIで取引を更新すると、消費税の計算方法は必ず内税方式が選択されます。</li>  <li>セグメントタグ情報は法人向けのプロフェッショナルプラン以上で利用可能です。利用可能なセグメントの数は、法人向けのプロフェッショナルプランの場合は1つ、エンタープライズプランの場合は3つです。</li> <li>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。またpartner_codeとpartner_idは同時に指定することはできません。</ul>
+<h2 id=\"\">概要</h2> <p>指定した事業所の取引（収入／支出）を更新する</p> <h2 id=\"_2\">定義</h2> <ul> <li> <p>issue_date : 発生日</p> </li> <li> <p>due_date : 支払期日</p> </li> <li> <p>amount : 金額</p> </li> <li> <p>due_amount : 支払残額</p> </li> <li> <p>type</p> <ul> <li>income : 収入</li> <li>expense : 支出</li> </ul> </li> <li> <p>details : 取引の明細行(最大40行)</p> </li> <li> <p>renews : 取引の+更新行</p> </li> <li> <p>payments : 取引の支払行</p> </li> <li> <p>from_walletable_type</p> <ul> <li>bank_account : 銀行口座</li> <li>credit_card : クレジットカード</li> <li>wallet : 現金</li> <li>private_account_item : プライベート資金（法人の場合は役員借入金もしくは役員借入金、個人の場合は事業主貸もしくは事業主借）</li> </ul> </li> <li> <p>receipt_ids : 証憑ファイルID</p> </li> </ul> <h2 id=\"_3\">注意点</h2> <ul>     <li><p>本APIでは支払行(payments)の操作ができません。支払行の作成・更新・削除APIをご利用ください。</p></li>     <li><p>本APIでは+更新行(renews)の操作ができません。+更新行の作成・更新・削除APIをご利用ください。</p></li>     <li><p>本APIでは収入／支出の切替えができません。既存の取引を削除後、再度作成してください。</p></li>     <li><p>本APIで取引を更新すると、消費税の計算方法は必ず内税方式が選択されます。</p></li>     <li><p>セグメントタグ情報は法人向けのプロフェッショナルプラン以上で利用可能です。利用可能なセグメントの数は、法人向けのプロフェッショナルプランの場合は1つ、エンタープライズプランの場合は3つです。</p></li>     <li><p>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。またpartner_codeとpartner_idは同時に指定することはできません。</p></li>     <li>         <p>本APIでは取引の明細行(details)は、最大40行までになります。</p>     </li> </ul>
 
 ### Example
 
@@ -315,10 +315,10 @@ $apiInstance = new Freee\Accounting\Api\DealsApi(
     $config
 );
 $id = 56; // int | 取引ID
-$parameters = new \Freee\Accounting\Model\UpdateDealParams(); // \Freee\Accounting\Model\UpdateDealParams | 取引（収入／支出）の更新
+$deal_update_params = new \Freee\Accounting\Model\DealUpdateParams(); // \Freee\Accounting\Model\DealUpdateParams | 取引（収入／支出）の更新
 
 try {
-    $result = $apiInstance->updateDeal($id, $parameters);
+    $result = $apiInstance->updateDeal($id, $deal_update_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DealsApi->updateDeal: ', $e->getMessage(), PHP_EOL;
@@ -332,11 +332,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 取引ID |
- **parameters** | [**\Freee\Accounting\Model\UpdateDealParams**](../Model/UpdateDealParams.md)| 取引（収入／支出）の更新 | [optional]
+ **deal_update_params** | [**\Freee\Accounting\Model\DealUpdateParams**](../Model/DealUpdateParams.md)| 取引（収入／支出）の更新 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\DealsResponse**](../Model/DealsResponse.md)
+[**\Freee\Accounting\Model\DealResponse**](../Model/DealResponse.md)
 
 ### Authorization
 
@@ -344,7 +344,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

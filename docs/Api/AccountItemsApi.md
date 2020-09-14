@@ -14,11 +14,11 @@ Method | HTTP request | Description
 
 ## createAccountItem
 
-> \Freee\Accounting\Model\AccountItemsCreateResponse createAccountItem($parameters)
+> \Freee\Accounting\Model\AccountItemResponse createAccountItem($account_item_params)
 
 勘定科目の作成
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所の勘定科目を作成する</p>
+<h2 id=\"\">概要</h2>  <p>指定した事業所の勘定科目を作成する</p>  <h2 id=\"_2\">注意点</h2> <p>tax_nameは、api/1/taxes/companies/{company_id} で該当事業所の税区分の一覧を取得して、availableの値がtrue、かつ”name_ja”に”税率%”を含んでいない税区分を確認して、そのnameを指定して勘定科目の作成をしてください</p>
 
 ### Example
 
@@ -37,10 +37,10 @@ $apiInstance = new Freee\Accounting\Api\AccountItemsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$parameters = new \Freee\Accounting\Model\AccountItemParams(); // \Freee\Accounting\Model\AccountItemParams | 勘定科目の作成
+$account_item_params = new \Freee\Accounting\Model\AccountItemParams(); // \Freee\Accounting\Model\AccountItemParams | 勘定科目の作成
 
 try {
-    $result = $apiInstance->createAccountItem($parameters);
+    $result = $apiInstance->createAccountItem($account_item_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountItemsApi->createAccountItem: ', $e->getMessage(), PHP_EOL;
@@ -53,11 +53,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parameters** | [**\Freee\Accounting\Model\AccountItemParams**](../Model/AccountItemParams.md)| 勘定科目の作成 |
+ **account_item_params** | [**\Freee\Accounting\Model\AccountItemParams**](../Model/AccountItemParams.md)| 勘定科目の作成 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\AccountItemsCreateResponse**](../Model/AccountItemsCreateResponse.md)
+[**\Freee\Accounting\Model\AccountItemResponse**](../Model/AccountItemResponse.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -137,7 +137,7 @@ void (empty response body)
 
 ## getAccountItem
 
-> \Freee\Accounting\Model\AccountItemsShowResponse getAccountItem($company_id, $id)
+> \Freee\Accounting\Model\AccountItemResponse getAccountItem($company_id, $id)
 
 勘定科目の詳細情報の取得
 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\AccountItemsShowResponse**](../Model/AccountItemsShowResponse.md)
+[**\Freee\Accounting\Model\AccountItemResponse**](../Model/AccountItemResponse.md)
 
 ### Authorization
 
@@ -200,11 +200,11 @@ Name | Type | Description  | Notes
 
 ## getAccountItems
 
-> \Freee\Accounting\Model\AccountItemsIndexResponse getAccountItems($company_id, $base_date)
+> \Freee\Accounting\Model\AccountItemsResponse getAccountItems($company_id, $base_date)
 
 勘定科目一覧の取得
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所の勘定科目一覧を取得する</p>  <h2 id=\"_2\">定義</h2>  <ul> <li>default_tax_id : デフォルト設定がされている税区分ID</li>  <li>default_tax_code : リクエストした日時を基準とした税区分コード</li> </ul>
+<h2 id=\"\">概要</h2>  <p>指定した事業所の勘定科目一覧を取得する</p>  <h2 id=\"_2\">定義</h2>  <ul> <li>default_tax_id : デフォルト設定がされている税区分ID</li>  <li>default_tax_code : リクエストした日時を基準とした税区分コード</li> </ul>  <h2 id=\"_3\">注意点</h2> <p>default_tax_code は勘定科目作成・更新時に利用するものではありません</p>
 
 ### Example
 
@@ -245,7 +245,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\AccountItemsIndexResponse**](../Model/AccountItemsIndexResponse.md)
+[**\Freee\Accounting\Model\AccountItemsResponse**](../Model/AccountItemsResponse.md)
 
 ### Authorization
 
@@ -263,11 +263,11 @@ Name | Type | Description  | Notes
 
 ## updateAccountItem
 
-> \Freee\Accounting\Model\AccountItemsUpdateResponse updateAccountItem($id, $parameters)
+> \Freee\Accounting\Model\AccountItemResponse updateAccountItem($id, $account_item_params)
 
 勘定科目の更新
 
-<h2 id=\"\">概要</h2>  <p>勘定科目を更新する</p>
+<h2 id=\"\">概要</h2>  <p>勘定科目を更新する</p>  <h2 id=\"_2\">注意点</h2> <p>tax_codeは、api/1/taxes/companies/{company_id} で該当事業所の税区分の一覧を取得して、availableの値がtrue、かつ”name_ja”に”税率%”を含んでいない税区分を確認して、そのcodeを指定して勘定科目の更新をしてください</p>
 
 ### Example
 
@@ -287,10 +287,10 @@ $apiInstance = new Freee\Accounting\Api\AccountItemsApi(
     $config
 );
 $id = 56; // int | 
-$parameters = new \Freee\Accounting\Model\AccountItemParams(); // \Freee\Accounting\Model\AccountItemParams | 勘定科目の更新
+$account_item_params = new \Freee\Accounting\Model\AccountItemParams(); // \Freee\Accounting\Model\AccountItemParams | 勘定科目の更新
 
 try {
-    $result = $apiInstance->updateAccountItem($id, $parameters);
+    $result = $apiInstance->updateAccountItem($id, $account_item_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountItemsApi->updateAccountItem: ', $e->getMessage(), PHP_EOL;
@@ -304,11 +304,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **parameters** | [**\Freee\Accounting\Model\AccountItemParams**](../Model/AccountItemParams.md)| 勘定科目の更新 |
+ **account_item_params** | [**\Freee\Accounting\Model\AccountItemParams**](../Model/AccountItemParams.md)| 勘定科目の更新 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\AccountItemsUpdateResponse**](../Model/AccountItemsUpdateResponse.md)
+[**\Freee\Accounting\Model\AccountItemResponse**](../Model/AccountItemResponse.md)
 
 ### Authorization
 
@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

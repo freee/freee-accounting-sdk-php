@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Freee\Accounting\Configuration;
 use Freee\Accounting\Api\CompaniesApi;
 use Freee\Accounting\Api\DealsApi;
+use Freee\Accounting\Api\InvoicesApi;
 use Illuminate\Support\Facades\Auth;
 
 class AccountController extends Controller
@@ -35,13 +36,17 @@ class AccountController extends Controller
 
         $dealsApiInstance = new DealsApi(null, $config);
         $targetCompanyId = $companiesResponse->getCompanies()[0]->getId();
-        $limit = 5;
+        $dealsNumberlimit = 5;
         $dealsResponse = $dealsApiInstance->getDeals(
             $targetCompanyId,
             null, null, null, null, null, null, null, null, null, null, null, null,
-            $limit);
+            $dealsNumberlimit);
         $deals = $dealsResponse->getDeals();
 
-        return view('account.me', compact('user', 'deals'));
+        $invoicesApiInstance = new InvoicesApi(null, $config);
+        $invoicesResponse = $invoicesApiInstance->getInvoices($targetCompanyId);
+        $invoices = $invoicesResponse->getInvoices();
+
+        return view('account.me', compact('user', 'deals', 'invoices'));
     }
 }

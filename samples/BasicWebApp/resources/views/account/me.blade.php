@@ -68,6 +68,36 @@
             </div>
         </div>
     </div>
+    <div class="row justify-content-center">
+        <div class="col-md-8 mb-3">
+            <div class="card">
+              <div class="card-header">Invoices</div>
+
+              <div class="card-body">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Issue date</th>
+                      <th scope="col">Invoicde status</th>
+                      <th scope="col">Total amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach ($invoices as $i => $invoice)
+                    <tr>
+                      <th scope="row">{{ $invoice->getInvoiceNumber() }}</th>
+                      <td>{{ $invoice->getIssueDate() }}</td>
+                      <td>{{ $invoice->getInvoiceStatus() }}</td>
+                      <td>{{ $invoice->getTotalAmount() }}</td>
+                    </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+              </div>
+            </div>
+        </div>
+    </div>
 
 </div>
 @endsection

@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## createWalletable
 
-> \Freee\Accounting\Model\WalletablesCreateResponse createWalletable($parameters)
+> \Freee\Accounting\Model\WalletableCreateResponse createWalletable($walletable_create_params)
 
 口座の作成
 
@@ -37,10 +37,10 @@ $apiInstance = new Freee\Accounting\Api\WalletablesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$parameters = new \Freee\Accounting\Model\WalletableCreateParams(); // \Freee\Accounting\Model\WalletableCreateParams | 口座の作成
+$walletable_create_params = new \Freee\Accounting\Model\WalletableCreateParams(); // \Freee\Accounting\Model\WalletableCreateParams | 口座の作成
 
 try {
-    $result = $apiInstance->createWalletable($parameters);
+    $result = $apiInstance->createWalletable($walletable_create_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WalletablesApi->createWalletable: ', $e->getMessage(), PHP_EOL;
@@ -53,11 +53,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parameters** | [**\Freee\Accounting\Model\WalletableCreateParams**](../Model/WalletableCreateParams.md)| 口座の作成 | [optional]
+ **walletable_create_params** | [**\Freee\Accounting\Model\WalletableCreateParams**](../Model/WalletableCreateParams.md)| 口座の作成 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\WalletablesCreateResponse**](../Model/WalletablesCreateResponse.md)
+[**\Freee\Accounting\Model\WalletableCreateResponse**](../Model/WalletableCreateResponse.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -139,7 +139,7 @@ void (empty response body)
 
 ## getWalletable
 
-> \Freee\Accounting\Model\WalletablesResponse getWalletable($id, $type, $company_id)
+> \Freee\Accounting\Model\InlineResponse20019 getWalletable($id, $type, $company_id)
 
 口座情報の取得
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\WalletablesResponse**](../Model/WalletablesResponse.md)
+[**\Freee\Accounting\Model\InlineResponse20019**](../Model/InlineResponse20019.md)
 
 ### Authorization
 
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 ## getWalletables
 
-> \Freee\Accounting\Model\WalletablesIndexResponse getWalletables($company_id, $with_balance)
+> \Freee\Accounting\Model\InlineResponse20018 getWalletables($company_id, $with_balance, $type)
 
 口座一覧の取得
 
@@ -229,9 +229,10 @@ $apiInstance = new Freee\Accounting\Api\WalletablesApi(
 );
 $company_id = 56; // int | 事業所ID
 $with_balance = True; // bool | 残高情報を含める
+$type = 'type_example'; // string | 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座）
 
 try {
-    $result = $apiInstance->getWalletables($company_id, $with_balance);
+    $result = $apiInstance->getWalletables($company_id, $with_balance, $type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WalletablesApi->getWalletables: ', $e->getMessage(), PHP_EOL;
@@ -246,10 +247,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| 事業所ID |
  **with_balance** | **bool**| 残高情報を含める | [optional]
+ **type** | **string**| 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\WalletablesIndexResponse**](../Model/WalletablesIndexResponse.md)
+[**\Freee\Accounting\Model\InlineResponse20018**](../Model/InlineResponse20018.md)
 
 ### Authorization
 
@@ -267,7 +269,7 @@ Name | Type | Description  | Notes
 
 ## updateWalletable
 
-> \Freee\Accounting\Model\WalletablesResponse updateWalletable($id, $type, $company_id, $parameters)
+> \Freee\Accounting\Model\InlineResponse20019 updateWalletable($id, $type, $walletable_update_params)
 
 口座の更新
 
@@ -292,11 +294,10 @@ $apiInstance = new Freee\Accounting\Api\WalletablesApi(
 );
 $id = 56; // int | 
 $type = 'type_example'; // string | 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座）
-$company_id = 56; // int | 事業所ID
-$parameters = new \Freee\Accounting\Model\WalletableUpdateParams(); // \Freee\Accounting\Model\WalletableUpdateParams | 口座の作成
+$walletable_update_params = new \Freee\Accounting\Model\WalletableUpdateParams(); // \Freee\Accounting\Model\WalletableUpdateParams | 口座の作成
 
 try {
-    $result = $apiInstance->updateWalletable($id, $type, $company_id, $parameters);
+    $result = $apiInstance->updateWalletable($id, $type, $walletable_update_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WalletablesApi->updateWalletable: ', $e->getMessage(), PHP_EOL;
@@ -311,12 +312,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
  **type** | **string**| 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） |
- **company_id** | **int**| 事業所ID |
- **parameters** | [**\Freee\Accounting\Model\WalletableUpdateParams**](../Model/WalletableUpdateParams.md)| 口座の作成 | [optional]
+ **walletable_update_params** | [**\Freee\Accounting\Model\WalletableUpdateParams**](../Model/WalletableUpdateParams.md)| 口座の作成 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\WalletablesResponse**](../Model/WalletablesResponse.md)
+[**\Freee\Accounting\Model\InlineResponse20019**](../Model/InlineResponse20019.md)
 
 ### Authorization
 
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

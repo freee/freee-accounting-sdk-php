@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## createTag
 
-> \Freee\Accounting\Model\TagsResponse createTag($parameters)
+> \Freee\Accounting\Model\TagResponse createTag($tag_params)
 
 メモタグの作成
 
@@ -37,10 +37,10 @@ $apiInstance = new Freee\Accounting\Api\TagsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$parameters = new \Freee\Accounting\Model\TagsParams(); // \Freee\Accounting\Model\TagsParams | メモタグの作成
+$tag_params = new \Freee\Accounting\Model\TagParams(); // \Freee\Accounting\Model\TagParams | メモタグの作成
 
 try {
-    $result = $apiInstance->createTag($parameters);
+    $result = $apiInstance->createTag($tag_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TagsApi->createTag: ', $e->getMessage(), PHP_EOL;
@@ -53,11 +53,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parameters** | [**\Freee\Accounting\Model\TagsParams**](../Model/TagsParams.md)| メモタグの作成 |
+ **tag_params** | [**\Freee\Accounting\Model\TagParams**](../Model/TagParams.md)| メモタグの作成 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\TagsResponse**](../Model/TagsResponse.md)
+[**\Freee\Accounting\Model\TagResponse**](../Model/TagResponse.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -137,7 +137,7 @@ void (empty response body)
 
 ## getTag
 
-> \Freee\Accounting\Model\TagsResponse getTag($id, $company_id)
+> \Freee\Accounting\Model\TagResponse getTag($id, $company_id)
 
 メモタグの詳細情報の取得
 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\TagsResponse**](../Model/TagsResponse.md)
+[**\Freee\Accounting\Model\TagResponse**](../Model/TagResponse.md)
 
 ### Authorization
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ## getTags
 
-> \Freee\Accounting\Model\TagsIndexResponse getTags($company_id)
+> \Freee\Accounting\Model\InlineResponse20011 getTags($company_id, $offset, $limit)
 
 メモタグ一覧の取得
 
@@ -224,9 +224,11 @@ $apiInstance = new Freee\Accounting\Api\TagsApi(
     $config
 );
 $company_id = 56; // int | 事業所ID
+$offset = 56; // int | 取得レコードのオフセット (デフォルト: 0)
+$limit = 56; // int | 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000)
 
 try {
-    $result = $apiInstance->getTags($company_id);
+    $result = $apiInstance->getTags($company_id, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TagsApi->getTags: ', $e->getMessage(), PHP_EOL;
@@ -240,10 +242,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| 事業所ID |
+ **offset** | **int**| 取得レコードのオフセット (デフォルト: 0) | [optional]
+ **limit** | **int**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\TagsIndexResponse**](../Model/TagsIndexResponse.md)
+[**\Freee\Accounting\Model\InlineResponse20011**](../Model/InlineResponse20011.md)
 
 ### Authorization
 
@@ -261,7 +265,7 @@ Name | Type | Description  | Notes
 
 ## updateTag
 
-> \Freee\Accounting\Model\TagsResponse updateTag($id, $parameters)
+> \Freee\Accounting\Model\TagResponse updateTag($id, $tag_params)
 
 メモタグの更新
 
@@ -285,10 +289,10 @@ $apiInstance = new Freee\Accounting\Api\TagsApi(
     $config
 );
 $id = 56; // int | メモタグID
-$parameters = new \Freee\Accounting\Model\TagsParams(); // \Freee\Accounting\Model\TagsParams | メモタグの更新
+$tag_params = new \Freee\Accounting\Model\TagParams(); // \Freee\Accounting\Model\TagParams | メモタグの更新
 
 try {
-    $result = $apiInstance->updateTag($id, $parameters);
+    $result = $apiInstance->updateTag($id, $tag_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TagsApi->updateTag: ', $e->getMessage(), PHP_EOL;
@@ -302,11 +306,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| メモタグID |
- **parameters** | [**\Freee\Accounting\Model\TagsParams**](../Model/TagsParams.md)| メモタグの更新 | [optional]
+ **tag_params** | [**\Freee\Accounting\Model\TagParams**](../Model/TagParams.md)| メモタグの更新 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\TagsResponse**](../Model/TagsResponse.md)
+[**\Freee\Accounting\Model\TagResponse**](../Model/TagResponse.md)
 
 ### Authorization
 
@@ -314,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

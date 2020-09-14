@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## createItem
 
-> \Freee\Accounting\Model\ItemResponse createItem($parameters)
+> \Freee\Accounting\Model\ItemResponse createItem($item_params)
 
 品目の作成
 
@@ -37,10 +37,10 @@ $apiInstance = new Freee\Accounting\Api\ItemsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$parameters = new \Freee\Accounting\Model\CreateItemParams(); // \Freee\Accounting\Model\CreateItemParams | 品目の作成
+$item_params = new \Freee\Accounting\Model\ItemParams(); // \Freee\Accounting\Model\ItemParams | 品目の作成
 
 try {
-    $result = $apiInstance->createItem($parameters);
+    $result = $apiInstance->createItem($item_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ItemsApi->createItem: ', $e->getMessage(), PHP_EOL;
@@ -53,7 +53,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parameters** | [**\Freee\Accounting\Model\CreateItemParams**](../Model/CreateItemParams.md)| 品目の作成 | [optional]
+ **item_params** | [**\Freee\Accounting\Model\ItemParams**](../Model/ItemParams.md)| 品目の作成 | [optional]
 
 ### Return type
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ## getItems
 
-> \Freee\Accounting\Model\ItemsIndexResponse getItems($company_id)
+> \Freee\Accounting\Model\InlineResponse2005 getItems($company_id, $offset, $limit)
 
 品目一覧の取得
 
@@ -224,9 +224,11 @@ $apiInstance = new Freee\Accounting\Api\ItemsApi(
     $config
 );
 $company_id = 56; // int | 事業所ID
+$offset = 56; // int | 取得レコードのオフセット (デフォルト: 0)
+$limit = 56; // int | 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000)
 
 try {
-    $result = $apiInstance->getItems($company_id);
+    $result = $apiInstance->getItems($company_id, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ItemsApi->getItems: ', $e->getMessage(), PHP_EOL;
@@ -240,10 +242,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| 事業所ID |
+ **offset** | **int**| 取得レコードのオフセット (デフォルト: 0) | [optional]
+ **limit** | **int**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\ItemsIndexResponse**](../Model/ItemsIndexResponse.md)
+[**\Freee\Accounting\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
 
 ### Authorization
 
@@ -261,7 +265,7 @@ Name | Type | Description  | Notes
 
 ## updateItem
 
-> \Freee\Accounting\Model\ItemResponse updateItem($id, $parameters)
+> \Freee\Accounting\Model\ItemResponse updateItem($id, $item_params)
 
 品目の更新
 
@@ -285,10 +289,10 @@ $apiInstance = new Freee\Accounting\Api\ItemsApi(
     $config
 );
 $id = 56; // int | 品目ID
-$parameters = new \Freee\Accounting\Model\UpdateItemParams(); // \Freee\Accounting\Model\UpdateItemParams | 品目の更新
+$item_params = new \Freee\Accounting\Model\ItemParams(); // \Freee\Accounting\Model\ItemParams | 品目の更新
 
 try {
-    $result = $apiInstance->updateItem($id, $parameters);
+    $result = $apiInstance->updateItem($id, $item_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ItemsApi->updateItem: ', $e->getMessage(), PHP_EOL;
@@ -302,7 +306,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 品目ID |
- **parameters** | [**\Freee\Accounting\Model\UpdateItemParams**](../Model/UpdateItemParams.md)| 品目の更新 | [optional]
+ **item_params** | [**\Freee\Accounting\Model\ItemParams**](../Model/ItemParams.md)| 品目の更新 | [optional]
 
 ### Return type
 
@@ -314,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

@@ -14,11 +14,11 @@ Method | HTTP request | Description
 
 ## createReceipt
 
-> \Freee\Accounting\Model\ReceiptsResponse createReceipt($company_id, $receipt, $description, $issue_date)
+> \Freee\Accounting\Model\ReceiptResponse createReceipt($company_id, $receipt, $description, $issue_date)
 
 ファイルボックス 証憑ファイルアップロード
 
-<h2 id=\"\">概要</h2>  <p>ファイルボックスに証憑ファイルをアップロードする</p>
+<h2 id=\"\">概要</h2>  <p>ファイルボックスに証憑ファイルをアップロードする</p> <h2 id=\"_2\">注意点</h2> <ul>   <li>リクエストヘッダーの Content-Type は、multipart/form-dataにのみ対応しています。</li> </ul>
 
 ### Example
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\ReceiptsResponse**](../Model/ReceiptsResponse.md)
+[**\Freee\Accounting\Model\ReceiptResponse**](../Model/ReceiptResponse.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ void (empty response body)
 
 ## getReceipt
 
-> \Freee\Accounting\Model\ReceiptsResponse getReceipt($id, $company_id)
+> \Freee\Accounting\Model\ReceiptResponse getReceipt($id, $company_id)
 
 ファイルボックス 証憑ファイルの取得
 
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\ReceiptsResponse**](../Model/ReceiptsResponse.md)
+[**\Freee\Accounting\Model\ReceiptResponse**](../Model/ReceiptResponse.md)
 
 ### Authorization
 
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ## getReceipts
 
-> \Freee\Accounting\Model\ReceiptsIndexResponse getReceipts($company_id, $start_date, $end_date, $user_name, $number, $comment_type, $comment_important, $category, $offset, $limit)
+> \Freee\Accounting\Model\InlineResponse2008 getReceipts($company_id, $start_date, $end_date, $user_name, $number, $comment_type, $comment_important, $category, $offset, $limit)
 
 ファイルボックス 証憑ファイル一覧の取得
 
@@ -238,7 +238,7 @@ $comment_type = 'comment_type_example'; // string | posted:コメントあり, r
 $comment_important = True; // bool | trueの時、重要コメント付きが対象
 $category = 'category_example'; // string | all:すべて、without_deal:未登録、with_expense_application_line:経費申請中, with_deal:登録済み、ignored:無視
 $offset = 56; // int | 取得レコードのオフセット (デフォルト: 0)
-$limit = 56; // int | 取得レコードの件数 (デフォルト: 50, 最大: 3000)
+$limit = 56; // int | 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000)
 
 try {
     $result = $apiInstance->getReceipts($company_id, $start_date, $end_date, $user_name, $number, $comment_type, $comment_important, $category, $offset, $limit);
@@ -263,11 +263,11 @@ Name | Type | Description  | Notes
  **comment_important** | **bool**| trueの時、重要コメント付きが対象 | [optional]
  **category** | **string**| all:すべて、without_deal:未登録、with_expense_application_line:経費申請中, with_deal:登録済み、ignored:無視 | [optional]
  **offset** | **int**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **int**| 取得レコードの件数 (デフォルト: 50, 最大: 3000) | [optional]
+ **limit** | **int**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\ReceiptsIndexResponse**](../Model/ReceiptsIndexResponse.md)
+[**\Freee\Accounting\Model\InlineResponse2008**](../Model/InlineResponse2008.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## updateReceipt
 
-> \Freee\Accounting\Model\ReceiptsResponse updateReceipt($id, $parameters)
+> \Freee\Accounting\Model\ReceiptResponse updateReceipt($id, $receipt_update_params)
 
 ファイルボックス 証憑ファイル情報更新
 
@@ -309,10 +309,10 @@ $apiInstance = new Freee\Accounting\Api\ReceiptsApi(
     $config
 );
 $id = 56; // int | 証憑ID
-$parameters = new \Freee\Accounting\Model\ReceiptUpdateParams(); // \Freee\Accounting\Model\ReceiptUpdateParams | 経費申請の更新
+$receipt_update_params = new \Freee\Accounting\Model\ReceiptUpdateParams(); // \Freee\Accounting\Model\ReceiptUpdateParams | 経費申請の更新
 
 try {
-    $result = $apiInstance->updateReceipt($id, $parameters);
+    $result = $apiInstance->updateReceipt($id, $receipt_update_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ReceiptsApi->updateReceipt: ', $e->getMessage(), PHP_EOL;
@@ -326,11 +326,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 証憑ID |
- **parameters** | [**\Freee\Accounting\Model\ReceiptUpdateParams**](../Model/ReceiptUpdateParams.md)| 経費申請の更新 |
+ **receipt_update_params** | [**\Freee\Accounting\Model\ReceiptUpdateParams**](../Model/ReceiptUpdateParams.md)| 経費申請の更新 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\ReceiptsResponse**](../Model/ReceiptsResponse.md)
+[**\Freee\Accounting\Model\ReceiptResponse**](../Model/ReceiptResponse.md)
 
 ### Authorization
 
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

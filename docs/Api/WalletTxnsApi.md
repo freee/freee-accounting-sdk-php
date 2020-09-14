@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## createWalletTxn
 
-> \Freee\Accounting\Model\WalletTxnsShowResponse createWalletTxn($parameters)
+> \Freee\Accounting\Model\WalletTxnResponse createWalletTxn($wallet_txn_params)
 
 明細の作成
 
@@ -36,10 +36,10 @@ $apiInstance = new Freee\Accounting\Api\WalletTxnsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$parameters = new \Freee\Accounting\Model\CreateWalletTxnParams(); // \Freee\Accounting\Model\CreateWalletTxnParams | 明細の作成
+$wallet_txn_params = new \Freee\Accounting\Model\WalletTxnParams(); // \Freee\Accounting\Model\WalletTxnParams | 明細の作成
 
 try {
-    $result = $apiInstance->createWalletTxn($parameters);
+    $result = $apiInstance->createWalletTxn($wallet_txn_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WalletTxnsApi->createWalletTxn: ', $e->getMessage(), PHP_EOL;
@@ -52,11 +52,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parameters** | [**\Freee\Accounting\Model\CreateWalletTxnParams**](../Model/CreateWalletTxnParams.md)| 明細の作成 | [optional]
+ **wallet_txn_params** | [**\Freee\Accounting\Model\WalletTxnParams**](../Model/WalletTxnParams.md)| 明細の作成 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\WalletTxnsShowResponse**](../Model/WalletTxnsShowResponse.md)
+[**\Freee\Accounting\Model\WalletTxnResponse**](../Model/WalletTxnResponse.md)
 
 ### Authorization
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -136,7 +136,7 @@ void (empty response body)
 
 ## getWalletTxn
 
-> \Freee\Accounting\Model\WalletTxnsShowResponse getWalletTxn($id, $company_id)
+> \Freee\Accounting\Model\WalletTxnResponse getWalletTxn($id, $company_id)
 
 明細の取得
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\WalletTxnsShowResponse**](../Model/WalletTxnsShowResponse.md)
+[**\Freee\Accounting\Model\WalletTxnResponse**](../Model/WalletTxnResponse.md)
 
 ### Authorization
 
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 
 ## getWalletTxns
 
-> \Freee\Accounting\Model\WalletTxnsIndexResponse getWalletTxns($company_id, $walletable_type, $walletable_id, $start_date, $end_date, $entry_side, $offset, $limit)
+> \Freee\Accounting\Model\InlineResponse20017 getWalletTxns($company_id, $walletable_type, $walletable_id, $start_date, $end_date, $entry_side, $offset, $limit)
 
 明細一覧の取得
 
@@ -223,13 +223,13 @@ $apiInstance = new Freee\Accounting\Api\WalletTxnsApi(
     $config
 );
 $company_id = 56; // int | 事業所ID
-$walletable_type = 'walletable_type_example'; // string | 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet)
-$walletable_id = 56; // int | 口座ID
+$walletable_type = 'walletable_type_example'; // string | 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) walletable_type、walletable_idは同時に指定が必要です。
+$walletable_id = 56; // int | 口座ID walletable_type、walletable_idは同時に指定が必要です。
 $start_date = 'start_date_example'; // string | 取引日で絞込：開始日 (yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 取引日で絞込：終了日 (yyyy-mm-dd)
 $entry_side = 'entry_side_example'; // string | 入金／出金 (入金: income, 出金: expense)
 $offset = 56; // int | 取得レコードのオフセット (デフォルト: 0)
-$limit = 56; // int | 取得レコードの件数 (デフォルト: 20, 最大: 100)
+$limit = 56; // int | 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)
 
 try {
     $result = $apiInstance->getWalletTxns($company_id, $walletable_type, $walletable_id, $start_date, $end_date, $entry_side, $offset, $limit);
@@ -246,17 +246,17 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| 事業所ID |
- **walletable_type** | **string**| 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) | [optional]
- **walletable_id** | **int**| 口座ID | [optional]
+ **walletable_type** | **string**| 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) walletable_type、walletable_idは同時に指定が必要です。 | [optional]
+ **walletable_id** | **int**| 口座ID walletable_type、walletable_idは同時に指定が必要です。 | [optional]
  **start_date** | **string**| 取引日で絞込：開始日 (yyyy-mm-dd) | [optional]
  **end_date** | **string**| 取引日で絞込：終了日 (yyyy-mm-dd) | [optional]
  **entry_side** | **string**| 入金／出金 (入金: income, 出金: expense) | [optional]
  **offset** | **int**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **int**| 取得レコードの件数 (デフォルト: 20, 最大: 100) | [optional]
+ **limit** | **int**| 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100) | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\WalletTxnsIndexResponse**](../Model/WalletTxnsIndexResponse.md)
+[**\Freee\Accounting\Model\InlineResponse20017**](../Model/InlineResponse20017.md)
 
 ### Authorization
 

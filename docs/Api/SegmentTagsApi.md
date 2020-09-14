@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## createSegmentTag
 
-> \Freee\Accounting\Model\SegmentTagsResponse createSegmentTag($segment_id, $parameters)
+> \Freee\Accounting\Model\SegmentTagResponse createSegmentTag($segment_id, $segment_tag_params)
 
 セグメントの作成
 
@@ -36,11 +36,11 @@ $apiInstance = new Freee\Accounting\Api\SegmentTagsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$segment_id = 56; // int | セグメントID
-$parameters = new \Freee\Accounting\Model\SegmentTagParams(); // \Freee\Accounting\Model\SegmentTagParams | セグメントタグの作成
+$segment_id = 56; // int | セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン
+$segment_tag_params = new \Freee\Accounting\Model\SegmentTagParams(); // \Freee\Accounting\Model\SegmentTagParams | セグメントタグの作成
 
 try {
-    $result = $apiInstance->createSegmentTag($segment_id, $parameters);
+    $result = $apiInstance->createSegmentTag($segment_id, $segment_tag_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SegmentTagsApi->createSegmentTag: ', $e->getMessage(), PHP_EOL;
@@ -53,12 +53,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **segment_id** | **int**| セグメントID |
- **parameters** | [**\Freee\Accounting\Model\SegmentTagParams**](../Model/SegmentTagParams.md)| セグメントタグの作成 |
+ **segment_id** | **int**| セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン |
+ **segment_tag_params** | [**\Freee\Accounting\Model\SegmentTagParams**](../Model/SegmentTagParams.md)| セグメントタグの作成 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\SegmentTagsResponse**](../Model/SegmentTagsResponse.md)
+[**\Freee\Accounting\Model\SegmentTagResponse**](../Model/SegmentTagResponse.md)
 
 ### Authorization
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
@@ -99,7 +99,7 @@ $apiInstance = new Freee\Accounting\Api\SegmentTagsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$segment_id = 56; // int | セグメントID
+$segment_id = 56; // int | セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン
 $id = 56; // int | セグメントタグID
 $company_id = 56; // int | 事業所ID
 
@@ -116,7 +116,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **segment_id** | **int**| セグメントID |
+ **segment_id** | **int**| セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン |
  **id** | **int**| セグメントタグID |
  **company_id** | **int**| 事業所ID |
 
@@ -140,7 +140,7 @@ void (empty response body)
 
 ## getSegmentTags
 
-> \Freee\Accounting\Model\SegmentTagsIndexResponse getSegmentTags($company_id, $segment_id, $offset, $limit)
+> \Freee\Accounting\Model\InlineResponse20010 getSegmentTags($company_id, $segment_id, $offset, $limit)
 
 セグメントタグ一覧の取得
 
@@ -164,9 +164,9 @@ $apiInstance = new Freee\Accounting\Api\SegmentTagsApi(
     $config
 );
 $company_id = 56; // int | 事業所ID
-$segment_id = 56; // int | セグメントID
+$segment_id = 56; // int | セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン
 $offset = 56; // int | 取得レコードのオフセット (デフォルト: 0)
-$limit = 56; // int | 取得レコードの件数 (デフォルト: 20, 最大: 500)
+$limit = 56; // int | 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500)
 
 try {
     $result = $apiInstance->getSegmentTags($company_id, $segment_id, $offset, $limit);
@@ -183,13 +183,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| 事業所ID |
- **segment_id** | **int**| セグメントID |
+ **segment_id** | **int**| セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン |
  **offset** | **int**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **int**| 取得レコードの件数 (デフォルト: 20, 最大: 500) | [optional]
+ **limit** | **int**| 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500) | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\SegmentTagsIndexResponse**](../Model/SegmentTagsIndexResponse.md)
+[**\Freee\Accounting\Model\InlineResponse20010**](../Model/InlineResponse20010.md)
 
 ### Authorization
 
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 ## updateSegmentTag
 
-> \Freee\Accounting\Model\SegmentTagsResponse updateSegmentTag($segment_id, $id, $parameters)
+> \Freee\Accounting\Model\SegmentTagResponse updateSegmentTag($segment_id, $id, $segment_tag_params)
 
 セグメントタグの更新
 
@@ -230,12 +230,12 @@ $apiInstance = new Freee\Accounting\Api\SegmentTagsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$segment_id = 56; // int | セグメントID
+$segment_id = 56; // int | セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン
 $id = 56; // int | セグメントタグID
-$parameters = new \Freee\Accounting\Model\SegmentTagParams(); // \Freee\Accounting\Model\SegmentTagParams | セグメントタグの作成
+$segment_tag_params = new \Freee\Accounting\Model\SegmentTagParams(); // \Freee\Accounting\Model\SegmentTagParams | セグメントタグの作成
 
 try {
-    $result = $apiInstance->updateSegmentTag($segment_id, $id, $parameters);
+    $result = $apiInstance->updateSegmentTag($segment_id, $id, $segment_tag_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SegmentTagsApi->updateSegmentTag: ', $e->getMessage(), PHP_EOL;
@@ -248,13 +248,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **segment_id** | **int**| セグメントID |
+ **segment_id** | **int**| セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン |
  **id** | **int**| セグメントタグID |
- **parameters** | [**\Freee\Accounting\Model\SegmentTagParams**](../Model/SegmentTagParams.md)| セグメントタグの作成 |
+ **segment_tag_params** | [**\Freee\Accounting\Model\SegmentTagParams**](../Model/SegmentTagParams.md)| セグメントタグの作成 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\SegmentTagsResponse**](../Model/SegmentTagsResponse.md)
+[**\Freee\Accounting\Model\SegmentTagResponse**](../Model/SegmentTagResponse.md)
 
 ### Authorization
 
@@ -262,7 +262,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
