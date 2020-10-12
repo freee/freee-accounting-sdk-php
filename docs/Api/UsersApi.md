@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getUsers**](UsersApi.md#getUsers) | **GET** /api/1/users | 事業所に所属するユーザー一覧の取得
 [**getUsersCapabilities**](UsersApi.md#getUsersCapabilities) | **GET** /api/1/users/capabilities | ログインユーザーの権限の取得
-[**getUsersMe**](UsersApi.md#getUsersMe) | **GET** /api/1/users/me | ログインユーザー情報の取得
 [**updateUser**](UsersApi.md#updateUser) | **PUT** /api/1/users/me | ユーザー情報の更新
 
 
@@ -120,67 +119,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Freee\Accounting\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
-
-### Authorization
-
-[oauth2](../../README.md#oauth2)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
-
-
-## getUsersMe
-
-> \Freee\Accounting\Model\MeResponse getUsersMe($companies)
-
-ログインユーザー情報の取得
-
-<h2 id=\"\">概要</h2>  <p>ユーザーの情報を取得する</p>
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new Freee\Accounting\Api\UsersApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$companies = True; // bool | 取得情報にユーザーが所属する事業所一覧を含める
-
-try {
-    $result = $apiInstance->getUsersMe($companies);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling UsersApi->getUsersMe: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **companies** | **bool**| 取得情報にユーザーが所属する事業所一覧を含める | [optional]
-
-### Return type
-
-[**\Freee\Accounting\Model\MeResponse**](../Model/MeResponse.md)
 
 ### Authorization
 
