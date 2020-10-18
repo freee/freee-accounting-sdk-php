@@ -1,7 +1,7 @@
 {
     "name": "freee/freee-accounting-sdk",
     "type": "library",
-    "version": "v2.0.0-beta",
+    "version": "v2.0.0",
     "description": "Accounting freee PHP SDK",
     "keywords": [
         "openapitools",
