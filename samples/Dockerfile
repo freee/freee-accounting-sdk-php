@@ -13,6 +13,9 @@ RUN apt-get update; \
 
 RUN docker-php-ext-install zip
 
+RUN cp $PHP_INI_DIR/php.ini-development $PHP_INI_DIR/php.ini; \
+    sed -i -e "s/^memory_limit.*$/memory_limit = 2G/g" $PHP_INI_DIR/php.ini
+
 WORKDIR /tmp
 
 RUN curl https://raw.githubusercontent.com/composer/getcomposer.org/76a7060ccb93902cd7576b67264ad91c8a2700e2/web/installer -o - -s | php -- --quiet; \
