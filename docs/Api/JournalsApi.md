@@ -1,18 +1,19 @@
 # Freee\Accounting\JournalsApi
 
-All URIs are relative to *https://api.freee.co.jp*
+All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**downloadJournal**](JournalsApi.md#downloadJournal) | **GET** /api/1/journals/reports/{id}/download | ダウンロード実行
-[**getJournalStatus**](JournalsApi.md#getJournalStatus) | **GET** /api/1/journals/reports/{id}/status | ステータス確認
-[**getJournals**](JournalsApi.md#getJournals) | **GET** /api/1/journals | ダウンロード要求
+[**downloadJournal()**](JournalsApi.md#downloadJournal) | **GET** /api/1/journals/reports/{id}/download | ダウンロード実行
+[**getJournalStatus()**](JournalsApi.md#getJournalStatus) | **GET** /api/1/journals/reports/{id}/status | ステータス確認
+[**getJournals()**](JournalsApi.md#getJournals) | **GET** /api/1/journals | ダウンロード要求
 
 
+## `downloadJournal()`
 
-## downloadJournal
-
-> \SplFileObject downloadJournal($id, $company_id)
+```php
+downloadJournal($id, $company_id): \SplFileObject
+```
 
 ダウンロード実行
 
@@ -44,11 +45,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling JournalsApi->downloadJournal: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -66,16 +65,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/pdf, text/csv, application/json
+- **Accept**: `application/pdf`, `text/csv`, `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getJournalStatus()`
 
-## getJournalStatus
-
-> \Freee\Accounting\Model\JournalStatusResponse getJournalStatus($company_id, $id, $visible_tags, $start_date, $end_date)
+```php
+getJournalStatus($company_id, $id, $visible_tags, $start_date, $end_date): \Freee\Accounting\Model\JournalStatusResponse
+```
 
 ステータス確認
 
@@ -110,11 +110,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling JournalsApi->getJournalStatus: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -135,16 +133,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getJournals()`
 
-## getJournals
-
-> \Freee\Accounting\Model\JournalsResponse getJournals($download_type, $company_id, $visible_tags, $start_date, $end_date)
+```php
+getJournals($download_type, $company_id, $visible_tags, $start_date, $end_date): \Freee\Accounting\Model\JournalsResponse
+```
 
 ダウンロード要求
 
@@ -179,11 +178,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling JournalsApi->getJournals: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -204,9 +201,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

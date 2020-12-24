@@ -1,19 +1,20 @@
 # Freee\Accounting\SegmentTagsApi
 
-All URIs are relative to *https://api.freee.co.jp*
+All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createSegmentTag**](SegmentTagsApi.md#createSegmentTag) | **POST** /api/1/segments/{segment_id}/tags | セグメントの作成
-[**destroySegmentsTag**](SegmentTagsApi.md#destroySegmentsTag) | **DELETE** /api/1/segments/{segment_id}/tags/{id} | セグメントタグの削除
-[**getSegmentTags**](SegmentTagsApi.md#getSegmentTags) | **GET** /api/1/segments/{segment_id}/tags | セグメントタグ一覧の取得
-[**updateSegmentTag**](SegmentTagsApi.md#updateSegmentTag) | **PUT** /api/1/segments/{segment_id}/tags/{id} | セグメントタグの更新
+[**createSegmentTag()**](SegmentTagsApi.md#createSegmentTag) | **POST** /api/1/segments/{segment_id}/tags | セグメントの作成
+[**destroySegmentsTag()**](SegmentTagsApi.md#destroySegmentsTag) | **DELETE** /api/1/segments/{segment_id}/tags/{id} | セグメントタグの削除
+[**getSegmentTags()**](SegmentTagsApi.md#getSegmentTags) | **GET** /api/1/segments/{segment_id}/tags | セグメントタグ一覧の取得
+[**updateSegmentTag()**](SegmentTagsApi.md#updateSegmentTag) | **PUT** /api/1/segments/{segment_id}/tags/{id} | セグメントタグの更新
 
 
+## `createSegmentTag()`
 
-## createSegmentTag
-
-> \Freee\Accounting\Model\SegmentTagResponse createSegmentTag($segment_id, $segment_tag_params)
+```php
+createSegmentTag($segment_id, $segment_tag_params): \Freee\Accounting\Model\SegmentTagResponse
+```
 
 セグメントの作成
 
@@ -45,11 +46,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling SegmentTagsApi->createSegmentTag: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -66,17 +65,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `destroySegmentsTag()`
 
-## destroySegmentsTag
-
-> destroySegmentsTag($segment_id, $id, $company_id)
+```php
+destroySegmentsTag($segment_id, $id, $company_id)
+```
 
 セグメントタグの削除
 
@@ -108,11 +108,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling SegmentTagsApi->destroySegmentsTag: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -131,16 +129,17 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getSegmentTags()`
 
-## getSegmentTags
-
-> \Freee\Accounting\Model\InlineResponse20010 getSegmentTags($company_id, $segment_id, $offset, $limit)
+```php
+getSegmentTags($company_id, $segment_id, $offset, $limit): \Freee\Accounting\Model\InlineResponse20010
+```
 
 セグメントタグ一覧の取得
 
@@ -174,11 +173,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling SegmentTagsApi->getSegmentTags: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -198,16 +195,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `updateSegmentTag()`
 
-## updateSegmentTag
-
-> \Freee\Accounting\Model\SegmentTagResponse updateSegmentTag($segment_id, $id, $segment_tag_params)
+```php
+updateSegmentTag($segment_id, $id, $segment_tag_params): \Freee\Accounting\Model\SegmentTagResponse
+```
 
 セグメントタグの更新
 
@@ -240,11 +238,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling SegmentTagsApi->updateSegmentTag: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -262,10 +258,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

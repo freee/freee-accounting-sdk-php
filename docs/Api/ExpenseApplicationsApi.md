@@ -1,20 +1,21 @@
 # Freee\Accounting\ExpenseApplicationsApi
 
-All URIs are relative to *https://api.freee.co.jp*
+All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createExpenseApplication**](ExpenseApplicationsApi.md#createExpenseApplication) | **POST** /api/1/expense_applications | 経費申請の作成
-[**destroyExpenseApplication**](ExpenseApplicationsApi.md#destroyExpenseApplication) | **DELETE** /api/1/expense_applications/{id} | 経費申請の削除
-[**getExpenseApplication**](ExpenseApplicationsApi.md#getExpenseApplication) | **GET** /api/1/expense_applications/{id} | 経費申請詳細の取得
-[**getExpenseApplications**](ExpenseApplicationsApi.md#getExpenseApplications) | **GET** /api/1/expense_applications | 経費申請一覧の取得
-[**updateExpenseApplication**](ExpenseApplicationsApi.md#updateExpenseApplication) | **PUT** /api/1/expense_applications/{id} | 経費申請の更新
+[**createExpenseApplication()**](ExpenseApplicationsApi.md#createExpenseApplication) | **POST** /api/1/expense_applications | 経費申請の作成
+[**destroyExpenseApplication()**](ExpenseApplicationsApi.md#destroyExpenseApplication) | **DELETE** /api/1/expense_applications/{id} | 経費申請の削除
+[**getExpenseApplication()**](ExpenseApplicationsApi.md#getExpenseApplication) | **GET** /api/1/expense_applications/{id} | 経費申請詳細の取得
+[**getExpenseApplications()**](ExpenseApplicationsApi.md#getExpenseApplications) | **GET** /api/1/expense_applications | 経費申請一覧の取得
+[**updateExpenseApplication()**](ExpenseApplicationsApi.md#updateExpenseApplication) | **PUT** /api/1/expense_applications/{id} | 経費申請の更新
 
 
+## `createExpenseApplication()`
 
-## createExpenseApplication
-
-> \Freee\Accounting\Model\ExpenseApplicationResponse createExpenseApplication($expense_application_create_params)
+```php
+createExpenseApplication($expense_application_create_params): \Freee\Accounting\Model\ExpenseApplicationResponse
+```
 
 経費申請の作成
 
@@ -45,11 +46,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ExpenseApplicationsApi->createExpenseApplication: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -65,17 +64,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `destroyExpenseApplication()`
 
-## destroyExpenseApplication
-
-> destroyExpenseApplication($id, $company_id)
+```php
+destroyExpenseApplication($id, $company_id)
+```
 
 経費申請の削除
 
@@ -98,7 +98,7 @@ $apiInstance = new Freee\Accounting\Api\ExpenseApplicationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 56; // int | 
+$id = 56; // int
 $company_id = 56; // int | 事業所ID
 
 try {
@@ -106,11 +106,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ExpenseApplicationsApi->destroyExpenseApplication: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -128,16 +126,17 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getExpenseApplication()`
 
-## getExpenseApplication
-
-> \Freee\Accounting\Model\ExpenseApplicationResponse getExpenseApplication($id, $company_id)
+```php
+getExpenseApplication($id, $company_id): \Freee\Accounting\Model\ExpenseApplicationResponse
+```
 
 経費申請詳細の取得
 
@@ -167,11 +166,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ExpenseApplicationsApi->getExpenseApplication: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -189,16 +186,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getExpenseApplications()`
 
-## getExpenseApplications
-
-> \Freee\Accounting\Model\ExpenseApplicationsIndexResponse getExpenseApplications($company_id, $offset, $limit)
+```php
+getExpenseApplications($company_id, $offset, $limit): \Freee\Accounting\Model\ExpenseApplicationsIndexResponse
+```
 
 経費申請一覧の取得
 
@@ -229,11 +227,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ExpenseApplicationsApi->getExpenseApplications: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -252,16 +248,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `updateExpenseApplication()`
 
-## updateExpenseApplication
-
-> \Freee\Accounting\Model\ExpenseApplicationResponse updateExpenseApplication($id, $expense_application_update_params)
+```php
+updateExpenseApplication($id, $expense_application_update_params): \Freee\Accounting\Model\ExpenseApplicationResponse
+```
 
 経費申請の更新
 
@@ -284,7 +281,7 @@ $apiInstance = new Freee\Accounting\Api\ExpenseApplicationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 56; // int | 
+$id = 56; // int
 $expense_application_update_params = new \Freee\Accounting\Model\ExpenseApplicationUpdateParams(); // \Freee\Accounting\Model\ExpenseApplicationUpdateParams | 経費申請の更新
 
 try {
@@ -293,11 +290,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ExpenseApplicationsApi->updateExpenseApplication: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -314,10 +309,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

@@ -1,17 +1,18 @@
 # Freee\Accounting\BanksApi
 
-All URIs are relative to *https://api.freee.co.jp*
+All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getBank**](BanksApi.md#getBank) | **GET** /api/1/banks/{id} | 連携サービスの取得
-[**getBanks**](BanksApi.md#getBanks) | **GET** /api/1/banks | 連携サービス一覧の取得
+[**getBank()**](BanksApi.md#getBank) | **GET** /api/1/banks/{id} | 連携サービスの取得
+[**getBanks()**](BanksApi.md#getBanks) | **GET** /api/1/banks | 連携サービス一覧の取得
 
 
+## `getBank()`
 
-## getBank
-
-> \Freee\Accounting\Model\BankResponse getBank($id)
+```php
+getBank($id): \Freee\Accounting\Model\BankResponse
+```
 
 連携サービスの取得
 
@@ -42,11 +43,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling BanksApi->getBank: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -63,16 +62,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getBanks()`
 
-## getBanks
-
-> \Freee\Accounting\Model\InlineResponse2001 getBanks($offset, $limit, $type)
+```php
+getBanks($offset, $limit, $type): \Freee\Accounting\Model\InlineResponse2001
+```
 
 連携サービス一覧の取得
 
@@ -105,11 +105,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling BanksApi->getBanks: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -128,9 +126,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

@@ -1,20 +1,21 @@
 # Freee\Accounting\DealsApi
 
-All URIs are relative to *https://api.freee.co.jp*
+All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createDeal**](DealsApi.md#createDeal) | **POST** /api/1/deals | 取引（収入／支出）の作成
-[**destroyDeal**](DealsApi.md#destroyDeal) | **DELETE** /api/1/deals/{id} | 取引（収入／支出）の削除
-[**getDeal**](DealsApi.md#getDeal) | **GET** /api/1/deals/{id} | 取引（収入／支出）の取得
-[**getDeals**](DealsApi.md#getDeals) | **GET** /api/1/deals | 取引（収入／支出）一覧の取得
-[**updateDeal**](DealsApi.md#updateDeal) | **PUT** /api/1/deals/{id} | 取引（収入／支出）の更新
+[**createDeal()**](DealsApi.md#createDeal) | **POST** /api/1/deals | 取引（収入／支出）の作成
+[**destroyDeal()**](DealsApi.md#destroyDeal) | **DELETE** /api/1/deals/{id} | 取引（収入／支出）の削除
+[**getDeal()**](DealsApi.md#getDeal) | **GET** /api/1/deals/{id} | 取引（収入／支出）の取得
+[**getDeals()**](DealsApi.md#getDeals) | **GET** /api/1/deals | 取引（収入／支出）一覧の取得
+[**updateDeal()**](DealsApi.md#updateDeal) | **PUT** /api/1/deals/{id} | 取引（収入／支出）の更新
 
 
+## `createDeal()`
 
-## createDeal
-
-> \Freee\Accounting\Model\DealCreateResponse createDeal($deal_create_params)
+```php
+createDeal($deal_create_params): \Freee\Accounting\Model\DealCreateResponse
+```
 
 取引（収入／支出）の作成
 
@@ -45,11 +46,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling DealsApi->createDeal: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -65,17 +64,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `destroyDeal()`
 
-## destroyDeal
-
-> destroyDeal($id, $company_id)
+```php
+destroyDeal($id, $company_id)
+```
 
 取引（収入／支出）の削除
 
@@ -104,11 +104,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling DealsApi->destroyDeal: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -126,16 +124,17 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getDeal()`
 
-## getDeal
-
-> \Freee\Accounting\Model\DealResponse getDeal($company_id, $id, $accruals)
+```php
+getDeal($company_id, $id, $accruals): \Freee\Accounting\Model\DealResponse
+```
 
 取引（収入／支出）の取得
 
@@ -159,7 +158,7 @@ $apiInstance = new Freee\Accounting\Api\DealsApi(
     $config
 );
 $company_id = 56; // int | 事業所ID
-$id = 56; // int | 
+$id = 56; // int
 $accruals = 'accruals_example'; // string | 取引の債権債務行の表示（without: 表示しない(デフォルト), with: 表示する）
 
 try {
@@ -168,11 +167,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling DealsApi->getDeal: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -191,16 +188,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getDeals()`
 
-## getDeals
-
-> \Freee\Accounting\Model\InlineResponse2002 getDeals($company_id, $partner_id, $account_item_id, $partner_code, $status, $type, $start_issue_date, $end_issue_date, $start_due_date, $end_due_date, $start_renew_date, $end_renew_date, $offset, $limit, $registered_from, $accruals)
+```php
+getDeals($company_id, $partner_id, $account_item_id, $partner_code, $status, $type, $start_issue_date, $end_issue_date, $start_due_date, $end_due_date, $start_renew_date, $end_renew_date, $offset, $limit, $registered_from, $accruals): \Freee\Accounting\Model\InlineResponse2002
+```
 
 取引（収入／支出）一覧の取得
 
@@ -246,11 +244,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling DealsApi->getDeals: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -282,16 +278,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `updateDeal()`
 
-## updateDeal
-
-> \Freee\Accounting\Model\DealResponse updateDeal($id, $deal_update_params)
+```php
+updateDeal($id, $deal_update_params): \Freee\Accounting\Model\DealResponse
+```
 
 取引（収入／支出）の更新
 
@@ -323,11 +320,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling DealsApi->updateDeal: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -344,10 +339,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

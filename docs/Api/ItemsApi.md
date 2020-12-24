@@ -1,20 +1,21 @@
 # Freee\Accounting\ItemsApi
 
-All URIs are relative to *https://api.freee.co.jp*
+All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createItem**](ItemsApi.md#createItem) | **POST** /api/1/items | 品目の作成
-[**destroyItem**](ItemsApi.md#destroyItem) | **DELETE** /api/1/items/{id} | 品目の削除
-[**getItem**](ItemsApi.md#getItem) | **GET** /api/1/items/{id} | 品目の取得
-[**getItems**](ItemsApi.md#getItems) | **GET** /api/1/items | 品目一覧の取得
-[**updateItem**](ItemsApi.md#updateItem) | **PUT** /api/1/items/{id} | 品目の更新
+[**createItem()**](ItemsApi.md#createItem) | **POST** /api/1/items | 品目の作成
+[**destroyItem()**](ItemsApi.md#destroyItem) | **DELETE** /api/1/items/{id} | 品目の削除
+[**getItem()**](ItemsApi.md#getItem) | **GET** /api/1/items/{id} | 品目の取得
+[**getItems()**](ItemsApi.md#getItems) | **GET** /api/1/items | 品目一覧の取得
+[**updateItem()**](ItemsApi.md#updateItem) | **PUT** /api/1/items/{id} | 品目の更新
 
 
+## `createItem()`
 
-## createItem
-
-> \Freee\Accounting\Model\ItemResponse createItem($item_params)
+```php
+createItem($item_params): \Freee\Accounting\Model\ItemResponse
+```
 
 品目の作成
 
@@ -45,11 +46,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ItemsApi->createItem: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -65,17 +64,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `destroyItem()`
 
-## destroyItem
-
-> destroyItem($id, $company_id)
+```php
+destroyItem($id, $company_id)
+```
 
 品目の削除
 
@@ -106,11 +106,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ItemsApi->destroyItem: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -128,16 +126,17 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getItem()`
 
-## getItem
-
-> \Freee\Accounting\Model\ItemResponse getItem($company_id, $id)
+```php
+getItem($company_id, $id): \Freee\Accounting\Model\ItemResponse
+```
 
 品目の取得
 
@@ -169,11 +168,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ItemsApi->getItem: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -191,16 +188,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getItems()`
 
-## getItems
-
-> \Freee\Accounting\Model\InlineResponse2005 getItems($company_id, $offset, $limit)
+```php
+getItems($company_id, $offset, $limit): \Freee\Accounting\Model\InlineResponse2005
+```
 
 品目一覧の取得
 
@@ -233,11 +231,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ItemsApi->getItems: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -256,16 +252,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `updateItem()`
 
-## updateItem
-
-> \Freee\Accounting\Model\ItemResponse updateItem($id, $item_params)
+```php
+updateItem($id, $item_params): \Freee\Accounting\Model\ItemResponse
+```
 
 品目の更新
 
@@ -297,11 +294,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ItemsApi->updateItem: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -318,10 +313,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

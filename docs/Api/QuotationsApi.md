@@ -1,20 +1,21 @@
 # Freee\Accounting\QuotationsApi
 
-All URIs are relative to *https://api.freee.co.jp*
+All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createQuotation**](QuotationsApi.md#createQuotation) | **POST** /api/1/quotations | 見積書の作成
-[**destroyQuotation**](QuotationsApi.md#destroyQuotation) | **DELETE** /api/1/quotations/{id} | 見積書の削除
-[**getQuotation**](QuotationsApi.md#getQuotation) | **GET** /api/1/quotations/{id} | 見積書の取得
-[**getQuotations**](QuotationsApi.md#getQuotations) | **GET** /api/1/quotations | 見積書一覧の取得
-[**updateQuotation**](QuotationsApi.md#updateQuotation) | **PUT** /api/1/quotations/{id} | 見積書の更新
+[**createQuotation()**](QuotationsApi.md#createQuotation) | **POST** /api/1/quotations | 見積書の作成
+[**destroyQuotation()**](QuotationsApi.md#destroyQuotation) | **DELETE** /api/1/quotations/{id} | 見積書の削除
+[**getQuotation()**](QuotationsApi.md#getQuotation) | **GET** /api/1/quotations/{id} | 見積書の取得
+[**getQuotations()**](QuotationsApi.md#getQuotations) | **GET** /api/1/quotations | 見積書一覧の取得
+[**updateQuotation()**](QuotationsApi.md#updateQuotation) | **PUT** /api/1/quotations/{id} | 見積書の更新
 
 
+## `createQuotation()`
 
-## createQuotation
-
-> \Freee\Accounting\Model\QuotationResponse createQuotation($quotation_create_params)
+```php
+createQuotation($quotation_create_params): \Freee\Accounting\Model\QuotationResponse
+```
 
 見積書の作成
 
@@ -45,11 +46,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling QuotationsApi->createQuotation: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -65,17 +64,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `destroyQuotation()`
 
-## destroyQuotation
-
-> destroyQuotation($id, $company_id)
+```php
+destroyQuotation($id, $company_id)
+```
 
 見積書の削除
 
@@ -98,7 +98,7 @@ $apiInstance = new Freee\Accounting\Api\QuotationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 56; // int | 
+$id = 56; // int
 $company_id = 56; // int | 事業所ID
 
 try {
@@ -106,11 +106,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling QuotationsApi->destroyQuotation: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -128,16 +126,17 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getQuotation()`
 
-## getQuotation
-
-> \Freee\Accounting\Model\QuotationResponse getQuotation($company_id, $id)
+```php
+getQuotation($company_id, $id): \Freee\Accounting\Model\QuotationResponse
+```
 
 見積書の取得
 
@@ -169,11 +168,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling QuotationsApi->getQuotation: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -191,16 +188,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getQuotations()`
 
-## getQuotations
-
-> \Freee\Accounting\Model\InlineResponse2007 getQuotations($company_id, $partner_id, $partner_code, $start_issue_date, $end_issue_date, $quotation_number, $description, $quotation_status, $offset, $limit)
+```php
+getQuotations($company_id, $partner_id, $partner_code, $start_issue_date, $end_issue_date, $quotation_number, $description, $quotation_status, $offset, $limit): \Freee\Accounting\Model\InlineResponse2007
+```
 
 見積書一覧の取得
 
@@ -240,11 +238,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling QuotationsApi->getQuotations: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -270,16 +266,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `updateQuotation()`
 
-## updateQuotation
-
-> \Freee\Accounting\Model\QuotationResponse updateQuotation($id, $quotation_update_params)
+```php
+updateQuotation($id, $quotation_update_params): \Freee\Accounting\Model\QuotationResponse
+```
 
 見積書の更新
 
@@ -311,11 +308,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling QuotationsApi->updateQuotation: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -332,10 +327,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

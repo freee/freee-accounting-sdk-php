@@ -1,23 +1,24 @@
 # Freee\Accounting\ApprovalRequestsApi
 
-All URIs are relative to *https://api.freee.co.jp*
+All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createApprovalRequest**](ApprovalRequestsApi.md#createApprovalRequest) | **POST** /api/1/approval_requests | 各種申請の作成
-[**destroyApprovalRequest**](ApprovalRequestsApi.md#destroyApprovalRequest) | **DELETE** /api/1/approval_requests/{id} | 各種申請の削除
-[**getApprovalRequest**](ApprovalRequestsApi.md#getApprovalRequest) | **GET** /api/1/approval_requests/{id} | 各種申請の取得
-[**getApprovalRequestForm**](ApprovalRequestsApi.md#getApprovalRequestForm) | **GET** /api/1/approval_requests/forms/{id} | 各種申請の申請フォームの取得
-[**getApprovalRequestForms**](ApprovalRequestsApi.md#getApprovalRequestForms) | **GET** /api/1/approval_requests/forms | 各種申請の申請フォーム一覧の取得
-[**getApprovalRequests**](ApprovalRequestsApi.md#getApprovalRequests) | **GET** /api/1/approval_requests | 各種申請の一覧
-[**updateApprovalRequest**](ApprovalRequestsApi.md#updateApprovalRequest) | **PUT** /api/1/approval_requests/{id} | 各種申請の更新
-[**updateApprovalRequestAction**](ApprovalRequestsApi.md#updateApprovalRequestAction) | **POST** /api/1/approval_requests/{id}/actions | 各種申請の承認操作
+[**createApprovalRequest()**](ApprovalRequestsApi.md#createApprovalRequest) | **POST** /api/1/approval_requests | 各種申請の作成
+[**destroyApprovalRequest()**](ApprovalRequestsApi.md#destroyApprovalRequest) | **DELETE** /api/1/approval_requests/{id} | 各種申請の削除
+[**getApprovalRequest()**](ApprovalRequestsApi.md#getApprovalRequest) | **GET** /api/1/approval_requests/{id} | 各種申請の取得
+[**getApprovalRequestForm()**](ApprovalRequestsApi.md#getApprovalRequestForm) | **GET** /api/1/approval_requests/forms/{id} | 各種申請の申請フォームの取得
+[**getApprovalRequestForms()**](ApprovalRequestsApi.md#getApprovalRequestForms) | **GET** /api/1/approval_requests/forms | 各種申請の申請フォーム一覧の取得
+[**getApprovalRequests()**](ApprovalRequestsApi.md#getApprovalRequests) | **GET** /api/1/approval_requests | 各種申請の一覧
+[**updateApprovalRequest()**](ApprovalRequestsApi.md#updateApprovalRequest) | **PUT** /api/1/approval_requests/{id} | 各種申請の更新
+[**updateApprovalRequestAction()**](ApprovalRequestsApi.md#updateApprovalRequestAction) | **POST** /api/1/approval_requests/{id}/actions | 各種申請の承認操作
 
 
+## `createApprovalRequest()`
 
-## createApprovalRequest
-
-> \Freee\Accounting\Model\ApprovalRequestResponse createApprovalRequest($approval_request_create_params)
+```php
+createApprovalRequest($approval_request_create_params): \Freee\Accounting\Model\ApprovalRequestResponse
+```
 
 各種申請の作成
 
@@ -48,11 +49,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ApprovalRequestsApi->createApprovalRequest: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -68,17 +67,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `destroyApprovalRequest()`
 
-## destroyApprovalRequest
-
-> destroyApprovalRequest($id, $company_id)
+```php
+destroyApprovalRequest($id, $company_id)
+```
 
 各種申請の削除
 
@@ -109,11 +109,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ApprovalRequestsApi->destroyApprovalRequest: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -131,16 +129,17 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getApprovalRequest()`
 
-## getApprovalRequest
-
-> \Freee\Accounting\Model\ApprovalRequestResponse getApprovalRequest($id, $company_id)
+```php
+getApprovalRequest($id, $company_id): \Freee\Accounting\Model\ApprovalRequestResponse
+```
 
 各種申請の取得
 
@@ -172,11 +171,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ApprovalRequestsApi->getApprovalRequest: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -194,16 +191,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getApprovalRequestForm()`
 
-## getApprovalRequestForm
-
-> \Freee\Accounting\Model\ApprovalRequestFormResponse getApprovalRequestForm($id, $company_id)
+```php
+getApprovalRequestForm($id, $company_id): \Freee\Accounting\Model\ApprovalRequestFormResponse
+```
 
 各種申請の申請フォームの取得
 
@@ -235,11 +233,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ApprovalRequestsApi->getApprovalRequestForm: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -257,16 +253,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getApprovalRequestForms()`
 
-## getApprovalRequestForms
-
-> \Freee\Accounting\Model\InlineResponse200 getApprovalRequestForms($company_id)
+```php
+getApprovalRequestForms($company_id): \Freee\Accounting\Model\InlineResponse200
+```
 
 各種申請の申請フォーム一覧の取得
 
@@ -297,11 +294,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ApprovalRequestsApi->getApprovalRequestForms: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -318,16 +313,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getApprovalRequests()`
 
-## getApprovalRequests
-
-> \Freee\Accounting\Model\ApprovalRequestsIndexResponse getApprovalRequests($company_id, $status, $application_number, $title, $form_id, $start_application_date, $end_application_date, $applicant_id, $approver_id, $offset, $limit)
+```php
+getApprovalRequests($company_id, $status, $application_number, $title, $form_id, $start_application_date, $end_application_date, $applicant_id, $approver_id, $offset, $limit): \Freee\Accounting\Model\ApprovalRequestsIndexResponse
+```
 
 各種申請の一覧
 
@@ -368,11 +364,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ApprovalRequestsApi->getApprovalRequests: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -399,16 +393,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `updateApprovalRequest()`
 
-## updateApprovalRequest
-
-> \Freee\Accounting\Model\ApprovalRequestResponse updateApprovalRequest($id, $approval_request_update_params)
+```php
+updateApprovalRequest($id, $approval_request_update_params): \Freee\Accounting\Model\ApprovalRequestResponse
+```
 
 各種申請の更新
 
@@ -440,11 +435,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ApprovalRequestsApi->updateApprovalRequest: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -461,17 +454,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `updateApprovalRequestAction()`
 
-## updateApprovalRequestAction
-
-> \Freee\Accounting\Model\ApprovalRequestResponse updateApprovalRequestAction($id, $approval_request_action_create_params)
+```php
+updateApprovalRequestAction($id, $approval_request_action_create_params): \Freee\Accounting\Model\ApprovalRequestResponse
+```
 
 各種申請の承認操作
 
@@ -503,11 +497,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ApprovalRequestsApi->updateApprovalRequestAction: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -524,10 +516,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

@@ -1,18 +1,19 @@
 # Freee\Accounting\RenewsApi
 
-All URIs are relative to *https://api.freee.co.jp*
+All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createDealRenew**](RenewsApi.md#createDealRenew) | **POST** /api/1/deals/{id}/renews | 取引（収入／支出）に対する+更新の作成
-[**deleteDealRenew**](RenewsApi.md#deleteDealRenew) | **DELETE** /api/1/deals/{id}/renews/{renew_id} | 取引（収入／支出）の+更新の削除
-[**updateDealRenew**](RenewsApi.md#updateDealRenew) | **PUT** /api/1/deals/{id}/renews/{renew_id} | 取引（収入／支出）の+更新の更新
+[**createDealRenew()**](RenewsApi.md#createDealRenew) | **POST** /api/1/deals/{id}/renews | 取引（収入／支出）に対する+更新の作成
+[**deleteDealRenew()**](RenewsApi.md#deleteDealRenew) | **DELETE** /api/1/deals/{id}/renews/{renew_id} | 取引（収入／支出）の+更新の削除
+[**updateDealRenew()**](RenewsApi.md#updateDealRenew) | **PUT** /api/1/deals/{id}/renews/{renew_id} | 取引（収入／支出）の+更新の更新
 
 
+## `createDealRenew()`
 
-## createDealRenew
-
-> \Freee\Accounting\Model\DealResponse createDealRenew($id, $renew_create_params)
+```php
+createDealRenew($id, $renew_create_params): \Freee\Accounting\Model\DealResponse
+```
 
 取引（収入／支出）に対する+更新の作成
 
@@ -44,11 +45,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling RenewsApi->createDealRenew: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -65,17 +64,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `deleteDealRenew()`
 
-## deleteDealRenew
-
-> \Freee\Accounting\Model\DealResponse deleteDealRenew($id, $renew_id, $company_id)
+```php
+deleteDealRenew($id, $renew_id, $company_id): \Freee\Accounting\Model\DealResponse
+```
 
 取引（収入／支出）の+更新の削除
 
@@ -108,11 +108,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling RenewsApi->deleteDealRenew: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -131,16 +129,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `updateDealRenew()`
 
-## updateDealRenew
-
-> \Freee\Accounting\Model\DealResponse updateDealRenew($id, $renew_id, $renew_update_params)
+```php
+updateDealRenew($id, $renew_id, $renew_update_params): \Freee\Accounting\Model\DealResponse
+```
 
 取引（収入／支出）の+更新の更新
 
@@ -173,11 +172,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling RenewsApi->updateDealRenew: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -195,10 +192,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

@@ -1,20 +1,21 @@
 # Freee\Accounting\SectionsApi
 
-All URIs are relative to *https://api.freee.co.jp*
+All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createSection**](SectionsApi.md#createSection) | **POST** /api/1/sections | 部門の作成
-[**destroySection**](SectionsApi.md#destroySection) | **DELETE** /api/1/sections/{id} | 部門の削除
-[**getSection**](SectionsApi.md#getSection) | **GET** /api/1/sections/{id} | 
-[**getSections**](SectionsApi.md#getSections) | **GET** /api/1/sections | 部門一覧の取得
-[**updateSection**](SectionsApi.md#updateSection) | **PUT** /api/1/sections/{id} | 部門の更新
+[**createSection()**](SectionsApi.md#createSection) | **POST** /api/1/sections | 部門の作成
+[**destroySection()**](SectionsApi.md#destroySection) | **DELETE** /api/1/sections/{id} | 部門の削除
+[**getSection()**](SectionsApi.md#getSection) | **GET** /api/1/sections/{id} | 
+[**getSections()**](SectionsApi.md#getSections) | **GET** /api/1/sections | 部門一覧の取得
+[**updateSection()**](SectionsApi.md#updateSection) | **PUT** /api/1/sections/{id} | 部門の更新
 
 
+## `createSection()`
 
-## createSection
-
-> \Freee\Accounting\Model\SectionResponse createSection($section_params)
+```php
+createSection($section_params): \Freee\Accounting\Model\SectionResponse
+```
 
 部門の作成
 
@@ -45,11 +46,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling SectionsApi->createSection: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -65,17 +64,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `destroySection()`
 
-## destroySection
-
-> destroySection($id, $company_id)
+```php
+destroySection($id, $company_id)
+```
 
 部門の削除
 
@@ -98,7 +98,7 @@ $apiInstance = new Freee\Accounting\Api\SectionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 56; // int | 
+$id = 56; // int
 $company_id = 56; // int | 事業所ID
 
 try {
@@ -106,11 +106,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling SectionsApi->destroySection: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -128,16 +126,17 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getSection()`
 
-## getSection
-
-> \Freee\Accounting\Model\SectionResponse getSection($id, $company_id)
+```php
+getSection($id, $company_id): \Freee\Accounting\Model\SectionResponse
+```
 
 
 
@@ -169,11 +168,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling SectionsApi->getSection: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -191,16 +188,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getSections()`
 
-## getSections
-
-> \Freee\Accounting\Model\InlineResponse2009 getSections($company_id)
+```php
+getSections($company_id): \Freee\Accounting\Model\InlineResponse2009
+```
 
 部門一覧の取得
 
@@ -231,11 +229,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling SectionsApi->getSections: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -252,16 +248,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `updateSection()`
 
-## updateSection
-
-> \Freee\Accounting\Model\SectionResponse updateSection($id, $section_params)
+```php
+updateSection($id, $section_params): \Freee\Accounting\Model\SectionResponse
+```
 
 部門の更新
 
@@ -284,7 +281,7 @@ $apiInstance = new Freee\Accounting\Api\SectionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 56; // int | 
+$id = 56; // int
 $section_params = new \Freee\Accounting\Model\SectionParams(); // \Freee\Accounting\Model\SectionParams | 部門の更新
 
 try {
@@ -293,11 +290,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling SectionsApi->updateSection: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -314,10 +309,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

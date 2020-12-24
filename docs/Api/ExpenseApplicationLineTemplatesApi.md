@@ -1,20 +1,21 @@
 # Freee\Accounting\ExpenseApplicationLineTemplatesApi
 
-All URIs are relative to *https://api.freee.co.jp*
+All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createExpenseApplicationLineTemplate**](ExpenseApplicationLineTemplatesApi.md#createExpenseApplicationLineTemplate) | **POST** /api/1/expense_application_line_templates | 経費科目の作成
-[**destroyExpenseApplicationLineTemplate**](ExpenseApplicationLineTemplatesApi.md#destroyExpenseApplicationLineTemplate) | **DELETE** /api/1/expense_application_line_templates/{id} | 経費科目の削除
-[**getExpenseApplicationLineTemplate**](ExpenseApplicationLineTemplatesApi.md#getExpenseApplicationLineTemplate) | **GET** /api/1/expense_application_line_templates/{id} | 経費科目の取得
-[**getExpenseApplicationLineTemplates**](ExpenseApplicationLineTemplatesApi.md#getExpenseApplicationLineTemplates) | **GET** /api/1/expense_application_line_templates | 経費科目一覧の取得
-[**updateExpenseApplicationLineTemplate**](ExpenseApplicationLineTemplatesApi.md#updateExpenseApplicationLineTemplate) | **PUT** /api/1/expense_application_line_templates/{id} | 経費科目の更新
+[**createExpenseApplicationLineTemplate()**](ExpenseApplicationLineTemplatesApi.md#createExpenseApplicationLineTemplate) | **POST** /api/1/expense_application_line_templates | 経費科目の作成
+[**destroyExpenseApplicationLineTemplate()**](ExpenseApplicationLineTemplatesApi.md#destroyExpenseApplicationLineTemplate) | **DELETE** /api/1/expense_application_line_templates/{id} | 経費科目の削除
+[**getExpenseApplicationLineTemplate()**](ExpenseApplicationLineTemplatesApi.md#getExpenseApplicationLineTemplate) | **GET** /api/1/expense_application_line_templates/{id} | 経費科目の取得
+[**getExpenseApplicationLineTemplates()**](ExpenseApplicationLineTemplatesApi.md#getExpenseApplicationLineTemplates) | **GET** /api/1/expense_application_line_templates | 経費科目一覧の取得
+[**updateExpenseApplicationLineTemplate()**](ExpenseApplicationLineTemplatesApi.md#updateExpenseApplicationLineTemplate) | **PUT** /api/1/expense_application_line_templates/{id} | 経費科目の更新
 
 
+## `createExpenseApplicationLineTemplate()`
 
-## createExpenseApplicationLineTemplate
-
-> \Freee\Accounting\Model\ExpenseApplicationLineTemplateResponse createExpenseApplicationLineTemplate($expense_application_line_template_params)
+```php
+createExpenseApplicationLineTemplate($expense_application_line_template_params): \Freee\Accounting\Model\ExpenseApplicationLineTemplateResponse
+```
 
 経費科目の作成
 
@@ -43,11 +44,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ExpenseApplicationLineTemplatesApi->createExpenseApplicationLineTemplate: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -63,17 +62,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `destroyExpenseApplicationLineTemplate()`
 
-## destroyExpenseApplicationLineTemplate
-
-> destroyExpenseApplicationLineTemplate($id, $company_id)
+```php
+destroyExpenseApplicationLineTemplate($id, $company_id)
+```
 
 経費科目の削除
 
@@ -102,11 +102,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ExpenseApplicationLineTemplatesApi->destroyExpenseApplicationLineTemplate: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -124,16 +122,17 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getExpenseApplicationLineTemplate()`
 
-## getExpenseApplicationLineTemplate
-
-> \Freee\Accounting\Model\ExpenseApplicationLineTemplateResponse getExpenseApplicationLineTemplate($id, $company_id)
+```php
+getExpenseApplicationLineTemplate($id, $company_id): \Freee\Accounting\Model\ExpenseApplicationLineTemplateResponse
+```
 
 経費科目の取得
 
@@ -163,11 +162,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ExpenseApplicationLineTemplatesApi->getExpenseApplicationLineTemplate: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -185,16 +182,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getExpenseApplicationLineTemplates()`
 
-## getExpenseApplicationLineTemplates
-
-> \Freee\Accounting\Model\InlineResponse2003 getExpenseApplicationLineTemplates($company_id, $offset, $limit)
+```php
+getExpenseApplicationLineTemplates($company_id, $offset, $limit): \Freee\Accounting\Model\InlineResponse2003
+```
 
 経費科目一覧の取得
 
@@ -227,11 +225,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ExpenseApplicationLineTemplatesApi->getExpenseApplicationLineTemplates: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -250,16 +246,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `updateExpenseApplicationLineTemplate()`
 
-## updateExpenseApplicationLineTemplate
-
-> \Freee\Accounting\Model\ExpenseApplicationLineTemplateResponse updateExpenseApplicationLineTemplate($id, $expense_application_line_template_params)
+```php
+updateExpenseApplicationLineTemplate($id, $expense_application_line_template_params): \Freee\Accounting\Model\ExpenseApplicationLineTemplateResponse
+```
 
 経費科目の更新
 
@@ -289,11 +286,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ExpenseApplicationLineTemplatesApi->updateExpenseApplicationLineTemplate: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -310,10 +305,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

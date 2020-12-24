@@ -1,17 +1,18 @@
 # Freee\Accounting\ApprovalFlowRoutesApi
 
-All URIs are relative to *https://api.freee.co.jp*
+All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getApprovalFlowRoute**](ApprovalFlowRoutesApi.md#getApprovalFlowRoute) | **GET** /api/1/approval_flow_routes/{id} | 申請経路の取得
-[**getApprovalFlowRoutes**](ApprovalFlowRoutesApi.md#getApprovalFlowRoutes) | **GET** /api/1/approval_flow_routes | 申請経路一覧の取得
+[**getApprovalFlowRoute()**](ApprovalFlowRoutesApi.md#getApprovalFlowRoute) | **GET** /api/1/approval_flow_routes/{id} | 申請経路の取得
+[**getApprovalFlowRoutes()**](ApprovalFlowRoutesApi.md#getApprovalFlowRoutes) | **GET** /api/1/approval_flow_routes | 申請経路一覧の取得
 
 
+## `getApprovalFlowRoute()`
 
-## getApprovalFlowRoute
-
-> \Freee\Accounting\Model\ApprovalFlowRouteResponse getApprovalFlowRoute($id, $company_id)
+```php
+getApprovalFlowRoute($id, $company_id): \Freee\Accounting\Model\ApprovalFlowRouteResponse
+```
 
 申請経路の取得
 
@@ -43,11 +44,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ApprovalFlowRoutesApi->getApprovalFlowRoute: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -65,16 +64,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getApprovalFlowRoutes()`
 
-## getApprovalFlowRoutes
-
-> \Freee\Accounting\Model\ApprovalFlowRoutesIndexResponse getApprovalFlowRoutes($company_id, $included_user_id, $usage, $request_form_id)
+```php
+getApprovalFlowRoutes($company_id, $included_user_id, $usage, $request_form_id): \Freee\Accounting\Model\ApprovalFlowRoutesIndexResponse
+```
 
 申請経路一覧の取得
 
@@ -108,11 +108,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ApprovalFlowRoutesApi->getApprovalFlowRoutes: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -132,9 +130,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

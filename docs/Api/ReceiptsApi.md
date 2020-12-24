@@ -1,20 +1,21 @@
 # Freee\Accounting\ReceiptsApi
 
-All URIs are relative to *https://api.freee.co.jp*
+All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createReceipt**](ReceiptsApi.md#createReceipt) | **POST** /api/1/receipts | ファイルボックス 証憑ファイルアップロード
-[**destroyReceipt**](ReceiptsApi.md#destroyReceipt) | **DELETE** /api/1/receipts/{id} | ファイルボックス 証憑ファイルを削除する
-[**getReceipt**](ReceiptsApi.md#getReceipt) | **GET** /api/1/receipts/{id} | ファイルボックス 証憑ファイルの取得
-[**getReceipts**](ReceiptsApi.md#getReceipts) | **GET** /api/1/receipts | ファイルボックス 証憑ファイル一覧の取得
-[**updateReceipt**](ReceiptsApi.md#updateReceipt) | **PUT** /api/1/receipts/{id} | ファイルボックス 証憑ファイル情報更新
+[**createReceipt()**](ReceiptsApi.md#createReceipt) | **POST** /api/1/receipts | ファイルボックス 証憑ファイルアップロード
+[**destroyReceipt()**](ReceiptsApi.md#destroyReceipt) | **DELETE** /api/1/receipts/{id} | ファイルボックス 証憑ファイルを削除する
+[**getReceipt()**](ReceiptsApi.md#getReceipt) | **GET** /api/1/receipts/{id} | ファイルボックス 証憑ファイルの取得
+[**getReceipts()**](ReceiptsApi.md#getReceipts) | **GET** /api/1/receipts | ファイルボックス 証憑ファイル一覧の取得
+[**updateReceipt()**](ReceiptsApi.md#updateReceipt) | **PUT** /api/1/receipts/{id} | ファイルボックス 証憑ファイル情報更新
 
 
+## `createReceipt()`
 
-## createReceipt
-
-> \Freee\Accounting\Model\ReceiptResponse createReceipt($company_id, $receipt, $description, $issue_date)
+```php
+createReceipt($company_id, $receipt, $description, $issue_date): \Freee\Accounting\Model\ReceiptResponse
+```
 
 ファイルボックス 証憑ファイルアップロード
 
@@ -48,11 +49,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ReceiptsApi->createReceipt: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -71,17 +70,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
-- **Accept**: application/json
+- **Content-Type**: `multipart/form-data`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `destroyReceipt()`
 
-## destroyReceipt
-
-> destroyReceipt($id, $company_id)
+```php
+destroyReceipt($id, $company_id)
+```
 
 ファイルボックス 証憑ファイルを削除する
 
@@ -112,11 +112,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ReceiptsApi->destroyReceipt: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -134,16 +132,17 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getReceipt()`
 
-## getReceipt
-
-> \Freee\Accounting\Model\ReceiptResponse getReceipt($id, $company_id)
+```php
+getReceipt($id, $company_id): \Freee\Accounting\Model\ReceiptResponse
+```
 
 ファイルボックス 証憑ファイルの取得
 
@@ -175,11 +174,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ReceiptsApi->getReceipt: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -197,16 +194,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getReceipts()`
 
-## getReceipts
-
-> \Freee\Accounting\Model\InlineResponse2008 getReceipts($company_id, $start_date, $end_date, $user_name, $number, $comment_type, $comment_important, $category, $offset, $limit)
+```php
+getReceipts($company_id, $start_date, $end_date, $user_name, $number, $comment_type, $comment_important, $category, $offset, $limit): \Freee\Accounting\Model\InlineResponse2008
+```
 
 ファイルボックス 証憑ファイル一覧の取得
 
@@ -246,11 +244,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ReceiptsApi->getReceipts: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -276,16 +272,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `updateReceipt()`
 
-## updateReceipt
-
-> \Freee\Accounting\Model\ReceiptResponse updateReceipt($id, $receipt_update_params)
+```php
+updateReceipt($id, $receipt_update_params): \Freee\Accounting\Model\ReceiptResponse
+```
 
 ファイルボックス 証憑ファイル情報更新
 
@@ -317,11 +314,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ReceiptsApi->updateReceipt: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -338,10 +333,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

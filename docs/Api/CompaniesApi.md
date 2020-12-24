@@ -1,18 +1,19 @@
 # Freee\Accounting\CompaniesApi
 
-All URIs are relative to *https://api.freee.co.jp*
+All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCompanies**](CompaniesApi.md#getCompanies) | **GET** /api/1/companies | 事業所一覧の取得
-[**getCompany**](CompaniesApi.md#getCompany) | **GET** /api/1/companies/{id} | 事業所の詳細情報の取得
-[**updateCompany**](CompaniesApi.md#updateCompany) | **PUT** /api/1/companies/{id} | 事業所情報の更新
+[**getCompanies()**](CompaniesApi.md#getCompanies) | **GET** /api/1/companies | 事業所一覧の取得
+[**getCompany()**](CompaniesApi.md#getCompany) | **GET** /api/1/companies/{id} | 事業所の詳細情報の取得
+[**updateCompany()**](CompaniesApi.md#updateCompany) | **PUT** /api/1/companies/{id} | 事業所情報の更新
 
 
+## `getCompanies()`
 
-## getCompanies
-
-> \Freee\Accounting\Model\CompanyIndexResponse getCompanies()
+```php
+getCompanies(): \Freee\Accounting\Model\CompanyIndexResponse
+```
 
 事業所一覧の取得
 
@@ -42,7 +43,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling CompaniesApi->getCompanies: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -60,16 +60,17 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getCompany()`
 
-## getCompany
-
-> \Freee\Accounting\Model\CompanyResponse getCompany($id, $details, $account_items, $taxes, $items, $partners, $sections, $tags, $walletables)
+```php
+getCompany($id, $details, $account_items, $taxes, $items, $partners, $sections, $tags, $walletables): \Freee\Accounting\Model\CompanyResponse
+```
 
 事業所の詳細情報の取得
 
@@ -108,11 +109,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling CompaniesApi->getCompany: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -137,16 +136,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `updateCompany()`
 
-## updateCompany
-
-> \Freee\Accounting\Model\CompanyUpdateResponse updateCompany($id, $company_params)
+```php
+updateCompany($id, $company_params): \Freee\Accounting\Model\CompanyUpdateResponse
+```
 
 事業所情報の更新
 
@@ -170,7 +170,7 @@ $apiInstance = new Freee\Accounting\Api\CompaniesApi(
     $config
 );
 $id = 56; // int | 事業所ID
-$company_params = new \Freee\Accounting\Model\CompanyParams(); // \Freee\Accounting\Model\CompanyParams | 
+$company_params = new \Freee\Accounting\Model\CompanyParams(); // \Freee\Accounting\Model\CompanyParams
 
 try {
     $result = $apiInstance->updateCompany($id, $company_params);
@@ -178,11 +178,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling CompaniesApi->updateCompany: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -199,10 +197,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

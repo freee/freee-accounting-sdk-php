@@ -1,20 +1,21 @@
 # Freee\Accounting\WalletablesApi
 
-All URIs are relative to *https://api.freee.co.jp*
+All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createWalletable**](WalletablesApi.md#createWalletable) | **POST** /api/1/walletables | 口座の作成
-[**destroyWalletable**](WalletablesApi.md#destroyWalletable) | **DELETE** /api/1/walletables/{type}/{id} | 口座の削除
-[**getWalletable**](WalletablesApi.md#getWalletable) | **GET** /api/1/walletables/{type}/{id} | 口座情報の取得
-[**getWalletables**](WalletablesApi.md#getWalletables) | **GET** /api/1/walletables | 口座一覧の取得
-[**updateWalletable**](WalletablesApi.md#updateWalletable) | **PUT** /api/1/walletables/{type}/{id} | 口座の更新
+[**createWalletable()**](WalletablesApi.md#createWalletable) | **POST** /api/1/walletables | 口座の作成
+[**destroyWalletable()**](WalletablesApi.md#destroyWalletable) | **DELETE** /api/1/walletables/{type}/{id} | 口座の削除
+[**getWalletable()**](WalletablesApi.md#getWalletable) | **GET** /api/1/walletables/{type}/{id} | 口座情報の取得
+[**getWalletables()**](WalletablesApi.md#getWalletables) | **GET** /api/1/walletables | 口座一覧の取得
+[**updateWalletable()**](WalletablesApi.md#updateWalletable) | **PUT** /api/1/walletables/{type}/{id} | 口座の更新
 
 
+## `createWalletable()`
 
-## createWalletable
-
-> \Freee\Accounting\Model\WalletableCreateResponse createWalletable($walletable_create_params)
+```php
+createWalletable($walletable_create_params): \Freee\Accounting\Model\WalletableCreateResponse
+```
 
 口座の作成
 
@@ -45,11 +46,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling WalletablesApi->createWalletable: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -65,17 +64,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `destroyWalletable()`
 
-## destroyWalletable
-
-> destroyWalletable($id, $type, $company_id)
+```php
+destroyWalletable($id, $type, $company_id)
+```
 
 口座の削除
 
@@ -107,11 +107,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling WalletablesApi->destroyWalletable: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -130,16 +128,17 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getWalletable()`
 
-## getWalletable
-
-> \Freee\Accounting\Model\InlineResponse20019 getWalletable($id, $type, $company_id)
+```php
+getWalletable($id, $type, $company_id): \Freee\Accounting\Model\InlineResponse20019
+```
 
 口座情報の取得
 
@@ -172,11 +171,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling WalletablesApi->getWalletable: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -195,16 +192,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getWalletables()`
 
-## getWalletables
-
-> \Freee\Accounting\Model\InlineResponse20018 getWalletables($company_id, $with_balance, $type)
+```php
+getWalletables($company_id, $with_balance, $type): \Freee\Accounting\Model\InlineResponse20018
+```
 
 口座一覧の取得
 
@@ -237,11 +235,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling WalletablesApi->getWalletables: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -260,16 +256,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `updateWalletable()`
 
-## updateWalletable
-
-> \Freee\Accounting\Model\InlineResponse20019 updateWalletable($id, $type, $walletable_update_params)
+```php
+updateWalletable($id, $type, $walletable_update_params): \Freee\Accounting\Model\InlineResponse20019
+```
 
 口座の更新
 
@@ -292,7 +289,7 @@ $apiInstance = new Freee\Accounting\Api\WalletablesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 56; // int | 
+$id = 56; // int
 $type = 'type_example'; // string | 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座）
 $walletable_update_params = new \Freee\Accounting\Model\WalletableUpdateParams(); // \Freee\Accounting\Model\WalletableUpdateParams | 口座の作成
 
@@ -302,11 +299,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling WalletablesApi->updateWalletable: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -324,10 +319,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-
