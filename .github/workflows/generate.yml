@@ -31,6 +31,9 @@ jobs:
           sudo snap install yq
 
       - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          ref: ${{ github.head_ref }}
 
       - name: Remove old codes
         run: |
