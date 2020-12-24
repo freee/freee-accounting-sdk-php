@@ -45,7 +45,7 @@ PHP の基礎については、 [PHP: PHP マニュアル - Manual ](https://www
 
 このリポジトリは以下の環境を想定しています。
 
-- PHP 7.1 以上
+- PHP 7.2 以上
 - composer
 
 このリポジトリは、 PHP 7.1 以上を対象としています。PHP の実行環境をお持ちでない方は、 [PHP: インストールと設定 - Manual](https://www.php.net/manual/ja/install.php) を参考に環境を準備してください。また、 [composer](https://getcomposer.org/) はこちらからインストールしてください。
