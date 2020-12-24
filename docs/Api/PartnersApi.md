@@ -1,21 +1,22 @@
 # Freee\Accounting\PartnersApi
 
-All URIs are relative to *https://api.freee.co.jp*
+All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createPartner**](PartnersApi.md#createPartner) | **POST** /api/1/partners | 取引先の作成
-[**destroyPartner**](PartnersApi.md#destroyPartner) | **DELETE** /api/1/partners/{id} | 取引先の削除
-[**getPartner**](PartnersApi.md#getPartner) | **GET** /api/1/partners/{id} | 取引先の取得
-[**getPartners**](PartnersApi.md#getPartners) | **GET** /api/1/partners | 取引先一覧の取得
-[**updatePartner**](PartnersApi.md#updatePartner) | **PUT** /api/1/partners/{id} | 取引先の更新
-[**updatePartnerByCode**](PartnersApi.md#updatePartnerByCode) | **PUT** /api/1/partners/code/{code} | 取引先の更新
+[**createPartner()**](PartnersApi.md#createPartner) | **POST** /api/1/partners | 取引先の作成
+[**destroyPartner()**](PartnersApi.md#destroyPartner) | **DELETE** /api/1/partners/{id} | 取引先の削除
+[**getPartner()**](PartnersApi.md#getPartner) | **GET** /api/1/partners/{id} | 取引先の取得
+[**getPartners()**](PartnersApi.md#getPartners) | **GET** /api/1/partners | 取引先一覧の取得
+[**updatePartner()**](PartnersApi.md#updatePartner) | **PUT** /api/1/partners/{id} | 取引先の更新
+[**updatePartnerByCode()**](PartnersApi.md#updatePartnerByCode) | **PUT** /api/1/partners/code/{code} | 取引先の更新
 
 
+## `createPartner()`
 
-## createPartner
-
-> \Freee\Accounting\Model\PartnerResponse createPartner($partner_create_params)
+```php
+createPartner($partner_create_params): \Freee\Accounting\Model\PartnerResponse
+```
 
 取引先の作成
 
@@ -46,11 +47,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling PartnersApi->createPartner: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -66,17 +65,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `destroyPartner()`
 
-## destroyPartner
-
-> destroyPartner($id, $company_id)
+```php
+destroyPartner($id, $company_id)
+```
 
 取引先の削除
 
@@ -107,11 +107,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling PartnersApi->destroyPartner: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -129,16 +127,17 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getPartner()`
 
-## getPartner
-
-> \Freee\Accounting\Model\PartnerResponse getPartner($id, $company_id)
+```php
+getPartner($id, $company_id): \Freee\Accounting\Model\PartnerResponse
+```
 
 取引先の取得
 
@@ -170,11 +169,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling PartnersApi->getPartner: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -192,16 +189,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getPartners()`
 
-## getPartners
-
-> \Freee\Accounting\Model\PartnersResponse getPartners($company_id, $offset, $limit, $keyword)
+```php
+getPartners($company_id, $offset, $limit, $keyword): \Freee\Accounting\Model\PartnersResponse
+```
 
 取引先一覧の取得
 
@@ -235,11 +233,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling PartnersApi->getPartners: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -259,16 +255,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `updatePartner()`
 
-## updatePartner
-
-> \Freee\Accounting\Model\PartnerResponse updatePartner($id, $partner_update_params)
+```php
+updatePartner($id, $partner_update_params): \Freee\Accounting\Model\PartnerResponse
+```
 
 取引先の更新
 
@@ -300,11 +297,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling PartnersApi->updatePartner: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -321,17 +316,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `updatePartnerByCode()`
 
-## updatePartnerByCode
-
-> \Freee\Accounting\Model\PartnerResponse updatePartnerByCode($code, $partner_update_params)
+```php
+updatePartnerByCode($code, $partner_update_params): \Freee\Accounting\Model\PartnerResponse
+```
 
 取引先の更新
 
@@ -363,11 +359,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling PartnersApi->updatePartnerByCode: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -384,10 +378,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

@@ -1,18 +1,19 @@
 # Freee\Accounting\TaxesApi
 
-All URIs are relative to *https://api.freee.co.jp*
+All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getTaxCode**](TaxesApi.md#getTaxCode) | **GET** /api/1/taxes/codes/{code} | 税区分コードの取得
-[**getTaxCodes**](TaxesApi.md#getTaxCodes) | **GET** /api/1/taxes/codes | 税区分コード一覧の取得
-[**getTaxesCompanies**](TaxesApi.md#getTaxesCompanies) | **GET** /api/1/taxes/companies/{company_id} | 税区分コード詳細一覧の取得
+[**getTaxCode()**](TaxesApi.md#getTaxCode) | **GET** /api/1/taxes/codes/{code} | 税区分コードの取得
+[**getTaxCodes()**](TaxesApi.md#getTaxCodes) | **GET** /api/1/taxes/codes | 税区分コード一覧の取得
+[**getTaxesCompanies()**](TaxesApi.md#getTaxesCompanies) | **GET** /api/1/taxes/companies/{company_id} | 税区分コード詳細一覧の取得
 
 
+## `getTaxCode()`
 
-## getTaxCode
-
-> \Freee\Accounting\Model\TaxResponse getTaxCode($code)
+```php
+getTaxCode($code): \Freee\Accounting\Model\TaxResponse
+```
 
 税区分コードの取得
 
@@ -43,11 +44,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TaxesApi->getTaxCode: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -64,16 +63,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getTaxCodes()`
 
-## getTaxCodes
-
-> \Freee\Accounting\Model\InlineResponse20012 getTaxCodes()
+```php
+getTaxCodes(): \Freee\Accounting\Model\InlineResponse20012
+```
 
 税区分コード一覧の取得
 
@@ -103,7 +103,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TaxesApi->getTaxCodes: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -121,16 +120,17 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getTaxesCompanies()`
 
-## getTaxesCompanies
-
-> \Freee\Accounting\Model\InlineResponse20013 getTaxesCompanies($company_id)
+```php
+getTaxesCompanies($company_id): \Freee\Accounting\Model\InlineResponse20013
+```
 
 税区分コード詳細一覧の取得
 
@@ -159,11 +159,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TaxesApi->getTaxesCompanies: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -180,9 +178,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

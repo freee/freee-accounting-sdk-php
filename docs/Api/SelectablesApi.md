@@ -1,16 +1,17 @@
 # Freee\Accounting\SelectablesApi
 
-All URIs are relative to *https://api.freee.co.jp*
+All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getFormsSelectables**](SelectablesApi.md#getFormsSelectables) | **GET** /api/1/forms/selectables | フォーム用選択項目情報の取得
+[**getFormsSelectables()**](SelectablesApi.md#getFormsSelectables) | **GET** /api/1/forms/selectables | フォーム用選択項目情報の取得
 
 
+## `getFormsSelectables()`
 
-## getFormsSelectables
-
-> \Freee\Accounting\Model\SelectablesIndexResponse getFormsSelectables($company_id, $includes)
+```php
+getFormsSelectables($company_id, $includes): \Freee\Accounting\Model\SelectablesIndexResponse
+```
 
 フォーム用選択項目情報の取得
 
@@ -42,11 +43,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling SelectablesApi->getFormsSelectables: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -64,9 +63,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

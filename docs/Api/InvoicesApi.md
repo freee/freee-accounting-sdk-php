@@ -1,20 +1,21 @@
 # Freee\Accounting\InvoicesApi
 
-All URIs are relative to *https://api.freee.co.jp*
+All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createInvoice**](InvoicesApi.md#createInvoice) | **POST** /api/1/invoices | 請求書の作成
-[**destroyInvoice**](InvoicesApi.md#destroyInvoice) | **DELETE** /api/1/invoices/{id} | 請求書の削除
-[**getInvoice**](InvoicesApi.md#getInvoice) | **GET** /api/1/invoices/{id} | 請求書の取得
-[**getInvoices**](InvoicesApi.md#getInvoices) | **GET** /api/1/invoices | 請求書一覧の取得
-[**updateInvoice**](InvoicesApi.md#updateInvoice) | **PUT** /api/1/invoices/{id} | 請求書の更新
+[**createInvoice()**](InvoicesApi.md#createInvoice) | **POST** /api/1/invoices | 請求書の作成
+[**destroyInvoice()**](InvoicesApi.md#destroyInvoice) | **DELETE** /api/1/invoices/{id} | 請求書の削除
+[**getInvoice()**](InvoicesApi.md#getInvoice) | **GET** /api/1/invoices/{id} | 請求書の取得
+[**getInvoices()**](InvoicesApi.md#getInvoices) | **GET** /api/1/invoices | 請求書一覧の取得
+[**updateInvoice()**](InvoicesApi.md#updateInvoice) | **PUT** /api/1/invoices/{id} | 請求書の更新
 
 
+## `createInvoice()`
 
-## createInvoice
-
-> \Freee\Accounting\Model\InvoiceResponse createInvoice($invoice_create_params)
+```php
+createInvoice($invoice_create_params): \Freee\Accounting\Model\InvoiceResponse
+```
 
 請求書の作成
 
@@ -45,11 +46,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling InvoicesApi->createInvoice: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -65,17 +64,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `destroyInvoice()`
 
-## destroyInvoice
-
-> destroyInvoice($id, $company_id)
+```php
+destroyInvoice($id, $company_id)
+```
 
 請求書の削除
 
@@ -98,7 +98,7 @@ $apiInstance = new Freee\Accounting\Api\InvoicesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 56; // int | 
+$id = 56; // int
 $company_id = 56; // int | 事業所ID
 
 try {
@@ -106,11 +106,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling InvoicesApi->destroyInvoice: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -128,16 +126,17 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getInvoice()`
 
-## getInvoice
-
-> \Freee\Accounting\Model\InvoiceResponse getInvoice($company_id, $id)
+```php
+getInvoice($company_id, $id): \Freee\Accounting\Model\InvoiceResponse
+```
 
 請求書の取得
 
@@ -169,11 +168,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling InvoicesApi->getInvoice: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -191,16 +188,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getInvoices()`
 
-## getInvoices
-
-> \Freee\Accounting\Model\InlineResponse2004 getInvoices($company_id, $partner_id, $partner_code, $start_issue_date, $end_issue_date, $start_due_date, $end_due_date, $invoice_number, $description, $invoice_status, $payment_status, $offset, $limit)
+```php
+getInvoices($company_id, $partner_id, $partner_code, $start_issue_date, $end_issue_date, $start_due_date, $end_due_date, $invoice_number, $description, $invoice_status, $payment_status, $offset, $limit): \Freee\Accounting\Model\InlineResponse2004
+```
 
 請求書一覧の取得
 
@@ -243,11 +241,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling InvoicesApi->getInvoices: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -276,16 +272,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `updateInvoice()`
 
-## updateInvoice
-
-> \Freee\Accounting\Model\InvoiceResponse updateInvoice($id, $invoice_update_params)
+```php
+updateInvoice($id, $invoice_update_params): \Freee\Accounting\Model\InvoiceResponse
+```
 
 請求書の更新
 
@@ -317,11 +314,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling InvoicesApi->updateInvoice: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -338,10 +333,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

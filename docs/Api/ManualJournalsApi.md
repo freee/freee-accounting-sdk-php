@@ -1,20 +1,21 @@
 # Freee\Accounting\ManualJournalsApi
 
-All URIs are relative to *https://api.freee.co.jp*
+All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createManualJournal**](ManualJournalsApi.md#createManualJournal) | **POST** /api/1/manual_journals | 振替伝票の作成
-[**destroyManualJournal**](ManualJournalsApi.md#destroyManualJournal) | **DELETE** /api/1/manual_journals/{id} | 振替伝票の削除
-[**getManualJournal**](ManualJournalsApi.md#getManualJournal) | **GET** /api/1/manual_journals/{id} | 振替伝票の取得
-[**getManualJournals**](ManualJournalsApi.md#getManualJournals) | **GET** /api/1/manual_journals | 振替伝票一覧の取得
-[**updateManualJournal**](ManualJournalsApi.md#updateManualJournal) | **PUT** /api/1/manual_journals/{id} | 振替伝票の更新
+[**createManualJournal()**](ManualJournalsApi.md#createManualJournal) | **POST** /api/1/manual_journals | 振替伝票の作成
+[**destroyManualJournal()**](ManualJournalsApi.md#destroyManualJournal) | **DELETE** /api/1/manual_journals/{id} | 振替伝票の削除
+[**getManualJournal()**](ManualJournalsApi.md#getManualJournal) | **GET** /api/1/manual_journals/{id} | 振替伝票の取得
+[**getManualJournals()**](ManualJournalsApi.md#getManualJournals) | **GET** /api/1/manual_journals | 振替伝票一覧の取得
+[**updateManualJournal()**](ManualJournalsApi.md#updateManualJournal) | **PUT** /api/1/manual_journals/{id} | 振替伝票の更新
 
 
+## `createManualJournal()`
 
-## createManualJournal
-
-> \Freee\Accounting\Model\ManualJournalResponse createManualJournal($manual_journal_create_params)
+```php
+createManualJournal($manual_journal_create_params): \Freee\Accounting\Model\ManualJournalResponse
+```
 
 振替伝票の作成
 
@@ -45,11 +46,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ManualJournalsApi->createManualJournal: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -65,17 +64,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `destroyManualJournal()`
 
-## destroyManualJournal
-
-> destroyManualJournal($id, $company_id)
+```php
+destroyManualJournal($id, $company_id)
+```
 
 振替伝票の削除
 
@@ -98,7 +98,7 @@ $apiInstance = new Freee\Accounting\Api\ManualJournalsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 56; // int | 
+$id = 56; // int
 $company_id = 56; // int | 事業所ID
 
 try {
@@ -106,11 +106,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ManualJournalsApi->destroyManualJournal: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -128,16 +126,17 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getManualJournal()`
 
-## getManualJournal
-
-> \Freee\Accounting\Model\ManualJournalResponse getManualJournal($company_id, $id)
+```php
+getManualJournal($company_id, $id): \Freee\Accounting\Model\ManualJournalResponse
+```
 
 振替伝票の取得
 
@@ -161,7 +160,7 @@ $apiInstance = new Freee\Accounting\Api\ManualJournalsApi(
     $config
 );
 $company_id = 56; // int | 事業所ID
-$id = 56; // int | 
+$id = 56; // int
 
 try {
     $result = $apiInstance->getManualJournal($company_id, $id);
@@ -169,11 +168,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ManualJournalsApi->getManualJournal: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -191,16 +188,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getManualJournals()`
 
-## getManualJournals
-
-> \Freee\Accounting\Model\InlineResponse2006 getManualJournals($company_id, $start_issue_date, $end_issue_date, $entry_side, $account_item_id, $min_amount, $max_amount, $partner_id, $partner_code, $item_id, $section_id, $segment_1_tag_id, $segment_2_tag_id, $segment_3_tag_id, $comment_status, $comment_important, $adjustment, $txn_number, $offset, $limit)
+```php
+getManualJournals($company_id, $start_issue_date, $end_issue_date, $entry_side, $account_item_id, $min_amount, $max_amount, $partner_id, $partner_code, $item_id, $section_id, $segment_1_tag_id, $segment_2_tag_id, $segment_3_tag_id, $comment_status, $comment_important, $adjustment, $txn_number, $offset, $limit): \Freee\Accounting\Model\InlineResponse2006
+```
 
 振替伝票一覧の取得
 
@@ -250,11 +248,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ManualJournalsApi->getManualJournals: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -290,16 +286,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `updateManualJournal()`
 
-## updateManualJournal
-
-> \Freee\Accounting\Model\ManualJournalResponse updateManualJournal($id, $manual_journal_update_params)
+```php
+updateManualJournal($id, $manual_journal_update_params): \Freee\Accounting\Model\ManualJournalResponse
+```
 
 振替伝票の更新
 
@@ -322,7 +319,7 @@ $apiInstance = new Freee\Accounting\Api\ManualJournalsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 56; // int | 
+$id = 56; // int
 $manual_journal_update_params = new \Freee\Accounting\Model\ManualJournalUpdateParams(); // \Freee\Accounting\Model\ManualJournalUpdateParams | 振替伝票の更新
 
 try {
@@ -331,11 +328,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ManualJournalsApi->updateManualJournal: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -352,10 +347,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

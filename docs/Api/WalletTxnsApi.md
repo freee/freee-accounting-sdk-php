@@ -1,19 +1,20 @@
 # Freee\Accounting\WalletTxnsApi
 
-All URIs are relative to *https://api.freee.co.jp*
+All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createWalletTxn**](WalletTxnsApi.md#createWalletTxn) | **POST** /api/1/wallet_txns | 明細の作成
-[**destroyWalletTxn**](WalletTxnsApi.md#destroyWalletTxn) | **DELETE** /api/1/wallet_txns/{id} | 明細の削除
-[**getWalletTxn**](WalletTxnsApi.md#getWalletTxn) | **GET** /api/1/wallet_txns/{id} | 明細の取得
-[**getWalletTxns**](WalletTxnsApi.md#getWalletTxns) | **GET** /api/1/wallet_txns | 明細一覧の取得
+[**createWalletTxn()**](WalletTxnsApi.md#createWalletTxn) | **POST** /api/1/wallet_txns | 明細の作成
+[**destroyWalletTxn()**](WalletTxnsApi.md#destroyWalletTxn) | **DELETE** /api/1/wallet_txns/{id} | 明細の削除
+[**getWalletTxn()**](WalletTxnsApi.md#getWalletTxn) | **GET** /api/1/wallet_txns/{id} | 明細の取得
+[**getWalletTxns()**](WalletTxnsApi.md#getWalletTxns) | **GET** /api/1/wallet_txns | 明細一覧の取得
 
 
+## `createWalletTxn()`
 
-## createWalletTxn
-
-> \Freee\Accounting\Model\WalletTxnResponse createWalletTxn($wallet_txn_params)
+```php
+createWalletTxn($wallet_txn_params): \Freee\Accounting\Model\WalletTxnResponse
+```
 
 明細の作成
 
@@ -44,11 +45,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling WalletTxnsApi->createWalletTxn: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -64,17 +63,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `destroyWalletTxn()`
 
-## destroyWalletTxn
-
-> destroyWalletTxn($id, $company_id)
+```php
+destroyWalletTxn($id, $company_id)
+```
 
 明細の削除
 
@@ -105,11 +105,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling WalletTxnsApi->destroyWalletTxn: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -127,16 +125,17 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getWalletTxn()`
 
-## getWalletTxn
-
-> \Freee\Accounting\Model\WalletTxnResponse getWalletTxn($id, $company_id)
+```php
+getWalletTxn($id, $company_id): \Freee\Accounting\Model\WalletTxnResponse
+```
 
 明細の取得
 
@@ -168,11 +167,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling WalletTxnsApi->getWalletTxn: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -190,16 +187,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getWalletTxns()`
 
-## getWalletTxns
-
-> \Freee\Accounting\Model\InlineResponse20017 getWalletTxns($company_id, $walletable_type, $walletable_id, $start_date, $end_date, $entry_side, $offset, $limit)
+```php
+getWalletTxns($company_id, $walletable_type, $walletable_id, $start_date, $end_date, $entry_side, $offset, $limit): \Freee\Accounting\Model\InlineResponse20017
+```
 
 明細一覧の取得
 
@@ -237,11 +235,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling WalletTxnsApi->getWalletTxns: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -265,9 +261,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

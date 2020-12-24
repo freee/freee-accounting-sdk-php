@@ -1,20 +1,21 @@
 # Freee\Accounting\TransfersApi
 
-All URIs are relative to *https://api.freee.co.jp*
+All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createTransfer**](TransfersApi.md#createTransfer) | **POST** /api/1/transfers | 取引（振替）の作成
-[**destroyTransfer**](TransfersApi.md#destroyTransfer) | **DELETE** /api/1/transfers/{id} | 取引（振替）の削除する
-[**getTransfer**](TransfersApi.md#getTransfer) | **GET** /api/1/transfers/{id} | 取引（振替）の取得
-[**getTransfers**](TransfersApi.md#getTransfers) | **GET** /api/1/transfers | 取引（振替）一覧の取得
-[**updateTransfer**](TransfersApi.md#updateTransfer) | **PUT** /api/1/transfers/{id} | 取引（振替）の更新
+[**createTransfer()**](TransfersApi.md#createTransfer) | **POST** /api/1/transfers | 取引（振替）の作成
+[**destroyTransfer()**](TransfersApi.md#destroyTransfer) | **DELETE** /api/1/transfers/{id} | 取引（振替）の削除する
+[**getTransfer()**](TransfersApi.md#getTransfer) | **GET** /api/1/transfers/{id} | 取引（振替）の取得
+[**getTransfers()**](TransfersApi.md#getTransfers) | **GET** /api/1/transfers | 取引（振替）一覧の取得
+[**updateTransfer()**](TransfersApi.md#updateTransfer) | **PUT** /api/1/transfers/{id} | 取引（振替）の更新
 
 
+## `createTransfer()`
 
-## createTransfer
-
-> \Freee\Accounting\Model\TransferResponse createTransfer($transfer_params)
+```php
+createTransfer($transfer_params): \Freee\Accounting\Model\TransferResponse
+```
 
 取引（振替）の作成
 
@@ -45,11 +46,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TransfersApi->createTransfer: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -65,17 +64,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `destroyTransfer()`
 
-## destroyTransfer
-
-> destroyTransfer($id, $company_id)
+```php
+destroyTransfer($id, $company_id)
+```
 
 取引（振替）の削除する
 
@@ -106,11 +106,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TransfersApi->destroyTransfer: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -128,16 +126,17 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getTransfer()`
 
-## getTransfer
-
-> \Freee\Accounting\Model\TransferResponse getTransfer($id, $company_id)
+```php
+getTransfer($id, $company_id): \Freee\Accounting\Model\TransferResponse
+```
 
 取引（振替）の取得
 
@@ -169,11 +168,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TransfersApi->getTransfer: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -191,16 +188,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getTransfers()`
 
-## getTransfers
-
-> \Freee\Accounting\Model\InlineResponse20014 getTransfers($company_id, $start_date, $end_date, $offset, $limit)
+```php
+getTransfers($company_id, $start_date, $end_date, $offset, $limit): \Freee\Accounting\Model\InlineResponse20014
+```
 
 取引（振替）一覧の取得
 
@@ -235,11 +233,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TransfersApi->getTransfers: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -260,16 +256,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `updateTransfer()`
 
-## updateTransfer
-
-> \Freee\Accounting\Model\TransferResponse updateTransfer($id, $transfer_params)
+```php
+updateTransfer($id, $transfer_params): \Freee\Accounting\Model\TransferResponse
+```
 
 取引（振替）の更新
 
@@ -301,11 +298,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TransfersApi->updateTransfer: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -322,10 +317,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

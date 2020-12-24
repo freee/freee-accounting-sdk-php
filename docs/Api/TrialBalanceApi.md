@@ -1,22 +1,23 @@
 # Freee\Accounting\TrialBalanceApi
 
-All URIs are relative to *https://api.freee.co.jp*
+All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getTrialBs**](TrialBalanceApi.md#getTrialBs) | **GET** /api/1/reports/trial_bs | 貸借対照表の取得
-[**getTrialBsThreeYears**](TrialBalanceApi.md#getTrialBsThreeYears) | **GET** /api/1/reports/trial_bs_three_years | 貸借対照表(３期間比較)の取得
-[**getTrialBsTwoYears**](TrialBalanceApi.md#getTrialBsTwoYears) | **GET** /api/1/reports/trial_bs_two_years | 貸借対照表(前年比較)の取得
-[**getTrialPl**](TrialBalanceApi.md#getTrialPl) | **GET** /api/1/reports/trial_pl | 損益計算書の取得
-[**getTrialPlSections**](TrialBalanceApi.md#getTrialPlSections) | **GET** /api/1/reports/trial_pl_sections | 損益計算書(部門比較)の取得
-[**getTrialPlThreeYears**](TrialBalanceApi.md#getTrialPlThreeYears) | **GET** /api/1/reports/trial_pl_three_years | 損益計算書(３期間比較)の取得
-[**getTrialPlTwoYears**](TrialBalanceApi.md#getTrialPlTwoYears) | **GET** /api/1/reports/trial_pl_two_years | 損益計算書(前年比較)の取得
+[**getTrialBs()**](TrialBalanceApi.md#getTrialBs) | **GET** /api/1/reports/trial_bs | 貸借対照表の取得
+[**getTrialBsThreeYears()**](TrialBalanceApi.md#getTrialBsThreeYears) | **GET** /api/1/reports/trial_bs_three_years | 貸借対照表(３期間比較)の取得
+[**getTrialBsTwoYears()**](TrialBalanceApi.md#getTrialBsTwoYears) | **GET** /api/1/reports/trial_bs_two_years | 貸借対照表(前年比較)の取得
+[**getTrialPl()**](TrialBalanceApi.md#getTrialPl) | **GET** /api/1/reports/trial_pl | 損益計算書の取得
+[**getTrialPlSections()**](TrialBalanceApi.md#getTrialPlSections) | **GET** /api/1/reports/trial_pl_sections | 損益計算書(部門比較)の取得
+[**getTrialPlThreeYears()**](TrialBalanceApi.md#getTrialPlThreeYears) | **GET** /api/1/reports/trial_pl_three_years | 損益計算書(３期間比較)の取得
+[**getTrialPlTwoYears()**](TrialBalanceApi.md#getTrialPlTwoYears) | **GET** /api/1/reports/trial_pl_two_years | 損益計算書(前年比較)の取得
 
 
+## `getTrialBs()`
 
-## getTrialBs
-
-> \Freee\Accounting\Model\TrialBsResponse getTrialBs($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $adjustment)
+```php
+getTrialBs($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $adjustment): \Freee\Accounting\Model\TrialBsResponse
+```
 
 貸借対照表の取得
 
@@ -58,11 +59,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TrialBalanceApi->getTrialBs: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -90,16 +89,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getTrialBsThreeYears()`
 
-## getTrialBsThreeYears
-
-> \Freee\Accounting\Model\TrialBsThreeYearsResponse getTrialBsThreeYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $adjustment)
+```php
+getTrialBsThreeYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $adjustment): \Freee\Accounting\Model\TrialBsThreeYearsResponse
+```
 
 貸借対照表(３期間比較)の取得
 
@@ -141,11 +141,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TrialBalanceApi->getTrialBsThreeYears: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -173,16 +171,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getTrialBsTwoYears()`
 
-## getTrialBsTwoYears
-
-> \Freee\Accounting\Model\TrialBsTwoYearsResponse getTrialBsTwoYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $adjustment)
+```php
+getTrialBsTwoYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $adjustment): \Freee\Accounting\Model\TrialBsTwoYearsResponse
+```
 
 貸借対照表(前年比較)の取得
 
@@ -224,11 +223,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TrialBalanceApi->getTrialBsTwoYears: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -256,16 +253,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getTrialPl()`
 
-## getTrialPl
-
-> \Freee\Accounting\Model\TrialPlResponse getTrialPl($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation)
+```php
+getTrialPl($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation): \Freee\Accounting\Model\TrialPlResponse
+```
 
 損益計算書の取得
 
@@ -309,11 +307,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TrialBalanceApi->getTrialPl: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -343,16 +339,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getTrialPlSections()`
 
-## getTrialPlSections
-
-> \Freee\Accounting\Model\TrialPlSectionsResponse getTrialPlSections($company_id, $section_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $adjustment, $cost_allocation)
+```php
+getTrialPlSections($company_id, $section_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $adjustment, $cost_allocation): \Freee\Accounting\Model\TrialPlSectionsResponse
+```
 
 損益計算書(部門比較)の取得
 
@@ -396,11 +393,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TrialBalanceApi->getTrialPlSections: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -430,16 +425,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getTrialPlThreeYears()`
 
-## getTrialPlThreeYears
-
-> \Freee\Accounting\Model\TrialPlThreeYearsResponse getTrialPlThreeYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation)
+```php
+getTrialPlThreeYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation): \Freee\Accounting\Model\TrialPlThreeYearsResponse
+```
 
 損益計算書(３期間比較)の取得
 
@@ -483,11 +479,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TrialBalanceApi->getTrialPlThreeYears: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -517,16 +511,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getTrialPlTwoYears()`
 
-## getTrialPlTwoYears
-
-> \Freee\Accounting\Model\TrialPlTwoYearsResponse getTrialPlTwoYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation)
+```php
+getTrialPlTwoYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation): \Freee\Accounting\Model\TrialPlTwoYearsResponse
+```
 
 損益計算書(前年比較)の取得
 
@@ -570,11 +565,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TrialBalanceApi->getTrialPlTwoYears: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -604,9 +597,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

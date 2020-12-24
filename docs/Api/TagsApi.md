@@ -1,20 +1,21 @@
 # Freee\Accounting\TagsApi
 
-All URIs are relative to *https://api.freee.co.jp*
+All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createTag**](TagsApi.md#createTag) | **POST** /api/1/tags | メモタグの作成
-[**destroyTag**](TagsApi.md#destroyTag) | **DELETE** /api/1/tags/{id} | メモタグの削除
-[**getTag**](TagsApi.md#getTag) | **GET** /api/1/tags/{id} | メモタグの詳細情報の取得
-[**getTags**](TagsApi.md#getTags) | **GET** /api/1/tags | メモタグ一覧の取得
-[**updateTag**](TagsApi.md#updateTag) | **PUT** /api/1/tags/{id} | メモタグの更新
+[**createTag()**](TagsApi.md#createTag) | **POST** /api/1/tags | メモタグの作成
+[**destroyTag()**](TagsApi.md#destroyTag) | **DELETE** /api/1/tags/{id} | メモタグの削除
+[**getTag()**](TagsApi.md#getTag) | **GET** /api/1/tags/{id} | メモタグの詳細情報の取得
+[**getTags()**](TagsApi.md#getTags) | **GET** /api/1/tags | メモタグ一覧の取得
+[**updateTag()**](TagsApi.md#updateTag) | **PUT** /api/1/tags/{id} | メモタグの更新
 
 
+## `createTag()`
 
-## createTag
-
-> \Freee\Accounting\Model\TagResponse createTag($tag_params)
+```php
+createTag($tag_params): \Freee\Accounting\Model\TagResponse
+```
 
 メモタグの作成
 
@@ -45,11 +46,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TagsApi->createTag: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -65,17 +64,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `destroyTag()`
 
-## destroyTag
-
-> destroyTag($id, $company_id)
+```php
+destroyTag($id, $company_id)
+```
 
 メモタグの削除
 
@@ -106,11 +106,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TagsApi->destroyTag: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -128,16 +126,17 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getTag()`
 
-## getTag
-
-> \Freee\Accounting\Model\TagResponse getTag($id, $company_id)
+```php
+getTag($id, $company_id): \Freee\Accounting\Model\TagResponse
+```
 
 メモタグの詳細情報の取得
 
@@ -169,11 +168,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TagsApi->getTag: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -191,16 +188,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getTags()`
 
-## getTags
-
-> \Freee\Accounting\Model\InlineResponse20011 getTags($company_id, $offset, $limit)
+```php
+getTags($company_id, $offset, $limit): \Freee\Accounting\Model\InlineResponse20011
+```
 
 メモタグ一覧の取得
 
@@ -233,11 +231,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TagsApi->getTags: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -256,16 +252,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `updateTag()`
 
-## updateTag
-
-> \Freee\Accounting\Model\TagResponse updateTag($id, $tag_params)
+```php
+updateTag($id, $tag_params): \Freee\Accounting\Model\TagResponse
+```
 
 メモタグの更新
 
@@ -297,11 +294,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TagsApi->updateTag: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -318,10 +313,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

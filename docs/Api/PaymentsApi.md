@@ -1,18 +1,19 @@
 # Freee\Accounting\PaymentsApi
 
-All URIs are relative to *https://api.freee.co.jp*
+All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createDealPayment**](PaymentsApi.md#createDealPayment) | **POST** /api/1/deals/{id}/payments | 取引（収入／支出）の支払行作成
-[**destroyDealPayment**](PaymentsApi.md#destroyDealPayment) | **DELETE** /api/1/deals/{id}/payments/{payment_id} | 取引（収入／支出）の支払行削除
-[**updateDealPayment**](PaymentsApi.md#updateDealPayment) | **PUT** /api/1/deals/{id}/payments/{payment_id} | 取引（収入／支出）の支払行更新
+[**createDealPayment()**](PaymentsApi.md#createDealPayment) | **POST** /api/1/deals/{id}/payments | 取引（収入／支出）の支払行作成
+[**destroyDealPayment()**](PaymentsApi.md#destroyDealPayment) | **DELETE** /api/1/deals/{id}/payments/{payment_id} | 取引（収入／支出）の支払行削除
+[**updateDealPayment()**](PaymentsApi.md#updateDealPayment) | **PUT** /api/1/deals/{id}/payments/{payment_id} | 取引（収入／支出）の支払行更新
 
 
+## `createDealPayment()`
 
-## createDealPayment
-
-> \Freee\Accounting\Model\DealResponse createDealPayment($id, $payment_params)
+```php
+createDealPayment($id, $payment_params): \Freee\Accounting\Model\DealResponse
+```
 
 取引（収入／支出）の支払行作成
 
@@ -44,11 +45,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling PaymentsApi->createDealPayment: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -65,17 +64,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `destroyDealPayment()`
 
-## destroyDealPayment
-
-> destroyDealPayment($id, $payment_id, $company_id)
+```php
+destroyDealPayment($id, $payment_id, $company_id)
+```
 
 取引（収入／支出）の支払行削除
 
@@ -107,11 +107,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling PaymentsApi->destroyDealPayment: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -130,16 +128,17 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `updateDealPayment()`
 
-## updateDealPayment
-
-> \Freee\Accounting\Model\DealResponse updateDealPayment($id, $payment_id, $payment_params)
+```php
+updateDealPayment($id, $payment_id, $payment_params): \Freee\Accounting\Model\DealResponse
+```
 
 取引（収入／支出）の支払行更新
 
@@ -172,11 +171,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling PaymentsApi->updateDealPayment: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -194,10 +191,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/x-www-form-urlencoded
-- **Accept**: application/json
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-
