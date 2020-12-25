@@ -41,7 +41,7 @@ jobs:
 
       - name: Update lib version
         run: |
-          yq write -i .openapi-generator/config.yml artifactVersion ${{ github.event.pull_request.title }}
+          yq write -i .openapi-generator/config.yml artifactVersion v${{ github.event.pull_request.title }}
 
       - name: Generate APIs
         env:
