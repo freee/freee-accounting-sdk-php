@@ -3,8 +3,8 @@
     "description": "FreeeAccounting OAuth2 Provider for Laravel Socialite",
     "license": "MIT",
     "authors": [{
-        "name": "dzeyelid",
-        "email": "dzeyelid@gmail.com"
+        "name": "Anonymous",
+        "email": "someone@example.com"
     }],
     "require": {
         "php": ">=5.5.9",
