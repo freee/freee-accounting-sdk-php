@@ -4,10 +4,6 @@
 
 会計freee API の詳細については、[会計API 概要 | freee Developers Community](https://developer.freee.co.jp/docs/accounting) をご参照ください。
 
-### **【重要】** 会計freee APIの新バージョンについて
-
-会計freee APIは、2020年12月まで、2つのバージョンが利用できる状態です。古いものは2020年12月に利用不可となります。
-
 このSDKは、リリースバージョンによって、内部で利用するAPIバージョンが異なります。
 
 - 2.0.0 以降 - 会計freee APIの新しいAPIバージョン(v2020-06-15)に対応しています。
