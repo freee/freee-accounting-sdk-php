@@ -812,14 +812,11 @@ class CompanyUpdateResponseCompany implements ModelInterface, ArrayAccess, \Json
         if ($this->container['phone2'] === null) {
             $invalidProperties[] = "'phone2' can't be null";
         }
-        if ($this->container['prefecture_code'] === null) {
-            $invalidProperties[] = "'prefecture_code' can't be null";
-        }
-        if (($this->container['prefecture_code'] > 46)) {
+        if (!is_null($this->container['prefecture_code']) && ($this->container['prefecture_code'] > 46)) {
             $invalidProperties[] = "invalid value for 'prefecture_code', must be smaller than or equal to 46.";
         }
 
-        if (($this->container['prefecture_code'] < 0)) {
+        if (!is_null($this->container['prefecture_code']) && ($this->container['prefecture_code'] < -1)) {
             $invalidProperties[] = "invalid value for 'prefecture_code', must be bigger than or equal to 0.";
         }
 
@@ -1407,10 +1404,10 @@ class CompanyUpdateResponseCompany implements ModelInterface, ArrayAccess, \Json
     public function setPrefectureCode($prefecture_code)
     {
 
-        if (($prefecture_code > 46)) {
+        if (!is_null($prefecture_code) && ($prefecture_code > 46)) {
             throw new \InvalidArgumentException('invalid value for $prefecture_code when calling CompanyUpdateResponseCompany., must be smaller than or equal to 46.');
         }
-        if (($prefecture_code < 0)) {
+        if (!is_null($prefecture_code) && ($prefecture_code < -1)) {
             throw new \InvalidArgumentException('invalid value for $prefecture_code when calling CompanyUpdateResponseCompany., must be bigger than or equal to 0.');
         }
 

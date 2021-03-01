@@ -216,7 +216,7 @@ class PartnerCreateParamsAddressAttributes implements ModelInterface, ArrayAcces
             $invalidProperties[] = "invalid value for 'prefecture_code', must be smaller than or equal to 46.";
         }
 
-        if (!is_null($this->container['prefecture_code']) && ($this->container['prefecture_code'] < 0)) {
+        if (!is_null($this->container['prefecture_code']) && ($this->container['prefecture_code'] < -0)) {
             $invalidProperties[] = "invalid value for 'prefecture_code', must be bigger than or equal to 0.";
         }
 

@@ -614,7 +614,7 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'company_prefecture_code', must be smaller than or equal to 46.";
         }
 
-        if (!is_null($this->container['company_prefecture_code']) && ($this->container['company_prefecture_code'] < 0)) {
+        if (!is_null($this->container['company_prefecture_code']) && ($this->container['company_prefecture_code'] < -1)) {
             $invalidProperties[] = "invalid value for 'company_prefecture_code', must be bigger than or equal to 0.";
         }
 
@@ -682,7 +682,7 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'partner_prefecture_code', must be smaller than or equal to 46.";
         }
 
-        if (!is_null($this->container['partner_prefecture_code']) && ($this->container['partner_prefecture_code'] < 0)) {
+        if (!is_null($this->container['partner_prefecture_code']) && ($this->container['partner_prefecture_code'] < -1)) {
             $invalidProperties[] = "invalid value for 'partner_prefecture_code', must be bigger than or equal to 0.";
         }
 
@@ -927,7 +927,7 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
         if (!is_null($company_prefecture_code) && ($company_prefecture_code > 46)) {
             throw new \InvalidArgumentException('invalid value for $company_prefecture_code when calling Invoice., must be smaller than or equal to 46.');
         }
-        if (!is_null($company_prefecture_code) && ($company_prefecture_code < 0)) {
+        if (!is_null($company_prefecture_code) && ($company_prefecture_code < -1)) {
             throw new \InvalidArgumentException('invalid value for $company_prefecture_code when calling Invoice., must be bigger than or equal to 0.');
         }
 
@@ -1507,7 +1507,7 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
         if (!is_null($partner_prefecture_code) && ($partner_prefecture_code > 46)) {
             throw new \InvalidArgumentException('invalid value for $partner_prefecture_code when calling Invoice., must be smaller than or equal to 46.');
         }
-        if (!is_null($partner_prefecture_code) && ($partner_prefecture_code < 0)) {
+        if (!is_null($partner_prefecture_code) && ($partner_prefecture_code < -1)) {
             throw new \InvalidArgumentException('invalid value for $partner_prefecture_code when calling Invoice., must be bigger than or equal to 0.');
         }
 

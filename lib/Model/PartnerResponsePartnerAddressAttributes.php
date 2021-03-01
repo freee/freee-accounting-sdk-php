@@ -258,7 +258,7 @@ class PartnerResponsePartnerAddressAttributes implements ModelInterface, ArrayAc
         if (!is_null($prefecture_code) && ($prefecture_code > 46)) {
             throw new \InvalidArgumentException('invalid value for $prefecture_code when calling PartnerResponsePartnerAddressAttributes., must be smaller than or equal to 46.');
         }
-        if (!is_null($prefecture_code) && ($prefecture_code < 0)) {
+        if (!is_null($prefecture_code) && ($prefecture_code < -1)) {
             throw new \InvalidArgumentException('invalid value for $prefecture_code when calling PartnerResponsePartnerAddressAttributes., must be bigger than or equal to 0.');
         }
 
