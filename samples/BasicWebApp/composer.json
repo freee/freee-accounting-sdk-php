@@ -10,7 +10,7 @@
     "require": {
         "php": "^7.2.5",
         "fideloper/proxy": "^4.2",
-        "freee/freee-accounting-sdk": "^2.0.0",
+        "freee/freee-accounting-sdk": "@dev",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.24",
@@ -64,5 +64,14 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ]
+    },
+    "repositories": {
+        "freee/freee-accounting-sdk": {
+            "type": "path",
+            "url": "./freee-accounting-sdk",
+            "options": {
+                "symlink": true
+            }
+        }
     }
 }

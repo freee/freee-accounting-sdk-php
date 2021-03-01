@@ -7,6 +7,7 @@ services:
     image: freee-accounting-sdk-php-console
     volumes:
       - "./BasicConsole:/usr/src/app"
+      - "../:/usr/src/app/freee-accounting-sdk"
     command: /bin/sh -c "while sleep 1000; do :; done"
   webapp:
     build:
@@ -18,4 +19,5 @@ services:
       - "8000:8000"
     volumes:
       - "./BasicWebApp:/usr/src/app"
+      - "../:/usr/src/app/freee-accounting-sdk"
     command: /bin/sh -c "while sleep 1000; do :; done"
