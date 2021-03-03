@@ -826,7 +826,7 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
         }
 
         if (!is_null($this->container['prefecture_code']) && ($this->container['prefecture_code'] < -1)) {
-            $invalidProperties[] = "invalid value for 'prefecture_code', must be bigger than or equal to 0.";
+            $invalidProperties[] = "invalid value for 'prefecture_code', must be bigger than or equal to -1.";
         }
 
         if ($this->container['private_settlement'] === null) {
@@ -1420,7 +1420,7 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
             throw new \InvalidArgumentException('invalid value for $prefecture_code when calling CompanyResponseCompany., must be smaller than or equal to 46.');
         }
         if (!is_null($prefecture_code) && ($prefecture_code < -1)) {
-            throw new \InvalidArgumentException('invalid value for $prefecture_code when calling CompanyResponseCompany., must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value for $prefecture_code when calling CompanyResponseCompany., must be bigger than or equal to -1.');
         }
 
         $this->container['prefecture_code'] = $prefecture_code;
