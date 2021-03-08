@@ -133,6 +133,55 @@ php artisan serve --host 0.0.0.0
 
 なお、内蔵サーバーを停止するには、 Ctrl + c を押下します。
 
+#### Console のサンプル
+
+##### Console のサンプルの実行環境 (Docker)
+
+また、Docker を利用可能な方向けに、上記実行環境を含む Dockerfile および docker-compose.yaml を同梱しています。利用する際は、下記をご参考にご利用ください。
+
+```bash
+cd <本リポジトリのクローン先ディレクトリ>
+cd samples
+docker-compose build
+docker-compose up -d
+docker exec -it samples_console_1 /bin/bash
+```
+
+上記の操作後、dockerコンテナの `/usr/src/app` にログインできます。このディレクトリは、本リポジトリの `samples/BasicConsole` をマウントしたものです。下記の手順を適宜読み替えて、ご利用ください。
+
+##### Console のサンプルの実行手順
+
+本リポジトリをクローンしたのち、PowerShell や bash などのターミナルでディレクトリに移動します。
+
+```bash
+cd <本リポジトリのクローン先ディレクトリ>
+cd samples/BasicConsole
+cp .env.example .env
+```
+
+コピーした `.env` を開き、下記の部分を設定してください。 `<client_id>`, `<client_secret>` は、それぞれ [freeeアプリストアへのアプリケーション登録](#freeeアプリストアへのアプリケーション登録) で取得した値を設定します。
+
+```env
+FREEE_ACCOUNTING_CLIENT_ID=<client_id>
+FREEE_ACCOUNTING_CLIENT_SECRET=<client_secret>
+```
+
+ターミナルで、下記を実行します。
+
+```bash
+# パッケージをインストールする
+composer install
+
+# php を interactive modeで実行する
+php -a
+php >require_once(__DIR__ . '/vendor/autoload.php');
+php >$token = {対象のアクセストークン}
+php >$cid = {対象の事業所ID}
+php >$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken($token);
+php >$partnersApiInstance = new Freee\Accounting\Api\PartnersApi(null, $config);
+php >echo $partnersApiInstance->getPartners($cid);
+```
+
 ### SDKの導入方法
 
 この項では、本 SDK の導入の参考として、 Laravel で利用する方法を記述します。
