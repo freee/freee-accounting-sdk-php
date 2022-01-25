@@ -13,12 +13,10 @@ Method | HTTP request | Description
 ## `getUsers()`
 
 ```php
-getUsers($company_id, $limit): \Freee\Accounting\Model\InlineResponse20015
+getUsers($company_id, $limit): \Freee\Accounting\Model\InlineResponse20012
 ```
 
 事業所に所属するユーザー一覧の取得
-
-<h2 id=\"\">概要</h2>  <p>事業所に所属するユーザーの一覧を取得する</p>
 
 ### Example
 
@@ -57,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\Freee\Accounting\Model\InlineResponse20012**](../Model/InlineResponse20012.md)
 
 ### Authorization
 
@@ -75,12 +73,10 @@ Name | Type | Description  | Notes
 ## `getUsersCapabilities()`
 
 ```php
-getUsersCapabilities($company_id): \Freee\Accounting\Model\InlineResponse20016
+getUsersCapabilities($company_id): \Freee\Accounting\Model\InlineResponse20013
 ```
 
 ログインユーザーの権限の取得
-
-<h2 id=\"\">概要</h2>  <p>ユーザーの権限情報を取得する</p>
 
 ### Example
 
@@ -117,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
+[**\Freee\Accounting\Model\InlineResponse20013**](../Model/InlineResponse20013.md)
 
 ### Authorization
 
@@ -135,12 +131,10 @@ Name | Type | Description  | Notes
 ## `getUsersMe()`
 
 ```php
-getUsersMe($companies): \Freee\Accounting\Model\MeResponse
+getUsersMe($companies, $advisor): \Freee\Accounting\Model\MeResponse
 ```
 
 ログインユーザー情報の取得
-
-<h2 id=\"\">概要</h2>  <p>ユーザーの情報を取得する</p>
 
 ### Example
 
@@ -160,9 +154,10 @@ $apiInstance = new Freee\Accounting\Api\UsersApi(
     $config
 );
 $companies = True; // bool | 取得情報にユーザーが所属する事業所一覧を含める
+$advisor = True; // bool | 取得情報に事業がアドバイザー事象所の場合は事業所毎の一意なプロフィールIDを含める
 
 try {
-    $result = $apiInstance->getUsersMe($companies);
+    $result = $apiInstance->getUsersMe($companies, $advisor);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->getUsersMe: ', $e->getMessage(), PHP_EOL;
@@ -174,6 +169,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **companies** | **bool**| 取得情報にユーザーが所属する事業所一覧を含める | [optional]
+ **advisor** | **bool**| 取得情報に事業がアドバイザー事象所の場合は事業所毎の一意なプロフィールIDを含める | [optional]
 
 ### Return type
 
@@ -199,8 +195,6 @@ updateUser($user_params): \Freee\Accounting\Model\UserResponse
 ```
 
 ユーザー情報の更新
-
-<h2 id=\"\">概要</h2>  <p>ユーザー情報を更新する</p>
 
 ### Example
 

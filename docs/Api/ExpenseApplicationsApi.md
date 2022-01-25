@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**getExpenseApplication()**](ExpenseApplicationsApi.md#getExpenseApplication) | **GET** /api/1/expense_applications/{id} | 経費申請詳細の取得
 [**getExpenseApplications()**](ExpenseApplicationsApi.md#getExpenseApplications) | **GET** /api/1/expense_applications | 経費申請一覧の取得
 [**updateExpenseApplication()**](ExpenseApplicationsApi.md#updateExpenseApplication) | **PUT** /api/1/expense_applications/{id} | 経費申請の更新
+[**updateExpenseApplicationAction()**](ExpenseApplicationsApi.md#updateExpenseApplicationAction) | **POST** /api/1/expense_applications/{id}/actions | 経費申請の承認操作
 
 
 ## `createExpenseApplication()`
@@ -18,8 +19,6 @@ createExpenseApplication($expense_application_create_params): \Freee\Accounting\
 ```
 
 経費申請の作成
-
-<h2 id=\"_1\">概要</h2>  <p>指定した事業所の経費申請を作成する</p>  <h2 id=\"_2\">注意点</h2> <ul>   <li>本APIでは、経費申請の下書きを作成することができます。申請作業はWebから行ってください。</li>   <li>現在、申請経路はWeb上からのみ入力できます。Web上での申請時に指定してください。</li>   <li>申請時には、申請タイトル(title)に加え、申請日(issue_date)、項目行については金額(amount)、日付(transaction_date)、内容(description)が必須項目となります。申請時の業務効率化のため、API入力をお勧めします。</li>   <li>個人アカウントの場合は、プレミアムプランでご利用できます。</li>   <li>法人アカウントの場合は、ベーシックプラン、プロフェッショナルプラン、エンタープライズプランでご利用できます。</li> </ul>
 
 ### Example
 
@@ -79,8 +78,6 @@ destroyExpenseApplication($id, $company_id)
 
 経費申請の削除
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所の経費申請を削除する</p>  <h2 id=\"_2\">注意点</h2> <ul>   <li>個人アカウントの場合は、プレミアムプランでご利用できます。</li>   <li>法人アカウントの場合は、ベーシックプラン、プロフェッショナルプラン、エンタープライズプランでご利用できます。</li> </ul>
-
 ### Example
 
 ```php
@@ -98,7 +95,7 @@ $apiInstance = new Freee\Accounting\Api\ExpenseApplicationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 56; // int
+$id = 56; // int | 経費申請ID
 $company_id = 56; // int | 事業所ID
 
 try {
@@ -112,7 +109,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**|  |
+ **id** | **int**| 経費申請ID |
  **company_id** | **int**| 事業所ID |
 
 ### Return type
@@ -195,7 +192,7 @@ Name | Type | Description  | Notes
 ## `getExpenseApplications()`
 
 ```php
-getExpenseApplications($company_id, $offset, $limit): \Freee\Accounting\Model\ExpenseApplicationsIndexResponse
+getExpenseApplications($company_id, $status, $payroll_attached, $start_transaction_date, $end_transaction_date, $application_number, $title, $start_issue_date, $end_issue_date, $applicant_id, $approver_id, $min_amount, $max_amount, $offset, $limit): \Freee\Accounting\Model\ExpenseApplicationsIndexResponse
 ```
 
 経費申請一覧の取得
@@ -218,11 +215,23 @@ $apiInstance = new Freee\Accounting\Api\ExpenseApplicationsApi(
     $config
 );
 $company_id = 56; // int | 事業所ID
+$status = 'status_example'; // string | 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)、 取引ステータス(unsettled:清算待ち, settled:精算済み)
+$payroll_attached = true; // bool | true:給与連携あり、false:給与連携なし、未指定時:絞り込みなし
+$start_transaction_date = 2019-12-17; // string | 発生日(経費申請項目の日付)で絞込：開始日(yyyy-mm-dd)
+$end_transaction_date = 2019-12-17; // string | 発生日(経費申請項目の日付)で絞込：終了日(yyyy-mm-dd)
+$application_number = 2; // int | 申請No.
+$title = 大阪出張; // string | 申請タイトル
+$start_issue_date = 2019-12-17; // string | 申請日で絞込：開始日(yyyy-mm-dd)
+$end_issue_date = 2019-12-17; // string | 申請日で絞込：終了日(yyyy-mm-dd)
+$applicant_id = 1; // int | 申請者のユーザーID
+$approver_id = 1; // int | 承認者のユーザーID
+$min_amount = 5000; // int | 金額で絞込 (下限金額)
+$max_amount = 10000; // int | 金額で絞込 (上限金額)
 $offset = 56; // int | 取得レコードのオフセット (デフォルト: 0)
 $limit = 56; // int | 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500)
 
 try {
-    $result = $apiInstance->getExpenseApplications($company_id, $offset, $limit);
+    $result = $apiInstance->getExpenseApplications($company_id, $status, $payroll_attached, $start_transaction_date, $end_transaction_date, $application_number, $title, $start_issue_date, $end_issue_date, $applicant_id, $approver_id, $min_amount, $max_amount, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ExpenseApplicationsApi->getExpenseApplications: ', $e->getMessage(), PHP_EOL;
@@ -234,6 +243,18 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| 事業所ID |
+ **status** | **string**| 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)、 取引ステータス(unsettled:清算待ち, settled:精算済み) | [optional]
+ **payroll_attached** | **bool**| true:給与連携あり、false:給与連携なし、未指定時:絞り込みなし | [optional]
+ **start_transaction_date** | **string**| 発生日(経費申請項目の日付)で絞込：開始日(yyyy-mm-dd) | [optional]
+ **end_transaction_date** | **string**| 発生日(経費申請項目の日付)で絞込：終了日(yyyy-mm-dd) | [optional]
+ **application_number** | **int**| 申請No. | [optional]
+ **title** | **string**| 申請タイトル | [optional]
+ **start_issue_date** | **string**| 申請日で絞込：開始日(yyyy-mm-dd) | [optional]
+ **end_issue_date** | **string**| 申請日で絞込：終了日(yyyy-mm-dd) | [optional]
+ **applicant_id** | **int**| 申請者のユーザーID | [optional]
+ **approver_id** | **int**| 承認者のユーザーID | [optional]
+ **min_amount** | **int**| 金額で絞込 (下限金額) | [optional]
+ **max_amount** | **int**| 金額で絞込 (上限金額) | [optional]
  **offset** | **int**| 取得レコードのオフセット (デフォルト: 0) | [optional]
  **limit** | **int**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) | [optional]
 
@@ -262,7 +283,65 @@ updateExpenseApplication($id, $expense_application_update_params): \Freee\Accoun
 
 経費申請の更新
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所の経費申請を更新する</p>  <h2 id=\"_2\">注意点</h2> <ul>   <li>本APIでは、経費申請の下書きを更新することができます。申請作業はWebから行ってください。</li>   <li>現在、申請経路はWeb上からのみ入力できます。Web上での申請時に指定してください。</li>   <li>申請時には、申請タイトル(title)に加え、申請日(issue_date)、項目行については金額(amount)、日付(transaction_date)、内容(description)が必須項目となります。申請時の業務効率化のため、API入力をお勧めします。</li>   <li>個人アカウントの場合は、プレミアムプランでご利用できます。</li>   <li>法人アカウントの場合は、ベーシックプラン、プロフェッショナルプラン、エンタープライズプランでご利用できます。</li> </ul>
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2
+$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Freee\Accounting\Api\ExpenseApplicationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int | 経費申請ID
+$expense_application_update_params = new \Freee\Accounting\Model\ExpenseApplicationUpdateParams(); // \Freee\Accounting\Model\ExpenseApplicationUpdateParams | 経費申請の更新
+
+try {
+    $result = $apiInstance->updateExpenseApplication($id, $expense_application_update_params);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ExpenseApplicationsApi->updateExpenseApplication: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| 経費申請ID |
+ **expense_application_update_params** | [**\Freee\Accounting\Model\ExpenseApplicationUpdateParams**](../Model/ExpenseApplicationUpdateParams.md)| 経費申請の更新 | [optional]
+
+### Return type
+
+[**\Freee\Accounting\Model\ExpenseApplicationResponse**](../Model/ExpenseApplicationResponse.md)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `updateExpenseApplicationAction()`
+
+```php
+updateExpenseApplicationAction($id, $expense_application_action_create_params): \Freee\Accounting\Model\ExpenseApplicationResponse
+```
+
+経費申請の承認操作
 
 ### Example
 
@@ -281,14 +360,14 @@ $apiInstance = new Freee\Accounting\Api\ExpenseApplicationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 56; // int
-$expense_application_update_params = new \Freee\Accounting\Model\ExpenseApplicationUpdateParams(); // \Freee\Accounting\Model\ExpenseApplicationUpdateParams | 経費申請の更新
+$id = 56; // int | 経費申請ID
+$expense_application_action_create_params = new \Freee\Accounting\Model\ExpenseApplicationActionCreateParams(); // \Freee\Accounting\Model\ExpenseApplicationActionCreateParams | 経費申請の承認操作
 
 try {
-    $result = $apiInstance->updateExpenseApplication($id, $expense_application_update_params);
+    $result = $apiInstance->updateExpenseApplicationAction($id, $expense_application_action_create_params);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ExpenseApplicationsApi->updateExpenseApplication: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ExpenseApplicationsApi->updateExpenseApplicationAction: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -296,8 +375,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**|  |
- **expense_application_update_params** | [**\Freee\Accounting\Model\ExpenseApplicationUpdateParams**](../Model/ExpenseApplicationUpdateParams.md)| 経費申請の更新 | [optional]
+ **id** | **int**| 経費申請ID |
+ **expense_application_action_create_params** | [**\Freee\Accounting\Model\ExpenseApplicationActionCreateParams**](../Model/ExpenseApplicationActionCreateParams.md)| 経費申請の承認操作 |
 
 ### Return type
 

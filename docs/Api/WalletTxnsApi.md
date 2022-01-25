@@ -18,8 +18,6 @@ createWalletTxn($wallet_txn_params): \Freee\Accounting\Model\WalletTxnResponse
 
 明細の作成
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所の明細を作成する</p>  <h2 id=\"_2\">定義</h2>  <ul> <li> <p>amount : 明細金額</p> </li>  <li> <p>due_amount : 取引登録待ち金額</p> </li>  <li> <p>balance : 残高</p> </li>  <li> <p>entry_side</p>  <ul> <li>income : 入金</li>  <li>expense : 出金</li> </ul> </li>  <li> <p>walletable_type</p>  <ul> <li>bank_account : 銀行口座</li>  <li>credit_card : クレジットカード</li>  <li>wallet : その他の決済口座</li> </ul> </li> </ul>
-
 ### Example
 
 ```php
@@ -77,8 +75,6 @@ destroyWalletTxn($id, $company_id)
 ```
 
 明細の削除
-
-<h2 id=\"\">概要</h2>  <p>指定した事業所の明細を削除する</p>
 
 ### Example
 
@@ -139,8 +135,6 @@ getWalletTxn($id, $company_id): \Freee\Accounting\Model\WalletTxnResponse
 
 明細の取得
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所の明細を取得する</p>  <h2 id=\"_2\">定義</h2>  <ul> <li> <p>amount : 明細金額</p> </li>  <li> <p>due_amount : 取引登録待ち金額</p> </li>  <li> <p>balance : 残高</p> </li>  <li> <p>entry_side</p>  <ul> <li>income : 入金</li>  <li>expense : 出金</li> </ul> </li>  <li> <p>walletable_type</p>  <ul> <li>bank_account : 銀行口座</li>  <li>credit_card : クレジットカード</li>  <li>wallet : その他の決済口座</li> </ul> </li> </ul>
-
 ### Example
 
 ```php
@@ -196,12 +190,10 @@ Name | Type | Description  | Notes
 ## `getWalletTxns()`
 
 ```php
-getWalletTxns($company_id, $walletable_type, $walletable_id, $start_date, $end_date, $entry_side, $offset, $limit): \Freee\Accounting\Model\InlineResponse20017
+getWalletTxns($company_id, $walletable_type, $walletable_id, $start_date, $end_date, $entry_side, $offset, $limit): \Freee\Accounting\Model\InlineResponse20014
 ```
 
 明細一覧の取得
-
-<h2 id=\"\">概要</h2>  <p>指定した事業所の明細一覧を取得する</p>  <h2 id=\"_2\">定義</h2>  <ul> <li> <p>amount : 明細金額</p> </li>  <li> <p>due_amount : 取引登録待ち金額</p> </li>  <li> <p>balance : 残高</p> </li>  <li> <p>entry_side</p>  <ul> <li>income : 入金</li>  <li>expense : 出金</li> </ul> </li>  <li> <p>walletable_type</p>  <ul> <li>bank_account : 銀行口座</li>  <li>credit_card : クレジットカード</li>  <li>wallet : その他の決済口座</li> </ul> </li> </ul>
 
 ### Example
 
@@ -252,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse20017**](../Model/InlineResponse20017.md)
+[**\Freee\Accounting\Model\InlineResponse20014**](../Model/InlineResponse20014.md)
 
 ### Authorization
 

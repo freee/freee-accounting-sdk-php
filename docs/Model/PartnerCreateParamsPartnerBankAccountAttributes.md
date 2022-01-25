@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **account_name** | **string** | 受取人名（カナ） | [optional]
 **account_number** | **string** | 口座番号 | [optional]
 **account_type** | **string** | 口座種別(ordinary:普通、checking：当座、earmarked：納税準備預金、savings：貯蓄、other:その他) | [optional]
-**bank_code** | **string** | 銀行番号 | [optional]
+**bank_code** | **string** | 銀行コード | [optional]
 **bank_name** | **string** | 銀行名 | [optional]
 **bank_name_kana** | **string** | 銀行名（カナ） | [optional]
 **branch_code** | **string** | 支店番号 | [optional]

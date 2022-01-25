@@ -20,8 +20,6 @@ createPartner($partner_create_params): \Freee\Accounting\Model\PartnerResponse
 
 取引先の作成
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所の取引先を作成する</p> <ul> <li>codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。</li> <li>取引先コードの利用を有効にしている場合は、codeの指定は必須です。</li> <li>振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。</li></ul>
-
 ### Example
 
 ```php
@@ -79,8 +77,6 @@ destroyPartner($id, $company_id)
 ```
 
 取引先の削除
-
-<h2 id=\"\">概要</h2>  <p>指定した事業所の取引先を削除する</p>
 
 ### Example
 
@@ -141,8 +137,6 @@ getPartner($id, $company_id): \Freee\Accounting\Model\PartnerResponse
 
 取引先の取得
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所の取引先を取得する</p> <ul> <li>振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。</li></ul>
-
 ### Example
 
 ```php
@@ -198,12 +192,10 @@ Name | Type | Description  | Notes
 ## `getPartners()`
 
 ```php
-getPartners($company_id, $offset, $limit, $keyword): \Freee\Accounting\Model\PartnersResponse
+getPartners($company_id, $start_update_date, $end_update_date, $offset, $limit, $keyword): \Freee\Accounting\Model\PartnersResponse
 ```
 
 取引先一覧の取得
-
-<h2 id=\"\">概要</h2>  <p>指定した事業所の取引先一覧を取得する</p> <ul> <li>振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）は法人向けのプロフェッショナルプラン以上で利用可能です。</li></ul>
 
 ### Example
 
@@ -223,12 +215,14 @@ $apiInstance = new Freee\Accounting\Api\PartnersApi(
     $config
 );
 $company_id = 56; // int | 事業所ID
+$start_update_date = 'start_update_date_example'; // string | 更新日で絞り込み：開始日(yyyy-mm-dd)
+$end_update_date = 'end_update_date_example'; // string | 更新日で絞り込み：終了日(yyyy-mm-dd)
 $offset = 56; // int | 取得レコードのオフセット (デフォルト: 0)
 $limit = 56; // int | 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000)
 $keyword = 'keyword_example'; // string | 検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致
 
 try {
-    $result = $apiInstance->getPartners($company_id, $offset, $limit, $keyword);
+    $result = $apiInstance->getPartners($company_id, $start_update_date, $end_update_date, $offset, $limit, $keyword);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PartnersApi->getPartners: ', $e->getMessage(), PHP_EOL;
@@ -240,6 +234,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| 事業所ID |
+ **start_update_date** | **string**| 更新日で絞り込み：開始日(yyyy-mm-dd) | [optional]
+ **end_update_date** | **string**| 更新日で絞り込み：終了日(yyyy-mm-dd) | [optional]
  **offset** | **int**| 取得レコードのオフセット (デフォルト: 0) | [optional]
  **limit** | **int**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) | [optional]
  **keyword** | **string**| 検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 | [optional]
@@ -268,8 +264,6 @@ updatePartner($id, $partner_update_params): \Freee\Accounting\Model\PartnerRespo
 ```
 
 取引先の更新
-
-<h2 id=\"\">概要</h2>  <p>指定した取引先の情報を更新する</p> <ul> <li>codeを指定、更新することはできません。</li> <li>振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。</li></ul>
 
 ### Example
 
@@ -330,8 +324,6 @@ updatePartnerByCode($code, $partner_update_params): \Freee\Accounting\Model\Part
 ```
 
 取引先の更新
-
-<h2 id=\"\">概要</h2>  <p>取引先コードをキーに、指定した取引先の情報を更新する</p> <ul> <li>このAPIを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。</li> <li>コードを日本語に設定している場合は、URLエンコードしてURLに含めるようにしてください。</li> <li>振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。</li></ul>
 
 ### Example
 

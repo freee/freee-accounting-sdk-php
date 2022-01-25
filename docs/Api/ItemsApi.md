@@ -19,8 +19,6 @@ createItem($item_params): \Freee\Accounting\Model\ItemResponse
 
 品目の作成
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所の品目を作成する</p>
-
 ### Example
 
 ```php
@@ -78,8 +76,6 @@ destroyItem($id, $company_id)
 ```
 
 品目の削除
-
-<h2 id=\"\">概要</h2>  <p>指定した事業所の品目を削除する</p>
 
 ### Example
 
@@ -140,8 +136,6 @@ getItem($company_id, $id): \Freee\Accounting\Model\ItemResponse
 
 品目の取得
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所の品目を取得する</p>
-
 ### Example
 
 ```php
@@ -197,12 +191,10 @@ Name | Type | Description  | Notes
 ## `getItems()`
 
 ```php
-getItems($company_id, $offset, $limit): \Freee\Accounting\Model\InlineResponse2005
+getItems($company_id, $start_update_date, $end_update_date, $offset, $limit): \Freee\Accounting\Model\InlineResponse2003
 ```
 
 品目一覧の取得
-
-<h2 id=\"\">概要</h2>  <p>指定した事業所の品目一覧を取得する</p>
 
 ### Example
 
@@ -222,11 +214,13 @@ $apiInstance = new Freee\Accounting\Api\ItemsApi(
     $config
 );
 $company_id = 56; // int | 事業所ID
+$start_update_date = 'start_update_date_example'; // string | 更新日で絞り込み：開始日(yyyy-mm-dd)
+$end_update_date = 'end_update_date_example'; // string | 更新日で絞り込み：終了日(yyyy-mm-dd)
 $offset = 56; // int | 取得レコードのオフセット (デフォルト: 0)
 $limit = 56; // int | 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000)
 
 try {
-    $result = $apiInstance->getItems($company_id, $offset, $limit);
+    $result = $apiInstance->getItems($company_id, $start_update_date, $end_update_date, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ItemsApi->getItems: ', $e->getMessage(), PHP_EOL;
@@ -238,12 +232,14 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| 事業所ID |
+ **start_update_date** | **string**| 更新日で絞り込み：開始日(yyyy-mm-dd) | [optional]
+ **end_update_date** | **string**| 更新日で絞り込み：終了日(yyyy-mm-dd) | [optional]
  **offset** | **int**| 取得レコードのオフセット (デフォルト: 0) | [optional]
  **limit** | **int**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+[**\Freee\Accounting\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
 
 ### Authorization
 
@@ -265,8 +261,6 @@ updateItem($id, $item_params): \Freee\Accounting\Model\ItemResponse
 ```
 
 品目の更新
-
-<h2 id=\"\">概要</h2>  <p>指定した事業所の品目を更新する</p>
 
 ### Example
 

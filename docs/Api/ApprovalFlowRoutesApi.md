@@ -16,8 +16,6 @@ getApprovalFlowRoute($id, $company_id): \Freee\Accounting\Model\ApprovalFlowRout
 
 申請経路の取得
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所の申請経路を取得する</p>  <p>各種申請APIの使い方については、<a href=\"https://developer.freee.co.jp/tips/accounting-approval-requests\" target=\"_blank\">会計freeeの各種申請APIの使い方</a>をご参照ください</p>  <h2 id=\"\">注意点</h2>  <ul>   <li>     <p>申請経路、承認者の指定として部門役職データ連携を活用し、以下のいずれかを利用している各種申請と申請経路はAPI経由で参照は可能ですが、作成と更新、承認ステータスの変更ができません。</p>     <ul>       <li>役職指定（申請者の所属部門）</li>       <li>役職指定（申請時に部門指定）</li>       <li>部門および役職指定</li>     </ul>   </li>   <li>個人アカウントの場合は、プレミアムプランでご利用できます。</li>   <li>法人アカウントの場合は、ベーシックプラン、プロフェッショナルプラン、エンタープライズプランでご利用できます。</li> </ul>
-
 ### Example
 
 ```php
@@ -77,8 +75,6 @@ getApprovalFlowRoutes($company_id, $included_user_id, $usage, $request_form_id):
 ```
 
 申請経路一覧の取得
-
-<h2 id=\"\">概要</h2>  <p>指定した事業所の申請経路一覧を取得する</p>  <p>各種申請APIの使い方については、<a href=\"https://developer.freee.co.jp/tips/accounting-approval-requests\" target=\"_blank\">会計freeeの各種申請APIの使い方</a>をご参照ください</p>  <h2 id=\"\">注意点</h2>  <ul>   <li>     <p>申請経路、承認者の指定として部門役職データ連携を活用し、以下のいずれかを利用している各種申請と申請経路はAPI経由で参照は可能ですが、作成と更新、承認ステータスの変更ができません。</p>     <ul>       <li>役職指定（申請者の所属部門）</li>       <li>役職指定（申請時に部門指定）</li>       <li>部門および役職指定</li>     </ul>   </li>   <li>個人アカウントの場合は、プレミアムプランでご利用できます。</li>   <li>法人アカウントの場合は、ベーシックプラン、プロフェッショナルプラン、エンタープライズプランでご利用できます。</li> </ul>
 
 ### Example
 

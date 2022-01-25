@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **id** | **int** | 経費科目ID |
 **line_description** | **string** | 内容の補足 | [optional]
 **name** | **string** | 経費科目名 |
+**required_receipt** | **bool** | 添付ファイルの必須/任意 | [optional]
 **tax_code** | **int** | 税区分コード | [optional]
 **tax_name** | **string** | 税区分名 |
 

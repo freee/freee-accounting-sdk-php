@@ -15,8 +15,6 @@ getFormsSelectables($company_id, $includes): \Freee\Accounting\Model\Selectables
 
 フォーム用選択項目情報の取得
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所のフォーム用選択項目情報を取得する</p>
-
 ### Example
 
 ```php

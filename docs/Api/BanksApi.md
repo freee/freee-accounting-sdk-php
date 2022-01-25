@@ -16,8 +16,6 @@ getBank($id): \Freee\Accounting\Model\BankResponse
 
 連携サービスの取得
 
-<h2 id=\"\">概要</h2>  <p>連携しているサービスを取得する</p>  <h2 id=\"_2\">定義</h2>  <ul> <li>type <ul> <li>bank_account : 銀行口座</li>  <li>credit_card : クレジットカード</li>  <li>wallet : その他の決済口座</li> </ul> </li> </ul>
-
 ### Example
 
 ```php
@@ -71,12 +69,10 @@ Name | Type | Description  | Notes
 ## `getBanks()`
 
 ```php
-getBanks($offset, $limit, $type): \Freee\Accounting\Model\InlineResponse2001
+getBanks($offset, $limit, $type): \Freee\Accounting\Model\InlineResponse200
 ```
 
 連携サービス一覧の取得
-
-<h2 id=\"\">概要</h2>  <p>連携しているサービス一覧を取得する</p>  <h2 id=\"_2\">定義</h2>  <ul> <li>type <ul> <li>bank_account : 銀行口座</li>  <li>credit_card : クレジットカード</li>  <li>wallet : その他の決済口座</li> </ul> </li> </ul>
 
 ### Example
 
@@ -117,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\Freee\Accounting\Model\InlineResponse200**](../Model/InlineResponse200.md)
 
 ### Authorization
 
