@@ -19,8 +19,6 @@ createQuotation($quotation_create_params): \Freee\Accounting\Model\QuotationResp
 
 見積書の作成
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所の見積書を作成する</p>  <h2 id=\"_1\">注意点</h2> <ul> <li> <p>partner_code, partner_idはどちらかの指定が必須です。ただし両方同時に指定することはできません。</p> </li> <li> <p>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。</p> </li> <li> <p>本APIでは見積内容(quotation_contents)は、最大100行までになります。</p> </li> </ul>
-
 ### Example
 
 ```php
@@ -78,8 +76,6 @@ destroyQuotation($id, $company_id)
 ```
 
 見積書の削除
-
-<h2 id=\"\">概要</h2>  <p>指定した事業所の見積書を削除する</p>
 
 ### Example
 
@@ -140,8 +136,6 @@ getQuotation($company_id, $id): \Freee\Accounting\Model\QuotationResponse
 
 見積書の取得
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所の見積書詳細を取得する</p>
-
 ### Example
 
 ```php
@@ -197,12 +191,10 @@ Name | Type | Description  | Notes
 ## `getQuotations()`
 
 ```php
-getQuotations($company_id, $partner_id, $partner_code, $start_issue_date, $end_issue_date, $quotation_number, $description, $quotation_status, $offset, $limit): \Freee\Accounting\Model\InlineResponse2007
+getQuotations($company_id, $partner_id, $partner_code, $start_issue_date, $end_issue_date, $quotation_number, $description, $quotation_status, $offset, $limit): \Freee\Accounting\Model\QuotationIndexResponse
 ```
 
 見積書一覧の取得
-
-<h2 id=\"\">概要</h2>  <p>指定した事業所の見積書一覧を取得する</p>
 
 ### Example
 
@@ -257,7 +249,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse2007**](../Model/InlineResponse2007.md)
+[**\Freee\Accounting\Model\QuotationIndexResponse**](../Model/QuotationIndexResponse.md)
 
 ### Authorization
 
@@ -279,8 +271,6 @@ updateQuotation($id, $quotation_update_params): \Freee\Accounting\Model\Quotatio
 ```
 
 見積書の更新
-
-<h2 id=\"\">概要</h2>  <p>指定した事業所の見積書を更新する</p>  <h2 id=\"_1\">注意点</h2> <ul> <li> <p>partner_code, partner_idを両方同時に指定することはできません。</p> </li> <li> <p>partner_codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。</p> </li> <li> <p>本APIでは見積内容(quotation_contents)は、最大100行までになります。</p> </li> </ul>
 
 ### Example
 

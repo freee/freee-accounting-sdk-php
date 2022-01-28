@@ -19,8 +19,6 @@ createWalletable($walletable_create_params): \Freee\Accounting\Model\WalletableC
 
 口座の作成
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所に口座を作成する</p>  <h2 id=\"\">注意点</h2> <ul><li>同期に対応した口座はこのAPIでは作成できません</li></ul>  <h2 id=\"_2\">定義</h2>  <ul> <li> <p>type</p>  <ul> <li>bank_account : 銀行口座</li>  <li>credit_card : クレジットカード</li>  <li>wallet : その他の決済口座</li> </ul> </li>  <li> <p>name : 口座名</p> </li>  <li> <p>bank_id : サービスID</p> </li>  <li> <p>group_name : 決算書表示名（小カテゴリー）　例：売掛金, 受取手形, 未収入金（法人のみ）, 買掛金, 支払手形, 未払金, 預り金, 前受金</p> </li> </ul>
-
 ### Example
 
 ```php
@@ -79,8 +77,6 @@ destroyWalletable($id, $type, $company_id)
 
 口座の削除
 
-<h2 id=\"\">概要</h2>  <p>指定した事業所の口座を削除する</p>  <h2 id=\"\">注意点</h2> <ul> <li>削除を実行するには、当該口座に関連する仕訳データを事前に削除する必要があります。</li> <li>当該口座に仕訳が残っていないか確認するには、レポートの「仕訳帳」等を参照し、必要に応じて、「取引」や「口座振替」も削除します。</li>  </ul>
-
 ### Example
 
 ```php
@@ -137,12 +133,10 @@ void (empty response body)
 ## `getWalletable()`
 
 ```php
-getWalletable($id, $type, $company_id): \Freee\Accounting\Model\InlineResponse20019
+getWalletable($id, $type, $company_id): \Freee\Accounting\Model\InlineResponse20016
 ```
 
 口座情報の取得
-
-<h2 id=\"\">概要</h2>  <p>指定した事業所の口座情報を取得する</p>  <h2 id=\"_2\">定義</h2>  <ul> <li>type <ul> <li>bank_account : 銀行口座</li>  <li>credit_card : クレジットカード</li>  <li>wallet : その他の決済口座</li> </ul> </li>  <li>walletable_balance : 登録残高</li>  <li>last_balance : 同期残高</li> </ul>
 
 ### Example
 
@@ -183,7 +177,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse20019**](../Model/InlineResponse20019.md)
+[**\Freee\Accounting\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
 
 ### Authorization
 
@@ -201,12 +195,10 @@ Name | Type | Description  | Notes
 ## `getWalletables()`
 
 ```php
-getWalletables($company_id, $with_balance, $type): \Freee\Accounting\Model\InlineResponse20018
+getWalletables($company_id, $with_balance, $type): \Freee\Accounting\Model\InlineResponse20015
 ```
 
 口座一覧の取得
-
-<h2 id=\"\">概要</h2>  <p>指定した事業所の口座一覧を取得する</p>  <h2 id=\"_2\">定義</h2>  <ul> <li>type <ul> <li>bank_account : 銀行口座</li>  <li>credit_card : クレジットカード</li>  <li>wallet : その他の決済口座</li> </ul> </li>  <li>walletable_balance : 登録残高</li>  <li>last_balance : 同期残高</li> </ul>
 
 ### Example
 
@@ -247,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse20018**](../Model/InlineResponse20018.md)
+[**\Freee\Accounting\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
 
 ### Authorization
 
@@ -265,12 +257,10 @@ Name | Type | Description  | Notes
 ## `updateWalletable()`
 
 ```php
-updateWalletable($id, $type, $walletable_update_params): \Freee\Accounting\Model\InlineResponse20019
+updateWalletable($id, $type, $walletable_update_params): \Freee\Accounting\Model\InlineResponse20016
 ```
 
 口座の更新
-
-<h2 id=\"\">概要</h2>  <p>口座を更新する</p>
 
 ### Example
 
@@ -311,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse20019**](../Model/InlineResponse20019.md)
+[**\Freee\Accounting\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
 
 ### Authorization
 

@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**advisor_id** | **int** | アドバイザープロファイルID（アドバイザー事業所で無い場合にnullになります） | [optional]
 **display_name** | **string** | 表示名 |
 **id** | **int** | 事業所ID |
 **role** | **string** | ユーザーの権限 |

@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **name** | **string** | 勘定科目名 (30文字以内) |
 **shortcut** | **string** | ショートカット1 (20文字以内) | [optional]
 **shortcut_num** | **string** | ショートカット2(勘定科目コード) (20文字以内) | [optional]
+**tax_code** | **int** | 税区分コード |
 **walletable_id** | **int** | 口座ID |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

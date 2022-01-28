@@ -7,8 +7,18 @@ Method | HTTP request | Description
 [**getTrialBs()**](TrialBalanceApi.md#getTrialBs) | **GET** /api/1/reports/trial_bs | 貸借対照表の取得
 [**getTrialBsThreeYears()**](TrialBalanceApi.md#getTrialBsThreeYears) | **GET** /api/1/reports/trial_bs_three_years | 貸借対照表(３期間比較)の取得
 [**getTrialBsTwoYears()**](TrialBalanceApi.md#getTrialBsTwoYears) | **GET** /api/1/reports/trial_bs_two_years | 貸借対照表(前年比較)の取得
+[**getTrialCr()**](TrialBalanceApi.md#getTrialCr) | **GET** /api/1/reports/trial_cr | 製造原価報告書の取得
+[**getTrialCrSections()**](TrialBalanceApi.md#getTrialCrSections) | **GET** /api/1/reports/trial_cr_sections | 製造原価報告書(部門比較)の取得
+[**getTrialCrSegment1Tags()**](TrialBalanceApi.md#getTrialCrSegment1Tags) | **GET** /api/1/reports/trial_cr_segment_1_tags | 製造原価報告書(セグメント1比較)の取得
+[**getTrialCrSegment2Tags()**](TrialBalanceApi.md#getTrialCrSegment2Tags) | **GET** /api/1/reports/trial_cr_segment_2_tags | 製造原価報告書(セグメント2比較)の取得
+[**getTrialCrSegment3Tags()**](TrialBalanceApi.md#getTrialCrSegment3Tags) | **GET** /api/1/reports/trial_cr_segment_3_tags | 製造原価報告書(セグメント3比較)の取得
+[**getTrialCrThreeYears()**](TrialBalanceApi.md#getTrialCrThreeYears) | **GET** /api/1/reports/trial_cr_three_years | 製造原価報告書(３期間比較)の取得
+[**getTrialCrTwoYears()**](TrialBalanceApi.md#getTrialCrTwoYears) | **GET** /api/1/reports/trial_cr_two_years | 製造原価報告書(前年比較)の取得
 [**getTrialPl()**](TrialBalanceApi.md#getTrialPl) | **GET** /api/1/reports/trial_pl | 損益計算書の取得
 [**getTrialPlSections()**](TrialBalanceApi.md#getTrialPlSections) | **GET** /api/1/reports/trial_pl_sections | 損益計算書(部門比較)の取得
+[**getTrialPlSegment1Tags()**](TrialBalanceApi.md#getTrialPlSegment1Tags) | **GET** /api/1/reports/trial_pl_segment_1_tags | 損益計算書(セグメント1比較)の取得
+[**getTrialPlSegment2Tags()**](TrialBalanceApi.md#getTrialPlSegment2Tags) | **GET** /api/1/reports/trial_pl_segment_2_tags | 損益計算書(セグメント2比較)の取得
+[**getTrialPlSegment3Tags()**](TrialBalanceApi.md#getTrialPlSegment3Tags) | **GET** /api/1/reports/trial_pl_segment_3_tags | 損益計算書(セグメント3比較)の取得
 [**getTrialPlThreeYears()**](TrialBalanceApi.md#getTrialPlThreeYears) | **GET** /api/1/reports/trial_pl_three_years | 損益計算書(３期間比較)の取得
 [**getTrialPlTwoYears()**](TrialBalanceApi.md#getTrialPlTwoYears) | **GET** /api/1/reports/trial_pl_two_years | 損益計算書(前年比較)の取得
 
@@ -16,12 +26,10 @@ Method | HTTP request | Description
 ## `getTrialBs()`
 
 ```php
-getTrialBs($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $adjustment): \Freee\Accounting\Model\TrialBsResponse
+getTrialBs($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $approval_flow_status): \Freee\Accounting\Model\TrialBsResponse
 ```
 
 貸借対照表の取得
-
-<h2 id=\"\">概要</h2>  <p>指定した事業所の貸借対照表を取得する</p>  <h2 id=\"_2\">定義</h2>  <ul>  <li> <p>created_at : 作成日時</p> </li>  <li> <p>account_item_name : 勘定科目名</p> </li>  <li> <p>hierarchy_level: 階層レベル</p> </li>  <li> <p>parent_account_category_name: 上位勘定科目カテゴリー名</p> </li> <li> <p>opening_balance : 期首残高 </p> </li>  <li> <p>debit_amount : 借方金額 </p> </li> <li> <p>credit_amount:  貸方金額 </p> </li> <li> <p>closing_balance : 期末残高 </p> </li> <li> <p>composition_ratio : 構成比</p> </li> <h2 id=\"_3\">注意点</h2> <ul> <li>会計年度が指定されない場合、現在の会計年度がデフォルトとなります。</li> <li>絞り込み条件の日付と、月または年度は同時に指定することはできません。</li> <li>up_to_dateがfalseの場合、残高の集計が完了していません。最新の集計結果を確認したい場合は、時間を空けて再度取得する必要があります。</li>  </ul> <h2 id=\"_4\">レスポンスの例</h2>  <blockquote> <p>GET https://api.freee.co.jp/api/1/reports/trial_bs?company_id=1&amp;fiscal_year=2017&amp;breakdown_display_type=partner</p> </blockquote>  <pre><code>{   &quot;trial_bs&quot; :     {       &quot;company_id&quot; : 1,       &quot;fiscal_year&quot; : 2017,       &quot;breakdown_display_type&quot; : &quot;partner&quot;,       &quot;created_at&quot; : &quot;2018-05-01 12:00:50&quot       &quot;balances&quot; : [{         &quot;account_item_id&quot; : 1000,         &quot;account_item_name&quot; : &quot;現金&quot;,         &quot;hierarchy_level&quot; : 2,         &quot;account_category_name&quot; : &quot;流動資産&quot;,         &quot;opening_balance&quot; : 100000,         &quot;debit_amount&quot; : 50000,         &quot;credit_amount&quot; : 20000,         &quot;closing_balance&quot; : 130000,         &quot;composition_ratio&quot; : 0.25         &quot;partners&quot; : [{           &quot;id&quot; : 123,           &quot;name&quot; : &quot;freee&quot;,           &quot;opening_balance&quot; : 100000,           &quot;debit_amount&quot; : 50000,           &quot;credit_amount&quot; : 20000,           &quot;closing_balance&quot; : 130000,           &quot;composition_ratio&quot; : 0.25           },         ...         ]       },       ...       ]     } }</code></pre>
 
 ### Example
 
@@ -43,18 +51,20 @@ $apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
 $company_id = 56; // int | 事業所ID
 $fiscal_year = 56; // int | 会計年度
 $start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
-$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
 $account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
-$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
+$section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
 $adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
+$approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
 
 try {
-    $result = $apiInstance->getTrialBs($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $adjustment);
+    $result = $apiInstance->getTrialBs($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $approval_flow_status);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TrialBalanceApi->getTrialBs: ', $e->getMessage(), PHP_EOL;
@@ -68,15 +78,17 @@ Name | Type | Description  | Notes
  **company_id** | **int**| 事業所ID |
  **fiscal_year** | **int**| 会計年度 | [optional]
  **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
- **end_month** | **int**| 発生月で絞込：終了会計月(1-12) | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
  **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
- **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
+ **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
  **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
+ **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
 
 ### Return type
 
@@ -98,12 +110,10 @@ Name | Type | Description  | Notes
 ## `getTrialBsThreeYears()`
 
 ```php
-getTrialBsThreeYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $adjustment): \Freee\Accounting\Model\TrialBsThreeYearsResponse
+getTrialBsThreeYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $approval_flow_status): \Freee\Accounting\Model\TrialBsThreeYearsResponse
 ```
 
 貸借対照表(３期間比較)の取得
-
-<h2 id=\"\">概要</h2>  <p>指定した事業所の貸借対照表(３期間比較)を取得する</p>  <h2 id=\"_2\">定義</h2>  <ul>  <li> <p>created_at : 作成日時</p> </li>  <li> <p>account_item_name : 勘定科目名</p> </li>  <li> <p>hierarchy_level: 階層レベル</p> </li>  <li> <p>parent_account_category_name: 上位勘定科目カテゴリー名</p> </li> <li> <p>two_years_before_closing_balance:  前々年度期末残高 </p> </li> <li> <p>last_year_closing_balance:  前年度期末残高 </p> </li> <li> <p>closing_balance : 期末残高 </p> </li> <li> <p>year_on_year : 前年比</p> </li> <h2 id=\"_3\">注意点</h2> <ul> <li>会計年度が指定されない場合、現在の会計年度がデフォルトとなります。</li> <li>絞り込み条件の日付と、月または年度は同時に指定することはできません。</li> <li>up_to_dateがfalseの場合、残高の集計が完了していません。最新の集計結果を確認したい場合は、時間を空けて再度取得する必要があります。</li>  </ul> <h2 id=\"_4\">レスポンスの例</h2>  <blockquote> <p>GET https://api.freee.co.jp/api/1/reports/trial_bs_three_years?company_id=1&amp;fiscal_year=2017</p> </blockquote>  <pre><code>{   &quot;trial_bs_three_years&quot; :     {       &quot;company_id&quot; : 1,       &quot;fiscal_year&quot; : 2017,       &quot;created_at&quot; : &quot;2018-05-01 12:00:50&quot       &quot;balances&quot; : [{         &quot;account_item_id&quot; : 1000,         &quot;account_item_name&quot; : &quot;現金&quot;,         &quot;hierarchy_level&quot; : 2,         &quot;account_category_name&quot; : &quot;流動資産&quot;,         &quot;two_year_before_closing_balance&quot; : 50000,         &quot;last_year_closing_balance&quot; : 25000,         &quot;closing_balance&quot; : 100000,         &quot;year_on_year&quot; : 0.85       },       ...       ]     } }</code></pre>
 
 ### Example
 
@@ -125,18 +135,20 @@ $apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
 $company_id = 56; // int | 事業所ID
 $fiscal_year = 56; // int | 会計年度
 $start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
-$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
 $account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
-$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
+$section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
 $adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
+$approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
 
 try {
-    $result = $apiInstance->getTrialBsThreeYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $adjustment);
+    $result = $apiInstance->getTrialBsThreeYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $approval_flow_status);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TrialBalanceApi->getTrialBsThreeYears: ', $e->getMessage(), PHP_EOL;
@@ -150,15 +162,17 @@ Name | Type | Description  | Notes
  **company_id** | **int**| 事業所ID |
  **fiscal_year** | **int**| 会計年度 | [optional]
  **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
- **end_month** | **int**| 発生月で絞込：終了会計月(1-12) | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
  **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
- **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
+ **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
  **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
+ **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
 
 ### Return type
 
@@ -180,12 +194,10 @@ Name | Type | Description  | Notes
 ## `getTrialBsTwoYears()`
 
 ```php
-getTrialBsTwoYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $adjustment): \Freee\Accounting\Model\TrialBsTwoYearsResponse
+getTrialBsTwoYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $approval_flow_status): \Freee\Accounting\Model\TrialBsTwoYearsResponse
 ```
 
 貸借対照表(前年比較)の取得
-
-<h2 id=\"\">概要</h2>  <p>指定した事業所の貸借対照表(前年比較)を取得する</p>  <h2 id=\"_2\">定義</h2>  <ul>  <li> <p>created_at : 作成日時</p> </li>  <li> <p>account_item_name : 勘定科目名</p> </li>  <li> <p>hierarchy_level: 階層レベル</p> </li>  <li> <p>parent_account_category_name: 上位勘定科目カテゴリー名</p> </li> <li> <p>last_year_closing_balance:  前年度期末残高 </p> </li> <li> <p>closing_balance : 期末残高 </p> </li> <h2 id=\"_3\">注意点</h2> <ul> <li>会計年度が指定されない場合、現在の会計年度がデフォルトとなります。</li> <li>絞り込み条件の日付と、月または年度は同時に指定することはできません。</li> <li>up_to_dateがfalseの場合、残高の集計が完了していません。最新の集計結果を確認したい場合は、時間を空けて再度取得する必要があります。</li>  </ul>  <h2 id=\"_4\">レスポンスの例</h2>  <blockquote> <p>GET https://api.freee.co.jp/api/1/reports/trial_bs_two_years?company_id=1&amp;fiscal_year=2017</p> </blockquote>  <pre><code>{   &quot;trial_bs_two_years&quot; :     {       &quot;company_id&quot; : 1,       &quot;fiscal_year&quot; : 2017,       &quot;created_at&quot; : &quot;2018-05-01 12:00:50&quot       &quot;balances&quot; : [{         &quot;account_item_id&quot; : 1000,         &quot;account_item_name&quot; : &quot;現金&quot;,         &quot;hierarchy_level&quot; : 2,         &quot;account_category_name&quot; : &quot;流動資産&quot;,         &quot;last_year_closing_balance&quot; : 25000,         &quot;closing_balance&quot; : 100000,         &quot;year_on_year&quot; : 0.85        },       ...       ]     } }</code></pre>
 
 ### Example
 
@@ -207,18 +219,20 @@ $apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
 $company_id = 56; // int | 事業所ID
 $fiscal_year = 56; // int | 会計年度
 $start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
-$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
 $account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
-$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
+$section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
 $adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
+$approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
 
 try {
-    $result = $apiInstance->getTrialBsTwoYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $adjustment);
+    $result = $apiInstance->getTrialBsTwoYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $approval_flow_status);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TrialBalanceApi->getTrialBsTwoYears: ', $e->getMessage(), PHP_EOL;
@@ -232,15 +246,17 @@ Name | Type | Description  | Notes
  **company_id** | **int**| 事業所ID |
  **fiscal_year** | **int**| 会計年度 | [optional]
  **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
- **end_month** | **int**| 発生月で絞込：終了会計月(1-12) | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
  **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
- **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
+ **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
  **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
+ **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
 
 ### Return type
 
@@ -259,15 +275,13 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getTrialPl()`
+## `getTrialCr()`
 
 ```php
-getTrialPl($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation): \Freee\Accounting\Model\TrialPlResponse
+getTrialCr($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialCrResponse
 ```
 
-損益計算書の取得
-
-<h2 id=\"\">概要</h2>  <p>指定した事業所の損益計算書を取得する</p>  <h2 id=\"_2\">定義</h2>  <ul>  <li> <p>created_at : 作成日時</p> </li>  <li> <p>account_item_name : 勘定科目名</p> </li>  <li> <p>hierarchy_level: 階層レベル</p> </li>  <li> <p>parent_account_category_name: 上位勘定科目カテゴリー名</p> </li> <li> <p>opening_balance : 期首残高 </p> </li>  <li> <p>debit_amount : 借方金額 </p> </li> <li> <p>credit_amount:  貸方金額 </p> </li> <li> <p>closing_balance : 期末残高 </p> </li> <li> <p>composition_ratio : 構成比</p> </li> <h2 id=\"_3\">注意点</h2> <ul> <li>会計年度が指定されない場合、現在の会計年度がデフォルトとなります。</li> <li>絞り込み条件の日付と、月または年度は同時に指定することはできません。</li> <li>up_to_dateがfalseの場合、残高の集計が完了していません。最新の集計結果を確認したい場合は、時間を空けて再度取得する必要があります。</li> <li>配賦仕訳の絞り込み（cost_allocation）は法人向けのベーシックプラン以上で利用可能です。</li> </ul> <h2 id=\"_4\">レスポンスの例</h2>  <blockquote> <p>GET https://api.freee.co.jp/api/1/reports/trial_pl?company_id=1&amp;fiscal_year=2017&amp;breakdown_display_type=partner</p> </blockquote>  <pre><code>{   &quot;trial_pl&quot; :     {       &quot;company_id&quot; : 1,       &quot;fiscal_year&quot; : 2017,       &quot;breakdown_display_type&quot; : &quot;partner&quot;,       &quot;created_at&quot; : &quot;2018-05-01 12:00:50&quot       &quot;balances&quot; : [{         &quot;account_item_id&quot; : 1500,         &quot;account_item_name&quot; : &quot;売上高&quot;,         &quot;hierarchy_level&quot; : 2,         &quot;account_category_name&quot; : &quot;営業収益&quot;,         &quot;opening_balance&quot; : 100000,         &quot;debit_amount&quot; : 50000,         &quot;credit_amount&quot; : 20000,         &quot;closing_balance&quot; : 130000,         &quot;composition_ratio&quot; : 0.25         &quot;partners&quot; : [{           &quot;id&quot; : 123,           &quot;name&quot; : &quot;freee&quot;,           &quot;opening_balance&quot; : 100000,           &quot;debit_amount&quot; : 50000,           &quot;credit_amount&quot; : 20000,           &quot;closing_balance&quot; : 130000,           &quot;composition_ratio&quot; : 0.25           },         ...         ]       },       ...       ]     } }</code></pre>
+製造原価報告書の取得
 
 ### Example
 
@@ -289,7 +303,180 @@ $apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
 $company_id = 56; // int | 事業所ID
 $fiscal_year = 56; // int | 会計年度
 $start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
-$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
+$start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
+$end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
+$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
+$partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
+$item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
+$section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
+$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
+$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
+
+try {
+    $result = $apiInstance->getTrialCr($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling TrialBalanceApi->getTrialCr: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **company_id** | **int**| 事業所ID |
+ **fiscal_year** | **int**| 会計年度 | [optional]
+ **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
+ **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
+ **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
+ **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
+ **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
+ **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
+ **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
+ **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
+ **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
+
+### Return type
+
+[**\Freee\Accounting\Model\TrialCrResponse**](../Model/TrialCrResponse.md)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getTrialCrSections()`
+
+```php
+getTrialCrSections($company_id, $section_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialCrSectionsResponse
+```
+
+製造原価報告書(部門比較)の取得
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2
+$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 56; // int | 事業所ID
+$section_ids = 'section_ids_example'; // string | 出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択の部門で比較できます）
+$fiscal_year = 56; // int | 会計年度
+$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
+$start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
+$end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
+$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
+$partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
+$item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
+$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
+$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
+
+try {
+    $result = $apiInstance->getTrialCrSections($company_id, $section_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $adjustment, $cost_allocation, $approval_flow_status);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling TrialBalanceApi->getTrialCrSections: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **company_id** | **int**| 事業所ID |
+ **section_ids** | **string**| 出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択の部門で比較できます） |
+ **fiscal_year** | **int**| 会計年度 | [optional]
+ **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
+ **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
+ **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
+ **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
+ **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
+ **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
+ **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
+ **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
+
+### Return type
+
+[**\Freee\Accounting\Model\TrialCrSectionsResponse**](../Model/TrialCrSectionsResponse.md)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getTrialCrSegment1Tags()`
+
+```php
+getTrialCrSegment1Tags($company_id, $segment_1_tag_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialCrSegment1TagsResponse
+```
+
+製造原価報告書(セグメント1比較)の取得
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2
+$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 56; // int | 事業所ID
+$segment_1_tag_ids = 'segment_1_tag_ids_example'; // string | 出力するセグメント1タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）
+$fiscal_year = 56; // int | 会計年度
+$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
 $account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
@@ -300,9 +487,445 @@ $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未�
 $section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
 $adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
 $cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
 
 try {
-    $result = $apiInstance->getTrialPl($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation);
+    $result = $apiInstance->getTrialCrSegment1Tags($company_id, $segment_1_tag_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling TrialBalanceApi->getTrialCrSegment1Tags: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **company_id** | **int**| 事業所ID |
+ **segment_1_tag_ids** | **string**| 出力するセグメント1タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます） |
+ **fiscal_year** | **int**| 会計年度 | [optional]
+ **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
+ **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
+ **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
+ **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
+ **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
+ **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
+ **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
+ **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
+ **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
+
+### Return type
+
+[**\Freee\Accounting\Model\TrialCrSegment1TagsResponse**](../Model/TrialCrSegment1TagsResponse.md)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getTrialCrSegment2Tags()`
+
+```php
+getTrialCrSegment2Tags($company_id, $segment_2_tag_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialCrSegment2TagsResponse
+```
+
+製造原価報告書(セグメント2比較)の取得
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2
+$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 56; // int | 事業所ID
+$segment_2_tag_ids = 'segment_2_tag_ids_example'; // string | 出力するセグメント2タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）
+$fiscal_year = 56; // int | 会計年度
+$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
+$start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
+$end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
+$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
+$partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
+$item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
+$section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
+$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
+$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
+
+try {
+    $result = $apiInstance->getTrialCrSegment2Tags($company_id, $segment_2_tag_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling TrialBalanceApi->getTrialCrSegment2Tags: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **company_id** | **int**| 事業所ID |
+ **segment_2_tag_ids** | **string**| 出力するセグメント2タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます） |
+ **fiscal_year** | **int**| 会計年度 | [optional]
+ **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
+ **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
+ **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
+ **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
+ **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
+ **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
+ **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
+ **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
+ **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
+
+### Return type
+
+[**\Freee\Accounting\Model\TrialCrSegment2TagsResponse**](../Model/TrialCrSegment2TagsResponse.md)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getTrialCrSegment3Tags()`
+
+```php
+getTrialCrSegment3Tags($company_id, $segment_3_tag_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialCrSegment3TagsResponse
+```
+
+製造原価報告書(セグメント3比較)の取得
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2
+$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 56; // int | 事業所ID
+$segment_3_tag_ids = 'segment_3_tag_ids_example'; // string | 出力するセグメント3タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）
+$fiscal_year = 56; // int | 会計年度
+$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
+$start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
+$end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
+$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
+$partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
+$item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
+$section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
+$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
+$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
+
+try {
+    $result = $apiInstance->getTrialCrSegment3Tags($company_id, $segment_3_tag_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling TrialBalanceApi->getTrialCrSegment3Tags: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **company_id** | **int**| 事業所ID |
+ **segment_3_tag_ids** | **string**| 出力するセグメント3タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます） |
+ **fiscal_year** | **int**| 会計年度 | [optional]
+ **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
+ **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
+ **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
+ **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
+ **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
+ **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
+ **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
+ **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
+ **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
+
+### Return type
+
+[**\Freee\Accounting\Model\TrialCrSegment3TagsResponse**](../Model/TrialCrSegment3TagsResponse.md)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getTrialCrThreeYears()`
+
+```php
+getTrialCrThreeYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialCrThreeYearsResponse
+```
+
+製造原価報告書(３期間比較)の取得
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2
+$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 56; // int | 事業所ID
+$fiscal_year = 56; // int | 会計年度
+$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
+$start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
+$end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
+$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
+$partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
+$item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
+$section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
+$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
+$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
+
+try {
+    $result = $apiInstance->getTrialCrThreeYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling TrialBalanceApi->getTrialCrThreeYears: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **company_id** | **int**| 事業所ID |
+ **fiscal_year** | **int**| 会計年度 | [optional]
+ **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
+ **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
+ **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
+ **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
+ **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
+ **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
+ **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
+ **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
+ **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
+
+### Return type
+
+[**\Freee\Accounting\Model\TrialCrThreeYearsResponse**](../Model/TrialCrThreeYearsResponse.md)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getTrialCrTwoYears()`
+
+```php
+getTrialCrTwoYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialCrTwoYearsResponse
+```
+
+製造原価報告書(前年比較)の取得
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2
+$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 56; // int | 事業所ID
+$fiscal_year = 56; // int | 会計年度
+$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
+$start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
+$end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
+$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
+$partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
+$item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
+$section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
+$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
+$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
+
+try {
+    $result = $apiInstance->getTrialCrTwoYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling TrialBalanceApi->getTrialCrTwoYears: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **company_id** | **int**| 事業所ID |
+ **fiscal_year** | **int**| 会計年度 | [optional]
+ **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
+ **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
+ **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
+ **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
+ **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
+ **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
+ **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
+ **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
+ **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
+
+### Return type
+
+[**\Freee\Accounting\Model\TrialCrTwoYearsResponse**](../Model/TrialCrTwoYearsResponse.md)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getTrialPl()`
+
+```php
+getTrialPl($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialPlResponse
+```
+
+損益計算書の取得
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2
+$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 56; // int | 事業所ID
+$fiscal_year = 56; // int | 会計年度
+$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
+$start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
+$end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
+$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
+$partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
+$item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
+$section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
+$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
+$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
+
+try {
+    $result = $apiInstance->getTrialPl($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TrialBalanceApi->getTrialPl: ', $e->getMessage(), PHP_EOL;
@@ -316,17 +939,18 @@ Name | Type | Description  | Notes
  **company_id** | **int**| 事業所ID |
  **fiscal_year** | **int**| 会計年度 | [optional]
  **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
- **end_month** | **int**| 発生月で絞込：終了会計月(1-12) | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
  **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
- **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
  **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
  **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
  **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
 
 ### Return type
 
@@ -348,12 +972,10 @@ Name | Type | Description  | Notes
 ## `getTrialPlSections()`
 
 ```php
-getTrialPlSections($company_id, $section_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $adjustment, $cost_allocation): \Freee\Accounting\Model\TrialPlSectionsResponse
+getTrialPlSections($company_id, $section_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialPlSectionsResponse
 ```
 
 損益計算書(部門比較)の取得
-
-<h2 id=\"\">概要</h2>  <p>指定した事業所の損益計算書(部門比較)を取得する</p>  <h2 id=\"_2\">定義</h2>  <ul>  <li> <p>created_at : 作成日時</p> </li>  <li> <p>account_item_name : 勘定科目名</p> </li>  <li> <p>hierarchy_level: 階層レベル</p> </li>  <li> <p>parent_account_category_name: 上位勘定科目カテゴリー名</p> </li> <li> <p>closing_balance : 期末残高 </p> </li> <h2 id=\"_3\">注意点</h2> <ul> <li>個人向けのプレミアムプラン、法人向けのビジネスプラン以上で利用可能なAPIです。対象外のプランでは401エラーを返却します。</li> <li>会計年度が指定されない場合、現在の会計年度がデフォルトとなります。</li> <li>絞り込み条件の日付と、月または年度は同時に指定することはできません。</li> <li>up_to_dateがfalseの場合、残高の集計が完了していません。最新の集計結果を確認したい場合は、時間を空けて再度取得する必要があります。</li> <li>配賦仕訳の絞り込み（cost_allocation）は法人向けのベーシックプラン以上で利用可能です。</li> </ul> <h2 id=\"_4\">レスポンスの例</h2>  <blockquote> <p>GET https://api.freee.co.jp/api/1/reports/trial_pl_section?company_id=1&amp;section_ids=1,2,3&amp;fiscal_year=2017</p></p> </blockquote>  <pre><code>{   &quot;trial_pl_sections&quot; :     {       &quot;company_id&quot; : 1,       &quot;section_ids&quot; : &quot;1,2,3&quot;,       &quot;fiscal_year&quot; : 2017,       &quot;created_at&quot; : &quot;2018-05-01 12:00:50&quot       &quot;balances&quot; : [{         &quot;account_item_id&quot; : 1500,         &quot;account_item_name&quot; : &quot;売上高&quot;,         &quot;hierarchy_level&quot; : 2,         &quot;account_category_name&quot; : &quot;営業収益&quot;,         &quot;closing_balance&quot; : 1000000,         &quot;sections&quot; : [{           &quot;id&quot;: 1           &quot;name&quot;: &quot;営業部&quot;,           &quot;closing_balance&quot; : 100000         },         {           &quot;id&quot;: 2           &quot;name&quot;: &quot;広報部&quot;,           &quot;closing_balance&quot; : 200000         },         {           &quot;id&quot;: 3           &quot;name&quot;: &quot;人事部&quot;,           &quot;closing_balance&quot; : 300000         },         ...         ]       },       ...       ]     } }</code></pre>
 
 ### Example
 
@@ -373,22 +995,23 @@ $apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
     $config
 );
 $company_id = 56; // int | 事業所ID
-$section_ids = 'section_ids_example'; // string | 出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください）
+$section_ids = 'section_ids_example'; // string | 出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択の部門で比較できます。）
 $fiscal_year = 56; // int | 会計年度
 $start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
-$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
 $account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
-$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
 $adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
 $cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
 
 try {
-    $result = $apiInstance->getTrialPlSections($company_id, $section_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $adjustment, $cost_allocation);
+    $result = $apiInstance->getTrialPlSections($company_id, $section_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $adjustment, $cost_allocation, $approval_flow_status);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TrialBalanceApi->getTrialPlSections: ', $e->getMessage(), PHP_EOL;
@@ -400,19 +1023,20 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| 事業所ID |
- **section_ids** | **string**| 出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください） |
+ **section_ids** | **string**| 出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択の部門で比較できます。） |
  **fiscal_year** | **int**| 会計年度 | [optional]
  **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
- **end_month** | **int**| 発生月で絞込：終了会計月(1-12) | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
  **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
- **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
  **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
  **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
 
 ### Return type
 
@@ -431,15 +1055,277 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getTrialPlSegment1Tags()`
+
+```php
+getTrialPlSegment1Tags($company_id, $segment_1_tag_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialPlSegment1TagsResponse
+```
+
+損益計算書(セグメント1比較)の取得
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2
+$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 56; // int | 事業所ID
+$segment_1_tag_ids = 'segment_1_tag_ids_example'; // string | 出力するセグメント1タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）
+$fiscal_year = 56; // int | 会計年度
+$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
+$start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
+$end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
+$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
+$partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
+$item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
+$section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
+$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
+$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
+
+try {
+    $result = $apiInstance->getTrialPlSegment1Tags($company_id, $segment_1_tag_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling TrialBalanceApi->getTrialPlSegment1Tags: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **company_id** | **int**| 事業所ID |
+ **segment_1_tag_ids** | **string**| 出力するセグメント1タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます） |
+ **fiscal_year** | **int**| 会計年度 | [optional]
+ **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
+ **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
+ **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
+ **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
+ **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
+ **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
+ **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
+ **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
+ **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
+
+### Return type
+
+[**\Freee\Accounting\Model\TrialPlSegment1TagsResponse**](../Model/TrialPlSegment1TagsResponse.md)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getTrialPlSegment2Tags()`
+
+```php
+getTrialPlSegment2Tags($company_id, $segment_2_tag_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialPlSegment2TagsResponse
+```
+
+損益計算書(セグメント2比較)の取得
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2
+$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 56; // int | 事業所ID
+$segment_2_tag_ids = 'segment_2_tag_ids_example'; // string | 出力するセグメント2タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）
+$fiscal_year = 56; // int | 会計年度
+$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
+$start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
+$end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
+$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
+$partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
+$item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
+$section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
+$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
+$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
+
+try {
+    $result = $apiInstance->getTrialPlSegment2Tags($company_id, $segment_2_tag_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling TrialBalanceApi->getTrialPlSegment2Tags: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **company_id** | **int**| 事業所ID |
+ **segment_2_tag_ids** | **string**| 出力するセグメント2タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます） |
+ **fiscal_year** | **int**| 会計年度 | [optional]
+ **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
+ **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
+ **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
+ **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
+ **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
+ **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
+ **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
+ **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
+ **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
+
+### Return type
+
+[**\Freee\Accounting\Model\TrialPlSegment2TagsResponse**](../Model/TrialPlSegment2TagsResponse.md)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getTrialPlSegment3Tags()`
+
+```php
+getTrialPlSegment3Tags($company_id, $segment_3_tag_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialPlSegment3TagsResponse
+```
+
+損益計算書(セグメント3比較)の取得
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2
+$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 56; // int | 事業所ID
+$segment_3_tag_ids = 'segment_3_tag_ids_example'; // string | 出力するセグメント3タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）
+$fiscal_year = 56; // int | 会計年度
+$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
+$start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
+$end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
+$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
+$partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
+$item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
+$section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
+$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
+$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
+
+try {
+    $result = $apiInstance->getTrialPlSegment3Tags($company_id, $segment_3_tag_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling TrialBalanceApi->getTrialPlSegment3Tags: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **company_id** | **int**| 事業所ID |
+ **segment_3_tag_ids** | **string**| 出力するセグメント3タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます） |
+ **fiscal_year** | **int**| 会計年度 | [optional]
+ **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
+ **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
+ **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
+ **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
+ **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
+ **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
+ **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
+ **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
+ **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
+
+### Return type
+
+[**\Freee\Accounting\Model\TrialPlSegment3TagsResponse**](../Model/TrialPlSegment3TagsResponse.md)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getTrialPlThreeYears()`
 
 ```php
-getTrialPlThreeYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation): \Freee\Accounting\Model\TrialPlThreeYearsResponse
+getTrialPlThreeYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialPlThreeYearsResponse
 ```
 
 損益計算書(３期間比較)の取得
-
-<h2 id=\"\">概要</h2>  <p>指定した事業所の損益計算書(３期間比較)を取得する</p>  <h2 id=\"_2\">定義</h2>  <ul>  <li> <p>created_at : 作成日時</p> </li>  <li> <p>account_item_name : 勘定科目名</p> </li>  <li> <p>hierarchy_level: 階層レベル</p> </li>  <li> <p>parent_account_category_name: 上位勘定科目カテゴリー名</p> </li> <li> <p>two_years_before_closing_balance:  前々年度期末残高 </p> </li> <li> <p>last_year_closing_balance:  前年度期末残高 </p> </li> <li> <p>closing_balance : 期末残高 </p> </li> <li> <p>year_on_year : 前年比</p> </li> <h2 id=\"_3\">注意点</h2> <ul> <li>会計年度が指定されない場合、現在の会計年度がデフォルトとなります。</li> <li>絞り込み条件の日付と、月または年度は同時に指定することはできません。</li> <li>up_to_dateがfalseの場合、残高の集計が完了していません。最新の集計結果を確認したい場合は、時間を空けて再度取得する必要があります。</li> <li>配賦仕訳の絞り込み（cost_allocation）は法人向けのベーシックプラン以上で利用可能です。</li> </ul> <h2 id=\"_4\">レスポンスの例</h2>  <blockquote> <p>GET https://api.freee.co.jp/api/1/reports/trial_pl_three_years?company_id=1&fiscal_year=2017</p> </blockquote>  <pre><code>{   &quot;trial_pl_three_years&quot; :     {       &quot;company_id&quot; : 1,       &quot;fiscal_year&quot; : 2017,       &quot;created_at&quot; : &quot;2018-05-01 12:00:50&quot       &quot;balances&quot; : [{         &quot;account_item_id&quot; : 1500,         &quot;account_item_name&quot; : &quot;売上高&quot;,         &quot;hierarchy_level&quot; : 2,         &quot;account_category_name&quot; : &quot;営業収益&quot;,         &quot;two_year_before_closing_balance&quot; : 50000,         &quot;last_year_closing_balance&quot; : 25000,         &quot;closing_balance&quot; : 100000,         &quot;year_on_year&quot; : 0.85       },       ...       ]     } }</code></pre>
 
 ### Example
 
@@ -461,20 +1347,21 @@ $apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
 $company_id = 56; // int | 事業所ID
 $fiscal_year = 56; // int | 会計年度
 $start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
-$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
 $account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
-$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
 $section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
 $adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
 $cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
 
 try {
-    $result = $apiInstance->getTrialPlThreeYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation);
+    $result = $apiInstance->getTrialPlThreeYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TrialBalanceApi->getTrialPlThreeYears: ', $e->getMessage(), PHP_EOL;
@@ -488,17 +1375,18 @@ Name | Type | Description  | Notes
  **company_id** | **int**| 事業所ID |
  **fiscal_year** | **int**| 会計年度 | [optional]
  **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
- **end_month** | **int**| 発生月で絞込：終了会計月(1-12) | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
  **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
- **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
  **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
  **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
  **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
 
 ### Return type
 
@@ -520,12 +1408,10 @@ Name | Type | Description  | Notes
 ## `getTrialPlTwoYears()`
 
 ```php
-getTrialPlTwoYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation): \Freee\Accounting\Model\TrialPlTwoYearsResponse
+getTrialPlTwoYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialPlTwoYearsResponse
 ```
 
 損益計算書(前年比較)の取得
-
-<h2 id=\"\">概要</h2>  <p>指定した事業所の損益計算書(前年比較)を取得する</p>  <h2 id=\"_2\">定義</h2>  <ul>  <li> <p>created_at : 作成日時</p> </li>  <li> <p>account_item_name : 勘定科目名</p> </li>  <li> <p>hierarchy_level: 階層レベル</p> </li>  <li> <p>parent_account_category_name: 上位勘定科目カテゴリー名</p> </li> <li> <p>last_year_closing_balance:  前年度期末残高 </p> </li> <li> <p>closing_balance : 期末残高 </p> </li> <li> <p>year_on_year : 前年比</p> </li> <h2 id=\"_3\">注意点</h2> <ul> <li>会計年度が指定されない場合、現在の会計年度がデフォルトとなります。</li> <li>絞り込み条件の日付と、月または年度は同時に指定することはできません。</li> <li>up_to_dateがfalseの場合、残高の集計が完了していません。最新の集計結果を確認したい場合は、時間を空けて再度取得する必要があります。</li> <li>配賦仕訳の絞り込み（cost_allocation）は法人向けのベーシックプラン以上で利用可能です。</li> </ul>  <h2 id=\"_4\">レスポンスの例</h2>  <blockquote> <p>GET https://api.freee.co.jp/api/1/reports/trial_pl_two_years?company_id=1&amp;fiscal_year=2017</p> </blockquote>  <pre><code>{   &quot;trial_pl_two_years&quot; :     {       &quot;company_id&quot; : 1,       &quot;fiscal_year&quot; : 2017,       &quot;created_at&quot; : &quot;2018-05-01 12:00:50&quot       &quot;balances&quot; : [{         &quot;account_item_id&quot; : 1500,         &quot;account_item_name&quot; : &quot;売上高&quot;,         &quot;hierarchy_level&quot; : 2,         &quot;account_category_name&quot; : &quot;営業収益&quot;,         &quot;last_year_closing_balance&quot; : 25000,         &quot;closing_balance&quot; : 100000,         &quot;year_on_year&quot; : 0.85        },       ...       ]     } }</code></pre>
 
 ### Example
 
@@ -547,20 +1433,21 @@ $apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
 $company_id = 56; // int | 事業所ID
 $fiscal_year = 56; // int | 会計年度
 $start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
-$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
 $account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
-$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
 $section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
 $adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
 $cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
 
 try {
-    $result = $apiInstance->getTrialPlTwoYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation);
+    $result = $apiInstance->getTrialPlTwoYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TrialBalanceApi->getTrialPlTwoYears: ', $e->getMessage(), PHP_EOL;
@@ -574,17 +1461,18 @@ Name | Type | Description  | Notes
  **company_id** | **int**| 事業所ID |
  **fiscal_year** | **int**| 会計年度 | [optional]
  **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
- **end_month** | **int**| 発生月で絞込：終了会計月(1-12) | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
  **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
- **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
  **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
  **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
  **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
 
 ### Return type
 

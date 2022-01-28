@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**transfers** | [**\Freee\Accounting\Model\Transfer[]**](Transfer.md) |  |
+**wallet_txns** | [**\Freee\Accounting\Model\WalletTxn[]**](WalletTxn.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

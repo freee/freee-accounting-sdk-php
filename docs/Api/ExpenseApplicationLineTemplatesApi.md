@@ -191,12 +191,10 @@ Name | Type | Description  | Notes
 ## `getExpenseApplicationLineTemplates()`
 
 ```php
-getExpenseApplicationLineTemplates($company_id, $offset, $limit): \Freee\Accounting\Model\InlineResponse2003
+getExpenseApplicationLineTemplates($company_id, $offset, $limit): \Freee\Accounting\Model\InlineResponse2002
 ```
 
 経費科目一覧の取得
-
-<h2 id=\"\">概要</h2>  <p>指定した事業所の経費科目一覧を取得する</p>
 
 ### Example
 
@@ -237,7 +235,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\Freee\Accounting\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
 
 ### Authorization
 

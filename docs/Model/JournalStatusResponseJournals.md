@@ -10,7 +10,8 @@ Name | Type | Description | Notes
 **end_date** | **string** | 取得終了日 (yyyy-mm-dd) |
 **id** | **int** | 受け付けID |
 **start_date** | **string** | 取得開始日 (yyyy-mm-dd) |
-**status** | **string** | 事業所ID |
+**status** | **string** | ダウンロードリクエストのステータス |
+**visible_ids** | **string[]** |  | [optional]
 **visible_tags** | **string[]** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
