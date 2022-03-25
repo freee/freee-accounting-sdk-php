@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**application_date** | **string** | 申請日 (yyyy-mm-dd) |
+**application_date** | **string** | 申請日 (yyyy-mm-dd)&lt;br&gt; 指定しない場合は当日の日付が登録されます。 | [optional]
 **approval_flow_route_id** | **int** | 申請経路ID |
 **approver_id** | **int** | 承認者のユーザーID | [optional]
 **company_id** | **int** | 事業所ID |
