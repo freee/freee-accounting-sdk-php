@@ -12,7 +12,7 @@
         "fideloper/proxy": "^4.2",
         "freee/freee-accounting-sdk": "@dev",
         "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^6.3",
+        "guzzlehttp/guzzle": "^7.3",
         "laravel/framework": "^7.24",
         "laravel/tinker": "^2.0"
     },
@@ -61,13 +61,13 @@
             "@php artisan key:generate --ansi"
         ]
     },
-    "repositories": {
-        "freee/freee-accounting-sdk": {
+    "repositories": [
+        {
             "type": "path",
             "url": "./freee-accounting-sdk",
             "options": {
                 "symlink": true
             }
         }
-    }
+    ]
 }
