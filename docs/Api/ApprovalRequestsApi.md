@@ -335,7 +335,7 @@ $apiInstance = new Freee\Accounting\Api\ApprovalRequestsApi(
     $config
 );
 $company_id = 56; // int | 事業所ID
-$status = draft; // string | 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)
+$status = draft; // string | 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) 承認者指定時には無効です。
 $application_number = 2; // int | 申請No.
 $title = 大阪出張; // string | 申請タイトル
 $form_id = 56; // int | 申請フォームID
@@ -344,7 +344,7 @@ $end_application_date = 'end_application_date_example'; // string | 申請日で
 $applicant_id = 56; // int | 申請者のユーザーID
 $min_amount = 56; // int | 金額で絞込：以上
 $max_amount = 56; // int | 金額で絞込：以下
-$approver_id = 1; // int | 承認者のユーザーID
+$approver_id = 1; // int | 承認者のユーザーID 承認者指定時には申請ステータスが申請中のものだけが取得可能です。
 $offset = 56; // int | 取得レコードのオフセット (デフォルト: 0)
 $limit = 56; // int | 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500)
 
@@ -361,7 +361,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| 事業所ID |
- **status** | **string**| 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) | [optional]
+ **status** | **string**| 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) 承認者指定時には無効です。 | [optional]
  **application_number** | **int**| 申請No. | [optional]
  **title** | **string**| 申請タイトル | [optional]
  **form_id** | **int**| 申請フォームID | [optional]
@@ -370,7 +370,7 @@ Name | Type | Description  | Notes
  **applicant_id** | **int**| 申請者のユーザーID | [optional]
  **min_amount** | **int**| 金額で絞込：以上 | [optional]
  **max_amount** | **int**| 金額で絞込：以下 | [optional]
- **approver_id** | **int**| 承認者のユーザーID | [optional]
+ **approver_id** | **int**| 承認者のユーザーID 承認者指定時には申請ステータスが申請中のものだけが取得可能です。 | [optional]
  **offset** | **int**| 取得レコードのオフセット (デフォルト: 0) | [optional]
  **limit** | **int**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) | [optional]
 

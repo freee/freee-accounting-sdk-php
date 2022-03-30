@@ -50,17 +50,17 @@ $apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
 );
 $company_id = 56; // int | 事業所ID
 $fiscal_year = 56; // int | 会計年度
-$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
-$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
+$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
-$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
+$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
 $breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
 $section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
-$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
+$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。
 $approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
 
 try {
@@ -77,17 +77,17 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| 事業所ID |
  **fiscal_year** | **int**| 会計年度 | [optional]
- **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
- **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
+ **start_month** | **int**| 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 | [optional]
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
- **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
+ **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
  **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
  **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
- **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
+ **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 | [optional]
  **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
 
 ### Return type
@@ -134,17 +134,17 @@ $apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
 );
 $company_id = 56; // int | 事業所ID
 $fiscal_year = 56; // int | 会計年度
-$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
-$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
+$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
-$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
+$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
 $breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
 $section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
-$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
+$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。
 $approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
 
 try {
@@ -161,17 +161,17 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| 事業所ID |
  **fiscal_year** | **int**| 会計年度 | [optional]
- **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
- **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
+ **start_month** | **int**| 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 | [optional]
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
- **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
+ **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
  **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
  **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
- **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
+ **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 | [optional]
  **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
 
 ### Return type
@@ -218,17 +218,17 @@ $apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
 );
 $company_id = 56; // int | 事業所ID
 $fiscal_year = 56; // int | 会計年度
-$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
-$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
+$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
-$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
+$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
 $breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
 $section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
-$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
+$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。
 $approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
 
 try {
@@ -245,17 +245,17 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| 事業所ID |
  **fiscal_year** | **int**| 会計年度 | [optional]
- **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
- **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
+ **start_month** | **int**| 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 | [optional]
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
- **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
+ **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
  **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
  **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
- **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
+ **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 | [optional]
  **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
 
 ### Return type
@@ -302,18 +302,18 @@ $apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
 );
 $company_id = 56; // int | 事業所ID
 $fiscal_year = 56; // int | 会計年度
-$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
-$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
+$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
-$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
+$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
 $breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
 $section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
-$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
-$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。
+$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。
 $approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
 
 try {
@@ -330,18 +330,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| 事業所ID |
  **fiscal_year** | **int**| 会計年度 | [optional]
- **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
- **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
+ **start_month** | **int**| 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 | [optional]
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
- **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
+ **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
  **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
  **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
- **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
- **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 | [optional]
+ **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 | [optional]
  **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
 
 ### Return type
@@ -389,17 +389,17 @@ $apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
 $company_id = 56; // int | 事業所ID
 $section_ids = 'section_ids_example'; // string | 出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択の部門で比較できます）
 $fiscal_year = 56; // int | 会計年度
-$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
-$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
+$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
-$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
+$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
 $breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
-$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
-$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。
+$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。
 $approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
 
 try {
@@ -417,17 +417,17 @@ Name | Type | Description  | Notes
  **company_id** | **int**| 事業所ID |
  **section_ids** | **string**| 出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択の部門で比較できます） |
  **fiscal_year** | **int**| 会計年度 | [optional]
- **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
- **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
+ **start_month** | **int**| 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 | [optional]
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
- **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
+ **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
  **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
- **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
- **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 | [optional]
+ **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 | [optional]
  **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
 
 ### Return type
@@ -475,18 +475,18 @@ $apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
 $company_id = 56; // int | 事業所ID
 $segment_1_tag_ids = 'segment_1_tag_ids_example'; // string | 出力するセグメント1タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）
 $fiscal_year = 56; // int | 会計年度
-$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
-$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
+$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
-$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
+$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
 $breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
 $section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
-$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
-$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。
+$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。
 $approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
 
 try {
@@ -504,18 +504,18 @@ Name | Type | Description  | Notes
  **company_id** | **int**| 事業所ID |
  **segment_1_tag_ids** | **string**| 出力するセグメント1タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます） |
  **fiscal_year** | **int**| 会計年度 | [optional]
- **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
- **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
+ **start_month** | **int**| 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 | [optional]
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
- **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
+ **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
  **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
  **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
- **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
- **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 | [optional]
+ **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 | [optional]
  **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
 
 ### Return type
@@ -563,18 +563,18 @@ $apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
 $company_id = 56; // int | 事業所ID
 $segment_2_tag_ids = 'segment_2_tag_ids_example'; // string | 出力するセグメント2タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）
 $fiscal_year = 56; // int | 会計年度
-$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
-$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
+$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
-$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
+$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
 $breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
 $section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
-$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
-$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。
+$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。
 $approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
 
 try {
@@ -592,18 +592,18 @@ Name | Type | Description  | Notes
  **company_id** | **int**| 事業所ID |
  **segment_2_tag_ids** | **string**| 出力するセグメント2タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます） |
  **fiscal_year** | **int**| 会計年度 | [optional]
- **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
- **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
+ **start_month** | **int**| 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 | [optional]
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
- **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
+ **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
  **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
  **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
- **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
- **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 | [optional]
+ **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 | [optional]
  **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
 
 ### Return type
@@ -651,18 +651,18 @@ $apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
 $company_id = 56; // int | 事業所ID
 $segment_3_tag_ids = 'segment_3_tag_ids_example'; // string | 出力するセグメント3タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）
 $fiscal_year = 56; // int | 会計年度
-$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
-$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
+$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
-$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
+$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
 $breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
 $section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
-$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
-$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。
+$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。
 $approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
 
 try {
@@ -680,18 +680,18 @@ Name | Type | Description  | Notes
  **company_id** | **int**| 事業所ID |
  **segment_3_tag_ids** | **string**| 出力するセグメント3タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます） |
  **fiscal_year** | **int**| 会計年度 | [optional]
- **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
- **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
+ **start_month** | **int**| 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 | [optional]
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
- **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
+ **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
  **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
  **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
- **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
- **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 | [optional]
+ **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 | [optional]
  **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
 
 ### Return type
@@ -738,18 +738,18 @@ $apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
 );
 $company_id = 56; // int | 事業所ID
 $fiscal_year = 56; // int | 会計年度
-$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
-$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
+$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
-$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
+$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
 $breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
 $section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
-$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
-$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。
+$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。
 $approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
 
 try {
@@ -766,18 +766,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| 事業所ID |
  **fiscal_year** | **int**| 会計年度 | [optional]
- **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
- **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
+ **start_month** | **int**| 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 | [optional]
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
- **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
+ **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
  **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
  **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
- **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
- **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 | [optional]
+ **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 | [optional]
  **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
 
 ### Return type
@@ -824,18 +824,18 @@ $apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
 );
 $company_id = 56; // int | 事業所ID
 $fiscal_year = 56; // int | 会計年度
-$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
-$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
+$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
-$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
+$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
 $breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
 $section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
-$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
-$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。
+$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。
 $approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
 
 try {
@@ -852,18 +852,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| 事業所ID |
  **fiscal_year** | **int**| 会計年度 | [optional]
- **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
- **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
+ **start_month** | **int**| 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 | [optional]
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
- **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
+ **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
  **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
  **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
- **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
- **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 | [optional]
+ **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 | [optional]
  **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
 
 ### Return type
@@ -910,18 +910,18 @@ $apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
 );
 $company_id = 56; // int | 事業所ID
 $fiscal_year = 56; // int | 会計年度
-$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
-$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
+$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
-$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
+$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
 $breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
 $section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
-$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
-$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。
+$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。
 $approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
 
 try {
@@ -938,18 +938,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| 事業所ID |
  **fiscal_year** | **int**| 会計年度 | [optional]
- **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
- **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
+ **start_month** | **int**| 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 | [optional]
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
- **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
+ **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
  **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
  **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
- **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
- **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 | [optional]
+ **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 | [optional]
  **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
 
 ### Return type
@@ -997,17 +997,17 @@ $apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
 $company_id = 56; // int | 事業所ID
 $section_ids = 'section_ids_example'; // string | 出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択の部門で比較できます。）
 $fiscal_year = 56; // int | 会計年度
-$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
-$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
+$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
-$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
+$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
 $breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
-$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
-$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。
+$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。
 $approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
 
 try {
@@ -1025,17 +1025,17 @@ Name | Type | Description  | Notes
  **company_id** | **int**| 事業所ID |
  **section_ids** | **string**| 出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択の部門で比較できます。） |
  **fiscal_year** | **int**| 会計年度 | [optional]
- **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
- **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
+ **start_month** | **int**| 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 | [optional]
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
- **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
+ **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
  **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
- **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
- **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 | [optional]
+ **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 | [optional]
  **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
 
 ### Return type
@@ -1083,18 +1083,18 @@ $apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
 $company_id = 56; // int | 事業所ID
 $segment_1_tag_ids = 'segment_1_tag_ids_example'; // string | 出力するセグメント1タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）
 $fiscal_year = 56; // int | 会計年度
-$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
-$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
+$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
-$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
+$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
 $breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
 $section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
-$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
-$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。
+$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。
 $approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
 
 try {
@@ -1112,18 +1112,18 @@ Name | Type | Description  | Notes
  **company_id** | **int**| 事業所ID |
  **segment_1_tag_ids** | **string**| 出力するセグメント1タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます） |
  **fiscal_year** | **int**| 会計年度 | [optional]
- **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
- **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
+ **start_month** | **int**| 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 | [optional]
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
- **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
+ **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
  **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
  **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
- **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
- **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 | [optional]
+ **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 | [optional]
  **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
 
 ### Return type
@@ -1171,18 +1171,18 @@ $apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
 $company_id = 56; // int | 事業所ID
 $segment_2_tag_ids = 'segment_2_tag_ids_example'; // string | 出力するセグメント2タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）
 $fiscal_year = 56; // int | 会計年度
-$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
-$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
+$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
-$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
+$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
 $breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
 $section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
-$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
-$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。
+$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。
 $approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
 
 try {
@@ -1200,18 +1200,18 @@ Name | Type | Description  | Notes
  **company_id** | **int**| 事業所ID |
  **segment_2_tag_ids** | **string**| 出力するセグメント2タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます） |
  **fiscal_year** | **int**| 会計年度 | [optional]
- **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
- **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
+ **start_month** | **int**| 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 | [optional]
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
- **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
+ **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
  **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
  **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
- **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
- **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 | [optional]
+ **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 | [optional]
  **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
 
 ### Return type
@@ -1259,18 +1259,18 @@ $apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
 $company_id = 56; // int | 事業所ID
 $segment_3_tag_ids = 'segment_3_tag_ids_example'; // string | 出力するセグメント3タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）
 $fiscal_year = 56; // int | 会計年度
-$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
-$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
+$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
-$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
+$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
 $breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
 $section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
-$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
-$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。
+$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。
 $approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
 
 try {
@@ -1288,18 +1288,18 @@ Name | Type | Description  | Notes
  **company_id** | **int**| 事業所ID |
  **segment_3_tag_ids** | **string**| 出力するセグメント3タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます） |
  **fiscal_year** | **int**| 会計年度 | [optional]
- **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
- **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
+ **start_month** | **int**| 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 | [optional]
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
- **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
+ **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
  **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
  **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
- **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
- **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 | [optional]
+ **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 | [optional]
  **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
 
 ### Return type
@@ -1346,18 +1346,18 @@ $apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
 );
 $company_id = 56; // int | 事業所ID
 $fiscal_year = 56; // int | 会計年度
-$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
-$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
+$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
-$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
+$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
 $breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
 $section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
-$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
-$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。
+$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。
 $approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
 
 try {
@@ -1374,18 +1374,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| 事業所ID |
  **fiscal_year** | **int**| 会計年度 | [optional]
- **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
- **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
+ **start_month** | **int**| 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 | [optional]
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
- **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
+ **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
  **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
  **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
- **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
- **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 | [optional]
+ **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 | [optional]
  **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
 
 ### Return type
@@ -1432,18 +1432,18 @@ $apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
 );
 $company_id = 56; // int | 事業所ID
 $fiscal_year = 56; // int | 会計年度
-$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)
-$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。)
+$start_month = 56; // int | 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。
+$end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
-$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）
+$account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
 $breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
 $section_id = 56; // int | 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます）
-$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
-$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）
+$adjustment = 'adjustment_example'; // string | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。
+$cost_allocation = 'cost_allocation_example'; // string | 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。
 $approval_flow_status = 'approval_flow_status_example'; // string | 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)<br> 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。<br> 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。
 
 try {
@@ -1460,18 +1460,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| 事業所ID |
  **fiscal_year** | **int**| 会計年度 | [optional]
- **start_month** | **int**| 発生月で絞込：開始会計月(1-12) | [optional]
- **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) | [optional]
+ **start_month** | **int**| 発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 | [optional]
+ **end_month** | **int**| 発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 | [optional]
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
- **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group） | [optional]
+ **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
  **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
  **section_id** | **int**| 部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） | [optional]
- **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional]
- **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） | [optional]
+ **adjustment** | **string**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 | [optional]
+ **cost_allocation** | **string**| 配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 | [optional]
  **approval_flow_status** | **string**| 承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。 | [optional]
 
 ### Return type
