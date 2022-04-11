@@ -19,6 +19,8 @@ createItem($item_params): \Freee\Accounting\Model\ItemResponse
 
 品目の作成
 
+
+
 ### Example
 
 ```php
@@ -76,6 +78,8 @@ destroyItem($id, $company_id)
 ```
 
 品目の削除
+
+
 
 ### Example
 
@@ -136,6 +140,8 @@ getItem($company_id, $id): \Freee\Accounting\Model\ItemResponse
 
 品目の取得
 
+
+
 ### Example
 
 ```php
@@ -195,6 +201,8 @@ getItems($company_id, $start_update_date, $end_update_date, $offset, $limit): \F
 ```
 
 品目一覧の取得
+
+
 
 ### Example
 
@@ -261,6 +269,8 @@ updateItem($id, $item_params): \Freee\Accounting\Model\ItemResponse
 ```
 
 品目の更新
+
+
 
 ### Example
 

@@ -17,6 +17,8 @@ createDealRenew($id, $renew_create_params): \Freee\Accounting\Model\DealResponse
 
 取引（収入／支出）に対する+更新の作成
 
+
+
 ### Example
 
 ```php
@@ -76,6 +78,8 @@ deleteDealRenew($id, $renew_id, $company_id): \Freee\Accounting\Model\DealRespon
 ```
 
 取引（収入／支出）の+更新の削除
+
+
 
 ### Example
 
@@ -138,6 +142,8 @@ updateDealRenew($id, $renew_id, $renew_update_params): \Freee\Accounting\Model\D
 ```
 
 取引（収入／支出）の+更新の更新
+
+
 
 ### Example
 

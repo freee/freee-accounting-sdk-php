@@ -31,6 +31,8 @@ getTrialBs($company_id, $fiscal_year, $start_month, $end_month, $start_date, $en
 
 貸借対照表の取得
 
+
+
 ### Example
 
 ```php
@@ -114,6 +116,8 @@ getTrialBsThreeYears($company_id, $fiscal_year, $start_month, $end_month, $start
 ```
 
 貸借対照表(３期間比較)の取得
+
+
 
 ### Example
 
@@ -199,6 +203,8 @@ getTrialBsTwoYears($company_id, $fiscal_year, $start_month, $end_month, $start_d
 
 貸借対照表(前年比較)の取得
 
+
+
 ### Example
 
 ```php
@@ -282,6 +288,8 @@ getTrialCr($company_id, $fiscal_year, $start_month, $end_month, $start_date, $en
 ```
 
 製造原価報告書の取得
+
+
 
 ### Example
 
@@ -369,6 +377,8 @@ getTrialCrSections($company_id, $section_ids, $fiscal_year, $start_month, $end_m
 
 製造原価報告書(部門比較)の取得
 
+
+
 ### Example
 
 ```php
@@ -454,6 +464,8 @@ getTrialCrSegment1Tags($company_id, $segment_1_tag_ids, $fiscal_year, $start_mon
 ```
 
 製造原価報告書(セグメント1比較)の取得
+
+
 
 ### Example
 
@@ -543,6 +555,8 @@ getTrialCrSegment2Tags($company_id, $segment_2_tag_ids, $fiscal_year, $start_mon
 
 製造原価報告書(セグメント2比較)の取得
 
+
+
 ### Example
 
 ```php
@@ -630,6 +644,8 @@ getTrialCrSegment3Tags($company_id, $segment_3_tag_ids, $fiscal_year, $start_mon
 ```
 
 製造原価報告書(セグメント3比較)の取得
+
+
 
 ### Example
 
@@ -719,6 +735,8 @@ getTrialCrThreeYears($company_id, $fiscal_year, $start_month, $end_month, $start
 
 製造原価報告書(３期間比較)の取得
 
+
+
 ### Example
 
 ```php
@@ -804,6 +822,8 @@ getTrialCrTwoYears($company_id, $fiscal_year, $start_month, $end_month, $start_d
 ```
 
 製造原価報告書(前年比較)の取得
+
+
 
 ### Example
 
@@ -891,6 +911,8 @@ getTrialPl($company_id, $fiscal_year, $start_month, $end_month, $start_date, $en
 
 損益計算書の取得
 
+
+
 ### Example
 
 ```php
@@ -977,6 +999,8 @@ getTrialPlSections($company_id, $section_ids, $fiscal_year, $start_month, $end_m
 
 損益計算書(部門比較)の取得
 
+
+
 ### Example
 
 ```php
@@ -1062,6 +1086,8 @@ getTrialPlSegment1Tags($company_id, $segment_1_tag_ids, $fiscal_year, $start_mon
 ```
 
 損益計算書(セグメント1比較)の取得
+
+
 
 ### Example
 
@@ -1151,6 +1177,8 @@ getTrialPlSegment2Tags($company_id, $segment_2_tag_ids, $fiscal_year, $start_mon
 
 損益計算書(セグメント2比較)の取得
 
+
+
 ### Example
 
 ```php
@@ -1238,6 +1266,8 @@ getTrialPlSegment3Tags($company_id, $segment_3_tag_ids, $fiscal_year, $start_mon
 ```
 
 損益計算書(セグメント3比較)の取得
+
+
 
 ### Example
 
@@ -1327,6 +1357,8 @@ getTrialPlThreeYears($company_id, $fiscal_year, $start_month, $end_month, $start
 
 損益計算書(３期間比較)の取得
 
+
+
 ### Example
 
 ```php
@@ -1412,6 +1444,8 @@ getTrialPlTwoYears($company_id, $fiscal_year, $start_month, $end_month, $start_d
 ```
 
 損益計算書(前年比較)の取得
+
+
 
 ### Example
 

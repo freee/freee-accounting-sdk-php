@@ -18,6 +18,8 @@ createWalletTxn($wallet_txn_params): \Freee\Accounting\Model\WalletTxnResponse
 
 明細の作成
 
+
+
 ### Example
 
 ```php
@@ -75,6 +77,8 @@ destroyWalletTxn($id, $company_id)
 ```
 
 明細の削除
+
+
 
 ### Example
 
@@ -135,6 +139,8 @@ getWalletTxn($id, $company_id): \Freee\Accounting\Model\WalletTxnResponse
 
 明細の取得
 
+
+
 ### Example
 
 ```php
@@ -194,6 +200,8 @@ getWalletTxns($company_id, $walletable_type, $walletable_id, $start_date, $end_d
 ```
 
 明細一覧の取得
+
+
 
 ### Example
 

@@ -20,6 +20,8 @@ createExpenseApplication($expense_application_create_params): \Freee\Accounting\
 
 経費申請の作成
 
+
+
 ### Example
 
 ```php
@@ -77,6 +79,8 @@ destroyExpenseApplication($id, $company_id)
 ```
 
 経費申請の削除
+
+
 
 ### Example
 
@@ -137,6 +141,8 @@ getExpenseApplication($id, $company_id): \Freee\Accounting\Model\ExpenseApplicat
 
 経費申請詳細の取得
 
+
+
 ### Example
 
 ```php
@@ -196,6 +202,8 @@ getExpenseApplications($company_id, $status, $payroll_attached, $start_transacti
 ```
 
 経費申請一覧の取得
+
+
 
 ### Example
 
@@ -283,6 +291,8 @@ updateExpenseApplication($id, $expense_application_update_params): \Freee\Accoun
 
 経費申請の更新
 
+
+
 ### Example
 
 ```php
@@ -342,6 +352,8 @@ updateExpenseApplicationAction($id, $expense_application_action_create_params): 
 ```
 
 経費申請の承認操作
+
+
 
 ### Example
 

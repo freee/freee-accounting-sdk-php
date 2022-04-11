@@ -19,6 +19,8 @@ createAccountItem($account_item_params): \Freee\Accounting\Model\AccountItemResp
 
 勘定科目の作成
 
+
+
 ### Example
 
 ```php
@@ -76,6 +78,8 @@ destroyAccountItem($id, $company_id)
 ```
 
 勘定科目の削除
+
+
 
 ### Example
 
@@ -135,6 +139,8 @@ getAccountItem($company_id, $id): \Freee\Accounting\Model\AccountItemResponse
 ```
 
 勘定科目の詳細情報の取得
+
+
 
 ### Example
 
@@ -196,6 +202,8 @@ getAccountItems($company_id, $base_date): \Freee\Accounting\Model\AccountItemsRe
 
 勘定科目一覧の取得
 
+
+
 ### Example
 
 ```php
@@ -255,6 +263,8 @@ updateAccountItem($id, $account_item_params): \Freee\Accounting\Model\AccountIte
 ```
 
 勘定科目の更新
+
+
 
 ### Example
 

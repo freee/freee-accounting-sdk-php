@@ -19,6 +19,8 @@ createDeal($deal_create_params): \Freee\Accounting\Model\DealCreateResponse
 
 取引（収入／支出）の作成
 
+
+
 ### Example
 
 ```php
@@ -76,6 +78,8 @@ destroyDeal($id, $company_id)
 ```
 
 取引（収入／支出）の削除
+
+
 
 ### Example
 
@@ -135,6 +139,8 @@ getDeal($company_id, $id, $accruals): \Freee\Accounting\Model\DealResponse
 ```
 
 取引（収入／支出）の取得
+
+
 
 ### Example
 
@@ -197,6 +203,8 @@ getDeals($company_id, $partner_id, $account_item_id, $partner_code, $status, $ty
 ```
 
 取引（収入／支出）一覧の取得
+
+
 
 ### Example
 
@@ -285,6 +293,8 @@ updateDeal($id, $deal_update_params): \Freee\Accounting\Model\DealResponse
 ```
 
 取引（収入／支出）の更新
+
+
 
 ### Example
 

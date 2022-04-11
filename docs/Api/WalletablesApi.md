@@ -19,6 +19,8 @@ createWalletable($walletable_create_params): \Freee\Accounting\Model\WalletableC
 
 口座の作成
 
+
+
 ### Example
 
 ```php
@@ -76,6 +78,8 @@ destroyWalletable($id, $type, $company_id)
 ```
 
 口座の削除
+
+
 
 ### Example
 
@@ -137,6 +141,8 @@ getWalletable($id, $type, $company_id): \Freee\Accounting\Model\InlineResponse20
 ```
 
 口座情報の取得
+
+
 
 ### Example
 
@@ -200,6 +206,8 @@ getWalletables($company_id, $with_balance, $type): \Freee\Accounting\Model\Inlin
 
 口座一覧の取得
 
+
+
 ### Example
 
 ```php
@@ -261,6 +269,8 @@ updateWalletable($id, $type, $walletable_update_params): \Freee\Accounting\Model
 ```
 
 口座の更新
+
+
 
 ### Example
 

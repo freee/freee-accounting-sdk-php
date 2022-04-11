@@ -18,6 +18,8 @@ createSegmentTag($segment_id, $segment_tag_params): \Freee\Accounting\Model\Segm
 
 セグメントの作成
 
+
+
 ### Example
 
 ```php
@@ -77,6 +79,8 @@ destroySegmentsTag($segment_id, $id, $company_id)
 ```
 
 セグメントタグの削除
+
+
 
 ### Example
 
@@ -138,6 +142,8 @@ getSegmentTags($company_id, $segment_id, $offset, $limit): \Freee\Accounting\Mod
 ```
 
 セグメントタグ一覧の取得
+
+
 
 ### Example
 
@@ -202,6 +208,8 @@ updateSegmentTag($segment_id, $id, $segment_tag_params): \Freee\Accounting\Model
 ```
 
 セグメントタグの更新
+
+
 
 ### Example
 
