@@ -19,6 +19,8 @@ createTransfer($transfer_params): \Freee\Accounting\Model\TransferResponse
 
 取引（振替）の作成
 
+
+
 ### Example
 
 ```php
@@ -76,6 +78,8 @@ destroyTransfer($id, $company_id)
 ```
 
 取引（振替）の削除する
+
+
 
 ### Example
 
@@ -136,6 +140,8 @@ getTransfer($id, $company_id): \Freee\Accounting\Model\TransferResponse
 
 取引（振替）の取得
 
+
+
 ### Example
 
 ```php
@@ -195,6 +201,8 @@ getTransfers($company_id, $start_date, $end_date, $offset, $limit): \Freee\Accou
 ```
 
 取引（振替）一覧の取得
+
+
 
 ### Example
 
@@ -261,6 +269,8 @@ updateTransfer($id, $transfer_params): \Freee\Accounting\Model\TransferResponse
 ```
 
 取引（振替）の更新
+
+
 
 ### Example
 

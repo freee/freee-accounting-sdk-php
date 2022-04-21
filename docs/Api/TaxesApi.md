@@ -17,6 +17,8 @@ getTaxCode($code): \Freee\Accounting\Model\TaxResponse
 
 税区分コードの取得
 
+
+
 ### Example
 
 ```php
@@ -75,6 +77,8 @@ getTaxCodes(): \Freee\Accounting\Model\InlineResponse2009
 
 税区分コード一覧の取得
 
+
+
 ### Example
 
 ```php
@@ -129,6 +133,8 @@ getTaxesCompanies($company_id): \Freee\Accounting\Model\InlineResponse20010
 ```
 
 税区分コード詳細一覧の取得
+
+
 
 ### Example
 

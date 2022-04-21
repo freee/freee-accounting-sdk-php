@@ -16,6 +16,8 @@ getCompanies(): \Freee\Accounting\Model\CompanyIndexResponse
 
 事業所一覧の取得
 
+
+
 ### Example
 
 ```php
@@ -70,6 +72,8 @@ getCompany($id, $details, $account_items, $taxes, $items, $partners, $sections, 
 ```
 
 事業所の詳細情報の取得
+
+
 
 ### Example
 

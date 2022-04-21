@@ -19,6 +19,8 @@ createManualJournal($manual_journal_create_params): \Freee\Accounting\Model\Manu
 
 振替伝票の作成
 
+
+
 ### Example
 
 ```php
@@ -76,6 +78,8 @@ destroyManualJournal($id, $company_id)
 ```
 
 振替伝票の削除
+
+
 
 ### Example
 
@@ -136,6 +140,8 @@ getManualJournal($company_id, $id): \Freee\Accounting\Model\ManualJournalRespons
 
 振替伝票の取得
 
+
+
 ### Example
 
 ```php
@@ -195,6 +201,8 @@ getManualJournals($company_id, $start_issue_date, $end_issue_date, $entry_side, 
 ```
 
 振替伝票一覧の取得
+
+
 
 ### Example
 
@@ -291,6 +299,8 @@ updateManualJournal($id, $manual_journal_update_params): \Freee\Accounting\Model
 ```
 
 振替伝票の更新
+
+
 
 ### Example
 

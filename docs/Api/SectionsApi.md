@@ -19,6 +19,8 @@ createSection($section_params): \Freee\Accounting\Model\SectionResponse
 
 部門の作成
 
+
+
 ### Example
 
 ```php
@@ -77,6 +79,8 @@ destroySection($id, $company_id)
 
 部門の削除
 
+
+
 ### Example
 
 ```php
@@ -133,6 +137,8 @@ void (empty response body)
 ```php
 getSection($id, $company_id): \Freee\Accounting\Model\SectionResponse
 ```
+
+
 
 
 
@@ -196,6 +202,8 @@ getSections($company_id): \Freee\Accounting\Model\InlineResponse2006
 
 部門一覧の取得
 
+
+
 ### Example
 
 ```php
@@ -253,6 +261,8 @@ updateSection($id, $section_params): \Freee\Accounting\Model\SectionResponse
 ```
 
 部門の更新
+
+
 
 ### Example
 

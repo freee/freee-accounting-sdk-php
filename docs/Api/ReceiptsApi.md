@@ -20,6 +20,8 @@ createReceipt($company_id, $receipt, $description, $issue_date): \Freee\Accounti
 
 ファイルボックス 証憑ファイルアップロード
 
+
+
 ### Example
 
 ```php
@@ -84,6 +86,8 @@ destroyReceipt($id, $company_id)
 
 ファイルボックス 証憑ファイルを削除する
 
+
+
 ### Example
 
 ```php
@@ -142,6 +146,8 @@ downloadReceipt($id, $company_id): \SplFileObject
 ```
 
 ファイルボックス 証憑ファイルのダウンロード
+
+
 
 ### Example
 
@@ -203,6 +209,8 @@ getReceipt($id, $company_id): \Freee\Accounting\Model\ReceiptResponse
 
 ファイルボックス 証憑ファイルの取得
 
+
+
 ### Example
 
 ```php
@@ -262,6 +270,8 @@ getReceipts($company_id, $start_date, $end_date, $user_name, $number, $comment_t
 ```
 
 ファイルボックス 証憑ファイル一覧の取得
+
+
 
 ### Example
 
@@ -338,6 +348,8 @@ updateReceipt($id, $receipt_update_params): \Freee\Accounting\Model\ReceiptRespo
 ```
 
 ファイルボックス 証憑ファイル情報更新
+
+
 
 ### Example
 

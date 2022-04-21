@@ -18,6 +18,8 @@ getUsers($company_id, $limit): \Freee\Accounting\Model\InlineResponse20012
 
 事業所に所属するユーザー一覧の取得
 
+
+
 ### Example
 
 ```php
@@ -78,6 +80,8 @@ getUsersCapabilities($company_id): \Freee\Accounting\Model\InlineResponse20013
 
 ログインユーザーの権限の取得
 
+
+
 ### Example
 
 ```php
@@ -135,6 +139,8 @@ getUsersMe($companies, $advisor): \Freee\Accounting\Model\MeResponse
 ```
 
 ログインユーザー情報の取得
+
+
 
 ### Example
 
@@ -195,6 +201,8 @@ updateUser($user_params): \Freee\Accounting\Model\UserResponse
 ```
 
 ユーザー情報の更新
+
+
 
 ### Example
 

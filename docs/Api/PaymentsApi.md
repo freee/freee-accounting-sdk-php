@@ -17,6 +17,8 @@ createDealPayment($id, $payment_params): \Freee\Accounting\Model\DealResponse
 
 取引（収入／支出）の支払行作成
 
+
+
 ### Example
 
 ```php
@@ -76,6 +78,8 @@ destroyDealPayment($id, $payment_id, $company_id)
 ```
 
 取引（収入／支出）の支払行削除
+
+
 
 ### Example
 
@@ -137,6 +141,8 @@ updateDealPayment($id, $payment_id, $payment_params): \Freee\Accounting\Model\De
 ```
 
 取引（収入／支出）の支払行更新
+
+
 
 ### Example
 

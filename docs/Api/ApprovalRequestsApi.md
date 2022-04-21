@@ -22,6 +22,8 @@ createApprovalRequest($approval_request_create_params): \Freee\Accounting\Model\
 
 各種申請の作成
 
+
+
 ### Example
 
 ```php
@@ -79,6 +81,8 @@ destroyApprovalRequest($id, $company_id)
 ```
 
 各種申請の削除
+
+
 
 ### Example
 
@@ -138,6 +142,8 @@ getApprovalRequest($id, $company_id): \Freee\Accounting\Model\ApprovalRequestRes
 ```
 
 各種申請の取得
+
+
 
 ### Example
 
@@ -199,6 +205,8 @@ getApprovalRequestForm($id, $company_id): \Freee\Accounting\Model\ApprovalReques
 
 各種申請の申請フォームの取得
 
+
+
 ### Example
 
 ```php
@@ -259,6 +267,8 @@ getApprovalRequestForms($company_id): \Freee\Accounting\Model\ApprovalRequestFor
 
 各種申請の申請フォーム一覧の取得
 
+
+
 ### Example
 
 ```php
@@ -316,6 +326,8 @@ getApprovalRequests($company_id, $status, $application_number, $title, $form_id,
 ```
 
 各種申請の一覧
+
+
 
 ### Example
 
@@ -399,6 +411,8 @@ updateApprovalRequest($id, $approval_request_update_params): \Freee\Accounting\M
 
 各種申請の更新
 
+
+
 ### Example
 
 ```php
@@ -458,6 +472,8 @@ updateApprovalRequestAction($id, $approval_request_action_create_params): \Freee
 ```
 
 各種申請の承認操作
+
+
 
 ### Example
 

@@ -16,6 +16,8 @@ getApprovalFlowRoute($id, $company_id): \Freee\Accounting\Model\ApprovalFlowRout
 
 申請経路の取得
 
+
+
 ### Example
 
 ```php
@@ -75,6 +77,8 @@ getApprovalFlowRoutes($company_id, $included_user_id, $usage, $request_form_id):
 ```
 
 申請経路一覧の取得
+
+
 
 ### Example
 

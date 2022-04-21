@@ -16,6 +16,8 @@ getBank($id): \Freee\Accounting\Model\BankResponse
 
 連携サービスの取得
 
+
+
 ### Example
 
 ```php
@@ -73,6 +75,8 @@ getBanks($offset, $limit, $type): \Freee\Accounting\Model\InlineResponse200
 ```
 
 連携サービス一覧の取得
+
+
 
 ### Example
 

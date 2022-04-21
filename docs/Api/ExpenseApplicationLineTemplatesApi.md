@@ -19,6 +19,8 @@ createExpenseApplicationLineTemplate($expense_application_line_template_params):
 
 経費科目の作成
 
+
+
 ### Example
 
 ```php
@@ -76,6 +78,8 @@ destroyExpenseApplicationLineTemplate($id, $company_id)
 ```
 
 経費科目の削除
+
+
 
 ### Example
 
@@ -136,6 +140,8 @@ getExpenseApplicationLineTemplate($id, $company_id): \Freee\Accounting\Model\Exp
 
 経費科目の取得
 
+
+
 ### Example
 
 ```php
@@ -195,6 +201,8 @@ getExpenseApplicationLineTemplates($company_id, $offset, $limit): \Freee\Account
 ```
 
 経費科目一覧の取得
+
+
 
 ### Example
 
@@ -257,6 +265,8 @@ updateExpenseApplicationLineTemplate($id, $expense_application_line_template_par
 ```
 
 経費科目の更新
+
+
 
 ### Example
 

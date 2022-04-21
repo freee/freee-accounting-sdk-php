@@ -8,5 +8,6 @@ Name | Type | Description | Notes
 **company_id** | **int** | 事業所ID |
 **details** | [**\Freee\Accounting\Model\ManualJournalCreateParamsDetails[]**](ManualJournalCreateParamsDetails.md) |  |
 **issue_date** | **string** | 発生日 (yyyy-mm-dd) |
+**receipt_ids** | **int[]** | 証憑ファイルID（ファイルボックスのファイルID）（配列） | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

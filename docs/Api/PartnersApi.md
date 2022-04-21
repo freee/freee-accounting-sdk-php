@@ -20,6 +20,8 @@ createPartner($partner_create_params): \Freee\Accounting\Model\PartnerResponse
 
 取引先の作成
 
+
+
 ### Example
 
 ```php
@@ -77,6 +79,8 @@ destroyPartner($id, $company_id)
 ```
 
 取引先の削除
+
+
 
 ### Example
 
@@ -137,6 +141,8 @@ getPartner($id, $company_id): \Freee\Accounting\Model\PartnerResponse
 
 取引先の取得
 
+
+
 ### Example
 
 ```php
@@ -196,6 +202,8 @@ getPartners($company_id, $start_update_date, $end_update_date, $offset, $limit, 
 ```
 
 取引先一覧の取得
+
+
 
 ### Example
 
@@ -265,6 +273,8 @@ updatePartner($id, $partner_update_params): \Freee\Accounting\Model\PartnerRespo
 
 取引先の更新
 
+
+
 ### Example
 
 ```php
@@ -324,6 +334,8 @@ updatePartnerByCode($code, $partner_update_params): \Freee\Accounting\Model\Part
 ```
 
 取引先の更新
+
+
 
 ### Example
 

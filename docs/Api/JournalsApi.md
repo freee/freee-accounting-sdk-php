@@ -17,6 +17,8 @@ downloadJournal($id, $company_id): \SplFileObject
 
 ダウンロード実行
 
+
+
 ### Example
 
 ```php
@@ -77,6 +79,8 @@ getJournalStatus($company_id, $id): \Freee\Accounting\Model\JournalStatusRespons
 
 ステータス確認
 
+
+
 ### Example
 
 ```php
@@ -136,6 +140,8 @@ getJournals($download_type, $company_id, $visible_tags, $visible_ids, $start_dat
 ```
 
 ダウンロード要求
+
+
 
 ### Example
 
