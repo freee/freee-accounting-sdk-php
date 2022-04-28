@@ -64,6 +64,7 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
         'details' => '\Freee\Accounting\Model\ManualJournalDetails[]',
         'id' => 'int',
         'issue_date' => 'string',
+        'receipt_ids' => 'int[]',
         'txn_number' => 'string'
     ];
 
@@ -80,6 +81,7 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
         'details' => null,
         'id' => null,
         'issue_date' => null,
+        'receipt_ids' => null,
         'txn_number' => null
     ];
 
@@ -115,6 +117,7 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
         'details' => 'details',
         'id' => 'id',
         'issue_date' => 'issue_date',
+        'receipt_ids' => 'receipt_ids',
         'txn_number' => 'txn_number'
     ];
 
@@ -129,6 +132,7 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
         'details' => 'setDetails',
         'id' => 'setId',
         'issue_date' => 'setIssueDate',
+        'receipt_ids' => 'setReceiptIds',
         'txn_number' => 'setTxnNumber'
     ];
 
@@ -143,6 +147,7 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
         'details' => 'getDetails',
         'id' => 'getId',
         'issue_date' => 'getIssueDate',
+        'receipt_ids' => 'getReceiptIds',
         'txn_number' => 'getTxnNumber'
     ];
 
@@ -208,6 +213,7 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['details'] = $data['details'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['issue_date'] = $data['issue_date'] ?? null;
+        $this->container['receipt_ids'] = $data['receipt_ids'] ?? null;
         $this->container['txn_number'] = $data['txn_number'] ?? null;
     }
 
@@ -401,6 +407,30 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setIssueDate($issue_date)
     {
         $this->container['issue_date'] = $issue_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets receipt_ids
+     *
+     * @return int[]|null
+     */
+    public function getReceiptIds()
+    {
+        return $this->container['receipt_ids'];
+    }
+
+    /**
+     * Sets receipt_ids
+     *
+     * @param int[]|null $receipt_ids 証憑ファイルID（ファイルボックスのファイルID）
+     *
+     * @return self
+     */
+    public function setReceiptIds($receipt_ids)
+    {
+        $this->container['receipt_ids'] = $receipt_ids;
 
         return $this;
     }

@@ -125,6 +125,15 @@ class ManualJournalTest extends TestCase
     }
 
     /**
+     * Test attribute "receipt_ids"
+     */
+    public function testPropertyReceiptIds()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "txn_number"
      */
     public function testPropertyTxnNumber()

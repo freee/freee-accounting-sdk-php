@@ -62,7 +62,8 @@ class ManualJournalUpdateParams implements ModelInterface, ArrayAccess, \JsonSer
         'adjustment' => 'bool',
         'company_id' => 'int',
         'details' => '\Freee\Accounting\Model\ManualJournalUpdateParamsDetails[]',
-        'issue_date' => 'string'
+        'issue_date' => 'string',
+        'receipt_ids' => 'int[]'
     ];
 
     /**
@@ -76,7 +77,8 @@ class ManualJournalUpdateParams implements ModelInterface, ArrayAccess, \JsonSer
         'adjustment' => null,
         'company_id' => null,
         'details' => null,
-        'issue_date' => null
+        'issue_date' => null,
+        'receipt_ids' => null
     ];
 
     /**
@@ -109,7 +111,8 @@ class ManualJournalUpdateParams implements ModelInterface, ArrayAccess, \JsonSer
         'adjustment' => 'adjustment',
         'company_id' => 'company_id',
         'details' => 'details',
-        'issue_date' => 'issue_date'
+        'issue_date' => 'issue_date',
+        'receipt_ids' => 'receipt_ids'
     ];
 
     /**
@@ -121,7 +124,8 @@ class ManualJournalUpdateParams implements ModelInterface, ArrayAccess, \JsonSer
         'adjustment' => 'setAdjustment',
         'company_id' => 'setCompanyId',
         'details' => 'setDetails',
-        'issue_date' => 'setIssueDate'
+        'issue_date' => 'setIssueDate',
+        'receipt_ids' => 'setReceiptIds'
     ];
 
     /**
@@ -133,7 +137,8 @@ class ManualJournalUpdateParams implements ModelInterface, ArrayAccess, \JsonSer
         'adjustment' => 'getAdjustment',
         'company_id' => 'getCompanyId',
         'details' => 'getDetails',
-        'issue_date' => 'getIssueDate'
+        'issue_date' => 'getIssueDate',
+        'receipt_ids' => 'getReceiptIds'
     ];
 
     /**
@@ -197,6 +202,7 @@ class ManualJournalUpdateParams implements ModelInterface, ArrayAccess, \JsonSer
         $this->container['company_id'] = $data['company_id'] ?? null;
         $this->container['details'] = $data['details'] ?? null;
         $this->container['issue_date'] = $data['issue_date'] ?? null;
+        $this->container['receipt_ids'] = $data['receipt_ids'] ?? null;
     }
 
     /**
@@ -340,6 +346,30 @@ class ManualJournalUpdateParams implements ModelInterface, ArrayAccess, \JsonSer
     public function setIssueDate($issue_date)
     {
         $this->container['issue_date'] = $issue_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets receipt_ids
+     *
+     * @return int[]|null
+     */
+    public function getReceiptIds()
+    {
+        return $this->container['receipt_ids'];
+    }
+
+    /**
+     * Sets receipt_ids
+     *
+     * @param int[]|null $receipt_ids 証憑ファイルID（ファイルボックスのファイルID）（配列）
+     *
+     * @return self
+     */
+    public function setReceiptIds($receipt_ids)
+    {
+        $this->container['receipt_ids'] = $receipt_ids;
 
         return $this;
     }
