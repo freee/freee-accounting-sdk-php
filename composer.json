@@ -1,6 +1,6 @@
 {
     "name": "freee/freee-accounting-sdk",
-    "version": "vFix openapitools/openapi-generator-cli version on 5.4.0 test",
+    "version": "v2.5.0",
     "description": "Accounting freee PHP SDK",
     "keywords": [
         "openapitools",
