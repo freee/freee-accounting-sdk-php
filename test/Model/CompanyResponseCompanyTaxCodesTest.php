@@ -1,6 +1,6 @@
 <?php
 /**
- * ManualJournalUpdateParamsTest
+ * CompanyResponseCompanyTaxCodesTest
  *
  * PHP version 7.3
  *
@@ -31,15 +31,15 @@ namespace Freee\Accounting\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ManualJournalUpdateParamsTest Class Doc Comment
+ * CompanyResponseCompanyTaxCodesTest Class Doc Comment
  *
  * @category    Class
- * @description ManualJournalUpdateParams
+ * @description CompanyResponseCompanyTaxCodes
  * @package     Freee\Accounting
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ManualJournalUpdateParamsTest extends TestCase
+class CompanyResponseCompanyTaxCodesTest extends TestCase
 {
 
     /**
@@ -71,54 +71,36 @@ class ManualJournalUpdateParamsTest extends TestCase
     }
 
     /**
-     * Test "ManualJournalUpdateParams"
+     * Test "CompanyResponseCompanyTaxCodes"
      */
-    public function testManualJournalUpdateParams()
+    public function testCompanyResponseCompanyTaxCodes()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "adjustment"
+     * Test attribute "code"
      */
-    public function testPropertyAdjustment()
+    public function testPropertyCode()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "company_id"
+     * Test attribute "name"
      */
-    public function testPropertyCompanyId()
+    public function testPropertyName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "details"
+     * Test attribute "name_ja"
      */
-    public function testPropertyDetails()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "issue_date"
-     */
-    public function testPropertyIssueDate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "receipt_ids"
-     */
-    public function testPropertyReceiptIds()
+    public function testPropertyNameJa()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

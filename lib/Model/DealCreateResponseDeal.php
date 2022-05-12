@@ -476,7 +476,7 @@ class DealCreateResponseDeal implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets due_amount
      *
-     * @param int|null $due_amount 支払金額
+     * @param int|null $due_amount 支払残額
      *
      * @return self
      */

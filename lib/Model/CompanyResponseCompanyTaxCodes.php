@@ -1,6 +1,6 @@
 <?php
 /**
- * ManualJournalUpdateParams
+ * CompanyResponseCompanyTaxCodes
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Freee\Accounting\ObjectSerializer;
 
 /**
- * ManualJournalUpdateParams Class Doc Comment
+ * CompanyResponseCompanyTaxCodes Class Doc Comment
  *
  * @category Class
  * @package  Freee\Accounting
@@ -42,7 +42,7 @@ use \Freee\Accounting\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ManualJournalUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializable
+class CompanyResponseCompanyTaxCodes implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class ManualJournalUpdateParams implements ModelInterface, ArrayAccess, \JsonSer
       *
       * @var string
       */
-    protected static $openAPIModelName = 'manualJournalUpdateParams';
+    protected static $openAPIModelName = 'companyResponse_company_tax_codes';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,11 +59,9 @@ class ManualJournalUpdateParams implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'adjustment' => 'bool',
-        'company_id' => 'int',
-        'details' => '\Freee\Accounting\Model\ManualJournalUpdateParamsDetails[]',
-        'issue_date' => 'string',
-        'receipt_ids' => 'int[]'
+        'code' => 'int',
+        'name' => 'string',
+        'name_ja' => 'string'
     ];
 
     /**
@@ -74,11 +72,9 @@ class ManualJournalUpdateParams implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'adjustment' => null,
-        'company_id' => null,
-        'details' => null,
-        'issue_date' => null,
-        'receipt_ids' => null
+        'code' => null,
+        'name' => null,
+        'name_ja' => null
     ];
 
     /**
@@ -108,11 +104,9 @@ class ManualJournalUpdateParams implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'adjustment' => 'adjustment',
-        'company_id' => 'company_id',
-        'details' => 'details',
-        'issue_date' => 'issue_date',
-        'receipt_ids' => 'receipt_ids'
+        'code' => 'code',
+        'name' => 'name',
+        'name_ja' => 'name_ja'
     ];
 
     /**
@@ -121,11 +115,9 @@ class ManualJournalUpdateParams implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'adjustment' => 'setAdjustment',
-        'company_id' => 'setCompanyId',
-        'details' => 'setDetails',
-        'issue_date' => 'setIssueDate',
-        'receipt_ids' => 'setReceiptIds'
+        'code' => 'setCode',
+        'name' => 'setName',
+        'name_ja' => 'setNameJa'
     ];
 
     /**
@@ -134,11 +126,9 @@ class ManualJournalUpdateParams implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'adjustment' => 'getAdjustment',
-        'company_id' => 'getCompanyId',
-        'details' => 'getDetails',
-        'issue_date' => 'getIssueDate',
-        'receipt_ids' => 'getReceiptIds'
+        'code' => 'getCode',
+        'name' => 'getName',
+        'name_ja' => 'getNameJa'
     ];
 
     /**
@@ -198,11 +188,9 @@ class ManualJournalUpdateParams implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(array $data = null)
     {
-        $this->container['adjustment'] = $data['adjustment'] ?? null;
-        $this->container['company_id'] = $data['company_id'] ?? null;
-        $this->container['details'] = $data['details'] ?? null;
-        $this->container['issue_date'] = $data['issue_date'] ?? null;
-        $this->container['receipt_ids'] = $data['receipt_ids'] ?? null;
+        $this->container['code'] = $data['code'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['name_ja'] = $data['name_ja'] ?? null;
     }
 
     /**
@@ -214,22 +202,22 @@ class ManualJournalUpdateParams implements ModelInterface, ArrayAccess, \JsonSer
     {
         $invalidProperties = [];
 
-        if ($this->container['company_id'] === null) {
-            $invalidProperties[] = "'company_id' can't be null";
+        if ($this->container['code'] === null) {
+            $invalidProperties[] = "'code' can't be null";
         }
-        if (($this->container['company_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['company_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
+        if (($this->container['code'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'code', must be smaller than or equal to 2147483647.";
         }
 
-        if ($this->container['details'] === null) {
-            $invalidProperties[] = "'details' can't be null";
+        if (($this->container['code'] < 1)) {
+            $invalidProperties[] = "invalid value for 'code', must be bigger than or equal to 1.";
         }
-        if ($this->container['issue_date'] === null) {
-            $invalidProperties[] = "'issue_date' can't be null";
+
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ($this->container['name_ja'] === null) {
+            $invalidProperties[] = "'name_ja' can't be null";
         }
         return $invalidProperties;
     }
@@ -247,129 +235,81 @@ class ManualJournalUpdateParams implements ModelInterface, ArrayAccess, \JsonSer
 
 
     /**
-     * Gets adjustment
-     *
-     * @return bool|null
-     */
-    public function getAdjustment()
-    {
-        return $this->container['adjustment'];
-    }
-
-    /**
-     * Sets adjustment
-     *
-     * @param bool|null $adjustment 決算整理仕訳フラグ（falseまたは未指定の場合: 日常仕訳）
-     *
-     * @return self
-     */
-    public function setAdjustment($adjustment)
-    {
-        $this->container['adjustment'] = $adjustment;
-
-        return $this;
-    }
-
-    /**
-     * Gets company_id
+     * Gets code
      *
      * @return int
      */
-    public function getCompanyId()
+    public function getCode()
     {
-        return $this->container['company_id'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets company_id
+     * Sets code
      *
-     * @param int $company_id 事業所ID
+     * @param int $code 税区分コード
      *
      * @return self
      */
-    public function setCompanyId($company_id)
+    public function setCode($code)
     {
 
-        if (($company_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling ManualJournalUpdateParams., must be smaller than or equal to 2147483647.');
+        if (($code > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $code when calling CompanyResponseCompanyTaxCodes., must be smaller than or equal to 2147483647.');
         }
-        if (($company_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling ManualJournalUpdateParams., must be bigger than or equal to 1.');
+        if (($code < 1)) {
+            throw new \InvalidArgumentException('invalid value for $code when calling CompanyResponseCompanyTaxCodes., must be bigger than or equal to 1.');
         }
 
-        $this->container['company_id'] = $company_id;
+        $this->container['code'] = $code;
 
         return $this;
     }
 
     /**
-     * Gets details
-     *
-     * @return \Freee\Accounting\Model\ManualJournalUpdateParamsDetails[]
-     */
-    public function getDetails()
-    {
-        return $this->container['details'];
-    }
-
-    /**
-     * Sets details
-     *
-     * @param \Freee\Accounting\Model\ManualJournalUpdateParamsDetails[] $details details
-     *
-     * @return self
-     */
-    public function setDetails($details)
-    {
-        $this->container['details'] = $details;
-
-        return $this;
-    }
-
-    /**
-     * Gets issue_date
+     * Gets name
      *
      * @return string
      */
-    public function getIssueDate()
+    public function getName()
     {
-        return $this->container['issue_date'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets issue_date
+     * Sets name
      *
-     * @param string $issue_date 発生日 (yyyy-mm-dd)
+     * @param string $name 税区分名
      *
      * @return self
      */
-    public function setIssueDate($issue_date)
+    public function setName($name)
     {
-        $this->container['issue_date'] = $issue_date;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets receipt_ids
+     * Gets name_ja
      *
-     * @return int[]|null
+     * @return string
      */
-    public function getReceiptIds()
+    public function getNameJa()
     {
-        return $this->container['receipt_ids'];
+        return $this->container['name_ja'];
     }
 
     /**
-     * Sets receipt_ids
+     * Sets name_ja
      *
-     * @param int[]|null $receipt_ids 証憑ファイルID（ファイルボックスのファイルID）（配列）
+     * @param string $name_ja 税区分名（日本語表示用）
      *
      * @return self
      */
-    public function setReceiptIds($receipt_ids)
+    public function setNameJa($name_ja)
     {
-        $this->container['receipt_ids'] = $receipt_ids;
+        $this->container['name_ja'] = $name_ja;
 
         return $this;
     }

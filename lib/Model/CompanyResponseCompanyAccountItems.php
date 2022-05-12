@@ -1,6 +1,6 @@
 <?php
 /**
- * ManualJournal
+ * CompanyResponseCompanyAccountItems
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Freee\Accounting\ObjectSerializer;
 
 /**
- * ManualJournal Class Doc Comment
+ * CompanyResponseCompanyAccountItems Class Doc Comment
  *
  * @category Class
  * @package  Freee\Accounting
@@ -42,7 +42,7 @@ use \Freee\Accounting\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
+class CompanyResponseCompanyAccountItems implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'manual_journal';
+    protected static $openAPIModelName = 'companyResponse_company_account_items';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,13 +59,11 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'adjustment' => 'bool',
-        'company_id' => 'int',
-        'details' => '\Freee\Accounting\Model\ManualJournalDetails[]',
+        'categories' => 'string[]',
+        'default_tax_id' => 'int',
         'id' => 'int',
-        'issue_date' => 'string',
-        'receipt_ids' => 'int[]',
-        'txn_number' => 'string'
+        'name' => 'string',
+        'shortcut' => 'string'
     ];
 
     /**
@@ -76,13 +74,11 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'adjustment' => null,
-        'company_id' => null,
-        'details' => null,
+        'categories' => null,
+        'default_tax_id' => null,
         'id' => null,
-        'issue_date' => null,
-        'receipt_ids' => null,
-        'txn_number' => null
+        'name' => null,
+        'shortcut' => null
     ];
 
     /**
@@ -112,13 +108,11 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'adjustment' => 'adjustment',
-        'company_id' => 'company_id',
-        'details' => 'details',
+        'categories' => 'categories',
+        'default_tax_id' => 'default_tax_id',
         'id' => 'id',
-        'issue_date' => 'issue_date',
-        'receipt_ids' => 'receipt_ids',
-        'txn_number' => 'txn_number'
+        'name' => 'name',
+        'shortcut' => 'shortcut'
     ];
 
     /**
@@ -127,13 +121,11 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'adjustment' => 'setAdjustment',
-        'company_id' => 'setCompanyId',
-        'details' => 'setDetails',
+        'categories' => 'setCategories',
+        'default_tax_id' => 'setDefaultTaxId',
         'id' => 'setId',
-        'issue_date' => 'setIssueDate',
-        'receipt_ids' => 'setReceiptIds',
-        'txn_number' => 'setTxnNumber'
+        'name' => 'setName',
+        'shortcut' => 'setShortcut'
     ];
 
     /**
@@ -142,13 +134,11 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'adjustment' => 'getAdjustment',
-        'company_id' => 'getCompanyId',
-        'details' => 'getDetails',
+        'categories' => 'getCategories',
+        'default_tax_id' => 'getDefaultTaxId',
         'id' => 'getId',
-        'issue_date' => 'getIssueDate',
-        'receipt_ids' => 'getReceiptIds',
-        'txn_number' => 'getTxnNumber'
+        'name' => 'getName',
+        'shortcut' => 'getShortcut'
     ];
 
     /**
@@ -208,13 +198,11 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['adjustment'] = $data['adjustment'] ?? null;
-        $this->container['company_id'] = $data['company_id'] ?? null;
-        $this->container['details'] = $data['details'] ?? null;
+        $this->container['categories'] = $data['categories'] ?? null;
+        $this->container['default_tax_id'] = $data['default_tax_id'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['issue_date'] = $data['issue_date'] ?? null;
-        $this->container['receipt_ids'] = $data['receipt_ids'] ?? null;
-        $this->container['txn_number'] = $data['txn_number'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['shortcut'] = $data['shortcut'] ?? null;
     }
 
     /**
@@ -226,23 +214,17 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['adjustment'] === null) {
-            $invalidProperties[] = "'adjustment' can't be null";
+        if ($this->container['categories'] === null) {
+            $invalidProperties[] = "'categories' can't be null";
         }
-        if ($this->container['company_id'] === null) {
-            $invalidProperties[] = "'company_id' can't be null";
-        }
-        if (($this->container['company_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
+        if (!is_null($this->container['default_tax_id']) && ($this->container['default_tax_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'default_tax_id', must be smaller than or equal to 2147483647.";
         }
 
-        if (($this->container['company_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
+        if (!is_null($this->container['default_tax_id']) && ($this->container['default_tax_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'default_tax_id', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['details'] === null) {
-            $invalidProperties[] = "'details' can't be null";
-        }
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
@@ -254,12 +236,13 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['issue_date'] === null) {
-            $invalidProperties[] = "'issue_date' can't be null";
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
         }
-        if ($this->container['txn_number'] === null) {
-            $invalidProperties[] = "'txn_number' can't be null";
+        if (!is_null($this->container['shortcut']) && (mb_strlen($this->container['shortcut']) > 20)) {
+            $invalidProperties[] = "invalid value for 'shortcut', the character length must be smaller than or equal to 20.";
         }
+
         return $invalidProperties;
     }
 
@@ -276,81 +259,57 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets adjustment
+     * Gets categories
      *
-     * @return bool
+     * @return string[]
      */
-    public function getAdjustment()
+    public function getCategories()
     {
-        return $this->container['adjustment'];
+        return $this->container['categories'];
     }
 
     /**
-     * Sets adjustment
+     * Sets categories
      *
-     * @param bool $adjustment 決算整理仕訳フラグ（falseまたは未指定の場合: 日常仕訳）
+     * @param string[] $categories categories
      *
      * @return self
      */
-    public function setAdjustment($adjustment)
+    public function setCategories($categories)
     {
-        $this->container['adjustment'] = $adjustment;
+        $this->container['categories'] = $categories;
 
         return $this;
     }
 
     /**
-     * Gets company_id
+     * Gets default_tax_id
      *
-     * @return int
+     * @return int|null
      */
-    public function getCompanyId()
+    public function getDefaultTaxId()
     {
-        return $this->container['company_id'];
+        return $this->container['default_tax_id'];
     }
 
     /**
-     * Sets company_id
+     * Sets default_tax_id
      *
-     * @param int $company_id 事業所ID
+     * @param int|null $default_tax_id デフォルト設定がされている税区分ID
      *
      * @return self
      */
-    public function setCompanyId($company_id)
+    public function setDefaultTaxId($default_tax_id)
     {
 
-        if (($company_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling ManualJournal., must be smaller than or equal to 2147483647.');
+        if (!is_null($default_tax_id) && ($default_tax_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $default_tax_id when calling CompanyResponseCompanyAccountItems., must be smaller than or equal to 2147483647.');
         }
-        if (($company_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling ManualJournal., must be bigger than or equal to 1.');
+        if (!is_null($default_tax_id) && ($default_tax_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $default_tax_id when calling CompanyResponseCompanyAccountItems., must be bigger than or equal to 1.');
         }
 
-        $this->container['company_id'] = $company_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets details
-     *
-     * @return \Freee\Accounting\Model\ManualJournalDetails[]
-     */
-    public function getDetails()
-    {
-        return $this->container['details'];
-    }
-
-    /**
-     * Sets details
-     *
-     * @param \Freee\Accounting\Model\ManualJournalDetails[] $details 貸借行一覧（配列）: 貸借合わせて100行まで登録できます。
-     *
-     * @return self
-     */
-    public function setDetails($details)
-    {
-        $this->container['details'] = $details;
+        $this->container['default_tax_id'] = $default_tax_id;
 
         return $this;
     }
@@ -368,7 +327,7 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param int $id 振替伝票ID
+     * @param int $id 勘定科目ID
      *
      * @return self
      */
@@ -376,10 +335,10 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
     {
 
         if (($id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling ManualJournal., must be smaller than or equal to 2147483647.');
+            throw new \InvalidArgumentException('invalid value for $id when calling CompanyResponseCompanyAccountItems., must be smaller than or equal to 2147483647.');
         }
         if (($id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling ManualJournal., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid value for $id when calling CompanyResponseCompanyAccountItems., must be bigger than or equal to 1.');
         }
 
         $this->container['id'] = $id;
@@ -388,73 +347,53 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets issue_date
+     * Gets name
      *
      * @return string
      */
-    public function getIssueDate()
+    public function getName()
     {
-        return $this->container['issue_date'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets issue_date
+     * Sets name
      *
-     * @param string $issue_date 発生日 (yyyy-mm-dd)
+     * @param string $name 勘定科目名 (30文字以内)
      *
      * @return self
      */
-    public function setIssueDate($issue_date)
+    public function setName($name)
     {
-        $this->container['issue_date'] = $issue_date;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets receipt_ids
+     * Gets shortcut
      *
-     * @return int[]|null
+     * @return string|null
      */
-    public function getReceiptIds()
+    public function getShortcut()
     {
-        return $this->container['receipt_ids'];
+        return $this->container['shortcut'];
     }
 
     /**
-     * Sets receipt_ids
+     * Sets shortcut
      *
-     * @param int[]|null $receipt_ids 証憑ファイルID（ファイルボックスのファイルID）
+     * @param string|null $shortcut ショートカット1 (20文字以内)
      *
      * @return self
      */
-    public function setReceiptIds($receipt_ids)
+    public function setShortcut($shortcut)
     {
-        $this->container['receipt_ids'] = $receipt_ids;
+        if (!is_null($shortcut) && (mb_strlen($shortcut) > 20)) {
+            throw new \InvalidArgumentException('invalid length for $shortcut when calling CompanyResponseCompanyAccountItems., must be smaller than or equal to 20.');
+        }
 
-        return $this;
-    }
-
-    /**
-     * Gets txn_number
-     *
-     * @return string
-     */
-    public function getTxnNumber()
-    {
-        return $this->container['txn_number'];
-    }
-
-    /**
-     * Sets txn_number
-     *
-     * @param string $txn_number 仕訳番号
-     *
-     * @return self
-     */
-    public function setTxnNumber($txn_number)
-    {
-        $this->container['txn_number'] = $txn_number;
+        $this->container['shortcut'] = $shortcut;
 
         return $this;
     }

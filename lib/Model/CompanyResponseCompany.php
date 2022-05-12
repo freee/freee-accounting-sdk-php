@@ -59,6 +59,8 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
+        'tags' => '\Freee\Accounting\Model\CompanyResponseCompanyTags[]',
+        'account_items' => '\Freee\Accounting\Model\CompanyResponseCompanyAccountItems[]',
         'amount_fraction' => 'int',
         'contact_name' => 'string',
         'corporate_number' => 'string',
@@ -71,19 +73,25 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
         'industry_class' => 'string',
         'industry_code' => 'string',
         'invoice_layout' => 'string',
+        'items' => '\Freee\Accounting\Model\CompanyResponseCompanyItems[]',
         'minus_format' => 'int',
         'name' => 'string',
         'name_kana' => 'string',
+        'partners' => '\Freee\Accounting\Model\CompanyResponseCompanyPartners[]',
         'phone1' => 'string',
         'phone2' => 'string',
         'prefecture_code' => 'int',
         'private_settlement' => 'bool',
         'role' => 'string',
+        'sections' => '\Freee\Accounting\Model\CompanyResponseCompanySections[]',
         'street_name1' => 'string',
         'street_name2' => 'string',
         'tax_at_source_calc_type' => 'int',
+        'tax_codes' => '\Freee\Accounting\Model\CompanyResponseCompanyTaxCodes[]',
+        'taxes' => '\Freee\Accounting\Model\CompanyResponseCompanyTaxes[]',
         'txn_number_format' => 'string',
         'use_partner_code' => 'bool',
+        'walletables' => '\Freee\Accounting\Model\CompanyResponseCompanyWalletables[]',
         'workflow_setting' => 'string',
         'zipcode' => 'string'
     ];
@@ -96,6 +104,8 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'tags' => null,
+        'account_items' => null,
         'amount_fraction' => null,
         'contact_name' => null,
         'corporate_number' => null,
@@ -108,19 +118,25 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
         'industry_class' => null,
         'industry_code' => null,
         'invoice_layout' => null,
+        'items' => null,
         'minus_format' => null,
         'name' => null,
         'name_kana' => null,
+        'partners' => null,
         'phone1' => null,
         'phone2' => null,
         'prefecture_code' => null,
         'private_settlement' => null,
         'role' => null,
+        'sections' => null,
         'street_name1' => null,
         'street_name2' => null,
         'tax_at_source_calc_type' => null,
+        'tax_codes' => null,
+        'taxes' => null,
         'txn_number_format' => null,
         'use_partner_code' => null,
+        'walletables' => null,
         'workflow_setting' => null,
         'zipcode' => null
     ];
@@ -152,6 +168,8 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
+        'tags' => 'tags',
+        'account_items' => 'account_items',
         'amount_fraction' => 'amount_fraction',
         'contact_name' => 'contact_name',
         'corporate_number' => 'corporate_number',
@@ -164,19 +182,25 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
         'industry_class' => 'industry_class',
         'industry_code' => 'industry_code',
         'invoice_layout' => 'invoice_layout',
+        'items' => 'items',
         'minus_format' => 'minus_format',
         'name' => 'name',
         'name_kana' => 'name_kana',
+        'partners' => 'partners',
         'phone1' => 'phone1',
         'phone2' => 'phone2',
         'prefecture_code' => 'prefecture_code',
         'private_settlement' => 'private_settlement',
         'role' => 'role',
+        'sections' => 'sections',
         'street_name1' => 'street_name1',
         'street_name2' => 'street_name2',
         'tax_at_source_calc_type' => 'tax_at_source_calc_type',
+        'tax_codes' => 'tax_codes',
+        'taxes' => 'taxes',
         'txn_number_format' => 'txn_number_format',
         'use_partner_code' => 'use_partner_code',
+        'walletables' => 'walletables',
         'workflow_setting' => 'workflow_setting',
         'zipcode' => 'zipcode'
     ];
@@ -187,6 +211,8 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
+        'tags' => 'setTags',
+        'account_items' => 'setAccountItems',
         'amount_fraction' => 'setAmountFraction',
         'contact_name' => 'setContactName',
         'corporate_number' => 'setCorporateNumber',
@@ -199,19 +225,25 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
         'industry_class' => 'setIndustryClass',
         'industry_code' => 'setIndustryCode',
         'invoice_layout' => 'setInvoiceLayout',
+        'items' => 'setItems',
         'minus_format' => 'setMinusFormat',
         'name' => 'setName',
         'name_kana' => 'setNameKana',
+        'partners' => 'setPartners',
         'phone1' => 'setPhone1',
         'phone2' => 'setPhone2',
         'prefecture_code' => 'setPrefectureCode',
         'private_settlement' => 'setPrivateSettlement',
         'role' => 'setRole',
+        'sections' => 'setSections',
         'street_name1' => 'setStreetName1',
         'street_name2' => 'setStreetName2',
         'tax_at_source_calc_type' => 'setTaxAtSourceCalcType',
+        'tax_codes' => 'setTaxCodes',
+        'taxes' => 'setTaxes',
         'txn_number_format' => 'setTxnNumberFormat',
         'use_partner_code' => 'setUsePartnerCode',
+        'walletables' => 'setWalletables',
         'workflow_setting' => 'setWorkflowSetting',
         'zipcode' => 'setZipcode'
     ];
@@ -222,6 +254,8 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
+        'tags' => 'getTags',
+        'account_items' => 'getAccountItems',
         'amount_fraction' => 'getAmountFraction',
         'contact_name' => 'getContactName',
         'corporate_number' => 'getCorporateNumber',
@@ -234,19 +268,25 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
         'industry_class' => 'getIndustryClass',
         'industry_code' => 'getIndustryCode',
         'invoice_layout' => 'getInvoiceLayout',
+        'items' => 'getItems',
         'minus_format' => 'getMinusFormat',
         'name' => 'getName',
         'name_kana' => 'getNameKana',
+        'partners' => 'getPartners',
         'phone1' => 'getPhone1',
         'phone2' => 'getPhone2',
         'prefecture_code' => 'getPrefectureCode',
         'private_settlement' => 'getPrivateSettlement',
         'role' => 'getRole',
+        'sections' => 'getSections',
         'street_name1' => 'getStreetName1',
         'street_name2' => 'getStreetName2',
         'tax_at_source_calc_type' => 'getTaxAtSourceCalcType',
+        'tax_codes' => 'getTaxCodes',
+        'taxes' => 'getTaxes',
         'txn_number_format' => 'getTxnNumberFormat',
         'use_partner_code' => 'getUsePartnerCode',
+        'walletables' => 'getWalletables',
         'workflow_setting' => 'getWorkflowSetting',
         'zipcode' => 'getZipcode'
     ];
@@ -654,6 +694,8 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
+        $this->container['tags'] = $data['tags'] ?? null;
+        $this->container['account_items'] = $data['account_items'] ?? null;
         $this->container['amount_fraction'] = $data['amount_fraction'] ?? null;
         $this->container['contact_name'] = $data['contact_name'] ?? null;
         $this->container['corporate_number'] = $data['corporate_number'] ?? null;
@@ -666,19 +708,25 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
         $this->container['industry_class'] = $data['industry_class'] ?? null;
         $this->container['industry_code'] = $data['industry_code'] ?? null;
         $this->container['invoice_layout'] = $data['invoice_layout'] ?? null;
+        $this->container['items'] = $data['items'] ?? null;
         $this->container['minus_format'] = $data['minus_format'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['name_kana'] = $data['name_kana'] ?? null;
+        $this->container['partners'] = $data['partners'] ?? null;
         $this->container['phone1'] = $data['phone1'] ?? null;
         $this->container['phone2'] = $data['phone2'] ?? null;
         $this->container['prefecture_code'] = $data['prefecture_code'] ?? null;
         $this->container['private_settlement'] = $data['private_settlement'] ?? null;
         $this->container['role'] = $data['role'] ?? null;
+        $this->container['sections'] = $data['sections'] ?? null;
         $this->container['street_name1'] = $data['street_name1'] ?? null;
         $this->container['street_name2'] = $data['street_name2'] ?? null;
         $this->container['tax_at_source_calc_type'] = $data['tax_at_source_calc_type'] ?? null;
+        $this->container['tax_codes'] = $data['tax_codes'] ?? null;
+        $this->container['taxes'] = $data['taxes'] ?? null;
         $this->container['txn_number_format'] = $data['txn_number_format'] ?? null;
         $this->container['use_partner_code'] = $data['use_partner_code'] ?? null;
+        $this->container['walletables'] = $data['walletables'] ?? null;
         $this->container['workflow_setting'] = $data['workflow_setting'] ?? null;
         $this->container['zipcode'] = $data['zipcode'] ?? null;
     }
@@ -906,6 +954,54 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets tags
+     *
+     * @return \Freee\Accounting\Model\CompanyResponseCompanyTags[]|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param \Freee\Accounting\Model\CompanyResponseCompanyTags[]|null $tags tags
+     *
+     * @return self
+     */
+    public function setTags($tags)
+    {
+        $this->container['tags'] = $tags;
+
+        return $this;
+    }
+
+    /**
+     * Gets account_items
+     *
+     * @return \Freee\Accounting\Model\CompanyResponseCompanyAccountItems[]|null
+     */
+    public function getAccountItems()
+    {
+        return $this->container['account_items'];
+    }
+
+    /**
+     * Sets account_items
+     *
+     * @param \Freee\Accounting\Model\CompanyResponseCompanyAccountItems[]|null $account_items account_items
+     *
+     * @return self
+     */
+    public function setAccountItems($account_items)
+    {
+        $this->container['account_items'] = $account_items;
+
+        return $this;
+    }
 
     /**
      * Gets amount_fraction
@@ -1262,6 +1358,30 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
+     * Gets items
+     *
+     * @return \Freee\Accounting\Model\CompanyResponseCompanyItems[]|null
+     */
+    public function getItems()
+    {
+        return $this->container['items'];
+    }
+
+    /**
+     * Sets items
+     *
+     * @param \Freee\Accounting\Model\CompanyResponseCompanyItems[]|null $items items
+     *
+     * @return self
+     */
+    public function setItems($items)
+    {
+        $this->container['items'] = $items;
+
+        return $this;
+    }
+
+    /**
      * Gets minus_format
      *
      * @return int
@@ -1345,6 +1465,30 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
         }
 
         $this->container['name_kana'] = $name_kana;
+
+        return $this;
+    }
+
+    /**
+     * Gets partners
+     *
+     * @return \Freee\Accounting\Model\CompanyResponseCompanyPartners[]|null
+     */
+    public function getPartners()
+    {
+        return $this->container['partners'];
+    }
+
+    /**
+     * Sets partners
+     *
+     * @param \Freee\Accounting\Model\CompanyResponseCompanyPartners[]|null $partners partners
+     *
+     * @return self
+     */
+    public function setPartners($partners)
+    {
+        $this->container['partners'] = $partners;
 
         return $this;
     }
@@ -1488,6 +1632,30 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
+     * Gets sections
+     *
+     * @return \Freee\Accounting\Model\CompanyResponseCompanySections[]|null
+     */
+    public function getSections()
+    {
+        return $this->container['sections'];
+    }
+
+    /**
+     * Sets sections
+     *
+     * @param \Freee\Accounting\Model\CompanyResponseCompanySections[]|null $sections sections
+     *
+     * @return self
+     */
+    public function setSections($sections)
+    {
+        $this->container['sections'] = $sections;
+
+        return $this;
+    }
+
+    /**
      * Gets street_name1
      *
      * @return string
@@ -1568,6 +1736,54 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
+     * Gets tax_codes
+     *
+     * @return \Freee\Accounting\Model\CompanyResponseCompanyTaxCodes[]|null
+     */
+    public function getTaxCodes()
+    {
+        return $this->container['tax_codes'];
+    }
+
+    /**
+     * Sets tax_codes
+     *
+     * @param \Freee\Accounting\Model\CompanyResponseCompanyTaxCodes[]|null $tax_codes tax_codes
+     *
+     * @return self
+     */
+    public function setTaxCodes($tax_codes)
+    {
+        $this->container['tax_codes'] = $tax_codes;
+
+        return $this;
+    }
+
+    /**
+     * Gets taxes
+     *
+     * @return \Freee\Accounting\Model\CompanyResponseCompanyTaxes[]|null
+     */
+    public function getTaxes()
+    {
+        return $this->container['taxes'];
+    }
+
+    /**
+     * Sets taxes
+     *
+     * @param \Freee\Accounting\Model\CompanyResponseCompanyTaxes[]|null $taxes taxes
+     *
+     * @return self
+     */
+    public function setTaxes($taxes)
+    {
+        $this->container['taxes'] = $taxes;
+
+        return $this;
+    }
+
+    /**
      * Gets txn_number_format
      *
      * @return string
@@ -1621,6 +1837,30 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     public function setUsePartnerCode($use_partner_code)
     {
         $this->container['use_partner_code'] = $use_partner_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets walletables
+     *
+     * @return \Freee\Accounting\Model\CompanyResponseCompanyWalletables[]|null
+     */
+    public function getWalletables()
+    {
+        return $this->container['walletables'];
+    }
+
+    /**
+     * Sets walletables
+     *
+     * @param \Freee\Accounting\Model\CompanyResponseCompanyWalletables[]|null $walletables walletables
+     *
+     * @return self
+     */
+    public function setWalletables($walletables)
+    {
+        $this->container['walletables'] = $walletables;
 
         return $this;
     }

@@ -80,6 +80,24 @@ class CompanyResponseCompanyTest extends TestCase
     }
 
     /**
+     * Test attribute "tags"
+     */
+    public function testPropertyTags()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "account_items"
+     */
+    public function testPropertyAccountItems()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "amount_fraction"
      */
     public function testPropertyAmountFraction()
@@ -188,6 +206,15 @@ class CompanyResponseCompanyTest extends TestCase
     }
 
     /**
+     * Test attribute "items"
+     */
+    public function testPropertyItems()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "minus_format"
      */
     public function testPropertyMinusFormat()
@@ -209,6 +236,15 @@ class CompanyResponseCompanyTest extends TestCase
      * Test attribute "name_kana"
      */
     public function testPropertyNameKana()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partners"
+     */
+    public function testPropertyPartners()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -260,6 +296,15 @@ class CompanyResponseCompanyTest extends TestCase
     }
 
     /**
+     * Test attribute "sections"
+     */
+    public function testPropertySections()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "street_name1"
      */
     public function testPropertyStreetName1()
@@ -287,6 +332,24 @@ class CompanyResponseCompanyTest extends TestCase
     }
 
     /**
+     * Test attribute "tax_codes"
+     */
+    public function testPropertyTaxCodes()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "taxes"
+     */
+    public function testPropertyTaxes()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "txn_number_format"
      */
     public function testPropertyTxnNumberFormat()
@@ -299,6 +362,15 @@ class CompanyResponseCompanyTest extends TestCase
      * Test attribute "use_partner_code"
      */
     public function testPropertyUsePartnerCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "walletables"
+     */
+    public function testPropertyWalletables()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
