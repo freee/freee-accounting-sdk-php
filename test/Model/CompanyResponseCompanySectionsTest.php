@@ -1,6 +1,6 @@
 <?php
 /**
- * ManualJournalUpdateParamsTest
+ * CompanyResponseCompanySectionsTest
  *
  * PHP version 7.3
  *
@@ -31,15 +31,15 @@ namespace Freee\Accounting\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ManualJournalUpdateParamsTest Class Doc Comment
+ * CompanyResponseCompanySectionsTest Class Doc Comment
  *
  * @category    Class
- * @description ManualJournalUpdateParams
+ * @description CompanyResponseCompanySections
  * @package     Freee\Accounting
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ManualJournalUpdateParamsTest extends TestCase
+class CompanyResponseCompanySectionsTest extends TestCase
 {
 
     /**
@@ -71,54 +71,45 @@ class ManualJournalUpdateParamsTest extends TestCase
     }
 
     /**
-     * Test "ManualJournalUpdateParams"
+     * Test "CompanyResponseCompanySections"
      */
-    public function testManualJournalUpdateParams()
+    public function testCompanyResponseCompanySections()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "adjustment"
+     * Test attribute "id"
      */
-    public function testPropertyAdjustment()
+    public function testPropertyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "company_id"
+     * Test attribute "name"
      */
-    public function testPropertyCompanyId()
+    public function testPropertyName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "details"
+     * Test attribute "shortcut1"
      */
-    public function testPropertyDetails()
+    public function testPropertyShortcut1()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "issue_date"
+     * Test attribute "shortcut2"
      */
-    public function testPropertyIssueDate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "receipt_ids"
-     */
-    public function testPropertyReceiptIds()
+    public function testPropertyShortcut2()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

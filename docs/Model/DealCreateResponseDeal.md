@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **amount** | **int** | 金額 |
 **company_id** | **int** | 事業所ID |
 **details** | [**\Freee\Accounting\Model\DealDetails[]**](DealDetails.md) | 取引の明細行 | [optional]
-**due_amount** | **int** | 支払金額 | [optional]
+**due_amount** | **int** | 支払残額 | [optional]
 **due_date** | **string** | 支払期日 (yyyy-mm-dd) | [optional]
 **id** | **int** | 取引ID |
 **issue_date** | **string** | 発生日 (yyyy-mm-dd) |

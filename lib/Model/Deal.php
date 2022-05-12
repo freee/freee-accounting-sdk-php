@@ -488,7 +488,7 @@ class Deal implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets due_amount
      *
-     * @param int|null $due_amount 支払金額
+     * @param int|null $due_amount 支払残額
      *
      * @return self
      */

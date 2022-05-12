@@ -114,4 +114,13 @@ class ManualJournalCreateParamsTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "receipt_ids"
+     */
+    public function testPropertyReceiptIds()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }
