@@ -64,7 +64,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
         'account_items' => '\Freee\Accounting\Model\UserCapability',
         'annual_reports' => '\Freee\Accounting\Model\UserCapability',
         'approval_flow_routes' => '\Freee\Accounting\Model\UserCapability',
-        'approval_requests' => '\Freee\Accounting\Model\UserCapability',
+        'approval_requests' => '\Freee\Accounting\Model\UserCapabilityWithSelfOnly',
         'backups' => '\Freee\Accounting\Model\UserCapability',
         'bank_accountant_staff_users' => '\Freee\Accounting\Model\UserCapability',
         'biz_allocations' => '\Freee\Accounting\Model\UserCapability',
@@ -72,26 +72,26 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
         'consumption_entries' => '\Freee\Accounting\Model\UserCapability',
         'cost_allocations' => '\Freee\Accounting\Model\UserCapability',
         'deal_templates' => '\Freee\Accounting\Model\UserCapability',
-        'deals' => '\Freee\Accounting\Model\UserCapability',
+        'deals' => '\Freee\Accounting\Model\UserCapabilityWithSelfOnly',
         'doc_postings' => '\Freee\Accounting\Model\UserCapability',
-        'docs' => '\Freee\Accounting\Model\UserCapability',
+        'docs' => '\Freee\Accounting\Model\UserCapabilityWithSelfOnly',
         'expense_application_templates' => '\Freee\Accounting\Model\UserCapability',
-        'expense_applications' => '\Freee\Accounting\Model\UserCapability',
+        'expense_applications' => '\Freee\Accounting\Model\UserCapabilityWithSelfOnly',
         'fixed_assets' => '\Freee\Accounting\Model\UserCapability',
         'inventory_refreshes' => '\Freee\Accounting\Model\UserCapability',
         'invitations' => '\Freee\Accounting\Model\UserCapability',
         'items' => '\Freee\Accounting\Model\UserCapability',
         'manual_journal_templates' => '\Freee\Accounting\Model\UserCapability',
-        'manual_journals' => '\Freee\Accounting\Model\UserCapability',
+        'manual_journals' => '\Freee\Accounting\Model\UserCapabilityWithSelfOnly',
         'month_end' => '\Freee\Accounting\Model\UserCapability',
         'oauth_applications' => '\Freee\Accounting\Model\UserCapability',
         'oauth_authorizations' => '\Freee\Accounting\Model\UserCapability',
         'opening_balances' => '\Freee\Accounting\Model\UserCapability',
         'partners' => '\Freee\Accounting\Model\UserCapability',
         'payment_records' => '\Freee\Accounting\Model\UserCapability',
-        'payment_requests' => '\Freee\Accounting\Model\UserCapability',
+        'payment_requests' => '\Freee\Accounting\Model\UserCapabilityWithSelfOnly',
         'receipt_stream_editor' => '\Freee\Accounting\Model\UserCapability',
-        'receipts' => '\Freee\Accounting\Model\UserCapability',
+        'receipts' => '\Freee\Accounting\Model\UserCapabilityWithSelfOnly',
         'reports' => '\Freee\Accounting\Model\UserCapability',
         'reports_bs' => '\Freee\Accounting\Model\UserCapability',
         'reports_cash_balance' => '\Freee\Accounting\Model\UserCapability',
@@ -113,7 +113,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
         'tax_reports' => '\Freee\Accounting\Model\UserCapability',
         'tax_return' => '\Freee\Accounting\Model\UserCapability',
         'taxes' => '\Freee\Accounting\Model\UserCapability',
-        'transfers' => '\Freee\Accounting\Model\UserCapability',
+        'transfers' => '\Freee\Accounting\Model\UserCapabilityWithSelfOnly',
         'user_matchers' => '\Freee\Accounting\Model\UserCapability',
         'wallet_txns' => '\Freee\Accounting\Model\UserCapability',
         'walletables' => '\Freee\Accounting\Model\UserCapability',
@@ -862,7 +862,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets approval_requests
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityWithSelfOnly
      */
     public function getApprovalRequests()
     {
@@ -872,7 +872,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets approval_requests
      *
-     * @param \Freee\Accounting\Model\UserCapability $approval_requests approval_requests
+     * @param \Freee\Accounting\Model\UserCapabilityWithSelfOnly $approval_requests approval_requests
      *
      * @return self
      */
@@ -1054,7 +1054,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets deals
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityWithSelfOnly
      */
     public function getDeals()
     {
@@ -1064,7 +1064,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets deals
      *
-     * @param \Freee\Accounting\Model\UserCapability $deals deals
+     * @param \Freee\Accounting\Model\UserCapabilityWithSelfOnly $deals deals
      *
      * @return self
      */
@@ -1102,7 +1102,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets docs
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityWithSelfOnly
      */
     public function getDocs()
     {
@@ -1112,7 +1112,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets docs
      *
-     * @param \Freee\Accounting\Model\UserCapability $docs docs
+     * @param \Freee\Accounting\Model\UserCapabilityWithSelfOnly $docs docs
      *
      * @return self
      */
@@ -1150,7 +1150,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets expense_applications
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityWithSelfOnly
      */
     public function getExpenseApplications()
     {
@@ -1160,7 +1160,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets expense_applications
      *
-     * @param \Freee\Accounting\Model\UserCapability $expense_applications expense_applications
+     * @param \Freee\Accounting\Model\UserCapabilityWithSelfOnly $expense_applications expense_applications
      *
      * @return self
      */
@@ -1294,7 +1294,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets manual_journals
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityWithSelfOnly
      */
     public function getManualJournals()
     {
@@ -1304,7 +1304,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets manual_journals
      *
-     * @param \Freee\Accounting\Model\UserCapability $manual_journals manual_journals
+     * @param \Freee\Accounting\Model\UserCapabilityWithSelfOnly $manual_journals manual_journals
      *
      * @return self
      */
@@ -1462,7 +1462,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets payment_requests
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityWithSelfOnly
      */
     public function getPaymentRequests()
     {
@@ -1472,7 +1472,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets payment_requests
      *
-     * @param \Freee\Accounting\Model\UserCapability $payment_requests payment_requests
+     * @param \Freee\Accounting\Model\UserCapabilityWithSelfOnly $payment_requests payment_requests
      *
      * @return self
      */
@@ -1510,7 +1510,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets receipts
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityWithSelfOnly
      */
     public function getReceipts()
     {
@@ -1520,7 +1520,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets receipts
      *
-     * @param \Freee\Accounting\Model\UserCapability $receipts receipts
+     * @param \Freee\Accounting\Model\UserCapabilityWithSelfOnly $receipts receipts
      *
      * @return self
      */
@@ -2038,7 +2038,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets transfers
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityWithSelfOnly
      */
     public function getTransfers()
     {
@@ -2048,7 +2048,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets transfers
      *
-     * @param \Freee\Accounting\Model\UserCapability $transfers transfers
+     * @param \Freee\Accounting\Model\UserCapabilityWithSelfOnly $transfers transfers
      *
      * @return self
      */
