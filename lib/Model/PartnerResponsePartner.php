@@ -76,7 +76,7 @@ class PartnerResponsePartner implements ModelInterface, ArrayAccess, \JsonSerial
         'partner_bank_account_attributes' => '\Freee\Accounting\Model\PartnerResponsePartnerPartnerBankAccountAttributes',
         'partner_doc_setting_attributes' => '\Freee\Accounting\Model\PartnerResponsePartnerPartnerDocSettingAttributes',
         'payer_walletable_id' => 'int',
-        'payment_term_attributes' => '\Freee\Accounting\Model\PartnerResponsePartnerInvoicePaymentTermAttributes',
+        'payment_term_attributes' => '\Freee\Accounting\Model\PartnerResponsePartnerPaymentTermAttributes',
         'phone' => 'string',
         'shortcut1' => 'string',
         'shortcut2' => 'string',
@@ -878,7 +878,7 @@ class PartnerResponsePartner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets payment_term_attributes
      *
-     * @return \Freee\Accounting\Model\PartnerResponsePartnerInvoicePaymentTermAttributes|null
+     * @return \Freee\Accounting\Model\PartnerResponsePartnerPaymentTermAttributes|null
      */
     public function getPaymentTermAttributes()
     {
@@ -888,7 +888,7 @@ class PartnerResponsePartner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets payment_term_attributes
      *
-     * @param \Freee\Accounting\Model\PartnerResponsePartnerInvoicePaymentTermAttributes|null $payment_term_attributes payment_term_attributes
+     * @param \Freee\Accounting\Model\PartnerResponsePartnerPaymentTermAttributes|null $payment_term_attributes payment_term_attributes
      *
      * @return self
      */

@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **partner_bank_account_attributes** | [**\Freee\Accounting\Model\PartnerCreateParamsPartnerBankAccountAttributes**](PartnerCreateParamsPartnerBankAccountAttributes.md) |  | [optional]
 **partner_doc_setting_attributes** | [**\Freee\Accounting\Model\PartnerCreateParamsPartnerDocSettingAttributes**](PartnerCreateParamsPartnerDocSettingAttributes.md) |  | [optional]
 **payer_walletable_id** | **int** | 振込元口座ID（一括振込ファイル用）:（walletableのtypeが&#39;bank_account&#39;のidのみ指定できます。また、未設定にする場合は、nullを指定してください。） | [optional]
-**payment_term_attributes** | [**\Freee\Accounting\Model\PartnerCreateParamsInvoicePaymentTermAttributes**](PartnerCreateParamsInvoicePaymentTermAttributes.md) |  | [optional]
+**payment_term_attributes** | [**\Freee\Accounting\Model\PartnerCreateParamsPaymentTermAttributes**](PartnerCreateParamsPaymentTermAttributes.md) |  | [optional]
 **phone** | **string** | 電話番号 | [optional]
 **shortcut1** | **string** | ショートカット１ (255文字以内) | [optional]
 **shortcut2** | **string** | ショートカット２ (255文字以内) | [optional]

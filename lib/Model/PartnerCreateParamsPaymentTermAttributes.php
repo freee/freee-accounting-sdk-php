@@ -1,6 +1,6 @@
 <?php
 /**
- * PartnerResponsePartnerInvoicePaymentTermAttributes
+ * PartnerCreateParamsPaymentTermAttributes
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Freee\Accounting\ObjectSerializer;
 
 /**
- * PartnerResponsePartnerInvoicePaymentTermAttributes Class Doc Comment
+ * PartnerCreateParamsPaymentTermAttributes Class Doc Comment
  *
  * @category Class
  * @package  Freee\Accounting
@@ -42,7 +42,7 @@ use \Freee\Accounting\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class PartnerResponsePartnerInvoicePaymentTermAttributes implements ModelInterface, ArrayAccess, \JsonSerializable
+class PartnerCreateParamsPaymentTermAttributes implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class PartnerResponsePartnerInvoicePaymentTermAttributes implements ModelInterfa
       *
       * @var string
       */
-    protected static $openAPIModelName = 'partnerResponse_partner_invoice_payment_term_attributes';
+    protected static $openAPIModelName = 'partnerCreateParams_payment_term_attributes';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -254,7 +254,7 @@ class PartnerResponsePartnerInvoicePaymentTermAttributes implements ModelInterfa
     /**
      * Sets additional_months
      *
-     * @param int|null $additional_months 入金月
+     * @param int|null $additional_months 支払月
      *
      * @return self
      */
@@ -262,10 +262,10 @@ class PartnerResponsePartnerInvoicePaymentTermAttributes implements ModelInterfa
     {
 
         if (!is_null($additional_months) && ($additional_months > 6)) {
-            throw new \InvalidArgumentException('invalid value for $additional_months when calling PartnerResponsePartnerInvoicePaymentTermAttributes., must be smaller than or equal to 6.');
+            throw new \InvalidArgumentException('invalid value for $additional_months when calling PartnerCreateParamsPaymentTermAttributes., must be smaller than or equal to 6.');
         }
         if (!is_null($additional_months) && ($additional_months < 1)) {
-            throw new \InvalidArgumentException('invalid value for $additional_months when calling PartnerResponsePartnerInvoicePaymentTermAttributes., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid value for $additional_months when calling PartnerCreateParamsPaymentTermAttributes., must be bigger than or equal to 1.');
         }
 
         $this->container['additional_months'] = $additional_months;
@@ -286,7 +286,7 @@ class PartnerResponsePartnerInvoicePaymentTermAttributes implements ModelInterfa
     /**
      * Sets cutoff_day
      *
-     * @param int|null $cutoff_day 締め日（29, 30, 31日の末日を指定する場合は、32。）
+     * @param int|null $cutoff_day 締め日（29, 30, 31日の末日を指定する場合は、32を指定してください。）
      *
      * @return self
      */
@@ -294,10 +294,10 @@ class PartnerResponsePartnerInvoicePaymentTermAttributes implements ModelInterfa
     {
 
         if (!is_null($cutoff_day) && ($cutoff_day > 32)) {
-            throw new \InvalidArgumentException('invalid value for $cutoff_day when calling PartnerResponsePartnerInvoicePaymentTermAttributes., must be smaller than or equal to 32.');
+            throw new \InvalidArgumentException('invalid value for $cutoff_day when calling PartnerCreateParamsPaymentTermAttributes., must be smaller than or equal to 32.');
         }
         if (!is_null($cutoff_day) && ($cutoff_day < 1)) {
-            throw new \InvalidArgumentException('invalid value for $cutoff_day when calling PartnerResponsePartnerInvoicePaymentTermAttributes., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid value for $cutoff_day when calling PartnerCreateParamsPaymentTermAttributes., must be bigger than or equal to 1.');
         }
 
         $this->container['cutoff_day'] = $cutoff_day;
@@ -318,7 +318,7 @@ class PartnerResponsePartnerInvoicePaymentTermAttributes implements ModelInterfa
     /**
      * Sets fixed_day
      *
-     * @param int|null $fixed_day 入金日（29, 30, 31日の末日を指定する場合は、32。）
+     * @param int|null $fixed_day 支払日（29, 30, 31日の末日を指定する場合は、32を指定してください。）
      *
      * @return self
      */
@@ -326,10 +326,10 @@ class PartnerResponsePartnerInvoicePaymentTermAttributes implements ModelInterfa
     {
 
         if (!is_null($fixed_day) && ($fixed_day > 32)) {
-            throw new \InvalidArgumentException('invalid value for $fixed_day when calling PartnerResponsePartnerInvoicePaymentTermAttributes., must be smaller than or equal to 32.');
+            throw new \InvalidArgumentException('invalid value for $fixed_day when calling PartnerCreateParamsPaymentTermAttributes., must be smaller than or equal to 32.');
         }
         if (!is_null($fixed_day) && ($fixed_day < 1)) {
-            throw new \InvalidArgumentException('invalid value for $fixed_day when calling PartnerResponsePartnerInvoicePaymentTermAttributes., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid value for $fixed_day when calling PartnerCreateParamsPaymentTermAttributes., must be bigger than or equal to 1.');
         }
 
         $this->container['fixed_day'] = $fixed_day;
