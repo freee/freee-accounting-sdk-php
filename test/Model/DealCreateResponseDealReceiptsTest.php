@@ -1,6 +1,6 @@
 <?php
 /**
- * DealCreateResponseDealTest
+ * DealCreateResponseDealReceiptsTest
  *
  * PHP version 7.3
  *
@@ -31,15 +31,15 @@ namespace Freee\Accounting\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * DealCreateResponseDealTest Class Doc Comment
+ * DealCreateResponseDealReceiptsTest Class Doc Comment
  *
  * @category    Class
- * @description DealCreateResponseDeal
+ * @description DealCreateResponseDealReceipts
  * @package     Freee\Accounting
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class DealCreateResponseDealTest extends TestCase
+class DealCreateResponseDealReceiptsTest extends TestCase
 {
 
     /**
@@ -71,54 +71,27 @@ class DealCreateResponseDealTest extends TestCase
     }
 
     /**
-     * Test "DealCreateResponseDeal"
+     * Test "DealCreateResponseDealReceipts"
      */
-    public function testDealCreateResponseDeal()
+    public function testDealCreateResponseDealReceipts()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "amount"
+     * Test attribute "created_at"
      */
-    public function testPropertyAmount()
+    public function testPropertyCreatedAt()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "company_id"
+     * Test attribute "description"
      */
-    public function testPropertyCompanyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "details"
-     */
-    public function testPropertyDetails()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "due_amount"
-     */
-    public function testPropertyDueAmount()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "due_date"
-     */
-    public function testPropertyDueDate()
+    public function testPropertyDescription()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -143,45 +116,18 @@ class DealCreateResponseDealTest extends TestCase
     }
 
     /**
-     * Test attribute "partner_code"
+     * Test attribute "mime_type"
      */
-    public function testPropertyPartnerCode()
+    public function testPropertyMimeType()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "partner_id"
+     * Test attribute "origin"
      */
-    public function testPropertyPartnerId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "payments"
-     */
-    public function testPropertyPayments()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "receipts"
-     */
-    public function testPropertyReceipts()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "ref_number"
-     */
-    public function testPropertyRefNumber()
+    public function testPropertyOrigin()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -197,9 +143,9 @@ class DealCreateResponseDealTest extends TestCase
     }
 
     /**
-     * Test attribute "type"
+     * Test attribute "user"
      */
-    public function testPropertyType()
+    public function testPropertyUser()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

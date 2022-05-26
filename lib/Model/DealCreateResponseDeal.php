@@ -69,6 +69,7 @@ class DealCreateResponseDeal implements ModelInterface, ArrayAccess, \JsonSerial
         'partner_code' => 'string',
         'partner_id' => 'int',
         'payments' => '\Freee\Accounting\Model\DealPayments[]',
+        'receipts' => '\Freee\Accounting\Model\DealCreateResponseDealReceipts[]',
         'ref_number' => 'string',
         'status' => 'string',
         'type' => 'string'
@@ -92,6 +93,7 @@ class DealCreateResponseDeal implements ModelInterface, ArrayAccess, \JsonSerial
         'partner_code' => null,
         'partner_id' => null,
         'payments' => null,
+        'receipts' => null,
         'ref_number' => null,
         'status' => null,
         'type' => null
@@ -134,6 +136,7 @@ class DealCreateResponseDeal implements ModelInterface, ArrayAccess, \JsonSerial
         'partner_code' => 'partner_code',
         'partner_id' => 'partner_id',
         'payments' => 'payments',
+        'receipts' => 'receipts',
         'ref_number' => 'ref_number',
         'status' => 'status',
         'type' => 'type'
@@ -155,6 +158,7 @@ class DealCreateResponseDeal implements ModelInterface, ArrayAccess, \JsonSerial
         'partner_code' => 'setPartnerCode',
         'partner_id' => 'setPartnerId',
         'payments' => 'setPayments',
+        'receipts' => 'setReceipts',
         'ref_number' => 'setRefNumber',
         'status' => 'setStatus',
         'type' => 'setType'
@@ -176,6 +180,7 @@ class DealCreateResponseDeal implements ModelInterface, ArrayAccess, \JsonSerial
         'partner_code' => 'getPartnerCode',
         'partner_id' => 'getPartnerId',
         'payments' => 'getPayments',
+        'receipts' => 'getReceipts',
         'ref_number' => 'getRefNumber',
         'status' => 'getStatus',
         'type' => 'getType'
@@ -278,6 +283,7 @@ class DealCreateResponseDeal implements ModelInterface, ArrayAccess, \JsonSerial
         $this->container['partner_code'] = $data['partner_code'] ?? null;
         $this->container['partner_id'] = $data['partner_id'] ?? null;
         $this->container['payments'] = $data['payments'] ?? null;
+        $this->container['receipts'] = $data['receipts'] ?? null;
         $this->container['ref_number'] = $data['ref_number'] ?? null;
         $this->container['status'] = $data['status'] ?? null;
         $this->container['type'] = $data['type'] ?? null;
@@ -643,6 +649,30 @@ class DealCreateResponseDeal implements ModelInterface, ArrayAccess, \JsonSerial
     public function setPayments($payments)
     {
         $this->container['payments'] = $payments;
+
+        return $this;
+    }
+
+    /**
+     * Gets receipts
+     *
+     * @return \Freee\Accounting\Model\DealCreateResponseDealReceipts[]|null
+     */
+    public function getReceipts()
+    {
+        return $this->container['receipts'];
+    }
+
+    /**
+     * Sets receipts
+     *
+     * @param \Freee\Accounting\Model\DealCreateResponseDealReceipts[]|null $receipts 証憑ファイル（ファイルボックスのファイル）
+     *
+     * @return self
+     */
+    public function setReceipts($receipts)
+    {
+        $this->container['receipts'] = $receipts;
 
         return $this;
     }

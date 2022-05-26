@@ -74,7 +74,7 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
         'partner_bank_account_attributes' => '\Freee\Accounting\Model\PartnerCreateParamsPartnerBankAccountAttributes',
         'partner_doc_setting_attributes' => '\Freee\Accounting\Model\PartnerCreateParamsPartnerDocSettingAttributes',
         'payer_walletable_id' => 'int',
-        'payment_term_attributes' => '\Freee\Accounting\Model\PartnerCreateParamsInvoicePaymentTermAttributes',
+        'payment_term_attributes' => '\Freee\Accounting\Model\PartnerCreateParamsPaymentTermAttributes',
         'phone' => 'string',
         'shortcut1' => 'string',
         'shortcut2' => 'string',
@@ -860,7 +860,7 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets payment_term_attributes
      *
-     * @return \Freee\Accounting\Model\PartnerCreateParamsInvoicePaymentTermAttributes|null
+     * @return \Freee\Accounting\Model\PartnerCreateParamsPaymentTermAttributes|null
      */
     public function getPaymentTermAttributes()
     {
@@ -870,7 +870,7 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets payment_term_attributes
      *
-     * @param \Freee\Accounting\Model\PartnerCreateParamsInvoicePaymentTermAttributes|null $payment_term_attributes payment_term_attributes
+     * @param \Freee\Accounting\Model\PartnerCreateParamsPaymentTermAttributes|null $payment_term_attributes payment_term_attributes
      *
      * @return self
      */

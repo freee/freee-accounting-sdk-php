@@ -254,7 +254,7 @@ class PartnerCreateParamsInvoicePaymentTermAttributes implements ModelInterface,
     /**
      * Sets additional_months
      *
-     * @param int|null $additional_months 支払月
+     * @param int|null $additional_months 入金月
      *
      * @return self
      */
@@ -318,7 +318,7 @@ class PartnerCreateParamsInvoicePaymentTermAttributes implements ModelInterface,
     /**
      * Sets fixed_day
      *
-     * @param int|null $fixed_day 支払日（29, 30, 31日の末日を指定する場合は、32を指定してください。）
+     * @param int|null $fixed_day 入金日（29, 30, 31日の末日を指定する場合は、32を指定してください。）
      *
      * @return self
      */
