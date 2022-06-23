@@ -176,7 +176,6 @@ docs/Model/PartnerResponsePartner.md
 docs/Model/PartnerResponsePartnerAddressAttributes.md
 docs/Model/PartnerResponsePartnerInvoicePaymentTermAttributes.md
 docs/Model/PartnerResponsePartnerPartnerBankAccountAttributes.md
-docs/Model/PartnerResponsePartnerPartnerDocSettingAttributes.md
 docs/Model/PartnerResponsePartnerPaymentTermAttributes.md
 docs/Model/PartnerUpdateParams.md
 docs/Model/PartnersResponse.md
@@ -531,7 +530,6 @@ lib/Model/PartnerResponsePartner.php
 lib/Model/PartnerResponsePartnerAddressAttributes.php
 lib/Model/PartnerResponsePartnerInvoicePaymentTermAttributes.php
 lib/Model/PartnerResponsePartnerPartnerBankAccountAttributes.php
-lib/Model/PartnerResponsePartnerPartnerDocSettingAttributes.php
 lib/Model/PartnerResponsePartnerPaymentTermAttributes.php
 lib/Model/PartnerUpdateParams.php
 lib/Model/PartnersResponse.php
@@ -881,7 +879,6 @@ test/Model/PartnerCreateParamsTest.php
 test/Model/PartnerResponsePartnerAddressAttributesTest.php
 test/Model/PartnerResponsePartnerInvoicePaymentTermAttributesTest.php
 test/Model/PartnerResponsePartnerPartnerBankAccountAttributesTest.php
-test/Model/PartnerResponsePartnerPartnerDocSettingAttributesTest.php
 test/Model/PartnerResponsePartnerPaymentTermAttributesTest.php
 test/Model/PartnerResponsePartnerTest.php
 test/Model/PartnerResponseTest.php
