@@ -320,7 +320,7 @@ class PartnerCreateParamsPartnerBankAccountAttributes implements ModelInterface,
     /**
      * Sets account_type
      *
-     * @param string|null $account_type 口座種別(ordinary:普通、checking：当座、earmarked：納税準備預金、savings：貯蓄、other:その他)
+     * @param string|null $account_type 口座種別(ordinary:普通、checking：当座、earmarked：納税準備預金、savings：貯蓄、other:その他)、指定しない場合ordinaryになります。
      *
      * @return self
      */

@@ -74,7 +74,7 @@ class PartnerResponsePartner implements ModelInterface, ArrayAccess, \JsonSerial
         'name_kana' => 'string',
         'org_code' => 'int',
         'partner_bank_account_attributes' => '\Freee\Accounting\Model\PartnerResponsePartnerPartnerBankAccountAttributes',
-        'partner_doc_setting_attributes' => '\Freee\Accounting\Model\PartnerResponsePartnerPartnerDocSettingAttributes',
+        'partner_doc_setting_attributes' => '\Freee\Accounting\Model\PartnerCreateParamsPartnerDocSettingAttributes',
         'payer_walletable_id' => 'int',
         'payment_term_attributes' => '\Freee\Accounting\Model\PartnerResponsePartnerPaymentTermAttributes',
         'phone' => 'string',
@@ -822,7 +822,7 @@ class PartnerResponsePartner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets partner_doc_setting_attributes
      *
-     * @return \Freee\Accounting\Model\PartnerResponsePartnerPartnerDocSettingAttributes|null
+     * @return \Freee\Accounting\Model\PartnerCreateParamsPartnerDocSettingAttributes|null
      */
     public function getPartnerDocSettingAttributes()
     {
@@ -832,7 +832,7 @@ class PartnerResponsePartner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets partner_doc_setting_attributes
      *
-     * @param \Freee\Accounting\Model\PartnerResponsePartnerPartnerDocSettingAttributes|null $partner_doc_setting_attributes partner_doc_setting_attributes
+     * @param \Freee\Accounting\Model\PartnerCreateParamsPartnerDocSettingAttributes|null $partner_doc_setting_attributes partner_doc_setting_attributes
      *
      * @return self
      */

@@ -532,7 +532,7 @@ class PartnerUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets country_code
      *
-     * @param string|null $country_code 地域（JP: 国内、ZZ:国外）
+     * @param string|null $country_code 地域（JP: 国内、ZZ:国外）、指定しない場合JPになります。
      *
      * @return self
      */
@@ -944,7 +944,7 @@ class PartnerUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets transfer_fee_handling_side
      *
-     * @param string|null $transfer_fee_handling_side 振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee)
+     * @param string|null $transfer_fee_handling_side 振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee)、指定しない場合payerになります。
      *
      * @return self
      */

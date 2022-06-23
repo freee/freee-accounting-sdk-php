@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **name_kana** | **string** | カナ名称（255文字以内） | [optional]
 **org_code** | **int** | 事業所種別（null: 未設定、1: 法人、2: 個人） | [optional]
 **partner_bank_account_attributes** | [**\Freee\Accounting\Model\PartnerResponsePartnerPartnerBankAccountAttributes**](PartnerResponsePartnerPartnerBankAccountAttributes.md) |  | [optional]
-**partner_doc_setting_attributes** | [**\Freee\Accounting\Model\PartnerResponsePartnerPartnerDocSettingAttributes**](PartnerResponsePartnerPartnerDocSettingAttributes.md) |  | [optional]
+**partner_doc_setting_attributes** | [**\Freee\Accounting\Model\PartnerCreateParamsPartnerDocSettingAttributes**](PartnerCreateParamsPartnerDocSettingAttributes.md) |  | [optional]
 **payer_walletable_id** | **int** | 振込元口座ID（一括振込ファイル用）:（未設定の場合は、nullです。） | [optional]
 **phone** | **string** | 電話番号 | [optional]
 **shortcut1** | **string** | ショートカット1 (255文字以内) | [optional]
