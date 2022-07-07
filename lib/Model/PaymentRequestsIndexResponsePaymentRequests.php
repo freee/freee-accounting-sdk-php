@@ -108,7 +108,7 @@ class PaymentRequestsIndexResponsePaymentRequests implements ModelInterface, Arr
         'payment_method' => null,
         'status' => null,
         'title' => null,
-        'total_amount' => null
+        'total_amount' => 'int64'
     ];
 
     /**

@@ -138,7 +138,7 @@ class PaymentRequestResponsePaymentRequest implements ModelInterface, ArrayAcces
         'receipt_ids' => null,
         'status' => null,
         'title' => null,
-        'total_amount' => null
+        'total_amount' => 'int64'
     ];
 
     /**
