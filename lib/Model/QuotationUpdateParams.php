@@ -1083,7 +1083,7 @@ class QuotationUpdateParams implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets quotation_status
      *
-     * @param string|null $quotation_status 見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み)
+     * @param string|null $quotation_status 見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み) (請求書承認ワークフローを利用している場合、unsubmitted を指定すると、下書きの見積書が作成されます)
      *
      * @return self
      */

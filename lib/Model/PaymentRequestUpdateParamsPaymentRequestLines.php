@@ -82,7 +82,7 @@ class PaymentRequestUpdateParamsPaymentRequestLines implements ModelInterface, A
       */
     protected static $openAPIFormats = [
         'account_item_id' => null,
-        'amount' => null,
+        'amount' => 'int64',
         'description' => null,
         'id' => 'int64',
         'item_id' => null,
@@ -282,8 +282,8 @@ class PaymentRequestUpdateParamsPaymentRequestLines implements ModelInterface, A
         if ($this->container['amount'] === null) {
             $invalidProperties[] = "'amount' can't be null";
         }
-        if (($this->container['amount'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 2147483647.";
+        if (($this->container['amount'] > 99999999999)) {
+            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 99999999999.";
         }
 
         if (($this->container['amount'] < 0)) {
@@ -422,8 +422,8 @@ class PaymentRequestUpdateParamsPaymentRequestLines implements ModelInterface, A
     public function setAmount($amount)
     {
 
-        if (($amount > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling PaymentRequestUpdateParamsPaymentRequestLines., must be smaller than or equal to 2147483647.');
+        if (($amount > 99999999999)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling PaymentRequestUpdateParamsPaymentRequestLines., must be smaller than or equal to 99999999999.');
         }
         if (($amount < 0)) {
             throw new \InvalidArgumentException('invalid value for $amount when calling PaymentRequestUpdateParamsPaymentRequestLines., must be bigger than or equal to 0.');
