@@ -281,7 +281,7 @@ $apiInstance = new Freee\Accounting\Api\WalletablesApi(
 );
 $id = 56; // int
 $type = 'type_example'; // string | 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座）
-$walletable_update_params = new \Freee\Accounting\Model\WalletableUpdateParams(); // \Freee\Accounting\Model\WalletableUpdateParams | 口座の作成
+$walletable_update_params = new \Freee\Accounting\Model\WalletableUpdateParams(); // \Freee\Accounting\Model\WalletableUpdateParams | 口座の更新
 
 try {
     $result = $apiInstance->updateWalletable($id, $type, $walletable_update_params);
@@ -297,7 +297,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
  **type** | **string**| 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） |
- **walletable_update_params** | [**\Freee\Accounting\Model\WalletableUpdateParams**](../Model/WalletableUpdateParams.md)| 口座の作成 | [optional]
+ **walletable_update_params** | [**\Freee\Accounting\Model\WalletableUpdateParams**](../Model/WalletableUpdateParams.md)| 口座の更新 | [optional]
 
 ### Return type
 

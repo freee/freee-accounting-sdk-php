@@ -1621,7 +1621,7 @@ class WalletablesApi
      *
      * @param  int $id id (required)
      * @param  string $type 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） (required)
-     * @param  \Freee\Accounting\Model\WalletableUpdateParams $walletable_update_params 口座の作成 (optional)
+     * @param  \Freee\Accounting\Model\WalletableUpdateParams $walletable_update_params 口座の更新 (optional)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1640,7 +1640,7 @@ class WalletablesApi
      *
      * @param  int $id (required)
      * @param  string $type 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） (required)
-     * @param  \Freee\Accounting\Model\WalletableUpdateParams $walletable_update_params 口座の作成 (optional)
+     * @param  \Freee\Accounting\Model\WalletableUpdateParams $walletable_update_params 口座の更新 (optional)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1835,7 +1835,7 @@ class WalletablesApi
      *
      * @param  int $id (required)
      * @param  string $type 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） (required)
-     * @param  \Freee\Accounting\Model\WalletableUpdateParams $walletable_update_params 口座の作成 (optional)
+     * @param  \Freee\Accounting\Model\WalletableUpdateParams $walletable_update_params 口座の更新 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1857,7 +1857,7 @@ class WalletablesApi
      *
      * @param  int $id (required)
      * @param  string $type 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） (required)
-     * @param  \Freee\Accounting\Model\WalletableUpdateParams $walletable_update_params 口座の作成 (optional)
+     * @param  \Freee\Accounting\Model\WalletableUpdateParams $walletable_update_params 口座の更新 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1905,7 +1905,7 @@ class WalletablesApi
      *
      * @param  int $id (required)
      * @param  string $type 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） (required)
-     * @param  \Freee\Accounting\Model\WalletableUpdateParams $walletable_update_params 口座の作成 (optional)
+     * @param  \Freee\Accounting\Model\WalletableUpdateParams $walletable_update_params 口座の更新 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

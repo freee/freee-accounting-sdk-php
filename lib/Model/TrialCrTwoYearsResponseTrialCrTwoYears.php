@@ -62,7 +62,7 @@ class TrialCrTwoYearsResponseTrialCrTwoYears implements ModelInterface, ArrayAcc
         'account_item_display_type' => 'string',
         'adjustment' => 'string',
         'approval_flow_status' => 'string',
-        'balances' => '\Freee\Accounting\Model\TrialCrTwoYearsResponseTrialCrTwoYearsBalances[]',
+        'balances' => '\Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsBalances[]',
         'breakdown_display_type' => 'string',
         'company_id' => 'int',
         'cost_allocation' => 'string',
@@ -590,7 +590,7 @@ class TrialCrTwoYearsResponseTrialCrTwoYears implements ModelInterface, ArrayAcc
     /**
      * Gets balances
      *
-     * @return \Freee\Accounting\Model\TrialCrTwoYearsResponseTrialCrTwoYearsBalances[]
+     * @return \Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsBalances[]
      */
     public function getBalances()
     {
@@ -600,7 +600,7 @@ class TrialCrTwoYearsResponseTrialCrTwoYears implements ModelInterface, ArrayAcc
     /**
      * Sets balances
      *
-     * @param \Freee\Accounting\Model\TrialCrTwoYearsResponseTrialCrTwoYearsBalances[] $balances balances
+     * @param \Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsBalances[] $balances balances
      *
      * @return self
      */

@@ -98,9 +98,9 @@ class WalletableCreateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "group_name"
+     * Test attribute "is_asset"
      */
-    public function testPropertyGroupName()
+    public function testPropertyIsAsset()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

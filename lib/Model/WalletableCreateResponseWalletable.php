@@ -290,7 +290,7 @@ class WalletableCreateResponseWalletable implements ModelInterface, ArrayAccess,
     /**
      * Sets bank_id
      *
-     * @param int $bank_id サービスID
+     * @param int $bank_id 連携サービスID（typeにbank_account、credit_cardを指定する場合は必須）
      *
      * @return self
      */

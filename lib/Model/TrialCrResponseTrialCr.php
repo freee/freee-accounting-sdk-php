@@ -62,7 +62,7 @@ class TrialCrResponseTrialCr implements ModelInterface, ArrayAccess, \JsonSerial
         'account_item_display_type' => 'string',
         'adjustment' => 'string',
         'approval_flow_status' => 'string',
-        'balances' => '\Freee\Accounting\Model\TrialCrResponseTrialCrBalances[]',
+        'balances' => '\Freee\Accounting\Model\TrialBsResponseTrialBsBalances[]',
         'breakdown_display_type' => 'string',
         'company_id' => 'int',
         'cost_allocation' => 'string',
@@ -590,7 +590,7 @@ class TrialCrResponseTrialCr implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets balances
      *
-     * @return \Freee\Accounting\Model\TrialCrResponseTrialCrBalances[]
+     * @return \Freee\Accounting\Model\TrialBsResponseTrialBsBalances[]
      */
     public function getBalances()
     {
@@ -600,7 +600,7 @@ class TrialCrResponseTrialCr implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets balances
      *
-     * @param \Freee\Accounting\Model\TrialCrResponseTrialCrBalances[] $balances balances
+     * @param \Freee\Accounting\Model\TrialBsResponseTrialBsBalances[] $balances balances
      *
      * @return self
      */
