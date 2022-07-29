@@ -221,8 +221,8 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsItems implements ModelInterface, Arr
             $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 2147483647.";
         }
 
-        if (($this->container['id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
+        if (($this->container['id'] < 0)) {
+            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 0.";
         }
 
         return $invalidProperties;
@@ -287,8 +287,8 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsItems implements ModelInterface, Arr
         if (($id > 2147483647)) {
             throw new \InvalidArgumentException('invalid value for $id when calling TrialBsTwoYearsResponseTrialBsTwoYearsItems., must be smaller than or equal to 2147483647.');
         }
-        if (($id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling TrialBsTwoYearsResponseTrialBsTwoYearsItems., must be bigger than or equal to 1.');
+        if (($id < 0)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling TrialBsTwoYearsResponseTrialBsTwoYearsItems., must be bigger than or equal to 0.');
         }
 
         $this->container['id'] = $id;

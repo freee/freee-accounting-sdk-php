@@ -412,16 +412,16 @@ class TrialBsResponseTrialBs implements ModelInterface, ArrayAccess, \JsonSerial
             $invalidProperties[] = "invalid value for 'item_id', must be smaller than or equal to 2147483647.";
         }
 
-        if (!is_null($this->container['item_id']) && ($this->container['item_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'item_id', must be bigger than or equal to 1.";
+        if (!is_null($this->container['item_id']) && ($this->container['item_id'] < 0)) {
+            $invalidProperties[] = "invalid value for 'item_id', must be bigger than or equal to 0.";
         }
 
         if (!is_null($this->container['partner_id']) && ($this->container['partner_id'] > 2147483647)) {
             $invalidProperties[] = "invalid value for 'partner_id', must be smaller than or equal to 2147483647.";
         }
 
-        if (!is_null($this->container['partner_id']) && ($this->container['partner_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'partner_id', must be bigger than or equal to 1.";
+        if (!is_null($this->container['partner_id']) && ($this->container['partner_id'] < 0)) {
+            $invalidProperties[] = "invalid value for 'partner_id', must be bigger than or equal to 0.";
         }
 
         if (!is_null($this->container['section_id']) && ($this->container['section_id'] > 2147483647)) {
@@ -774,8 +774,8 @@ class TrialBsResponseTrialBs implements ModelInterface, ArrayAccess, \JsonSerial
         if (!is_null($item_id) && ($item_id > 2147483647)) {
             throw new \InvalidArgumentException('invalid value for $item_id when calling TrialBsResponseTrialBs., must be smaller than or equal to 2147483647.');
         }
-        if (!is_null($item_id) && ($item_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $item_id when calling TrialBsResponseTrialBs., must be bigger than or equal to 1.');
+        if (!is_null($item_id) && ($item_id < 0)) {
+            throw new \InvalidArgumentException('invalid value for $item_id when calling TrialBsResponseTrialBs., must be bigger than or equal to 0.');
         }
 
         $this->container['item_id'] = $item_id;
@@ -830,8 +830,8 @@ class TrialBsResponseTrialBs implements ModelInterface, ArrayAccess, \JsonSerial
         if (!is_null($partner_id) && ($partner_id > 2147483647)) {
             throw new \InvalidArgumentException('invalid value for $partner_id when calling TrialBsResponseTrialBs., must be smaller than or equal to 2147483647.');
         }
-        if (!is_null($partner_id) && ($partner_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $partner_id when calling TrialBsResponseTrialBs., must be bigger than or equal to 1.');
+        if (!is_null($partner_id) && ($partner_id < 0)) {
+            throw new \InvalidArgumentException('invalid value for $partner_id when calling TrialBsResponseTrialBs., must be bigger than or equal to 0.');
         }
 
         $this->container['partner_id'] = $partner_id;

@@ -61,7 +61,7 @@ class WalletableCreateParams implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPITypes = [
         'bank_id' => 'int',
         'company_id' => 'int',
-        'group_name' => 'string',
+        'is_asset' => 'bool',
         'name' => 'string',
         'type' => 'string'
     ];
@@ -76,7 +76,7 @@ class WalletableCreateParams implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPIFormats = [
         'bank_id' => null,
         'company_id' => null,
-        'group_name' => null,
+        'is_asset' => null,
         'name' => null,
         'type' => null
     ];
@@ -110,7 +110,7 @@ class WalletableCreateParams implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $attributeMap = [
         'bank_id' => 'bank_id',
         'company_id' => 'company_id',
-        'group_name' => 'group_name',
+        'is_asset' => 'is_asset',
         'name' => 'name',
         'type' => 'type'
     ];
@@ -123,7 +123,7 @@ class WalletableCreateParams implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $setters = [
         'bank_id' => 'setBankId',
         'company_id' => 'setCompanyId',
-        'group_name' => 'setGroupName',
+        'is_asset' => 'setIsAsset',
         'name' => 'setName',
         'type' => 'setType'
     ];
@@ -136,7 +136,7 @@ class WalletableCreateParams implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $getters = [
         'bank_id' => 'getBankId',
         'company_id' => 'getCompanyId',
-        'group_name' => 'getGroupName',
+        'is_asset' => 'getIsAsset',
         'name' => 'getName',
         'type' => 'getType'
     ];
@@ -217,7 +217,7 @@ class WalletableCreateParams implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $this->container['bank_id'] = $data['bank_id'] ?? null;
         $this->container['company_id'] = $data['company_id'] ?? null;
-        $this->container['group_name'] = $data['group_name'] ?? null;
+        $this->container['is_asset'] = $data['is_asset'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['type'] = $data['type'] ?? null;
     }
@@ -297,7 +297,7 @@ class WalletableCreateParams implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets bank_id
      *
-     * @param int|null $bank_id サービスID
+     * @param int|null $bank_id 連携サービスID（typeにbank_account、credit_cardを指定する場合は必須）
      *
      * @return self
      */
@@ -349,25 +349,25 @@ class WalletableCreateParams implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
-     * Gets group_name
+     * Gets is_asset
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getGroupName()
+    public function getIsAsset()
     {
-        return $this->container['group_name'];
+        return $this->container['is_asset'];
     }
 
     /**
-     * Sets group_name
+     * Sets is_asset
      *
-     * @param string|null $group_name 決算書表示名（小カテゴリー）　例：売掛金, 受取手形, 未収入金（法人のみ）, 買掛金, 支払手形, 未払金, 預り金, 前受金
+     * @param bool|null $is_asset 口座を資産口座とするか負債口座とするか（true: 資産口座 (デフォルト), false: 負債口座）<br> bank_idを指定しない場合にのみ使われます。<br> bank_idを指定する場合には資産口座か負債口座かはbank_idに指定したサービスに応じて決定され、is_assetに指定した値は無視されます。
      *
      * @return self
      */
-    public function setGroupName($group_name)
+    public function setIsAsset($is_asset)
     {
-        $this->container['group_name'] = $group_name;
+        $this->container['is_asset'] = $is_asset;
 
         return $this;
     }
