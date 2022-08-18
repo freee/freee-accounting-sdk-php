@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **issue_date** | **string** | 発生日 | [optional]
 **mime_type** | **string** | MIMEタイプ |
 **origin** | **string** | アップロード元種別 |
-**status** | **string** | ステータス(unconfirmed:確認待ち、confirmed:確認済み、deleted:削除済み、ignored:無視) |
+**status** | **string** | ステータス(confirmed:確認済み、deleted:削除済み、ignored:無視) |
 **user** | [**\Freee\Accounting\Model\DealUser**](DealUser.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
