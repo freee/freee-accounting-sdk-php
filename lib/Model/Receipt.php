@@ -212,7 +212,6 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
     const ORIGIN_MAIL = 'mail';
     const ORIGIN_SAFETY_CONTACT_FILE = 'safety_contact_file';
     const ORIGIN_PUBLIC_API = 'public_api';
-    const STATUS_UNCONFIRMED = 'unconfirmed';
     const STATUS_CONFIRMED = 'confirmed';
     const STATUS_DELETED = 'deleted';
     const STATUS_IGNORED = 'ignored';
@@ -246,7 +245,6 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getStatusAllowableValues()
     {
         return [
-            self::STATUS_UNCONFIRMED,
             self::STATUS_CONFIRMED,
             self::STATUS_DELETED,
             self::STATUS_IGNORED,
@@ -551,7 +549,7 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param string $status ステータス(unconfirmed:確認待ち、confirmed:確認済み、deleted:削除済み、ignored:無視)
+     * @param string $status ステータス(confirmed:確認済み、deleted:削除済み、ignored:無視)
      *
      * @return self
      */
