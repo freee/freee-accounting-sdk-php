@@ -65,7 +65,7 @@ class PartnerUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
         'country_code' => 'string',
         'default_title' => 'string',
         'email' => 'string',
-        'invoice_payment_term_attributes' => '\Freee\Accounting\Model\PartnerCreateParamsInvoicePaymentTermAttributes',
+        'invoice_payment_term_attributes' => '\Freee\Accounting\Model\PartnerUpdateParamsInvoicePaymentTermAttributes',
         'long_name' => 'string',
         'name' => 'string',
         'name_kana' => 'string',
@@ -73,7 +73,7 @@ class PartnerUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
         'partner_bank_account_attributes' => '\Freee\Accounting\Model\PartnerCreateParamsPartnerBankAccountAttributes',
         'partner_doc_setting_attributes' => '\Freee\Accounting\Model\PartnerCreateParamsPartnerDocSettingAttributes',
         'payer_walletable_id' => 'int',
-        'payment_term_attributes' => '\Freee\Accounting\Model\PartnerCreateParamsPaymentTermAttributes',
+        'payment_term_attributes' => '\Freee\Accounting\Model\PartnerUpdateParamsPaymentTermAttributes',
         'phone' => 'string',
         'shortcut1' => 'string',
         'shortcut2' => 'string',
@@ -608,7 +608,7 @@ class PartnerUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets invoice_payment_term_attributes
      *
-     * @return \Freee\Accounting\Model\PartnerCreateParamsInvoicePaymentTermAttributes|null
+     * @return \Freee\Accounting\Model\PartnerUpdateParamsInvoicePaymentTermAttributes|null
      */
     public function getInvoicePaymentTermAttributes()
     {
@@ -618,7 +618,7 @@ class PartnerUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets invoice_payment_term_attributes
      *
-     * @param \Freee\Accounting\Model\PartnerCreateParamsInvoicePaymentTermAttributes|null $invoice_payment_term_attributes invoice_payment_term_attributes
+     * @param \Freee\Accounting\Model\PartnerUpdateParamsInvoicePaymentTermAttributes|null $invoice_payment_term_attributes invoice_payment_term_attributes
      *
      * @return self
      */
@@ -830,7 +830,7 @@ class PartnerUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets payment_term_attributes
      *
-     * @return \Freee\Accounting\Model\PartnerCreateParamsPaymentTermAttributes|null
+     * @return \Freee\Accounting\Model\PartnerUpdateParamsPaymentTermAttributes|null
      */
     public function getPaymentTermAttributes()
     {
@@ -840,7 +840,7 @@ class PartnerUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets payment_term_attributes
      *
-     * @param \Freee\Accounting\Model\PartnerCreateParamsPaymentTermAttributes|null $payment_term_attributes payment_term_attributes
+     * @param \Freee\Accounting\Model\PartnerUpdateParamsPaymentTermAttributes|null $payment_term_attributes payment_term_attributes
      *
      * @return self
      */

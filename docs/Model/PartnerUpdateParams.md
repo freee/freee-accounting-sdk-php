@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **country_code** | **string** | 地域（JP: 国内、ZZ:国外）、指定しない場合JPになります。 | [optional]
 **default_title** | **string** | 敬称（御中、様、(空白)の3つから選択） | [optional]
 **email** | **string** | 担当者 メールアドレス (255文字以内) | [optional]
-**invoice_payment_term_attributes** | [**\Freee\Accounting\Model\PartnerCreateParamsInvoicePaymentTermAttributes**](PartnerCreateParamsInvoicePaymentTermAttributes.md) |  | [optional]
+**invoice_payment_term_attributes** | [**\Freee\Accounting\Model\PartnerUpdateParamsInvoicePaymentTermAttributes**](PartnerUpdateParamsInvoicePaymentTermAttributes.md) |  | [optional]
 **long_name** | **string** | 正式名称（255文字以内） | [optional]
 **name** | **string** | 取引先名 (255文字以内) |
 **name_kana** | **string** | カナ名称（255文字以内） | [optional]
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **partner_bank_account_attributes** | [**\Freee\Accounting\Model\PartnerCreateParamsPartnerBankAccountAttributes**](PartnerCreateParamsPartnerBankAccountAttributes.md) |  | [optional]
 **partner_doc_setting_attributes** | [**\Freee\Accounting\Model\PartnerCreateParamsPartnerDocSettingAttributes**](PartnerCreateParamsPartnerDocSettingAttributes.md) |  | [optional]
 **payer_walletable_id** | **int** | 振込元口座ID（一括振込ファイル用）:（walletableのtypeが&#39;bank_account&#39;のidのみ指定できます。また、未設定にする場合は、nullを指定してください。） | [optional]
-**payment_term_attributes** | [**\Freee\Accounting\Model\PartnerCreateParamsPaymentTermAttributes**](PartnerCreateParamsPaymentTermAttributes.md) |  | [optional]
+**payment_term_attributes** | [**\Freee\Accounting\Model\PartnerUpdateParamsPaymentTermAttributes**](PartnerUpdateParamsPaymentTermAttributes.md) |  | [optional]
 **phone** | **string** | 電話番号 | [optional]
 **shortcut1** | **string** | ショートカット１ (255文字以内) | [optional]
 **shortcut2** | **string** | ショートカット２ (255文字以内) | [optional]
