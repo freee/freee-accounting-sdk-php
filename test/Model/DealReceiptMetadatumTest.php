@@ -1,6 +1,6 @@
 <?php
 /**
- * ReceiptUpdateParamsTest
+ * DealReceiptMetadatumTest
  *
  * PHP version 7.3
  *
@@ -31,15 +31,15 @@ namespace Freee\Accounting\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ReceiptUpdateParamsTest Class Doc Comment
+ * DealReceiptMetadatumTest Class Doc Comment
  *
  * @category    Class
- * @description ReceiptUpdateParams
+ * @description DealReceiptMetadatum
  * @package     Freee\Accounting
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ReceiptUpdateParamsTest extends TestCase
+class DealReceiptMetadatumTest extends TestCase
 {
 
     /**
@@ -71,27 +71,18 @@ class ReceiptUpdateParamsTest extends TestCase
     }
 
     /**
-     * Test "ReceiptUpdateParams"
+     * Test "DealReceiptMetadatum"
      */
-    public function testReceiptUpdateParams()
+    public function testDealReceiptMetadatum()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "company_id"
+     * Test attribute "amount"
      */
-    public function testPropertyCompanyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
+    public function testPropertyAmount()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -107,9 +98,9 @@ class ReceiptUpdateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "receipt_metadatum"
+     * Test attribute "partner_name"
      */
-    public function testPropertyReceiptMetadatum()
+    public function testPropertyPartnerName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

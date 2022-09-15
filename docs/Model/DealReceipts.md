@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **issue_date** | **string** | 発生日 | [optional]
 **mime_type** | **string** | MIMEタイプ |
 **origin** | **string** | アップロード元種別 |
+**receipt_metadatum** | [**\Freee\Accounting\Model\DealReceiptMetadatum**](DealReceiptMetadatum.md) |  | [optional]
 **status** | **string** | ステータス(confirmed:確認済み、deleted:削除済み、ignored:無視) |
 **user** | [**\Freee\Accounting\Model\DealUser**](DealUser.md) |  |
 

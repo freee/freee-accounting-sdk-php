@@ -93,6 +93,7 @@ docs/Model/DealCreateResponseDealReceipts.md
 docs/Model/DealDetails.md
 docs/Model/DealDetails1.md
 docs/Model/DealPayments.md
+docs/Model/DealReceiptMetadatum.md
 docs/Model/DealReceipts.md
 docs/Model/DealRenews.md
 docs/Model/DealResponse.md
@@ -404,6 +405,7 @@ lib/Model/DealCreateResponseDealReceipts.php
 lib/Model/DealDetails.php
 lib/Model/DealDetails1.php
 lib/Model/DealPayments.php
+lib/Model/DealReceiptMetadatum.php
 lib/Model/DealReceipts.php
 lib/Model/DealRenews.php
 lib/Model/DealResponse.php
@@ -713,6 +715,7 @@ test/Model/DealCreateResponseTest.php
 test/Model/DealDetails1Test.php
 test/Model/DealDetailsTest.php
 test/Model/DealPaymentsTest.php
+test/Model/DealReceiptMetadatumTest.php
 test/Model/DealReceiptsTest.php
 test/Model/DealRenewsTest.php
 test/Model/DealResponseTest.php
