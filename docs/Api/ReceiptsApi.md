@@ -15,7 +15,7 @@ Method | HTTP request | Description
 ## `createReceipt()`
 
 ```php
-createReceipt($company_id, $receipt, $description, $issue_date): \Freee\Accounting\Model\ReceiptResponse
+createReceipt($company_id, $receipt, $description, $issue_date, $receipt_metadatum_amount, $receipt_metadatum_issue_date, $receipt_metadatum_partner_name): \Freee\Accounting\Model\ReceiptResponse
 ```
 
 ファイルボックス 証憑ファイルアップロード
@@ -41,9 +41,12 @@ $company_id = 56; // int | 事業所ID
 $receipt = "/path/to/file.txt"; // \SplFileObject | 証憑ファイル
 $description = 'description_example'; // string | メモ (255文字以内)
 $issue_date = 'issue_date_example'; // string | 取引日 (yyyy-mm-dd)
+$receipt_metadatum_amount = 56; // int | 金額
+$receipt_metadatum_issue_date = 'receipt_metadatum_issue_date_example'; // string | 発行日 (yyyy-mm-dd)
+$receipt_metadatum_partner_name = 'receipt_metadatum_partner_name_example'; // string | 発行元
 
 try {
-    $result = $apiInstance->createReceipt($company_id, $receipt, $description, $issue_date);
+    $result = $apiInstance->createReceipt($company_id, $receipt, $description, $issue_date, $receipt_metadatum_amount, $receipt_metadatum_issue_date, $receipt_metadatum_partner_name);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ReceiptsApi->createReceipt: ', $e->getMessage(), PHP_EOL;
@@ -58,6 +61,9 @@ Name | Type | Description  | Notes
  **receipt** | **\SplFileObject****\SplFileObject**| 証憑ファイル |
  **description** | **string**| メモ (255文字以内) | [optional]
  **issue_date** | **string**| 取引日 (yyyy-mm-dd) | [optional]
+ **receipt_metadatum_amount** | **int**| 金額 | [optional]
+ **receipt_metadatum_issue_date** | **string**| 発行日 (yyyy-mm-dd) | [optional]
+ **receipt_metadatum_partner_name** | **string**| 発行元 | [optional]
 
 ### Return type
 
@@ -357,7 +363,7 @@ $apiInstance = new Freee\Accounting\Api\ReceiptsApi(
     $config
 );
 $id = 56; // int | 証憑ファイルID
-$receipt_update_params = new \Freee\Accounting\Model\ReceiptUpdateParams(); // \Freee\Accounting\Model\ReceiptUpdateParams | 経費申請の更新
+$receipt_update_params = new \Freee\Accounting\Model\ReceiptUpdateParams(); // \Freee\Accounting\Model\ReceiptUpdateParams
 
 try {
     $result = $apiInstance->updateReceipt($id, $receipt_update_params);
@@ -372,7 +378,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 証憑ファイルID |
- **receipt_update_params** | [**\Freee\Accounting\Model\ReceiptUpdateParams**](../Model/ReceiptUpdateParams.md)| 経費申請の更新 |
+ **receipt_update_params** | [**\Freee\Accounting\Model\ReceiptUpdateParams**](../Model/ReceiptUpdateParams.md)|  |
 
 ### Return type
 

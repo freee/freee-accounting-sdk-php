@@ -66,6 +66,7 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
         'issue_date' => 'string',
         'mime_type' => 'string',
         'origin' => 'string',
+        'receipt_metadatum' => '\Freee\Accounting\Model\DealReceiptMetadatum',
         'status' => 'string',
         'user' => '\Freee\Accounting\Model\DealUser'
     ];
@@ -85,6 +86,7 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
         'issue_date' => null,
         'mime_type' => null,
         'origin' => null,
+        'receipt_metadatum' => null,
         'status' => null,
         'user' => null
     ];
@@ -123,6 +125,7 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
         'issue_date' => 'issue_date',
         'mime_type' => 'mime_type',
         'origin' => 'origin',
+        'receipt_metadatum' => 'receipt_metadatum',
         'status' => 'status',
         'user' => 'user'
     ];
@@ -140,6 +143,7 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
         'issue_date' => 'setIssueDate',
         'mime_type' => 'setMimeType',
         'origin' => 'setOrigin',
+        'receipt_metadatum' => 'setReceiptMetadatum',
         'status' => 'setStatus',
         'user' => 'setUser'
     ];
@@ -157,6 +161,7 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
         'issue_date' => 'getIssueDate',
         'mime_type' => 'getMimeType',
         'origin' => 'getOrigin',
+        'receipt_metadatum' => 'getReceiptMetadatum',
         'status' => 'getStatus',
         'user' => 'getUser'
     ];
@@ -273,6 +278,7 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['issue_date'] = $data['issue_date'] ?? null;
         $this->container['mime_type'] = $data['mime_type'] ?? null;
         $this->container['origin'] = $data['origin'] ?? null;
+        $this->container['receipt_metadatum'] = $data['receipt_metadatum'] ?? null;
         $this->container['status'] = $data['status'] ?? null;
         $this->container['user'] = $data['user'] ?? null;
     }
@@ -532,6 +538,30 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
         $this->container['origin'] = $origin;
+
+        return $this;
+    }
+
+    /**
+     * Gets receipt_metadatum
+     *
+     * @return \Freee\Accounting\Model\DealReceiptMetadatum|null
+     */
+    public function getReceiptMetadatum()
+    {
+        return $this->container['receipt_metadatum'];
+    }
+
+    /**
+     * Sets receipt_metadatum
+     *
+     * @param \Freee\Accounting\Model\DealReceiptMetadatum|null $receipt_metadatum receipt_metadatum
+     *
+     * @return self
+     */
+    public function setReceiptMetadatum($receipt_metadatum)
+    {
+        $this->container['receipt_metadatum'] = $receipt_metadatum;
 
         return $this;
     }

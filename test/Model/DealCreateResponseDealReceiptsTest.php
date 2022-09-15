@@ -134,6 +134,15 @@ class DealCreateResponseDealReceiptsTest extends TestCase
     }
 
     /**
+     * Test attribute "receipt_metadatum"
+     */
+    public function testPropertyReceiptMetadatum()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "status"
      */
     public function testPropertyStatus()

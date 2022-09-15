@@ -1,6 +1,6 @@
 <?php
 /**
- * ReceiptUpdateParams
+ * DealReceiptMetadatum
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Freee\Accounting\ObjectSerializer;
 
 /**
- * ReceiptUpdateParams Class Doc Comment
+ * DealReceiptMetadatum Class Doc Comment
  *
  * @category Class
  * @package  Freee\Accounting
@@ -42,7 +42,7 @@ use \Freee\Accounting\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializable
+class DealReceiptMetadatum implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var string
       */
-    protected static $openAPIModelName = 'receiptUpdateParams';
+    protected static $openAPIModelName = 'deal_receipt_metadatum';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,10 +59,9 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'company_id' => 'int',
-        'description' => 'string',
+        'amount' => 'int',
         'issue_date' => 'string',
-        'receipt_metadatum' => '\Freee\Accounting\Model\DealReceiptMetadatum'
+        'partner_name' => 'string'
     ];
 
     /**
@@ -73,10 +72,9 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'company_id' => null,
-        'description' => null,
+        'amount' => 'int64',
         'issue_date' => null,
-        'receipt_metadatum' => null
+        'partner_name' => null
     ];
 
     /**
@@ -106,10 +104,9 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'company_id' => 'company_id',
-        'description' => 'description',
+        'amount' => 'amount',
         'issue_date' => 'issue_date',
-        'receipt_metadatum' => 'receipt_metadatum'
+        'partner_name' => 'partner_name'
     ];
 
     /**
@@ -118,10 +115,9 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'company_id' => 'setCompanyId',
-        'description' => 'setDescription',
+        'amount' => 'setAmount',
         'issue_date' => 'setIssueDate',
-        'receipt_metadatum' => 'setReceiptMetadatum'
+        'partner_name' => 'setPartnerName'
     ];
 
     /**
@@ -130,10 +126,9 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'company_id' => 'getCompanyId',
-        'description' => 'getDescription',
+        'amount' => 'getAmount',
         'issue_date' => 'getIssueDate',
-        'receipt_metadatum' => 'getReceiptMetadatum'
+        'partner_name' => 'getPartnerName'
     ];
 
     /**
@@ -193,10 +188,9 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['company_id'] = $data['company_id'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
+        $this->container['amount'] = $data['amount'] ?? null;
         $this->container['issue_date'] = $data['issue_date'] ?? null;
-        $this->container['receipt_metadatum'] = $data['receipt_metadatum'] ?? null;
+        $this->container['partner_name'] = $data['partner_name'] ?? null;
     }
 
     /**
@@ -208,24 +202,18 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
-        if ($this->container['company_id'] === null) {
-            $invalidProperties[] = "'company_id' can't be null";
-        }
-        if (($this->container['company_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
+        if (!is_null($this->container['amount']) && ($this->container['amount'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 9223372036854775807.";
         }
 
-        if (($this->container['company_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
+        if (!is_null($this->container['amount']) && ($this->container['amount'] < -9223372036854775808)) {
+            $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to -9223372036854775808.";
         }
 
-        if (!is_null($this->container['description']) && (mb_strlen($this->container['description']) > 255)) {
-            $invalidProperties[] = "invalid value for 'description', the character length must be smaller than or equal to 255.";
+        if (!is_null($this->container['partner_name']) && (mb_strlen($this->container['partner_name']) > 255)) {
+            $invalidProperties[] = "invalid value for 'partner_name', the character length must be smaller than or equal to 255.";
         }
 
-        if ($this->container['issue_date'] === null) {
-            $invalidProperties[] = "'issue_date' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -242,61 +230,33 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets company_id
+     * Gets amount
      *
-     * @return int
+     * @return int|null
      */
-    public function getCompanyId()
+    public function getAmount()
     {
-        return $this->container['company_id'];
+        return $this->container['amount'];
     }
 
     /**
-     * Sets company_id
+     * Sets amount
      *
-     * @param int $company_id 事業所ID
+     * @param int|null $amount 金額
      *
      * @return self
      */
-    public function setCompanyId($company_id)
+    public function setAmount($amount)
     {
 
-        if (($company_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling ReceiptUpdateParams., must be smaller than or equal to 2147483647.');
+        if (!is_null($amount) && ($amount > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling DealReceiptMetadatum., must be smaller than or equal to 9223372036854775807.');
         }
-        if (($company_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling ReceiptUpdateParams., must be bigger than or equal to 1.');
-        }
-
-        $this->container['company_id'] = $company_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string|null
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string|null $description メモ (255文字以内)
-     *
-     * @return self
-     */
-    public function setDescription($description)
-    {
-        if (!is_null($description) && (mb_strlen($description) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $description when calling ReceiptUpdateParams., must be smaller than or equal to 255.');
+        if (!is_null($amount) && ($amount < -9223372036854775808)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling DealReceiptMetadatum., must be bigger than or equal to -9223372036854775808.');
         }
 
-        $this->container['description'] = $description;
+        $this->container['amount'] = $amount;
 
         return $this;
     }
@@ -304,7 +264,7 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets issue_date
      *
-     * @return string
+     * @return string|null
      */
     public function getIssueDate()
     {
@@ -314,7 +274,7 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets issue_date
      *
-     * @param string $issue_date 取引日 (yyyy-mm-dd)
+     * @param string|null $issue_date 発行日 (yyyy-mm-dd)
      *
      * @return self
      */
@@ -326,25 +286,29 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets receipt_metadatum
+     * Gets partner_name
      *
-     * @return \Freee\Accounting\Model\DealReceiptMetadatum|null
+     * @return string|null
      */
-    public function getReceiptMetadatum()
+    public function getPartnerName()
     {
-        return $this->container['receipt_metadatum'];
+        return $this->container['partner_name'];
     }
 
     /**
-     * Sets receipt_metadatum
+     * Sets partner_name
      *
-     * @param \Freee\Accounting\Model\DealReceiptMetadatum|null $receipt_metadatum receipt_metadatum
+     * @param string|null $partner_name 発行元
      *
      * @return self
      */
-    public function setReceiptMetadatum($receipt_metadatum)
+    public function setPartnerName($partner_name)
     {
-        $this->container['receipt_metadatum'] = $receipt_metadatum;
+        if (!is_null($partner_name) && (mb_strlen($partner_name) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $partner_name when calling DealReceiptMetadatum., must be smaller than or equal to 255.');
+        }
+
+        $this->container['partner_name'] = $partner_name;
 
         return $this;
     }

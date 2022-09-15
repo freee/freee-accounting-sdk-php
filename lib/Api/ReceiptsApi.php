@@ -124,14 +124,17 @@ class ReceiptsApi
      * @param  \SplFileObject $receipt 証憑ファイル (required)
      * @param  string $description メモ (255文字以内) (optional)
      * @param  string $issue_date 取引日 (yyyy-mm-dd) (optional)
+     * @param  int $receipt_metadatum_amount 金額 (optional)
+     * @param  string $receipt_metadatum_issue_date 発行日 (yyyy-mm-dd) (optional)
+     * @param  string $receipt_metadatum_partner_name 発行元 (optional)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Freee\Accounting\Model\ReceiptResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError
      */
-    public function createReceipt($company_id, $receipt, $description = null, $issue_date = null)
+    public function createReceipt($company_id, $receipt, $description = null, $issue_date = null, $receipt_metadatum_amount = null, $receipt_metadatum_issue_date = null, $receipt_metadatum_partner_name = null)
     {
-        list($response) = $this->createReceiptWithHttpInfo($company_id, $receipt, $description, $issue_date);
+        list($response) = $this->createReceiptWithHttpInfo($company_id, $receipt, $description, $issue_date, $receipt_metadatum_amount, $receipt_metadatum_issue_date, $receipt_metadatum_partner_name);
         return $response;
     }
 
@@ -144,14 +147,17 @@ class ReceiptsApi
      * @param  \SplFileObject $receipt 証憑ファイル (required)
      * @param  string $description メモ (255文字以内) (optional)
      * @param  string $issue_date 取引日 (yyyy-mm-dd) (optional)
+     * @param  int $receipt_metadatum_amount 金額 (optional)
+     * @param  string $receipt_metadatum_issue_date 発行日 (yyyy-mm-dd) (optional)
+     * @param  string $receipt_metadatum_partner_name 発行元 (optional)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Freee\Accounting\Model\ReceiptResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createReceiptWithHttpInfo($company_id, $receipt, $description = null, $issue_date = null)
+    public function createReceiptWithHttpInfo($company_id, $receipt, $description = null, $issue_date = null, $receipt_metadatum_amount = null, $receipt_metadatum_issue_date = null, $receipt_metadatum_partner_name = null)
     {
-        $request = $this->createReceiptRequest($company_id, $receipt, $description, $issue_date);
+        $request = $this->createReceiptRequest($company_id, $receipt, $description, $issue_date, $receipt_metadatum_amount, $receipt_metadatum_issue_date, $receipt_metadatum_partner_name);
 
         try {
             $options = $this->createHttpClientOption();
@@ -320,13 +326,16 @@ class ReceiptsApi
      * @param  \SplFileObject $receipt 証憑ファイル (required)
      * @param  string $description メモ (255文字以内) (optional)
      * @param  string $issue_date 取引日 (yyyy-mm-dd) (optional)
+     * @param  int $receipt_metadatum_amount 金額 (optional)
+     * @param  string $receipt_metadatum_issue_date 発行日 (yyyy-mm-dd) (optional)
+     * @param  string $receipt_metadatum_partner_name 発行元 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createReceiptAsync($company_id, $receipt, $description = null, $issue_date = null)
+    public function createReceiptAsync($company_id, $receipt, $description = null, $issue_date = null, $receipt_metadatum_amount = null, $receipt_metadatum_issue_date = null, $receipt_metadatum_partner_name = null)
     {
-        return $this->createReceiptAsyncWithHttpInfo($company_id, $receipt, $description, $issue_date)
+        return $this->createReceiptAsyncWithHttpInfo($company_id, $receipt, $description, $issue_date, $receipt_metadatum_amount, $receipt_metadatum_issue_date, $receipt_metadatum_partner_name)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -343,14 +352,17 @@ class ReceiptsApi
      * @param  \SplFileObject $receipt 証憑ファイル (required)
      * @param  string $description メモ (255文字以内) (optional)
      * @param  string $issue_date 取引日 (yyyy-mm-dd) (optional)
+     * @param  int $receipt_metadatum_amount 金額 (optional)
+     * @param  string $receipt_metadatum_issue_date 発行日 (yyyy-mm-dd) (optional)
+     * @param  string $receipt_metadatum_partner_name 発行元 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createReceiptAsyncWithHttpInfo($company_id, $receipt, $description = null, $issue_date = null)
+    public function createReceiptAsyncWithHttpInfo($company_id, $receipt, $description = null, $issue_date = null, $receipt_metadatum_amount = null, $receipt_metadatum_issue_date = null, $receipt_metadatum_partner_name = null)
     {
         $returnType = '\Freee\Accounting\Model\ReceiptResponse';
-        $request = $this->createReceiptRequest($company_id, $receipt, $description, $issue_date);
+        $request = $this->createReceiptRequest($company_id, $receipt, $description, $issue_date, $receipt_metadatum_amount, $receipt_metadatum_issue_date, $receipt_metadatum_partner_name);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -392,11 +404,14 @@ class ReceiptsApi
      * @param  \SplFileObject $receipt 証憑ファイル (required)
      * @param  string $description メモ (255文字以内) (optional)
      * @param  string $issue_date 取引日 (yyyy-mm-dd) (optional)
+     * @param  int $receipt_metadatum_amount 金額 (optional)
+     * @param  string $receipt_metadatum_issue_date 発行日 (yyyy-mm-dd) (optional)
+     * @param  string $receipt_metadatum_partner_name 発行元 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createReceiptRequest($company_id, $receipt, $description = null, $issue_date = null)
+    public function createReceiptRequest($company_id, $receipt, $description = null, $issue_date = null, $receipt_metadatum_amount = null, $receipt_metadatum_issue_date = null, $receipt_metadatum_partner_name = null)
     {
         // verify the required parameter 'company_id' is set
         if ($company_id === null || (is_array($company_id) && count($company_id) === 0)) {
@@ -419,6 +434,17 @@ class ReceiptsApi
         }
         if ($description !== null && strlen($description) > 255) {
             throw new \InvalidArgumentException('invalid length for "$description" when calling ReceiptsApi.createReceipt, must be smaller than or equal to 255.');
+        }
+
+        if ($receipt_metadatum_amount !== null && $receipt_metadatum_amount > 9223372036854775807) {
+            throw new \InvalidArgumentException('invalid value for "$receipt_metadatum_amount" when calling ReceiptsApi.createReceipt, must be smaller than or equal to 9223372036854775807.');
+        }
+        if ($receipt_metadatum_amount !== null && $receipt_metadatum_amount < -9223372036854775808) {
+            throw new \InvalidArgumentException('invalid value for "$receipt_metadatum_amount" when calling ReceiptsApi.createReceipt, must be bigger than or equal to -9223372036854775808.');
+        }
+
+        if ($receipt_metadatum_partner_name !== null && strlen($receipt_metadatum_partner_name) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$receipt_metadatum_partner_name" when calling ReceiptsApi.createReceipt, must be smaller than or equal to 255.');
         }
 
 
@@ -455,6 +481,18 @@ class ReceiptsApi
                     'rb'
                 );
             }
+        }
+        // form params
+        if ($receipt_metadatum_amount !== null) {
+            $formParams['receipt_metadatum_amount'] = ObjectSerializer::toFormValue($receipt_metadatum_amount);
+        }
+        // form params
+        if ($receipt_metadatum_issue_date !== null) {
+            $formParams['receipt_metadatum_issue_date'] = ObjectSerializer::toFormValue($receipt_metadatum_issue_date);
+        }
+        // form params
+        if ($receipt_metadatum_partner_name !== null) {
+            $formParams['receipt_metadatum_partner_name'] = ObjectSerializer::toFormValue($receipt_metadatum_partner_name);
         }
 
         if ($multipart) {
@@ -2194,7 +2232,7 @@ class ReceiptsApi
      * ファイルボックス 証憑ファイル情報更新
      *
      * @param  int $id 証憑ファイルID (required)
-     * @param  \Freee\Accounting\Model\ReceiptUpdateParams $receipt_update_params 経費申請の更新 (required)
+     * @param  \Freee\Accounting\Model\ReceiptUpdateParams $receipt_update_params receipt_update_params (required)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2212,7 +2250,7 @@ class ReceiptsApi
      * ファイルボックス 証憑ファイル情報更新
      *
      * @param  int $id 証憑ファイルID (required)
-     * @param  \Freee\Accounting\Model\ReceiptUpdateParams $receipt_update_params 経費申請の更新 (required)
+     * @param  \Freee\Accounting\Model\ReceiptUpdateParams $receipt_update_params (required)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2406,7 +2444,7 @@ class ReceiptsApi
      * ファイルボックス 証憑ファイル情報更新
      *
      * @param  int $id 証憑ファイルID (required)
-     * @param  \Freee\Accounting\Model\ReceiptUpdateParams $receipt_update_params 経費申請の更新 (required)
+     * @param  \Freee\Accounting\Model\ReceiptUpdateParams $receipt_update_params (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2427,7 +2465,7 @@ class ReceiptsApi
      * ファイルボックス 証憑ファイル情報更新
      *
      * @param  int $id 証憑ファイルID (required)
-     * @param  \Freee\Accounting\Model\ReceiptUpdateParams $receipt_update_params 経費申請の更新 (required)
+     * @param  \Freee\Accounting\Model\ReceiptUpdateParams $receipt_update_params (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2474,7 +2512,7 @@ class ReceiptsApi
      * Create request for operation 'updateReceipt'
      *
      * @param  int $id 証憑ファイルID (required)
-     * @param  \Freee\Accounting\Model\ReceiptUpdateParams $receipt_update_params 経費申請の更新 (required)
+     * @param  \Freee\Accounting\Model\ReceiptUpdateParams $receipt_update_params (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
