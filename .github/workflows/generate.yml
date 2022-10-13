@@ -44,7 +44,7 @@ jobs:
 
       - name: Generate APIs
         env:
-          SCHEMA_URL: https://raw.githubusercontent.com/freee/freee-api-schema/${{ steps.get_original_repo_tag.outputs.tag }}/_sdk_compatible/open-api-3/api-schema.json
+          SCHEMA_URL: https://raw.githubusercontent.com/freee/freee-api-schema/master/_sdk_compatible/open-api-3/api-schema.json
         run: |
           docker run --rm -u "$(id -u $USER):$(id -g $USER)" -v "${PWD}:/local" openapitools/openapi-generator-cli:v5.4.0 generate \
             -i ${{ env.SCHEMA_URL }} \
