@@ -15,7 +15,7 @@ Method | HTTP request | Description
 ## `createReceipt()`
 
 ```php
-createReceipt($company_id, $receipt, $description, $issue_date, $receipt_metadatum_amount, $receipt_metadatum_issue_date, $receipt_metadatum_partner_name): \Freee\Accounting\Model\ReceiptResponse
+createReceipt($company_id, $receipt, $description, $issue_date, $receipt_metadatum_partner_name, $receipt_metadatum_issue_date, $receipt_metadatum_amount): \Freee\Accounting\Model\ReceiptResponse
 ```
 
 ファイルボックス 証憑ファイルアップロード
@@ -41,12 +41,12 @@ $company_id = 56; // int | 事業所ID
 $receipt = "/path/to/file.txt"; // \SplFileObject | 証憑ファイル
 $description = 'description_example'; // string | メモ (255文字以内)
 $issue_date = 'issue_date_example'; // string | 取引日 (yyyy-mm-dd)
-$receipt_metadatum_amount = 56; // int | 金額
-$receipt_metadatum_issue_date = 'receipt_metadatum_issue_date_example'; // string | 発行日 (yyyy-mm-dd)
 $receipt_metadatum_partner_name = 'receipt_metadatum_partner_name_example'; // string | 発行元
+$receipt_metadatum_issue_date = 'receipt_metadatum_issue_date_example'; // string | 発行日 (yyyy-mm-dd)
+$receipt_metadatum_amount = 56; // int | 金額
 
 try {
-    $result = $apiInstance->createReceipt($company_id, $receipt, $description, $issue_date, $receipt_metadatum_amount, $receipt_metadatum_issue_date, $receipt_metadatum_partner_name);
+    $result = $apiInstance->createReceipt($company_id, $receipt, $description, $issue_date, $receipt_metadatum_partner_name, $receipt_metadatum_issue_date, $receipt_metadatum_amount);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ReceiptsApi->createReceipt: ', $e->getMessage(), PHP_EOL;
@@ -61,9 +61,9 @@ Name | Type | Description  | Notes
  **receipt** | **\SplFileObject****\SplFileObject**| 証憑ファイル |
  **description** | **string**| メモ (255文字以内) | [optional]
  **issue_date** | **string**| 取引日 (yyyy-mm-dd) | [optional]
- **receipt_metadatum_amount** | **int**| 金額 | [optional]
- **receipt_metadatum_issue_date** | **string**| 発行日 (yyyy-mm-dd) | [optional]
  **receipt_metadatum_partner_name** | **string**| 発行元 | [optional]
+ **receipt_metadatum_issue_date** | **string**| 発行日 (yyyy-mm-dd) | [optional]
+ **receipt_metadatum_amount** | **int**| 金額 | [optional]
 
 ### Return type
 
@@ -144,7 +144,7 @@ void (empty response body)
 ## `downloadReceipt()`
 
 ```php
-downloadReceipt($id, $company_id): \SplFileObject
+downloadReceipt($id, $company_id): string
 ```
 
 ファイルボックス 証憑ファイルのダウンロード
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**\SplFileObject**
+**string**
 
 ### Authorization
 
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/pdf`, `image/_*`, `text/csv`, `application/json`
+- **Accept**: `text/csv`, `application/pdf`, `image/_*`, `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 ## `getReceipts()`
 
 ```php
-getReceipts($company_id, $start_date, $end_date, $user_name, $number, $comment_type, $comment_important, $category, $offset, $limit): \Freee\Accounting\Model\InlineResponse2005
+getReceipts($company_id, $start_date, $end_date, $user_name, $number, $comment_type, $comment_important, $category, $offset, $limit): \Freee\Accounting\Model\InlineResponse20014
 ```
 
 ファイルボックス 証憑ファイル一覧の取得
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+[**\Freee\Accounting\Model\InlineResponse20014**](../Model/InlineResponse20014.md)
 
 ### Authorization
 

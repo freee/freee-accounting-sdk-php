@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 ## `getItems()`
 
 ```php
-getItems($company_id, $start_update_date, $end_update_date, $offset, $limit): \Freee\Accounting\Model\InlineResponse2003
+getItems($company_id, $start_update_date, $end_update_date, $offset, $limit): \Freee\Accounting\Model\InlineResponse2006
 ```
 
 品目一覧の取得
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\Freee\Accounting\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
 
 ### Authorization
 

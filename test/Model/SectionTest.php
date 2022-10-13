@@ -80,45 +80,9 @@ class SectionTest extends TestCase
     }
 
     /**
-     * Test attribute "available"
-     */
-    public function testPropertyAvailable()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "company_id"
-     */
-    public function testPropertyCompanyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "id"
      */
     public function testPropertyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "indent_count"
-     */
-    public function testPropertyIndentCount()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "long_name"
-     */
-    public function testPropertyLongName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -134,9 +98,27 @@ class SectionTest extends TestCase
     }
 
     /**
-     * Test attribute "parent_id"
+     * Test attribute "available"
      */
-    public function testPropertyParentId()
+    public function testPropertyAvailable()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "long_name"
+     */
+    public function testPropertyLongName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "company_id"
+     */
+    public function testPropertyCompanyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -155,6 +137,24 @@ class SectionTest extends TestCase
      * Test attribute "shortcut2"
      */
     public function testPropertyShortcut2()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "indent_count"
+     */
+    public function testPropertyIndentCount()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "parent_id"
+     */
+    public function testPropertyParentId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

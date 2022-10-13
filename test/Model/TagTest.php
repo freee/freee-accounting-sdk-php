@@ -80,15 +80,6 @@ class TagTest extends TestCase
     }
 
     /**
-     * Test attribute "company_id"
-     */
-    public function testPropertyCompanyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "id"
      */
     public function testPropertyId()
@@ -98,9 +89,27 @@ class TagTest extends TestCase
     }
 
     /**
+     * Test attribute "company_id"
+     */
+    public function testPropertyCompanyId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "name"
      */
     public function testPropertyName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "update_date"
+     */
+    public function testPropertyUpdateDate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -119,15 +128,6 @@ class TagTest extends TestCase
      * Test attribute "shortcut2"
      */
     public function testPropertyShortcut2()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "update_date"
-     */
-    public function testPropertyUpdateDate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

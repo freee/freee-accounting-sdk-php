@@ -59,18 +59,18 @@ class PaymentRequestResponsePaymentRequestPaymentRequestLines implements ModelIn
       * @var string[]
       */
     protected static $openAPITypes = [
-        'account_item_id' => 'int',
-        'amount' => 'int',
-        'description' => 'string',
         'id' => 'int',
-        'item_id' => 'int',
         'line_type' => 'string',
+        'description' => 'string',
+        'amount' => 'int',
+        'account_item_id' => 'int',
+        'tax_code' => 'int',
+        'item_id' => 'int',
         'section_id' => 'int',
+        'tag_ids' => 'int[]',
         'segment_1_tag_id' => 'int',
         'segment_2_tag_id' => 'int',
-        'segment_3_tag_id' => 'int',
-        'tag_ids' => 'int[]',
-        'tax_code' => 'int'
+        'segment_3_tag_id' => 'int'
     ];
 
     /**
@@ -81,18 +81,18 @@ class PaymentRequestResponsePaymentRequestPaymentRequestLines implements ModelIn
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'account_item_id' => null,
-        'amount' => 'int64',
-        'description' => null,
         'id' => 'int64',
-        'item_id' => null,
         'line_type' => null,
+        'description' => null,
+        'amount' => 'int64',
+        'account_item_id' => null,
+        'tax_code' => null,
+        'item_id' => null,
         'section_id' => null,
+        'tag_ids' => null,
         'segment_1_tag_id' => 'int64',
         'segment_2_tag_id' => 'int64',
-        'segment_3_tag_id' => 'int64',
-        'tag_ids' => null,
-        'tax_code' => null
+        'segment_3_tag_id' => 'int64'
     ];
 
     /**
@@ -122,18 +122,18 @@ class PaymentRequestResponsePaymentRequestPaymentRequestLines implements ModelIn
      * @var string[]
      */
     protected static $attributeMap = [
-        'account_item_id' => 'account_item_id',
-        'amount' => 'amount',
-        'description' => 'description',
         'id' => 'id',
-        'item_id' => 'item_id',
         'line_type' => 'line_type',
+        'description' => 'description',
+        'amount' => 'amount',
+        'account_item_id' => 'account_item_id',
+        'tax_code' => 'tax_code',
+        'item_id' => 'item_id',
         'section_id' => 'section_id',
+        'tag_ids' => 'tag_ids',
         'segment_1_tag_id' => 'segment_1_tag_id',
         'segment_2_tag_id' => 'segment_2_tag_id',
-        'segment_3_tag_id' => 'segment_3_tag_id',
-        'tag_ids' => 'tag_ids',
-        'tax_code' => 'tax_code'
+        'segment_3_tag_id' => 'segment_3_tag_id'
     ];
 
     /**
@@ -142,18 +142,18 @@ class PaymentRequestResponsePaymentRequestPaymentRequestLines implements ModelIn
      * @var string[]
      */
     protected static $setters = [
-        'account_item_id' => 'setAccountItemId',
-        'amount' => 'setAmount',
-        'description' => 'setDescription',
         'id' => 'setId',
-        'item_id' => 'setItemId',
         'line_type' => 'setLineType',
+        'description' => 'setDescription',
+        'amount' => 'setAmount',
+        'account_item_id' => 'setAccountItemId',
+        'tax_code' => 'setTaxCode',
+        'item_id' => 'setItemId',
         'section_id' => 'setSectionId',
+        'tag_ids' => 'setTagIds',
         'segment_1_tag_id' => 'setSegment1TagId',
         'segment_2_tag_id' => 'setSegment2TagId',
-        'segment_3_tag_id' => 'setSegment3TagId',
-        'tag_ids' => 'setTagIds',
-        'tax_code' => 'setTaxCode'
+        'segment_3_tag_id' => 'setSegment3TagId'
     ];
 
     /**
@@ -162,18 +162,18 @@ class PaymentRequestResponsePaymentRequestPaymentRequestLines implements ModelIn
      * @var string[]
      */
     protected static $getters = [
-        'account_item_id' => 'getAccountItemId',
-        'amount' => 'getAmount',
-        'description' => 'getDescription',
         'id' => 'getId',
-        'item_id' => 'getItemId',
         'line_type' => 'getLineType',
+        'description' => 'getDescription',
+        'amount' => 'getAmount',
+        'account_item_id' => 'getAccountItemId',
+        'tax_code' => 'getTaxCode',
+        'item_id' => 'getItemId',
         'section_id' => 'getSectionId',
+        'tag_ids' => 'getTagIds',
         'segment_1_tag_id' => 'getSegment1TagId',
         'segment_2_tag_id' => 'getSegment2TagId',
-        'segment_3_tag_id' => 'getSegment3TagId',
-        'tag_ids' => 'getTagIds',
-        'tax_code' => 'getTaxCode'
+        'segment_3_tag_id' => 'getSegment3TagId'
     ];
 
     /**
@@ -248,18 +248,18 @@ class PaymentRequestResponsePaymentRequestPaymentRequestLines implements ModelIn
      */
     public function __construct(array $data = null)
     {
-        $this->container['account_item_id'] = $data['account_item_id'] ?? null;
-        $this->container['amount'] = $data['amount'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['item_id'] = $data['item_id'] ?? null;
         $this->container['line_type'] = $data['line_type'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
+        $this->container['amount'] = $data['amount'] ?? null;
+        $this->container['account_item_id'] = $data['account_item_id'] ?? null;
+        $this->container['tax_code'] = $data['tax_code'] ?? null;
+        $this->container['item_id'] = $data['item_id'] ?? null;
         $this->container['section_id'] = $data['section_id'] ?? null;
+        $this->container['tag_ids'] = $data['tag_ids'] ?? null;
         $this->container['segment_1_tag_id'] = $data['segment_1_tag_id'] ?? null;
         $this->container['segment_2_tag_id'] = $data['segment_2_tag_id'] ?? null;
         $this->container['segment_3_tag_id'] = $data['segment_3_tag_id'] ?? null;
-        $this->container['tag_ids'] = $data['tag_ids'] ?? null;
-        $this->container['tax_code'] = $data['tax_code'] ?? null;
     }
 
     /**
@@ -271,31 +271,6 @@ class PaymentRequestResponsePaymentRequestPaymentRequestLines implements ModelIn
     {
         $invalidProperties = [];
 
-        if ($this->container['account_item_id'] === null) {
-            $invalidProperties[] = "'account_item_id' can't be null";
-        }
-        if (($this->container['account_item_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'account_item_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['account_item_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'account_item_id', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['amount'] === null) {
-            $invalidProperties[] = "'amount' can't be null";
-        }
-        if (($this->container['amount'] > 99999999999)) {
-            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 99999999999.";
-        }
-
-        if (($this->container['amount'] < 0)) {
-            $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['description'] === null) {
-            $invalidProperties[] = "'description' can't be null";
-        }
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
@@ -305,17 +280,6 @@ class PaymentRequestResponsePaymentRequestPaymentRequestLines implements ModelIn
 
         if (($this->container['id'] < 1)) {
             $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['item_id'] === null) {
-            $invalidProperties[] = "'item_id' can't be null";
-        }
-        if (($this->container['item_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'item_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['item_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'item_id', must be bigger than or equal to 1.";
         }
 
         if ($this->container['line_type'] === null) {
@@ -330,6 +294,53 @@ class PaymentRequestResponsePaymentRequestPaymentRequestLines implements ModelIn
             );
         }
 
+        if ($this->container['description'] === null) {
+            $invalidProperties[] = "'description' can't be null";
+        }
+        if ($this->container['amount'] === null) {
+            $invalidProperties[] = "'amount' can't be null";
+        }
+        if (($this->container['amount'] > 99999999999)) {
+            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 99999999999.";
+        }
+
+        if (($this->container['amount'] < 0)) {
+            $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to 0.";
+        }
+
+        if ($this->container['account_item_id'] === null) {
+            $invalidProperties[] = "'account_item_id' can't be null";
+        }
+        if (($this->container['account_item_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'account_item_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['account_item_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'account_item_id', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['tax_code'] === null) {
+            $invalidProperties[] = "'tax_code' can't be null";
+        }
+        if (($this->container['tax_code'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'tax_code', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['tax_code'] < 0)) {
+            $invalidProperties[] = "invalid value for 'tax_code', must be bigger than or equal to 0.";
+        }
+
+        if ($this->container['item_id'] === null) {
+            $invalidProperties[] = "'item_id' can't be null";
+        }
+        if (($this->container['item_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'item_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['item_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'item_id', must be bigger than or equal to 1.";
+        }
+
         if ($this->container['section_id'] === null) {
             $invalidProperties[] = "'section_id' can't be null";
         }
@@ -341,6 +352,9 @@ class PaymentRequestResponsePaymentRequestPaymentRequestLines implements ModelIn
             $invalidProperties[] = "invalid value for 'section_id', must be bigger than or equal to 1.";
         }
 
+        if ($this->container['tag_ids'] === null) {
+            $invalidProperties[] = "'tag_ids' can't be null";
+        }
         if (!is_null($this->container['segment_1_tag_id']) && ($this->container['segment_1_tag_id'] > 9223372036854775807)) {
             $invalidProperties[] = "invalid value for 'segment_1_tag_id', must be smaller than or equal to 9223372036854775807.";
         }
@@ -365,20 +379,6 @@ class PaymentRequestResponsePaymentRequestPaymentRequestLines implements ModelIn
             $invalidProperties[] = "invalid value for 'segment_3_tag_id', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['tag_ids'] === null) {
-            $invalidProperties[] = "'tag_ids' can't be null";
-        }
-        if ($this->container['tax_code'] === null) {
-            $invalidProperties[] = "'tax_code' can't be null";
-        }
-        if (($this->container['tax_code'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'tax_code', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['tax_code'] < 0)) {
-            $invalidProperties[] = "invalid value for 'tax_code', must be bigger than or equal to 0.";
-        }
-
         return $invalidProperties;
     }
 
@@ -393,94 +393,6 @@ class PaymentRequestResponsePaymentRequestPaymentRequestLines implements ModelIn
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets account_item_id
-     *
-     * @return int
-     */
-    public function getAccountItemId()
-    {
-        return $this->container['account_item_id'];
-    }
-
-    /**
-     * Sets account_item_id
-     *
-     * @param int $account_item_id 勘定科目ID
-     *
-     * @return self
-     */
-    public function setAccountItemId($account_item_id)
-    {
-
-        if (($account_item_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $account_item_id when calling PaymentRequestResponsePaymentRequestPaymentRequestLines., must be smaller than or equal to 2147483647.');
-        }
-        if (($account_item_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $account_item_id when calling PaymentRequestResponsePaymentRequestPaymentRequestLines., must be bigger than or equal to 1.');
-        }
-
-        $this->container['account_item_id'] = $account_item_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets amount
-     *
-     * @return int
-     */
-    public function getAmount()
-    {
-        return $this->container['amount'];
-    }
-
-    /**
-     * Sets amount
-     *
-     * @param int $amount 金額
-     *
-     * @return self
-     */
-    public function setAmount($amount)
-    {
-
-        if (($amount > 99999999999)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling PaymentRequestResponsePaymentRequestPaymentRequestLines., must be smaller than or equal to 99999999999.');
-        }
-        if (($amount < 0)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling PaymentRequestResponsePaymentRequestPaymentRequestLines., must be bigger than or equal to 0.');
-        }
-
-        $this->container['amount'] = $amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string $description 内容
-     *
-     * @return self
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
-
-        return $this;
-    }
 
     /**
      * Gets id
@@ -510,38 +422,6 @@ class PaymentRequestResponsePaymentRequestPaymentRequestLines implements ModelIn
         }
 
         $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets item_id
-     *
-     * @return int
-     */
-    public function getItemId()
-    {
-        return $this->container['item_id'];
-    }
-
-    /**
-     * Sets item_id
-     *
-     * @param int $item_id 品目ID
-     *
-     * @return self
-     */
-    public function setItemId($item_id)
-    {
-
-        if (($item_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $item_id when calling PaymentRequestResponsePaymentRequestPaymentRequestLines., must be smaller than or equal to 2147483647.');
-        }
-        if (($item_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $item_id when calling PaymentRequestResponsePaymentRequestPaymentRequestLines., must be bigger than or equal to 1.');
-        }
-
-        $this->container['item_id'] = $item_id;
 
         return $this;
     }
@@ -581,6 +461,158 @@ class PaymentRequestResponsePaymentRequestPaymentRequestLines implements ModelIn
     }
 
     /**
+     * Gets description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string $description 内容
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount
+     *
+     * @return int
+     */
+    public function getAmount()
+    {
+        return $this->container['amount'];
+    }
+
+    /**
+     * Sets amount
+     *
+     * @param int $amount 金額
+     *
+     * @return self
+     */
+    public function setAmount($amount)
+    {
+
+        if (($amount > 99999999999)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling PaymentRequestResponsePaymentRequestPaymentRequestLines., must be smaller than or equal to 99999999999.');
+        }
+        if (($amount < 0)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling PaymentRequestResponsePaymentRequestPaymentRequestLines., must be bigger than or equal to 0.');
+        }
+
+        $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets account_item_id
+     *
+     * @return int
+     */
+    public function getAccountItemId()
+    {
+        return $this->container['account_item_id'];
+    }
+
+    /**
+     * Sets account_item_id
+     *
+     * @param int $account_item_id 勘定科目ID
+     *
+     * @return self
+     */
+    public function setAccountItemId($account_item_id)
+    {
+
+        if (($account_item_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $account_item_id when calling PaymentRequestResponsePaymentRequestPaymentRequestLines., must be smaller than or equal to 2147483647.');
+        }
+        if (($account_item_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $account_item_id when calling PaymentRequestResponsePaymentRequestPaymentRequestLines., must be bigger than or equal to 1.');
+        }
+
+        $this->container['account_item_id'] = $account_item_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_code
+     *
+     * @return int
+     */
+    public function getTaxCode()
+    {
+        return $this->container['tax_code'];
+    }
+
+    /**
+     * Sets tax_code
+     *
+     * @param int $tax_code 税区分コード
+     *
+     * @return self
+     */
+    public function setTaxCode($tax_code)
+    {
+
+        if (($tax_code > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling PaymentRequestResponsePaymentRequestPaymentRequestLines., must be smaller than or equal to 2147483647.');
+        }
+        if (($tax_code < 0)) {
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling PaymentRequestResponsePaymentRequestPaymentRequestLines., must be bigger than or equal to 0.');
+        }
+
+        $this->container['tax_code'] = $tax_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets item_id
+     *
+     * @return int
+     */
+    public function getItemId()
+    {
+        return $this->container['item_id'];
+    }
+
+    /**
+     * Sets item_id
+     *
+     * @param int $item_id 品目ID
+     *
+     * @return self
+     */
+    public function setItemId($item_id)
+    {
+
+        if (($item_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $item_id when calling PaymentRequestResponsePaymentRequestPaymentRequestLines., must be smaller than or equal to 2147483647.');
+        }
+        if (($item_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $item_id when calling PaymentRequestResponsePaymentRequestPaymentRequestLines., must be bigger than or equal to 1.');
+        }
+
+        $this->container['item_id'] = $item_id;
+
+        return $this;
+    }
+
+    /**
      * Gets section_id
      *
      * @return int
@@ -608,6 +640,30 @@ class PaymentRequestResponsePaymentRequestPaymentRequestLines implements ModelIn
         }
 
         $this->container['section_id'] = $section_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets tag_ids
+     *
+     * @return int[]
+     */
+    public function getTagIds()
+    {
+        return $this->container['tag_ids'];
+    }
+
+    /**
+     * Sets tag_ids
+     *
+     * @param int[] $tag_ids メモタグID
+     *
+     * @return self
+     */
+    public function setTagIds($tag_ids)
+    {
+        $this->container['tag_ids'] = $tag_ids;
 
         return $this;
     }
@@ -704,62 +760,6 @@ class PaymentRequestResponsePaymentRequestPaymentRequestLines implements ModelIn
         }
 
         $this->container['segment_3_tag_id'] = $segment_3_tag_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets tag_ids
-     *
-     * @return int[]
-     */
-    public function getTagIds()
-    {
-        return $this->container['tag_ids'];
-    }
-
-    /**
-     * Sets tag_ids
-     *
-     * @param int[] $tag_ids メモタグID
-     *
-     * @return self
-     */
-    public function setTagIds($tag_ids)
-    {
-        $this->container['tag_ids'] = $tag_ids;
-
-        return $this;
-    }
-
-    /**
-     * Gets tax_code
-     *
-     * @return int
-     */
-    public function getTaxCode()
-    {
-        return $this->container['tax_code'];
-    }
-
-    /**
-     * Sets tax_code
-     *
-     * @param int $tax_code 税区分コード
-     *
-     * @return self
-     */
-    public function setTaxCode($tax_code)
-    {
-
-        if (($tax_code > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $tax_code when calling PaymentRequestResponsePaymentRequestPaymentRequestLines., must be smaller than or equal to 2147483647.');
-        }
-        if (($tax_code < 0)) {
-            throw new \InvalidArgumentException('invalid value for $tax_code when calling PaymentRequestResponsePaymentRequestPaymentRequestLines., must be bigger than or equal to 0.');
-        }
-
-        $this->container['tax_code'] = $tax_code;
 
         return $this;
     }

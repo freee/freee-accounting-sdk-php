@@ -59,7 +59,7 @@ class ApprovalRequestResponseApprovalRequestApprovalRequestForm implements Model
       * @var string[]
       */
     protected static $openAPITypes = [
-        'parts' => '\Freee\Accounting\Model\ApprovalRequestFormResponseApprovalRequestFormParts[]'
+        'parts' => '\Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovalRequestFormParts[]'
     ];
 
     /**
@@ -211,7 +211,7 @@ class ApprovalRequestResponseApprovalRequestApprovalRequestForm implements Model
     /**
      * Gets parts
      *
-     * @return \Freee\Accounting\Model\ApprovalRequestFormResponseApprovalRequestFormParts[]
+     * @return \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovalRequestFormParts[]
      */
     public function getParts()
     {
@@ -221,7 +221,7 @@ class ApprovalRequestResponseApprovalRequestApprovalRequestForm implements Model
     /**
      * Sets parts
      *
-     * @param \Freee\Accounting\Model\ApprovalRequestFormResponseApprovalRequestFormParts[] $parts 申請フォームの項目
+     * @param \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovalRequestFormParts[] $parts 申請フォームの項目
      *
      * @return self
      */

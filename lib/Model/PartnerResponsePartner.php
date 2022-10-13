@@ -59,29 +59,29 @@ class PartnerResponsePartner implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'address_attributes' => '\Freee\Accounting\Model\PartnerResponsePartnerAddressAttributes',
-        'available' => 'bool',
+        'id' => 'int',
         'code' => 'string',
         'company_id' => 'int',
-        'contact_name' => 'string',
-        'country_code' => 'string',
-        'default_title' => 'string',
-        'email' => 'string',
-        'id' => 'int',
-        'invoice_payment_term_attributes' => '\Freee\Accounting\Model\PartnerResponsePartnerInvoicePaymentTermAttributes',
-        'long_name' => 'string',
         'name' => 'string',
-        'name_kana' => 'string',
-        'org_code' => 'int',
-        'partner_bank_account_attributes' => '\Freee\Accounting\Model\PartnerResponsePartnerPartnerBankAccountAttributes',
-        'partner_doc_setting_attributes' => '\Freee\Accounting\Model\PartnerCreateParamsPartnerDocSettingAttributes',
-        'payer_walletable_id' => 'int',
-        'payment_term_attributes' => '\Freee\Accounting\Model\PartnerResponsePartnerPaymentTermAttributes',
-        'phone' => 'string',
+        'update_date' => 'string',
+        'available' => 'bool',
         'shortcut1' => 'string',
         'shortcut2' => 'string',
+        'org_code' => 'int',
+        'country_code' => 'string',
+        'long_name' => 'string',
+        'name_kana' => 'string',
+        'default_title' => 'string',
+        'phone' => 'string',
+        'contact_name' => 'string',
+        'email' => 'string',
+        'payer_walletable_id' => 'int',
         'transfer_fee_handling_side' => 'string',
-        'update_date' => 'string'
+        'address_attributes' => '\Freee\Accounting\Model\PartnerResponsePartnerAddressAttributes',
+        'partner_doc_setting_attributes' => '\Freee\Accounting\Model\PartnerCreateParamsPartnerDocSettingAttributes',
+        'partner_bank_account_attributes' => '\Freee\Accounting\Model\PartnersResponsePartnerBankAccountAttributes',
+        'payment_term_attributes' => '\Freee\Accounting\Model\PartnerResponsePartnerPaymentTermAttributes',
+        'invoice_payment_term_attributes' => '\Freee\Accounting\Model\PartnerResponsePartnerInvoicePaymentTermAttributes'
     ];
 
     /**
@@ -92,29 +92,29 @@ class PartnerResponsePartner implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'address_attributes' => null,
-        'available' => null,
+        'id' => null,
         'code' => null,
         'company_id' => null,
-        'contact_name' => null,
-        'country_code' => null,
-        'default_title' => null,
-        'email' => null,
-        'id' => null,
-        'invoice_payment_term_attributes' => null,
-        'long_name' => null,
         'name' => null,
-        'name_kana' => null,
-        'org_code' => null,
-        'partner_bank_account_attributes' => null,
-        'partner_doc_setting_attributes' => null,
-        'payer_walletable_id' => null,
-        'payment_term_attributes' => null,
-        'phone' => null,
+        'update_date' => null,
+        'available' => null,
         'shortcut1' => null,
         'shortcut2' => null,
+        'org_code' => null,
+        'country_code' => null,
+        'long_name' => null,
+        'name_kana' => null,
+        'default_title' => null,
+        'phone' => null,
+        'contact_name' => null,
+        'email' => null,
+        'payer_walletable_id' => null,
         'transfer_fee_handling_side' => null,
-        'update_date' => null
+        'address_attributes' => null,
+        'partner_doc_setting_attributes' => null,
+        'partner_bank_account_attributes' => null,
+        'payment_term_attributes' => null,
+        'invoice_payment_term_attributes' => null
     ];
 
     /**
@@ -144,29 +144,29 @@ class PartnerResponsePartner implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'address_attributes' => 'address_attributes',
-        'available' => 'available',
+        'id' => 'id',
         'code' => 'code',
         'company_id' => 'company_id',
-        'contact_name' => 'contact_name',
-        'country_code' => 'country_code',
-        'default_title' => 'default_title',
-        'email' => 'email',
-        'id' => 'id',
-        'invoice_payment_term_attributes' => 'invoice_payment_term_attributes',
-        'long_name' => 'long_name',
         'name' => 'name',
-        'name_kana' => 'name_kana',
-        'org_code' => 'org_code',
-        'partner_bank_account_attributes' => 'partner_bank_account_attributes',
-        'partner_doc_setting_attributes' => 'partner_doc_setting_attributes',
-        'payer_walletable_id' => 'payer_walletable_id',
-        'payment_term_attributes' => 'payment_term_attributes',
-        'phone' => 'phone',
+        'update_date' => 'update_date',
+        'available' => 'available',
         'shortcut1' => 'shortcut1',
         'shortcut2' => 'shortcut2',
+        'org_code' => 'org_code',
+        'country_code' => 'country_code',
+        'long_name' => 'long_name',
+        'name_kana' => 'name_kana',
+        'default_title' => 'default_title',
+        'phone' => 'phone',
+        'contact_name' => 'contact_name',
+        'email' => 'email',
+        'payer_walletable_id' => 'payer_walletable_id',
         'transfer_fee_handling_side' => 'transfer_fee_handling_side',
-        'update_date' => 'update_date'
+        'address_attributes' => 'address_attributes',
+        'partner_doc_setting_attributes' => 'partner_doc_setting_attributes',
+        'partner_bank_account_attributes' => 'partner_bank_account_attributes',
+        'payment_term_attributes' => 'payment_term_attributes',
+        'invoice_payment_term_attributes' => 'invoice_payment_term_attributes'
     ];
 
     /**
@@ -175,29 +175,29 @@ class PartnerResponsePartner implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'address_attributes' => 'setAddressAttributes',
-        'available' => 'setAvailable',
+        'id' => 'setId',
         'code' => 'setCode',
         'company_id' => 'setCompanyId',
-        'contact_name' => 'setContactName',
-        'country_code' => 'setCountryCode',
-        'default_title' => 'setDefaultTitle',
-        'email' => 'setEmail',
-        'id' => 'setId',
-        'invoice_payment_term_attributes' => 'setInvoicePaymentTermAttributes',
-        'long_name' => 'setLongName',
         'name' => 'setName',
-        'name_kana' => 'setNameKana',
-        'org_code' => 'setOrgCode',
-        'partner_bank_account_attributes' => 'setPartnerBankAccountAttributes',
-        'partner_doc_setting_attributes' => 'setPartnerDocSettingAttributes',
-        'payer_walletable_id' => 'setPayerWalletableId',
-        'payment_term_attributes' => 'setPaymentTermAttributes',
-        'phone' => 'setPhone',
+        'update_date' => 'setUpdateDate',
+        'available' => 'setAvailable',
         'shortcut1' => 'setShortcut1',
         'shortcut2' => 'setShortcut2',
+        'org_code' => 'setOrgCode',
+        'country_code' => 'setCountryCode',
+        'long_name' => 'setLongName',
+        'name_kana' => 'setNameKana',
+        'default_title' => 'setDefaultTitle',
+        'phone' => 'setPhone',
+        'contact_name' => 'setContactName',
+        'email' => 'setEmail',
+        'payer_walletable_id' => 'setPayerWalletableId',
         'transfer_fee_handling_side' => 'setTransferFeeHandlingSide',
-        'update_date' => 'setUpdateDate'
+        'address_attributes' => 'setAddressAttributes',
+        'partner_doc_setting_attributes' => 'setPartnerDocSettingAttributes',
+        'partner_bank_account_attributes' => 'setPartnerBankAccountAttributes',
+        'payment_term_attributes' => 'setPaymentTermAttributes',
+        'invoice_payment_term_attributes' => 'setInvoicePaymentTermAttributes'
     ];
 
     /**
@@ -206,29 +206,29 @@ class PartnerResponsePartner implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'address_attributes' => 'getAddressAttributes',
-        'available' => 'getAvailable',
+        'id' => 'getId',
         'code' => 'getCode',
         'company_id' => 'getCompanyId',
-        'contact_name' => 'getContactName',
-        'country_code' => 'getCountryCode',
-        'default_title' => 'getDefaultTitle',
-        'email' => 'getEmail',
-        'id' => 'getId',
-        'invoice_payment_term_attributes' => 'getInvoicePaymentTermAttributes',
-        'long_name' => 'getLongName',
         'name' => 'getName',
-        'name_kana' => 'getNameKana',
-        'org_code' => 'getOrgCode',
-        'partner_bank_account_attributes' => 'getPartnerBankAccountAttributes',
-        'partner_doc_setting_attributes' => 'getPartnerDocSettingAttributes',
-        'payer_walletable_id' => 'getPayerWalletableId',
-        'payment_term_attributes' => 'getPaymentTermAttributes',
-        'phone' => 'getPhone',
+        'update_date' => 'getUpdateDate',
+        'available' => 'getAvailable',
         'shortcut1' => 'getShortcut1',
         'shortcut2' => 'getShortcut2',
+        'org_code' => 'getOrgCode',
+        'country_code' => 'getCountryCode',
+        'long_name' => 'getLongName',
+        'name_kana' => 'getNameKana',
+        'default_title' => 'getDefaultTitle',
+        'phone' => 'getPhone',
+        'contact_name' => 'getContactName',
+        'email' => 'getEmail',
+        'payer_walletable_id' => 'getPayerWalletableId',
         'transfer_fee_handling_side' => 'getTransferFeeHandlingSide',
-        'update_date' => 'getUpdateDate'
+        'address_attributes' => 'getAddressAttributes',
+        'partner_doc_setting_attributes' => 'getPartnerDocSettingAttributes',
+        'partner_bank_account_attributes' => 'getPartnerBankAccountAttributes',
+        'payment_term_attributes' => 'getPaymentTermAttributes',
+        'invoice_payment_term_attributes' => 'getInvoicePaymentTermAttributes'
     ];
 
     /**
@@ -303,29 +303,29 @@ class PartnerResponsePartner implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
-        $this->container['address_attributes'] = $data['address_attributes'] ?? null;
-        $this->container['available'] = $data['available'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['code'] = $data['code'] ?? null;
         $this->container['company_id'] = $data['company_id'] ?? null;
-        $this->container['contact_name'] = $data['contact_name'] ?? null;
-        $this->container['country_code'] = $data['country_code'] ?? null;
-        $this->container['default_title'] = $data['default_title'] ?? null;
-        $this->container['email'] = $data['email'] ?? null;
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['invoice_payment_term_attributes'] = $data['invoice_payment_term_attributes'] ?? null;
-        $this->container['long_name'] = $data['long_name'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['name_kana'] = $data['name_kana'] ?? null;
-        $this->container['org_code'] = $data['org_code'] ?? null;
-        $this->container['partner_bank_account_attributes'] = $data['partner_bank_account_attributes'] ?? null;
-        $this->container['partner_doc_setting_attributes'] = $data['partner_doc_setting_attributes'] ?? null;
-        $this->container['payer_walletable_id'] = $data['payer_walletable_id'] ?? null;
-        $this->container['payment_term_attributes'] = $data['payment_term_attributes'] ?? null;
-        $this->container['phone'] = $data['phone'] ?? null;
+        $this->container['update_date'] = $data['update_date'] ?? null;
+        $this->container['available'] = $data['available'] ?? null;
         $this->container['shortcut1'] = $data['shortcut1'] ?? null;
         $this->container['shortcut2'] = $data['shortcut2'] ?? null;
+        $this->container['org_code'] = $data['org_code'] ?? null;
+        $this->container['country_code'] = $data['country_code'] ?? null;
+        $this->container['long_name'] = $data['long_name'] ?? null;
+        $this->container['name_kana'] = $data['name_kana'] ?? null;
+        $this->container['default_title'] = $data['default_title'] ?? null;
+        $this->container['phone'] = $data['phone'] ?? null;
+        $this->container['contact_name'] = $data['contact_name'] ?? null;
+        $this->container['email'] = $data['email'] ?? null;
+        $this->container['payer_walletable_id'] = $data['payer_walletable_id'] ?? null;
         $this->container['transfer_fee_handling_side'] = $data['transfer_fee_handling_side'] ?? null;
-        $this->container['update_date'] = $data['update_date'] ?? null;
+        $this->container['address_attributes'] = $data['address_attributes'] ?? null;
+        $this->container['partner_doc_setting_attributes'] = $data['partner_doc_setting_attributes'] ?? null;
+        $this->container['partner_bank_account_attributes'] = $data['partner_bank_account_attributes'] ?? null;
+        $this->container['payment_term_attributes'] = $data['payment_term_attributes'] ?? null;
+        $this->container['invoice_payment_term_attributes'] = $data['invoice_payment_term_attributes'] ?? null;
     }
 
     /**
@@ -337,9 +337,17 @@ class PartnerResponsePartner implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
-        if ($this->container['available'] === null) {
-            $invalidProperties[] = "'available' can't be null";
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
         }
+        if (($this->container['id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
+        }
+
         if ($this->container['code'] === null) {
             $invalidProperties[] = "'code' can't be null";
         }
@@ -354,26 +362,21 @@ class PartnerResponsePartner implements ModelInterface, ArrayAccess, \JsonSerial
             $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if (($this->container['id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['long_name']) && (mb_strlen($this->container['long_name']) > 255)) {
-            $invalidProperties[] = "invalid value for 'long_name', the character length must be smaller than or equal to 255.";
-        }
-
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
-        if (!is_null($this->container['name_kana']) && (mb_strlen($this->container['name_kana']) > 255)) {
-            $invalidProperties[] = "invalid value for 'name_kana', the character length must be smaller than or equal to 255.";
+        if ($this->container['update_date'] === null) {
+            $invalidProperties[] = "'update_date' can't be null";
+        }
+        if ($this->container['available'] === null) {
+            $invalidProperties[] = "'available' can't be null";
+        }
+        if (!is_null($this->container['shortcut1']) && (mb_strlen($this->container['shortcut1']) > 255)) {
+            $invalidProperties[] = "invalid value for 'shortcut1', the character length must be smaller than or equal to 255.";
+        }
+
+        if (!is_null($this->container['shortcut2']) && (mb_strlen($this->container['shortcut2']) > 255)) {
+            $invalidProperties[] = "invalid value for 'shortcut2', the character length must be smaller than or equal to 255.";
         }
 
         if (!is_null($this->container['org_code']) && ($this->container['org_code'] > 2)) {
@@ -384,20 +387,20 @@ class PartnerResponsePartner implements ModelInterface, ArrayAccess, \JsonSerial
             $invalidProperties[] = "invalid value for 'org_code', must be bigger than or equal to 1.";
         }
 
+        if (!is_null($this->container['long_name']) && (mb_strlen($this->container['long_name']) > 255)) {
+            $invalidProperties[] = "invalid value for 'long_name', the character length must be smaller than or equal to 255.";
+        }
+
+        if (!is_null($this->container['name_kana']) && (mb_strlen($this->container['name_kana']) > 255)) {
+            $invalidProperties[] = "invalid value for 'name_kana', the character length must be smaller than or equal to 255.";
+        }
+
         if (!is_null($this->container['payer_walletable_id']) && ($this->container['payer_walletable_id'] > 2147483647)) {
             $invalidProperties[] = "invalid value for 'payer_walletable_id', must be smaller than or equal to 2147483647.";
         }
 
         if (!is_null($this->container['payer_walletable_id']) && ($this->container['payer_walletable_id'] < 1)) {
             $invalidProperties[] = "invalid value for 'payer_walletable_id', must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['shortcut1']) && (mb_strlen($this->container['shortcut1']) > 255)) {
-            $invalidProperties[] = "invalid value for 'shortcut1', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['shortcut2']) && (mb_strlen($this->container['shortcut2']) > 255)) {
-            $invalidProperties[] = "invalid value for 'shortcut2', the character length must be smaller than or equal to 255.";
         }
 
         $allowedValues = $this->getTransferFeeHandlingSideAllowableValues();
@@ -409,9 +412,6 @@ class PartnerResponsePartner implements ModelInterface, ArrayAccess, \JsonSerial
             );
         }
 
-        if ($this->container['update_date'] === null) {
-            $invalidProperties[] = "'update_date' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -428,49 +428,33 @@ class PartnerResponsePartner implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
-     * Gets address_attributes
+     * Gets id
      *
-     * @return \Freee\Accounting\Model\PartnerResponsePartnerAddressAttributes|null
+     * @return int
      */
-    public function getAddressAttributes()
+    public function getId()
     {
-        return $this->container['address_attributes'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets address_attributes
+     * Sets id
      *
-     * @param \Freee\Accounting\Model\PartnerResponsePartnerAddressAttributes|null $address_attributes address_attributes
+     * @param int $id 取引先ID
      *
      * @return self
      */
-    public function setAddressAttributes($address_attributes)
+    public function setId($id)
     {
-        $this->container['address_attributes'] = $address_attributes;
 
-        return $this;
-    }
+        if (($id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling PartnerResponsePartner., must be smaller than or equal to 2147483647.');
+        }
+        if (($id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling PartnerResponsePartner., must be bigger than or equal to 1.');
+        }
 
-    /**
-     * Gets available
-     *
-     * @return bool
-     */
-    public function getAvailable()
-    {
-        return $this->container['available'];
-    }
-
-    /**
-     * Sets available
-     *
-     * @param bool $available 取引先の使用設定（true: 使用する、false: 使用しない） <br> <ul>   <li>     本APIでpartnerを作成した場合はtrueになります。   </li>   <li>     falseにする場合はWeb画面から変更できます。   </li>   <li>     trueの場合、Web画面での取引登録時などに入力候補として表示されます。   </li>   <li>     falseの場合、取引先自体は削除せず、Web画面での取引登録時などに入力候補として表示されません。ただし取引（収入／支出）の作成APIなどでfalseの取引先をパラメータに指定すれば、取引などにfalseの取引先を設定できます。   </li> </ul>
-     *
-     * @return self
-     */
-    public function setAvailable($available)
-    {
-        $this->container['available'] = $available;
+        $this->container['id'] = $id;
 
         return $this;
     }
@@ -532,186 +516,6 @@ class PartnerResponsePartner implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
-     * Gets contact_name
-     *
-     * @return string|null
-     */
-    public function getContactName()
-    {
-        return $this->container['contact_name'];
-    }
-
-    /**
-     * Sets contact_name
-     *
-     * @param string|null $contact_name 担当者 氏名
-     *
-     * @return self
-     */
-    public function setContactName($contact_name)
-    {
-        $this->container['contact_name'] = $contact_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets country_code
-     *
-     * @return string|null
-     */
-    public function getCountryCode()
-    {
-        return $this->container['country_code'];
-    }
-
-    /**
-     * Sets country_code
-     *
-     * @param string|null $country_code 地域（JP: 国内、ZZ:国外）
-     *
-     * @return self
-     */
-    public function setCountryCode($country_code)
-    {
-        $this->container['country_code'] = $country_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets default_title
-     *
-     * @return string|null
-     */
-    public function getDefaultTitle()
-    {
-        return $this->container['default_title'];
-    }
-
-    /**
-     * Sets default_title
-     *
-     * @param string|null $default_title 敬称（御中、様、(空白)の3つから選択）
-     *
-     * @return self
-     */
-    public function setDefaultTitle($default_title)
-    {
-        $this->container['default_title'] = $default_title;
-
-        return $this;
-    }
-
-    /**
-     * Gets email
-     *
-     * @return string|null
-     */
-    public function getEmail()
-    {
-        return $this->container['email'];
-    }
-
-    /**
-     * Sets email
-     *
-     * @param string|null $email 担当者 メールアドレス
-     *
-     * @return self
-     */
-    public function setEmail($email)
-    {
-        $this->container['email'] = $email;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int $id 取引先ID
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-
-        if (($id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling PartnerResponsePartner., must be smaller than or equal to 2147483647.');
-        }
-        if (($id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling PartnerResponsePartner., must be bigger than or equal to 1.');
-        }
-
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets invoice_payment_term_attributes
-     *
-     * @return \Freee\Accounting\Model\PartnerResponsePartnerInvoicePaymentTermAttributes|null
-     */
-    public function getInvoicePaymentTermAttributes()
-    {
-        return $this->container['invoice_payment_term_attributes'];
-    }
-
-    /**
-     * Sets invoice_payment_term_attributes
-     *
-     * @param \Freee\Accounting\Model\PartnerResponsePartnerInvoicePaymentTermAttributes|null $invoice_payment_term_attributes invoice_payment_term_attributes
-     *
-     * @return self
-     */
-    public function setInvoicePaymentTermAttributes($invoice_payment_term_attributes)
-    {
-        $this->container['invoice_payment_term_attributes'] = $invoice_payment_term_attributes;
-
-        return $this;
-    }
-
-    /**
-     * Gets long_name
-     *
-     * @return string|null
-     */
-    public function getLongName()
-    {
-        return $this->container['long_name'];
-    }
-
-    /**
-     * Sets long_name
-     *
-     * @param string|null $long_name 正式名称（255文字以内）
-     *
-     * @return self
-     */
-    public function setLongName($long_name)
-    {
-        if (!is_null($long_name) && (mb_strlen($long_name) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $long_name when calling PartnerResponsePartner., must be smaller than or equal to 255.');
-        }
-
-        $this->container['long_name'] = $long_name;
-
-        return $this;
-    }
-
-    /**
      * Gets name
      *
      * @return string
@@ -736,189 +540,49 @@ class PartnerResponsePartner implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
-     * Gets name_kana
+     * Gets update_date
      *
-     * @return string|null
+     * @return string
      */
-    public function getNameKana()
+    public function getUpdateDate()
     {
-        return $this->container['name_kana'];
+        return $this->container['update_date'];
     }
 
     /**
-     * Sets name_kana
+     * Sets update_date
      *
-     * @param string|null $name_kana カナ名称（255文字以内）
+     * @param string $update_date 更新日 (yyyy-mm-dd)
      *
      * @return self
      */
-    public function setNameKana($name_kana)
+    public function setUpdateDate($update_date)
     {
-        if (!is_null($name_kana) && (mb_strlen($name_kana) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $name_kana when calling PartnerResponsePartner., must be smaller than or equal to 255.');
-        }
-
-        $this->container['name_kana'] = $name_kana;
+        $this->container['update_date'] = $update_date;
 
         return $this;
     }
 
     /**
-     * Gets org_code
+     * Gets available
      *
-     * @return int|null
+     * @return bool
      */
-    public function getOrgCode()
+    public function getAvailable()
     {
-        return $this->container['org_code'];
+        return $this->container['available'];
     }
 
     /**
-     * Sets org_code
+     * Sets available
      *
-     * @param int|null $org_code 事業所種別（null: 未設定、1: 法人、2: 個人）
+     * @param bool $available 取引先の使用設定（true: 使用する、false: 使用しない） <br> <ul>   <li>     本APIでpartnerを作成した場合はtrueになります。   </li>   <li>     falseにする場合はWeb画面から変更できます。   </li>   <li>     trueの場合、Web画面での取引登録時などに入力候補として表示されます。   </li>   <li>     falseの場合、取引先自体は削除せず、Web画面での取引登録時などに入力候補として表示されません。ただし取引（収入／支出）の作成APIなどでfalseの取引先をパラメータに指定すれば、取引などにfalseの取引先を設定できます。   </li> </ul>
      *
      * @return self
      */
-    public function setOrgCode($org_code)
+    public function setAvailable($available)
     {
-
-        if (!is_null($org_code) && ($org_code > 2)) {
-            throw new \InvalidArgumentException('invalid value for $org_code when calling PartnerResponsePartner., must be smaller than or equal to 2.');
-        }
-        if (!is_null($org_code) && ($org_code < 1)) {
-            throw new \InvalidArgumentException('invalid value for $org_code when calling PartnerResponsePartner., must be bigger than or equal to 1.');
-        }
-
-        $this->container['org_code'] = $org_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets partner_bank_account_attributes
-     *
-     * @return \Freee\Accounting\Model\PartnerResponsePartnerPartnerBankAccountAttributes|null
-     */
-    public function getPartnerBankAccountAttributes()
-    {
-        return $this->container['partner_bank_account_attributes'];
-    }
-
-    /**
-     * Sets partner_bank_account_attributes
-     *
-     * @param \Freee\Accounting\Model\PartnerResponsePartnerPartnerBankAccountAttributes|null $partner_bank_account_attributes partner_bank_account_attributes
-     *
-     * @return self
-     */
-    public function setPartnerBankAccountAttributes($partner_bank_account_attributes)
-    {
-        $this->container['partner_bank_account_attributes'] = $partner_bank_account_attributes;
-
-        return $this;
-    }
-
-    /**
-     * Gets partner_doc_setting_attributes
-     *
-     * @return \Freee\Accounting\Model\PartnerCreateParamsPartnerDocSettingAttributes|null
-     */
-    public function getPartnerDocSettingAttributes()
-    {
-        return $this->container['partner_doc_setting_attributes'];
-    }
-
-    /**
-     * Sets partner_doc_setting_attributes
-     *
-     * @param \Freee\Accounting\Model\PartnerCreateParamsPartnerDocSettingAttributes|null $partner_doc_setting_attributes partner_doc_setting_attributes
-     *
-     * @return self
-     */
-    public function setPartnerDocSettingAttributes($partner_doc_setting_attributes)
-    {
-        $this->container['partner_doc_setting_attributes'] = $partner_doc_setting_attributes;
-
-        return $this;
-    }
-
-    /**
-     * Gets payer_walletable_id
-     *
-     * @return int|null
-     */
-    public function getPayerWalletableId()
-    {
-        return $this->container['payer_walletable_id'];
-    }
-
-    /**
-     * Sets payer_walletable_id
-     *
-     * @param int|null $payer_walletable_id 振込元口座ID（一括振込ファイル用）:（未設定の場合は、nullです。）
-     *
-     * @return self
-     */
-    public function setPayerWalletableId($payer_walletable_id)
-    {
-
-        if (!is_null($payer_walletable_id) && ($payer_walletable_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $payer_walletable_id when calling PartnerResponsePartner., must be smaller than or equal to 2147483647.');
-        }
-        if (!is_null($payer_walletable_id) && ($payer_walletable_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $payer_walletable_id when calling PartnerResponsePartner., must be bigger than or equal to 1.');
-        }
-
-        $this->container['payer_walletable_id'] = $payer_walletable_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets payment_term_attributes
-     *
-     * @return \Freee\Accounting\Model\PartnerResponsePartnerPaymentTermAttributes|null
-     */
-    public function getPaymentTermAttributes()
-    {
-        return $this->container['payment_term_attributes'];
-    }
-
-    /**
-     * Sets payment_term_attributes
-     *
-     * @param \Freee\Accounting\Model\PartnerResponsePartnerPaymentTermAttributes|null $payment_term_attributes payment_term_attributes
-     *
-     * @return self
-     */
-    public function setPaymentTermAttributes($payment_term_attributes)
-    {
-        $this->container['payment_term_attributes'] = $payment_term_attributes;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone
-     *
-     * @return string|null
-     */
-    public function getPhone()
-    {
-        return $this->container['phone'];
-    }
-
-    /**
-     * Sets phone
-     *
-     * @param string|null $phone 電話番号
-     *
-     * @return self
-     */
-    public function setPhone($phone)
-    {
-        $this->container['phone'] = $phone;
+        $this->container['available'] = $available;
 
         return $this;
     }
@@ -980,6 +644,246 @@ class PartnerResponsePartner implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
+     * Gets org_code
+     *
+     * @return int|null
+     */
+    public function getOrgCode()
+    {
+        return $this->container['org_code'];
+    }
+
+    /**
+     * Sets org_code
+     *
+     * @param int|null $org_code 事業所種別（null: 未設定、1: 法人、2: 個人）
+     *
+     * @return self
+     */
+    public function setOrgCode($org_code)
+    {
+
+        if (!is_null($org_code) && ($org_code > 2)) {
+            throw new \InvalidArgumentException('invalid value for $org_code when calling PartnerResponsePartner., must be smaller than or equal to 2.');
+        }
+        if (!is_null($org_code) && ($org_code < 1)) {
+            throw new \InvalidArgumentException('invalid value for $org_code when calling PartnerResponsePartner., must be bigger than or equal to 1.');
+        }
+
+        $this->container['org_code'] = $org_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets country_code
+     *
+     * @return string|null
+     */
+    public function getCountryCode()
+    {
+        return $this->container['country_code'];
+    }
+
+    /**
+     * Sets country_code
+     *
+     * @param string|null $country_code 地域（JP: 国内、ZZ:国外）
+     *
+     * @return self
+     */
+    public function setCountryCode($country_code)
+    {
+        $this->container['country_code'] = $country_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets long_name
+     *
+     * @return string|null
+     */
+    public function getLongName()
+    {
+        return $this->container['long_name'];
+    }
+
+    /**
+     * Sets long_name
+     *
+     * @param string|null $long_name 正式名称（255文字以内）
+     *
+     * @return self
+     */
+    public function setLongName($long_name)
+    {
+        if (!is_null($long_name) && (mb_strlen($long_name) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $long_name when calling PartnerResponsePartner., must be smaller than or equal to 255.');
+        }
+
+        $this->container['long_name'] = $long_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets name_kana
+     *
+     * @return string|null
+     */
+    public function getNameKana()
+    {
+        return $this->container['name_kana'];
+    }
+
+    /**
+     * Sets name_kana
+     *
+     * @param string|null $name_kana カナ名称（255文字以内）
+     *
+     * @return self
+     */
+    public function setNameKana($name_kana)
+    {
+        if (!is_null($name_kana) && (mb_strlen($name_kana) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $name_kana when calling PartnerResponsePartner., must be smaller than or equal to 255.');
+        }
+
+        $this->container['name_kana'] = $name_kana;
+
+        return $this;
+    }
+
+    /**
+     * Gets default_title
+     *
+     * @return string|null
+     */
+    public function getDefaultTitle()
+    {
+        return $this->container['default_title'];
+    }
+
+    /**
+     * Sets default_title
+     *
+     * @param string|null $default_title 敬称（御中、様、(空白)の3つから選択）
+     *
+     * @return self
+     */
+    public function setDefaultTitle($default_title)
+    {
+        $this->container['default_title'] = $default_title;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone
+     *
+     * @return string|null
+     */
+    public function getPhone()
+    {
+        return $this->container['phone'];
+    }
+
+    /**
+     * Sets phone
+     *
+     * @param string|null $phone 電話番号
+     *
+     * @return self
+     */
+    public function setPhone($phone)
+    {
+        $this->container['phone'] = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets contact_name
+     *
+     * @return string|null
+     */
+    public function getContactName()
+    {
+        return $this->container['contact_name'];
+    }
+
+    /**
+     * Sets contact_name
+     *
+     * @param string|null $contact_name 担当者 氏名
+     *
+     * @return self
+     */
+    public function setContactName($contact_name)
+    {
+        $this->container['contact_name'] = $contact_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     *
+     * @return string|null
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     *
+     * @param string|null $email 担当者 メールアドレス
+     *
+     * @return self
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets payer_walletable_id
+     *
+     * @return int|null
+     */
+    public function getPayerWalletableId()
+    {
+        return $this->container['payer_walletable_id'];
+    }
+
+    /**
+     * Sets payer_walletable_id
+     *
+     * @param int|null $payer_walletable_id 振込元口座ID（一括振込ファイル用）:（未設定の場合は、nullです。）
+     *
+     * @return self
+     */
+    public function setPayerWalletableId($payer_walletable_id)
+    {
+
+        if (!is_null($payer_walletable_id) && ($payer_walletable_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $payer_walletable_id when calling PartnerResponsePartner., must be smaller than or equal to 2147483647.');
+        }
+        if (!is_null($payer_walletable_id) && ($payer_walletable_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $payer_walletable_id when calling PartnerResponsePartner., must be bigger than or equal to 1.');
+        }
+
+        $this->container['payer_walletable_id'] = $payer_walletable_id;
+
+        return $this;
+    }
+
+    /**
      * Gets transfer_fee_handling_side
      *
      * @return string|null
@@ -1014,25 +918,121 @@ class PartnerResponsePartner implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
-     * Gets update_date
+     * Gets address_attributes
      *
-     * @return string
+     * @return \Freee\Accounting\Model\PartnerResponsePartnerAddressAttributes|null
      */
-    public function getUpdateDate()
+    public function getAddressAttributes()
     {
-        return $this->container['update_date'];
+        return $this->container['address_attributes'];
     }
 
     /**
-     * Sets update_date
+     * Sets address_attributes
      *
-     * @param string $update_date 更新日 (yyyy-mm-dd)
+     * @param \Freee\Accounting\Model\PartnerResponsePartnerAddressAttributes|null $address_attributes address_attributes
      *
      * @return self
      */
-    public function setUpdateDate($update_date)
+    public function setAddressAttributes($address_attributes)
     {
-        $this->container['update_date'] = $update_date;
+        $this->container['address_attributes'] = $address_attributes;
+
+        return $this;
+    }
+
+    /**
+     * Gets partner_doc_setting_attributes
+     *
+     * @return \Freee\Accounting\Model\PartnerCreateParamsPartnerDocSettingAttributes|null
+     */
+    public function getPartnerDocSettingAttributes()
+    {
+        return $this->container['partner_doc_setting_attributes'];
+    }
+
+    /**
+     * Sets partner_doc_setting_attributes
+     *
+     * @param \Freee\Accounting\Model\PartnerCreateParamsPartnerDocSettingAttributes|null $partner_doc_setting_attributes partner_doc_setting_attributes
+     *
+     * @return self
+     */
+    public function setPartnerDocSettingAttributes($partner_doc_setting_attributes)
+    {
+        $this->container['partner_doc_setting_attributes'] = $partner_doc_setting_attributes;
+
+        return $this;
+    }
+
+    /**
+     * Gets partner_bank_account_attributes
+     *
+     * @return \Freee\Accounting\Model\PartnersResponsePartnerBankAccountAttributes|null
+     */
+    public function getPartnerBankAccountAttributes()
+    {
+        return $this->container['partner_bank_account_attributes'];
+    }
+
+    /**
+     * Sets partner_bank_account_attributes
+     *
+     * @param \Freee\Accounting\Model\PartnersResponsePartnerBankAccountAttributes|null $partner_bank_account_attributes partner_bank_account_attributes
+     *
+     * @return self
+     */
+    public function setPartnerBankAccountAttributes($partner_bank_account_attributes)
+    {
+        $this->container['partner_bank_account_attributes'] = $partner_bank_account_attributes;
+
+        return $this;
+    }
+
+    /**
+     * Gets payment_term_attributes
+     *
+     * @return \Freee\Accounting\Model\PartnerResponsePartnerPaymentTermAttributes|null
+     */
+    public function getPaymentTermAttributes()
+    {
+        return $this->container['payment_term_attributes'];
+    }
+
+    /**
+     * Sets payment_term_attributes
+     *
+     * @param \Freee\Accounting\Model\PartnerResponsePartnerPaymentTermAttributes|null $payment_term_attributes payment_term_attributes
+     *
+     * @return self
+     */
+    public function setPaymentTermAttributes($payment_term_attributes)
+    {
+        $this->container['payment_term_attributes'] = $payment_term_attributes;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoice_payment_term_attributes
+     *
+     * @return \Freee\Accounting\Model\PartnerResponsePartnerInvoicePaymentTermAttributes|null
+     */
+    public function getInvoicePaymentTermAttributes()
+    {
+        return $this->container['invoice_payment_term_attributes'];
+    }
+
+    /**
+     * Sets invoice_payment_term_attributes
+     *
+     * @param \Freee\Accounting\Model\PartnerResponsePartnerInvoicePaymentTermAttributes|null $invoice_payment_term_attributes invoice_payment_term_attributes
+     *
+     * @return self
+     */
+    public function setInvoicePaymentTermAttributes($invoice_payment_term_attributes)
+    {
+        $this->container['invoice_payment_term_attributes'] = $invoice_payment_term_attributes;
 
         return $this;
     }

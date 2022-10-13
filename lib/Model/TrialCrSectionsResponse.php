@@ -59,7 +59,7 @@ class TrialCrSectionsResponse implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'trial_cr_sections' => '\Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSections',
+        'trial_cr_sections' => '\Freee\Accounting\Model\TrialPlSectionsResponseTrialPlSections',
         'up_to_date' => 'bool',
         'up_to_date_reasons' => '\Freee\Accounting\Model\JournalsResponseJournalsUpToDateReasons[]'
     ];
@@ -226,7 +226,7 @@ class TrialCrSectionsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets trial_cr_sections
      *
-     * @return \Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSections
+     * @return \Freee\Accounting\Model\TrialPlSectionsResponseTrialPlSections
      */
     public function getTrialCrSections()
     {
@@ -236,7 +236,7 @@ class TrialCrSectionsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets trial_cr_sections
      *
-     * @param \Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSections $trial_cr_sections trial_cr_sections
+     * @param \Freee\Accounting\Model\TrialPlSectionsResponseTrialPlSections $trial_cr_sections trial_cr_sections
      *
      * @return self
      */

@@ -80,6 +80,168 @@ class QuotationUpdateParamsTest extends TestCase
     }
 
     /**
+     * Test attribute "company_id"
+     */
+    public function testPropertyCompanyId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "issue_date"
+     */
+    public function testPropertyIssueDate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partner_id"
+     */
+    public function testPropertyPartnerId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partner_code"
+     */
+    public function testPropertyPartnerCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "quotation_number"
+     */
+    public function testPropertyQuotationNumber()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "title"
+     */
+    public function testPropertyTitle()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "quotation_status"
+     */
+    public function testPropertyQuotationStatus()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partner_display_name"
+     */
+    public function testPropertyPartnerDisplayName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partner_title"
+     */
+    public function testPropertyPartnerTitle()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partner_contact_info"
+     */
+    public function testPropertyPartnerContactInfo()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partner_zipcode"
+     */
+    public function testPropertyPartnerZipcode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partner_prefecture_code"
+     */
+    public function testPropertyPartnerPrefectureCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partner_address1"
+     */
+    public function testPropertyPartnerAddress1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partner_address2"
+     */
+    public function testPropertyPartnerAddress2()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "company_name"
+     */
+    public function testPropertyCompanyName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "company_zipcode"
+     */
+    public function testPropertyCompanyZipcode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "company_prefecture_code"
+     */
+    public function testPropertyCompanyPrefectureCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "company_address1"
      */
     public function testPropertyCompanyAddress1()
@@ -107,60 +269,6 @@ class QuotationUpdateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "company_id"
-     */
-    public function testPropertyCompanyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "company_name"
-     */
-    public function testPropertyCompanyName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "company_prefecture_code"
-     */
-    public function testPropertyCompanyPrefectureCode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "company_zipcode"
-     */
-    public function testPropertyCompanyZipcode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "issue_date"
-     */
-    public function testPropertyIssueDate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "message"
      */
     public function testPropertyMessage()
@@ -179,117 +287,9 @@ class QuotationUpdateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "partner_address1"
-     */
-    public function testPropertyPartnerAddress1()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partner_address2"
-     */
-    public function testPropertyPartnerAddress2()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partner_code"
-     */
-    public function testPropertyPartnerCode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partner_contact_info"
-     */
-    public function testPropertyPartnerContactInfo()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partner_display_name"
-     */
-    public function testPropertyPartnerDisplayName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partner_id"
-     */
-    public function testPropertyPartnerId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partner_prefecture_code"
-     */
-    public function testPropertyPartnerPrefectureCode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partner_title"
-     */
-    public function testPropertyPartnerTitle()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partner_zipcode"
-     */
-    public function testPropertyPartnerZipcode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "quotation_contents"
-     */
-    public function testPropertyQuotationContents()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "quotation_layout"
      */
     public function testPropertyQuotationLayout()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "quotation_number"
-     */
-    public function testPropertyQuotationNumber()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "quotation_status"
-     */
-    public function testPropertyQuotationStatus()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -305,9 +305,9 @@ class QuotationUpdateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "title"
+     * Test attribute "quotation_contents"
      */
-    public function testPropertyTitle()
+    public function testPropertyQuotationContents()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -59,11 +59,11 @@ class PaymentParams implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'amount' => 'int',
         'company_id' => 'int',
         'date' => 'string',
+        'from_walletable_type' => 'string',
         'from_walletable_id' => 'int',
-        'from_walletable_type' => 'string'
+        'amount' => 'int'
     ];
 
     /**
@@ -74,11 +74,11 @@ class PaymentParams implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'amount' => 'int64',
         'company_id' => null,
         'date' => null,
+        'from_walletable_type' => null,
         'from_walletable_id' => null,
-        'from_walletable_type' => null
+        'amount' => 'int64'
     ];
 
     /**
@@ -108,11 +108,11 @@ class PaymentParams implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'amount' => 'amount',
         'company_id' => 'company_id',
         'date' => 'date',
+        'from_walletable_type' => 'from_walletable_type',
         'from_walletable_id' => 'from_walletable_id',
-        'from_walletable_type' => 'from_walletable_type'
+        'amount' => 'amount'
     ];
 
     /**
@@ -121,11 +121,11 @@ class PaymentParams implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'amount' => 'setAmount',
         'company_id' => 'setCompanyId',
         'date' => 'setDate',
+        'from_walletable_type' => 'setFromWalletableType',
         'from_walletable_id' => 'setFromWalletableId',
-        'from_walletable_type' => 'setFromWalletableType'
+        'amount' => 'setAmount'
     ];
 
     /**
@@ -134,11 +134,11 @@ class PaymentParams implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'amount' => 'getAmount',
         'company_id' => 'getCompanyId',
         'date' => 'getDate',
+        'from_walletable_type' => 'getFromWalletableType',
         'from_walletable_id' => 'getFromWalletableId',
-        'from_walletable_type' => 'getFromWalletableType'
+        'amount' => 'getAmount'
     ];
 
     /**
@@ -217,11 +217,11 @@ class PaymentParams implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['amount'] = $data['amount'] ?? null;
         $this->container['company_id'] = $data['company_id'] ?? null;
         $this->container['date'] = $data['date'] ?? null;
-        $this->container['from_walletable_id'] = $data['from_walletable_id'] ?? null;
         $this->container['from_walletable_type'] = $data['from_walletable_type'] ?? null;
+        $this->container['from_walletable_id'] = $data['from_walletable_id'] ?? null;
+        $this->container['amount'] = $data['amount'] ?? null;
     }
 
     /**
@@ -232,17 +232,6 @@ class PaymentParams implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        if ($this->container['amount'] === null) {
-            $invalidProperties[] = "'amount' can't be null";
-        }
-        if (($this->container['amount'] > 9223372036854775807)) {
-            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 9223372036854775807.";
-        }
-
-        if (($this->container['amount'] < 1)) {
-            $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to 1.";
-        }
 
         if ($this->container['company_id'] === null) {
             $invalidProperties[] = "'company_id' can't be null";
@@ -258,6 +247,18 @@ class PaymentParams implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['date'] === null) {
             $invalidProperties[] = "'date' can't be null";
         }
+        if ($this->container['from_walletable_type'] === null) {
+            $invalidProperties[] = "'from_walletable_type' can't be null";
+        }
+        $allowedValues = $this->getFromWalletableTypeAllowableValues();
+        if (!is_null($this->container['from_walletable_type']) && !in_array($this->container['from_walletable_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'from_walletable_type', must be one of '%s'",
+                $this->container['from_walletable_type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         if ($this->container['from_walletable_id'] === null) {
             $invalidProperties[] = "'from_walletable_id' can't be null";
         }
@@ -269,16 +270,15 @@ class PaymentParams implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'from_walletable_id', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['from_walletable_type'] === null) {
-            $invalidProperties[] = "'from_walletable_type' can't be null";
+        if ($this->container['amount'] === null) {
+            $invalidProperties[] = "'amount' can't be null";
         }
-        $allowedValues = $this->getFromWalletableTypeAllowableValues();
-        if (!is_null($this->container['from_walletable_type']) && !in_array($this->container['from_walletable_type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'from_walletable_type', must be one of '%s'",
-                $this->container['from_walletable_type'],
-                implode("', '", $allowedValues)
-            );
+        if (($this->container['amount'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 9223372036854775807.";
+        }
+
+        if (($this->container['amount'] < 1)) {
+            $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -295,38 +295,6 @@ class PaymentParams implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets amount
-     *
-     * @return int
-     */
-    public function getAmount()
-    {
-        return $this->container['amount'];
-    }
-
-    /**
-     * Sets amount
-     *
-     * @param int $amount 金額
-     *
-     * @return self
-     */
-    public function setAmount($amount)
-    {
-
-        if (($amount > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling PaymentParams., must be smaller than or equal to 9223372036854775807.');
-        }
-        if (($amount < 1)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling PaymentParams., must be bigger than or equal to 1.');
-        }
-
-        $this->container['amount'] = $amount;
-
-        return $this;
-    }
 
     /**
      * Gets company_id
@@ -385,6 +353,40 @@ class PaymentParams implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets from_walletable_type
+     *
+     * @return string
+     */
+    public function getFromWalletableType()
+    {
+        return $this->container['from_walletable_type'];
+    }
+
+    /**
+     * Sets from_walletable_type
+     *
+     * @param string $from_walletable_type 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet, プライベート資金（法人の場合は役員借入金もしくは役員借入金、個人の場合は事業主貸もしくは事業主借）: private_account_item)：payments指定時は必須
+     *
+     * @return self
+     */
+    public function setFromWalletableType($from_walletable_type)
+    {
+        $allowedValues = $this->getFromWalletableTypeAllowableValues();
+        if (!in_array($from_walletable_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'from_walletable_type', must be one of '%s'",
+                    $from_walletable_type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['from_walletable_type'] = $from_walletable_type;
+
+        return $this;
+    }
+
+    /**
      * Gets from_walletable_id
      *
      * @return int
@@ -417,35 +419,33 @@ class PaymentParams implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets from_walletable_type
+     * Gets amount
      *
-     * @return string
+     * @return int
      */
-    public function getFromWalletableType()
+    public function getAmount()
     {
-        return $this->container['from_walletable_type'];
+        return $this->container['amount'];
     }
 
     /**
-     * Sets from_walletable_type
+     * Sets amount
      *
-     * @param string $from_walletable_type 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet, プライベート資金（法人の場合は役員借入金もしくは役員借入金、個人の場合は事業主貸もしくは事業主借）: private_account_item)：payments指定時は必須
+     * @param int $amount 金額
      *
      * @return self
      */
-    public function setFromWalletableType($from_walletable_type)
+    public function setAmount($amount)
     {
-        $allowedValues = $this->getFromWalletableTypeAllowableValues();
-        if (!in_array($from_walletable_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'from_walletable_type', must be one of '%s'",
-                    $from_walletable_type,
-                    implode("', '", $allowedValues)
-                )
-            );
+
+        if (($amount > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling PaymentParams., must be smaller than or equal to 9223372036854775807.');
         }
-        $this->container['from_walletable_type'] = $from_walletable_type;
+        if (($amount < 1)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling PaymentParams., must be bigger than or equal to 1.');
+        }
+
+        $this->container['amount'] = $amount;
 
         return $this;
     }

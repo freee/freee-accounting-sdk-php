@@ -80,9 +80,9 @@ class TransferTest extends TestCase
     }
 
     /**
-     * Test attribute "amount"
+     * Test attribute "id"
      */
-    public function testPropertyAmount()
+    public function testPropertyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -98,27 +98,18 @@ class TransferTest extends TestCase
     }
 
     /**
+     * Test attribute "amount"
+     */
+    public function testPropertyAmount()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "date"
      */
     public function testPropertyDate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "from_walletable_id"
-     */
-    public function testPropertyFromWalletableId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -134,9 +125,18 @@ class TransferTest extends TestCase
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "from_walletable_id"
      */
-    public function testPropertyId()
+    public function testPropertyFromWalletableId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "to_walletable_type"
+     */
+    public function testPropertyToWalletableType()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -152,9 +152,9 @@ class TransferTest extends TestCase
     }
 
     /**
-     * Test attribute "to_walletable_type"
+     * Test attribute "description"
      */
-    public function testPropertyToWalletableType()
+    public function testPropertyDescription()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

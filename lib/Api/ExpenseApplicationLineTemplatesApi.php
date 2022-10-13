@@ -1196,7 +1196,7 @@ class ExpenseApplicationLineTemplatesApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\InlineResponse2002|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError
+     * @return \Freee\Accounting\Model\InlineResponse20015|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError
      */
     public function getExpenseApplicationLineTemplates($company_id, $offset = null, $limit = null)
     {
@@ -1215,7 +1215,7 @@ class ExpenseApplicationLineTemplatesApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\InlineResponse2002|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Freee\Accounting\Model\InlineResponse20015|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getExpenseApplicationLineTemplatesWithHttpInfo($company_id, $offset = null, $limit = null)
     {
@@ -1258,14 +1258,14 @@ class ExpenseApplicationLineTemplatesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Freee\Accounting\Model\InlineResponse2002' === '\SplFileObject') {
+                    if ('\Freee\Accounting\Model\InlineResponse20015' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InlineResponse2002', []),
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InlineResponse20015', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1319,7 +1319,7 @@ class ExpenseApplicationLineTemplatesApi
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\InlineResponse2002';
+            $returnType = '\Freee\Accounting\Model\InlineResponse20015';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1337,7 +1337,7 @@ class ExpenseApplicationLineTemplatesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InlineResponse2002',
+                        '\Freee\Accounting\Model\InlineResponse20015',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1415,7 +1415,7 @@ class ExpenseApplicationLineTemplatesApi
      */
     public function getExpenseApplicationLineTemplatesAsyncWithHttpInfo($company_id, $offset = null, $limit = null)
     {
-        $returnType = '\Freee\Accounting\Model\InlineResponse2002';
+        $returnType = '\Freee\Accounting\Model\InlineResponse20015';
         $request = $this->getExpenseApplicationLineTemplatesRequest($company_id, $offset, $limit);
 
         return $this->client

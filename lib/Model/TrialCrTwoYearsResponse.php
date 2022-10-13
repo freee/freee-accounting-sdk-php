@@ -59,7 +59,7 @@ class TrialCrTwoYearsResponse implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'trial_cr_two_years' => '\Freee\Accounting\Model\TrialCrTwoYearsResponseTrialCrTwoYears',
+        'trial_cr_two_years' => '\Freee\Accounting\Model\TrialPlTwoYearsResponseTrialPlTwoYears',
         'up_to_date' => 'bool',
         'up_to_date_reasons' => '\Freee\Accounting\Model\JournalsResponseJournalsUpToDateReasons[]'
     ];
@@ -226,7 +226,7 @@ class TrialCrTwoYearsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets trial_cr_two_years
      *
-     * @return \Freee\Accounting\Model\TrialCrTwoYearsResponseTrialCrTwoYears
+     * @return \Freee\Accounting\Model\TrialPlTwoYearsResponseTrialPlTwoYears
      */
     public function getTrialCrTwoYears()
     {
@@ -236,7 +236,7 @@ class TrialCrTwoYearsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets trial_cr_two_years
      *
-     * @param \Freee\Accounting\Model\TrialCrTwoYearsResponseTrialCrTwoYears $trial_cr_two_years trial_cr_two_years
+     * @param \Freee\Accounting\Model\TrialPlTwoYearsResponseTrialPlTwoYears $trial_cr_two_years trial_cr_two_years
      *
      * @return self
      */

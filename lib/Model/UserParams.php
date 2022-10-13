@@ -61,8 +61,8 @@ class UserParams implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'display_name' => 'string',
         'first_name' => 'string',
-        'first_name_kana' => 'string',
         'last_name' => 'string',
+        'first_name_kana' => 'string',
         'last_name_kana' => 'string'
     ];
 
@@ -76,8 +76,8 @@ class UserParams implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'display_name' => null,
         'first_name' => null,
-        'first_name_kana' => null,
         'last_name' => null,
+        'first_name_kana' => null,
         'last_name_kana' => null
     ];
 
@@ -110,8 +110,8 @@ class UserParams implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'display_name' => 'display_name',
         'first_name' => 'first_name',
-        'first_name_kana' => 'first_name_kana',
         'last_name' => 'last_name',
+        'first_name_kana' => 'first_name_kana',
         'last_name_kana' => 'last_name_kana'
     ];
 
@@ -123,8 +123,8 @@ class UserParams implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'display_name' => 'setDisplayName',
         'first_name' => 'setFirstName',
-        'first_name_kana' => 'setFirstNameKana',
         'last_name' => 'setLastName',
+        'first_name_kana' => 'setFirstNameKana',
         'last_name_kana' => 'setLastNameKana'
     ];
 
@@ -136,8 +136,8 @@ class UserParams implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'display_name' => 'getDisplayName',
         'first_name' => 'getFirstName',
-        'first_name_kana' => 'getFirstNameKana',
         'last_name' => 'getLastName',
+        'first_name_kana' => 'getFirstNameKana',
         'last_name_kana' => 'getLastNameKana'
     ];
 
@@ -200,8 +200,8 @@ class UserParams implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->container['display_name'] = $data['display_name'] ?? null;
         $this->container['first_name'] = $data['first_name'] ?? null;
-        $this->container['first_name_kana'] = $data['first_name_kana'] ?? null;
         $this->container['last_name'] = $data['last_name'] ?? null;
+        $this->container['first_name_kana'] = $data['first_name_kana'] ?? null;
         $this->container['last_name_kana'] = $data['last_name_kana'] ?? null;
     }
 
@@ -222,12 +222,12 @@ class UserParams implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'first_name', the character length must be smaller than or equal to 20.";
         }
 
-        if (!is_null($this->container['first_name_kana']) && (mb_strlen($this->container['first_name_kana']) > 20)) {
-            $invalidProperties[] = "invalid value for 'first_name_kana', the character length must be smaller than or equal to 20.";
-        }
-
         if (!is_null($this->container['last_name']) && (mb_strlen($this->container['last_name']) > 20)) {
             $invalidProperties[] = "invalid value for 'last_name', the character length must be smaller than or equal to 20.";
+        }
+
+        if (!is_null($this->container['first_name_kana']) && (mb_strlen($this->container['first_name_kana']) > 20)) {
+            $invalidProperties[] = "invalid value for 'first_name_kana', the character length must be smaller than or equal to 20.";
         }
 
         if (!is_null($this->container['last_name_kana']) && (mb_strlen($this->container['last_name_kana']) > 20)) {
@@ -306,34 +306,6 @@ class UserParams implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets first_name_kana
-     *
-     * @return string|null
-     */
-    public function getFirstNameKana()
-    {
-        return $this->container['first_name_kana'];
-    }
-
-    /**
-     * Sets first_name_kana
-     *
-     * @param string|null $first_name_kana 氏名（カナ・名） (20文字以内)
-     *
-     * @return self
-     */
-    public function setFirstNameKana($first_name_kana)
-    {
-        if (!is_null($first_name_kana) && (mb_strlen($first_name_kana) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $first_name_kana when calling UserParams., must be smaller than or equal to 20.');
-        }
-
-        $this->container['first_name_kana'] = $first_name_kana;
-
-        return $this;
-    }
-
-    /**
      * Gets last_name
      *
      * @return string|null
@@ -357,6 +329,34 @@ class UserParams implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['last_name'] = $last_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets first_name_kana
+     *
+     * @return string|null
+     */
+    public function getFirstNameKana()
+    {
+        return $this->container['first_name_kana'];
+    }
+
+    /**
+     * Sets first_name_kana
+     *
+     * @param string|null $first_name_kana 氏名（カナ・名） (20文字以内)
+     *
+     * @return self
+     */
+    public function setFirstNameKana($first_name_kana)
+    {
+        if (!is_null($first_name_kana) && (mb_strlen($first_name_kana) > 20)) {
+            throw new \InvalidArgumentException('invalid length for $first_name_kana when calling UserParams., must be smaller than or equal to 20.');
+        }
+
+        $this->container['first_name_kana'] = $first_name_kana;
 
         return $this;
     }

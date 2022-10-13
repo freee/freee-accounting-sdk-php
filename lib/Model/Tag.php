@@ -59,12 +59,12 @@ class Tag implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'company_id' => 'int',
         'id' => 'int',
+        'company_id' => 'int',
         'name' => 'string',
+        'update_date' => 'string',
         'shortcut1' => 'string',
-        'shortcut2' => 'string',
-        'update_date' => 'string'
+        'shortcut2' => 'string'
     ];
 
     /**
@@ -75,12 +75,12 @@ class Tag implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'company_id' => null,
         'id' => null,
+        'company_id' => null,
         'name' => null,
+        'update_date' => null,
         'shortcut1' => null,
-        'shortcut2' => null,
-        'update_date' => null
+        'shortcut2' => null
     ];
 
     /**
@@ -110,12 +110,12 @@ class Tag implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'company_id' => 'company_id',
         'id' => 'id',
+        'company_id' => 'company_id',
         'name' => 'name',
+        'update_date' => 'update_date',
         'shortcut1' => 'shortcut1',
-        'shortcut2' => 'shortcut2',
-        'update_date' => 'update_date'
+        'shortcut2' => 'shortcut2'
     ];
 
     /**
@@ -124,12 +124,12 @@ class Tag implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'company_id' => 'setCompanyId',
         'id' => 'setId',
+        'company_id' => 'setCompanyId',
         'name' => 'setName',
+        'update_date' => 'setUpdateDate',
         'shortcut1' => 'setShortcut1',
-        'shortcut2' => 'setShortcut2',
-        'update_date' => 'setUpdateDate'
+        'shortcut2' => 'setShortcut2'
     ];
 
     /**
@@ -138,12 +138,12 @@ class Tag implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'company_id' => 'getCompanyId',
         'id' => 'getId',
+        'company_id' => 'getCompanyId',
         'name' => 'getName',
+        'update_date' => 'getUpdateDate',
         'shortcut1' => 'getShortcut1',
-        'shortcut2' => 'getShortcut2',
-        'update_date' => 'getUpdateDate'
+        'shortcut2' => 'getShortcut2'
     ];
 
     /**
@@ -203,12 +203,12 @@ class Tag implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['company_id'] = $data['company_id'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
+        $this->container['company_id'] = $data['company_id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['update_date'] = $data['update_date'] ?? null;
         $this->container['shortcut1'] = $data['shortcut1'] ?? null;
         $this->container['shortcut2'] = $data['shortcut2'] ?? null;
-        $this->container['update_date'] = $data['update_date'] ?? null;
     }
 
     /**
@@ -219,17 +219,6 @@ class Tag implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        if ($this->container['company_id'] === null) {
-            $invalidProperties[] = "'company_id' can't be null";
-        }
-        if (($this->container['company_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['company_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
-        }
 
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
@@ -242,6 +231,17 @@ class Tag implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
         }
 
+        if ($this->container['company_id'] === null) {
+            $invalidProperties[] = "'company_id' can't be null";
+        }
+        if (($this->container['company_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['company_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
+        }
+
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
@@ -249,6 +249,9 @@ class Tag implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 30.";
         }
 
+        if ($this->container['update_date'] === null) {
+            $invalidProperties[] = "'update_date' can't be null";
+        }
         if (!is_null($this->container['shortcut1']) && (mb_strlen($this->container['shortcut1']) > 255)) {
             $invalidProperties[] = "invalid value for 'shortcut1', the character length must be smaller than or equal to 255.";
         }
@@ -257,9 +260,6 @@ class Tag implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'shortcut2', the character length must be smaller than or equal to 255.";
         }
 
-        if ($this->container['update_date'] === null) {
-            $invalidProperties[] = "'update_date' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -274,38 +274,6 @@ class Tag implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets company_id
-     *
-     * @return int
-     */
-    public function getCompanyId()
-    {
-        return $this->container['company_id'];
-    }
-
-    /**
-     * Sets company_id
-     *
-     * @param int $company_id 事業所ID
-     *
-     * @return self
-     */
-    public function setCompanyId($company_id)
-    {
-
-        if (($company_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling Tag., must be smaller than or equal to 2147483647.');
-        }
-        if (($company_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling Tag., must be bigger than or equal to 1.');
-        }
-
-        $this->container['company_id'] = $company_id;
-
-        return $this;
-    }
 
     /**
      * Gets id
@@ -340,6 +308,38 @@ class Tag implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets company_id
+     *
+     * @return int
+     */
+    public function getCompanyId()
+    {
+        return $this->container['company_id'];
+    }
+
+    /**
+     * Sets company_id
+     *
+     * @param int $company_id 事業所ID
+     *
+     * @return self
+     */
+    public function setCompanyId($company_id)
+    {
+
+        if (($company_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $company_id when calling Tag., must be smaller than or equal to 2147483647.');
+        }
+        if (($company_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $company_id when calling Tag., must be bigger than or equal to 1.');
+        }
+
+        $this->container['company_id'] = $company_id;
+
+        return $this;
+    }
+
+    /**
      * Gets name
      *
      * @return string
@@ -363,6 +363,30 @@ class Tag implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets update_date
+     *
+     * @return string
+     */
+    public function getUpdateDate()
+    {
+        return $this->container['update_date'];
+    }
+
+    /**
+     * Sets update_date
+     *
+     * @param string $update_date 更新日(yyyy-mm-dd)
+     *
+     * @return self
+     */
+    public function setUpdateDate($update_date)
+    {
+        $this->container['update_date'] = $update_date;
 
         return $this;
     }
@@ -419,30 +443,6 @@ class Tag implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['shortcut2'] = $shortcut2;
-
-        return $this;
-    }
-
-    /**
-     * Gets update_date
-     *
-     * @return string
-     */
-    public function getUpdateDate()
-    {
-        return $this->container['update_date'];
-    }
-
-    /**
-     * Sets update_date
-     *
-     * @param string $update_date 更新日(yyyy-mm-dd)
-     *
-     * @return self
-     */
-    public function setUpdateDate($update_date)
-    {
-        $this->container['update_date'] = $update_date;
 
         return $this;
     }

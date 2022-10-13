@@ -80,27 +80,9 @@ class SelectablesIndexResponseAccountCategoriesTest extends TestCase
     }
 
     /**
-     * Test attribute "account_items"
-     */
-    public function testPropertyAccountItems()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "balance"
      */
     public function testPropertyBalance()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "desc"
-     */
-    public function testPropertyDesc()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -128,6 +110,24 @@ class SelectablesIndexResponseAccountCategoriesTest extends TestCase
      * Test attribute "title"
      */
     public function testPropertyTitle()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "desc"
+     */
+    public function testPropertyDesc()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "account_items"
+     */
+    public function testPropertyAccountItems()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

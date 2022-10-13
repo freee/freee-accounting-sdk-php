@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 ## `getWalletTxns()`
 
 ```php
-getWalletTxns($company_id, $walletable_type, $walletable_id, $start_date, $end_date, $entry_side, $offset, $limit): \Freee\Accounting\Model\InlineResponse20014
+getWalletTxns($company_id, $walletable_type, $walletable_id, $start_date, $end_date, $entry_side, $offset, $limit): \Freee\Accounting\Model\InlineResponse20013
 ```
 
 明細一覧の取得
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse20014**](../Model/InlineResponse20014.md)
+[**\Freee\Accounting\Model\InlineResponse20013**](../Model/InlineResponse20013.md)
 
 ### Authorization
 

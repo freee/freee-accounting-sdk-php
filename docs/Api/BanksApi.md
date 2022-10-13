@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 ## `getBanks()`
 
 ```php
-getBanks($offset, $limit, $type): \Freee\Accounting\Model\InlineResponse200
+getBanks($offset, $limit, $type): \Freee\Accounting\Model\InlineResponse20011
 ```
 
 連携サービス一覧の取得
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse200**](../Model/InlineResponse200.md)
+[**\Freee\Accounting\Model\InlineResponse20011**](../Model/InlineResponse20011.md)
 
 ### Authorization
 

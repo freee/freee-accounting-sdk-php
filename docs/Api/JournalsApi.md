@@ -12,7 +12,7 @@ Method | HTTP request | Description
 ## `downloadJournal()`
 
 ```php
-downloadJournal($id, $company_id): \SplFileObject
+downloadJournal($id, $company_id): string
 ```
 
 ダウンロード実行
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**\SplFileObject**
+**string**
 
 ### Authorization
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/pdf`, `text/csv`, `application/json`
+- **Accept**: `text/csv`, `application/pdf`, `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

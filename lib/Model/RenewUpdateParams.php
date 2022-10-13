@@ -60,8 +60,8 @@ class RenewUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPITypes = [
         'company_id' => 'int',
-        'details' => '\Freee\Accounting\Model\RenewUpdateParamsDetails[]',
-        'update_date' => 'string'
+        'update_date' => 'string',
+        'details' => '\Freee\Accounting\Model\RenewUpdateParamsDetails[]'
     ];
 
     /**
@@ -73,8 +73,8 @@ class RenewUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPIFormats = [
         'company_id' => null,
-        'details' => null,
-        'update_date' => null
+        'update_date' => null,
+        'details' => null
     ];
 
     /**
@@ -105,8 +105,8 @@ class RenewUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $attributeMap = [
         'company_id' => 'company_id',
-        'details' => 'details',
-        'update_date' => 'update_date'
+        'update_date' => 'update_date',
+        'details' => 'details'
     ];
 
     /**
@@ -116,8 +116,8 @@ class RenewUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $setters = [
         'company_id' => 'setCompanyId',
-        'details' => 'setDetails',
-        'update_date' => 'setUpdateDate'
+        'update_date' => 'setUpdateDate',
+        'details' => 'setDetails'
     ];
 
     /**
@@ -127,8 +127,8 @@ class RenewUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $getters = [
         'company_id' => 'getCompanyId',
-        'details' => 'getDetails',
-        'update_date' => 'getUpdateDate'
+        'update_date' => 'getUpdateDate',
+        'details' => 'getDetails'
     ];
 
     /**
@@ -189,8 +189,8 @@ class RenewUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function __construct(array $data = null)
     {
         $this->container['company_id'] = $data['company_id'] ?? null;
-        $this->container['details'] = $data['details'] ?? null;
         $this->container['update_date'] = $data['update_date'] ?? null;
+        $this->container['details'] = $data['details'] ?? null;
     }
 
     /**
@@ -213,11 +213,11 @@ class RenewUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializabl
             $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['details'] === null) {
-            $invalidProperties[] = "'details' can't be null";
-        }
         if ($this->container['update_date'] === null) {
             $invalidProperties[] = "'update_date' can't be null";
+        }
+        if ($this->container['details'] === null) {
+            $invalidProperties[] = "'details' can't be null";
         }
         return $invalidProperties;
     }
@@ -267,30 +267,6 @@ class RenewUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
-     * Gets details
-     *
-     * @return \Freee\Accounting\Model\RenewUpdateParamsDetails[]
-     */
-    public function getDetails()
-    {
-        return $this->container['details'];
-    }
-
-    /**
-     * Sets details
-     *
-     * @param \Freee\Accounting\Model\RenewUpdateParamsDetails[] $details +更新の明細行
-     *
-     * @return self
-     */
-    public function setDetails($details)
-    {
-        $this->container['details'] = $details;
-
-        return $this;
-    }
-
-    /**
      * Gets update_date
      *
      * @return string
@@ -310,6 +286,30 @@ class RenewUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setUpdateDate($update_date)
     {
         $this->container['update_date'] = $update_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets details
+     *
+     * @return \Freee\Accounting\Model\RenewUpdateParamsDetails[]
+     */
+    public function getDetails()
+    {
+        return $this->container['details'];
+    }
+
+    /**
+     * Sets details
+     *
+     * @param \Freee\Accounting\Model\RenewUpdateParamsDetails[] $details +更新の明細行
+     *
+     * @return self
+     */
+    public function setDetails($details)
+    {
+        $this->container['details'] = $details;
 
         return $this;
     }

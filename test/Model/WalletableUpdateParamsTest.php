@@ -80,18 +80,18 @@ class WalletableUpdateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "company_id"
+     * Test attribute "name"
      */
-    public function testPropertyCompanyId()
+    public function testPropertyName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "company_id"
      */
-    public function testPropertyName()
+    public function testPropertyCompanyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

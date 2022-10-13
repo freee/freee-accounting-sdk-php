@@ -80,9 +80,9 @@ class MeResponseUserCompaniesTest extends TestCase
     }
 
     /**
-     * Test attribute "advisor_id"
+     * Test attribute "id"
      */
-    public function testPropertyAdvisorId()
+    public function testPropertyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -92,15 +92,6 @@ class MeResponseUserCompaniesTest extends TestCase
      * Test attribute "display_name"
      */
     public function testPropertyDisplayName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -119,6 +110,15 @@ class MeResponseUserCompaniesTest extends TestCase
      * Test attribute "use_custom_role"
      */
     public function testPropertyUseCustomRole()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "advisor_id"
+     */
+    public function testPropertyAdvisorId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -80,24 +80,6 @@ class TrialBsThreeYearsResponseTrialBsThreeYearsBalancesTest extends TestCase
     }
 
     /**
-     * Test attribute "account_category_name"
-     */
-    public function testPropertyAccountCategoryName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "account_group_name"
-     */
-    public function testPropertyAccountGroupName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "account_item_id"
      */
     public function testPropertyAccountItemId()
@@ -116,45 +98,9 @@ class TrialBsThreeYearsResponseTrialBsThreeYearsBalancesTest extends TestCase
     }
 
     /**
-     * Test attribute "closing_balance"
+     * Test attribute "account_group_name"
      */
-    public function testPropertyClosingBalance()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "hierarchy_level"
-     */
-    public function testPropertyHierarchyLevel()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "items"
-     */
-    public function testPropertyItems()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "last_year_closing_balance"
-     */
-    public function testPropertyLastYearClosingBalance()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "parent_account_category_name"
-     */
-    public function testPropertyParentAccountCategoryName()
+    public function testPropertyAccountGroupName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -164,6 +110,15 @@ class TrialBsThreeYearsResponseTrialBsThreeYearsBalancesTest extends TestCase
      * Test attribute "partners"
      */
     public function testPropertyPartners()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "items"
+     */
+    public function testPropertyItems()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -206,6 +161,15 @@ class TrialBsThreeYearsResponseTrialBsThreeYearsBalancesTest extends TestCase
     }
 
     /**
+     * Test attribute "account_category_name"
+     */
+    public function testPropertyAccountCategoryName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "total_line"
      */
     public function testPropertyTotalLine()
@@ -215,9 +179,45 @@ class TrialBsThreeYearsResponseTrialBsThreeYearsBalancesTest extends TestCase
     }
 
     /**
+     * Test attribute "hierarchy_level"
+     */
+    public function testPropertyHierarchyLevel()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "parent_account_category_name"
+     */
+    public function testPropertyParentAccountCategoryName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "two_years_before_closing_balance"
      */
     public function testPropertyTwoYearsBeforeClosingBalance()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "last_year_closing_balance"
+     */
+    public function testPropertyLastYearClosingBalance()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "closing_balance"
+     */
+    public function testPropertyClosingBalance()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

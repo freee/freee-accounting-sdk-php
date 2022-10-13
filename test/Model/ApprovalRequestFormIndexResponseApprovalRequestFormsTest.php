@@ -80,45 +80,18 @@ class ApprovalRequestFormIndexResponseApprovalRequestFormsTest extends TestCase
     }
 
     /**
-     * Test attribute "company_id"
-     */
-    public function testPropertyCompanyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "created_date"
-     */
-    public function testPropertyCreatedDate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "form_order"
-     */
-    public function testPropertyFormOrder()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "id"
      */
     public function testPropertyId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "company_id"
+     */
+    public function testPropertyCompanyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -134,9 +107,9 @@ class ApprovalRequestFormIndexResponseApprovalRequestFormsTest extends TestCase
     }
 
     /**
-     * Test attribute "route_setting_count"
+     * Test attribute "description"
      */
-    public function testPropertyRouteSettingCount()
+    public function testPropertyDescription()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -146,6 +119,33 @@ class ApprovalRequestFormIndexResponseApprovalRequestFormsTest extends TestCase
      * Test attribute "status"
      */
     public function testPropertyStatus()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "created_date"
+     */
+    public function testPropertyCreatedDate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "form_order"
+     */
+    public function testPropertyFormOrder()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "route_setting_count"
+     */
+    public function testPropertyRouteSettingCount()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

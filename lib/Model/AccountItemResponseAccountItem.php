@@ -59,26 +59,26 @@ class AccountItemResponseAccountItem implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
+        'id' => 'int',
+        'name' => 'string',
+        'company_id' => 'int',
+        'tax_code' => 'int',
         'account_category' => 'string',
         'account_category_id' => 'int',
-        'accumulated_dep_account_item_id' => 'int',
-        'accumulated_dep_account_item_name' => 'string',
-        'available' => 'bool',
-        'company_id' => 'int',
-        'corresponding_expense_id' => 'int',
-        'corresponding_expense_name' => 'string',
-        'corresponding_income_id' => 'int',
-        'corresponding_income_name' => 'string',
-        'group_name' => 'string',
-        'id' => 'int',
-        'items' => '\Freee\Accounting\Model\AccountItemResponseAccountItemItems[]',
-        'name' => 'string',
-        'partners' => '\Freee\Accounting\Model\AccountItemResponseAccountItemPartners[]',
-        'searchable' => 'int',
         'shortcut' => 'string',
         'shortcut_num' => 'string',
-        'tax_code' => 'int',
-        'walletable_id' => 'int'
+        'searchable' => 'int',
+        'accumulated_dep_account_item_name' => 'string',
+        'accumulated_dep_account_item_id' => 'int',
+        'items' => '\Freee\Accounting\Model\AccountItemResponseAccountItemItems[]',
+        'partners' => '\Freee\Accounting\Model\AccountItemResponseAccountItemPartners[]',
+        'available' => 'bool',
+        'walletable_id' => 'int',
+        'group_name' => 'string',
+        'corresponding_income_name' => 'string',
+        'corresponding_income_id' => 'int',
+        'corresponding_expense_name' => 'string',
+        'corresponding_expense_id' => 'int'
     ];
 
     /**
@@ -89,26 +89,26 @@ class AccountItemResponseAccountItem implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'id' => null,
+        'name' => null,
+        'company_id' => null,
+        'tax_code' => null,
         'account_category' => null,
         'account_category_id' => null,
-        'accumulated_dep_account_item_id' => null,
-        'accumulated_dep_account_item_name' => null,
-        'available' => null,
-        'company_id' => null,
-        'corresponding_expense_id' => null,
-        'corresponding_expense_name' => null,
-        'corresponding_income_id' => null,
-        'corresponding_income_name' => null,
-        'group_name' => null,
-        'id' => null,
-        'items' => null,
-        'name' => null,
-        'partners' => null,
-        'searchable' => null,
         'shortcut' => null,
         'shortcut_num' => null,
-        'tax_code' => null,
-        'walletable_id' => null
+        'searchable' => null,
+        'accumulated_dep_account_item_name' => null,
+        'accumulated_dep_account_item_id' => null,
+        'items' => null,
+        'partners' => null,
+        'available' => null,
+        'walletable_id' => null,
+        'group_name' => null,
+        'corresponding_income_name' => null,
+        'corresponding_income_id' => null,
+        'corresponding_expense_name' => null,
+        'corresponding_expense_id' => null
     ];
 
     /**
@@ -138,26 +138,26 @@ class AccountItemResponseAccountItem implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
+        'name' => 'name',
+        'company_id' => 'company_id',
+        'tax_code' => 'tax_code',
         'account_category' => 'account_category',
         'account_category_id' => 'account_category_id',
-        'accumulated_dep_account_item_id' => 'accumulated_dep_account_item_id',
-        'accumulated_dep_account_item_name' => 'accumulated_dep_account_item_name',
-        'available' => 'available',
-        'company_id' => 'company_id',
-        'corresponding_expense_id' => 'corresponding_expense_id',
-        'corresponding_expense_name' => 'corresponding_expense_name',
-        'corresponding_income_id' => 'corresponding_income_id',
-        'corresponding_income_name' => 'corresponding_income_name',
-        'group_name' => 'group_name',
-        'id' => 'id',
-        'items' => 'items',
-        'name' => 'name',
-        'partners' => 'partners',
-        'searchable' => 'searchable',
         'shortcut' => 'shortcut',
         'shortcut_num' => 'shortcut_num',
-        'tax_code' => 'tax_code',
-        'walletable_id' => 'walletable_id'
+        'searchable' => 'searchable',
+        'accumulated_dep_account_item_name' => 'accumulated_dep_account_item_name',
+        'accumulated_dep_account_item_id' => 'accumulated_dep_account_item_id',
+        'items' => 'items',
+        'partners' => 'partners',
+        'available' => 'available',
+        'walletable_id' => 'walletable_id',
+        'group_name' => 'group_name',
+        'corresponding_income_name' => 'corresponding_income_name',
+        'corresponding_income_id' => 'corresponding_income_id',
+        'corresponding_expense_name' => 'corresponding_expense_name',
+        'corresponding_expense_id' => 'corresponding_expense_id'
     ];
 
     /**
@@ -166,26 +166,26 @@ class AccountItemResponseAccountItem implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
+        'name' => 'setName',
+        'company_id' => 'setCompanyId',
+        'tax_code' => 'setTaxCode',
         'account_category' => 'setAccountCategory',
         'account_category_id' => 'setAccountCategoryId',
-        'accumulated_dep_account_item_id' => 'setAccumulatedDepAccountItemId',
-        'accumulated_dep_account_item_name' => 'setAccumulatedDepAccountItemName',
-        'available' => 'setAvailable',
-        'company_id' => 'setCompanyId',
-        'corresponding_expense_id' => 'setCorrespondingExpenseId',
-        'corresponding_expense_name' => 'setCorrespondingExpenseName',
-        'corresponding_income_id' => 'setCorrespondingIncomeId',
-        'corresponding_income_name' => 'setCorrespondingIncomeName',
-        'group_name' => 'setGroupName',
-        'id' => 'setId',
-        'items' => 'setItems',
-        'name' => 'setName',
-        'partners' => 'setPartners',
-        'searchable' => 'setSearchable',
         'shortcut' => 'setShortcut',
         'shortcut_num' => 'setShortcutNum',
-        'tax_code' => 'setTaxCode',
-        'walletable_id' => 'setWalletableId'
+        'searchable' => 'setSearchable',
+        'accumulated_dep_account_item_name' => 'setAccumulatedDepAccountItemName',
+        'accumulated_dep_account_item_id' => 'setAccumulatedDepAccountItemId',
+        'items' => 'setItems',
+        'partners' => 'setPartners',
+        'available' => 'setAvailable',
+        'walletable_id' => 'setWalletableId',
+        'group_name' => 'setGroupName',
+        'corresponding_income_name' => 'setCorrespondingIncomeName',
+        'corresponding_income_id' => 'setCorrespondingIncomeId',
+        'corresponding_expense_name' => 'setCorrespondingExpenseName',
+        'corresponding_expense_id' => 'setCorrespondingExpenseId'
     ];
 
     /**
@@ -194,26 +194,26 @@ class AccountItemResponseAccountItem implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
+        'name' => 'getName',
+        'company_id' => 'getCompanyId',
+        'tax_code' => 'getTaxCode',
         'account_category' => 'getAccountCategory',
         'account_category_id' => 'getAccountCategoryId',
-        'accumulated_dep_account_item_id' => 'getAccumulatedDepAccountItemId',
-        'accumulated_dep_account_item_name' => 'getAccumulatedDepAccountItemName',
-        'available' => 'getAvailable',
-        'company_id' => 'getCompanyId',
-        'corresponding_expense_id' => 'getCorrespondingExpenseId',
-        'corresponding_expense_name' => 'getCorrespondingExpenseName',
-        'corresponding_income_id' => 'getCorrespondingIncomeId',
-        'corresponding_income_name' => 'getCorrespondingIncomeName',
-        'group_name' => 'getGroupName',
-        'id' => 'getId',
-        'items' => 'getItems',
-        'name' => 'getName',
-        'partners' => 'getPartners',
-        'searchable' => 'getSearchable',
         'shortcut' => 'getShortcut',
         'shortcut_num' => 'getShortcutNum',
-        'tax_code' => 'getTaxCode',
-        'walletable_id' => 'getWalletableId'
+        'searchable' => 'getSearchable',
+        'accumulated_dep_account_item_name' => 'getAccumulatedDepAccountItemName',
+        'accumulated_dep_account_item_id' => 'getAccumulatedDepAccountItemId',
+        'items' => 'getItems',
+        'partners' => 'getPartners',
+        'available' => 'getAvailable',
+        'walletable_id' => 'getWalletableId',
+        'group_name' => 'getGroupName',
+        'corresponding_income_name' => 'getCorrespondingIncomeName',
+        'corresponding_income_id' => 'getCorrespondingIncomeId',
+        'corresponding_expense_name' => 'getCorrespondingExpenseName',
+        'corresponding_expense_id' => 'getCorrespondingExpenseId'
     ];
 
     /**
@@ -273,26 +273,26 @@ class AccountItemResponseAccountItem implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['company_id'] = $data['company_id'] ?? null;
+        $this->container['tax_code'] = $data['tax_code'] ?? null;
         $this->container['account_category'] = $data['account_category'] ?? null;
         $this->container['account_category_id'] = $data['account_category_id'] ?? null;
-        $this->container['accumulated_dep_account_item_id'] = $data['accumulated_dep_account_item_id'] ?? null;
-        $this->container['accumulated_dep_account_item_name'] = $data['accumulated_dep_account_item_name'] ?? null;
-        $this->container['available'] = $data['available'] ?? null;
-        $this->container['company_id'] = $data['company_id'] ?? null;
-        $this->container['corresponding_expense_id'] = $data['corresponding_expense_id'] ?? null;
-        $this->container['corresponding_expense_name'] = $data['corresponding_expense_name'] ?? null;
-        $this->container['corresponding_income_id'] = $data['corresponding_income_id'] ?? null;
-        $this->container['corresponding_income_name'] = $data['corresponding_income_name'] ?? null;
-        $this->container['group_name'] = $data['group_name'] ?? null;
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['items'] = $data['items'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['partners'] = $data['partners'] ?? null;
-        $this->container['searchable'] = $data['searchable'] ?? null;
         $this->container['shortcut'] = $data['shortcut'] ?? null;
         $this->container['shortcut_num'] = $data['shortcut_num'] ?? null;
-        $this->container['tax_code'] = $data['tax_code'] ?? null;
+        $this->container['searchable'] = $data['searchable'] ?? null;
+        $this->container['accumulated_dep_account_item_name'] = $data['accumulated_dep_account_item_name'] ?? null;
+        $this->container['accumulated_dep_account_item_id'] = $data['accumulated_dep_account_item_id'] ?? null;
+        $this->container['items'] = $data['items'] ?? null;
+        $this->container['partners'] = $data['partners'] ?? null;
+        $this->container['available'] = $data['available'] ?? null;
         $this->container['walletable_id'] = $data['walletable_id'] ?? null;
+        $this->container['group_name'] = $data['group_name'] ?? null;
+        $this->container['corresponding_income_name'] = $data['corresponding_income_name'] ?? null;
+        $this->container['corresponding_income_id'] = $data['corresponding_income_id'] ?? null;
+        $this->container['corresponding_expense_name'] = $data['corresponding_expense_name'] ?? null;
+        $this->container['corresponding_expense_id'] = $data['corresponding_expense_id'] ?? null;
     }
 
     /**
@@ -303,34 +303,6 @@ class AccountItemResponseAccountItem implements ModelInterface, ArrayAccess, \Js
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        if ($this->container['account_category'] === null) {
-            $invalidProperties[] = "'account_category' can't be null";
-        }
-        if ($this->container['account_category_id'] === null) {
-            $invalidProperties[] = "'account_category_id' can't be null";
-        }
-        if (($this->container['account_category_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'account_category_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['account_category_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'account_category_id', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['available'] === null) {
-            $invalidProperties[] = "'available' can't be null";
-        }
-        if ($this->container['company_id'] === null) {
-            $invalidProperties[] = "'company_id' can't be null";
-        }
-        if (($this->container['company_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['company_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
-        }
 
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
@@ -350,23 +322,15 @@ class AccountItemResponseAccountItem implements ModelInterface, ArrayAccess, \Js
             $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 30.";
         }
 
-        if ($this->container['searchable'] === null) {
-            $invalidProperties[] = "'searchable' can't be null";
+        if ($this->container['company_id'] === null) {
+            $invalidProperties[] = "'company_id' can't be null";
         }
-        if (($this->container['searchable'] > 3)) {
-            $invalidProperties[] = "invalid value for 'searchable', must be smaller than or equal to 3.";
-        }
-
-        if (($this->container['searchable'] < 2)) {
-            $invalidProperties[] = "invalid value for 'searchable', must be bigger than or equal to 2.";
+        if (($this->container['company_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
         }
 
-        if (!is_null($this->container['shortcut']) && (mb_strlen($this->container['shortcut']) > 20)) {
-            $invalidProperties[] = "invalid value for 'shortcut', the character length must be smaller than or equal to 20.";
-        }
-
-        if (!is_null($this->container['shortcut_num']) && (mb_strlen($this->container['shortcut_num']) > 20)) {
-            $invalidProperties[] = "invalid value for 'shortcut_num', the character length must be smaller than or equal to 20.";
+        if (($this->container['company_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
         }
 
         if ($this->container['tax_code'] === null) {
@@ -380,6 +344,42 @@ class AccountItemResponseAccountItem implements ModelInterface, ArrayAccess, \Js
             $invalidProperties[] = "invalid value for 'tax_code', must be bigger than or equal to 0.";
         }
 
+        if ($this->container['account_category'] === null) {
+            $invalidProperties[] = "'account_category' can't be null";
+        }
+        if ($this->container['account_category_id'] === null) {
+            $invalidProperties[] = "'account_category_id' can't be null";
+        }
+        if (($this->container['account_category_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'account_category_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['account_category_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'account_category_id', must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['shortcut']) && (mb_strlen($this->container['shortcut']) > 20)) {
+            $invalidProperties[] = "invalid value for 'shortcut', the character length must be smaller than or equal to 20.";
+        }
+
+        if (!is_null($this->container['shortcut_num']) && (mb_strlen($this->container['shortcut_num']) > 20)) {
+            $invalidProperties[] = "invalid value for 'shortcut_num', the character length must be smaller than or equal to 20.";
+        }
+
+        if ($this->container['searchable'] === null) {
+            $invalidProperties[] = "'searchable' can't be null";
+        }
+        if (($this->container['searchable'] > 3)) {
+            $invalidProperties[] = "invalid value for 'searchable', must be smaller than or equal to 3.";
+        }
+
+        if (($this->container['searchable'] < 2)) {
+            $invalidProperties[] = "invalid value for 'searchable', must be bigger than or equal to 2.";
+        }
+
+        if ($this->container['available'] === null) {
+            $invalidProperties[] = "'available' can't be null";
+        }
         if ($this->container['walletable_id'] === null) {
             $invalidProperties[] = "'walletable_id' can't be null";
         }
@@ -405,6 +405,130 @@ class AccountItemResponseAccountItem implements ModelInterface, ArrayAccess, \Js
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int $id 勘定科目ID
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+
+        if (($id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling AccountItemResponseAccountItem., must be smaller than or equal to 2147483647.');
+        }
+        if (($id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling AccountItemResponseAccountItem., must be bigger than or equal to 1.');
+        }
+
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name 勘定科目名 (30文字以内)
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        if ((mb_strlen($name) > 30)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling AccountItemResponseAccountItem., must be smaller than or equal to 30.');
+        }
+
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets company_id
+     *
+     * @return int
+     */
+    public function getCompanyId()
+    {
+        return $this->container['company_id'];
+    }
+
+    /**
+     * Sets company_id
+     *
+     * @param int $company_id 事業所ID
+     *
+     * @return self
+     */
+    public function setCompanyId($company_id)
+    {
+
+        if (($company_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $company_id when calling AccountItemResponseAccountItem., must be smaller than or equal to 2147483647.');
+        }
+        if (($company_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $company_id when calling AccountItemResponseAccountItem., must be bigger than or equal to 1.');
+        }
+
+        $this->container['company_id'] = $company_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_code
+     *
+     * @return int
+     */
+    public function getTaxCode()
+    {
+        return $this->container['tax_code'];
+    }
+
+    /**
+     * Sets tax_code
+     *
+     * @param int $tax_code 税区分コード
+     *
+     * @return self
+     */
+    public function setTaxCode($tax_code)
+    {
+
+        if (($tax_code > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling AccountItemResponseAccountItem., must be smaller than or equal to 2147483647.');
+        }
+        if (($tax_code < 0)) {
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling AccountItemResponseAccountItem., must be bigger than or equal to 0.');
+        }
+
+        $this->container['tax_code'] = $tax_code;
+
+        return $this;
+    }
 
     /**
      * Gets account_category
@@ -458,370 +582,6 @@ class AccountItemResponseAccountItem implements ModelInterface, ArrayAccess, \Js
         }
 
         $this->container['account_category_id'] = $account_category_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets accumulated_dep_account_item_id
-     *
-     * @return int|null
-     */
-    public function getAccumulatedDepAccountItemId()
-    {
-        return $this->container['accumulated_dep_account_item_id'];
-    }
-
-    /**
-     * Sets accumulated_dep_account_item_id
-     *
-     * @param int|null $accumulated_dep_account_item_id 減価償却累計額勘定科目ID（法人のみ利用可能）
-     *
-     * @return self
-     */
-    public function setAccumulatedDepAccountItemId($accumulated_dep_account_item_id)
-    {
-        $this->container['accumulated_dep_account_item_id'] = $accumulated_dep_account_item_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets accumulated_dep_account_item_name
-     *
-     * @return string|null
-     */
-    public function getAccumulatedDepAccountItemName()
-    {
-        return $this->container['accumulated_dep_account_item_name'];
-    }
-
-    /**
-     * Sets accumulated_dep_account_item_name
-     *
-     * @param string|null $accumulated_dep_account_item_name 減価償却累計額勘定科目（法人のみ利用可能）
-     *
-     * @return self
-     */
-    public function setAccumulatedDepAccountItemName($accumulated_dep_account_item_name)
-    {
-        $this->container['accumulated_dep_account_item_name'] = $accumulated_dep_account_item_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets available
-     *
-     * @return bool
-     */
-    public function getAvailable()
-    {
-        return $this->container['available'];
-    }
-
-    /**
-     * Sets available
-     *
-     * @param bool $available 勘定科目の使用設定（true: 使用する、false: 使用しない）
-     *
-     * @return self
-     */
-    public function setAvailable($available)
-    {
-        $this->container['available'] = $available;
-
-        return $this;
-    }
-
-    /**
-     * Gets company_id
-     *
-     * @return int
-     */
-    public function getCompanyId()
-    {
-        return $this->container['company_id'];
-    }
-
-    /**
-     * Sets company_id
-     *
-     * @param int $company_id 事業所ID
-     *
-     * @return self
-     */
-    public function setCompanyId($company_id)
-    {
-
-        if (($company_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling AccountItemResponseAccountItem., must be smaller than or equal to 2147483647.');
-        }
-        if (($company_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling AccountItemResponseAccountItem., must be bigger than or equal to 1.');
-        }
-
-        $this->container['company_id'] = $company_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets corresponding_expense_id
-     *
-     * @return int|null
-     */
-    public function getCorrespondingExpenseId()
-    {
-        return $this->container['corresponding_expense_id'];
-    }
-
-    /**
-     * Sets corresponding_expense_id
-     *
-     * @param int|null $corresponding_expense_id 支出取引相手勘定科目ID
-     *
-     * @return self
-     */
-    public function setCorrespondingExpenseId($corresponding_expense_id)
-    {
-        $this->container['corresponding_expense_id'] = $corresponding_expense_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets corresponding_expense_name
-     *
-     * @return string|null
-     */
-    public function getCorrespondingExpenseName()
-    {
-        return $this->container['corresponding_expense_name'];
-    }
-
-    /**
-     * Sets corresponding_expense_name
-     *
-     * @param string|null $corresponding_expense_name 支出取引相手勘定科目名
-     *
-     * @return self
-     */
-    public function setCorrespondingExpenseName($corresponding_expense_name)
-    {
-        $this->container['corresponding_expense_name'] = $corresponding_expense_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets corresponding_income_id
-     *
-     * @return int|null
-     */
-    public function getCorrespondingIncomeId()
-    {
-        return $this->container['corresponding_income_id'];
-    }
-
-    /**
-     * Sets corresponding_income_id
-     *
-     * @param int|null $corresponding_income_id 収入取引相手勘定科目ID
-     *
-     * @return self
-     */
-    public function setCorrespondingIncomeId($corresponding_income_id)
-    {
-        $this->container['corresponding_income_id'] = $corresponding_income_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets corresponding_income_name
-     *
-     * @return string|null
-     */
-    public function getCorrespondingIncomeName()
-    {
-        return $this->container['corresponding_income_name'];
-    }
-
-    /**
-     * Sets corresponding_income_name
-     *
-     * @param string|null $corresponding_income_name 収入取引相手勘定科目名
-     *
-     * @return self
-     */
-    public function setCorrespondingIncomeName($corresponding_income_name)
-    {
-        $this->container['corresponding_income_name'] = $corresponding_income_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets group_name
-     *
-     * @return string|null
-     */
-    public function getGroupName()
-    {
-        return $this->container['group_name'];
-    }
-
-    /**
-     * Sets group_name
-     *
-     * @param string|null $group_name 決算書表示名（小カテゴリー）
-     *
-     * @return self
-     */
-    public function setGroupName($group_name)
-    {
-        $this->container['group_name'] = $group_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int $id 勘定科目ID
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-
-        if (($id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling AccountItemResponseAccountItem., must be smaller than or equal to 2147483647.');
-        }
-        if (($id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling AccountItemResponseAccountItem., must be bigger than or equal to 1.');
-        }
-
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets items
-     *
-     * @return \Freee\Accounting\Model\AccountItemResponseAccountItemItems[]|null
-     */
-    public function getItems()
-    {
-        return $this->container['items'];
-    }
-
-    /**
-     * Sets items
-     *
-     * @param \Freee\Accounting\Model\AccountItemResponseAccountItemItems[]|null $items items
-     *
-     * @return self
-     */
-    public function setItems($items)
-    {
-        $this->container['items'] = $items;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name 勘定科目名 (30文字以内)
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        if ((mb_strlen($name) > 30)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling AccountItemResponseAccountItem., must be smaller than or equal to 30.');
-        }
-
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets partners
-     *
-     * @return \Freee\Accounting\Model\AccountItemResponseAccountItemPartners[]|null
-     */
-    public function getPartners()
-    {
-        return $this->container['partners'];
-    }
-
-    /**
-     * Sets partners
-     *
-     * @param \Freee\Accounting\Model\AccountItemResponseAccountItemPartners[]|null $partners partners
-     *
-     * @return self
-     */
-    public function setPartners($partners)
-    {
-        $this->container['partners'] = $partners;
-
-        return $this;
-    }
-
-    /**
-     * Gets searchable
-     *
-     * @return int
-     */
-    public function getSearchable()
-    {
-        return $this->container['searchable'];
-    }
-
-    /**
-     * Sets searchable
-     *
-     * @param int $searchable 検索可能:2, 検索不可：3
-     *
-     * @return self
-     */
-    public function setSearchable($searchable)
-    {
-
-        if (($searchable > 3)) {
-            throw new \InvalidArgumentException('invalid value for $searchable when calling AccountItemResponseAccountItem., must be smaller than or equal to 3.');
-        }
-        if (($searchable < 2)) {
-            throw new \InvalidArgumentException('invalid value for $searchable when calling AccountItemResponseAccountItem., must be bigger than or equal to 2.');
-        }
-
-        $this->container['searchable'] = $searchable;
 
         return $this;
     }
@@ -883,33 +643,153 @@ class AccountItemResponseAccountItem implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets tax_code
+     * Gets searchable
      *
      * @return int
      */
-    public function getTaxCode()
+    public function getSearchable()
     {
-        return $this->container['tax_code'];
+        return $this->container['searchable'];
     }
 
     /**
-     * Sets tax_code
+     * Sets searchable
      *
-     * @param int $tax_code 税区分コード
+     * @param int $searchable 検索可能:2, 検索不可：3
      *
      * @return self
      */
-    public function setTaxCode($tax_code)
+    public function setSearchable($searchable)
     {
 
-        if (($tax_code > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $tax_code when calling AccountItemResponseAccountItem., must be smaller than or equal to 2147483647.');
+        if (($searchable > 3)) {
+            throw new \InvalidArgumentException('invalid value for $searchable when calling AccountItemResponseAccountItem., must be smaller than or equal to 3.');
         }
-        if (($tax_code < 0)) {
-            throw new \InvalidArgumentException('invalid value for $tax_code when calling AccountItemResponseAccountItem., must be bigger than or equal to 0.');
+        if (($searchable < 2)) {
+            throw new \InvalidArgumentException('invalid value for $searchable when calling AccountItemResponseAccountItem., must be bigger than or equal to 2.');
         }
 
-        $this->container['tax_code'] = $tax_code;
+        $this->container['searchable'] = $searchable;
+
+        return $this;
+    }
+
+    /**
+     * Gets accumulated_dep_account_item_name
+     *
+     * @return string|null
+     */
+    public function getAccumulatedDepAccountItemName()
+    {
+        return $this->container['accumulated_dep_account_item_name'];
+    }
+
+    /**
+     * Sets accumulated_dep_account_item_name
+     *
+     * @param string|null $accumulated_dep_account_item_name 減価償却累計額勘定科目（法人のみ利用可能）
+     *
+     * @return self
+     */
+    public function setAccumulatedDepAccountItemName($accumulated_dep_account_item_name)
+    {
+        $this->container['accumulated_dep_account_item_name'] = $accumulated_dep_account_item_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets accumulated_dep_account_item_id
+     *
+     * @return int|null
+     */
+    public function getAccumulatedDepAccountItemId()
+    {
+        return $this->container['accumulated_dep_account_item_id'];
+    }
+
+    /**
+     * Sets accumulated_dep_account_item_id
+     *
+     * @param int|null $accumulated_dep_account_item_id 減価償却累計額勘定科目ID（法人のみ利用可能）
+     *
+     * @return self
+     */
+    public function setAccumulatedDepAccountItemId($accumulated_dep_account_item_id)
+    {
+        $this->container['accumulated_dep_account_item_id'] = $accumulated_dep_account_item_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets items
+     *
+     * @return \Freee\Accounting\Model\AccountItemResponseAccountItemItems[]|null
+     */
+    public function getItems()
+    {
+        return $this->container['items'];
+    }
+
+    /**
+     * Sets items
+     *
+     * @param \Freee\Accounting\Model\AccountItemResponseAccountItemItems[]|null $items items
+     *
+     * @return self
+     */
+    public function setItems($items)
+    {
+        $this->container['items'] = $items;
+
+        return $this;
+    }
+
+    /**
+     * Gets partners
+     *
+     * @return \Freee\Accounting\Model\AccountItemResponseAccountItemPartners[]|null
+     */
+    public function getPartners()
+    {
+        return $this->container['partners'];
+    }
+
+    /**
+     * Sets partners
+     *
+     * @param \Freee\Accounting\Model\AccountItemResponseAccountItemPartners[]|null $partners partners
+     *
+     * @return self
+     */
+    public function setPartners($partners)
+    {
+        $this->container['partners'] = $partners;
+
+        return $this;
+    }
+
+    /**
+     * Gets available
+     *
+     * @return bool
+     */
+    public function getAvailable()
+    {
+        return $this->container['available'];
+    }
+
+    /**
+     * Sets available
+     *
+     * @param bool $available 勘定科目の使用設定（true: 使用する、false: 使用しない）
+     *
+     * @return self
+     */
+    public function setAvailable($available)
+    {
+        $this->container['available'] = $available;
 
         return $this;
     }
@@ -942,6 +822,126 @@ class AccountItemResponseAccountItem implements ModelInterface, ArrayAccess, \Js
         }
 
         $this->container['walletable_id'] = $walletable_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets group_name
+     *
+     * @return string|null
+     */
+    public function getGroupName()
+    {
+        return $this->container['group_name'];
+    }
+
+    /**
+     * Sets group_name
+     *
+     * @param string|null $group_name 決算書表示名（小カテゴリー）
+     *
+     * @return self
+     */
+    public function setGroupName($group_name)
+    {
+        $this->container['group_name'] = $group_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets corresponding_income_name
+     *
+     * @return string|null
+     */
+    public function getCorrespondingIncomeName()
+    {
+        return $this->container['corresponding_income_name'];
+    }
+
+    /**
+     * Sets corresponding_income_name
+     *
+     * @param string|null $corresponding_income_name 収入取引相手勘定科目名
+     *
+     * @return self
+     */
+    public function setCorrespondingIncomeName($corresponding_income_name)
+    {
+        $this->container['corresponding_income_name'] = $corresponding_income_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets corresponding_income_id
+     *
+     * @return int|null
+     */
+    public function getCorrespondingIncomeId()
+    {
+        return $this->container['corresponding_income_id'];
+    }
+
+    /**
+     * Sets corresponding_income_id
+     *
+     * @param int|null $corresponding_income_id 収入取引相手勘定科目ID
+     *
+     * @return self
+     */
+    public function setCorrespondingIncomeId($corresponding_income_id)
+    {
+        $this->container['corresponding_income_id'] = $corresponding_income_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets corresponding_expense_name
+     *
+     * @return string|null
+     */
+    public function getCorrespondingExpenseName()
+    {
+        return $this->container['corresponding_expense_name'];
+    }
+
+    /**
+     * Sets corresponding_expense_name
+     *
+     * @param string|null $corresponding_expense_name 支出取引相手勘定科目名
+     *
+     * @return self
+     */
+    public function setCorrespondingExpenseName($corresponding_expense_name)
+    {
+        $this->container['corresponding_expense_name'] = $corresponding_expense_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets corresponding_expense_id
+     *
+     * @return int|null
+     */
+    public function getCorrespondingExpenseId()
+    {
+        return $this->container['corresponding_expense_id'];
+    }
+
+    /**
+     * Sets corresponding_expense_id
+     *
+     * @param int|null $corresponding_expense_id 支出取引相手勘定科目ID
+     *
+     * @return self
+     */
+    public function setCorrespondingExpenseId($corresponding_expense_id)
+    {
+        $this->container['corresponding_expense_id'] = $corresponding_expense_id;
 
         return $this;
     }

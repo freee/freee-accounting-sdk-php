@@ -59,7 +59,8 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'taxes' => '\Freee\Accounting\Model\Tax[]'
+        'walletables' => '\Freee\Accounting\Model\Walletable[]',
+        'meta' => '\Freee\Accounting\Model\InlineResponse2009Meta'
     ];
 
     /**
@@ -70,7 +71,8 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'taxes' => null
+        'walletables' => null,
+        'meta' => null
     ];
 
     /**
@@ -100,7 +102,8 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'taxes' => 'taxes'
+        'walletables' => 'walletables',
+        'meta' => 'meta'
     ];
 
     /**
@@ -109,7 +112,8 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'taxes' => 'setTaxes'
+        'walletables' => 'setWalletables',
+        'meta' => 'setMeta'
     ];
 
     /**
@@ -118,7 +122,8 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'taxes' => 'getTaxes'
+        'walletables' => 'getWalletables',
+        'meta' => 'getMeta'
     ];
 
     /**
@@ -178,7 +183,8 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['taxes'] = $data['taxes'] ?? null;
+        $this->container['walletables'] = $data['walletables'] ?? null;
+        $this->container['meta'] = $data['meta'] ?? null;
     }
 
     /**
@@ -190,8 +196,8 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['taxes'] === null) {
-            $invalidProperties[] = "'taxes' can't be null";
+        if ($this->container['walletables'] === null) {
+            $invalidProperties[] = "'walletables' can't be null";
         }
         return $invalidProperties;
     }
@@ -209,25 +215,49 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets taxes
+     * Gets walletables
      *
-     * @return \Freee\Accounting\Model\Tax[]
+     * @return \Freee\Accounting\Model\Walletable[]
      */
-    public function getTaxes()
+    public function getWalletables()
     {
-        return $this->container['taxes'];
+        return $this->container['walletables'];
     }
 
     /**
-     * Sets taxes
+     * Sets walletables
      *
-     * @param \Freee\Accounting\Model\Tax[] $taxes taxes
+     * @param \Freee\Accounting\Model\Walletable[] $walletables walletables
      *
      * @return self
      */
-    public function setTaxes($taxes)
+    public function setWalletables($walletables)
     {
-        $this->container['taxes'] = $taxes;
+        $this->container['walletables'] = $walletables;
+
+        return $this;
+    }
+
+    /**
+     * Gets meta
+     *
+     * @return \Freee\Accounting\Model\InlineResponse2009Meta|null
+     */
+    public function getMeta()
+    {
+        return $this->container['meta'];
+    }
+
+    /**
+     * Sets meta
+     *
+     * @param \Freee\Accounting\Model\InlineResponse2009Meta|null $meta meta
+     *
+     * @return self
+     */
+    public function setMeta($meta)
+    {
+        $this->container['meta'] = $meta;
 
         return $this;
     }

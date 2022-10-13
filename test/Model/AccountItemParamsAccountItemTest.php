@@ -80,81 +80,9 @@ class AccountItemParamsAccountItemTest extends TestCase
     }
 
     /**
-     * Test attribute "account_category_id"
-     */
-    public function testPropertyAccountCategoryId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "accumulated_dep_account_item_id"
-     */
-    public function testPropertyAccumulatedDepAccountItemId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "corresponding_expense_id"
-     */
-    public function testPropertyCorrespondingExpenseId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "corresponding_income_id"
-     */
-    public function testPropertyCorrespondingIncomeId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "group_name"
-     */
-    public function testPropertyGroupName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "items"
-     */
-    public function testPropertyItems()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "name"
      */
     public function testPropertyName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partners"
-     */
-    public function testPropertyPartners()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "searchable"
-     */
-    public function testPropertySearchable()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -182,6 +110,78 @@ class AccountItemParamsAccountItemTest extends TestCase
      * Test attribute "tax_code"
      */
     public function testPropertyTaxCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "group_name"
+     */
+    public function testPropertyGroupName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "account_category_id"
+     */
+    public function testPropertyAccountCategoryId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "corresponding_income_id"
+     */
+    public function testPropertyCorrespondingIncomeId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "corresponding_expense_id"
+     */
+    public function testPropertyCorrespondingExpenseId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "accumulated_dep_account_item_id"
+     */
+    public function testPropertyAccumulatedDepAccountItemId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "searchable"
+     */
+    public function testPropertySearchable()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "items"
+     */
+    public function testPropertyItems()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partners"
+     */
+    public function testPropertyPartners()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

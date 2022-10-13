@@ -80,18 +80,9 @@ class WalletTxnTest extends TestCase
     }
 
     /**
-     * Test attribute "amount"
+     * Test attribute "id"
      */
-    public function testPropertyAmount()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "balance"
-     */
-    public function testPropertyBalance()
+    public function testPropertyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -116,9 +107,9 @@ class WalletTxnTest extends TestCase
     }
 
     /**
-     * Test attribute "description"
+     * Test attribute "amount"
      */
-    public function testPropertyDescription()
+    public function testPropertyAmount()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -134,6 +125,15 @@ class WalletTxnTest extends TestCase
     }
 
     /**
+     * Test attribute "balance"
+     */
+    public function testPropertyBalance()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "entry_side"
      */
     public function testPropertyEntrySide()
@@ -143,27 +143,9 @@ class WalletTxnTest extends TestCase
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "walletable_type"
      */
-    public function testPropertyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "rule_matched"
-     */
-    public function testPropertyRuleMatched()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "status"
-     */
-    public function testPropertyStatus()
+    public function testPropertyWalletableType()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -179,9 +161,27 @@ class WalletTxnTest extends TestCase
     }
 
     /**
-     * Test attribute "walletable_type"
+     * Test attribute "description"
      */
-    public function testPropertyWalletableType()
+    public function testPropertyDescription()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "status"
+     */
+    public function testPropertyStatus()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "rule_matched"
+     */
+    public function testPropertyRuleMatched()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

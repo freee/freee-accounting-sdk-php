@@ -125,7 +125,7 @@ class JournalsApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
+     * @return string|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
      */
     public function downloadJournal($id, $company_id)
     {
@@ -143,7 +143,7 @@ class JournalsApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of string|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function downloadJournalWithHttpInfo($id, $company_id)
     {
@@ -186,14 +186,14 @@ class JournalsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\SplFileObject' === '\SplFileObject') {
+                    if ('string' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\SplFileObject', []),
+                        ObjectSerializer::deserialize($content, 'string', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -259,7 +259,7 @@ class JournalsApi
                     ];
             }
 
-            $returnType = '\SplFileObject';
+            $returnType = 'string';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -277,7 +277,7 @@ class JournalsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SplFileObject',
+                        'string',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -361,7 +361,7 @@ class JournalsApi
      */
     public function downloadJournalAsyncWithHttpInfo($id, $company_id)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'string';
         $request = $this->downloadJournalRequest($id, $company_id);
 
         return $this->client
@@ -467,11 +467,11 @@ class JournalsApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/pdf', 'text/csv', 'application/json']
+                ['text/csv', 'application/pdf', 'application/json']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/pdf', 'text/csv', 'application/json'],
+                ['text/csv', 'application/pdf', 'application/json'],
                 []
             );
         }

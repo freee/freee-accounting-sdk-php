@@ -89,18 +89,18 @@ class SegmentTagParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "description"
+     * Test attribute "name"
      */
-    public function testPropertyDescription()
+    public function testPropertyName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "description"
      */
-    public function testPropertyName()
+    public function testPropertyDescription()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

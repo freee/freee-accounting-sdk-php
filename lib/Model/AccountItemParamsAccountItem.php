@@ -59,18 +59,18 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'account_category_id' => 'int',
-        'accumulated_dep_account_item_id' => 'int',
-        'corresponding_expense_id' => 'int',
-        'corresponding_income_id' => 'int',
-        'group_name' => 'string',
-        'items' => '\Freee\Accounting\Model\AccountItemParamsAccountItemItems[]',
         'name' => 'string',
-        'partners' => '\Freee\Accounting\Model\AccountItemParamsAccountItemItems[]',
-        'searchable' => 'int',
         'shortcut' => 'string',
         'shortcut_num' => 'string',
-        'tax_code' => 'int'
+        'tax_code' => 'int',
+        'group_name' => 'string',
+        'account_category_id' => 'int',
+        'corresponding_income_id' => 'int',
+        'corresponding_expense_id' => 'int',
+        'accumulated_dep_account_item_id' => 'int',
+        'searchable' => 'int',
+        'items' => '\Freee\Accounting\Model\AccountItemParamsAccountItemItems[]',
+        'partners' => '\Freee\Accounting\Model\AccountItemParamsAccountItemItems[]'
     ];
 
     /**
@@ -81,18 +81,18 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'account_category_id' => null,
-        'accumulated_dep_account_item_id' => null,
-        'corresponding_expense_id' => null,
-        'corresponding_income_id' => null,
-        'group_name' => null,
-        'items' => null,
         'name' => null,
-        'partners' => null,
-        'searchable' => null,
         'shortcut' => null,
         'shortcut_num' => null,
-        'tax_code' => null
+        'tax_code' => null,
+        'group_name' => null,
+        'account_category_id' => null,
+        'corresponding_income_id' => null,
+        'corresponding_expense_id' => null,
+        'accumulated_dep_account_item_id' => null,
+        'searchable' => null,
+        'items' => null,
+        'partners' => null
     ];
 
     /**
@@ -122,18 +122,18 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'account_category_id' => 'account_category_id',
-        'accumulated_dep_account_item_id' => 'accumulated_dep_account_item_id',
-        'corresponding_expense_id' => 'corresponding_expense_id',
-        'corresponding_income_id' => 'corresponding_income_id',
-        'group_name' => 'group_name',
-        'items' => 'items',
         'name' => 'name',
-        'partners' => 'partners',
-        'searchable' => 'searchable',
         'shortcut' => 'shortcut',
         'shortcut_num' => 'shortcut_num',
-        'tax_code' => 'tax_code'
+        'tax_code' => 'tax_code',
+        'group_name' => 'group_name',
+        'account_category_id' => 'account_category_id',
+        'corresponding_income_id' => 'corresponding_income_id',
+        'corresponding_expense_id' => 'corresponding_expense_id',
+        'accumulated_dep_account_item_id' => 'accumulated_dep_account_item_id',
+        'searchable' => 'searchable',
+        'items' => 'items',
+        'partners' => 'partners'
     ];
 
     /**
@@ -142,18 +142,18 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'account_category_id' => 'setAccountCategoryId',
-        'accumulated_dep_account_item_id' => 'setAccumulatedDepAccountItemId',
-        'corresponding_expense_id' => 'setCorrespondingExpenseId',
-        'corresponding_income_id' => 'setCorrespondingIncomeId',
-        'group_name' => 'setGroupName',
-        'items' => 'setItems',
         'name' => 'setName',
-        'partners' => 'setPartners',
-        'searchable' => 'setSearchable',
         'shortcut' => 'setShortcut',
         'shortcut_num' => 'setShortcutNum',
-        'tax_code' => 'setTaxCode'
+        'tax_code' => 'setTaxCode',
+        'group_name' => 'setGroupName',
+        'account_category_id' => 'setAccountCategoryId',
+        'corresponding_income_id' => 'setCorrespondingIncomeId',
+        'corresponding_expense_id' => 'setCorrespondingExpenseId',
+        'accumulated_dep_account_item_id' => 'setAccumulatedDepAccountItemId',
+        'searchable' => 'setSearchable',
+        'items' => 'setItems',
+        'partners' => 'setPartners'
     ];
 
     /**
@@ -162,18 +162,18 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'account_category_id' => 'getAccountCategoryId',
-        'accumulated_dep_account_item_id' => 'getAccumulatedDepAccountItemId',
-        'corresponding_expense_id' => 'getCorrespondingExpenseId',
-        'corresponding_income_id' => 'getCorrespondingIncomeId',
-        'group_name' => 'getGroupName',
-        'items' => 'getItems',
         'name' => 'getName',
-        'partners' => 'getPartners',
-        'searchable' => 'getSearchable',
         'shortcut' => 'getShortcut',
         'shortcut_num' => 'getShortcutNum',
-        'tax_code' => 'getTaxCode'
+        'tax_code' => 'getTaxCode',
+        'group_name' => 'getGroupName',
+        'account_category_id' => 'getAccountCategoryId',
+        'corresponding_income_id' => 'getCorrespondingIncomeId',
+        'corresponding_expense_id' => 'getCorrespondingExpenseId',
+        'accumulated_dep_account_item_id' => 'getAccumulatedDepAccountItemId',
+        'searchable' => 'getSearchable',
+        'items' => 'getItems',
+        'partners' => 'getPartners'
     ];
 
     /**
@@ -233,18 +233,18 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(array $data = null)
     {
-        $this->container['account_category_id'] = $data['account_category_id'] ?? null;
-        $this->container['accumulated_dep_account_item_id'] = $data['accumulated_dep_account_item_id'] ?? null;
-        $this->container['corresponding_expense_id'] = $data['corresponding_expense_id'] ?? null;
-        $this->container['corresponding_income_id'] = $data['corresponding_income_id'] ?? null;
-        $this->container['group_name'] = $data['group_name'] ?? null;
-        $this->container['items'] = $data['items'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['partners'] = $data['partners'] ?? null;
-        $this->container['searchable'] = $data['searchable'] ?? null;
         $this->container['shortcut'] = $data['shortcut'] ?? null;
         $this->container['shortcut_num'] = $data['shortcut_num'] ?? null;
         $this->container['tax_code'] = $data['tax_code'] ?? null;
+        $this->container['group_name'] = $data['group_name'] ?? null;
+        $this->container['account_category_id'] = $data['account_category_id'] ?? null;
+        $this->container['corresponding_income_id'] = $data['corresponding_income_id'] ?? null;
+        $this->container['corresponding_expense_id'] = $data['corresponding_expense_id'] ?? null;
+        $this->container['accumulated_dep_account_item_id'] = $data['accumulated_dep_account_item_id'] ?? null;
+        $this->container['searchable'] = $data['searchable'] ?? null;
+        $this->container['items'] = $data['items'] ?? null;
+        $this->container['partners'] = $data['partners'] ?? null;
     }
 
     /**
@@ -256,39 +256,11 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
-        if ($this->container['account_category_id'] === null) {
-            $invalidProperties[] = "'account_category_id' can't be null";
-        }
-        if (($this->container['account_category_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'account_category_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['account_category_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'account_category_id', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['corresponding_expense_id'] === null) {
-            $invalidProperties[] = "'corresponding_expense_id' can't be null";
-        }
-        if ($this->container['corresponding_income_id'] === null) {
-            $invalidProperties[] = "'corresponding_income_id' can't be null";
-        }
-        if ($this->container['group_name'] === null) {
-            $invalidProperties[] = "'group_name' can't be null";
-        }
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
         if ((mb_strlen($this->container['name']) > 30)) {
             $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 30.";
-        }
-
-        if (!is_null($this->container['searchable']) && ($this->container['searchable'] > 3)) {
-            $invalidProperties[] = "invalid value for 'searchable', must be smaller than or equal to 3.";
-        }
-
-        if (!is_null($this->container['searchable']) && ($this->container['searchable'] < 2)) {
-            $invalidProperties[] = "invalid value for 'searchable', must be bigger than or equal to 2.";
         }
 
         if (!is_null($this->container['shortcut']) && (mb_strlen($this->container['shortcut']) > 20)) {
@@ -310,6 +282,34 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess, \Json
             $invalidProperties[] = "invalid value for 'tax_code', must be bigger than or equal to 0.";
         }
 
+        if ($this->container['group_name'] === null) {
+            $invalidProperties[] = "'group_name' can't be null";
+        }
+        if ($this->container['account_category_id'] === null) {
+            $invalidProperties[] = "'account_category_id' can't be null";
+        }
+        if (($this->container['account_category_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'account_category_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['account_category_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'account_category_id', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['corresponding_income_id'] === null) {
+            $invalidProperties[] = "'corresponding_income_id' can't be null";
+        }
+        if ($this->container['corresponding_expense_id'] === null) {
+            $invalidProperties[] = "'corresponding_expense_id' can't be null";
+        }
+        if (!is_null($this->container['searchable']) && ($this->container['searchable'] > 3)) {
+            $invalidProperties[] = "invalid value for 'searchable', must be smaller than or equal to 3.";
+        }
+
+        if (!is_null($this->container['searchable']) && ($this->container['searchable'] < 2)) {
+            $invalidProperties[] = "invalid value for 'searchable', must be bigger than or equal to 2.";
+        }
+
         return $invalidProperties;
     }
 
@@ -324,158 +324,6 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess, \Json
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets account_category_id
-     *
-     * @return int
-     */
-    public function getAccountCategoryId()
-    {
-        return $this->container['account_category_id'];
-    }
-
-    /**
-     * Sets account_category_id
-     *
-     * @param int $account_category_id 勘定科目カテゴリーID Selectablesフォーム用選択項目情報エンドポイント(account_groups.account_category_id)で取得可能です
-     *
-     * @return self
-     */
-    public function setAccountCategoryId($account_category_id)
-    {
-
-        if (($account_category_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $account_category_id when calling AccountItemParamsAccountItem., must be smaller than or equal to 2147483647.');
-        }
-        if (($account_category_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $account_category_id when calling AccountItemParamsAccountItem., must be bigger than or equal to 1.');
-        }
-
-        $this->container['account_category_id'] = $account_category_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets accumulated_dep_account_item_id
-     *
-     * @return int|null
-     */
-    public function getAccumulatedDepAccountItemId()
-    {
-        return $this->container['accumulated_dep_account_item_id'];
-    }
-
-    /**
-     * Sets accumulated_dep_account_item_id
-     *
-     * @param int|null $accumulated_dep_account_item_id 減価償却累計額勘定科目ID（法人のみ利用可能）
-     *
-     * @return self
-     */
-    public function setAccumulatedDepAccountItemId($accumulated_dep_account_item_id)
-    {
-        $this->container['accumulated_dep_account_item_id'] = $accumulated_dep_account_item_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets corresponding_expense_id
-     *
-     * @return int
-     */
-    public function getCorrespondingExpenseId()
-    {
-        return $this->container['corresponding_expense_id'];
-    }
-
-    /**
-     * Sets corresponding_expense_id
-     *
-     * @param int $corresponding_expense_id 支出取引相手勘定科目ID
-     *
-     * @return self
-     */
-    public function setCorrespondingExpenseId($corresponding_expense_id)
-    {
-        $this->container['corresponding_expense_id'] = $corresponding_expense_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets corresponding_income_id
-     *
-     * @return int
-     */
-    public function getCorrespondingIncomeId()
-    {
-        return $this->container['corresponding_income_id'];
-    }
-
-    /**
-     * Sets corresponding_income_id
-     *
-     * @param int $corresponding_income_id 収入取引相手勘定科目ID
-     *
-     * @return self
-     */
-    public function setCorrespondingIncomeId($corresponding_income_id)
-    {
-        $this->container['corresponding_income_id'] = $corresponding_income_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets group_name
-     *
-     * @return string
-     */
-    public function getGroupName()
-    {
-        return $this->container['group_name'];
-    }
-
-    /**
-     * Sets group_name
-     *
-     * @param string $group_name 決算書表示名（小カテゴリー） Selectablesフォーム用選択項目情報エンドポイント(account_groups.name)で取得可能です
-     *
-     * @return self
-     */
-    public function setGroupName($group_name)
-    {
-        $this->container['group_name'] = $group_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets items
-     *
-     * @return \Freee\Accounting\Model\AccountItemParamsAccountItemItems[]|null
-     */
-    public function getItems()
-    {
-        return $this->container['items'];
-    }
-
-    /**
-     * Sets items
-     *
-     * @param \Freee\Accounting\Model\AccountItemParamsAccountItemItems[]|null $items 品目
-     *
-     * @return self
-     */
-    public function setItems($items)
-    {
-        $this->container['items'] = $items;
-
-        return $this;
-    }
 
     /**
      * Gets name
@@ -501,62 +349,6 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess, \Json
         }
 
         $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets partners
-     *
-     * @return \Freee\Accounting\Model\AccountItemParamsAccountItemItems[]|null
-     */
-    public function getPartners()
-    {
-        return $this->container['partners'];
-    }
-
-    /**
-     * Sets partners
-     *
-     * @param \Freee\Accounting\Model\AccountItemParamsAccountItemItems[]|null $partners 取引先
-     *
-     * @return self
-     */
-    public function setPartners($partners)
-    {
-        $this->container['partners'] = $partners;
-
-        return $this;
-    }
-
-    /**
-     * Gets searchable
-     *
-     * @return int|null
-     */
-    public function getSearchable()
-    {
-        return $this->container['searchable'];
-    }
-
-    /**
-     * Sets searchable
-     *
-     * @param int|null $searchable 検索可能:2, 検索不可：3(登録時未指定の場合は2で登録されます。更新時未指定の場合はsearchableは変更されません。)
-     *
-     * @return self
-     */
-    public function setSearchable($searchable)
-    {
-
-        if (!is_null($searchable) && ($searchable > 3)) {
-            throw new \InvalidArgumentException('invalid value for $searchable when calling AccountItemParamsAccountItem., must be smaller than or equal to 3.');
-        }
-        if (!is_null($searchable) && ($searchable < 2)) {
-            throw new \InvalidArgumentException('invalid value for $searchable when calling AccountItemParamsAccountItem., must be bigger than or equal to 2.');
-        }
-
-        $this->container['searchable'] = $searchable;
 
         return $this;
     }
@@ -645,6 +437,214 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess, \Json
         }
 
         $this->container['tax_code'] = $tax_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets group_name
+     *
+     * @return string
+     */
+    public function getGroupName()
+    {
+        return $this->container['group_name'];
+    }
+
+    /**
+     * Sets group_name
+     *
+     * @param string $group_name 決算書表示名（小カテゴリー） Selectablesフォーム用選択項目情報エンドポイント(account_groups.name)で取得可能です
+     *
+     * @return self
+     */
+    public function setGroupName($group_name)
+    {
+        $this->container['group_name'] = $group_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets account_category_id
+     *
+     * @return int
+     */
+    public function getAccountCategoryId()
+    {
+        return $this->container['account_category_id'];
+    }
+
+    /**
+     * Sets account_category_id
+     *
+     * @param int $account_category_id 勘定科目カテゴリーID Selectablesフォーム用選択項目情報エンドポイント(account_groups.account_category_id)で取得可能です
+     *
+     * @return self
+     */
+    public function setAccountCategoryId($account_category_id)
+    {
+
+        if (($account_category_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $account_category_id when calling AccountItemParamsAccountItem., must be smaller than or equal to 2147483647.');
+        }
+        if (($account_category_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $account_category_id when calling AccountItemParamsAccountItem., must be bigger than or equal to 1.');
+        }
+
+        $this->container['account_category_id'] = $account_category_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets corresponding_income_id
+     *
+     * @return int
+     */
+    public function getCorrespondingIncomeId()
+    {
+        return $this->container['corresponding_income_id'];
+    }
+
+    /**
+     * Sets corresponding_income_id
+     *
+     * @param int $corresponding_income_id 収入取引相手勘定科目ID
+     *
+     * @return self
+     */
+    public function setCorrespondingIncomeId($corresponding_income_id)
+    {
+        $this->container['corresponding_income_id'] = $corresponding_income_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets corresponding_expense_id
+     *
+     * @return int
+     */
+    public function getCorrespondingExpenseId()
+    {
+        return $this->container['corresponding_expense_id'];
+    }
+
+    /**
+     * Sets corresponding_expense_id
+     *
+     * @param int $corresponding_expense_id 支出取引相手勘定科目ID
+     *
+     * @return self
+     */
+    public function setCorrespondingExpenseId($corresponding_expense_id)
+    {
+        $this->container['corresponding_expense_id'] = $corresponding_expense_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets accumulated_dep_account_item_id
+     *
+     * @return int|null
+     */
+    public function getAccumulatedDepAccountItemId()
+    {
+        return $this->container['accumulated_dep_account_item_id'];
+    }
+
+    /**
+     * Sets accumulated_dep_account_item_id
+     *
+     * @param int|null $accumulated_dep_account_item_id 減価償却累計額勘定科目ID（法人のみ利用可能）
+     *
+     * @return self
+     */
+    public function setAccumulatedDepAccountItemId($accumulated_dep_account_item_id)
+    {
+        $this->container['accumulated_dep_account_item_id'] = $accumulated_dep_account_item_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets searchable
+     *
+     * @return int|null
+     */
+    public function getSearchable()
+    {
+        return $this->container['searchable'];
+    }
+
+    /**
+     * Sets searchable
+     *
+     * @param int|null $searchable 検索可能:2, 検索不可：3(登録時未指定の場合は2で登録されます。更新時未指定の場合はsearchableは変更されません。)
+     *
+     * @return self
+     */
+    public function setSearchable($searchable)
+    {
+
+        if (!is_null($searchable) && ($searchable > 3)) {
+            throw new \InvalidArgumentException('invalid value for $searchable when calling AccountItemParamsAccountItem., must be smaller than or equal to 3.');
+        }
+        if (!is_null($searchable) && ($searchable < 2)) {
+            throw new \InvalidArgumentException('invalid value for $searchable when calling AccountItemParamsAccountItem., must be bigger than or equal to 2.');
+        }
+
+        $this->container['searchable'] = $searchable;
+
+        return $this;
+    }
+
+    /**
+     * Gets items
+     *
+     * @return \Freee\Accounting\Model\AccountItemParamsAccountItemItems[]|null
+     */
+    public function getItems()
+    {
+        return $this->container['items'];
+    }
+
+    /**
+     * Sets items
+     *
+     * @param \Freee\Accounting\Model\AccountItemParamsAccountItemItems[]|null $items 品目
+     *
+     * @return self
+     */
+    public function setItems($items)
+    {
+        $this->container['items'] = $items;
+
+        return $this;
+    }
+
+    /**
+     * Gets partners
+     *
+     * @return \Freee\Accounting\Model\AccountItemParamsAccountItemItems[]|null
+     */
+    public function getPartners()
+    {
+        return $this->container['partners'];
+    }
+
+    /**
+     * Sets partners
+     *
+     * @param \Freee\Accounting\Model\AccountItemParamsAccountItemItems[]|null $partners 取引先
+     *
+     * @return self
+     */
+    public function setPartners($partners)
+    {
+        $this->container['partners'] = $partners;
 
         return $this;
     }

@@ -89,18 +89,18 @@ class CompaniesPlanResponseTest extends TestCase
     }
 
     /**
-     * Test attribute "org_code"
+     * Test attribute "plan"
      */
-    public function testPropertyOrgCode()
+    public function testPropertyPlan()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "plan"
+     * Test attribute "org_code"
      */
-    public function testPropertyPlan()
+    public function testPropertyOrgCode()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

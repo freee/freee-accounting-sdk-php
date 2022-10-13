@@ -59,11 +59,11 @@ class MeResponseUserCompanies implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'advisor_id' => 'int',
-        'display_name' => 'string',
         'id' => 'int',
+        'display_name' => 'string',
         'role' => 'string',
-        'use_custom_role' => 'bool'
+        'use_custom_role' => 'bool',
+        'advisor_id' => 'int'
     ];
 
     /**
@@ -74,11 +74,11 @@ class MeResponseUserCompanies implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'advisor_id' => null,
-        'display_name' => null,
         'id' => null,
+        'display_name' => null,
         'role' => null,
-        'use_custom_role' => null
+        'use_custom_role' => null,
+        'advisor_id' => null
     ];
 
     /**
@@ -108,11 +108,11 @@ class MeResponseUserCompanies implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'advisor_id' => 'advisor_id',
-        'display_name' => 'display_name',
         'id' => 'id',
+        'display_name' => 'display_name',
         'role' => 'role',
-        'use_custom_role' => 'use_custom_role'
+        'use_custom_role' => 'use_custom_role',
+        'advisor_id' => 'advisor_id'
     ];
 
     /**
@@ -121,11 +121,11 @@ class MeResponseUserCompanies implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'advisor_id' => 'setAdvisorId',
-        'display_name' => 'setDisplayName',
         'id' => 'setId',
+        'display_name' => 'setDisplayName',
         'role' => 'setRole',
-        'use_custom_role' => 'setUseCustomRole'
+        'use_custom_role' => 'setUseCustomRole',
+        'advisor_id' => 'setAdvisorId'
     ];
 
     /**
@@ -134,11 +134,11 @@ class MeResponseUserCompanies implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'advisor_id' => 'getAdvisorId',
-        'display_name' => 'getDisplayName',
         'id' => 'getId',
+        'display_name' => 'getDisplayName',
         'role' => 'getRole',
-        'use_custom_role' => 'getUseCustomRole'
+        'use_custom_role' => 'getUseCustomRole',
+        'advisor_id' => 'getAdvisorId'
     ];
 
     /**
@@ -219,11 +219,11 @@ class MeResponseUserCompanies implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
-        $this->container['advisor_id'] = $data['advisor_id'] ?? null;
-        $this->container['display_name'] = $data['display_name'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
+        $this->container['display_name'] = $data['display_name'] ?? null;
         $this->container['role'] = $data['role'] ?? null;
         $this->container['use_custom_role'] = $data['use_custom_role'] ?? null;
+        $this->container['advisor_id'] = $data['advisor_id'] ?? null;
     }
 
     /**
@@ -235,17 +235,6 @@ class MeResponseUserCompanies implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['advisor_id']) && ($this->container['advisor_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'advisor_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (!is_null($this->container['advisor_id']) && ($this->container['advisor_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'advisor_id', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['display_name'] === null) {
-            $invalidProperties[] = "'display_name' can't be null";
-        }
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
@@ -257,6 +246,9 @@ class MeResponseUserCompanies implements ModelInterface, ArrayAccess, \JsonSeria
             $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
         }
 
+        if ($this->container['display_name'] === null) {
+            $invalidProperties[] = "'display_name' can't be null";
+        }
         if ($this->container['role'] === null) {
             $invalidProperties[] = "'role' can't be null";
         }
@@ -272,6 +264,14 @@ class MeResponseUserCompanies implements ModelInterface, ArrayAccess, \JsonSeria
         if ($this->container['use_custom_role'] === null) {
             $invalidProperties[] = "'use_custom_role' can't be null";
         }
+        if (!is_null($this->container['advisor_id']) && ($this->container['advisor_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'advisor_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (!is_null($this->container['advisor_id']) && ($this->container['advisor_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'advisor_id', must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -286,62 +286,6 @@ class MeResponseUserCompanies implements ModelInterface, ArrayAccess, \JsonSeria
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets advisor_id
-     *
-     * @return int|null
-     */
-    public function getAdvisorId()
-    {
-        return $this->container['advisor_id'];
-    }
-
-    /**
-     * Sets advisor_id
-     *
-     * @param int|null $advisor_id アドバイザープロファイルID（アドバイザー事業所で無い場合にnullになります）
-     *
-     * @return self
-     */
-    public function setAdvisorId($advisor_id)
-    {
-
-        if (!is_null($advisor_id) && ($advisor_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $advisor_id when calling MeResponseUserCompanies., must be smaller than or equal to 2147483647.');
-        }
-        if (!is_null($advisor_id) && ($advisor_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $advisor_id when calling MeResponseUserCompanies., must be bigger than or equal to 1.');
-        }
-
-        $this->container['advisor_id'] = $advisor_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets display_name
-     *
-     * @return string
-     */
-    public function getDisplayName()
-    {
-        return $this->container['display_name'];
-    }
-
-    /**
-     * Sets display_name
-     *
-     * @param string $display_name 表示名
-     *
-     * @return self
-     */
-    public function setDisplayName($display_name)
-    {
-        $this->container['display_name'] = $display_name;
-
-        return $this;
-    }
 
     /**
      * Gets id
@@ -371,6 +315,30 @@ class MeResponseUserCompanies implements ModelInterface, ArrayAccess, \JsonSeria
         }
 
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets display_name
+     *
+     * @return string
+     */
+    public function getDisplayName()
+    {
+        return $this->container['display_name'];
+    }
+
+    /**
+     * Sets display_name
+     *
+     * @param string $display_name 表示名
+     *
+     * @return self
+     */
+    public function setDisplayName($display_name)
+    {
+        $this->container['display_name'] = $display_name;
 
         return $this;
     }
@@ -429,6 +397,38 @@ class MeResponseUserCompanies implements ModelInterface, ArrayAccess, \JsonSeria
     public function setUseCustomRole($use_custom_role)
     {
         $this->container['use_custom_role'] = $use_custom_role;
+
+        return $this;
+    }
+
+    /**
+     * Gets advisor_id
+     *
+     * @return int|null
+     */
+    public function getAdvisorId()
+    {
+        return $this->container['advisor_id'];
+    }
+
+    /**
+     * Sets advisor_id
+     *
+     * @param int|null $advisor_id アドバイザープロファイルID（アドバイザー事業所で無い場合にnullになります）
+     *
+     * @return self
+     */
+    public function setAdvisorId($advisor_id)
+    {
+
+        if (!is_null($advisor_id) && ($advisor_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $advisor_id when calling MeResponseUserCompanies., must be smaller than or equal to 2147483647.');
+        }
+        if (!is_null($advisor_id) && ($advisor_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $advisor_id when calling MeResponseUserCompanies., must be bigger than or equal to 1.');
+        }
+
+        $this->container['advisor_id'] = $advisor_id;
 
         return $this;
     }

@@ -80,6 +80,15 @@ class DealCreateParamsDetailsTest extends TestCase
     }
 
     /**
+     * Test attribute "tax_code"
+     */
+    public function testPropertyTaxCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "account_item_id"
      */
     public function testPropertyAccountItemId()
@@ -98,15 +107,6 @@ class DealCreateParamsDetailsTest extends TestCase
     }
 
     /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "item_id"
      */
     public function testPropertyItemId()
@@ -119,6 +119,15 @@ class DealCreateParamsDetailsTest extends TestCase
      * Test attribute "section_id"
      */
     public function testPropertySectionId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tag_ids"
+     */
+    public function testPropertyTagIds()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -152,18 +161,9 @@ class DealCreateParamsDetailsTest extends TestCase
     }
 
     /**
-     * Test attribute "tag_ids"
+     * Test attribute "description"
      */
-    public function testPropertyTagIds()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "tax_code"
-     */
-    public function testPropertyTaxCode()
+    public function testPropertyDescription()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -59,17 +59,17 @@ class DealUpdateParamsDetails implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
+        'id' => 'int',
+        'tax_code' => 'int',
         'account_item_id' => 'int',
         'amount' => 'int',
-        'description' => 'string',
-        'id' => 'int',
         'item_id' => 'int',
         'section_id' => 'int',
+        'tag_ids' => 'int[]',
         'segment_1_tag_id' => 'int',
         'segment_2_tag_id' => 'int',
         'segment_3_tag_id' => 'int',
-        'tag_ids' => 'int[]',
-        'tax_code' => 'int',
+        'description' => 'string',
         'vat' => 'int'
     ];
 
@@ -81,17 +81,17 @@ class DealUpdateParamsDetails implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'id' => 'int64',
+        'tax_code' => null,
         'account_item_id' => null,
         'amount' => 'int64',
-        'description' => null,
-        'id' => 'int64',
         'item_id' => null,
         'section_id' => null,
+        'tag_ids' => null,
         'segment_1_tag_id' => 'int64',
         'segment_2_tag_id' => 'int64',
         'segment_3_tag_id' => 'int64',
-        'tag_ids' => null,
-        'tax_code' => null,
+        'description' => null,
         'vat' => null
     ];
 
@@ -122,17 +122,17 @@ class DealUpdateParamsDetails implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
+        'tax_code' => 'tax_code',
         'account_item_id' => 'account_item_id',
         'amount' => 'amount',
-        'description' => 'description',
-        'id' => 'id',
         'item_id' => 'item_id',
         'section_id' => 'section_id',
+        'tag_ids' => 'tag_ids',
         'segment_1_tag_id' => 'segment_1_tag_id',
         'segment_2_tag_id' => 'segment_2_tag_id',
         'segment_3_tag_id' => 'segment_3_tag_id',
-        'tag_ids' => 'tag_ids',
-        'tax_code' => 'tax_code',
+        'description' => 'description',
         'vat' => 'vat'
     ];
 
@@ -142,17 +142,17 @@ class DealUpdateParamsDetails implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
+        'tax_code' => 'setTaxCode',
         'account_item_id' => 'setAccountItemId',
         'amount' => 'setAmount',
-        'description' => 'setDescription',
-        'id' => 'setId',
         'item_id' => 'setItemId',
         'section_id' => 'setSectionId',
+        'tag_ids' => 'setTagIds',
         'segment_1_tag_id' => 'setSegment1TagId',
         'segment_2_tag_id' => 'setSegment2TagId',
         'segment_3_tag_id' => 'setSegment3TagId',
-        'tag_ids' => 'setTagIds',
-        'tax_code' => 'setTaxCode',
+        'description' => 'setDescription',
         'vat' => 'setVat'
     ];
 
@@ -162,17 +162,17 @@ class DealUpdateParamsDetails implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
+        'tax_code' => 'getTaxCode',
         'account_item_id' => 'getAccountItemId',
         'amount' => 'getAmount',
-        'description' => 'getDescription',
-        'id' => 'getId',
         'item_id' => 'getItemId',
         'section_id' => 'getSectionId',
+        'tag_ids' => 'getTagIds',
         'segment_1_tag_id' => 'getSegment1TagId',
         'segment_2_tag_id' => 'getSegment2TagId',
         'segment_3_tag_id' => 'getSegment3TagId',
-        'tag_ids' => 'getTagIds',
-        'tax_code' => 'getTaxCode',
+        'description' => 'getDescription',
         'vat' => 'getVat'
     ];
 
@@ -233,17 +233,17 @@ class DealUpdateParamsDetails implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['tax_code'] = $data['tax_code'] ?? null;
         $this->container['account_item_id'] = $data['account_item_id'] ?? null;
         $this->container['amount'] = $data['amount'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
-        $this->container['id'] = $data['id'] ?? null;
         $this->container['item_id'] = $data['item_id'] ?? null;
         $this->container['section_id'] = $data['section_id'] ?? null;
+        $this->container['tag_ids'] = $data['tag_ids'] ?? null;
         $this->container['segment_1_tag_id'] = $data['segment_1_tag_id'] ?? null;
         $this->container['segment_2_tag_id'] = $data['segment_2_tag_id'] ?? null;
         $this->container['segment_3_tag_id'] = $data['segment_3_tag_id'] ?? null;
-        $this->container['tag_ids'] = $data['tag_ids'] ?? null;
-        $this->container['tax_code'] = $data['tax_code'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
         $this->container['vat'] = $data['vat'] ?? null;
     }
 
@@ -255,6 +255,25 @@ class DealUpdateParamsDetails implements ModelInterface, ArrayAccess, \JsonSeria
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if (!is_null($this->container['id']) && ($this->container['id'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 9223372036854775807.";
+        }
+
+        if (!is_null($this->container['id']) && ($this->container['id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['tax_code'] === null) {
+            $invalidProperties[] = "'tax_code' can't be null";
+        }
+        if (($this->container['tax_code'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'tax_code', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['tax_code'] < 0)) {
+            $invalidProperties[] = "invalid value for 'tax_code', must be bigger than or equal to 0.";
+        }
 
         if ($this->container['account_item_id'] === null) {
             $invalidProperties[] = "'account_item_id' can't be null";
@@ -276,14 +295,6 @@ class DealUpdateParamsDetails implements ModelInterface, ArrayAccess, \JsonSeria
 
         if (($this->container['amount'] < -9223372036854775808)) {
             $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to -9223372036854775808.";
-        }
-
-        if (!is_null($this->container['id']) && ($this->container['id'] > 9223372036854775807)) {
-            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 9223372036854775807.";
-        }
-
-        if (!is_null($this->container['id']) && ($this->container['id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['item_id']) && ($this->container['item_id'] > 2147483647)) {
@@ -326,17 +337,6 @@ class DealUpdateParamsDetails implements ModelInterface, ArrayAccess, \JsonSeria
             $invalidProperties[] = "invalid value for 'segment_3_tag_id', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['tax_code'] === null) {
-            $invalidProperties[] = "'tax_code' can't be null";
-        }
-        if (($this->container['tax_code'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'tax_code', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['tax_code'] < 0)) {
-            $invalidProperties[] = "invalid value for 'tax_code', must be bigger than or equal to 0.";
-        }
-
         return $invalidProperties;
     }
 
@@ -351,6 +351,70 @@ class DealUpdateParamsDetails implements ModelInterface, ArrayAccess, \JsonSeria
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets id
+     *
+     * @return int|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int|null $id 取引行ID: 既存取引行を更新する場合に指定します。IDを指定しない取引行は、新規行として扱われ追加されます。また、detailsに含まれない既存の取引行は削除されます。更新後も残したい行は、必ず取引行IDを指定してdetailsに含めてください。
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+
+        if (!is_null($id) && ($id > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling DealUpdateParamsDetails., must be smaller than or equal to 9223372036854775807.');
+        }
+        if (!is_null($id) && ($id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling DealUpdateParamsDetails., must be bigger than or equal to 1.');
+        }
+
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_code
+     *
+     * @return int
+     */
+    public function getTaxCode()
+    {
+        return $this->container['tax_code'];
+    }
+
+    /**
+     * Sets tax_code
+     *
+     * @param int $tax_code 税区分コード
+     *
+     * @return self
+     */
+    public function setTaxCode($tax_code)
+    {
+
+        if (($tax_code > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling DealUpdateParamsDetails., must be smaller than or equal to 2147483647.');
+        }
+        if (($tax_code < 0)) {
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling DealUpdateParamsDetails., must be bigger than or equal to 0.');
+        }
+
+        $this->container['tax_code'] = $tax_code;
+
+        return $this;
+    }
 
     /**
      * Gets account_item_id
@@ -417,62 +481,6 @@ class DealUpdateParamsDetails implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets description
-     *
-     * @return string|null
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string|null $description 備考
-     *
-     * @return self
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return int|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int|null $id 取引行ID: 既存取引行を更新する場合に指定します。IDを指定しない取引行は、新規行として扱われ追加されます。また、detailsに含まれない既存の取引行は削除されます。更新後も残したい行は、必ず取引行IDを指定してdetailsに含めてください。
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-
-        if (!is_null($id) && ($id > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling DealUpdateParamsDetails., must be smaller than or equal to 9223372036854775807.');
-        }
-        if (!is_null($id) && ($id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling DealUpdateParamsDetails., must be bigger than or equal to 1.');
-        }
-
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
      * Gets item_id
      *
      * @return int|null
@@ -532,6 +540,30 @@ class DealUpdateParamsDetails implements ModelInterface, ArrayAccess, \JsonSeria
         }
 
         $this->container['section_id'] = $section_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets tag_ids
+     *
+     * @return int[]|null
+     */
+    public function getTagIds()
+    {
+        return $this->container['tag_ids'];
+    }
+
+    /**
+     * Sets tag_ids
+     *
+     * @param int[]|null $tag_ids メモタグID
+     *
+     * @return self
+     */
+    public function setTagIds($tag_ids)
+    {
+        $this->container['tag_ids'] = $tag_ids;
 
         return $this;
     }
@@ -633,57 +665,25 @@ class DealUpdateParamsDetails implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets tag_ids
+     * Gets description
      *
-     * @return int[]|null
+     * @return string|null
      */
-    public function getTagIds()
+    public function getDescription()
     {
-        return $this->container['tag_ids'];
+        return $this->container['description'];
     }
 
     /**
-     * Sets tag_ids
+     * Sets description
      *
-     * @param int[]|null $tag_ids メモタグID
+     * @param string|null $description 備考
      *
      * @return self
      */
-    public function setTagIds($tag_ids)
+    public function setDescription($description)
     {
-        $this->container['tag_ids'] = $tag_ids;
-
-        return $this;
-    }
-
-    /**
-     * Gets tax_code
-     *
-     * @return int
-     */
-    public function getTaxCode()
-    {
-        return $this->container['tax_code'];
-    }
-
-    /**
-     * Sets tax_code
-     *
-     * @param int $tax_code 税区分コード
-     *
-     * @return self
-     */
-    public function setTaxCode($tax_code)
-    {
-
-        if (($tax_code > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $tax_code when calling DealUpdateParamsDetails., must be smaller than or equal to 2147483647.');
-        }
-        if (($tax_code < 0)) {
-            throw new \InvalidArgumentException('invalid value for $tax_code when calling DealUpdateParamsDetails., must be bigger than or equal to 0.');
-        }
-
-        $this->container['tax_code'] = $tax_code;
+        $this->container['description'] = $description;
 
         return $this;
     }

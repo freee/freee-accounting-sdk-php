@@ -80,9 +80,9 @@ class ManualJournalTest extends TestCase
     }
 
     /**
-     * Test attribute "adjustment"
+     * Test attribute "id"
      */
-    public function testPropertyAdjustment()
+    public function testPropertyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -98,24 +98,6 @@ class ManualJournalTest extends TestCase
     }
 
     /**
-     * Test attribute "details"
-     */
-    public function testPropertyDetails()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "issue_date"
      */
     public function testPropertyIssueDate()
@@ -125,9 +107,9 @@ class ManualJournalTest extends TestCase
     }
 
     /**
-     * Test attribute "receipt_ids"
+     * Test attribute "adjustment"
      */
-    public function testPropertyReceiptIds()
+    public function testPropertyAdjustment()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -137,6 +119,24 @@ class ManualJournalTest extends TestCase
      * Test attribute "txn_number"
      */
     public function testPropertyTxnNumber()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "details"
+     */
+    public function testPropertyDetails()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "receipt_ids"
+     */
+    public function testPropertyReceiptIds()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

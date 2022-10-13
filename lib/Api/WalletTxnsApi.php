@@ -1195,7 +1195,7 @@ class WalletTxnsApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\InlineResponse20014|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError
+     * @return \Freee\Accounting\Model\InlineResponse20013|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError
      */
     public function getWalletTxns($company_id, $walletable_type = null, $walletable_id = null, $start_date = null, $end_date = null, $entry_side = null, $offset = null, $limit = null)
     {
@@ -1219,7 +1219,7 @@ class WalletTxnsApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\InlineResponse20014|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Freee\Accounting\Model\InlineResponse20013|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWalletTxnsWithHttpInfo($company_id, $walletable_type = null, $walletable_id = null, $start_date = null, $end_date = null, $entry_side = null, $offset = null, $limit = null)
     {
@@ -1262,14 +1262,14 @@ class WalletTxnsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Freee\Accounting\Model\InlineResponse20014' === '\SplFileObject') {
+                    if ('\Freee\Accounting\Model\InlineResponse20013' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InlineResponse20014', []),
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InlineResponse20013', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1323,7 +1323,7 @@ class WalletTxnsApi
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\InlineResponse20014';
+            $returnType = '\Freee\Accounting\Model\InlineResponse20013';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1341,7 +1341,7 @@ class WalletTxnsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InlineResponse20014',
+                        '\Freee\Accounting\Model\InlineResponse20013',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1429,7 +1429,7 @@ class WalletTxnsApi
      */
     public function getWalletTxnsAsyncWithHttpInfo($company_id, $walletable_type = null, $walletable_id = null, $start_date = null, $end_date = null, $entry_side = null, $offset = null, $limit = null)
     {
-        $returnType = '\Freee\Accounting\Model\InlineResponse20014';
+        $returnType = '\Freee\Accounting\Model\InlineResponse20013';
         $request = $this->getWalletTxnsRequest($company_id, $walletable_type, $walletable_id, $start_date, $end_date, $entry_side, $offset, $limit);
 
         return $this->client

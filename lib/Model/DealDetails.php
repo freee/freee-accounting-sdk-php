@@ -59,19 +59,19 @@ class DealDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'account_item_id' => 'int',
-        'amount' => 'int',
-        'description' => 'string',
-        'entry_side' => 'string',
         'id' => 'int',
+        'entry_side' => 'string',
+        'account_item_id' => 'int',
+        'tax_code' => 'int',
         'item_id' => 'int',
         'section_id' => 'int',
+        'tag_ids' => 'int[]',
         'segment_1_tag_id' => 'int',
         'segment_2_tag_id' => 'int',
         'segment_3_tag_id' => 'int',
-        'tag_ids' => 'int[]',
-        'tax_code' => 'int',
-        'vat' => 'int'
+        'amount' => 'int',
+        'vat' => 'int',
+        'description' => 'string'
     ];
 
     /**
@@ -82,19 +82,19 @@ class DealDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'account_item_id' => null,
-        'amount' => 'int64',
-        'description' => null,
-        'entry_side' => null,
         'id' => 'int64',
+        'entry_side' => null,
+        'account_item_id' => null,
+        'tax_code' => null,
         'item_id' => null,
         'section_id' => null,
+        'tag_ids' => null,
         'segment_1_tag_id' => 'int64',
         'segment_2_tag_id' => 'int64',
         'segment_3_tag_id' => 'int64',
-        'tag_ids' => null,
-        'tax_code' => null,
-        'vat' => null
+        'amount' => 'int64',
+        'vat' => null,
+        'description' => null
     ];
 
     /**
@@ -124,19 +124,19 @@ class DealDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'account_item_id' => 'account_item_id',
-        'amount' => 'amount',
-        'description' => 'description',
-        'entry_side' => 'entry_side',
         'id' => 'id',
+        'entry_side' => 'entry_side',
+        'account_item_id' => 'account_item_id',
+        'tax_code' => 'tax_code',
         'item_id' => 'item_id',
         'section_id' => 'section_id',
+        'tag_ids' => 'tag_ids',
         'segment_1_tag_id' => 'segment_1_tag_id',
         'segment_2_tag_id' => 'segment_2_tag_id',
         'segment_3_tag_id' => 'segment_3_tag_id',
-        'tag_ids' => 'tag_ids',
-        'tax_code' => 'tax_code',
-        'vat' => 'vat'
+        'amount' => 'amount',
+        'vat' => 'vat',
+        'description' => 'description'
     ];
 
     /**
@@ -145,19 +145,19 @@ class DealDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'account_item_id' => 'setAccountItemId',
-        'amount' => 'setAmount',
-        'description' => 'setDescription',
-        'entry_side' => 'setEntrySide',
         'id' => 'setId',
+        'entry_side' => 'setEntrySide',
+        'account_item_id' => 'setAccountItemId',
+        'tax_code' => 'setTaxCode',
         'item_id' => 'setItemId',
         'section_id' => 'setSectionId',
+        'tag_ids' => 'setTagIds',
         'segment_1_tag_id' => 'setSegment1TagId',
         'segment_2_tag_id' => 'setSegment2TagId',
         'segment_3_tag_id' => 'setSegment3TagId',
-        'tag_ids' => 'setTagIds',
-        'tax_code' => 'setTaxCode',
-        'vat' => 'setVat'
+        'amount' => 'setAmount',
+        'vat' => 'setVat',
+        'description' => 'setDescription'
     ];
 
     /**
@@ -166,19 +166,19 @@ class DealDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'account_item_id' => 'getAccountItemId',
-        'amount' => 'getAmount',
-        'description' => 'getDescription',
-        'entry_side' => 'getEntrySide',
         'id' => 'getId',
+        'entry_side' => 'getEntrySide',
+        'account_item_id' => 'getAccountItemId',
+        'tax_code' => 'getTaxCode',
         'item_id' => 'getItemId',
         'section_id' => 'getSectionId',
+        'tag_ids' => 'getTagIds',
         'segment_1_tag_id' => 'getSegment1TagId',
         'segment_2_tag_id' => 'getSegment2TagId',
         'segment_3_tag_id' => 'getSegment3TagId',
-        'tag_ids' => 'getTagIds',
-        'tax_code' => 'getTaxCode',
-        'vat' => 'getVat'
+        'amount' => 'getAmount',
+        'vat' => 'getVat',
+        'description' => 'getDescription'
     ];
 
     /**
@@ -253,19 +253,19 @@ class DealDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['account_item_id'] = $data['account_item_id'] ?? null;
-        $this->container['amount'] = $data['amount'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
-        $this->container['entry_side'] = $data['entry_side'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
+        $this->container['entry_side'] = $data['entry_side'] ?? null;
+        $this->container['account_item_id'] = $data['account_item_id'] ?? null;
+        $this->container['tax_code'] = $data['tax_code'] ?? null;
         $this->container['item_id'] = $data['item_id'] ?? null;
         $this->container['section_id'] = $data['section_id'] ?? null;
+        $this->container['tag_ids'] = $data['tag_ids'] ?? null;
         $this->container['segment_1_tag_id'] = $data['segment_1_tag_id'] ?? null;
         $this->container['segment_2_tag_id'] = $data['segment_2_tag_id'] ?? null;
         $this->container['segment_3_tag_id'] = $data['segment_3_tag_id'] ?? null;
-        $this->container['tag_ids'] = $data['tag_ids'] ?? null;
-        $this->container['tax_code'] = $data['tax_code'] ?? null;
+        $this->container['amount'] = $data['amount'] ?? null;
         $this->container['vat'] = $data['vat'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
     }
 
     /**
@@ -277,26 +277,15 @@ class DealDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['account_item_id'] === null) {
-            $invalidProperties[] = "'account_item_id' can't be null";
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
         }
-        if (($this->container['account_item_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'account_item_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['account_item_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'account_item_id', must be bigger than or equal to 1.";
+        if (($this->container['id'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 9223372036854775807.";
         }
 
-        if ($this->container['amount'] === null) {
-            $invalidProperties[] = "'amount' can't be null";
-        }
-        if (($this->container['amount'] > 9223372036854775807)) {
-            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 9223372036854775807.";
-        }
-
-        if (($this->container['amount'] < -9223372036854775808)) {
-            $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to -9223372036854775808.";
+        if (($this->container['id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
         }
 
         if ($this->container['entry_side'] === null) {
@@ -311,15 +300,26 @@ class DealDetails implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
+        if ($this->container['account_item_id'] === null) {
+            $invalidProperties[] = "'account_item_id' can't be null";
         }
-        if (($this->container['id'] > 9223372036854775807)) {
-            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 9223372036854775807.";
+        if (($this->container['account_item_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'account_item_id', must be smaller than or equal to 2147483647.";
         }
 
-        if (($this->container['id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
+        if (($this->container['account_item_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'account_item_id', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['tax_code'] === null) {
+            $invalidProperties[] = "'tax_code' can't be null";
+        }
+        if (($this->container['tax_code'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'tax_code', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['tax_code'] < 0)) {
+            $invalidProperties[] = "invalid value for 'tax_code', must be bigger than or equal to 0.";
         }
 
         if (!is_null($this->container['item_id']) && ($this->container['item_id'] > 2147483647)) {
@@ -338,6 +338,9 @@ class DealDetails implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'section_id', must be bigger than or equal to 1.";
         }
 
+        if ($this->container['tag_ids'] === null) {
+            $invalidProperties[] = "'tag_ids' can't be null";
+        }
         if (!is_null($this->container['segment_1_tag_id']) && ($this->container['segment_1_tag_id'] > 9223372036854775807)) {
             $invalidProperties[] = "invalid value for 'segment_1_tag_id', must be smaller than or equal to 9223372036854775807.";
         }
@@ -362,15 +365,15 @@ class DealDetails implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'segment_3_tag_id', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['tax_code'] === null) {
-            $invalidProperties[] = "'tax_code' can't be null";
+        if ($this->container['amount'] === null) {
+            $invalidProperties[] = "'amount' can't be null";
         }
-        if (($this->container['tax_code'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'tax_code', must be smaller than or equal to 2147483647.";
+        if (($this->container['amount'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 9223372036854775807.";
         }
 
-        if (($this->container['tax_code'] < 0)) {
-            $invalidProperties[] = "invalid value for 'tax_code', must be bigger than or equal to 0.";
+        if (($this->container['amount'] < -9223372036854775808)) {
+            $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to -9223372036854775808.";
         }
 
         if ($this->container['vat'] === null) {
@@ -390,6 +393,72 @@ class DealDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int $id +更新の明細行ID
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+
+        if (($id > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling DealDetails., must be smaller than or equal to 9223372036854775807.');
+        }
+        if (($id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling DealDetails., must be bigger than or equal to 1.');
+        }
+
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets entry_side
+     *
+     * @return string
+     */
+    public function getEntrySide()
+    {
+        return $this->container['entry_side'];
+    }
+
+    /**
+     * Sets entry_side
+     *
+     * @param string $entry_side 貸借(貸方: credit, 借方: debit)
+     *
+     * @return self
+     */
+    public function setEntrySide($entry_side)
+    {
+        $allowedValues = $this->getEntrySideAllowableValues();
+        if (!in_array($entry_side, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'entry_side', must be one of '%s'",
+                    $entry_side,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['entry_side'] = $entry_side;
+
+        return $this;
+    }
 
     /**
      * Gets account_item_id
@@ -424,123 +493,33 @@ class DealDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets amount
+     * Gets tax_code
      *
      * @return int
      */
-    public function getAmount()
+    public function getTaxCode()
     {
-        return $this->container['amount'];
+        return $this->container['tax_code'];
     }
 
     /**
-     * Sets amount
+     * Sets tax_code
      *
-     * @param int $amount 取引金額
+     * @param int $tax_code 税区分コード
      *
      * @return self
      */
-    public function setAmount($amount)
+    public function setTaxCode($tax_code)
     {
 
-        if (($amount > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling DealDetails., must be smaller than or equal to 9223372036854775807.');
+        if (($tax_code > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling DealDetails., must be smaller than or equal to 2147483647.');
         }
-        if (($amount < -9223372036854775808)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling DealDetails., must be bigger than or equal to -9223372036854775808.');
-        }
-
-        $this->container['amount'] = $amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string|null
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string|null $description 備考
-     *
-     * @return self
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets entry_side
-     *
-     * @return string
-     */
-    public function getEntrySide()
-    {
-        return $this->container['entry_side'];
-    }
-
-    /**
-     * Sets entry_side
-     *
-     * @param string $entry_side 貸借（貸方: credit, 借方: debit）
-     *
-     * @return self
-     */
-    public function setEntrySide($entry_side)
-    {
-        $allowedValues = $this->getEntrySideAllowableValues();
-        if (!in_array($entry_side, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'entry_side', must be one of '%s'",
-                    $entry_side,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['entry_side'] = $entry_side;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int $id 取引行ID
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-
-        if (($id > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling DealDetails., must be smaller than or equal to 9223372036854775807.');
-        }
-        if (($id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling DealDetails., must be bigger than or equal to 1.');
+        if (($tax_code < 0)) {
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling DealDetails., must be bigger than or equal to 0.');
         }
 
-        $this->container['id'] = $id;
+        $this->container['tax_code'] = $tax_code;
 
         return $this;
     }
@@ -605,6 +584,30 @@ class DealDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['section_id'] = $section_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets tag_ids
+     *
+     * @return int[]
+     */
+    public function getTagIds()
+    {
+        return $this->container['tag_ids'];
+    }
+
+    /**
+     * Sets tag_ids
+     *
+     * @param int[] $tag_ids tag_ids
+     *
+     * @return self
+     */
+    public function setTagIds($tag_ids)
+    {
+        $this->container['tag_ids'] = $tag_ids;
 
         return $this;
     }
@@ -706,57 +709,33 @@ class DealDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets tag_ids
-     *
-     * @return int[]|null
-     */
-    public function getTagIds()
-    {
-        return $this->container['tag_ids'];
-    }
-
-    /**
-     * Sets tag_ids
-     *
-     * @param int[]|null $tag_ids メモタグID
-     *
-     * @return self
-     */
-    public function setTagIds($tag_ids)
-    {
-        $this->container['tag_ids'] = $tag_ids;
-
-        return $this;
-    }
-
-    /**
-     * Gets tax_code
+     * Gets amount
      *
      * @return int
      */
-    public function getTaxCode()
+    public function getAmount()
     {
-        return $this->container['tax_code'];
+        return $this->container['amount'];
     }
 
     /**
-     * Sets tax_code
+     * Sets amount
      *
-     * @param int $tax_code 税区分コード
+     * @param int $amount 金額（税込で指定してください）
      *
      * @return self
      */
-    public function setTaxCode($tax_code)
+    public function setAmount($amount)
     {
 
-        if (($tax_code > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $tax_code when calling DealDetails., must be smaller than or equal to 2147483647.');
+        if (($amount > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling DealDetails., must be smaller than or equal to 9223372036854775807.');
         }
-        if (($tax_code < 0)) {
-            throw new \InvalidArgumentException('invalid value for $tax_code when calling DealDetails., must be bigger than or equal to 0.');
+        if (($amount < -9223372036854775808)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling DealDetails., must be bigger than or equal to -9223372036854775808.');
         }
 
-        $this->container['tax_code'] = $tax_code;
+        $this->container['amount'] = $amount;
 
         return $this;
     }
@@ -774,13 +753,37 @@ class DealDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets vat
      *
-     * @param int $vat 消費税額
+     * @param int $vat 消費税額（指定しない場合は自動で計算されます）
      *
      * @return self
      */
     public function setVat($vat)
     {
         $this->container['vat'] = $vat;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string|null $description 備考
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
 
         return $this;
     }

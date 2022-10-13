@@ -80,6 +80,24 @@ class ManualJournalCreateParamsDetailsTest extends TestCase
     }
 
     /**
+     * Test attribute "entry_side"
+     */
+    public function testPropertyEntrySide()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tax_code"
+     */
+    public function testPropertyTaxCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "account_item_id"
      */
     public function testPropertyAccountItemId()
@@ -98,36 +116,9 @@ class ManualJournalCreateParamsDetailsTest extends TestCase
     }
 
     /**
-     * Test attribute "description"
+     * Test attribute "vat"
      */
-    public function testPropertyDescription()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "entry_side"
-     */
-    public function testPropertyEntrySide()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "item_id"
-     */
-    public function testPropertyItemId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partner_code"
-     */
-    public function testPropertyPartnerCode()
+    public function testPropertyVat()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -143,9 +134,36 @@ class ManualJournalCreateParamsDetailsTest extends TestCase
     }
 
     /**
+     * Test attribute "partner_code"
+     */
+    public function testPropertyPartnerCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "item_id"
+     */
+    public function testPropertyItemId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "section_id"
      */
     public function testPropertySectionId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tag_ids"
+     */
+    public function testPropertyTagIds()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -179,27 +197,9 @@ class ManualJournalCreateParamsDetailsTest extends TestCase
     }
 
     /**
-     * Test attribute "tag_ids"
+     * Test attribute "description"
      */
-    public function testPropertyTagIds()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "tax_code"
-     */
-    public function testPropertyTaxCode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "vat"
-     */
-    public function testPropertyVat()
+    public function testPropertyDescription()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

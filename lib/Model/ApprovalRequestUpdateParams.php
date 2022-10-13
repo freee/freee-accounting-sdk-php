@@ -59,10 +59,10 @@ class ApprovalRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
+        'company_id' => 'int',
         'application_date' => 'string',
         'approval_flow_route_id' => 'int',
         'approver_id' => 'int',
-        'company_id' => 'int',
         'draft' => 'bool',
         'request_items' => '\Freee\Accounting\Model\ApprovalRequestCreateParamsRequestItems[]'
     ];
@@ -75,10 +75,10 @@ class ApprovalRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'company_id' => null,
         'application_date' => null,
         'approval_flow_route_id' => null,
         'approver_id' => null,
-        'company_id' => null,
         'draft' => null,
         'request_items' => null
     ];
@@ -110,10 +110,10 @@ class ApprovalRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $attributeMap = [
+        'company_id' => 'company_id',
         'application_date' => 'application_date',
         'approval_flow_route_id' => 'approval_flow_route_id',
         'approver_id' => 'approver_id',
-        'company_id' => 'company_id',
         'draft' => 'draft',
         'request_items' => 'request_items'
     ];
@@ -124,10 +124,10 @@ class ApprovalRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
+        'company_id' => 'setCompanyId',
         'application_date' => 'setApplicationDate',
         'approval_flow_route_id' => 'setApprovalFlowRouteId',
         'approver_id' => 'setApproverId',
-        'company_id' => 'setCompanyId',
         'draft' => 'setDraft',
         'request_items' => 'setRequestItems'
     ];
@@ -138,10 +138,10 @@ class ApprovalRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
+        'company_id' => 'getCompanyId',
         'application_date' => 'getApplicationDate',
         'approval_flow_route_id' => 'getApprovalFlowRouteId',
         'approver_id' => 'getApproverId',
-        'company_id' => 'getCompanyId',
         'draft' => 'getDraft',
         'request_items' => 'getRequestItems'
     ];
@@ -203,10 +203,10 @@ class ApprovalRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(array $data = null)
     {
+        $this->container['company_id'] = $data['company_id'] ?? null;
         $this->container['application_date'] = $data['application_date'] ?? null;
         $this->container['approval_flow_route_id'] = $data['approval_flow_route_id'] ?? null;
         $this->container['approver_id'] = $data['approver_id'] ?? null;
-        $this->container['company_id'] = $data['company_id'] ?? null;
         $this->container['draft'] = $data['draft'] ?? null;
         $this->container['request_items'] = $data['request_items'] ?? null;
     }
@@ -219,6 +219,17 @@ class ApprovalRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonS
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if ($this->container['company_id'] === null) {
+            $invalidProperties[] = "'company_id' can't be null";
+        }
+        if (($this->container['company_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['company_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
+        }
 
         if ($this->container['approval_flow_route_id'] === null) {
             $invalidProperties[] = "'approval_flow_route_id' can't be null";
@@ -237,17 +248,6 @@ class ApprovalRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonS
 
         if (!is_null($this->container['approver_id']) && ($this->container['approver_id'] < 1)) {
             $invalidProperties[] = "invalid value for 'approver_id', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['company_id'] === null) {
-            $invalidProperties[] = "'company_id' can't be null";
-        }
-        if (($this->container['company_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['company_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
         }
 
         if ($this->container['draft'] === null) {
@@ -270,6 +270,38 @@ class ApprovalRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonS
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets company_id
+     *
+     * @return int
+     */
+    public function getCompanyId()
+    {
+        return $this->container['company_id'];
+    }
+
+    /**
+     * Sets company_id
+     *
+     * @param int $company_id 事業所ID
+     *
+     * @return self
+     */
+    public function setCompanyId($company_id)
+    {
+
+        if (($company_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $company_id when calling ApprovalRequestUpdateParams., must be smaller than or equal to 2147483647.');
+        }
+        if (($company_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $company_id when calling ApprovalRequestUpdateParams., must be bigger than or equal to 1.');
+        }
+
+        $this->container['company_id'] = $company_id;
+
+        return $this;
+    }
 
     /**
      * Gets application_date
@@ -360,38 +392,6 @@ class ApprovalRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets company_id
-     *
-     * @return int
-     */
-    public function getCompanyId()
-    {
-        return $this->container['company_id'];
-    }
-
-    /**
-     * Sets company_id
-     *
-     * @param int $company_id 事業所ID
-     *
-     * @return self
-     */
-    public function setCompanyId($company_id)
-    {
-
-        if (($company_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling ApprovalRequestUpdateParams., must be smaller than or equal to 2147483647.');
-        }
-        if (($company_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling ApprovalRequestUpdateParams., must be bigger than or equal to 1.');
-        }
-
-        $this->container['company_id'] = $company_id;
-
-        return $this;
-    }
-
-    /**
      * Gets draft
      *
      * @return bool
@@ -404,7 +404,7 @@ class ApprovalRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets draft
      *
-     * @param bool $draft falseの時、in_progress:申請中で更新する。それ以外の時はdraft:下書きで更新する
+     * @param bool $draft 各種申請のステータス<br> falseを指定した時は申請中（in_progress）で各種申請を更新します。<br> trueを指定した時は下書き（draft）で各種申請を更新します。
      *
      * @return self
      */

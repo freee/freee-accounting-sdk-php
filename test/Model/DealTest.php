@@ -80,9 +80,9 @@ class DealTest extends TestCase
     }
 
     /**
-     * Test attribute "amount"
+     * Test attribute "id"
      */
-    public function testPropertyAmount()
+    public function testPropertyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -98,18 +98,9 @@ class DealTest extends TestCase
     }
 
     /**
-     * Test attribute "details"
+     * Test attribute "issue_date"
      */
-    public function testPropertyDetails()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "due_amount"
-     */
-    public function testPropertyDueAmount()
+    public function testPropertyIssueDate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -125,18 +116,36 @@ class DealTest extends TestCase
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "amount"
      */
-    public function testPropertyId()
+    public function testPropertyAmount()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "issue_date"
+     * Test attribute "due_amount"
      */
-    public function testPropertyIssueDate()
+    public function testPropertyDueAmount()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partner_id"
+     */
+    public function testPropertyPartnerId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -152,9 +161,36 @@ class DealTest extends TestCase
     }
 
     /**
-     * Test attribute "partner_id"
+     * Test attribute "ref_number"
      */
-    public function testPropertyPartnerId()
+    public function testPropertyRefNumber()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "status"
+     */
+    public function testPropertyStatus()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "details"
+     */
+    public function testPropertyDetails()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "renews"
+     */
+    public function testPropertyRenews()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -173,42 +209,6 @@ class DealTest extends TestCase
      * Test attribute "receipts"
      */
     public function testPropertyReceipts()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "ref_number"
-     */
-    public function testPropertyRefNumber()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "renews"
-     */
-    public function testPropertyRenews()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "status"
-     */
-    public function testPropertyStatus()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

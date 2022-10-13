@@ -59,9 +59,9 @@ class WalletableCreateResponseWalletable implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'bank_id' => 'int',
         'id' => 'int',
         'name' => 'string',
+        'bank_id' => 'int',
         'type' => 'string'
     ];
 
@@ -73,9 +73,9 @@ class WalletableCreateResponseWalletable implements ModelInterface, ArrayAccess,
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'bank_id' => null,
         'id' => null,
         'name' => null,
+        'bank_id' => null,
         'type' => null
     ];
 
@@ -106,9 +106,9 @@ class WalletableCreateResponseWalletable implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $attributeMap = [
-        'bank_id' => 'bank_id',
         'id' => 'id',
         'name' => 'name',
+        'bank_id' => 'bank_id',
         'type' => 'type'
     ];
 
@@ -118,9 +118,9 @@ class WalletableCreateResponseWalletable implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-        'bank_id' => 'setBankId',
         'id' => 'setId',
         'name' => 'setName',
+        'bank_id' => 'setBankId',
         'type' => 'setType'
     ];
 
@@ -130,9 +130,9 @@ class WalletableCreateResponseWalletable implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $getters = [
-        'bank_id' => 'getBankId',
         'id' => 'getId',
         'name' => 'getName',
+        'bank_id' => 'getBankId',
         'type' => 'getType'
     ];
 
@@ -210,9 +210,9 @@ class WalletableCreateResponseWalletable implements ModelInterface, ArrayAccess,
      */
     public function __construct(array $data = null)
     {
-        $this->container['bank_id'] = $data['bank_id'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['bank_id'] = $data['bank_id'] ?? null;
         $this->container['type'] = $data['type'] ?? null;
     }
 
@@ -224,17 +224,6 @@ class WalletableCreateResponseWalletable implements ModelInterface, ArrayAccess,
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        if ($this->container['bank_id'] === null) {
-            $invalidProperties[] = "'bank_id' can't be null";
-        }
-        if (($this->container['bank_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'bank_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['bank_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'bank_id', must be bigger than or equal to 1.";
-        }
 
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
@@ -250,6 +239,17 @@ class WalletableCreateResponseWalletable implements ModelInterface, ArrayAccess,
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
+        if ($this->container['bank_id'] === null) {
+            $invalidProperties[] = "'bank_id' can't be null";
+        }
+        if (($this->container['bank_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'bank_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['bank_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'bank_id', must be bigger than or equal to 1.";
+        }
+
         if ($this->container['type'] === null) {
             $invalidProperties[] = "'type' can't be null";
         }
@@ -276,38 +276,6 @@ class WalletableCreateResponseWalletable implements ModelInterface, ArrayAccess,
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets bank_id
-     *
-     * @return int
-     */
-    public function getBankId()
-    {
-        return $this->container['bank_id'];
-    }
-
-    /**
-     * Sets bank_id
-     *
-     * @param int $bank_id 連携サービスID（typeにbank_account、credit_cardを指定する場合は必須）
-     *
-     * @return self
-     */
-    public function setBankId($bank_id)
-    {
-
-        if (($bank_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $bank_id when calling WalletableCreateResponseWalletable., must be smaller than or equal to 2147483647.');
-        }
-        if (($bank_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $bank_id when calling WalletableCreateResponseWalletable., must be bigger than or equal to 1.');
-        }
-
-        $this->container['bank_id'] = $bank_id;
-
-        return $this;
-    }
 
     /**
      * Gets id
@@ -361,6 +329,38 @@ class WalletableCreateResponseWalletable implements ModelInterface, ArrayAccess,
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets bank_id
+     *
+     * @return int
+     */
+    public function getBankId()
+    {
+        return $this->container['bank_id'];
+    }
+
+    /**
+     * Sets bank_id
+     *
+     * @param int $bank_id 連携サービスID（typeにbank_account、credit_cardを指定する場合は必須）
+     *
+     * @return self
+     */
+    public function setBankId($bank_id)
+    {
+
+        if (($bank_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $bank_id when calling WalletableCreateResponseWalletable., must be smaller than or equal to 2147483647.');
+        }
+        if (($bank_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $bank_id when calling WalletableCreateResponseWalletable., must be bigger than or equal to 1.');
+        }
+
+        $this->container['bank_id'] = $bank_id;
 
         return $this;
     }

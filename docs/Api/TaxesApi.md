@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 ## `getTaxCodes()`
 
 ```php
-getTaxCodes(): \Freee\Accounting\Model\InlineResponse2009
+getTaxCodes(): \Freee\Accounting\Model\InlineResponse2007
 ```
 
 税区分コード一覧の取得
@@ -107,7 +107,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse2009**](../Model/InlineResponse2009.md)
+[**\Freee\Accounting\Model\InlineResponse2007**](../Model/InlineResponse2007.md)
 
 ### Authorization
 
@@ -125,7 +125,7 @@ This endpoint does not need any parameter.
 ## `getTaxesCompanies()`
 
 ```php
-getTaxesCompanies($company_id): \Freee\Accounting\Model\InlineResponse20010
+getTaxesCompanies($company_id): \Freee\Accounting\Model\InlineResponse2008
 ```
 
 税区分コード詳細一覧の取得
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse20010**](../Model/InlineResponse20010.md)
+[**\Freee\Accounting\Model\InlineResponse2008**](../Model/InlineResponse2008.md)
 
 ### Authorization
 

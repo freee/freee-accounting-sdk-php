@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 ## `getTags()`
 
 ```php
-getTags($company_id, $start_update_date, $end_update_date, $offset, $limit): \Freee\Accounting\Model\InlineResponse2008
+getTags($company_id, $start_update_date, $end_update_date, $offset, $limit): \Freee\Accounting\Model\InlineResponse200
 ```
 
 メモタグ一覧の取得
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse2008**](../Model/InlineResponse2008.md)
+[**\Freee\Accounting\Model\InlineResponse200**](../Model/InlineResponse200.md)
 
 ### Authorization
 

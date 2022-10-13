@@ -80,9 +80,18 @@ class SelectablesIndexResponseAccountItemsTest extends TestCase
     }
 
     /**
-     * Test attribute "default_tax"
+     * Test attribute "id"
      */
-    public function testPropertyDefaultTax()
+    public function testPropertyId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -107,27 +116,18 @@ class SelectablesIndexResponseAccountItemsTest extends TestCase
     }
 
     /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "name"
-     */
-    public function testPropertyName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "shortcut"
      */
     public function testPropertyShortcut()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "default_tax"
+     */
+    public function testPropertyDefaultTax()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

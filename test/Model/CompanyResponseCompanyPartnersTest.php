@@ -80,18 +80,18 @@ class CompanyResponseCompanyPartnersTest extends TestCase
     }
 
     /**
-     * Test attribute "code"
+     * Test attribute "id"
      */
-    public function testPropertyCode()
+    public function testPropertyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "code"
      */
-    public function testPropertyId()
+    public function testPropertyCode()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

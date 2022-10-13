@@ -80,18 +80,18 @@ class AccountItemParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "account_item"
+     * Test attribute "company_id"
      */
-    public function testPropertyAccountItem()
+    public function testPropertyCompanyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "company_id"
+     * Test attribute "account_item"
      */
-    public function testPropertyCompanyId()
+    public function testPropertyAccountItem()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

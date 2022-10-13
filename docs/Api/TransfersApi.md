@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 ## `getTransfers()`
 
 ```php
-getTransfers($company_id, $start_date, $end_date, $offset, $limit): \Freee\Accounting\Model\InlineResponse20011
+getTransfers($company_id, $start_date, $end_date, $offset, $limit): \Freee\Accounting\Model\InlineResponse20012
 ```
 
 取引（振替）一覧の取得
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse20011**](../Model/InlineResponse20011.md)
+[**\Freee\Accounting\Model\InlineResponse20012**](../Model/InlineResponse20012.md)
 
 ### Authorization
 

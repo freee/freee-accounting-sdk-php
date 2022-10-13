@@ -508,7 +508,7 @@ class BanksApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\InlineResponse200|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError
+     * @return \Freee\Accounting\Model\InlineResponse20011|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError
      */
     public function getBanks($offset = null, $limit = null, $type = null)
     {
@@ -527,7 +527,7 @@ class BanksApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\InlineResponse200|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Freee\Accounting\Model\InlineResponse20011|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBanksWithHttpInfo($offset = null, $limit = null, $type = null)
     {
@@ -570,14 +570,14 @@ class BanksApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Freee\Accounting\Model\InlineResponse200' === '\SplFileObject') {
+                    if ('\Freee\Accounting\Model\InlineResponse20011' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InlineResponse200', []),
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InlineResponse20011', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -631,7 +631,7 @@ class BanksApi
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\InlineResponse200';
+            $returnType = '\Freee\Accounting\Model\InlineResponse20011';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -649,7 +649,7 @@ class BanksApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InlineResponse200',
+                        '\Freee\Accounting\Model\InlineResponse20011',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -727,7 +727,7 @@ class BanksApi
      */
     public function getBanksAsyncWithHttpInfo($offset = null, $limit = null, $type = null)
     {
-        $returnType = '\Freee\Accounting\Model\InlineResponse200';
+        $returnType = '\Freee\Accounting\Model\InlineResponse20011';
         $request = $this->getBanksRequest($offset, $limit, $type);
 
         return $this->client

@@ -80,9 +80,18 @@ class InlineResponse2002Test extends TestCase
     }
 
     /**
-     * Test attribute "expense_application_line_templates"
+     * Test attribute "deals"
      */
-    public function testPropertyExpenseApplicationLineTemplates()
+    public function testPropertyDeals()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "meta"
+     */
+    public function testPropertyMeta()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

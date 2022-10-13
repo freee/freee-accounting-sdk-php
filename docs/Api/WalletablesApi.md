@@ -133,7 +133,7 @@ void (empty response body)
 ## `getWalletable()`
 
 ```php
-getWalletable($id, $type, $company_id): \Freee\Accounting\Model\InlineResponse20016
+getWalletable($id, $type, $company_id): \Freee\Accounting\Model\InlineResponse20010
 ```
 
 口座情報の取得
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
+[**\Freee\Accounting\Model\InlineResponse20010**](../Model/InlineResponse20010.md)
 
 ### Authorization
 
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 ## `getWalletables()`
 
 ```php
-getWalletables($company_id, $with_balance, $type): \Freee\Accounting\Model\InlineResponse20015
+getWalletables($company_id, $with_balance, $type): \Freee\Accounting\Model\InlineResponse2009
 ```
 
 口座一覧の取得
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\Freee\Accounting\Model\InlineResponse2009**](../Model/InlineResponse2009.md)
 
 ### Authorization
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 ## `updateWalletable()`
 
 ```php
-updateWalletable($id, $type, $walletable_update_params): \Freee\Accounting\Model\InlineResponse20016
+updateWalletable($id, $type, $walletable_update_params): \Freee\Accounting\Model\InlineResponse20010
 ```
 
 口座の更新
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
+[**\Freee\Accounting\Model\InlineResponse20010**](../Model/InlineResponse20010.md)
 
 ### Authorization
 

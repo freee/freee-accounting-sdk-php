@@ -59,24 +59,24 @@ class TrialBsResponseTrialBsBalances implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'account_category_name' => 'string',
-        'account_group_name' => 'string',
         'account_item_id' => 'int',
         'account_item_name' => 'string',
-        'closing_balance' => 'int',
-        'composition_ratio' => 'float',
-        'credit_amount' => 'int',
-        'debit_amount' => 'int',
-        'hierarchy_level' => 'int',
-        'items' => '\Freee\Accounting\Model\TrialBsResponseTrialBsItems[]',
-        'opening_balance' => 'int',
-        'parent_account_category_name' => 'string',
+        'account_group_name' => 'string',
         'partners' => '\Freee\Accounting\Model\TrialBsResponseTrialBsPartners[]',
+        'items' => '\Freee\Accounting\Model\TrialBsResponseTrialBsItems[]',
         'sections' => '\Freee\Accounting\Model\TrialBsResponseTrialBsSections[]',
         'segment_1_tags' => '\Freee\Accounting\Model\TrialBsResponseTrialBsSegment1Tags[]',
         'segment_2_tags' => '\Freee\Accounting\Model\TrialBsResponseTrialBsSegment2Tags[]',
         'segment_3_tags' => '\Freee\Accounting\Model\TrialBsResponseTrialBsSegment3Tags[]',
-        'total_line' => 'bool'
+        'account_category_name' => 'string',
+        'total_line' => 'bool',
+        'hierarchy_level' => 'int',
+        'parent_account_category_name' => 'string',
+        'opening_balance' => 'int',
+        'debit_amount' => 'int',
+        'credit_amount' => 'int',
+        'closing_balance' => 'int',
+        'composition_ratio' => 'float'
     ];
 
     /**
@@ -87,24 +87,24 @@ class TrialBsResponseTrialBsBalances implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'account_category_name' => null,
-        'account_group_name' => null,
         'account_item_id' => null,
         'account_item_name' => null,
-        'closing_balance' => null,
-        'composition_ratio' => null,
-        'credit_amount' => null,
-        'debit_amount' => null,
-        'hierarchy_level' => null,
-        'items' => null,
-        'opening_balance' => null,
-        'parent_account_category_name' => null,
+        'account_group_name' => null,
         'partners' => null,
+        'items' => null,
         'sections' => null,
         'segment_1_tags' => null,
         'segment_2_tags' => null,
         'segment_3_tags' => null,
-        'total_line' => null
+        'account_category_name' => null,
+        'total_line' => null,
+        'hierarchy_level' => null,
+        'parent_account_category_name' => null,
+        'opening_balance' => null,
+        'debit_amount' => null,
+        'credit_amount' => null,
+        'closing_balance' => null,
+        'composition_ratio' => null
     ];
 
     /**
@@ -134,24 +134,24 @@ class TrialBsResponseTrialBsBalances implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $attributeMap = [
-        'account_category_name' => 'account_category_name',
-        'account_group_name' => 'account_group_name',
         'account_item_id' => 'account_item_id',
         'account_item_name' => 'account_item_name',
-        'closing_balance' => 'closing_balance',
-        'composition_ratio' => 'composition_ratio',
-        'credit_amount' => 'credit_amount',
-        'debit_amount' => 'debit_amount',
-        'hierarchy_level' => 'hierarchy_level',
-        'items' => 'items',
-        'opening_balance' => 'opening_balance',
-        'parent_account_category_name' => 'parent_account_category_name',
+        'account_group_name' => 'account_group_name',
         'partners' => 'partners',
+        'items' => 'items',
         'sections' => 'sections',
         'segment_1_tags' => 'segment_1_tags',
         'segment_2_tags' => 'segment_2_tags',
         'segment_3_tags' => 'segment_3_tags',
-        'total_line' => 'total_line'
+        'account_category_name' => 'account_category_name',
+        'total_line' => 'total_line',
+        'hierarchy_level' => 'hierarchy_level',
+        'parent_account_category_name' => 'parent_account_category_name',
+        'opening_balance' => 'opening_balance',
+        'debit_amount' => 'debit_amount',
+        'credit_amount' => 'credit_amount',
+        'closing_balance' => 'closing_balance',
+        'composition_ratio' => 'composition_ratio'
     ];
 
     /**
@@ -160,24 +160,24 @@ class TrialBsResponseTrialBsBalances implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'account_category_name' => 'setAccountCategoryName',
-        'account_group_name' => 'setAccountGroupName',
         'account_item_id' => 'setAccountItemId',
         'account_item_name' => 'setAccountItemName',
-        'closing_balance' => 'setClosingBalance',
-        'composition_ratio' => 'setCompositionRatio',
-        'credit_amount' => 'setCreditAmount',
-        'debit_amount' => 'setDebitAmount',
-        'hierarchy_level' => 'setHierarchyLevel',
-        'items' => 'setItems',
-        'opening_balance' => 'setOpeningBalance',
-        'parent_account_category_name' => 'setParentAccountCategoryName',
+        'account_group_name' => 'setAccountGroupName',
         'partners' => 'setPartners',
+        'items' => 'setItems',
         'sections' => 'setSections',
         'segment_1_tags' => 'setSegment1Tags',
         'segment_2_tags' => 'setSegment2Tags',
         'segment_3_tags' => 'setSegment3Tags',
-        'total_line' => 'setTotalLine'
+        'account_category_name' => 'setAccountCategoryName',
+        'total_line' => 'setTotalLine',
+        'hierarchy_level' => 'setHierarchyLevel',
+        'parent_account_category_name' => 'setParentAccountCategoryName',
+        'opening_balance' => 'setOpeningBalance',
+        'debit_amount' => 'setDebitAmount',
+        'credit_amount' => 'setCreditAmount',
+        'closing_balance' => 'setClosingBalance',
+        'composition_ratio' => 'setCompositionRatio'
     ];
 
     /**
@@ -186,24 +186,24 @@ class TrialBsResponseTrialBsBalances implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $getters = [
-        'account_category_name' => 'getAccountCategoryName',
-        'account_group_name' => 'getAccountGroupName',
         'account_item_id' => 'getAccountItemId',
         'account_item_name' => 'getAccountItemName',
-        'closing_balance' => 'getClosingBalance',
-        'composition_ratio' => 'getCompositionRatio',
-        'credit_amount' => 'getCreditAmount',
-        'debit_amount' => 'getDebitAmount',
-        'hierarchy_level' => 'getHierarchyLevel',
-        'items' => 'getItems',
-        'opening_balance' => 'getOpeningBalance',
-        'parent_account_category_name' => 'getParentAccountCategoryName',
+        'account_group_name' => 'getAccountGroupName',
         'partners' => 'getPartners',
+        'items' => 'getItems',
         'sections' => 'getSections',
         'segment_1_tags' => 'getSegment1Tags',
         'segment_2_tags' => 'getSegment2Tags',
         'segment_3_tags' => 'getSegment3Tags',
-        'total_line' => 'getTotalLine'
+        'account_category_name' => 'getAccountCategoryName',
+        'total_line' => 'getTotalLine',
+        'hierarchy_level' => 'getHierarchyLevel',
+        'parent_account_category_name' => 'getParentAccountCategoryName',
+        'opening_balance' => 'getOpeningBalance',
+        'debit_amount' => 'getDebitAmount',
+        'credit_amount' => 'getCreditAmount',
+        'closing_balance' => 'getClosingBalance',
+        'composition_ratio' => 'getCompositionRatio'
     ];
 
     /**
@@ -263,24 +263,24 @@ class TrialBsResponseTrialBsBalances implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(array $data = null)
     {
-        $this->container['account_category_name'] = $data['account_category_name'] ?? null;
-        $this->container['account_group_name'] = $data['account_group_name'] ?? null;
         $this->container['account_item_id'] = $data['account_item_id'] ?? null;
         $this->container['account_item_name'] = $data['account_item_name'] ?? null;
-        $this->container['closing_balance'] = $data['closing_balance'] ?? null;
-        $this->container['composition_ratio'] = $data['composition_ratio'] ?? null;
-        $this->container['credit_amount'] = $data['credit_amount'] ?? null;
-        $this->container['debit_amount'] = $data['debit_amount'] ?? null;
-        $this->container['hierarchy_level'] = $data['hierarchy_level'] ?? null;
-        $this->container['items'] = $data['items'] ?? null;
-        $this->container['opening_balance'] = $data['opening_balance'] ?? null;
-        $this->container['parent_account_category_name'] = $data['parent_account_category_name'] ?? null;
+        $this->container['account_group_name'] = $data['account_group_name'] ?? null;
         $this->container['partners'] = $data['partners'] ?? null;
+        $this->container['items'] = $data['items'] ?? null;
         $this->container['sections'] = $data['sections'] ?? null;
         $this->container['segment_1_tags'] = $data['segment_1_tags'] ?? null;
         $this->container['segment_2_tags'] = $data['segment_2_tags'] ?? null;
         $this->container['segment_3_tags'] = $data['segment_3_tags'] ?? null;
+        $this->container['account_category_name'] = $data['account_category_name'] ?? null;
         $this->container['total_line'] = $data['total_line'] ?? null;
+        $this->container['hierarchy_level'] = $data['hierarchy_level'] ?? null;
+        $this->container['parent_account_category_name'] = $data['parent_account_category_name'] ?? null;
+        $this->container['opening_balance'] = $data['opening_balance'] ?? null;
+        $this->container['debit_amount'] = $data['debit_amount'] ?? null;
+        $this->container['credit_amount'] = $data['credit_amount'] ?? null;
+        $this->container['closing_balance'] = $data['closing_balance'] ?? null;
+        $this->container['composition_ratio'] = $data['composition_ratio'] ?? null;
     }
 
     /**
@@ -314,54 +314,6 @@ class TrialBsResponseTrialBsBalances implements ModelInterface, ArrayAccess, \Js
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets account_category_name
-     *
-     * @return string|null
-     */
-    public function getAccountCategoryName()
-    {
-        return $this->container['account_category_name'];
-    }
-
-    /**
-     * Sets account_category_name
-     *
-     * @param string|null $account_category_name 勘定科目カテゴリー名
-     *
-     * @return self
-     */
-    public function setAccountCategoryName($account_category_name)
-    {
-        $this->container['account_category_name'] = $account_category_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets account_group_name
-     *
-     * @return string|null
-     */
-    public function getAccountGroupName()
-    {
-        return $this->container['account_group_name'];
-    }
-
-    /**
-     * Sets account_group_name
-     *
-     * @param string|null $account_group_name 決算書表示名(account_item_display_type:group指定時に決算書表示名の時のみ含まれる)
-     *
-     * @return self
-     */
-    public function setAccountGroupName($account_group_name)
-    {
-        $this->container['account_group_name'] = $account_group_name;
-
-        return $this;
-    }
 
     /**
      * Gets account_item_id
@@ -420,193 +372,25 @@ class TrialBsResponseTrialBsBalances implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets closing_balance
-     *
-     * @return int|null
-     */
-    public function getClosingBalance()
-    {
-        return $this->container['closing_balance'];
-    }
-
-    /**
-     * Sets closing_balance
-     *
-     * @param int|null $closing_balance 期末残高
-     *
-     * @return self
-     */
-    public function setClosingBalance($closing_balance)
-    {
-        $this->container['closing_balance'] = $closing_balance;
-
-        return $this;
-    }
-
-    /**
-     * Gets composition_ratio
-     *
-     * @return float|null
-     */
-    public function getCompositionRatio()
-    {
-        return $this->container['composition_ratio'];
-    }
-
-    /**
-     * Sets composition_ratio
-     *
-     * @param float|null $composition_ratio 構成比
-     *
-     * @return self
-     */
-    public function setCompositionRatio($composition_ratio)
-    {
-        $this->container['composition_ratio'] = $composition_ratio;
-
-        return $this;
-    }
-
-    /**
-     * Gets credit_amount
-     *
-     * @return int|null
-     */
-    public function getCreditAmount()
-    {
-        return $this->container['credit_amount'];
-    }
-
-    /**
-     * Sets credit_amount
-     *
-     * @param int|null $credit_amount 貸方金額
-     *
-     * @return self
-     */
-    public function setCreditAmount($credit_amount)
-    {
-        $this->container['credit_amount'] = $credit_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets debit_amount
-     *
-     * @return int|null
-     */
-    public function getDebitAmount()
-    {
-        return $this->container['debit_amount'];
-    }
-
-    /**
-     * Sets debit_amount
-     *
-     * @param int|null $debit_amount 借方金額
-     *
-     * @return self
-     */
-    public function setDebitAmount($debit_amount)
-    {
-        $this->container['debit_amount'] = $debit_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets hierarchy_level
-     *
-     * @return int|null
-     */
-    public function getHierarchyLevel()
-    {
-        return $this->container['hierarchy_level'];
-    }
-
-    /**
-     * Sets hierarchy_level
-     *
-     * @param int|null $hierarchy_level 階層レベル
-     *
-     * @return self
-     */
-    public function setHierarchyLevel($hierarchy_level)
-    {
-        $this->container['hierarchy_level'] = $hierarchy_level;
-
-        return $this;
-    }
-
-    /**
-     * Gets items
-     *
-     * @return \Freee\Accounting\Model\TrialBsResponseTrialBsItems[]|null
-     */
-    public function getItems()
-    {
-        return $this->container['items'];
-    }
-
-    /**
-     * Sets items
-     *
-     * @param \Freee\Accounting\Model\TrialBsResponseTrialBsItems[]|null $items breakdown_display_type:item, account_item_display_type:account_item指定時のみ含まれる
-     *
-     * @return self
-     */
-    public function setItems($items)
-    {
-        $this->container['items'] = $items;
-
-        return $this;
-    }
-
-    /**
-     * Gets opening_balance
-     *
-     * @return int|null
-     */
-    public function getOpeningBalance()
-    {
-        return $this->container['opening_balance'];
-    }
-
-    /**
-     * Sets opening_balance
-     *
-     * @param int|null $opening_balance 期首残高
-     *
-     * @return self
-     */
-    public function setOpeningBalance($opening_balance)
-    {
-        $this->container['opening_balance'] = $opening_balance;
-
-        return $this;
-    }
-
-    /**
-     * Gets parent_account_category_name
+     * Gets account_group_name
      *
      * @return string|null
      */
-    public function getParentAccountCategoryName()
+    public function getAccountGroupName()
     {
-        return $this->container['parent_account_category_name'];
+        return $this->container['account_group_name'];
     }
 
     /**
-     * Sets parent_account_category_name
+     * Sets account_group_name
      *
-     * @param string|null $parent_account_category_name 上位勘定科目カテゴリー名(勘定科目カテゴリーの時のみ、上層が存在する場合含まれる)
+     * @param string|null $account_group_name 決算書表示名(account_item_display_type:group指定時に決算書表示名の時のみ含まれる)
      *
      * @return self
      */
-    public function setParentAccountCategoryName($parent_account_category_name)
+    public function setAccountGroupName($account_group_name)
     {
-        $this->container['parent_account_category_name'] = $parent_account_category_name;
+        $this->container['account_group_name'] = $account_group_name;
 
         return $this;
     }
@@ -631,6 +415,30 @@ class TrialBsResponseTrialBsBalances implements ModelInterface, ArrayAccess, \Js
     public function setPartners($partners)
     {
         $this->container['partners'] = $partners;
+
+        return $this;
+    }
+
+    /**
+     * Gets items
+     *
+     * @return \Freee\Accounting\Model\TrialBsResponseTrialBsItems[]|null
+     */
+    public function getItems()
+    {
+        return $this->container['items'];
+    }
+
+    /**
+     * Sets items
+     *
+     * @param \Freee\Accounting\Model\TrialBsResponseTrialBsItems[]|null $items breakdown_display_type:item, account_item_display_type:account_item指定時のみ含まれる
+     *
+     * @return self
+     */
+    public function setItems($items)
+    {
+        $this->container['items'] = $items;
 
         return $this;
     }
@@ -732,6 +540,30 @@ class TrialBsResponseTrialBsBalances implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
+     * Gets account_category_name
+     *
+     * @return string|null
+     */
+    public function getAccountCategoryName()
+    {
+        return $this->container['account_category_name'];
+    }
+
+    /**
+     * Sets account_category_name
+     *
+     * @param string|null $account_category_name 勘定科目カテゴリー名
+     *
+     * @return self
+     */
+    public function setAccountCategoryName($account_category_name)
+    {
+        $this->container['account_category_name'] = $account_category_name;
+
+        return $this;
+    }
+
+    /**
      * Gets total_line
      *
      * @return bool|null
@@ -751,6 +583,174 @@ class TrialBsResponseTrialBsBalances implements ModelInterface, ArrayAccess, \Js
     public function setTotalLine($total_line)
     {
         $this->container['total_line'] = $total_line;
+
+        return $this;
+    }
+
+    /**
+     * Gets hierarchy_level
+     *
+     * @return int|null
+     */
+    public function getHierarchyLevel()
+    {
+        return $this->container['hierarchy_level'];
+    }
+
+    /**
+     * Sets hierarchy_level
+     *
+     * @param int|null $hierarchy_level 階層レベル
+     *
+     * @return self
+     */
+    public function setHierarchyLevel($hierarchy_level)
+    {
+        $this->container['hierarchy_level'] = $hierarchy_level;
+
+        return $this;
+    }
+
+    /**
+     * Gets parent_account_category_name
+     *
+     * @return string|null
+     */
+    public function getParentAccountCategoryName()
+    {
+        return $this->container['parent_account_category_name'];
+    }
+
+    /**
+     * Sets parent_account_category_name
+     *
+     * @param string|null $parent_account_category_name 上位勘定科目カテゴリー名(勘定科目カテゴリーの時のみ、上層が存在する場合含まれる)
+     *
+     * @return self
+     */
+    public function setParentAccountCategoryName($parent_account_category_name)
+    {
+        $this->container['parent_account_category_name'] = $parent_account_category_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets opening_balance
+     *
+     * @return int|null
+     */
+    public function getOpeningBalance()
+    {
+        return $this->container['opening_balance'];
+    }
+
+    /**
+     * Sets opening_balance
+     *
+     * @param int|null $opening_balance 期首残高
+     *
+     * @return self
+     */
+    public function setOpeningBalance($opening_balance)
+    {
+        $this->container['opening_balance'] = $opening_balance;
+
+        return $this;
+    }
+
+    /**
+     * Gets debit_amount
+     *
+     * @return int|null
+     */
+    public function getDebitAmount()
+    {
+        return $this->container['debit_amount'];
+    }
+
+    /**
+     * Sets debit_amount
+     *
+     * @param int|null $debit_amount 借方金額
+     *
+     * @return self
+     */
+    public function setDebitAmount($debit_amount)
+    {
+        $this->container['debit_amount'] = $debit_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets credit_amount
+     *
+     * @return int|null
+     */
+    public function getCreditAmount()
+    {
+        return $this->container['credit_amount'];
+    }
+
+    /**
+     * Sets credit_amount
+     *
+     * @param int|null $credit_amount 貸方金額
+     *
+     * @return self
+     */
+    public function setCreditAmount($credit_amount)
+    {
+        $this->container['credit_amount'] = $credit_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets closing_balance
+     *
+     * @return int|null
+     */
+    public function getClosingBalance()
+    {
+        return $this->container['closing_balance'];
+    }
+
+    /**
+     * Sets closing_balance
+     *
+     * @param int|null $closing_balance 期末残高
+     *
+     * @return self
+     */
+    public function setClosingBalance($closing_balance)
+    {
+        $this->container['closing_balance'] = $closing_balance;
+
+        return $this;
+    }
+
+    /**
+     * Gets composition_ratio
+     *
+     * @return float|null
+     */
+    public function getCompositionRatio()
+    {
+        return $this->container['composition_ratio'];
+    }
+
+    /**
+     * Sets composition_ratio
+     *
+     * @param float|null $composition_ratio 構成比
+     *
+     * @return self
+     */
+    public function setCompositionRatio($composition_ratio)
+    {
+        $this->container['composition_ratio'] = $composition_ratio;
 
         return $this;
     }

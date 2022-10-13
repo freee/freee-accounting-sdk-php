@@ -62,7 +62,7 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
         'company_id' => 'int',
         'description' => 'string',
         'issue_date' => 'string',
-        'receipt_metadatum' => '\Freee\Accounting\Model\DealReceiptMetadatum'
+        'receipt_metadatum' => '\Freee\Accounting\Model\ReceiptUpdateParamsReceiptMetadatum'
     ];
 
     /**
@@ -328,7 +328,7 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets receipt_metadatum
      *
-     * @return \Freee\Accounting\Model\DealReceiptMetadatum|null
+     * @return \Freee\Accounting\Model\ReceiptUpdateParamsReceiptMetadatum|null
      */
     public function getReceiptMetadatum()
     {
@@ -338,7 +338,7 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets receipt_metadatum
      *
-     * @param \Freee\Accounting\Model\DealReceiptMetadatum|null $receipt_metadatum receipt_metadatum
+     * @param \Freee\Accounting\Model\ReceiptUpdateParamsReceiptMetadatum|null $receipt_metadatum receipt_metadatum
      *
      * @return self
      */

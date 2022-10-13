@@ -59,11 +59,11 @@ class ExpenseApplicationCreateParamsExpenseApplicationLines implements ModelInte
       * @var string[]
       */
     protected static $openAPITypes = [
-        'amount' => 'int',
+        'transaction_date' => 'string',
         'description' => 'string',
+        'amount' => 'int',
         'expense_application_line_template_id' => 'int',
-        'receipt_id' => 'int',
-        'transaction_date' => 'string'
+        'receipt_id' => 'int'
     ];
 
     /**
@@ -74,11 +74,11 @@ class ExpenseApplicationCreateParamsExpenseApplicationLines implements ModelInte
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'amount' => null,
+        'transaction_date' => null,
         'description' => null,
+        'amount' => null,
         'expense_application_line_template_id' => null,
-        'receipt_id' => null,
-        'transaction_date' => null
+        'receipt_id' => null
     ];
 
     /**
@@ -108,11 +108,11 @@ class ExpenseApplicationCreateParamsExpenseApplicationLines implements ModelInte
      * @var string[]
      */
     protected static $attributeMap = [
-        'amount' => 'amount',
+        'transaction_date' => 'transaction_date',
         'description' => 'description',
+        'amount' => 'amount',
         'expense_application_line_template_id' => 'expense_application_line_template_id',
-        'receipt_id' => 'receipt_id',
-        'transaction_date' => 'transaction_date'
+        'receipt_id' => 'receipt_id'
     ];
 
     /**
@@ -121,11 +121,11 @@ class ExpenseApplicationCreateParamsExpenseApplicationLines implements ModelInte
      * @var string[]
      */
     protected static $setters = [
-        'amount' => 'setAmount',
+        'transaction_date' => 'setTransactionDate',
         'description' => 'setDescription',
+        'amount' => 'setAmount',
         'expense_application_line_template_id' => 'setExpenseApplicationLineTemplateId',
-        'receipt_id' => 'setReceiptId',
-        'transaction_date' => 'setTransactionDate'
+        'receipt_id' => 'setReceiptId'
     ];
 
     /**
@@ -134,11 +134,11 @@ class ExpenseApplicationCreateParamsExpenseApplicationLines implements ModelInte
      * @var string[]
      */
     protected static $getters = [
-        'amount' => 'getAmount',
+        'transaction_date' => 'getTransactionDate',
         'description' => 'getDescription',
+        'amount' => 'getAmount',
         'expense_application_line_template_id' => 'getExpenseApplicationLineTemplateId',
-        'receipt_id' => 'getReceiptId',
-        'transaction_date' => 'getTransactionDate'
+        'receipt_id' => 'getReceiptId'
     ];
 
     /**
@@ -198,11 +198,11 @@ class ExpenseApplicationCreateParamsExpenseApplicationLines implements ModelInte
      */
     public function __construct(array $data = null)
     {
-        $this->container['amount'] = $data['amount'] ?? null;
+        $this->container['transaction_date'] = $data['transaction_date'] ?? null;
         $this->container['description'] = $data['description'] ?? null;
+        $this->container['amount'] = $data['amount'] ?? null;
         $this->container['expense_application_line_template_id'] = $data['expense_application_line_template_id'] ?? null;
         $this->container['receipt_id'] = $data['receipt_id'] ?? null;
-        $this->container['transaction_date'] = $data['transaction_date'] ?? null;
     }
 
     /**
@@ -214,16 +214,16 @@ class ExpenseApplicationCreateParamsExpenseApplicationLines implements ModelInte
     {
         $invalidProperties = [];
 
+        if (!is_null($this->container['description']) && (mb_strlen($this->container['description']) > 250)) {
+            $invalidProperties[] = "invalid value for 'description', the character length must be smaller than or equal to 250.";
+        }
+
         if (!is_null($this->container['amount']) && ($this->container['amount'] > 2147483647)) {
             $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 2147483647.";
         }
 
         if (!is_null($this->container['amount']) && ($this->container['amount'] < 0)) {
             $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['description']) && (mb_strlen($this->container['description']) > 250)) {
-            $invalidProperties[] = "invalid value for 'description', the character length must be smaller than or equal to 250.";
         }
 
         if (!is_null($this->container['expense_application_line_template_id']) && ($this->container['expense_application_line_template_id'] > 2147483647)) {
@@ -258,33 +258,25 @@ class ExpenseApplicationCreateParamsExpenseApplicationLines implements ModelInte
 
 
     /**
-     * Gets amount
+     * Gets transaction_date
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getAmount()
+    public function getTransactionDate()
     {
-        return $this->container['amount'];
+        return $this->container['transaction_date'];
     }
 
     /**
-     * Sets amount
+     * Sets transaction_date
      *
-     * @param int|null $amount 金額
+     * @param string|null $transaction_date 日付 (yyyy-mm-dd)
      *
      * @return self
      */
-    public function setAmount($amount)
+    public function setTransactionDate($transaction_date)
     {
-
-        if (!is_null($amount) && ($amount > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling ExpenseApplicationCreateParamsExpenseApplicationLines., must be smaller than or equal to 2147483647.');
-        }
-        if (!is_null($amount) && ($amount < 0)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling ExpenseApplicationCreateParamsExpenseApplicationLines., must be bigger than or equal to 0.');
-        }
-
-        $this->container['amount'] = $amount;
+        $this->container['transaction_date'] = $transaction_date;
 
         return $this;
     }
@@ -313,6 +305,38 @@ class ExpenseApplicationCreateParamsExpenseApplicationLines implements ModelInte
         }
 
         $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount
+     *
+     * @return int|null
+     */
+    public function getAmount()
+    {
+        return $this->container['amount'];
+    }
+
+    /**
+     * Sets amount
+     *
+     * @param int|null $amount 金額
+     *
+     * @return self
+     */
+    public function setAmount($amount)
+    {
+
+        if (!is_null($amount) && ($amount > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling ExpenseApplicationCreateParamsExpenseApplicationLines., must be smaller than or equal to 2147483647.');
+        }
+        if (!is_null($amount) && ($amount < 0)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling ExpenseApplicationCreateParamsExpenseApplicationLines., must be bigger than or equal to 0.');
+        }
+
+        $this->container['amount'] = $amount;
 
         return $this;
     }
@@ -377,30 +401,6 @@ class ExpenseApplicationCreateParamsExpenseApplicationLines implements ModelInte
         }
 
         $this->container['receipt_id'] = $receipt_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets transaction_date
-     *
-     * @return string|null
-     */
-    public function getTransactionDate()
-    {
-        return $this->container['transaction_date'];
-    }
-
-    /**
-     * Sets transaction_date
-     *
-     * @param string|null $transaction_date 日付 (yyyy-mm-dd)
-     *
-     * @return self
-     */
-    public function setTransactionDate($transaction_date)
-    {
-        $this->container['transaction_date'] = $transaction_date;
 
         return $this;
     }

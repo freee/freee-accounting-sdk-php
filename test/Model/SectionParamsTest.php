@@ -89,15 +89,6 @@ class SectionParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "long_name"
-     */
-    public function testPropertyLongName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "name"
      */
     public function testPropertyName()
@@ -107,9 +98,9 @@ class SectionParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "parent_id"
+     * Test attribute "long_name"
      */
-    public function testPropertyParentId()
+    public function testPropertyLongName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -128,6 +119,15 @@ class SectionParamsTest extends TestCase
      * Test attribute "shortcut2"
      */
     public function testPropertyShortcut2()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "parent_id"
+     */
+    public function testPropertyParentId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

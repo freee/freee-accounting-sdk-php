@@ -89,15 +89,6 @@ class DealCreateParamsPaymentsTest extends TestCase
     }
 
     /**
-     * Test attribute "date"
-     */
-    public function testPropertyDate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "from_walletable_id"
      */
     public function testPropertyFromWalletableId()
@@ -110,6 +101,15 @@ class DealCreateParamsPaymentsTest extends TestCase
      * Test attribute "from_walletable_type"
      */
     public function testPropertyFromWalletableType()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "date"
+     */
+    public function testPropertyDate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

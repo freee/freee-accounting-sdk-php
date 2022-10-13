@@ -59,12 +59,12 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'display_name' => 'string',
-        'email' => 'string',
-        'first_name' => 'string',
-        'first_name_kana' => 'string',
         'id' => 'int',
+        'email' => 'string',
+        'display_name' => 'string',
+        'first_name' => 'string',
         'last_name' => 'string',
+        'first_name_kana' => 'string',
         'last_name_kana' => 'string'
     ];
 
@@ -76,12 +76,12 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'display_name' => null,
-        'email' => null,
-        'first_name' => null,
-        'first_name_kana' => null,
         'id' => null,
+        'email' => null,
+        'display_name' => null,
+        'first_name' => null,
         'last_name' => null,
+        'first_name_kana' => null,
         'last_name_kana' => null
     ];
 
@@ -112,12 +112,12 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'display_name' => 'display_name',
-        'email' => 'email',
-        'first_name' => 'first_name',
-        'first_name_kana' => 'first_name_kana',
         'id' => 'id',
+        'email' => 'email',
+        'display_name' => 'display_name',
+        'first_name' => 'first_name',
         'last_name' => 'last_name',
+        'first_name_kana' => 'first_name_kana',
         'last_name_kana' => 'last_name_kana'
     ];
 
@@ -127,12 +127,12 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'display_name' => 'setDisplayName',
-        'email' => 'setEmail',
-        'first_name' => 'setFirstName',
-        'first_name_kana' => 'setFirstNameKana',
         'id' => 'setId',
+        'email' => 'setEmail',
+        'display_name' => 'setDisplayName',
+        'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
+        'first_name_kana' => 'setFirstNameKana',
         'last_name_kana' => 'setLastNameKana'
     ];
 
@@ -142,12 +142,12 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'display_name' => 'getDisplayName',
-        'email' => 'getEmail',
-        'first_name' => 'getFirstName',
-        'first_name_kana' => 'getFirstNameKana',
         'id' => 'getId',
+        'email' => 'getEmail',
+        'display_name' => 'getDisplayName',
+        'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
+        'first_name_kana' => 'getFirstNameKana',
         'last_name_kana' => 'getLastNameKana'
     ];
 
@@ -208,12 +208,12 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['display_name'] = $data['display_name'] ?? null;
-        $this->container['email'] = $data['email'] ?? null;
-        $this->container['first_name'] = $data['first_name'] ?? null;
-        $this->container['first_name_kana'] = $data['first_name_kana'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
+        $this->container['email'] = $data['email'] ?? null;
+        $this->container['display_name'] = $data['display_name'] ?? null;
+        $this->container['first_name'] = $data['first_name'] ?? null;
         $this->container['last_name'] = $data['last_name'] ?? null;
+        $this->container['first_name_kana'] = $data['first_name_kana'] ?? null;
         $this->container['last_name_kana'] = $data['last_name_kana'] ?? null;
     }
 
@@ -226,9 +226,6 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['email'] === null) {
-            $invalidProperties[] = "'email' can't be null";
-        }
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
@@ -240,6 +237,9 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
         }
 
+        if ($this->container['email'] === null) {
+            $invalidProperties[] = "'email' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -254,102 +254,6 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets display_name
-     *
-     * @return string|null
-     */
-    public function getDisplayName()
-    {
-        return $this->container['display_name'];
-    }
-
-    /**
-     * Sets display_name
-     *
-     * @param string|null $display_name 表示名
-     *
-     * @return self
-     */
-    public function setDisplayName($display_name)
-    {
-        $this->container['display_name'] = $display_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets email
-     *
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->container['email'];
-    }
-
-    /**
-     * Sets email
-     *
-     * @param string $email メールアドレス
-     *
-     * @return self
-     */
-    public function setEmail($email)
-    {
-        $this->container['email'] = $email;
-
-        return $this;
-    }
-
-    /**
-     * Gets first_name
-     *
-     * @return string|null
-     */
-    public function getFirstName()
-    {
-        return $this->container['first_name'];
-    }
-
-    /**
-     * Sets first_name
-     *
-     * @param string|null $first_name 氏名（名）
-     *
-     * @return self
-     */
-    public function setFirstName($first_name)
-    {
-        $this->container['first_name'] = $first_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets first_name_kana
-     *
-     * @return string|null
-     */
-    public function getFirstNameKana()
-    {
-        return $this->container['first_name_kana'];
-    }
-
-    /**
-     * Sets first_name_kana
-     *
-     * @param string|null $first_name_kana 氏名（カナ・名）
-     *
-     * @return self
-     */
-    public function setFirstNameKana($first_name_kana)
-    {
-        $this->container['first_name_kana'] = $first_name_kana;
-
-        return $this;
-    }
 
     /**
      * Gets id
@@ -384,6 +288,78 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     *
+     * @param string $email メールアドレス
+     *
+     * @return self
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets display_name
+     *
+     * @return string|null
+     */
+    public function getDisplayName()
+    {
+        return $this->container['display_name'];
+    }
+
+    /**
+     * Sets display_name
+     *
+     * @param string|null $display_name 表示名
+     *
+     * @return self
+     */
+    public function setDisplayName($display_name)
+    {
+        $this->container['display_name'] = $display_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets first_name
+     *
+     * @return string|null
+     */
+    public function getFirstName()
+    {
+        return $this->container['first_name'];
+    }
+
+    /**
+     * Sets first_name
+     *
+     * @param string|null $first_name 氏名（名）
+     *
+     * @return self
+     */
+    public function setFirstName($first_name)
+    {
+        $this->container['first_name'] = $first_name;
+
+        return $this;
+    }
+
+    /**
      * Gets last_name
      *
      * @return string|null
@@ -403,6 +379,30 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLastName($last_name)
     {
         $this->container['last_name'] = $last_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets first_name_kana
+     *
+     * @return string|null
+     */
+    public function getFirstNameKana()
+    {
+        return $this->container['first_name_kana'];
+    }
+
+    /**
+     * Sets first_name_kana
+     *
+     * @param string|null $first_name_kana 氏名（カナ・名）
+     *
+     * @return self
+     */
+    public function setFirstNameKana($first_name_kana)
+    {
+        $this->container['first_name_kana'] = $first_name_kana;
 
         return $this;
     }

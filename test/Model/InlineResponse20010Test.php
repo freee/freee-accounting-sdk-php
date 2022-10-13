@@ -80,9 +80,18 @@ class InlineResponse20010Test extends TestCase
     }
 
     /**
-     * Test attribute "taxes"
+     * Test attribute "walletable"
      */
-    public function testPropertyTaxes()
+    public function testPropertyWalletable()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "meta"
+     */
+    public function testPropertyMeta()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

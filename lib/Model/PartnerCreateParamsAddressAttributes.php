@@ -59,10 +59,10 @@ class PartnerCreateParamsAddressAttributes implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
+        'zipcode' => 'string',
         'prefecture_code' => 'int',
         'street_name1' => 'string',
-        'street_name2' => 'string',
-        'zipcode' => 'string'
+        'street_name2' => 'string'
     ];
 
     /**
@@ -73,10 +73,10 @@ class PartnerCreateParamsAddressAttributes implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'zipcode' => null,
         'prefecture_code' => null,
         'street_name1' => null,
-        'street_name2' => null,
-        'zipcode' => null
+        'street_name2' => null
     ];
 
     /**
@@ -106,10 +106,10 @@ class PartnerCreateParamsAddressAttributes implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
+        'zipcode' => 'zipcode',
         'prefecture_code' => 'prefecture_code',
         'street_name1' => 'street_name1',
-        'street_name2' => 'street_name2',
-        'zipcode' => 'zipcode'
+        'street_name2' => 'street_name2'
     ];
 
     /**
@@ -118,10 +118,10 @@ class PartnerCreateParamsAddressAttributes implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
+        'zipcode' => 'setZipcode',
         'prefecture_code' => 'setPrefectureCode',
         'street_name1' => 'setStreetName1',
-        'street_name2' => 'setStreetName2',
-        'zipcode' => 'setZipcode'
+        'street_name2' => 'setStreetName2'
     ];
 
     /**
@@ -130,10 +130,10 @@ class PartnerCreateParamsAddressAttributes implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $getters = [
+        'zipcode' => 'getZipcode',
         'prefecture_code' => 'getPrefectureCode',
         'street_name1' => 'getStreetName1',
-        'street_name2' => 'getStreetName2',
-        'zipcode' => 'getZipcode'
+        'street_name2' => 'getStreetName2'
     ];
 
     /**
@@ -193,10 +193,10 @@ class PartnerCreateParamsAddressAttributes implements ModelInterface, ArrayAcces
      */
     public function __construct(array $data = null)
     {
+        $this->container['zipcode'] = $data['zipcode'] ?? null;
         $this->container['prefecture_code'] = $data['prefecture_code'] ?? null;
         $this->container['street_name1'] = $data['street_name1'] ?? null;
         $this->container['street_name2'] = $data['street_name2'] ?? null;
-        $this->container['zipcode'] = $data['zipcode'] ?? null;
     }
 
     /**
@@ -207,6 +207,10 @@ class PartnerCreateParamsAddressAttributes implements ModelInterface, ArrayAcces
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if (!is_null($this->container['zipcode']) && (mb_strlen($this->container['zipcode']) > 8)) {
+            $invalidProperties[] = "invalid value for 'zipcode', the character length must be smaller than or equal to 8.";
+        }
 
         if (!is_null($this->container['prefecture_code']) && ($this->container['prefecture_code'] > 46)) {
             $invalidProperties[] = "invalid value for 'prefecture_code', must be smaller than or equal to 46.";
@@ -224,10 +228,6 @@ class PartnerCreateParamsAddressAttributes implements ModelInterface, ArrayAcces
             $invalidProperties[] = "invalid value for 'street_name2', the character length must be smaller than or equal to 255.";
         }
 
-        if (!is_null($this->container['zipcode']) && (mb_strlen($this->container['zipcode']) > 8)) {
-            $invalidProperties[] = "invalid value for 'zipcode', the character length must be smaller than or equal to 8.";
-        }
-
         return $invalidProperties;
     }
 
@@ -242,6 +242,34 @@ class PartnerCreateParamsAddressAttributes implements ModelInterface, ArrayAcces
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets zipcode
+     *
+     * @return string|null
+     */
+    public function getZipcode()
+    {
+        return $this->container['zipcode'];
+    }
+
+    /**
+     * Sets zipcode
+     *
+     * @param string|null $zipcode 郵便番号（8文字以内）
+     *
+     * @return self
+     */
+    public function setZipcode($zipcode)
+    {
+        if (!is_null($zipcode) && (mb_strlen($zipcode) > 8)) {
+            throw new \InvalidArgumentException('invalid length for $zipcode when calling PartnerCreateParamsAddressAttributes., must be smaller than or equal to 8.');
+        }
+
+        $this->container['zipcode'] = $zipcode;
+
+        return $this;
+    }
 
     /**
      * Gets prefecture_code
@@ -327,34 +355,6 @@ class PartnerCreateParamsAddressAttributes implements ModelInterface, ArrayAcces
         }
 
         $this->container['street_name2'] = $street_name2;
-
-        return $this;
-    }
-
-    /**
-     * Gets zipcode
-     *
-     * @return string|null
-     */
-    public function getZipcode()
-    {
-        return $this->container['zipcode'];
-    }
-
-    /**
-     * Sets zipcode
-     *
-     * @param string|null $zipcode 郵便番号（8文字以内）
-     *
-     * @return self
-     */
-    public function setZipcode($zipcode)
-    {
-        if (!is_null($zipcode) && (mb_strlen($zipcode) > 8)) {
-            throw new \InvalidArgumentException('invalid length for $zipcode when calling PartnerCreateParamsAddressAttributes., must be smaller than or equal to 8.');
-        }
-
-        $this->container['zipcode'] = $zipcode;
 
         return $this;
     }

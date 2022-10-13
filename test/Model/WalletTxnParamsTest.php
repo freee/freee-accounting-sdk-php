@@ -80,36 +80,9 @@ class WalletTxnParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "amount"
+     * Test attribute "entry_side"
      */
-    public function testPropertyAmount()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "balance"
-     */
-    public function testPropertyBalance()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "company_id"
-     */
-    public function testPropertyCompanyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "date"
-     */
-    public function testPropertyDate()
+    public function testPropertyEntrySide()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -125,9 +98,9 @@ class WalletTxnParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "entry_side"
+     * Test attribute "amount"
      */
-    public function testPropertyEntrySide()
+    public function testPropertyAmount()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -146,6 +119,33 @@ class WalletTxnParamsTest extends TestCase
      * Test attribute "walletable_type"
      */
     public function testPropertyWalletableType()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "date"
+     */
+    public function testPropertyDate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "company_id"
+     */
+    public function testPropertyCompanyId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "balance"
+     */
+    public function testPropertyBalance()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

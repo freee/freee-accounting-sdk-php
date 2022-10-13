@@ -80,24 +80,6 @@ class UserCapabilityTest extends TestCase
     }
 
     /**
-     * Test attribute "create"
-     */
-    public function testPropertyCreate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "destroy"
-     */
-    public function testPropertyDestroy()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "read"
      */
     public function testPropertyRead()
@@ -107,9 +89,27 @@ class UserCapabilityTest extends TestCase
     }
 
     /**
+     * Test attribute "create"
+     */
+    public function testPropertyCreate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "update"
      */
     public function testPropertyUpdate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "destroy"
+     */
+    public function testPropertyDestroy()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

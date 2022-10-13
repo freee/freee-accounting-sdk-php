@@ -80,6 +80,69 @@ class ExpenseApplicationCreateParamsTest extends TestCase
     }
 
     /**
+     * Test attribute "company_id"
+     */
+    public function testPropertyCompanyId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "title"
+     */
+    public function testPropertyTitle()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "issue_date"
+     */
+    public function testPropertyIssueDate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "section_id"
+     */
+    public function testPropertySectionId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tag_ids"
+     */
+    public function testPropertyTagIds()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "expense_application_lines"
+     */
+    public function testPropertyExpenseApplicationLines()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "approval_flow_route_id"
      */
     public function testPropertyApprovalFlowRouteId()
@@ -98,24 +161,6 @@ class ExpenseApplicationCreateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "company_id"
-     */
-    public function testPropertyCompanyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "draft"
      */
     public function testPropertyDraft()
@@ -125,36 +170,9 @@ class ExpenseApplicationCreateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "expense_application_lines"
-     */
-    public function testPropertyExpenseApplicationLines()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "issue_date"
-     */
-    public function testPropertyIssueDate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "parent_id"
      */
     public function testPropertyParentId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "section_id"
-     */
-    public function testPropertySectionId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -182,24 +200,6 @@ class ExpenseApplicationCreateParamsTest extends TestCase
      * Test attribute "segment_3_tag_id"
      */
     public function testPropertySegment3TagId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "tag_ids"
-     */
-    public function testPropertyTagIds()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "title"
-     */
-    public function testPropertyTitle()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

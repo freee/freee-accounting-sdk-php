@@ -59,7 +59,8 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'expense_application_line_templates' => '\Freee\Accounting\Model\ExpenseApplicationLineTemplate[]'
+        'deals' => '\Freee\Accounting\Model\Deal[]',
+        'meta' => '\Freee\Accounting\Model\InlineResponse2002Meta'
     ];
 
     /**
@@ -70,7 +71,8 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'expense_application_line_templates' => null
+        'deals' => null,
+        'meta' => null
     ];
 
     /**
@@ -100,7 +102,8 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'expense_application_line_templates' => 'expense_application_line_templates'
+        'deals' => 'deals',
+        'meta' => 'meta'
     ];
 
     /**
@@ -109,7 +112,8 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'expense_application_line_templates' => 'setExpenseApplicationLineTemplates'
+        'deals' => 'setDeals',
+        'meta' => 'setMeta'
     ];
 
     /**
@@ -118,7 +122,8 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'expense_application_line_templates' => 'getExpenseApplicationLineTemplates'
+        'deals' => 'getDeals',
+        'meta' => 'getMeta'
     ];
 
     /**
@@ -178,7 +183,8 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['expense_application_line_templates'] = $data['expense_application_line_templates'] ?? null;
+        $this->container['deals'] = $data['deals'] ?? null;
+        $this->container['meta'] = $data['meta'] ?? null;
     }
 
     /**
@@ -190,8 +196,11 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['expense_application_line_templates'] === null) {
-            $invalidProperties[] = "'expense_application_line_templates' can't be null";
+        if ($this->container['deals'] === null) {
+            $invalidProperties[] = "'deals' can't be null";
+        }
+        if ($this->container['meta'] === null) {
+            $invalidProperties[] = "'meta' can't be null";
         }
         return $invalidProperties;
     }
@@ -209,25 +218,49 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets expense_application_line_templates
+     * Gets deals
      *
-     * @return \Freee\Accounting\Model\ExpenseApplicationLineTemplate[]
+     * @return \Freee\Accounting\Model\Deal[]
      */
-    public function getExpenseApplicationLineTemplates()
+    public function getDeals()
     {
-        return $this->container['expense_application_line_templates'];
+        return $this->container['deals'];
     }
 
     /**
-     * Sets expense_application_line_templates
+     * Sets deals
      *
-     * @param \Freee\Accounting\Model\ExpenseApplicationLineTemplate[] $expense_application_line_templates expense_application_line_templates
+     * @param \Freee\Accounting\Model\Deal[] $deals deals
      *
      * @return self
      */
-    public function setExpenseApplicationLineTemplates($expense_application_line_templates)
+    public function setDeals($deals)
     {
-        $this->container['expense_application_line_templates'] = $expense_application_line_templates;
+        $this->container['deals'] = $deals;
+
+        return $this;
+    }
+
+    /**
+     * Gets meta
+     *
+     * @return \Freee\Accounting\Model\InlineResponse2002Meta
+     */
+    public function getMeta()
+    {
+        return $this->container['meta'];
+    }
+
+    /**
+     * Sets meta
+     *
+     * @param \Freee\Accounting\Model\InlineResponse2002Meta $meta meta
+     *
+     * @return self
+     */
+    public function setMeta($meta)
+    {
+        $this->container['meta'] = $meta;
 
         return $this;
     }

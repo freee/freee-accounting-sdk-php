@@ -59,12 +59,12 @@ class SelectablesIndexResponseAccountCategories implements ModelInterface, Array
       * @var string[]
       */
     protected static $openAPITypes = [
-        'account_items' => '\Freee\Accounting\Model\SelectablesIndexResponseAccountItems[]',
         'balance' => 'string',
-        'desc' => 'string',
         'org_code' => 'string',
         'role' => 'string',
-        'title' => 'string'
+        'title' => 'string',
+        'desc' => 'string',
+        'account_items' => '\Freee\Accounting\Model\SelectablesIndexResponseAccountItems[]'
     ];
 
     /**
@@ -75,12 +75,12 @@ class SelectablesIndexResponseAccountCategories implements ModelInterface, Array
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'account_items' => null,
         'balance' => null,
-        'desc' => null,
         'org_code' => null,
         'role' => null,
-        'title' => null
+        'title' => null,
+        'desc' => null,
+        'account_items' => null
     ];
 
     /**
@@ -110,12 +110,12 @@ class SelectablesIndexResponseAccountCategories implements ModelInterface, Array
      * @var string[]
      */
     protected static $attributeMap = [
-        'account_items' => 'account_items',
         'balance' => 'balance',
-        'desc' => 'desc',
         'org_code' => 'org_code',
         'role' => 'role',
-        'title' => 'title'
+        'title' => 'title',
+        'desc' => 'desc',
+        'account_items' => 'account_items'
     ];
 
     /**
@@ -124,12 +124,12 @@ class SelectablesIndexResponseAccountCategories implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-        'account_items' => 'setAccountItems',
         'balance' => 'setBalance',
-        'desc' => 'setDesc',
         'org_code' => 'setOrgCode',
         'role' => 'setRole',
-        'title' => 'setTitle'
+        'title' => 'setTitle',
+        'desc' => 'setDesc',
+        'account_items' => 'setAccountItems'
     ];
 
     /**
@@ -138,12 +138,12 @@ class SelectablesIndexResponseAccountCategories implements ModelInterface, Array
      * @var string[]
      */
     protected static $getters = [
-        'account_items' => 'getAccountItems',
         'balance' => 'getBalance',
-        'desc' => 'getDesc',
         'org_code' => 'getOrgCode',
         'role' => 'getRole',
-        'title' => 'getTitle'
+        'title' => 'getTitle',
+        'desc' => 'getDesc',
+        'account_items' => 'getAccountItems'
     ];
 
     /**
@@ -233,12 +233,12 @@ class SelectablesIndexResponseAccountCategories implements ModelInterface, Array
      */
     public function __construct(array $data = null)
     {
-        $this->container['account_items'] = $data['account_items'] ?? null;
         $this->container['balance'] = $data['balance'] ?? null;
-        $this->container['desc'] = $data['desc'] ?? null;
         $this->container['org_code'] = $data['org_code'] ?? null;
         $this->container['role'] = $data['role'] ?? null;
         $this->container['title'] = $data['title'] ?? null;
+        $this->container['desc'] = $data['desc'] ?? null;
+        $this->container['account_items'] = $data['account_items'] ?? null;
     }
 
     /**
@@ -250,9 +250,6 @@ class SelectablesIndexResponseAccountCategories implements ModelInterface, Array
     {
         $invalidProperties = [];
 
-        if ($this->container['account_items'] === null) {
-            $invalidProperties[] = "'account_items' can't be null";
-        }
         if ($this->container['balance'] === null) {
             $invalidProperties[] = "'balance' can't be null";
         }
@@ -283,6 +280,9 @@ class SelectablesIndexResponseAccountCategories implements ModelInterface, Array
         if ($this->container['title'] === null) {
             $invalidProperties[] = "'title' can't be null";
         }
+        if ($this->container['account_items'] === null) {
+            $invalidProperties[] = "'account_items' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -297,30 +297,6 @@ class SelectablesIndexResponseAccountCategories implements ModelInterface, Array
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets account_items
-     *
-     * @return \Freee\Accounting\Model\SelectablesIndexResponseAccountItems[]
-     */
-    public function getAccountItems()
-    {
-        return $this->container['account_items'];
-    }
-
-    /**
-     * Sets account_items
-     *
-     * @param \Freee\Accounting\Model\SelectablesIndexResponseAccountItems[] $account_items 勘定科目の一覧
-     *
-     * @return self
-     */
-    public function setAccountItems($account_items)
-    {
-        $this->container['account_items'] = $account_items;
-
-        return $this;
-    }
 
     /**
      * Gets balance
@@ -352,30 +328,6 @@ class SelectablesIndexResponseAccountCategories implements ModelInterface, Array
             );
         }
         $this->container['balance'] = $balance;
-
-        return $this;
-    }
-
-    /**
-     * Gets desc
-     *
-     * @return string|null
-     */
-    public function getDesc()
-    {
-        return $this->container['desc'];
-    }
-
-    /**
-     * Sets desc
-     *
-     * @param string|null $desc カテゴリーの説明
-     *
-     * @return self
-     */
-    public function setDesc($desc)
-    {
-        $this->container['desc'] = $desc;
 
         return $this;
     }
@@ -458,6 +410,54 @@ class SelectablesIndexResponseAccountCategories implements ModelInterface, Array
     public function setTitle($title)
     {
         $this->container['title'] = $title;
+
+        return $this;
+    }
+
+    /**
+     * Gets desc
+     *
+     * @return string|null
+     */
+    public function getDesc()
+    {
+        return $this->container['desc'];
+    }
+
+    /**
+     * Sets desc
+     *
+     * @param string|null $desc カテゴリーの説明
+     *
+     * @return self
+     */
+    public function setDesc($desc)
+    {
+        $this->container['desc'] = $desc;
+
+        return $this;
+    }
+
+    /**
+     * Gets account_items
+     *
+     * @return \Freee\Accounting\Model\SelectablesIndexResponseAccountItems[]
+     */
+    public function getAccountItems()
+    {
+        return $this->container['account_items'];
+    }
+
+    /**
+     * Sets account_items
+     *
+     * @param \Freee\Accounting\Model\SelectablesIndexResponseAccountItems[] $account_items 勘定科目の一覧
+     *
+     * @return self
+     */
+    public function setAccountItems($account_items)
+    {
+        $this->container['account_items'] = $account_items;
 
         return $this;
     }

@@ -80,18 +80,18 @@ class DealRenewsTest extends TestCase
     }
 
     /**
-     * Test attribute "details"
+     * Test attribute "id"
      */
-    public function testPropertyDetails()
+    public function testPropertyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "update_date"
      */
-    public function testPropertyId()
+    public function testPropertyUpdateDate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -116,9 +116,9 @@ class DealRenewsTest extends TestCase
     }
 
     /**
-     * Test attribute "update_date"
+     * Test attribute "details"
      */
-    public function testPropertyUpdateDate()
+    public function testPropertyDetails()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

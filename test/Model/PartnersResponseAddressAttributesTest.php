@@ -80,6 +80,15 @@ class PartnersResponseAddressAttributesTest extends TestCase
     }
 
     /**
+     * Test attribute "zipcode"
+     */
+    public function testPropertyZipcode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "prefecture_code"
      */
     public function testPropertyPrefectureCode()
@@ -101,15 +110,6 @@ class PartnersResponseAddressAttributesTest extends TestCase
      * Test attribute "street_name2"
      */
     public function testPropertyStreetName2()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "zipcode"
-     */
-    public function testPropertyZipcode()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

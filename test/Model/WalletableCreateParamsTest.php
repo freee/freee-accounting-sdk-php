@@ -80,9 +80,18 @@ class WalletableCreateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "bank_id"
+     * Test attribute "name"
      */
-    public function testPropertyBankId()
+    public function testPropertyName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -98,27 +107,18 @@ class WalletableCreateParamsTest extends TestCase
     }
 
     /**
+     * Test attribute "bank_id"
+     */
+    public function testPropertyBankId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "is_asset"
      */
     public function testPropertyIsAsset()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "name"
-     */
-    public function testPropertyName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

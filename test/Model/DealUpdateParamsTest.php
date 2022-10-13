@@ -80,18 +80,27 @@ class DealUpdateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "company_id"
+     * Test attribute "issue_date"
      */
-    public function testPropertyCompanyId()
+    public function testPropertyIssueDate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "details"
+     * Test attribute "type"
      */
-    public function testPropertyDetails()
+    public function testPropertyType()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "company_id"
+     */
+    public function testPropertyCompanyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -107,9 +116,9 @@ class DealUpdateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "issue_date"
+     * Test attribute "partner_id"
      */
-    public function testPropertyIssueDate()
+    public function testPropertyPartnerId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -125,24 +134,6 @@ class DealUpdateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "partner_id"
-     */
-    public function testPropertyPartnerId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "receipt_ids"
-     */
-    public function testPropertyReceiptIds()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "ref_number"
      */
     public function testPropertyRefNumber()
@@ -152,9 +143,18 @@ class DealUpdateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "type"
+     * Test attribute "details"
      */
-    public function testPropertyType()
+    public function testPropertyDetails()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "receipt_ids"
+     */
+    public function testPropertyReceiptIds()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

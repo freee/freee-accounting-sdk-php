@@ -59,14 +59,14 @@ class TransferParams implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'amount' => 'int',
-        'company_id' => 'int',
-        'date' => 'string',
-        'description' => 'string',
+        'to_walletable_id' => 'int',
+        'to_walletable_type' => 'string',
         'from_walletable_id' => 'int',
         'from_walletable_type' => 'string',
-        'to_walletable_id' => 'int',
-        'to_walletable_type' => 'string'
+        'amount' => 'int',
+        'date' => 'string',
+        'company_id' => 'int',
+        'description' => 'string'
     ];
 
     /**
@@ -77,14 +77,14 @@ class TransferParams implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'amount' => 'int64',
-        'company_id' => null,
-        'date' => null,
-        'description' => null,
+        'to_walletable_id' => null,
+        'to_walletable_type' => null,
         'from_walletable_id' => null,
         'from_walletable_type' => null,
-        'to_walletable_id' => null,
-        'to_walletable_type' => null
+        'amount' => 'int64',
+        'date' => null,
+        'company_id' => null,
+        'description' => null
     ];
 
     /**
@@ -114,14 +114,14 @@ class TransferParams implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'amount' => 'amount',
-        'company_id' => 'company_id',
-        'date' => 'date',
-        'description' => 'description',
+        'to_walletable_id' => 'to_walletable_id',
+        'to_walletable_type' => 'to_walletable_type',
         'from_walletable_id' => 'from_walletable_id',
         'from_walletable_type' => 'from_walletable_type',
-        'to_walletable_id' => 'to_walletable_id',
-        'to_walletable_type' => 'to_walletable_type'
+        'amount' => 'amount',
+        'date' => 'date',
+        'company_id' => 'company_id',
+        'description' => 'description'
     ];
 
     /**
@@ -130,14 +130,14 @@ class TransferParams implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'amount' => 'setAmount',
-        'company_id' => 'setCompanyId',
-        'date' => 'setDate',
-        'description' => 'setDescription',
+        'to_walletable_id' => 'setToWalletableId',
+        'to_walletable_type' => 'setToWalletableType',
         'from_walletable_id' => 'setFromWalletableId',
         'from_walletable_type' => 'setFromWalletableType',
-        'to_walletable_id' => 'setToWalletableId',
-        'to_walletable_type' => 'setToWalletableType'
+        'amount' => 'setAmount',
+        'date' => 'setDate',
+        'company_id' => 'setCompanyId',
+        'description' => 'setDescription'
     ];
 
     /**
@@ -146,14 +146,14 @@ class TransferParams implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'amount' => 'getAmount',
-        'company_id' => 'getCompanyId',
-        'date' => 'getDate',
-        'description' => 'getDescription',
+        'to_walletable_id' => 'getToWalletableId',
+        'to_walletable_type' => 'getToWalletableType',
         'from_walletable_id' => 'getFromWalletableId',
         'from_walletable_type' => 'getFromWalletableType',
-        'to_walletable_id' => 'getToWalletableId',
-        'to_walletable_type' => 'getToWalletableType'
+        'amount' => 'getAmount',
+        'date' => 'getDate',
+        'company_id' => 'getCompanyId',
+        'description' => 'getDescription'
     ];
 
     /**
@@ -197,26 +197,12 @@ class TransferParams implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-    const FROM_WALLETABLE_TYPE_BANK_ACCOUNT = 'bank_account';
-    const FROM_WALLETABLE_TYPE_CREDIT_CARD = 'credit_card';
-    const FROM_WALLETABLE_TYPE_WALLET = 'wallet';
     const TO_WALLETABLE_TYPE_BANK_ACCOUNT = 'bank_account';
     const TO_WALLETABLE_TYPE_CREDIT_CARD = 'credit_card';
     const TO_WALLETABLE_TYPE_WALLET = 'wallet';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getFromWalletableTypeAllowableValues()
-    {
-        return [
-            self::FROM_WALLETABLE_TYPE_BANK_ACCOUNT,
-            self::FROM_WALLETABLE_TYPE_CREDIT_CARD,
-            self::FROM_WALLETABLE_TYPE_WALLET,
-        ];
-    }
+    const FROM_WALLETABLE_TYPE_BANK_ACCOUNT = 'bank_account';
+    const FROM_WALLETABLE_TYPE_CREDIT_CARD = 'credit_card';
+    const FROM_WALLETABLE_TYPE_WALLET = 'wallet';
 
     /**
      * Gets allowable values of the enum
@@ -229,6 +215,20 @@ class TransferParams implements ModelInterface, ArrayAccess, \JsonSerializable
             self::TO_WALLETABLE_TYPE_BANK_ACCOUNT,
             self::TO_WALLETABLE_TYPE_CREDIT_CARD,
             self::TO_WALLETABLE_TYPE_WALLET,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getFromWalletableTypeAllowableValues()
+    {
+        return [
+            self::FROM_WALLETABLE_TYPE_BANK_ACCOUNT,
+            self::FROM_WALLETABLE_TYPE_CREDIT_CARD,
+            self::FROM_WALLETABLE_TYPE_WALLET,
         ];
     }
 
@@ -247,14 +247,14 @@ class TransferParams implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['amount'] = $data['amount'] ?? null;
-        $this->container['company_id'] = $data['company_id'] ?? null;
-        $this->container['date'] = $data['date'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
-        $this->container['from_walletable_id'] = $data['from_walletable_id'] ?? null;
-        $this->container['from_walletable_type'] = $data['from_walletable_type'] ?? null;
         $this->container['to_walletable_id'] = $data['to_walletable_id'] ?? null;
         $this->container['to_walletable_type'] = $data['to_walletable_type'] ?? null;
+        $this->container['from_walletable_id'] = $data['from_walletable_id'] ?? null;
+        $this->container['from_walletable_type'] = $data['from_walletable_type'] ?? null;
+        $this->container['amount'] = $data['amount'] ?? null;
+        $this->container['date'] = $data['date'] ?? null;
+        $this->container['company_id'] = $data['company_id'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
     }
 
     /**
@@ -265,54 +265,6 @@ class TransferParams implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        if ($this->container['amount'] === null) {
-            $invalidProperties[] = "'amount' can't be null";
-        }
-        if (($this->container['amount'] > 9223372036854775807)) {
-            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 9223372036854775807.";
-        }
-
-        if (($this->container['amount'] < -9223372036854775808)) {
-            $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to -9223372036854775808.";
-        }
-
-        if ($this->container['company_id'] === null) {
-            $invalidProperties[] = "'company_id' can't be null";
-        }
-        if (($this->container['company_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['company_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['date'] === null) {
-            $invalidProperties[] = "'date' can't be null";
-        }
-        if ($this->container['from_walletable_id'] === null) {
-            $invalidProperties[] = "'from_walletable_id' can't be null";
-        }
-        if (($this->container['from_walletable_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'from_walletable_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['from_walletable_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'from_walletable_id', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['from_walletable_type'] === null) {
-            $invalidProperties[] = "'from_walletable_type' can't be null";
-        }
-        $allowedValues = $this->getFromWalletableTypeAllowableValues();
-        if (!is_null($this->container['from_walletable_type']) && !in_array($this->container['from_walletable_type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'from_walletable_type', must be one of '%s'",
-                $this->container['from_walletable_type'],
-                implode("', '", $allowedValues)
-            );
-        }
 
         if ($this->container['to_walletable_id'] === null) {
             $invalidProperties[] = "'to_walletable_id' can't be null";
@@ -337,6 +289,54 @@ class TransferParams implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
 
+        if ($this->container['from_walletable_id'] === null) {
+            $invalidProperties[] = "'from_walletable_id' can't be null";
+        }
+        if (($this->container['from_walletable_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'from_walletable_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['from_walletable_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'from_walletable_id', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['from_walletable_type'] === null) {
+            $invalidProperties[] = "'from_walletable_type' can't be null";
+        }
+        $allowedValues = $this->getFromWalletableTypeAllowableValues();
+        if (!is_null($this->container['from_walletable_type']) && !in_array($this->container['from_walletable_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'from_walletable_type', must be one of '%s'",
+                $this->container['from_walletable_type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if ($this->container['amount'] === null) {
+            $invalidProperties[] = "'amount' can't be null";
+        }
+        if (($this->container['amount'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 9223372036854775807.";
+        }
+
+        if (($this->container['amount'] < -9223372036854775808)) {
+            $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to -9223372036854775808.";
+        }
+
+        if ($this->container['date'] === null) {
+            $invalidProperties[] = "'date' can't be null";
+        }
+        if ($this->container['company_id'] === null) {
+            $invalidProperties[] = "'company_id' can't be null";
+        }
+        if (($this->container['company_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['company_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -353,113 +353,67 @@ class TransferParams implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets amount
+     * Gets to_walletable_id
      *
      * @return int
      */
-    public function getAmount()
+    public function getToWalletableId()
     {
-        return $this->container['amount'];
+        return $this->container['to_walletable_id'];
     }
 
     /**
-     * Sets amount
+     * Sets to_walletable_id
      *
-     * @param int $amount 金額
+     * @param int $to_walletable_id 振替先口座ID
      *
      * @return self
      */
-    public function setAmount($amount)
+    public function setToWalletableId($to_walletable_id)
     {
 
-        if (($amount > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling TransferParams., must be smaller than or equal to 9223372036854775807.');
+        if (($to_walletable_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $to_walletable_id when calling TransferParams., must be smaller than or equal to 2147483647.');
         }
-        if (($amount < -9223372036854775808)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling TransferParams., must be bigger than or equal to -9223372036854775808.');
+        if (($to_walletable_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $to_walletable_id when calling TransferParams., must be bigger than or equal to 1.');
         }
 
-        $this->container['amount'] = $amount;
+        $this->container['to_walletable_id'] = $to_walletable_id;
 
         return $this;
     }
 
     /**
-     * Gets company_id
-     *
-     * @return int
-     */
-    public function getCompanyId()
-    {
-        return $this->container['company_id'];
-    }
-
-    /**
-     * Sets company_id
-     *
-     * @param int $company_id 事業所ID
-     *
-     * @return self
-     */
-    public function setCompanyId($company_id)
-    {
-
-        if (($company_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling TransferParams., must be smaller than or equal to 2147483647.');
-        }
-        if (($company_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling TransferParams., must be bigger than or equal to 1.');
-        }
-
-        $this->container['company_id'] = $company_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets date
+     * Gets to_walletable_type
      *
      * @return string
      */
-    public function getDate()
+    public function getToWalletableType()
     {
-        return $this->container['date'];
+        return $this->container['to_walletable_type'];
     }
 
     /**
-     * Sets date
+     * Sets to_walletable_type
      *
-     * @param string $date 振替日 (yyyy-mm-dd)
+     * @param string $to_walletable_type 振替先口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet)
      *
      * @return self
      */
-    public function setDate($date)
+    public function setToWalletableType($to_walletable_type)
     {
-        $this->container['date'] = $date;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string|null
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string|null $description 備考
-     *
-     * @return self
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
+        $allowedValues = $this->getToWalletableTypeAllowableValues();
+        if (!in_array($to_walletable_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'to_walletable_type', must be one of '%s'",
+                    $to_walletable_type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['to_walletable_type'] = $to_walletable_type;
 
         return $this;
     }
@@ -531,67 +485,113 @@ class TransferParams implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets to_walletable_id
+     * Gets amount
      *
      * @return int
      */
-    public function getToWalletableId()
+    public function getAmount()
     {
-        return $this->container['to_walletable_id'];
+        return $this->container['amount'];
     }
 
     /**
-     * Sets to_walletable_id
+     * Sets amount
      *
-     * @param int $to_walletable_id 振替先口座ID
+     * @param int $amount 金額
      *
      * @return self
      */
-    public function setToWalletableId($to_walletable_id)
+    public function setAmount($amount)
     {
 
-        if (($to_walletable_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $to_walletable_id when calling TransferParams., must be smaller than or equal to 2147483647.');
+        if (($amount > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling TransferParams., must be smaller than or equal to 9223372036854775807.');
         }
-        if (($to_walletable_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $to_walletable_id when calling TransferParams., must be bigger than or equal to 1.');
+        if (($amount < -9223372036854775808)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling TransferParams., must be bigger than or equal to -9223372036854775808.');
         }
 
-        $this->container['to_walletable_id'] = $to_walletable_id;
+        $this->container['amount'] = $amount;
 
         return $this;
     }
 
     /**
-     * Gets to_walletable_type
+     * Gets date
      *
      * @return string
      */
-    public function getToWalletableType()
+    public function getDate()
     {
-        return $this->container['to_walletable_type'];
+        return $this->container['date'];
     }
 
     /**
-     * Sets to_walletable_type
+     * Sets date
      *
-     * @param string $to_walletable_type 振替先口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet)
+     * @param string $date 振替日 (yyyy-mm-dd)
      *
      * @return self
      */
-    public function setToWalletableType($to_walletable_type)
+    public function setDate($date)
     {
-        $allowedValues = $this->getToWalletableTypeAllowableValues();
-        if (!in_array($to_walletable_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'to_walletable_type', must be one of '%s'",
-                    $to_walletable_type,
-                    implode("', '", $allowedValues)
-                )
-            );
+        $this->container['date'] = $date;
+
+        return $this;
+    }
+
+    /**
+     * Gets company_id
+     *
+     * @return int
+     */
+    public function getCompanyId()
+    {
+        return $this->container['company_id'];
+    }
+
+    /**
+     * Sets company_id
+     *
+     * @param int $company_id 事業所ID
+     *
+     * @return self
+     */
+    public function setCompanyId($company_id)
+    {
+
+        if (($company_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $company_id when calling TransferParams., must be smaller than or equal to 2147483647.');
         }
-        $this->container['to_walletable_type'] = $to_walletable_type;
+        if (($company_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $company_id when calling TransferParams., must be bigger than or equal to 1.');
+        }
+
+        $this->container['company_id'] = $company_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string|null $description 備考
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
 
         return $this;
     }

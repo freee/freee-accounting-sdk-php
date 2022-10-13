@@ -59,25 +59,25 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'applicant_id' => 'int',
-        'application_date' => 'string',
-        'application_number' => 'string',
-        'approval_flow_logs' => '\Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovalFlowLogs[]',
-        'approval_flow_route_id' => 'int',
-        'approval_request_form' => '\Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovalRequestForm',
-        'approvers' => '\Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovers[]',
-        'comments' => '\Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestComments[]',
-        'company_id' => 'int',
-        'current_round' => 'int',
-        'current_step_id' => 'int',
-        'deal_id' => 'int',
-        'deal_status' => 'string',
-        'form_id' => 'int',
         'id' => 'int',
-        'manual_journal_id' => 'int',
-        'request_items' => '\Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestRequestItems[]',
+        'company_id' => 'int',
+        'application_date' => 'string',
+        'title' => 'string',
+        'applicant_id' => 'int',
+        'approvers' => '\Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplicationApprovers[]',
+        'application_number' => 'string',
         'status' => 'string',
-        'title' => 'string'
+        'request_items' => '\Freee\Accounting\Model\ApprovalRequestsIndexResponseRequestItems[]',
+        'form_id' => 'int',
+        'approval_flow_route_id' => 'int',
+        'comments' => '\Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplicationComments[]',
+        'approval_flow_logs' => '\Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplicationApprovalFlowLogs[]',
+        'current_step_id' => 'int',
+        'current_round' => 'int',
+        'approval_request_form' => '\Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovalRequestForm',
+        'deal_id' => 'int',
+        'manual_journal_id' => 'int',
+        'deal_status' => 'string'
     ];
 
     /**
@@ -88,25 +88,25 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'applicant_id' => null,
-        'application_date' => null,
-        'application_number' => null,
-        'approval_flow_logs' => null,
-        'approval_flow_route_id' => null,
-        'approval_request_form' => null,
-        'approvers' => null,
-        'comments' => null,
-        'company_id' => null,
-        'current_round' => null,
-        'current_step_id' => null,
-        'deal_id' => null,
-        'deal_status' => null,
-        'form_id' => null,
         'id' => null,
-        'manual_journal_id' => null,
-        'request_items' => null,
+        'company_id' => null,
+        'application_date' => null,
+        'title' => null,
+        'applicant_id' => null,
+        'approvers' => null,
+        'application_number' => null,
         'status' => null,
-        'title' => null
+        'request_items' => null,
+        'form_id' => null,
+        'approval_flow_route_id' => null,
+        'comments' => null,
+        'approval_flow_logs' => null,
+        'current_step_id' => null,
+        'current_round' => null,
+        'approval_request_form' => null,
+        'deal_id' => null,
+        'manual_journal_id' => null,
+        'deal_status' => null
     ];
 
     /**
@@ -136,25 +136,25 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $attributeMap = [
-        'applicant_id' => 'applicant_id',
-        'application_date' => 'application_date',
-        'application_number' => 'application_number',
-        'approval_flow_logs' => 'approval_flow_logs',
-        'approval_flow_route_id' => 'approval_flow_route_id',
-        'approval_request_form' => 'approval_request_form',
-        'approvers' => 'approvers',
-        'comments' => 'comments',
-        'company_id' => 'company_id',
-        'current_round' => 'current_round',
-        'current_step_id' => 'current_step_id',
-        'deal_id' => 'deal_id',
-        'deal_status' => 'deal_status',
-        'form_id' => 'form_id',
         'id' => 'id',
-        'manual_journal_id' => 'manual_journal_id',
-        'request_items' => 'request_items',
+        'company_id' => 'company_id',
+        'application_date' => 'application_date',
+        'title' => 'title',
+        'applicant_id' => 'applicant_id',
+        'approvers' => 'approvers',
+        'application_number' => 'application_number',
         'status' => 'status',
-        'title' => 'title'
+        'request_items' => 'request_items',
+        'form_id' => 'form_id',
+        'approval_flow_route_id' => 'approval_flow_route_id',
+        'comments' => 'comments',
+        'approval_flow_logs' => 'approval_flow_logs',
+        'current_step_id' => 'current_step_id',
+        'current_round' => 'current_round',
+        'approval_request_form' => 'approval_request_form',
+        'deal_id' => 'deal_id',
+        'manual_journal_id' => 'manual_journal_id',
+        'deal_status' => 'deal_status'
     ];
 
     /**
@@ -163,25 +163,25 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-        'applicant_id' => 'setApplicantId',
-        'application_date' => 'setApplicationDate',
-        'application_number' => 'setApplicationNumber',
-        'approval_flow_logs' => 'setApprovalFlowLogs',
-        'approval_flow_route_id' => 'setApprovalFlowRouteId',
-        'approval_request_form' => 'setApprovalRequestForm',
-        'approvers' => 'setApprovers',
-        'comments' => 'setComments',
-        'company_id' => 'setCompanyId',
-        'current_round' => 'setCurrentRound',
-        'current_step_id' => 'setCurrentStepId',
-        'deal_id' => 'setDealId',
-        'deal_status' => 'setDealStatus',
-        'form_id' => 'setFormId',
         'id' => 'setId',
-        'manual_journal_id' => 'setManualJournalId',
-        'request_items' => 'setRequestItems',
+        'company_id' => 'setCompanyId',
+        'application_date' => 'setApplicationDate',
+        'title' => 'setTitle',
+        'applicant_id' => 'setApplicantId',
+        'approvers' => 'setApprovers',
+        'application_number' => 'setApplicationNumber',
         'status' => 'setStatus',
-        'title' => 'setTitle'
+        'request_items' => 'setRequestItems',
+        'form_id' => 'setFormId',
+        'approval_flow_route_id' => 'setApprovalFlowRouteId',
+        'comments' => 'setComments',
+        'approval_flow_logs' => 'setApprovalFlowLogs',
+        'current_step_id' => 'setCurrentStepId',
+        'current_round' => 'setCurrentRound',
+        'approval_request_form' => 'setApprovalRequestForm',
+        'deal_id' => 'setDealId',
+        'manual_journal_id' => 'setManualJournalId',
+        'deal_status' => 'setDealStatus'
     ];
 
     /**
@@ -190,25 +190,25 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $getters = [
-        'applicant_id' => 'getApplicantId',
-        'application_date' => 'getApplicationDate',
-        'application_number' => 'getApplicationNumber',
-        'approval_flow_logs' => 'getApprovalFlowLogs',
-        'approval_flow_route_id' => 'getApprovalFlowRouteId',
-        'approval_request_form' => 'getApprovalRequestForm',
-        'approvers' => 'getApprovers',
-        'comments' => 'getComments',
-        'company_id' => 'getCompanyId',
-        'current_round' => 'getCurrentRound',
-        'current_step_id' => 'getCurrentStepId',
-        'deal_id' => 'getDealId',
-        'deal_status' => 'getDealStatus',
-        'form_id' => 'getFormId',
         'id' => 'getId',
-        'manual_journal_id' => 'getManualJournalId',
-        'request_items' => 'getRequestItems',
+        'company_id' => 'getCompanyId',
+        'application_date' => 'getApplicationDate',
+        'title' => 'getTitle',
+        'applicant_id' => 'getApplicantId',
+        'approvers' => 'getApprovers',
+        'application_number' => 'getApplicationNumber',
         'status' => 'getStatus',
-        'title' => 'getTitle'
+        'request_items' => 'getRequestItems',
+        'form_id' => 'getFormId',
+        'approval_flow_route_id' => 'getApprovalFlowRouteId',
+        'comments' => 'getComments',
+        'approval_flow_logs' => 'getApprovalFlowLogs',
+        'current_step_id' => 'getCurrentStepId',
+        'current_round' => 'getCurrentRound',
+        'approval_request_form' => 'getApprovalRequestForm',
+        'deal_id' => 'getDealId',
+        'manual_journal_id' => 'getManualJournalId',
+        'deal_status' => 'getDealStatus'
     ];
 
     /**
@@ -252,26 +252,13 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
         return self::$openAPIModelName;
     }
 
-    const DEAL_STATUS_SETTLED = 'settled';
-    const DEAL_STATUS_UNSETTLED = 'unsettled';
     const STATUS_DRAFT = 'draft';
     const STATUS_IN_PROGRESS = 'in_progress';
     const STATUS_APPROVED = 'approved';
     const STATUS_REJECTED = 'rejected';
     const STATUS_FEEDBACK = 'feedback';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getDealStatusAllowableValues()
-    {
-        return [
-            self::DEAL_STATUS_SETTLED,
-            self::DEAL_STATUS_UNSETTLED,
-        ];
-    }
+    const DEAL_STATUS_SETTLED = 'settled';
+    const DEAL_STATUS_UNSETTLED = 'unsettled';
 
     /**
      * Gets allowable values of the enum
@@ -290,6 +277,19 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
     }
 
     /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getDealStatusAllowableValues()
+    {
+        return [
+            self::DEAL_STATUS_SETTLED,
+            self::DEAL_STATUS_UNSETTLED,
+        ];
+    }
+
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
@@ -304,25 +304,25 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
      */
     public function __construct(array $data = null)
     {
-        $this->container['applicant_id'] = $data['applicant_id'] ?? null;
-        $this->container['application_date'] = $data['application_date'] ?? null;
-        $this->container['application_number'] = $data['application_number'] ?? null;
-        $this->container['approval_flow_logs'] = $data['approval_flow_logs'] ?? null;
-        $this->container['approval_flow_route_id'] = $data['approval_flow_route_id'] ?? null;
-        $this->container['approval_request_form'] = $data['approval_request_form'] ?? null;
-        $this->container['approvers'] = $data['approvers'] ?? null;
-        $this->container['comments'] = $data['comments'] ?? null;
-        $this->container['company_id'] = $data['company_id'] ?? null;
-        $this->container['current_round'] = $data['current_round'] ?? null;
-        $this->container['current_step_id'] = $data['current_step_id'] ?? null;
-        $this->container['deal_id'] = $data['deal_id'] ?? null;
-        $this->container['deal_status'] = $data['deal_status'] ?? null;
-        $this->container['form_id'] = $data['form_id'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['manual_journal_id'] = $data['manual_journal_id'] ?? null;
-        $this->container['request_items'] = $data['request_items'] ?? null;
-        $this->container['status'] = $data['status'] ?? null;
+        $this->container['company_id'] = $data['company_id'] ?? null;
+        $this->container['application_date'] = $data['application_date'] ?? null;
         $this->container['title'] = $data['title'] ?? null;
+        $this->container['applicant_id'] = $data['applicant_id'] ?? null;
+        $this->container['approvers'] = $data['approvers'] ?? null;
+        $this->container['application_number'] = $data['application_number'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
+        $this->container['request_items'] = $data['request_items'] ?? null;
+        $this->container['form_id'] = $data['form_id'] ?? null;
+        $this->container['approval_flow_route_id'] = $data['approval_flow_route_id'] ?? null;
+        $this->container['comments'] = $data['comments'] ?? null;
+        $this->container['approval_flow_logs'] = $data['approval_flow_logs'] ?? null;
+        $this->container['current_step_id'] = $data['current_step_id'] ?? null;
+        $this->container['current_round'] = $data['current_round'] ?? null;
+        $this->container['approval_request_form'] = $data['approval_request_form'] ?? null;
+        $this->container['deal_id'] = $data['deal_id'] ?? null;
+        $this->container['manual_journal_id'] = $data['manual_journal_id'] ?? null;
+        $this->container['deal_status'] = $data['deal_status'] ?? null;
     }
 
     /**
@@ -334,6 +334,34 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
     {
         $invalidProperties = [];
 
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
+        }
+        if (($this->container['id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['company_id'] === null) {
+            $invalidProperties[] = "'company_id' can't be null";
+        }
+        if (($this->container['company_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['company_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['application_date'] === null) {
+            $invalidProperties[] = "'application_date' can't be null";
+        }
+        if ($this->container['title'] === null) {
+            $invalidProperties[] = "'title' can't be null";
+        }
         if ($this->container['applicant_id'] === null) {
             $invalidProperties[] = "'applicant_id' can't be null";
         }
@@ -345,15 +373,38 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
             $invalidProperties[] = "invalid value for 'applicant_id', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['application_date'] === null) {
-            $invalidProperties[] = "'application_date' can't be null";
+        if ($this->container['approvers'] === null) {
+            $invalidProperties[] = "'approvers' can't be null";
         }
         if ($this->container['application_number'] === null) {
             $invalidProperties[] = "'application_number' can't be null";
         }
-        if ($this->container['approval_flow_logs'] === null) {
-            $invalidProperties[] = "'approval_flow_logs' can't be null";
+        if ($this->container['status'] === null) {
+            $invalidProperties[] = "'status' can't be null";
         }
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'status', must be one of '%s'",
+                $this->container['status'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if ($this->container['request_items'] === null) {
+            $invalidProperties[] = "'request_items' can't be null";
+        }
+        if ($this->container['form_id'] === null) {
+            $invalidProperties[] = "'form_id' can't be null";
+        }
+        if (($this->container['form_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'form_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['form_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'form_id', must be bigger than or equal to 1.";
+        }
+
         if ($this->container['approval_flow_route_id'] === null) {
             $invalidProperties[] = "'approval_flow_route_id' can't be null";
         }
@@ -365,24 +416,21 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
             $invalidProperties[] = "invalid value for 'approval_flow_route_id', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['approval_request_form'] === null) {
-            $invalidProperties[] = "'approval_request_form' can't be null";
-        }
-        if ($this->container['approvers'] === null) {
-            $invalidProperties[] = "'approvers' can't be null";
-        }
         if ($this->container['comments'] === null) {
             $invalidProperties[] = "'comments' can't be null";
         }
-        if ($this->container['company_id'] === null) {
-            $invalidProperties[] = "'company_id' can't be null";
+        if ($this->container['approval_flow_logs'] === null) {
+            $invalidProperties[] = "'approval_flow_logs' can't be null";
         }
-        if (($this->container['company_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
+        if ($this->container['current_step_id'] === null) {
+            $invalidProperties[] = "'current_step_id' can't be null";
+        }
+        if (($this->container['current_step_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'current_step_id', must be smaller than or equal to 2147483647.";
         }
 
-        if (($this->container['company_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
+        if (($this->container['current_step_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'current_step_id', must be bigger than or equal to 1.";
         }
 
         if ($this->container['current_round'] === null) {
@@ -396,17 +444,9 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
             $invalidProperties[] = "invalid value for 'current_round', must be bigger than or equal to 0.";
         }
 
-        if ($this->container['current_step_id'] === null) {
-            $invalidProperties[] = "'current_step_id' can't be null";
+        if ($this->container['approval_request_form'] === null) {
+            $invalidProperties[] = "'approval_request_form' can't be null";
         }
-        if (($this->container['current_step_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'current_step_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['current_step_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'current_step_id', must be bigger than or equal to 1.";
-        }
-
         if ($this->container['deal_id'] === null) {
             $invalidProperties[] = "'deal_id' can't be null";
         }
@@ -416,6 +456,17 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
 
         if (($this->container['deal_id'] < 1)) {
             $invalidProperties[] = "invalid value for 'deal_id', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['manual_journal_id'] === null) {
+            $invalidProperties[] = "'manual_journal_id' can't be null";
+        }
+        if (($this->container['manual_journal_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'manual_journal_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['manual_journal_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'manual_journal_id', must be bigger than or equal to 1.";
         }
 
         if ($this->container['deal_status'] === null) {
@@ -430,57 +481,6 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
             );
         }
 
-        if ($this->container['form_id'] === null) {
-            $invalidProperties[] = "'form_id' can't be null";
-        }
-        if (($this->container['form_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'form_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['form_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'form_id', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if (($this->container['id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['manual_journal_id'] === null) {
-            $invalidProperties[] = "'manual_journal_id' can't be null";
-        }
-        if (($this->container['manual_journal_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'manual_journal_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['manual_journal_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'manual_journal_id', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['request_items'] === null) {
-            $invalidProperties[] = "'request_items' can't be null";
-        }
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
-        }
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'status', must be one of '%s'",
-                $this->container['status'],
-                implode("', '", $allowedValues)
-            );
-        }
-
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -497,209 +497,33 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
 
 
     /**
-     * Gets applicant_id
+     * Gets id
      *
      * @return int
      */
-    public function getApplicantId()
+    public function getId()
     {
-        return $this->container['applicant_id'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets applicant_id
+     * Sets id
      *
-     * @param int $applicant_id 申請者のユーザーID
+     * @param int $id 各種申請ID
      *
      * @return self
      */
-    public function setApplicantId($applicant_id)
+    public function setId($id)
     {
 
-        if (($applicant_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $applicant_id when calling ApprovalRequestResponseApprovalRequest., must be smaller than or equal to 2147483647.');
+        if (($id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling ApprovalRequestResponseApprovalRequest., must be smaller than or equal to 2147483647.');
         }
-        if (($applicant_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $applicant_id when calling ApprovalRequestResponseApprovalRequest., must be bigger than or equal to 1.');
-        }
-
-        $this->container['applicant_id'] = $applicant_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets application_date
-     *
-     * @return string
-     */
-    public function getApplicationDate()
-    {
-        return $this->container['application_date'];
-    }
-
-    /**
-     * Sets application_date
-     *
-     * @param string $application_date 申請日 (yyyy-mm-dd)
-     *
-     * @return self
-     */
-    public function setApplicationDate($application_date)
-    {
-        $this->container['application_date'] = $application_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets application_number
-     *
-     * @return string
-     */
-    public function getApplicationNumber()
-    {
-        return $this->container['application_number'];
-    }
-
-    /**
-     * Sets application_number
-     *
-     * @param string $application_number 申請No.
-     *
-     * @return self
-     */
-    public function setApplicationNumber($application_number)
-    {
-        $this->container['application_number'] = $application_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets approval_flow_logs
-     *
-     * @return \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovalFlowLogs[]
-     */
-    public function getApprovalFlowLogs()
-    {
-        return $this->container['approval_flow_logs'];
-    }
-
-    /**
-     * Sets approval_flow_logs
-     *
-     * @param \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovalFlowLogs[] $approval_flow_logs 各種申請の承認履歴（配列）
-     *
-     * @return self
-     */
-    public function setApprovalFlowLogs($approval_flow_logs)
-    {
-        $this->container['approval_flow_logs'] = $approval_flow_logs;
-
-        return $this;
-    }
-
-    /**
-     * Gets approval_flow_route_id
-     *
-     * @return int
-     */
-    public function getApprovalFlowRouteId()
-    {
-        return $this->container['approval_flow_route_id'];
-    }
-
-    /**
-     * Sets approval_flow_route_id
-     *
-     * @param int $approval_flow_route_id 申請経路ID
-     *
-     * @return self
-     */
-    public function setApprovalFlowRouteId($approval_flow_route_id)
-    {
-
-        if (($approval_flow_route_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $approval_flow_route_id when calling ApprovalRequestResponseApprovalRequest., must be smaller than or equal to 2147483647.');
-        }
-        if (($approval_flow_route_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $approval_flow_route_id when calling ApprovalRequestResponseApprovalRequest., must be bigger than or equal to 1.');
+        if (($id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling ApprovalRequestResponseApprovalRequest., must be bigger than or equal to 1.');
         }
 
-        $this->container['approval_flow_route_id'] = $approval_flow_route_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets approval_request_form
-     *
-     * @return \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovalRequestForm
-     */
-    public function getApprovalRequestForm()
-    {
-        return $this->container['approval_request_form'];
-    }
-
-    /**
-     * Sets approval_request_form
-     *
-     * @param \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovalRequestForm $approval_request_form approval_request_form
-     *
-     * @return self
-     */
-    public function setApprovalRequestForm($approval_request_form)
-    {
-        $this->container['approval_request_form'] = $approval_request_form;
-
-        return $this;
-    }
-
-    /**
-     * Gets approvers
-     *
-     * @return \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovers[]
-     */
-    public function getApprovers()
-    {
-        return $this->container['approvers'];
-    }
-
-    /**
-     * Sets approvers
-     *
-     * @param \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovers[] $approvers 承認者（配列）   承認ステップのresource_typeがunspecified (指定なし)の場合はapproversはレスポンスに含まれません。   しかし、resource_typeがunspecifiedの承認ステップにおいて誰かが承認・却下・差し戻しのいずれかのアクションを取った後は、   approversはレスポンスに含まれるようになります。   その場合approversにはアクションを行ったステップのIDとアクションを行ったユーザーのIDが含まれます。
-     *
-     * @return self
-     */
-    public function setApprovers($approvers)
-    {
-        $this->container['approvers'] = $approvers;
-
-        return $this;
-    }
-
-    /**
-     * Gets comments
-     *
-     * @return \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestComments[]
-     */
-    public function getComments()
-    {
-        return $this->container['comments'];
-    }
-
-    /**
-     * Sets comments
-     *
-     * @param \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestComments[] $comments 各種申請のコメント一覧（配列）
-     *
-     * @return self
-     */
-    public function setComments($comments)
-    {
-        $this->container['comments'] = $comments;
+        $this->container['id'] = $id;
 
         return $this;
     }
@@ -737,251 +561,129 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
     }
 
     /**
-     * Gets current_round
-     *
-     * @return int
-     */
-    public function getCurrentRound()
-    {
-        return $this->container['current_round'];
-    }
-
-    /**
-     * Sets current_round
-     *
-     * @param int $current_round 現在のround。差し戻し等により申請がstepの最初からやり直しになるとroundの値が増えます。
-     *
-     * @return self
-     */
-    public function setCurrentRound($current_round)
-    {
-
-        if (($current_round > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $current_round when calling ApprovalRequestResponseApprovalRequest., must be smaller than or equal to 2147483647.');
-        }
-        if (($current_round < 0)) {
-            throw new \InvalidArgumentException('invalid value for $current_round when calling ApprovalRequestResponseApprovalRequest., must be bigger than or equal to 0.');
-        }
-
-        $this->container['current_round'] = $current_round;
-
-        return $this;
-    }
-
-    /**
-     * Gets current_step_id
-     *
-     * @return int
-     */
-    public function getCurrentStepId()
-    {
-        return $this->container['current_step_id'];
-    }
-
-    /**
-     * Sets current_step_id
-     *
-     * @param int $current_step_id 現在承認ステップID
-     *
-     * @return self
-     */
-    public function setCurrentStepId($current_step_id)
-    {
-
-        if (($current_step_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $current_step_id when calling ApprovalRequestResponseApprovalRequest., must be smaller than or equal to 2147483647.');
-        }
-        if (($current_step_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $current_step_id when calling ApprovalRequestResponseApprovalRequest., must be bigger than or equal to 1.');
-        }
-
-        $this->container['current_step_id'] = $current_step_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets deal_id
-     *
-     * @return int
-     */
-    public function getDealId()
-    {
-        return $this->container['deal_id'];
-    }
-
-    /**
-     * Sets deal_id
-     *
-     * @param int $deal_id 取引ID (申請ステータス:statusがapprovedで、取引が存在する時のみdeal_idが表示されます)
-     *
-     * @return self
-     */
-    public function setDealId($deal_id)
-    {
-
-        if (($deal_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $deal_id when calling ApprovalRequestResponseApprovalRequest., must be smaller than or equal to 2147483647.');
-        }
-        if (($deal_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $deal_id when calling ApprovalRequestResponseApprovalRequest., must be bigger than or equal to 1.');
-        }
-
-        $this->container['deal_id'] = $deal_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets deal_status
+     * Gets application_date
      *
      * @return string
      */
-    public function getDealStatus()
+    public function getApplicationDate()
     {
-        return $this->container['deal_status'];
+        return $this->container['application_date'];
     }
 
     /**
-     * Sets deal_status
+     * Sets application_date
      *
-     * @param string $deal_status 取引ステータス (申請ステータス:statusがapprovedで、取引が存在する時のみdeal_statusが表示されます settled:決済済み, unsettled:未決済)
+     * @param string $application_date 申請日 (yyyy-mm-dd)
      *
      * @return self
      */
-    public function setDealStatus($deal_status)
+    public function setApplicationDate($application_date)
     {
-        $allowedValues = $this->getDealStatusAllowableValues();
-        if (!in_array($deal_status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'deal_status', must be one of '%s'",
-                    $deal_status,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['deal_status'] = $deal_status;
+        $this->container['application_date'] = $application_date;
 
         return $this;
     }
 
     /**
-     * Gets form_id
+     * Gets title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->container['title'];
+    }
+
+    /**
+     * Sets title
+     *
+     * @param string $title 申請タイトル
+     *
+     * @return self
+     */
+    public function setTitle($title)
+    {
+        $this->container['title'] = $title;
+
+        return $this;
+    }
+
+    /**
+     * Gets applicant_id
      *
      * @return int
      */
-    public function getFormId()
+    public function getApplicantId()
     {
-        return $this->container['form_id'];
+        return $this->container['applicant_id'];
     }
 
     /**
-     * Sets form_id
+     * Sets applicant_id
      *
-     * @param int $form_id 申請フォームID
+     * @param int $applicant_id 申請者のユーザーID
      *
      * @return self
      */
-    public function setFormId($form_id)
+    public function setApplicantId($applicant_id)
     {
 
-        if (($form_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $form_id when calling ApprovalRequestResponseApprovalRequest., must be smaller than or equal to 2147483647.');
+        if (($applicant_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $applicant_id when calling ApprovalRequestResponseApprovalRequest., must be smaller than or equal to 2147483647.');
         }
-        if (($form_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $form_id when calling ApprovalRequestResponseApprovalRequest., must be bigger than or equal to 1.');
+        if (($applicant_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $applicant_id when calling ApprovalRequestResponseApprovalRequest., must be bigger than or equal to 1.');
         }
 
-        $this->container['form_id'] = $form_id;
+        $this->container['applicant_id'] = $applicant_id;
 
         return $this;
     }
 
     /**
-     * Gets id
+     * Gets approvers
      *
-     * @return int
+     * @return \Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplicationApprovers[]
      */
-    public function getId()
+    public function getApprovers()
     {
-        return $this->container['id'];
+        return $this->container['approvers'];
     }
 
     /**
-     * Sets id
+     * Sets approvers
      *
-     * @param int $id 各種申請ID
+     * @param \Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplicationApprovers[] $approvers 承認者（配列）   承認ステップのresource_typeがunspecified (指定なし)の場合はapproversはレスポンスに含まれません。   しかし、resource_typeがunspecifiedの承認ステップにおいて誰かが承認・却下・差し戻しのいずれかのアクションを取った後は、   approversはレスポンスに含まれるようになります。   その場合approversにはアクションを行ったステップのIDとアクションを行ったユーザーのIDが含まれます。
      *
      * @return self
      */
-    public function setId($id)
+    public function setApprovers($approvers)
     {
-
-        if (($id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling ApprovalRequestResponseApprovalRequest., must be smaller than or equal to 2147483647.');
-        }
-        if (($id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling ApprovalRequestResponseApprovalRequest., must be bigger than or equal to 1.');
-        }
-
-        $this->container['id'] = $id;
+        $this->container['approvers'] = $approvers;
 
         return $this;
     }
 
     /**
-     * Gets manual_journal_id
+     * Gets application_number
      *
-     * @return int
+     * @return string
      */
-    public function getManualJournalId()
+    public function getApplicationNumber()
     {
-        return $this->container['manual_journal_id'];
+        return $this->container['application_number'];
     }
 
     /**
-     * Sets manual_journal_id
+     * Sets application_number
      *
-     * @param int $manual_journal_id 振替伝票のID (申請ステータス:statusがapprovedで、関連する振替伝票が存在する時のみmanual_journal_idが表示されます)  <a href=\"https://support.freee.co.jp/hc/ja/articles/115003827683-#5\" target=\"_blank\">承認された各種申請から支払依頼等を作成する</a>
+     * @param string $application_number 申請No.
      *
      * @return self
      */
-    public function setManualJournalId($manual_journal_id)
+    public function setApplicationNumber($application_number)
     {
-
-        if (($manual_journal_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $manual_journal_id when calling ApprovalRequestResponseApprovalRequest., must be smaller than or equal to 2147483647.');
-        }
-        if (($manual_journal_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $manual_journal_id when calling ApprovalRequestResponseApprovalRequest., must be bigger than or equal to 1.');
-        }
-
-        $this->container['manual_journal_id'] = $manual_journal_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets request_items
-     *
-     * @return \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestRequestItems[]
-     */
-    public function getRequestItems()
-    {
-        return $this->container['request_items'];
-    }
-
-    /**
-     * Sets request_items
-     *
-     * @param \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestRequestItems[] $request_items 各種申請の項目一覧（配列）
-     *
-     * @return self
-     */
-    public function setRequestItems($request_items)
-    {
-        $this->container['request_items'] = $request_items;
+        $this->container['application_number'] = $application_number;
 
         return $this;
     }
@@ -1021,25 +723,323 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
     }
 
     /**
-     * Gets title
+     * Gets request_items
      *
-     * @return string
+     * @return \Freee\Accounting\Model\ApprovalRequestsIndexResponseRequestItems[]
      */
-    public function getTitle()
+    public function getRequestItems()
     {
-        return $this->container['title'];
+        return $this->container['request_items'];
     }
 
     /**
-     * Sets title
+     * Sets request_items
      *
-     * @param string $title 申請タイトル
+     * @param \Freee\Accounting\Model\ApprovalRequestsIndexResponseRequestItems[] $request_items 各種申請の項目一覧（配列）
      *
      * @return self
      */
-    public function setTitle($title)
+    public function setRequestItems($request_items)
     {
-        $this->container['title'] = $title;
+        $this->container['request_items'] = $request_items;
+
+        return $this;
+    }
+
+    /**
+     * Gets form_id
+     *
+     * @return int
+     */
+    public function getFormId()
+    {
+        return $this->container['form_id'];
+    }
+
+    /**
+     * Sets form_id
+     *
+     * @param int $form_id 申請フォームID
+     *
+     * @return self
+     */
+    public function setFormId($form_id)
+    {
+
+        if (($form_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $form_id when calling ApprovalRequestResponseApprovalRequest., must be smaller than or equal to 2147483647.');
+        }
+        if (($form_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $form_id when calling ApprovalRequestResponseApprovalRequest., must be bigger than or equal to 1.');
+        }
+
+        $this->container['form_id'] = $form_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets approval_flow_route_id
+     *
+     * @return int
+     */
+    public function getApprovalFlowRouteId()
+    {
+        return $this->container['approval_flow_route_id'];
+    }
+
+    /**
+     * Sets approval_flow_route_id
+     *
+     * @param int $approval_flow_route_id 申請経路ID
+     *
+     * @return self
+     */
+    public function setApprovalFlowRouteId($approval_flow_route_id)
+    {
+
+        if (($approval_flow_route_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $approval_flow_route_id when calling ApprovalRequestResponseApprovalRequest., must be smaller than or equal to 2147483647.');
+        }
+        if (($approval_flow_route_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $approval_flow_route_id when calling ApprovalRequestResponseApprovalRequest., must be bigger than or equal to 1.');
+        }
+
+        $this->container['approval_flow_route_id'] = $approval_flow_route_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets comments
+     *
+     * @return \Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplicationComments[]
+     */
+    public function getComments()
+    {
+        return $this->container['comments'];
+    }
+
+    /**
+     * Sets comments
+     *
+     * @param \Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplicationComments[] $comments 各種申請のコメント一覧（配列）
+     *
+     * @return self
+     */
+    public function setComments($comments)
+    {
+        $this->container['comments'] = $comments;
+
+        return $this;
+    }
+
+    /**
+     * Gets approval_flow_logs
+     *
+     * @return \Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplicationApprovalFlowLogs[]
+     */
+    public function getApprovalFlowLogs()
+    {
+        return $this->container['approval_flow_logs'];
+    }
+
+    /**
+     * Sets approval_flow_logs
+     *
+     * @param \Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplicationApprovalFlowLogs[] $approval_flow_logs 各種申請の承認履歴（配列）
+     *
+     * @return self
+     */
+    public function setApprovalFlowLogs($approval_flow_logs)
+    {
+        $this->container['approval_flow_logs'] = $approval_flow_logs;
+
+        return $this;
+    }
+
+    /**
+     * Gets current_step_id
+     *
+     * @return int
+     */
+    public function getCurrentStepId()
+    {
+        return $this->container['current_step_id'];
+    }
+
+    /**
+     * Sets current_step_id
+     *
+     * @param int $current_step_id 現在承認ステップID
+     *
+     * @return self
+     */
+    public function setCurrentStepId($current_step_id)
+    {
+
+        if (($current_step_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $current_step_id when calling ApprovalRequestResponseApprovalRequest., must be smaller than or equal to 2147483647.');
+        }
+        if (($current_step_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $current_step_id when calling ApprovalRequestResponseApprovalRequest., must be bigger than or equal to 1.');
+        }
+
+        $this->container['current_step_id'] = $current_step_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets current_round
+     *
+     * @return int
+     */
+    public function getCurrentRound()
+    {
+        return $this->container['current_round'];
+    }
+
+    /**
+     * Sets current_round
+     *
+     * @param int $current_round 現在のround。差し戻し等により申請がstepの最初からやり直しになるとroundの値が増えます。
+     *
+     * @return self
+     */
+    public function setCurrentRound($current_round)
+    {
+
+        if (($current_round > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $current_round when calling ApprovalRequestResponseApprovalRequest., must be smaller than or equal to 2147483647.');
+        }
+        if (($current_round < 0)) {
+            throw new \InvalidArgumentException('invalid value for $current_round when calling ApprovalRequestResponseApprovalRequest., must be bigger than or equal to 0.');
+        }
+
+        $this->container['current_round'] = $current_round;
+
+        return $this;
+    }
+
+    /**
+     * Gets approval_request_form
+     *
+     * @return \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovalRequestForm
+     */
+    public function getApprovalRequestForm()
+    {
+        return $this->container['approval_request_form'];
+    }
+
+    /**
+     * Sets approval_request_form
+     *
+     * @param \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovalRequestForm $approval_request_form approval_request_form
+     *
+     * @return self
+     */
+    public function setApprovalRequestForm($approval_request_form)
+    {
+        $this->container['approval_request_form'] = $approval_request_form;
+
+        return $this;
+    }
+
+    /**
+     * Gets deal_id
+     *
+     * @return int
+     */
+    public function getDealId()
+    {
+        return $this->container['deal_id'];
+    }
+
+    /**
+     * Sets deal_id
+     *
+     * @param int $deal_id 取引ID (申請ステータス:statusがapprovedで、取引が存在する時のみdeal_idが表示されます)
+     *
+     * @return self
+     */
+    public function setDealId($deal_id)
+    {
+
+        if (($deal_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $deal_id when calling ApprovalRequestResponseApprovalRequest., must be smaller than or equal to 2147483647.');
+        }
+        if (($deal_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $deal_id when calling ApprovalRequestResponseApprovalRequest., must be bigger than or equal to 1.');
+        }
+
+        $this->container['deal_id'] = $deal_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets manual_journal_id
+     *
+     * @return int
+     */
+    public function getManualJournalId()
+    {
+        return $this->container['manual_journal_id'];
+    }
+
+    /**
+     * Sets manual_journal_id
+     *
+     * @param int $manual_journal_id 振替伝票のID (申請ステータス:statusがapprovedで、関連する振替伝票が存在する時のみmanual_journal_idが表示されます)  <a href=\"https://support.freee.co.jp/hc/ja/articles/115003827683-#5\" target=\"_blank\">承認された各種申請から支払依頼等を作成する</a>
+     *
+     * @return self
+     */
+    public function setManualJournalId($manual_journal_id)
+    {
+
+        if (($manual_journal_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $manual_journal_id when calling ApprovalRequestResponseApprovalRequest., must be smaller than or equal to 2147483647.');
+        }
+        if (($manual_journal_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $manual_journal_id when calling ApprovalRequestResponseApprovalRequest., must be bigger than or equal to 1.');
+        }
+
+        $this->container['manual_journal_id'] = $manual_journal_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets deal_status
+     *
+     * @return string
+     */
+    public function getDealStatus()
+    {
+        return $this->container['deal_status'];
+    }
+
+    /**
+     * Sets deal_status
+     *
+     * @param string $deal_status 取引ステータス (申請ステータス:statusがapprovedで、取引が存在する時のみdeal_statusが表示されます settled:決済済み, unsettled:未決済)
+     *
+     * @return self
+     */
+    public function setDealStatus($deal_status)
+    {
+        $allowedValues = $this->getDealStatusAllowableValues();
+        if (!in_array($deal_status, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'deal_status', must be one of '%s'",
+                    $deal_status,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['deal_status'] = $deal_status;
 
         return $this;
     }

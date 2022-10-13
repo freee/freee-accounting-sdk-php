@@ -59,13 +59,13 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'adjustment' => 'bool',
-        'company_id' => 'int',
-        'details' => '\Freee\Accounting\Model\ManualJournalDetails[]',
         'id' => 'int',
+        'company_id' => 'int',
         'issue_date' => 'string',
-        'receipt_ids' => 'int[]',
-        'txn_number' => 'string'
+        'adjustment' => 'bool',
+        'txn_number' => 'string',
+        'details' => '\Freee\Accounting\Model\ManualJournalDetails[]',
+        'receipt_ids' => 'int[]'
     ];
 
     /**
@@ -76,13 +76,13 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'adjustment' => null,
-        'company_id' => null,
-        'details' => null,
         'id' => null,
+        'company_id' => null,
         'issue_date' => null,
-        'receipt_ids' => null,
-        'txn_number' => null
+        'adjustment' => null,
+        'txn_number' => null,
+        'details' => null,
+        'receipt_ids' => null
     ];
 
     /**
@@ -112,13 +112,13 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'adjustment' => 'adjustment',
-        'company_id' => 'company_id',
-        'details' => 'details',
         'id' => 'id',
+        'company_id' => 'company_id',
         'issue_date' => 'issue_date',
-        'receipt_ids' => 'receipt_ids',
-        'txn_number' => 'txn_number'
+        'adjustment' => 'adjustment',
+        'txn_number' => 'txn_number',
+        'details' => 'details',
+        'receipt_ids' => 'receipt_ids'
     ];
 
     /**
@@ -127,13 +127,13 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'adjustment' => 'setAdjustment',
-        'company_id' => 'setCompanyId',
-        'details' => 'setDetails',
         'id' => 'setId',
+        'company_id' => 'setCompanyId',
         'issue_date' => 'setIssueDate',
-        'receipt_ids' => 'setReceiptIds',
-        'txn_number' => 'setTxnNumber'
+        'adjustment' => 'setAdjustment',
+        'txn_number' => 'setTxnNumber',
+        'details' => 'setDetails',
+        'receipt_ids' => 'setReceiptIds'
     ];
 
     /**
@@ -142,13 +142,13 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'adjustment' => 'getAdjustment',
-        'company_id' => 'getCompanyId',
-        'details' => 'getDetails',
         'id' => 'getId',
+        'company_id' => 'getCompanyId',
         'issue_date' => 'getIssueDate',
-        'receipt_ids' => 'getReceiptIds',
-        'txn_number' => 'getTxnNumber'
+        'adjustment' => 'getAdjustment',
+        'txn_number' => 'getTxnNumber',
+        'details' => 'getDetails',
+        'receipt_ids' => 'getReceiptIds'
     ];
 
     /**
@@ -208,13 +208,13 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['adjustment'] = $data['adjustment'] ?? null;
-        $this->container['company_id'] = $data['company_id'] ?? null;
-        $this->container['details'] = $data['details'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
+        $this->container['company_id'] = $data['company_id'] ?? null;
         $this->container['issue_date'] = $data['issue_date'] ?? null;
-        $this->container['receipt_ids'] = $data['receipt_ids'] ?? null;
+        $this->container['adjustment'] = $data['adjustment'] ?? null;
         $this->container['txn_number'] = $data['txn_number'] ?? null;
+        $this->container['details'] = $data['details'] ?? null;
+        $this->container['receipt_ids'] = $data['receipt_ids'] ?? null;
     }
 
     /**
@@ -226,23 +226,6 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['adjustment'] === null) {
-            $invalidProperties[] = "'adjustment' can't be null";
-        }
-        if ($this->container['company_id'] === null) {
-            $invalidProperties[] = "'company_id' can't be null";
-        }
-        if (($this->container['company_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['company_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['details'] === null) {
-            $invalidProperties[] = "'details' can't be null";
-        }
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
@@ -254,11 +237,28 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
         }
 
+        if ($this->container['company_id'] === null) {
+            $invalidProperties[] = "'company_id' can't be null";
+        }
+        if (($this->container['company_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['company_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
+        }
+
         if ($this->container['issue_date'] === null) {
             $invalidProperties[] = "'issue_date' can't be null";
         }
+        if ($this->container['adjustment'] === null) {
+            $invalidProperties[] = "'adjustment' can't be null";
+        }
         if ($this->container['txn_number'] === null) {
             $invalidProperties[] = "'txn_number' can't be null";
+        }
+        if ($this->container['details'] === null) {
+            $invalidProperties[] = "'details' can't be null";
         }
         return $invalidProperties;
     }
@@ -276,25 +276,33 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets adjustment
+     * Gets id
      *
-     * @return bool
+     * @return int
      */
-    public function getAdjustment()
+    public function getId()
     {
-        return $this->container['adjustment'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets adjustment
+     * Sets id
      *
-     * @param bool $adjustment 決算整理仕訳フラグ（falseまたは未指定の場合: 日常仕訳）
+     * @param int $id 振替伝票ID
      *
      * @return self
      */
-    public function setAdjustment($adjustment)
+    public function setId($id)
     {
-        $this->container['adjustment'] = $adjustment;
+
+        if (($id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling ManualJournal., must be smaller than or equal to 2147483647.');
+        }
+        if (($id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling ManualJournal., must be bigger than or equal to 1.');
+        }
+
+        $this->container['id'] = $id;
 
         return $this;
     }
@@ -332,62 +340,6 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets details
-     *
-     * @return \Freee\Accounting\Model\ManualJournalDetails[]
-     */
-    public function getDetails()
-    {
-        return $this->container['details'];
-    }
-
-    /**
-     * Sets details
-     *
-     * @param \Freee\Accounting\Model\ManualJournalDetails[] $details 貸借行一覧（配列）: 貸借合わせて100行まで登録できます。
-     *
-     * @return self
-     */
-    public function setDetails($details)
-    {
-        $this->container['details'] = $details;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int $id 振替伝票ID
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-
-        if (($id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling ManualJournal., must be smaller than or equal to 2147483647.');
-        }
-        if (($id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling ManualJournal., must be bigger than or equal to 1.');
-        }
-
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
      * Gets issue_date
      *
      * @return string
@@ -412,25 +364,25 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets receipt_ids
+     * Gets adjustment
      *
-     * @return int[]|null
+     * @return bool
      */
-    public function getReceiptIds()
+    public function getAdjustment()
     {
-        return $this->container['receipt_ids'];
+        return $this->container['adjustment'];
     }
 
     /**
-     * Sets receipt_ids
+     * Sets adjustment
      *
-     * @param int[]|null $receipt_ids 証憑ファイルID（ファイルボックスのファイルID）
+     * @param bool $adjustment 決算整理仕訳フラグ（falseまたは未指定の場合: 日常仕訳）
      *
      * @return self
      */
-    public function setReceiptIds($receipt_ids)
+    public function setAdjustment($adjustment)
     {
-        $this->container['receipt_ids'] = $receipt_ids;
+        $this->container['adjustment'] = $adjustment;
 
         return $this;
     }
@@ -455,6 +407,54 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTxnNumber($txn_number)
     {
         $this->container['txn_number'] = $txn_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets details
+     *
+     * @return \Freee\Accounting\Model\ManualJournalDetails[]
+     */
+    public function getDetails()
+    {
+        return $this->container['details'];
+    }
+
+    /**
+     * Sets details
+     *
+     * @param \Freee\Accounting\Model\ManualJournalDetails[] $details 貸借行一覧（配列）: 貸借合わせて100行まで登録できます。
+     *
+     * @return self
+     */
+    public function setDetails($details)
+    {
+        $this->container['details'] = $details;
+
+        return $this;
+    }
+
+    /**
+     * Gets receipt_ids
+     *
+     * @return int[]|null
+     */
+    public function getReceiptIds()
+    {
+        return $this->container['receipt_ids'];
+    }
+
+    /**
+     * Sets receipt_ids
+     *
+     * @param int[]|null $receipt_ids 証憑ファイルID（ファイルボックスのファイルID）
+     *
+     * @return self
+     */
+    public function setReceiptIds($receipt_ids)
+    {
+        $this->container['receipt_ids'] = $receipt_ids;
 
         return $this;
     }

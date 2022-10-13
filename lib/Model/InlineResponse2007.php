@@ -59,7 +59,7 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'segment_tags' => '\Freee\Accounting\Model\SegmentTag[]'
+        'taxes' => '\Freee\Accounting\Model\Tax[]'
     ];
 
     /**
@@ -70,7 +70,7 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'segment_tags' => null
+        'taxes' => null
     ];
 
     /**
@@ -100,7 +100,7 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'segment_tags' => 'segment_tags'
+        'taxes' => 'taxes'
     ];
 
     /**
@@ -109,7 +109,7 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'segment_tags' => 'setSegmentTags'
+        'taxes' => 'setTaxes'
     ];
 
     /**
@@ -118,7 +118,7 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'segment_tags' => 'getSegmentTags'
+        'taxes' => 'getTaxes'
     ];
 
     /**
@@ -178,7 +178,7 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['segment_tags'] = $data['segment_tags'] ?? null;
+        $this->container['taxes'] = $data['taxes'] ?? null;
     }
 
     /**
@@ -190,8 +190,8 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['segment_tags'] === null) {
-            $invalidProperties[] = "'segment_tags' can't be null";
+        if ($this->container['taxes'] === null) {
+            $invalidProperties[] = "'taxes' can't be null";
         }
         return $invalidProperties;
     }
@@ -209,25 +209,25 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets segment_tags
+     * Gets taxes
      *
-     * @return \Freee\Accounting\Model\SegmentTag[]
+     * @return \Freee\Accounting\Model\Tax[]
      */
-    public function getSegmentTags()
+    public function getTaxes()
     {
-        return $this->container['segment_tags'];
+        return $this->container['taxes'];
     }
 
     /**
-     * Sets segment_tags
+     * Sets taxes
      *
-     * @param \Freee\Accounting\Model\SegmentTag[] $segment_tags segment_tags
+     * @param \Freee\Accounting\Model\Tax[] $taxes taxes
      *
      * @return self
      */
-    public function setSegmentTags($segment_tags)
+    public function setTaxes($taxes)
     {
-        $this->container['segment_tags'] = $segment_tags;
+        $this->container['taxes'] = $taxes;
 
         return $this;
     }

@@ -59,29 +59,29 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'account_item_id' => 'int',
-        'amount' => 'int',
-        'description' => 'string',
-        'entry_side' => 'string',
         'id' => 'int',
+        'entry_side' => 'string',
+        'account_item_id' => 'int',
+        'tax_code' => 'int',
+        'partner_id' => 'int',
+        'partner_name' => 'string',
+        'partner_code' => 'string',
+        'partner_long_name' => 'string',
         'item_id' => 'int',
         'item_name' => 'string',
-        'partner_code' => 'string',
-        'partner_id' => 'int',
-        'partner_long_name' => 'string',
-        'partner_name' => 'string',
         'section_id' => 'int',
         'section_name' => 'string',
+        'tag_ids' => 'int[]',
+        'tag_names' => 'string[]',
         'segment_1_tag_id' => 'int',
         'segment_1_tag_name' => 'int',
         'segment_2_tag_id' => 'int',
         'segment_2_tag_name' => 'int',
         'segment_3_tag_id' => 'int',
         'segment_3_tag_name' => 'int',
-        'tag_ids' => 'int[]',
-        'tag_names' => 'string[]',
-        'tax_code' => 'int',
-        'vat' => 'int'
+        'amount' => 'int',
+        'vat' => 'int',
+        'description' => 'string'
     ];
 
     /**
@@ -92,29 +92,29 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'account_item_id' => null,
-        'amount' => null,
-        'description' => null,
-        'entry_side' => null,
         'id' => 'int64',
+        'entry_side' => null,
+        'account_item_id' => null,
+        'tax_code' => null,
+        'partner_id' => null,
+        'partner_name' => null,
+        'partner_code' => null,
+        'partner_long_name' => null,
         'item_id' => null,
         'item_name' => null,
-        'partner_code' => null,
-        'partner_id' => null,
-        'partner_long_name' => null,
-        'partner_name' => null,
         'section_id' => null,
         'section_name' => null,
+        'tag_ids' => null,
+        'tag_names' => null,
         'segment_1_tag_id' => 'int64',
         'segment_1_tag_name' => null,
         'segment_2_tag_id' => 'int64',
         'segment_2_tag_name' => null,
         'segment_3_tag_id' => 'int64',
         'segment_3_tag_name' => null,
-        'tag_ids' => null,
-        'tag_names' => null,
-        'tax_code' => null,
-        'vat' => null
+        'amount' => null,
+        'vat' => null,
+        'description' => null
     ];
 
     /**
@@ -144,29 +144,29 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'account_item_id' => 'account_item_id',
-        'amount' => 'amount',
-        'description' => 'description',
-        'entry_side' => 'entry_side',
         'id' => 'id',
+        'entry_side' => 'entry_side',
+        'account_item_id' => 'account_item_id',
+        'tax_code' => 'tax_code',
+        'partner_id' => 'partner_id',
+        'partner_name' => 'partner_name',
+        'partner_code' => 'partner_code',
+        'partner_long_name' => 'partner_long_name',
         'item_id' => 'item_id',
         'item_name' => 'item_name',
-        'partner_code' => 'partner_code',
-        'partner_id' => 'partner_id',
-        'partner_long_name' => 'partner_long_name',
-        'partner_name' => 'partner_name',
         'section_id' => 'section_id',
         'section_name' => 'section_name',
+        'tag_ids' => 'tag_ids',
+        'tag_names' => 'tag_names',
         'segment_1_tag_id' => 'segment_1_tag_id',
         'segment_1_tag_name' => 'segment_1_tag_name',
         'segment_2_tag_id' => 'segment_2_tag_id',
         'segment_2_tag_name' => 'segment_2_tag_name',
         'segment_3_tag_id' => 'segment_3_tag_id',
         'segment_3_tag_name' => 'segment_3_tag_name',
-        'tag_ids' => 'tag_ids',
-        'tag_names' => 'tag_names',
-        'tax_code' => 'tax_code',
-        'vat' => 'vat'
+        'amount' => 'amount',
+        'vat' => 'vat',
+        'description' => 'description'
     ];
 
     /**
@@ -175,29 +175,29 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'account_item_id' => 'setAccountItemId',
-        'amount' => 'setAmount',
-        'description' => 'setDescription',
-        'entry_side' => 'setEntrySide',
         'id' => 'setId',
+        'entry_side' => 'setEntrySide',
+        'account_item_id' => 'setAccountItemId',
+        'tax_code' => 'setTaxCode',
+        'partner_id' => 'setPartnerId',
+        'partner_name' => 'setPartnerName',
+        'partner_code' => 'setPartnerCode',
+        'partner_long_name' => 'setPartnerLongName',
         'item_id' => 'setItemId',
         'item_name' => 'setItemName',
-        'partner_code' => 'setPartnerCode',
-        'partner_id' => 'setPartnerId',
-        'partner_long_name' => 'setPartnerLongName',
-        'partner_name' => 'setPartnerName',
         'section_id' => 'setSectionId',
         'section_name' => 'setSectionName',
+        'tag_ids' => 'setTagIds',
+        'tag_names' => 'setTagNames',
         'segment_1_tag_id' => 'setSegment1TagId',
         'segment_1_tag_name' => 'setSegment1TagName',
         'segment_2_tag_id' => 'setSegment2TagId',
         'segment_2_tag_name' => 'setSegment2TagName',
         'segment_3_tag_id' => 'setSegment3TagId',
         'segment_3_tag_name' => 'setSegment3TagName',
-        'tag_ids' => 'setTagIds',
-        'tag_names' => 'setTagNames',
-        'tax_code' => 'setTaxCode',
-        'vat' => 'setVat'
+        'amount' => 'setAmount',
+        'vat' => 'setVat',
+        'description' => 'setDescription'
     ];
 
     /**
@@ -206,29 +206,29 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'account_item_id' => 'getAccountItemId',
-        'amount' => 'getAmount',
-        'description' => 'getDescription',
-        'entry_side' => 'getEntrySide',
         'id' => 'getId',
+        'entry_side' => 'getEntrySide',
+        'account_item_id' => 'getAccountItemId',
+        'tax_code' => 'getTaxCode',
+        'partner_id' => 'getPartnerId',
+        'partner_name' => 'getPartnerName',
+        'partner_code' => 'getPartnerCode',
+        'partner_long_name' => 'getPartnerLongName',
         'item_id' => 'getItemId',
         'item_name' => 'getItemName',
-        'partner_code' => 'getPartnerCode',
-        'partner_id' => 'getPartnerId',
-        'partner_long_name' => 'getPartnerLongName',
-        'partner_name' => 'getPartnerName',
         'section_id' => 'getSectionId',
         'section_name' => 'getSectionName',
+        'tag_ids' => 'getTagIds',
+        'tag_names' => 'getTagNames',
         'segment_1_tag_id' => 'getSegment1TagId',
         'segment_1_tag_name' => 'getSegment1TagName',
         'segment_2_tag_id' => 'getSegment2TagId',
         'segment_2_tag_name' => 'getSegment2TagName',
         'segment_3_tag_id' => 'getSegment3TagId',
         'segment_3_tag_name' => 'getSegment3TagName',
-        'tag_ids' => 'getTagIds',
-        'tag_names' => 'getTagNames',
-        'tax_code' => 'getTaxCode',
-        'vat' => 'getVat'
+        'amount' => 'getAmount',
+        'vat' => 'getVat',
+        'description' => 'getDescription'
     ];
 
     /**
@@ -303,29 +303,29 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
-        $this->container['account_item_id'] = $data['account_item_id'] ?? null;
-        $this->container['amount'] = $data['amount'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
-        $this->container['entry_side'] = $data['entry_side'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
+        $this->container['entry_side'] = $data['entry_side'] ?? null;
+        $this->container['account_item_id'] = $data['account_item_id'] ?? null;
+        $this->container['tax_code'] = $data['tax_code'] ?? null;
+        $this->container['partner_id'] = $data['partner_id'] ?? null;
+        $this->container['partner_name'] = $data['partner_name'] ?? null;
+        $this->container['partner_code'] = $data['partner_code'] ?? null;
+        $this->container['partner_long_name'] = $data['partner_long_name'] ?? null;
         $this->container['item_id'] = $data['item_id'] ?? null;
         $this->container['item_name'] = $data['item_name'] ?? null;
-        $this->container['partner_code'] = $data['partner_code'] ?? null;
-        $this->container['partner_id'] = $data['partner_id'] ?? null;
-        $this->container['partner_long_name'] = $data['partner_long_name'] ?? null;
-        $this->container['partner_name'] = $data['partner_name'] ?? null;
         $this->container['section_id'] = $data['section_id'] ?? null;
         $this->container['section_name'] = $data['section_name'] ?? null;
+        $this->container['tag_ids'] = $data['tag_ids'] ?? null;
+        $this->container['tag_names'] = $data['tag_names'] ?? null;
         $this->container['segment_1_tag_id'] = $data['segment_1_tag_id'] ?? null;
         $this->container['segment_1_tag_name'] = $data['segment_1_tag_name'] ?? null;
         $this->container['segment_2_tag_id'] = $data['segment_2_tag_id'] ?? null;
         $this->container['segment_2_tag_name'] = $data['segment_2_tag_name'] ?? null;
         $this->container['segment_3_tag_id'] = $data['segment_3_tag_id'] ?? null;
         $this->container['segment_3_tag_name'] = $data['segment_3_tag_name'] ?? null;
-        $this->container['tag_ids'] = $data['tag_ids'] ?? null;
-        $this->container['tag_names'] = $data['tag_names'] ?? null;
-        $this->container['tax_code'] = $data['tax_code'] ?? null;
+        $this->container['amount'] = $data['amount'] ?? null;
         $this->container['vat'] = $data['vat'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
     }
 
     /**
@@ -337,31 +337,17 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if ($this->container['account_item_id'] === null) {
-            $invalidProperties[] = "'account_item_id' can't be null";
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
         }
-        if (($this->container['account_item_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'account_item_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['account_item_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'account_item_id', must be bigger than or equal to 1.";
+        if (($this->container['id'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 9223372036854775807.";
         }
 
-        if ($this->container['amount'] === null) {
-            $invalidProperties[] = "'amount' can't be null";
-        }
-        if (($this->container['amount'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 2147483647.";
+        if (($this->container['id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
         }
 
-        if (($this->container['amount'] < 1)) {
-            $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['description'] === null) {
-            $invalidProperties[] = "'description' can't be null";
-        }
         if ($this->container['entry_side'] === null) {
             $invalidProperties[] = "'entry_side' can't be null";
         }
@@ -374,15 +360,47 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess, \JsonSerializ
             );
         }
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
+        if ($this->container['account_item_id'] === null) {
+            $invalidProperties[] = "'account_item_id' can't be null";
         }
-        if (($this->container['id'] > 9223372036854775807)) {
-            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 9223372036854775807.";
+        if (($this->container['account_item_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'account_item_id', must be smaller than or equal to 2147483647.";
         }
 
-        if (($this->container['id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
+        if (($this->container['account_item_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'account_item_id', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['tax_code'] === null) {
+            $invalidProperties[] = "'tax_code' can't be null";
+        }
+        if (($this->container['tax_code'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'tax_code', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['tax_code'] < 0)) {
+            $invalidProperties[] = "invalid value for 'tax_code', must be bigger than or equal to 0.";
+        }
+
+        if ($this->container['partner_id'] === null) {
+            $invalidProperties[] = "'partner_id' can't be null";
+        }
+        if (($this->container['partner_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'partner_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['partner_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'partner_id', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['partner_name'] === null) {
+            $invalidProperties[] = "'partner_name' can't be null";
+        }
+        if ($this->container['partner_long_name'] === null) {
+            $invalidProperties[] = "'partner_long_name' can't be null";
+        }
+        if ((mb_strlen($this->container['partner_long_name']) > 255)) {
+            $invalidProperties[] = "invalid value for 'partner_long_name', the character length must be smaller than or equal to 255.";
         }
 
         if ($this->container['item_id'] === null) {
@@ -399,27 +417,6 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess, \JsonSerializ
         if ($this->container['item_name'] === null) {
             $invalidProperties[] = "'item_name' can't be null";
         }
-        if ($this->container['partner_id'] === null) {
-            $invalidProperties[] = "'partner_id' can't be null";
-        }
-        if (($this->container['partner_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'partner_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['partner_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'partner_id', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['partner_long_name'] === null) {
-            $invalidProperties[] = "'partner_long_name' can't be null";
-        }
-        if ((mb_strlen($this->container['partner_long_name']) > 255)) {
-            $invalidProperties[] = "invalid value for 'partner_long_name', the character length must be smaller than or equal to 255.";
-        }
-
-        if ($this->container['partner_name'] === null) {
-            $invalidProperties[] = "'partner_name' can't be null";
-        }
         if ($this->container['section_id'] === null) {
             $invalidProperties[] = "'section_id' can't be null";
         }
@@ -433,6 +430,12 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess, \JsonSerializ
 
         if ($this->container['section_name'] === null) {
             $invalidProperties[] = "'section_name' can't be null";
+        }
+        if ($this->container['tag_ids'] === null) {
+            $invalidProperties[] = "'tag_ids' can't be null";
+        }
+        if ($this->container['tag_names'] === null) {
+            $invalidProperties[] = "'tag_names' can't be null";
         }
         if (!is_null($this->container['segment_1_tag_id']) && ($this->container['segment_1_tag_id'] > 9223372036854775807)) {
             $invalidProperties[] = "invalid value for 'segment_1_tag_id', must be smaller than or equal to 9223372036854775807.";
@@ -458,25 +461,22 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess, \JsonSerializ
             $invalidProperties[] = "invalid value for 'segment_3_tag_id', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['tag_ids'] === null) {
-            $invalidProperties[] = "'tag_ids' can't be null";
+        if ($this->container['amount'] === null) {
+            $invalidProperties[] = "'amount' can't be null";
         }
-        if ($this->container['tag_names'] === null) {
-            $invalidProperties[] = "'tag_names' can't be null";
-        }
-        if ($this->container['tax_code'] === null) {
-            $invalidProperties[] = "'tax_code' can't be null";
-        }
-        if (($this->container['tax_code'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'tax_code', must be smaller than or equal to 2147483647.";
+        if (($this->container['amount'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 2147483647.";
         }
 
-        if (($this->container['tax_code'] < 0)) {
-            $invalidProperties[] = "invalid value for 'tax_code', must be bigger than or equal to 0.";
+        if (($this->container['amount'] < 1)) {
+            $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to 1.";
         }
 
         if ($this->container['vat'] === null) {
             $invalidProperties[] = "'vat' can't be null";
+        }
+        if ($this->container['description'] === null) {
+            $invalidProperties[] = "'description' can't be null";
         }
         return $invalidProperties;
     }
@@ -494,89 +494,33 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
-     * Gets account_item_id
+     * Gets id
      *
      * @return int
      */
-    public function getAccountItemId()
+    public function getId()
     {
-        return $this->container['account_item_id'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets account_item_id
+     * Sets id
      *
-     * @param int $account_item_id 勘定科目ID
+     * @param int $id 貸借行ID
      *
      * @return self
      */
-    public function setAccountItemId($account_item_id)
+    public function setId($id)
     {
 
-        if (($account_item_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $account_item_id when calling ManualJournalDetails., must be smaller than or equal to 2147483647.');
+        if (($id > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling ManualJournalDetails., must be smaller than or equal to 9223372036854775807.');
         }
-        if (($account_item_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $account_item_id when calling ManualJournalDetails., must be bigger than or equal to 1.');
-        }
-
-        $this->container['account_item_id'] = $account_item_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets amount
-     *
-     * @return int
-     */
-    public function getAmount()
-    {
-        return $this->container['amount'];
-    }
-
-    /**
-     * Sets amount
-     *
-     * @param int $amount 金額（税込で指定してください）
-     *
-     * @return self
-     */
-    public function setAmount($amount)
-    {
-
-        if (($amount > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling ManualJournalDetails., must be smaller than or equal to 2147483647.');
-        }
-        if (($amount < 1)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling ManualJournalDetails., must be bigger than or equal to 1.');
+        if (($id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling ManualJournalDetails., must be bigger than or equal to 1.');
         }
 
-        $this->container['amount'] = $amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string $description 備考
-     *
-     * @return self
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
+        $this->container['id'] = $id;
 
         return $this;
     }
@@ -616,33 +560,173 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets id
+     * Gets account_item_id
      *
      * @return int
      */
-    public function getId()
+    public function getAccountItemId()
     {
-        return $this->container['id'];
+        return $this->container['account_item_id'];
     }
 
     /**
-     * Sets id
+     * Sets account_item_id
      *
-     * @param int $id 貸借行ID
+     * @param int $account_item_id 勘定科目ID
      *
      * @return self
      */
-    public function setId($id)
+    public function setAccountItemId($account_item_id)
     {
 
-        if (($id > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling ManualJournalDetails., must be smaller than or equal to 9223372036854775807.');
+        if (($account_item_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $account_item_id when calling ManualJournalDetails., must be smaller than or equal to 2147483647.');
         }
-        if (($id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling ManualJournalDetails., must be bigger than or equal to 1.');
+        if (($account_item_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $account_item_id when calling ManualJournalDetails., must be bigger than or equal to 1.');
         }
 
-        $this->container['id'] = $id;
+        $this->container['account_item_id'] = $account_item_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_code
+     *
+     * @return int
+     */
+    public function getTaxCode()
+    {
+        return $this->container['tax_code'];
+    }
+
+    /**
+     * Sets tax_code
+     *
+     * @param int $tax_code 税区分コード
+     *
+     * @return self
+     */
+    public function setTaxCode($tax_code)
+    {
+
+        if (($tax_code > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling ManualJournalDetails., must be smaller than or equal to 2147483647.');
+        }
+        if (($tax_code < 0)) {
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling ManualJournalDetails., must be bigger than or equal to 0.');
+        }
+
+        $this->container['tax_code'] = $tax_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets partner_id
+     *
+     * @return int
+     */
+    public function getPartnerId()
+    {
+        return $this->container['partner_id'];
+    }
+
+    /**
+     * Sets partner_id
+     *
+     * @param int $partner_id 取引先ID
+     *
+     * @return self
+     */
+    public function setPartnerId($partner_id)
+    {
+
+        if (($partner_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $partner_id when calling ManualJournalDetails., must be smaller than or equal to 2147483647.');
+        }
+        if (($partner_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $partner_id when calling ManualJournalDetails., must be bigger than or equal to 1.');
+        }
+
+        $this->container['partner_id'] = $partner_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets partner_name
+     *
+     * @return string
+     */
+    public function getPartnerName()
+    {
+        return $this->container['partner_name'];
+    }
+
+    /**
+     * Sets partner_name
+     *
+     * @param string $partner_name 取引先名
+     *
+     * @return self
+     */
+    public function setPartnerName($partner_name)
+    {
+        $this->container['partner_name'] = $partner_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets partner_code
+     *
+     * @return string|null
+     */
+    public function getPartnerCode()
+    {
+        return $this->container['partner_code'];
+    }
+
+    /**
+     * Sets partner_code
+     *
+     * @param string|null $partner_code 取引先コード
+     *
+     * @return self
+     */
+    public function setPartnerCode($partner_code)
+    {
+        $this->container['partner_code'] = $partner_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets partner_long_name
+     *
+     * @return string
+     */
+    public function getPartnerLongName()
+    {
+        return $this->container['partner_long_name'];
+    }
+
+    /**
+     * Sets partner_long_name
+     *
+     * @param string $partner_long_name 正式名称（255文字以内）
+     *
+     * @return self
+     */
+    public function setPartnerLongName($partner_long_name)
+    {
+        if ((mb_strlen($partner_long_name) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $partner_long_name when calling ManualJournalDetails., must be smaller than or equal to 255.');
+        }
+
+        $this->container['partner_long_name'] = $partner_long_name;
 
         return $this;
     }
@@ -704,114 +788,6 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets partner_code
-     *
-     * @return string|null
-     */
-    public function getPartnerCode()
-    {
-        return $this->container['partner_code'];
-    }
-
-    /**
-     * Sets partner_code
-     *
-     * @param string|null $partner_code 取引先コード
-     *
-     * @return self
-     */
-    public function setPartnerCode($partner_code)
-    {
-        $this->container['partner_code'] = $partner_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets partner_id
-     *
-     * @return int
-     */
-    public function getPartnerId()
-    {
-        return $this->container['partner_id'];
-    }
-
-    /**
-     * Sets partner_id
-     *
-     * @param int $partner_id 取引先ID
-     *
-     * @return self
-     */
-    public function setPartnerId($partner_id)
-    {
-
-        if (($partner_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $partner_id when calling ManualJournalDetails., must be smaller than or equal to 2147483647.');
-        }
-        if (($partner_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $partner_id when calling ManualJournalDetails., must be bigger than or equal to 1.');
-        }
-
-        $this->container['partner_id'] = $partner_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets partner_long_name
-     *
-     * @return string
-     */
-    public function getPartnerLongName()
-    {
-        return $this->container['partner_long_name'];
-    }
-
-    /**
-     * Sets partner_long_name
-     *
-     * @param string $partner_long_name 正式名称（255文字以内）
-     *
-     * @return self
-     */
-    public function setPartnerLongName($partner_long_name)
-    {
-        if ((mb_strlen($partner_long_name) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $partner_long_name when calling ManualJournalDetails., must be smaller than or equal to 255.');
-        }
-
-        $this->container['partner_long_name'] = $partner_long_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets partner_name
-     *
-     * @return string
-     */
-    public function getPartnerName()
-    {
-        return $this->container['partner_name'];
-    }
-
-    /**
-     * Sets partner_name
-     *
-     * @param string $partner_name 取引先名
-     *
-     * @return self
-     */
-    public function setPartnerName($partner_name)
-    {
-        $this->container['partner_name'] = $partner_name;
-
-        return $this;
-    }
-
-    /**
      * Gets section_id
      *
      * @return int
@@ -863,6 +839,54 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setSectionName($section_name)
     {
         $this->container['section_name'] = $section_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets tag_ids
+     *
+     * @return int[]
+     */
+    public function getTagIds()
+    {
+        return $this->container['tag_ids'];
+    }
+
+    /**
+     * Sets tag_ids
+     *
+     * @param int[] $tag_ids tag_ids
+     *
+     * @return self
+     */
+    public function setTagIds($tag_ids)
+    {
+        $this->container['tag_ids'] = $tag_ids;
+
+        return $this;
+    }
+
+    /**
+     * Gets tag_names
+     *
+     * @return string[]
+     */
+    public function getTagNames()
+    {
+        return $this->container['tag_names'];
+    }
+
+    /**
+     * Sets tag_names
+     *
+     * @param string[] $tag_names tag_names
+     *
+     * @return self
+     */
+    public function setTagNames($tag_names)
+    {
+        $this->container['tag_names'] = $tag_names;
 
         return $this;
     }
@@ -1036,81 +1060,33 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets tag_ids
-     *
-     * @return int[]
-     */
-    public function getTagIds()
-    {
-        return $this->container['tag_ids'];
-    }
-
-    /**
-     * Sets tag_ids
-     *
-     * @param int[] $tag_ids tag_ids
-     *
-     * @return self
-     */
-    public function setTagIds($tag_ids)
-    {
-        $this->container['tag_ids'] = $tag_ids;
-
-        return $this;
-    }
-
-    /**
-     * Gets tag_names
-     *
-     * @return string[]
-     */
-    public function getTagNames()
-    {
-        return $this->container['tag_names'];
-    }
-
-    /**
-     * Sets tag_names
-     *
-     * @param string[] $tag_names tag_names
-     *
-     * @return self
-     */
-    public function setTagNames($tag_names)
-    {
-        $this->container['tag_names'] = $tag_names;
-
-        return $this;
-    }
-
-    /**
-     * Gets tax_code
+     * Gets amount
      *
      * @return int
      */
-    public function getTaxCode()
+    public function getAmount()
     {
-        return $this->container['tax_code'];
+        return $this->container['amount'];
     }
 
     /**
-     * Sets tax_code
+     * Sets amount
      *
-     * @param int $tax_code 税区分コード
+     * @param int $amount 金額（税込で指定してください）
      *
      * @return self
      */
-    public function setTaxCode($tax_code)
+    public function setAmount($amount)
     {
 
-        if (($tax_code > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $tax_code when calling ManualJournalDetails., must be smaller than or equal to 2147483647.');
+        if (($amount > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling ManualJournalDetails., must be smaller than or equal to 2147483647.');
         }
-        if (($tax_code < 0)) {
-            throw new \InvalidArgumentException('invalid value for $tax_code when calling ManualJournalDetails., must be bigger than or equal to 0.');
+        if (($amount < 1)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling ManualJournalDetails., must be bigger than or equal to 1.');
         }
 
-        $this->container['tax_code'] = $tax_code;
+        $this->container['amount'] = $amount;
 
         return $this;
     }
@@ -1135,6 +1111,30 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setVat($vat)
     {
         $this->container['vat'] = $vat;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string $description 備考
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
 
         return $this;
     }

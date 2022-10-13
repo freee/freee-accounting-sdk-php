@@ -59,18 +59,18 @@ class WalletTxn implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'amount' => 'int',
-        'balance' => 'int',
+        'id' => 'int',
         'company_id' => 'int',
         'date' => 'string',
-        'description' => 'string',
+        'amount' => 'int',
         'due_amount' => 'int',
+        'balance' => 'int',
         'entry_side' => 'string',
-        'id' => 'int',
-        'rule_matched' => 'bool',
-        'status' => 'int',
+        'walletable_type' => 'string',
         'walletable_id' => 'int',
-        'walletable_type' => 'string'
+        'description' => 'string',
+        'status' => 'int',
+        'rule_matched' => 'bool'
     ];
 
     /**
@@ -81,18 +81,18 @@ class WalletTxn implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'amount' => 'int64',
-        'balance' => null,
+        'id' => null,
         'company_id' => null,
         'date' => null,
-        'description' => null,
+        'amount' => 'int64',
         'due_amount' => null,
+        'balance' => null,
         'entry_side' => null,
-        'id' => null,
-        'rule_matched' => null,
-        'status' => null,
+        'walletable_type' => null,
         'walletable_id' => null,
-        'walletable_type' => null
+        'description' => null,
+        'status' => null,
+        'rule_matched' => null
     ];
 
     /**
@@ -122,18 +122,18 @@ class WalletTxn implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'amount' => 'amount',
-        'balance' => 'balance',
+        'id' => 'id',
         'company_id' => 'company_id',
         'date' => 'date',
-        'description' => 'description',
+        'amount' => 'amount',
         'due_amount' => 'due_amount',
+        'balance' => 'balance',
         'entry_side' => 'entry_side',
-        'id' => 'id',
-        'rule_matched' => 'rule_matched',
-        'status' => 'status',
+        'walletable_type' => 'walletable_type',
         'walletable_id' => 'walletable_id',
-        'walletable_type' => 'walletable_type'
+        'description' => 'description',
+        'status' => 'status',
+        'rule_matched' => 'rule_matched'
     ];
 
     /**
@@ -142,18 +142,18 @@ class WalletTxn implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'amount' => 'setAmount',
-        'balance' => 'setBalance',
+        'id' => 'setId',
         'company_id' => 'setCompanyId',
         'date' => 'setDate',
-        'description' => 'setDescription',
+        'amount' => 'setAmount',
         'due_amount' => 'setDueAmount',
+        'balance' => 'setBalance',
         'entry_side' => 'setEntrySide',
-        'id' => 'setId',
-        'rule_matched' => 'setRuleMatched',
-        'status' => 'setStatus',
+        'walletable_type' => 'setWalletableType',
         'walletable_id' => 'setWalletableId',
-        'walletable_type' => 'setWalletableType'
+        'description' => 'setDescription',
+        'status' => 'setStatus',
+        'rule_matched' => 'setRuleMatched'
     ];
 
     /**
@@ -162,18 +162,18 @@ class WalletTxn implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'amount' => 'getAmount',
-        'balance' => 'getBalance',
+        'id' => 'getId',
         'company_id' => 'getCompanyId',
         'date' => 'getDate',
-        'description' => 'getDescription',
+        'amount' => 'getAmount',
         'due_amount' => 'getDueAmount',
+        'balance' => 'getBalance',
         'entry_side' => 'getEntrySide',
-        'id' => 'getId',
-        'rule_matched' => 'getRuleMatched',
-        'status' => 'getStatus',
+        'walletable_type' => 'getWalletableType',
         'walletable_id' => 'getWalletableId',
-        'walletable_type' => 'getWalletableType'
+        'description' => 'getDescription',
+        'status' => 'getStatus',
+        'rule_matched' => 'getRuleMatched'
     ];
 
     /**
@@ -265,18 +265,18 @@ class WalletTxn implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['amount'] = $data['amount'] ?? null;
-        $this->container['balance'] = $data['balance'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['company_id'] = $data['company_id'] ?? null;
         $this->container['date'] = $data['date'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
+        $this->container['amount'] = $data['amount'] ?? null;
         $this->container['due_amount'] = $data['due_amount'] ?? null;
+        $this->container['balance'] = $data['balance'] ?? null;
         $this->container['entry_side'] = $data['entry_side'] ?? null;
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['rule_matched'] = $data['rule_matched'] ?? null;
-        $this->container['status'] = $data['status'] ?? null;
-        $this->container['walletable_id'] = $data['walletable_id'] ?? null;
         $this->container['walletable_type'] = $data['walletable_type'] ?? null;
+        $this->container['walletable_id'] = $data['walletable_id'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
+        $this->container['rule_matched'] = $data['rule_matched'] ?? null;
     }
 
     /**
@@ -288,20 +288,17 @@ class WalletTxn implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['amount'] === null) {
-            $invalidProperties[] = "'amount' can't be null";
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
         }
-        if (($this->container['amount'] > 9223372036854775807)) {
-            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 9223372036854775807.";
-        }
-
-        if (($this->container['amount'] < -9223372036854775808)) {
-            $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to -9223372036854775808.";
+        if (($this->container['id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 2147483647.";
         }
 
-        if ($this->container['balance'] === null) {
-            $invalidProperties[] = "'balance' can't be null";
+        if (($this->container['id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
         }
+
         if ($this->container['company_id'] === null) {
             $invalidProperties[] = "'company_id' can't be null";
         }
@@ -316,11 +313,22 @@ class WalletTxn implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['date'] === null) {
             $invalidProperties[] = "'date' can't be null";
         }
-        if ($this->container['description'] === null) {
-            $invalidProperties[] = "'description' can't be null";
+        if ($this->container['amount'] === null) {
+            $invalidProperties[] = "'amount' can't be null";
         }
+        if (($this->container['amount'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 9223372036854775807.";
+        }
+
+        if (($this->container['amount'] < -9223372036854775808)) {
+            $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to -9223372036854775808.";
+        }
+
         if ($this->container['due_amount'] === null) {
             $invalidProperties[] = "'due_amount' can't be null";
+        }
+        if ($this->container['balance'] === null) {
+            $invalidProperties[] = "'balance' can't be null";
         }
         if ($this->container['entry_side'] === null) {
             $invalidProperties[] = "'entry_side' can't be null";
@@ -332,42 +340,6 @@ class WalletTxn implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->container['entry_side'],
                 implode("', '", $allowedValues)
             );
-        }
-
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if (($this->container['id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['rule_matched'] === null) {
-            $invalidProperties[] = "'rule_matched' can't be null";
-        }
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
-        }
-        if (($this->container['status'] > 6)) {
-            $invalidProperties[] = "invalid value for 'status', must be smaller than or equal to 6.";
-        }
-
-        if (($this->container['status'] < 1)) {
-            $invalidProperties[] = "invalid value for 'status', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['walletable_id'] === null) {
-            $invalidProperties[] = "'walletable_id' can't be null";
-        }
-        if (($this->container['walletable_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'walletable_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['walletable_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'walletable_id', must be bigger than or equal to 1.";
         }
 
         if ($this->container['walletable_type'] === null) {
@@ -382,6 +354,34 @@ class WalletTxn implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
 
+        if ($this->container['walletable_id'] === null) {
+            $invalidProperties[] = "'walletable_id' can't be null";
+        }
+        if (($this->container['walletable_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'walletable_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['walletable_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'walletable_id', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['description'] === null) {
+            $invalidProperties[] = "'description' can't be null";
+        }
+        if ($this->container['status'] === null) {
+            $invalidProperties[] = "'status' can't be null";
+        }
+        if (($this->container['status'] > 6)) {
+            $invalidProperties[] = "invalid value for 'status', must be smaller than or equal to 6.";
+        }
+
+        if (($this->container['status'] < 1)) {
+            $invalidProperties[] = "invalid value for 'status', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['rule_matched'] === null) {
+            $invalidProperties[] = "'rule_matched' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -398,57 +398,33 @@ class WalletTxn implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets amount
+     * Gets id
      *
      * @return int
      */
-    public function getAmount()
+    public function getId()
     {
-        return $this->container['amount'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets amount
+     * Sets id
      *
-     * @param int $amount 取引金額
+     * @param int $id 明細ID
      *
      * @return self
      */
-    public function setAmount($amount)
+    public function setId($id)
     {
 
-        if (($amount > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling WalletTxn., must be smaller than or equal to 9223372036854775807.');
+        if (($id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling WalletTxn., must be smaller than or equal to 2147483647.');
         }
-        if (($amount < -9223372036854775808)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling WalletTxn., must be bigger than or equal to -9223372036854775808.');
+        if (($id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling WalletTxn., must be bigger than or equal to 1.');
         }
 
-        $this->container['amount'] = $amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets balance
-     *
-     * @return int
-     */
-    public function getBalance()
-    {
-        return $this->container['balance'];
-    }
-
-    /**
-     * Sets balance
-     *
-     * @param int $balance 残高(銀行口座等)
-     *
-     * @return self
-     */
-    public function setBalance($balance)
-    {
-        $this->container['balance'] = $balance;
+        $this->container['id'] = $id;
 
         return $this;
     }
@@ -510,25 +486,33 @@ class WalletTxn implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets description
+     * Gets amount
      *
-     * @return string
+     * @return int
      */
-    public function getDescription()
+    public function getAmount()
     {
-        return $this->container['description'];
+        return $this->container['amount'];
     }
 
     /**
-     * Sets description
+     * Sets amount
      *
-     * @param string $description 取引内容
+     * @param int $amount 取引金額
      *
      * @return self
      */
-    public function setDescription($description)
+    public function setAmount($amount)
     {
-        $this->container['description'] = $description;
+
+        if (($amount > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling WalletTxn., must be smaller than or equal to 9223372036854775807.');
+        }
+        if (($amount < -9223372036854775808)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling WalletTxn., must be bigger than or equal to -9223372036854775808.');
+        }
+
+        $this->container['amount'] = $amount;
 
         return $this;
     }
@@ -553,6 +537,30 @@ class WalletTxn implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDueAmount($due_amount)
     {
         $this->container['due_amount'] = $due_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets balance
+     *
+     * @return int
+     */
+    public function getBalance()
+    {
+        return $this->container['balance'];
+    }
+
+    /**
+     * Sets balance
+     *
+     * @param int $balance 残高(銀行口座等)
+     *
+     * @return self
+     */
+    public function setBalance($balance)
+    {
+        $this->container['balance'] = $balance;
 
         return $this;
     }
@@ -592,89 +600,35 @@ class WalletTxn implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets id
+     * Gets walletable_type
      *
-     * @return int
+     * @return string
      */
-    public function getId()
+    public function getWalletableType()
     {
-        return $this->container['id'];
+        return $this->container['walletable_type'];
     }
 
     /**
-     * Sets id
+     * Sets walletable_type
      *
-     * @param int $id 明細ID
+     * @param string $walletable_type 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet)
      *
      * @return self
      */
-    public function setId($id)
+    public function setWalletableType($walletable_type)
     {
-
-        if (($id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling WalletTxn., must be smaller than or equal to 2147483647.');
+        $allowedValues = $this->getWalletableTypeAllowableValues();
+        if (!in_array($walletable_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'walletable_type', must be one of '%s'",
+                    $walletable_type,
+                    implode("', '", $allowedValues)
+                )
+            );
         }
-        if (($id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling WalletTxn., must be bigger than or equal to 1.');
-        }
-
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets rule_matched
-     *
-     * @return bool
-     */
-    public function getRuleMatched()
-    {
-        return $this->container['rule_matched'];
-    }
-
-    /**
-     * Sets rule_matched
-     *
-     * @param bool $rule_matched 登録時に<a href=\"https://support.freee.co.jp/hc/ja/articles/202848350-明細の自動登録ルールを設定する\" target=\"_blank\">自動登録ルールの設定</a>が適用され、登録処理が実行された場合、 trueになります。〜を推測する、〜の消込をするの条件の場合は一致してもfalseになります。
-     *
-     * @return self
-     */
-    public function setRuleMatched($rule_matched)
-    {
-        $this->container['rule_matched'] = $rule_matched;
-
-        return $this;
-    }
-
-    /**
-     * Gets status
-     *
-     * @return int
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     *
-     * @param int $status 明細のステータス（消込待ち: 1, 消込済み: 2, 無視: 3, 消込中: 4, 対象外: 6）
-     *
-     * @return self
-     */
-    public function setStatus($status)
-    {
-
-        if (($status > 6)) {
-            throw new \InvalidArgumentException('invalid value for $status when calling WalletTxn., must be smaller than or equal to 6.');
-        }
-        if (($status < 1)) {
-            throw new \InvalidArgumentException('invalid value for $status when calling WalletTxn., must be bigger than or equal to 1.');
-        }
-
-        $this->container['status'] = $status;
+        $this->container['walletable_type'] = $walletable_type;
 
         return $this;
     }
@@ -712,35 +666,81 @@ class WalletTxn implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets walletable_type
+     * Gets description
      *
      * @return string
      */
-    public function getWalletableType()
+    public function getDescription()
     {
-        return $this->container['walletable_type'];
+        return $this->container['description'];
     }
 
     /**
-     * Sets walletable_type
+     * Sets description
      *
-     * @param string $walletable_type 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet)
+     * @param string $description 取引内容
      *
      * @return self
      */
-    public function setWalletableType($walletable_type)
+    public function setDescription($description)
     {
-        $allowedValues = $this->getWalletableTypeAllowableValues();
-        if (!in_array($walletable_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'walletable_type', must be one of '%s'",
-                    $walletable_type,
-                    implode("', '", $allowedValues)
-                )
-            );
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param int $status 明細のステータス（消込待ち: 1, 消込済み: 2, 無視: 3, 消込中: 4, 対象外: 6）
+     *
+     * @return self
+     */
+    public function setStatus($status)
+    {
+
+        if (($status > 6)) {
+            throw new \InvalidArgumentException('invalid value for $status when calling WalletTxn., must be smaller than or equal to 6.');
         }
-        $this->container['walletable_type'] = $walletable_type;
+        if (($status < 1)) {
+            throw new \InvalidArgumentException('invalid value for $status when calling WalletTxn., must be bigger than or equal to 1.');
+        }
+
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets rule_matched
+     *
+     * @return bool
+     */
+    public function getRuleMatched()
+    {
+        return $this->container['rule_matched'];
+    }
+
+    /**
+     * Sets rule_matched
+     *
+     * @param bool $rule_matched 登録時に<a href=\"https://support.freee.co.jp/hc/ja/articles/202848350-明細の自動登録ルールを設定する\" target=\"_blank\">自動登録ルールの設定</a>が適用され、登録処理が実行された場合、 trueになります。〜を推測する、〜の消込をするの条件の場合は一致してもfalseになります。
+     *
+     * @return self
+     */
+    public function setRuleMatched($rule_matched)
+    {
+        $this->container['rule_matched'] = $rule_matched;
 
         return $this;
     }

@@ -80,9 +80,9 @@ class InlineResponse200Test extends TestCase
     }
 
     /**
-     * Test attribute "banks"
+     * Test attribute "tags"
      */
-    public function testPropertyBanks()
+    public function testPropertyTags()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

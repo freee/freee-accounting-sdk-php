@@ -80,18 +80,9 @@ class ExpenseApplicationsIndexResponseExpenseApplicationsTest extends TestCase
     }
 
     /**
-     * Test attribute "applicant_id"
+     * Test attribute "id"
      */
-    public function testPropertyApplicantId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "application_number"
-     */
-    public function testPropertyApplicationNumber()
+    public function testPropertyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -107,18 +98,72 @@ class ExpenseApplicationsIndexResponseExpenseApplicationsTest extends TestCase
     }
 
     /**
-     * Test attribute "current_round"
+     * Test attribute "title"
      */
-    public function testPropertyCurrentRound()
+    public function testPropertyTitle()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "current_step_id"
+     * Test attribute "issue_date"
      */
-    public function testPropertyCurrentStepId()
+    public function testPropertyIssueDate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "total_amount"
+     */
+    public function testPropertyTotalAmount()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "status"
+     */
+    public function testPropertyStatus()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "section_id"
+     */
+    public function testPropertySectionId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tag_ids"
+     */
+    public function testPropertyTagIds()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "expense_application_lines"
+     */
+    public function testPropertyExpenseApplicationLines()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -143,45 +188,36 @@ class ExpenseApplicationsIndexResponseExpenseApplicationsTest extends TestCase
     }
 
     /**
-     * Test attribute "description"
+     * Test attribute "applicant_id"
      */
-    public function testPropertyDescription()
+    public function testPropertyApplicantId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "expense_application_lines"
+     * Test attribute "application_number"
      */
-    public function testPropertyExpenseApplicationLines()
+    public function testPropertyApplicationNumber()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "current_step_id"
      */
-    public function testPropertyId()
+    public function testPropertyCurrentStepId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "issue_date"
+     * Test attribute "current_round"
      */
-    public function testPropertyIssueDate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "section_id"
-     */
-    public function testPropertySectionId()
+    public function testPropertyCurrentRound()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -209,42 +245,6 @@ class ExpenseApplicationsIndexResponseExpenseApplicationsTest extends TestCase
      * Test attribute "segment_3_tag_id"
      */
     public function testPropertySegment3TagId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "status"
-     */
-    public function testPropertyStatus()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "tag_ids"
-     */
-    public function testPropertyTagIds()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "title"
-     */
-    public function testPropertyTitle()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "total_amount"
-     */
-    public function testPropertyTotalAmount()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

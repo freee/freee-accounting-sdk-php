@@ -80,144 +80,9 @@ class CompanyResponseCompanyTest extends TestCase
     }
 
     /**
-     * Test attribute "tags"
-     */
-    public function testPropertyTags()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "account_items"
-     */
-    public function testPropertyAccountItems()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "amount_fraction"
-     */
-    public function testPropertyAmountFraction()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "contact_name"
-     */
-    public function testPropertyContactName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "corporate_number"
-     */
-    public function testPropertyCorporateNumber()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "default_wallet_account_id"
-     */
-    public function testPropertyDefaultWalletAccountId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "display_name"
-     */
-    public function testPropertyDisplayName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fax"
-     */
-    public function testPropertyFax()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fiscal_years"
-     */
-    public function testPropertyFiscalYears()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "head_count"
-     */
-    public function testPropertyHeadCount()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "id"
      */
     public function testPropertyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "industry_class"
-     */
-    public function testPropertyIndustryClass()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "industry_code"
-     */
-    public function testPropertyIndustryCode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "invoice_layout"
-     */
-    public function testPropertyInvoiceLayout()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "items"
-     */
-    public function testPropertyItems()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "minus_format"
-     */
-    public function testPropertyMinusFormat()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -242,9 +107,90 @@ class CompanyResponseCompanyTest extends TestCase
     }
 
     /**
-     * Test attribute "partners"
+     * Test attribute "display_name"
      */
-    public function testPropertyPartners()
+    public function testPropertyDisplayName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tax_at_source_calc_type"
+     */
+    public function testPropertyTaxAtSourceCalcType()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "contact_name"
+     */
+    public function testPropertyContactName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "head_count"
+     */
+    public function testPropertyHeadCount()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "corporate_number"
+     */
+    public function testPropertyCorporateNumber()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "txn_number_format"
+     */
+    public function testPropertyTxnNumberFormat()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "default_wallet_account_id"
+     */
+    public function testPropertyDefaultWalletAccountId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "private_settlement"
+     */
+    public function testPropertyPrivateSettlement()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "minus_format"
+     */
+    public function testPropertyMinusFormat()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "role"
+     */
+    public function testPropertyRole()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -269,36 +215,27 @@ class CompanyResponseCompanyTest extends TestCase
     }
 
     /**
+     * Test attribute "fax"
+     */
+    public function testPropertyFax()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "zipcode"
+     */
+    public function testPropertyZipcode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "prefecture_code"
      */
     public function testPropertyPrefectureCode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "private_settlement"
-     */
-    public function testPropertyPrivateSettlement()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "role"
-     */
-    public function testPropertyRole()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sections"
-     */
-    public function testPropertySections()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -323,9 +260,72 @@ class CompanyResponseCompanyTest extends TestCase
     }
 
     /**
-     * Test attribute "tax_at_source_calc_type"
+     * Test attribute "invoice_layout"
      */
-    public function testPropertyTaxAtSourceCalcType()
+    public function testPropertyInvoiceLayout()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "amount_fraction"
+     */
+    public function testPropertyAmountFraction()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "industry_class"
+     */
+    public function testPropertyIndustryClass()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "industry_code"
+     */
+    public function testPropertyIndustryCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "workflow_setting"
+     */
+    public function testPropertyWorkflowSetting()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "use_partner_code"
+     */
+    public function testPropertyUsePartnerCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "fiscal_years"
+     */
+    public function testPropertyFiscalYears()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "account_items"
+     */
+    public function testPropertyAccountItems()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -350,18 +350,36 @@ class CompanyResponseCompanyTest extends TestCase
     }
 
     /**
-     * Test attribute "txn_number_format"
+     * Test attribute "items"
      */
-    public function testPropertyTxnNumberFormat()
+    public function testPropertyItems()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "use_partner_code"
+     * Test attribute "partners"
      */
-    public function testPropertyUsePartnerCode()
+    public function testPropertyPartners()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "sections"
+     */
+    public function testPropertySections()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tags"
+     */
+    public function testPropertyTags()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -371,24 +389,6 @@ class CompanyResponseCompanyTest extends TestCase
      * Test attribute "walletables"
      */
     public function testPropertyWalletables()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "workflow_setting"
-     */
-    public function testPropertyWorkflowSetting()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "zipcode"
-     */
-    public function testPropertyZipcode()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

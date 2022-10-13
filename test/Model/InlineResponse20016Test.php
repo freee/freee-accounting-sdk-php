@@ -80,18 +80,9 @@ class InlineResponse20016Test extends TestCase
     }
 
     /**
-     * Test attribute "meta"
+     * Test attribute "segment_tags"
      */
-    public function testPropertyMeta()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "walletable"
-     */
-    public function testPropertyWalletable()
+    public function testPropertySegmentTags()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

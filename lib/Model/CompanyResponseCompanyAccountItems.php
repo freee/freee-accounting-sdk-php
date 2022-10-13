@@ -59,11 +59,11 @@ class CompanyResponseCompanyAccountItems implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'categories' => 'string[]',
-        'default_tax_id' => 'int',
         'id' => 'int',
         'name' => 'string',
-        'shortcut' => 'string'
+        'shortcut' => 'string',
+        'default_tax_id' => 'int',
+        'categories' => 'string[]'
     ];
 
     /**
@@ -74,11 +74,11 @@ class CompanyResponseCompanyAccountItems implements ModelInterface, ArrayAccess,
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'categories' => null,
-        'default_tax_id' => null,
         'id' => null,
         'name' => null,
-        'shortcut' => null
+        'shortcut' => null,
+        'default_tax_id' => null,
+        'categories' => null
     ];
 
     /**
@@ -108,11 +108,11 @@ class CompanyResponseCompanyAccountItems implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $attributeMap = [
-        'categories' => 'categories',
-        'default_tax_id' => 'default_tax_id',
         'id' => 'id',
         'name' => 'name',
-        'shortcut' => 'shortcut'
+        'shortcut' => 'shortcut',
+        'default_tax_id' => 'default_tax_id',
+        'categories' => 'categories'
     ];
 
     /**
@@ -121,11 +121,11 @@ class CompanyResponseCompanyAccountItems implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-        'categories' => 'setCategories',
-        'default_tax_id' => 'setDefaultTaxId',
         'id' => 'setId',
         'name' => 'setName',
-        'shortcut' => 'setShortcut'
+        'shortcut' => 'setShortcut',
+        'default_tax_id' => 'setDefaultTaxId',
+        'categories' => 'setCategories'
     ];
 
     /**
@@ -134,11 +134,11 @@ class CompanyResponseCompanyAccountItems implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $getters = [
-        'categories' => 'getCategories',
-        'default_tax_id' => 'getDefaultTaxId',
         'id' => 'getId',
         'name' => 'getName',
-        'shortcut' => 'getShortcut'
+        'shortcut' => 'getShortcut',
+        'default_tax_id' => 'getDefaultTaxId',
+        'categories' => 'getCategories'
     ];
 
     /**
@@ -198,11 +198,11 @@ class CompanyResponseCompanyAccountItems implements ModelInterface, ArrayAccess,
      */
     public function __construct(array $data = null)
     {
-        $this->container['categories'] = $data['categories'] ?? null;
-        $this->container['default_tax_id'] = $data['default_tax_id'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['shortcut'] = $data['shortcut'] ?? null;
+        $this->container['default_tax_id'] = $data['default_tax_id'] ?? null;
+        $this->container['categories'] = $data['categories'] ?? null;
     }
 
     /**
@@ -213,17 +213,6 @@ class CompanyResponseCompanyAccountItems implements ModelInterface, ArrayAccess,
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        if ($this->container['categories'] === null) {
-            $invalidProperties[] = "'categories' can't be null";
-        }
-        if (!is_null($this->container['default_tax_id']) && ($this->container['default_tax_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'default_tax_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (!is_null($this->container['default_tax_id']) && ($this->container['default_tax_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'default_tax_id', must be bigger than or equal to 1.";
-        }
 
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
@@ -243,6 +232,17 @@ class CompanyResponseCompanyAccountItems implements ModelInterface, ArrayAccess,
             $invalidProperties[] = "invalid value for 'shortcut', the character length must be smaller than or equal to 20.";
         }
 
+        if (!is_null($this->container['default_tax_id']) && ($this->container['default_tax_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'default_tax_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (!is_null($this->container['default_tax_id']) && ($this->container['default_tax_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'default_tax_id', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['categories'] === null) {
+            $invalidProperties[] = "'categories' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -257,62 +257,6 @@ class CompanyResponseCompanyAccountItems implements ModelInterface, ArrayAccess,
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets categories
-     *
-     * @return string[]
-     */
-    public function getCategories()
-    {
-        return $this->container['categories'];
-    }
-
-    /**
-     * Sets categories
-     *
-     * @param string[] $categories categories
-     *
-     * @return self
-     */
-    public function setCategories($categories)
-    {
-        $this->container['categories'] = $categories;
-
-        return $this;
-    }
-
-    /**
-     * Gets default_tax_id
-     *
-     * @return int|null
-     */
-    public function getDefaultTaxId()
-    {
-        return $this->container['default_tax_id'];
-    }
-
-    /**
-     * Sets default_tax_id
-     *
-     * @param int|null $default_tax_id デフォルト設定がされている税区分ID
-     *
-     * @return self
-     */
-    public function setDefaultTaxId($default_tax_id)
-    {
-
-        if (!is_null($default_tax_id) && ($default_tax_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $default_tax_id when calling CompanyResponseCompanyAccountItems., must be smaller than or equal to 2147483647.');
-        }
-        if (!is_null($default_tax_id) && ($default_tax_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $default_tax_id when calling CompanyResponseCompanyAccountItems., must be bigger than or equal to 1.');
-        }
-
-        $this->container['default_tax_id'] = $default_tax_id;
-
-        return $this;
-    }
 
     /**
      * Gets id
@@ -394,6 +338,62 @@ class CompanyResponseCompanyAccountItems implements ModelInterface, ArrayAccess,
         }
 
         $this->container['shortcut'] = $shortcut;
+
+        return $this;
+    }
+
+    /**
+     * Gets default_tax_id
+     *
+     * @return int|null
+     */
+    public function getDefaultTaxId()
+    {
+        return $this->container['default_tax_id'];
+    }
+
+    /**
+     * Sets default_tax_id
+     *
+     * @param int|null $default_tax_id デフォルト設定がされている税区分ID
+     *
+     * @return self
+     */
+    public function setDefaultTaxId($default_tax_id)
+    {
+
+        if (!is_null($default_tax_id) && ($default_tax_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $default_tax_id when calling CompanyResponseCompanyAccountItems., must be smaller than or equal to 2147483647.');
+        }
+        if (!is_null($default_tax_id) && ($default_tax_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $default_tax_id when calling CompanyResponseCompanyAccountItems., must be bigger than or equal to 1.');
+        }
+
+        $this->container['default_tax_id'] = $default_tax_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets categories
+     *
+     * @return string[]
+     */
+    public function getCategories()
+    {
+        return $this->container['categories'];
+    }
+
+    /**
+     * Sets categories
+     *
+     * @param string[] $categories categories
+     *
+     * @return self
+     */
+    public function setCategories($categories)
+    {
+        $this->container['categories'] = $categories;
 
         return $this;
     }

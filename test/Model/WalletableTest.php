@@ -80,27 +80,9 @@ class WalletableTest extends TestCase
     }
 
     /**
-     * Test attribute "bank_id"
-     */
-    public function testPropertyBankId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "id"
      */
     public function testPropertyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "last_balance"
-     */
-    public function testPropertyLastBalance()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -116,9 +98,27 @@ class WalletableTest extends TestCase
     }
 
     /**
+     * Test attribute "bank_id"
+     */
+    public function testPropertyBankId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "type"
      */
     public function testPropertyType()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "last_balance"
+     */
+    public function testPropertyLastBalance()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

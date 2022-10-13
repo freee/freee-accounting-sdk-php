@@ -80,9 +80,9 @@ class UserCapabilityWithSelfOnlyTest extends TestCase
     }
 
     /**
-     * Test attribute "allowed_target"
+     * Test attribute "read"
      */
-    public function testPropertyAllowedTarget()
+    public function testPropertyRead()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -98,6 +98,15 @@ class UserCapabilityWithSelfOnlyTest extends TestCase
     }
 
     /**
+     * Test attribute "update"
+     */
+    public function testPropertyUpdate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "destroy"
      */
     public function testPropertyDestroy()
@@ -107,18 +116,9 @@ class UserCapabilityWithSelfOnlyTest extends TestCase
     }
 
     /**
-     * Test attribute "read"
+     * Test attribute "allowed_target"
      */
-    public function testPropertyRead()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "update"
-     */
-    public function testPropertyUpdate()
+    public function testPropertyAllowedTarget()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

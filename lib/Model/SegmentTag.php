@@ -59,9 +59,9 @@ class SegmentTag implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'description' => 'string',
         'id' => 'int',
         'name' => 'string',
+        'description' => 'string',
         'shortcut1' => 'string',
         'shortcut2' => 'string'
     ];
@@ -74,9 +74,9 @@ class SegmentTag implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'description' => null,
         'id' => null,
         'name' => null,
+        'description' => null,
         'shortcut1' => null,
         'shortcut2' => null
     ];
@@ -108,9 +108,9 @@ class SegmentTag implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'description' => 'description',
         'id' => 'id',
         'name' => 'name',
+        'description' => 'description',
         'shortcut1' => 'shortcut1',
         'shortcut2' => 'shortcut2'
     ];
@@ -121,9 +121,9 @@ class SegmentTag implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'description' => 'setDescription',
         'id' => 'setId',
         'name' => 'setName',
+        'description' => 'setDescription',
         'shortcut1' => 'setShortcut1',
         'shortcut2' => 'setShortcut2'
     ];
@@ -134,9 +134,9 @@ class SegmentTag implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'description' => 'getDescription',
         'id' => 'getId',
         'name' => 'getName',
+        'description' => 'getDescription',
         'shortcut1' => 'getShortcut1',
         'shortcut2' => 'getShortcut2'
     ];
@@ -198,9 +198,9 @@ class SegmentTag implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['description'] = $data['description'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
         $this->container['shortcut1'] = $data['shortcut1'] ?? null;
         $this->container['shortcut2'] = $data['shortcut2'] ?? null;
     }
@@ -214,9 +214,6 @@ class SegmentTag implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['description'] === null) {
-            $invalidProperties[] = "'description' can't be null";
-        }
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
@@ -230,6 +227,9 @@ class SegmentTag implements ModelInterface, ArrayAccess, \JsonSerializable
 
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
+        }
+        if ($this->container['description'] === null) {
+            $invalidProperties[] = "'description' can't be null";
         }
         if ($this->container['shortcut1'] === null) {
             $invalidProperties[] = "'shortcut1' can't be null";
@@ -259,30 +259,6 @@ class SegmentTag implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string $description 備考
-     *
-     * @return self
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
-
-        return $this;
-    }
 
     /**
      * Gets id
@@ -336,6 +312,30 @@ class SegmentTag implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string $description 備考
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
 
         return $this;
     }

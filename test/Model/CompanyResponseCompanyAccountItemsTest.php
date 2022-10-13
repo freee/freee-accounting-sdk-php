@@ -80,24 +80,6 @@ class CompanyResponseCompanyAccountItemsTest extends TestCase
     }
 
     /**
-     * Test attribute "categories"
-     */
-    public function testPropertyCategories()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "default_tax_id"
-     */
-    public function testPropertyDefaultTaxId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "id"
      */
     public function testPropertyId()
@@ -119,6 +101,24 @@ class CompanyResponseCompanyAccountItemsTest extends TestCase
      * Test attribute "shortcut"
      */
     public function testPropertyShortcut()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "default_tax_id"
+     */
+    public function testPropertyDefaultTaxId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "categories"
+     */
+    public function testPropertyCategories()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -80,24 +80,6 @@ class TrialBsResponseTrialBsBalancesTest extends TestCase
     }
 
     /**
-     * Test attribute "account_category_name"
-     */
-    public function testPropertyAccountCategoryName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "account_group_name"
-     */
-    public function testPropertyAccountGroupName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "account_item_id"
      */
     public function testPropertyAccountItemId()
@@ -116,72 +98,9 @@ class TrialBsResponseTrialBsBalancesTest extends TestCase
     }
 
     /**
-     * Test attribute "closing_balance"
+     * Test attribute "account_group_name"
      */
-    public function testPropertyClosingBalance()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "composition_ratio"
-     */
-    public function testPropertyCompositionRatio()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "credit_amount"
-     */
-    public function testPropertyCreditAmount()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "debit_amount"
-     */
-    public function testPropertyDebitAmount()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "hierarchy_level"
-     */
-    public function testPropertyHierarchyLevel()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "items"
-     */
-    public function testPropertyItems()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "opening_balance"
-     */
-    public function testPropertyOpeningBalance()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "parent_account_category_name"
-     */
-    public function testPropertyParentAccountCategoryName()
+    public function testPropertyAccountGroupName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -191,6 +110,15 @@ class TrialBsResponseTrialBsBalancesTest extends TestCase
      * Test attribute "partners"
      */
     public function testPropertyPartners()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "items"
+     */
+    public function testPropertyItems()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -233,9 +161,81 @@ class TrialBsResponseTrialBsBalancesTest extends TestCase
     }
 
     /**
+     * Test attribute "account_category_name"
+     */
+    public function testPropertyAccountCategoryName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "total_line"
      */
     public function testPropertyTotalLine()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "hierarchy_level"
+     */
+    public function testPropertyHierarchyLevel()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "parent_account_category_name"
+     */
+    public function testPropertyParentAccountCategoryName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "opening_balance"
+     */
+    public function testPropertyOpeningBalance()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "debit_amount"
+     */
+    public function testPropertyDebitAmount()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "credit_amount"
+     */
+    public function testPropertyCreditAmount()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "closing_balance"
+     */
+    public function testPropertyClosingBalance()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "composition_ratio"
+     */
+    public function testPropertyCompositionRatio()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

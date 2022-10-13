@@ -80,45 +80,9 @@ class ExpenseApplicationLineTemplateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "account_item_id"
-     */
-    public function testPropertyAccountItemId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "company_id"
      */
     public function testPropertyCompanyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "item_id"
-     */
-    public function testPropertyItemId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "line_description"
-     */
-    public function testPropertyLineDescription()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -134,9 +98,18 @@ class ExpenseApplicationLineTemplateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "required_receipt"
+     * Test attribute "account_item_id"
      */
-    public function testPropertyRequiredReceipt()
+    public function testPropertyAccountItemId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "item_id"
+     */
+    public function testPropertyItemId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -146,6 +119,33 @@ class ExpenseApplicationLineTemplateParamsTest extends TestCase
      * Test attribute "tax_code"
      */
     public function testPropertyTaxCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "line_description"
+     */
+    public function testPropertyLineDescription()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "required_receipt"
+     */
+    public function testPropertyRequiredReceipt()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

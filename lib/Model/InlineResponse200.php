@@ -59,7 +59,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'banks' => '\Freee\Accounting\Model\Bank[]'
+        'tags' => '\Freee\Accounting\Model\Tag[]'
     ];
 
     /**
@@ -70,7 +70,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'banks' => null
+        'tags' => null
     ];
 
     /**
@@ -100,7 +100,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $attributeMap = [
-        'banks' => 'banks'
+        'tags' => 'tags'
     ];
 
     /**
@@ -109,7 +109,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'banks' => 'setBanks'
+        'tags' => 'setTags'
     ];
 
     /**
@@ -118,7 +118,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
-        'banks' => 'getBanks'
+        'tags' => 'getTags'
     ];
 
     /**
@@ -178,7 +178,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function __construct(array $data = null)
     {
-        $this->container['banks'] = $data['banks'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
     }
 
     /**
@@ -190,8 +190,8 @@ class InlineResponse200 implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $invalidProperties = [];
 
-        if ($this->container['banks'] === null) {
-            $invalidProperties[] = "'banks' can't be null";
+        if ($this->container['tags'] === null) {
+            $invalidProperties[] = "'tags' can't be null";
         }
         return $invalidProperties;
     }
@@ -209,25 +209,25 @@ class InlineResponse200 implements ModelInterface, ArrayAccess, \JsonSerializabl
 
 
     /**
-     * Gets banks
+     * Gets tags
      *
-     * @return \Freee\Accounting\Model\Bank[]
+     * @return \Freee\Accounting\Model\Tag[]
      */
-    public function getBanks()
+    public function getTags()
     {
-        return $this->container['banks'];
+        return $this->container['tags'];
     }
 
     /**
-     * Sets banks
+     * Sets tags
      *
-     * @param \Freee\Accounting\Model\Bank[] $banks banks
+     * @param \Freee\Accounting\Model\Tag[] $tags tags
      *
      * @return self
      */
-    public function setBanks($banks)
+    public function setTags($tags)
     {
-        $this->container['banks'] = $banks;
+        $this->container['tags'] = $tags;
 
         return $this;
     }

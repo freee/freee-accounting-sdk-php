@@ -80,36 +80,9 @@ class PaymentRequestsIndexResponsePaymentRequestsTest extends TestCase
     }
 
     /**
-     * Test attribute "applicant_id"
+     * Test attribute "id"
      */
-    public function testPropertyApplicantId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "application_date"
-     */
-    public function testPropertyApplicationDate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "application_number"
-     */
-    public function testPropertyApplicationNumber()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "approvers"
-     */
-    public function testPropertyApprovers()
+    public function testPropertyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -125,18 +98,36 @@ class PaymentRequestsIndexResponsePaymentRequestsTest extends TestCase
     }
 
     /**
-     * Test attribute "current_round"
+     * Test attribute "title"
      */
-    public function testPropertyCurrentRound()
+    public function testPropertyTitle()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "current_step_id"
+     * Test attribute "application_date"
      */
-    public function testPropertyCurrentStepId()
+    public function testPropertyApplicationDate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "total_amount"
+     */
+    public function testPropertyTotalAmount()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "status"
+     */
+    public function testPropertyStatus()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -161,6 +152,51 @@ class PaymentRequestsIndexResponsePaymentRequestsTest extends TestCase
     }
 
     /**
+     * Test attribute "applicant_id"
+     */
+    public function testPropertyApplicantId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "approvers"
+     */
+    public function testPropertyApprovers()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "application_number"
+     */
+    public function testPropertyApplicationNumber()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "current_step_id"
+     */
+    public function testPropertyCurrentStepId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "current_round"
+     */
+    public function testPropertyCurrentRound()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "document_code"
      */
     public function testPropertyDocumentCode()
@@ -170,45 +206,9 @@ class PaymentRequestsIndexResponsePaymentRequestsTest extends TestCase
     }
 
     /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "issue_date"
      */
     public function testPropertyIssueDate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partner_code"
-     */
-    public function testPropertyPartnerCode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partner_id"
-     */
-    public function testPropertyPartnerId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partner_name"
-     */
-    public function testPropertyPartnerName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -233,27 +233,27 @@ class PaymentRequestsIndexResponsePaymentRequestsTest extends TestCase
     }
 
     /**
-     * Test attribute "status"
+     * Test attribute "partner_id"
      */
-    public function testPropertyStatus()
+    public function testPropertyPartnerId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "title"
+     * Test attribute "partner_code"
      */
-    public function testPropertyTitle()
+    public function testPropertyPartnerCode()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "total_amount"
+     * Test attribute "partner_name"
      */
-    public function testPropertyTotalAmount()
+    public function testPropertyPartnerName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

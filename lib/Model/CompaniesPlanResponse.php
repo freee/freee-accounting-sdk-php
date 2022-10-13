@@ -60,8 +60,8 @@ class CompaniesPlanResponse implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPITypes = [
         'id' => 'int',
-        'org_code' => 'string',
-        'plan' => 'string'
+        'plan' => 'string',
+        'org_code' => 'string'
     ];
 
     /**
@@ -73,8 +73,8 @@ class CompaniesPlanResponse implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'org_code' => null,
-        'plan' => null
+        'plan' => null,
+        'org_code' => null
     ];
 
     /**
@@ -105,8 +105,8 @@ class CompaniesPlanResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'org_code' => 'org_code',
-        'plan' => 'plan'
+        'plan' => 'plan',
+        'org_code' => 'org_code'
     ];
 
     /**
@@ -116,8 +116,8 @@ class CompaniesPlanResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $setters = [
         'id' => 'setId',
-        'org_code' => 'setOrgCode',
-        'plan' => 'setPlan'
+        'plan' => 'setPlan',
+        'org_code' => 'setOrgCode'
     ];
 
     /**
@@ -127,8 +127,8 @@ class CompaniesPlanResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $getters = [
         'id' => 'getId',
-        'org_code' => 'getOrgCode',
-        'plan' => 'getPlan'
+        'plan' => 'getPlan',
+        'org_code' => 'getOrgCode'
     ];
 
     /**
@@ -172,8 +172,6 @@ class CompaniesPlanResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         return self::$openAPIModelName;
     }
 
-    const ORG_CODE_PERSONAL = 'personal';
-    const ORG_CODE_CORPORATE = 'corporate';
     const PLAN_NON_CHARGED = 'non_charged';
     const PLAN_STARTER = 'starter';
     const PLAN_STANDARD = 'standard';
@@ -182,19 +180,8 @@ class CompaniesPlanResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     const PLAN_BASIC = 'basic';
     const PLAN_PROFESSIONAL = 'professional';
     const PLAN_ENTERPRISE = 'enterprise';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getOrgCodeAllowableValues()
-    {
-        return [
-            self::ORG_CODE_PERSONAL,
-            self::ORG_CODE_CORPORATE,
-        ];
-    }
+    const ORG_CODE_PERSONAL = 'personal';
+    const ORG_CODE_CORPORATE = 'corporate';
 
     /**
      * Gets allowable values of the enum
@@ -216,6 +203,19 @@ class CompaniesPlanResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getOrgCodeAllowableValues()
+    {
+        return [
+            self::ORG_CODE_PERSONAL,
+            self::ORG_CODE_CORPORATE,
+        ];
+    }
+
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
@@ -231,8 +231,8 @@ class CompaniesPlanResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     public function __construct(array $data = null)
     {
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['org_code'] = $data['org_code'] ?? null;
         $this->container['plan'] = $data['plan'] ?? null;
+        $this->container['org_code'] = $data['org_code'] ?? null;
     }
 
     /**
@@ -255,18 +255,6 @@ class CompaniesPlanResponse implements ModelInterface, ArrayAccess, \JsonSeriali
             $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['org_code'] === null) {
-            $invalidProperties[] = "'org_code' can't be null";
-        }
-        $allowedValues = $this->getOrgCodeAllowableValues();
-        if (!is_null($this->container['org_code']) && !in_array($this->container['org_code'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'org_code', must be one of '%s'",
-                $this->container['org_code'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         if ($this->container['plan'] === null) {
             $invalidProperties[] = "'plan' can't be null";
         }
@@ -275,6 +263,18 @@ class CompaniesPlanResponse implements ModelInterface, ArrayAccess, \JsonSeriali
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'plan', must be one of '%s'",
                 $this->container['plan'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if ($this->container['org_code'] === null) {
+            $invalidProperties[] = "'org_code' can't be null";
+        }
+        $allowedValues = $this->getOrgCodeAllowableValues();
+        if (!is_null($this->container['org_code']) && !in_array($this->container['org_code'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'org_code', must be one of '%s'",
+                $this->container['org_code'],
                 implode("', '", $allowedValues)
             );
         }
@@ -327,40 +327,6 @@ class CompaniesPlanResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets org_code
-     *
-     * @return string
-     */
-    public function getOrgCode()
-    {
-        return $this->container['org_code'];
-    }
-
-    /**
-     * Sets org_code
-     *
-     * @param string $org_code 事業形態（個人事業主: personal、法人: corporate）
-     *
-     * @return self
-     */
-    public function setOrgCode($org_code)
-    {
-        $allowedValues = $this->getOrgCodeAllowableValues();
-        if (!in_array($org_code, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'org_code', must be one of '%s'",
-                    $org_code,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['org_code'] = $org_code;
-
-        return $this;
-    }
-
-    /**
      * Gets plan
      *
      * @return string
@@ -390,6 +356,40 @@ class CompaniesPlanResponse implements ModelInterface, ArrayAccess, \JsonSeriali
             );
         }
         $this->container['plan'] = $plan;
+
+        return $this;
+    }
+
+    /**
+     * Gets org_code
+     *
+     * @return string
+     */
+    public function getOrgCode()
+    {
+        return $this->container['org_code'];
+    }
+
+    /**
+     * Sets org_code
+     *
+     * @param string $org_code 事業形態（個人事業主: personal、法人: corporate）
+     *
+     * @return self
+     */
+    public function setOrgCode($org_code)
+    {
+        $allowedValues = $this->getOrgCodeAllowableValues();
+        if (!in_array($org_code, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'org_code', must be one of '%s'",
+                    $org_code,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['org_code'] = $org_code;
 
         return $this;
     }

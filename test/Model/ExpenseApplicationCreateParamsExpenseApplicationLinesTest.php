@@ -80,9 +80,9 @@ class ExpenseApplicationCreateParamsExpenseApplicationLinesTest extends TestCase
     }
 
     /**
-     * Test attribute "amount"
+     * Test attribute "transaction_date"
      */
-    public function testPropertyAmount()
+    public function testPropertyTransactionDate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -92,6 +92,15 @@ class ExpenseApplicationCreateParamsExpenseApplicationLinesTest extends TestCase
      * Test attribute "description"
      */
     public function testPropertyDescription()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "amount"
+     */
+    public function testPropertyAmount()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -110,15 +119,6 @@ class ExpenseApplicationCreateParamsExpenseApplicationLinesTest extends TestCase
      * Test attribute "receipt_id"
      */
     public function testPropertyReceiptId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "transaction_date"
-     */
-    public function testPropertyTransactionDate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -80,33 +80,6 @@ class InvoiceCreateParamsInvoiceContentsTest extends TestCase
     }
 
     /**
-     * Test attribute "account_item_id"
-     */
-    public function testPropertyAccountItemId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "item_id"
-     */
-    public function testPropertyItemId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "order"
      */
     public function testPropertyOrder()
@@ -116,72 +89,18 @@ class InvoiceCreateParamsInvoiceContentsTest extends TestCase
     }
 
     /**
-     * Test attribute "qty"
-     */
-    public function testPropertyQty()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "section_id"
-     */
-    public function testPropertySectionId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "segment_1_tag_id"
-     */
-    public function testPropertySegment1TagId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "segment_2_tag_id"
-     */
-    public function testPropertySegment2TagId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "segment_3_tag_id"
-     */
-    public function testPropertySegment3TagId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "tag_ids"
-     */
-    public function testPropertyTagIds()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "tax_code"
-     */
-    public function testPropertyTaxCode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "type"
      */
     public function testPropertyType()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "qty"
+     */
+    public function testPropertyQty()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -209,6 +128,87 @@ class InvoiceCreateParamsInvoiceContentsTest extends TestCase
      * Test attribute "vat"
      */
     public function testPropertyVat()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "account_item_id"
+     */
+    public function testPropertyAccountItemId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tax_code"
+     */
+    public function testPropertyTaxCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "item_id"
+     */
+    public function testPropertyItemId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "section_id"
+     */
+    public function testPropertySectionId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tag_ids"
+     */
+    public function testPropertyTagIds()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "segment_1_tag_id"
+     */
+    public function testPropertySegment1TagId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "segment_2_tag_id"
+     */
+    public function testPropertySegment2TagId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "segment_3_tag_id"
+     */
+    public function testPropertySegment3TagId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

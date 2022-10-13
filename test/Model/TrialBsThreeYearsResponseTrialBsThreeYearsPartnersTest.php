@@ -80,27 +80,9 @@ class TrialBsThreeYearsResponseTrialBsThreeYearsPartnersTest extends TestCase
     }
 
     /**
-     * Test attribute "closing_balance"
-     */
-    public function testPropertyClosingBalance()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "id"
      */
     public function testPropertyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "last_year_closing_balance"
-     */
-    public function testPropertyLastYearClosingBalance()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -119,6 +101,24 @@ class TrialBsThreeYearsResponseTrialBsThreeYearsPartnersTest extends TestCase
      * Test attribute "two_years_before_closing_balance"
      */
     public function testPropertyTwoYearsBeforeClosingBalance()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "last_year_closing_balance"
+     */
+    public function testPropertyLastYearClosingBalance()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "closing_balance"
+     */
+    public function testPropertyClosingBalance()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

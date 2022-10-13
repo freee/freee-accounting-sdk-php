@@ -60,9 +60,9 @@ class DealCreateParamsPayments implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static $openAPITypes = [
         'amount' => 'int',
-        'date' => 'string',
         'from_walletable_id' => 'int',
-        'from_walletable_type' => 'string'
+        'from_walletable_type' => 'string',
+        'date' => 'string'
     ];
 
     /**
@@ -74,9 +74,9 @@ class DealCreateParamsPayments implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static $openAPIFormats = [
         'amount' => 'int64',
-        'date' => null,
         'from_walletable_id' => null,
-        'from_walletable_type' => null
+        'from_walletable_type' => null,
+        'date' => null
     ];
 
     /**
@@ -107,9 +107,9 @@ class DealCreateParamsPayments implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static $attributeMap = [
         'amount' => 'amount',
-        'date' => 'date',
         'from_walletable_id' => 'from_walletable_id',
-        'from_walletable_type' => 'from_walletable_type'
+        'from_walletable_type' => 'from_walletable_type',
+        'date' => 'date'
     ];
 
     /**
@@ -119,9 +119,9 @@ class DealCreateParamsPayments implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static $setters = [
         'amount' => 'setAmount',
-        'date' => 'setDate',
         'from_walletable_id' => 'setFromWalletableId',
-        'from_walletable_type' => 'setFromWalletableType'
+        'from_walletable_type' => 'setFromWalletableType',
+        'date' => 'setDate'
     ];
 
     /**
@@ -131,9 +131,9 @@ class DealCreateParamsPayments implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static $getters = [
         'amount' => 'getAmount',
-        'date' => 'getDate',
         'from_walletable_id' => 'getFromWalletableId',
-        'from_walletable_type' => 'getFromWalletableType'
+        'from_walletable_type' => 'getFromWalletableType',
+        'date' => 'getDate'
     ];
 
     /**
@@ -213,9 +213,9 @@ class DealCreateParamsPayments implements ModelInterface, ArrayAccess, \JsonSeri
     public function __construct(array $data = null)
     {
         $this->container['amount'] = $data['amount'] ?? null;
-        $this->container['date'] = $data['date'] ?? null;
         $this->container['from_walletable_id'] = $data['from_walletable_id'] ?? null;
         $this->container['from_walletable_type'] = $data['from_walletable_type'] ?? null;
+        $this->container['date'] = $data['date'] ?? null;
     }
 
     /**
@@ -238,9 +238,6 @@ class DealCreateParamsPayments implements ModelInterface, ArrayAccess, \JsonSeri
             $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to -9223372036854775808.";
         }
 
-        if ($this->container['date'] === null) {
-            $invalidProperties[] = "'date' can't be null";
-        }
         if ($this->container['from_walletable_id'] === null) {
             $invalidProperties[] = "'from_walletable_id' can't be null";
         }
@@ -264,6 +261,9 @@ class DealCreateParamsPayments implements ModelInterface, ArrayAccess, \JsonSeri
             );
         }
 
+        if ($this->container['date'] === null) {
+            $invalidProperties[] = "'date' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -307,30 +307,6 @@ class DealCreateParamsPayments implements ModelInterface, ArrayAccess, \JsonSeri
         }
 
         $this->container['amount'] = $amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets date
-     *
-     * @return string
-     */
-    public function getDate()
-    {
-        return $this->container['date'];
-    }
-
-    /**
-     * Sets date
-     *
-     * @param string $date 支払日：payments指定時は必須
-     *
-     * @return self
-     */
-    public function setDate($date)
-    {
-        $this->container['date'] = $date;
 
         return $this;
     }
@@ -397,6 +373,30 @@ class DealCreateParamsPayments implements ModelInterface, ArrayAccess, \JsonSeri
             );
         }
         $this->container['from_walletable_type'] = $from_walletable_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets date
+     *
+     * @return string
+     */
+    public function getDate()
+    {
+        return $this->container['date'];
+    }
+
+    /**
+     * Sets date
+     *
+     * @param string $date 支払日：payments指定時は必須
+     *
+     * @return self
+     */
+    public function setDate($date)
+    {
+        $this->container['date'] = $date;
 
         return $this;
     }

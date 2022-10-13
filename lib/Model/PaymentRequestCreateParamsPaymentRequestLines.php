@@ -59,17 +59,17 @@ class PaymentRequestCreateParamsPaymentRequestLines implements ModelInterface, A
       * @var string[]
       */
     protected static $openAPITypes = [
-        'account_item_id' => 'int',
-        'amount' => 'int',
-        'description' => 'string',
-        'item_id' => 'int',
         'line_type' => 'string',
+        'description' => 'string',
+        'amount' => 'int',
+        'account_item_id' => 'int',
+        'tax_code' => 'int',
+        'item_id' => 'int',
         'section_id' => 'int',
+        'tag_ids' => 'int[]',
         'segment_1_tag_id' => 'int',
         'segment_2_tag_id' => 'int',
-        'segment_3_tag_id' => 'int',
-        'tag_ids' => 'int[]',
-        'tax_code' => 'int'
+        'segment_3_tag_id' => 'int'
     ];
 
     /**
@@ -80,17 +80,17 @@ class PaymentRequestCreateParamsPaymentRequestLines implements ModelInterface, A
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'account_item_id' => null,
-        'amount' => 'int64',
-        'description' => null,
-        'item_id' => null,
         'line_type' => null,
+        'description' => null,
+        'amount' => 'int64',
+        'account_item_id' => null,
+        'tax_code' => null,
+        'item_id' => null,
         'section_id' => null,
+        'tag_ids' => null,
         'segment_1_tag_id' => 'int64',
         'segment_2_tag_id' => 'int64',
-        'segment_3_tag_id' => 'int64',
-        'tag_ids' => null,
-        'tax_code' => null
+        'segment_3_tag_id' => 'int64'
     ];
 
     /**
@@ -120,17 +120,17 @@ class PaymentRequestCreateParamsPaymentRequestLines implements ModelInterface, A
      * @var string[]
      */
     protected static $attributeMap = [
-        'account_item_id' => 'account_item_id',
-        'amount' => 'amount',
-        'description' => 'description',
-        'item_id' => 'item_id',
         'line_type' => 'line_type',
+        'description' => 'description',
+        'amount' => 'amount',
+        'account_item_id' => 'account_item_id',
+        'tax_code' => 'tax_code',
+        'item_id' => 'item_id',
         'section_id' => 'section_id',
+        'tag_ids' => 'tag_ids',
         'segment_1_tag_id' => 'segment_1_tag_id',
         'segment_2_tag_id' => 'segment_2_tag_id',
-        'segment_3_tag_id' => 'segment_3_tag_id',
-        'tag_ids' => 'tag_ids',
-        'tax_code' => 'tax_code'
+        'segment_3_tag_id' => 'segment_3_tag_id'
     ];
 
     /**
@@ -139,17 +139,17 @@ class PaymentRequestCreateParamsPaymentRequestLines implements ModelInterface, A
      * @var string[]
      */
     protected static $setters = [
-        'account_item_id' => 'setAccountItemId',
-        'amount' => 'setAmount',
-        'description' => 'setDescription',
-        'item_id' => 'setItemId',
         'line_type' => 'setLineType',
+        'description' => 'setDescription',
+        'amount' => 'setAmount',
+        'account_item_id' => 'setAccountItemId',
+        'tax_code' => 'setTaxCode',
+        'item_id' => 'setItemId',
         'section_id' => 'setSectionId',
+        'tag_ids' => 'setTagIds',
         'segment_1_tag_id' => 'setSegment1TagId',
         'segment_2_tag_id' => 'setSegment2TagId',
-        'segment_3_tag_id' => 'setSegment3TagId',
-        'tag_ids' => 'setTagIds',
-        'tax_code' => 'setTaxCode'
+        'segment_3_tag_id' => 'setSegment3TagId'
     ];
 
     /**
@@ -158,17 +158,17 @@ class PaymentRequestCreateParamsPaymentRequestLines implements ModelInterface, A
      * @var string[]
      */
     protected static $getters = [
-        'account_item_id' => 'getAccountItemId',
-        'amount' => 'getAmount',
-        'description' => 'getDescription',
-        'item_id' => 'getItemId',
         'line_type' => 'getLineType',
+        'description' => 'getDescription',
+        'amount' => 'getAmount',
+        'account_item_id' => 'getAccountItemId',
+        'tax_code' => 'getTaxCode',
+        'item_id' => 'getItemId',
         'section_id' => 'getSectionId',
+        'tag_ids' => 'getTagIds',
         'segment_1_tag_id' => 'getSegment1TagId',
         'segment_2_tag_id' => 'getSegment2TagId',
-        'segment_3_tag_id' => 'getSegment3TagId',
-        'tag_ids' => 'getTagIds',
-        'tax_code' => 'getTaxCode'
+        'segment_3_tag_id' => 'getSegment3TagId'
     ];
 
     /**
@@ -243,17 +243,17 @@ class PaymentRequestCreateParamsPaymentRequestLines implements ModelInterface, A
      */
     public function __construct(array $data = null)
     {
-        $this->container['account_item_id'] = $data['account_item_id'] ?? null;
-        $this->container['amount'] = $data['amount'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
-        $this->container['item_id'] = $data['item_id'] ?? null;
         $this->container['line_type'] = $data['line_type'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
+        $this->container['amount'] = $data['amount'] ?? null;
+        $this->container['account_item_id'] = $data['account_item_id'] ?? null;
+        $this->container['tax_code'] = $data['tax_code'] ?? null;
+        $this->container['item_id'] = $data['item_id'] ?? null;
         $this->container['section_id'] = $data['section_id'] ?? null;
+        $this->container['tag_ids'] = $data['tag_ids'] ?? null;
         $this->container['segment_1_tag_id'] = $data['segment_1_tag_id'] ?? null;
         $this->container['segment_2_tag_id'] = $data['segment_2_tag_id'] ?? null;
         $this->container['segment_3_tag_id'] = $data['segment_3_tag_id'] ?? null;
-        $this->container['tag_ids'] = $data['tag_ids'] ?? null;
-        $this->container['tax_code'] = $data['tax_code'] ?? null;
     }
 
     /**
@@ -265,12 +265,13 @@ class PaymentRequestCreateParamsPaymentRequestLines implements ModelInterface, A
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['account_item_id']) && ($this->container['account_item_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'account_item_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (!is_null($this->container['account_item_id']) && ($this->container['account_item_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'account_item_id', must be bigger than or equal to 1.";
+        $allowedValues = $this->getLineTypeAllowableValues();
+        if (!is_null($this->container['line_type']) && !in_array($this->container['line_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'line_type', must be one of '%s'",
+                $this->container['line_type'],
+                implode("', '", $allowedValues)
+            );
         }
 
         if ($this->container['amount'] === null) {
@@ -284,21 +285,28 @@ class PaymentRequestCreateParamsPaymentRequestLines implements ModelInterface, A
             $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to 0.";
         }
 
+        if (!is_null($this->container['account_item_id']) && ($this->container['account_item_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'account_item_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (!is_null($this->container['account_item_id']) && ($this->container['account_item_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'account_item_id', must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['tax_code']) && ($this->container['tax_code'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'tax_code', must be smaller than or equal to 2147483647.";
+        }
+
+        if (!is_null($this->container['tax_code']) && ($this->container['tax_code'] < 0)) {
+            $invalidProperties[] = "invalid value for 'tax_code', must be bigger than or equal to 0.";
+        }
+
         if (!is_null($this->container['item_id']) && ($this->container['item_id'] > 2147483647)) {
             $invalidProperties[] = "invalid value for 'item_id', must be smaller than or equal to 2147483647.";
         }
 
         if (!is_null($this->container['item_id']) && ($this->container['item_id'] < 1)) {
             $invalidProperties[] = "invalid value for 'item_id', must be bigger than or equal to 1.";
-        }
-
-        $allowedValues = $this->getLineTypeAllowableValues();
-        if (!is_null($this->container['line_type']) && !in_array($this->container['line_type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'line_type', must be one of '%s'",
-                $this->container['line_type'],
-                implode("', '", $allowedValues)
-            );
         }
 
         if (!is_null($this->container['section_id']) && ($this->container['section_id'] > 2147483647)) {
@@ -333,14 +341,6 @@ class PaymentRequestCreateParamsPaymentRequestLines implements ModelInterface, A
             $invalidProperties[] = "invalid value for 'segment_3_tag_id', must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['tax_code']) && ($this->container['tax_code'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'tax_code', must be smaller than or equal to 2147483647.";
-        }
-
-        if (!is_null($this->container['tax_code']) && ($this->container['tax_code'] < 0)) {
-            $invalidProperties[] = "invalid value for 'tax_code', must be bigger than or equal to 0.";
-        }
-
         return $invalidProperties;
     }
 
@@ -357,33 +357,59 @@ class PaymentRequestCreateParamsPaymentRequestLines implements ModelInterface, A
 
 
     /**
-     * Gets account_item_id
+     * Gets line_type
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getAccountItemId()
+    public function getLineType()
     {
-        return $this->container['account_item_id'];
+        return $this->container['line_type'];
     }
 
     /**
-     * Sets account_item_id
+     * Sets line_type
      *
-     * @param int|null $account_item_id 勘定科目ID
+     * @param string|null $line_type '行の種類 (deal_line: 支払依頼, withholding_tax: 源泉徴収税)'<br> 'デフォルトは deal_line: 支払依頼 です'
      *
      * @return self
      */
-    public function setAccountItemId($account_item_id)
+    public function setLineType($line_type)
     {
-
-        if (!is_null($account_item_id) && ($account_item_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $account_item_id when calling PaymentRequestCreateParamsPaymentRequestLines., must be smaller than or equal to 2147483647.');
+        $allowedValues = $this->getLineTypeAllowableValues();
+        if (!is_null($line_type) && !in_array($line_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'line_type', must be one of '%s'",
+                    $line_type,
+                    implode("', '", $allowedValues)
+                )
+            );
         }
-        if (!is_null($account_item_id) && ($account_item_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $account_item_id when calling PaymentRequestCreateParamsPaymentRequestLines., must be bigger than or equal to 1.');
-        }
+        $this->container['line_type'] = $line_type;
 
-        $this->container['account_item_id'] = $account_item_id;
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string|null $description 内容
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
 
         return $this;
     }
@@ -421,25 +447,65 @@ class PaymentRequestCreateParamsPaymentRequestLines implements ModelInterface, A
     }
 
     /**
-     * Gets description
+     * Gets account_item_id
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getDescription()
+    public function getAccountItemId()
     {
-        return $this->container['description'];
+        return $this->container['account_item_id'];
     }
 
     /**
-     * Sets description
+     * Sets account_item_id
      *
-     * @param string|null $description 内容
+     * @param int|null $account_item_id 勘定科目ID
      *
      * @return self
      */
-    public function setDescription($description)
+    public function setAccountItemId($account_item_id)
     {
-        $this->container['description'] = $description;
+
+        if (!is_null($account_item_id) && ($account_item_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $account_item_id when calling PaymentRequestCreateParamsPaymentRequestLines., must be smaller than or equal to 2147483647.');
+        }
+        if (!is_null($account_item_id) && ($account_item_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $account_item_id when calling PaymentRequestCreateParamsPaymentRequestLines., must be bigger than or equal to 1.');
+        }
+
+        $this->container['account_item_id'] = $account_item_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_code
+     *
+     * @return int|null
+     */
+    public function getTaxCode()
+    {
+        return $this->container['tax_code'];
+    }
+
+    /**
+     * Sets tax_code
+     *
+     * @param int|null $tax_code 税区分コード<br> 勘定科目IDを指定する場合は必須です。
+     *
+     * @return self
+     */
+    public function setTaxCode($tax_code)
+    {
+
+        if (!is_null($tax_code) && ($tax_code > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling PaymentRequestCreateParamsPaymentRequestLines., must be smaller than or equal to 2147483647.');
+        }
+        if (!is_null($tax_code) && ($tax_code < 0)) {
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling PaymentRequestCreateParamsPaymentRequestLines., must be bigger than or equal to 0.');
+        }
+
+        $this->container['tax_code'] = $tax_code;
 
         return $this;
     }
@@ -477,40 +543,6 @@ class PaymentRequestCreateParamsPaymentRequestLines implements ModelInterface, A
     }
 
     /**
-     * Gets line_type
-     *
-     * @return string|null
-     */
-    public function getLineType()
-    {
-        return $this->container['line_type'];
-    }
-
-    /**
-     * Sets line_type
-     *
-     * @param string|null $line_type '行の種類 (deal_line: 支払依頼, withholding_tax: 源泉徴収税)'<br> 'デフォルトは deal_line: 支払依頼 です'
-     *
-     * @return self
-     */
-    public function setLineType($line_type)
-    {
-        $allowedValues = $this->getLineTypeAllowableValues();
-        if (!is_null($line_type) && !in_array($line_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'line_type', must be one of '%s'",
-                    $line_type,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['line_type'] = $line_type;
-
-        return $this;
-    }
-
-    /**
      * Gets section_id
      *
      * @return int|null
@@ -538,6 +570,30 @@ class PaymentRequestCreateParamsPaymentRequestLines implements ModelInterface, A
         }
 
         $this->container['section_id'] = $section_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets tag_ids
+     *
+     * @return int[]|null
+     */
+    public function getTagIds()
+    {
+        return $this->container['tag_ids'];
+    }
+
+    /**
+     * Sets tag_ids
+     *
+     * @param int[]|null $tag_ids メモタグID
+     *
+     * @return self
+     */
+    public function setTagIds($tag_ids)
+    {
+        $this->container['tag_ids'] = $tag_ids;
 
         return $this;
     }
@@ -634,62 +690,6 @@ class PaymentRequestCreateParamsPaymentRequestLines implements ModelInterface, A
         }
 
         $this->container['segment_3_tag_id'] = $segment_3_tag_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets tag_ids
-     *
-     * @return int[]|null
-     */
-    public function getTagIds()
-    {
-        return $this->container['tag_ids'];
-    }
-
-    /**
-     * Sets tag_ids
-     *
-     * @param int[]|null $tag_ids メモタグID
-     *
-     * @return self
-     */
-    public function setTagIds($tag_ids)
-    {
-        $this->container['tag_ids'] = $tag_ids;
-
-        return $this;
-    }
-
-    /**
-     * Gets tax_code
-     *
-     * @return int|null
-     */
-    public function getTaxCode()
-    {
-        return $this->container['tax_code'];
-    }
-
-    /**
-     * Sets tax_code
-     *
-     * @param int|null $tax_code 税区分コード<br> 勘定科目IDを指定する場合は必須です。
-     *
-     * @return self
-     */
-    public function setTaxCode($tax_code)
-    {
-
-        if (!is_null($tax_code) && ($tax_code > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $tax_code when calling PaymentRequestCreateParamsPaymentRequestLines., must be smaller than or equal to 2147483647.');
-        }
-        if (!is_null($tax_code) && ($tax_code < 0)) {
-            throw new \InvalidArgumentException('invalid value for $tax_code when calling PaymentRequestCreateParamsPaymentRequestLines., must be bigger than or equal to 0.');
-        }
-
-        $this->container['tax_code'] = $tax_code;
 
         return $this;
     }

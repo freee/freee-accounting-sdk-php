@@ -59,8 +59,8 @@ class CompanyResponseCompanyPartners implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'code' => 'string',
         'id' => 'int',
+        'code' => 'string',
         'name' => 'string',
         'shortcut1' => 'string',
         'shortcut2' => 'string'
@@ -74,8 +74,8 @@ class CompanyResponseCompanyPartners implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'code' => null,
         'id' => null,
+        'code' => null,
         'name' => null,
         'shortcut1' => null,
         'shortcut2' => null
@@ -108,8 +108,8 @@ class CompanyResponseCompanyPartners implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
         'id' => 'id',
+        'code' => 'code',
         'name' => 'name',
         'shortcut1' => 'shortcut1',
         'shortcut2' => 'shortcut2'
@@ -121,8 +121,8 @@ class CompanyResponseCompanyPartners implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
         'id' => 'setId',
+        'code' => 'setCode',
         'name' => 'setName',
         'shortcut1' => 'setShortcut1',
         'shortcut2' => 'setShortcut2'
@@ -134,8 +134,8 @@ class CompanyResponseCompanyPartners implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
         'id' => 'getId',
+        'code' => 'getCode',
         'name' => 'getName',
         'shortcut1' => 'getShortcut1',
         'shortcut2' => 'getShortcut2'
@@ -198,8 +198,8 @@ class CompanyResponseCompanyPartners implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = $data['code'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
+        $this->container['code'] = $data['code'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['shortcut1'] = $data['shortcut1'] ?? null;
         $this->container['shortcut2'] = $data['shortcut2'] ?? null;
@@ -214,9 +214,6 @@ class CompanyResponseCompanyPartners implements ModelInterface, ArrayAccess, \Js
     {
         $invalidProperties = [];
 
-        if ($this->container['code'] === null) {
-            $invalidProperties[] = "'code' can't be null";
-        }
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
@@ -228,6 +225,9 @@ class CompanyResponseCompanyPartners implements ModelInterface, ArrayAccess, \Js
             $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
         }
 
+        if ($this->container['code'] === null) {
+            $invalidProperties[] = "'code' can't be null";
+        }
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
@@ -253,30 +253,6 @@ class CompanyResponseCompanyPartners implements ModelInterface, ArrayAccess, \Js
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets code
-     *
-     * @return string
-     */
-    public function getCode()
-    {
-        return $this->container['code'];
-    }
-
-    /**
-     * Sets code
-     *
-     * @param string $code 取引先コード
-     *
-     * @return self
-     */
-    public function setCode($code)
-    {
-        $this->container['code'] = $code;
-
-        return $this;
-    }
 
     /**
      * Gets id
@@ -306,6 +282,30 @@ class CompanyResponseCompanyPartners implements ModelInterface, ArrayAccess, \Js
         }
 
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets code
+     *
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->container['code'];
+    }
+
+    /**
+     * Sets code
+     *
+     * @param string $code 取引先コード
+     *
+     * @return self
+     */
+    public function setCode($code)
+    {
+        $this->container['code'] = $code;
 
         return $this;
     }

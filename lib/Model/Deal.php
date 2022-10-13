@@ -59,21 +59,21 @@ class Deal implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'amount' => 'int',
-        'company_id' => 'int',
-        'details' => '\Freee\Accounting\Model\DealDetails[]',
-        'due_amount' => 'int',
-        'due_date' => 'string',
         'id' => 'int',
+        'company_id' => 'int',
         'issue_date' => 'string',
-        'partner_code' => 'string',
+        'due_date' => 'string',
+        'amount' => 'int',
+        'due_amount' => 'int',
+        'type' => 'string',
         'partner_id' => 'int',
-        'payments' => '\Freee\Accounting\Model\DealPayments[]',
-        'receipts' => '\Freee\Accounting\Model\DealReceipts[]',
+        'partner_code' => 'string',
         'ref_number' => 'string',
-        'renews' => '\Freee\Accounting\Model\DealRenews[]',
         'status' => 'string',
-        'type' => 'string'
+        'details' => '\Freee\Accounting\Model\DealCreateResponseDealDetails[]',
+        'renews' => '\Freee\Accounting\Model\DealRenews[]',
+        'payments' => '\Freee\Accounting\Model\DealCreateResponseDealPayments[]',
+        'receipts' => '\Freee\Accounting\Model\DealReceipts[]'
     ];
 
     /**
@@ -84,21 +84,21 @@ class Deal implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'amount' => 'int64',
-        'company_id' => null,
-        'details' => null,
-        'due_amount' => null,
-        'due_date' => null,
         'id' => null,
+        'company_id' => null,
         'issue_date' => null,
-        'partner_code' => null,
+        'due_date' => null,
+        'amount' => 'int64',
+        'due_amount' => null,
+        'type' => null,
         'partner_id' => null,
-        'payments' => null,
-        'receipts' => null,
+        'partner_code' => null,
         'ref_number' => null,
-        'renews' => null,
         'status' => null,
-        'type' => null
+        'details' => null,
+        'renews' => null,
+        'payments' => null,
+        'receipts' => null
     ];
 
     /**
@@ -128,21 +128,21 @@ class Deal implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'amount' => 'amount',
-        'company_id' => 'company_id',
-        'details' => 'details',
-        'due_amount' => 'due_amount',
-        'due_date' => 'due_date',
         'id' => 'id',
+        'company_id' => 'company_id',
         'issue_date' => 'issue_date',
-        'partner_code' => 'partner_code',
+        'due_date' => 'due_date',
+        'amount' => 'amount',
+        'due_amount' => 'due_amount',
+        'type' => 'type',
         'partner_id' => 'partner_id',
-        'payments' => 'payments',
-        'receipts' => 'receipts',
+        'partner_code' => 'partner_code',
         'ref_number' => 'ref_number',
-        'renews' => 'renews',
         'status' => 'status',
-        'type' => 'type'
+        'details' => 'details',
+        'renews' => 'renews',
+        'payments' => 'payments',
+        'receipts' => 'receipts'
     ];
 
     /**
@@ -151,21 +151,21 @@ class Deal implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'amount' => 'setAmount',
-        'company_id' => 'setCompanyId',
-        'details' => 'setDetails',
-        'due_amount' => 'setDueAmount',
-        'due_date' => 'setDueDate',
         'id' => 'setId',
+        'company_id' => 'setCompanyId',
         'issue_date' => 'setIssueDate',
-        'partner_code' => 'setPartnerCode',
+        'due_date' => 'setDueDate',
+        'amount' => 'setAmount',
+        'due_amount' => 'setDueAmount',
+        'type' => 'setType',
         'partner_id' => 'setPartnerId',
-        'payments' => 'setPayments',
-        'receipts' => 'setReceipts',
+        'partner_code' => 'setPartnerCode',
         'ref_number' => 'setRefNumber',
-        'renews' => 'setRenews',
         'status' => 'setStatus',
-        'type' => 'setType'
+        'details' => 'setDetails',
+        'renews' => 'setRenews',
+        'payments' => 'setPayments',
+        'receipts' => 'setReceipts'
     ];
 
     /**
@@ -174,21 +174,21 @@ class Deal implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'amount' => 'getAmount',
-        'company_id' => 'getCompanyId',
-        'details' => 'getDetails',
-        'due_amount' => 'getDueAmount',
-        'due_date' => 'getDueDate',
         'id' => 'getId',
+        'company_id' => 'getCompanyId',
         'issue_date' => 'getIssueDate',
-        'partner_code' => 'getPartnerCode',
+        'due_date' => 'getDueDate',
+        'amount' => 'getAmount',
+        'due_amount' => 'getDueAmount',
+        'type' => 'getType',
         'partner_id' => 'getPartnerId',
-        'payments' => 'getPayments',
-        'receipts' => 'getReceipts',
+        'partner_code' => 'getPartnerCode',
         'ref_number' => 'getRefNumber',
-        'renews' => 'getRenews',
         'status' => 'getStatus',
-        'type' => 'getType'
+        'details' => 'getDetails',
+        'renews' => 'getRenews',
+        'payments' => 'getPayments',
+        'receipts' => 'getReceipts'
     ];
 
     /**
@@ -232,23 +232,10 @@ class Deal implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-    const STATUS_UNSETTLED = 'unsettled';
-    const STATUS_SETTLED = 'settled';
     const TYPE_INCOME = 'income';
     const TYPE_EXPENSE = 'expense';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getStatusAllowableValues()
-    {
-        return [
-            self::STATUS_UNSETTLED,
-            self::STATUS_SETTLED,
-        ];
-    }
+    const STATUS_UNSETTLED = 'unsettled';
+    const STATUS_SETTLED = 'settled';
 
     /**
      * Gets allowable values of the enum
@@ -260,6 +247,19 @@ class Deal implements ModelInterface, ArrayAccess, \JsonSerializable
         return [
             self::TYPE_INCOME,
             self::TYPE_EXPENSE,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getStatusAllowableValues()
+    {
+        return [
+            self::STATUS_UNSETTLED,
+            self::STATUS_SETTLED,
         ];
     }
 
@@ -278,21 +278,21 @@ class Deal implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['amount'] = $data['amount'] ?? null;
-        $this->container['company_id'] = $data['company_id'] ?? null;
-        $this->container['details'] = $data['details'] ?? null;
-        $this->container['due_amount'] = $data['due_amount'] ?? null;
-        $this->container['due_date'] = $data['due_date'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
+        $this->container['company_id'] = $data['company_id'] ?? null;
         $this->container['issue_date'] = $data['issue_date'] ?? null;
-        $this->container['partner_code'] = $data['partner_code'] ?? null;
+        $this->container['due_date'] = $data['due_date'] ?? null;
+        $this->container['amount'] = $data['amount'] ?? null;
+        $this->container['due_amount'] = $data['due_amount'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
         $this->container['partner_id'] = $data['partner_id'] ?? null;
+        $this->container['partner_code'] = $data['partner_code'] ?? null;
+        $this->container['ref_number'] = $data['ref_number'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
+        $this->container['details'] = $data['details'] ?? null;
+        $this->container['renews'] = $data['renews'] ?? null;
         $this->container['payments'] = $data['payments'] ?? null;
         $this->container['receipts'] = $data['receipts'] ?? null;
-        $this->container['ref_number'] = $data['ref_number'] ?? null;
-        $this->container['renews'] = $data['renews'] ?? null;
-        $this->container['status'] = $data['status'] ?? null;
-        $this->container['type'] = $data['type'] ?? null;
     }
 
     /**
@@ -304,15 +304,15 @@ class Deal implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['amount'] === null) {
-            $invalidProperties[] = "'amount' can't be null";
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
         }
-        if (($this->container['amount'] > 9223372036854775807)) {
-            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 9223372036854775807.";
+        if (($this->container['id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 2147483647.";
         }
 
-        if (($this->container['amount'] < -9223372036854775808)) {
-            $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to -9223372036854775808.";
+        if (($this->container['id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
         }
 
         if ($this->container['company_id'] === null) {
@@ -326,20 +326,29 @@ class Deal implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if (($this->container['id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
-        }
-
         if ($this->container['issue_date'] === null) {
             $invalidProperties[] = "'issue_date' can't be null";
         }
+        if ($this->container['amount'] === null) {
+            $invalidProperties[] = "'amount' can't be null";
+        }
+        if (($this->container['amount'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 9223372036854775807.";
+        }
+
+        if (($this->container['amount'] < -9223372036854775808)) {
+            $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to -9223372036854775808.";
+        }
+
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'type', must be one of '%s'",
+                $this->container['type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         if ($this->container['partner_id'] === null) {
             $invalidProperties[] = "'partner_id' can't be null";
         }
@@ -363,15 +372,6 @@ class Deal implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
 
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'type', must be one of '%s'",
-                $this->container['type'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         return $invalidProperties;
     }
 
@@ -388,33 +388,33 @@ class Deal implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets amount
+     * Gets id
      *
      * @return int
      */
-    public function getAmount()
+    public function getId()
     {
-        return $this->container['amount'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets amount
+     * Sets id
      *
-     * @param int $amount 金額
+     * @param int $id 取引ID
      *
      * @return self
      */
-    public function setAmount($amount)
+    public function setId($id)
     {
 
-        if (($amount > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling Deal., must be smaller than or equal to 9223372036854775807.');
+        if (($id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling Deal., must be smaller than or equal to 2147483647.');
         }
-        if (($amount < -9223372036854775808)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling Deal., must be bigger than or equal to -9223372036854775808.');
+        if (($id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling Deal., must be bigger than or equal to 1.');
         }
 
-        $this->container['amount'] = $amount;
+        $this->container['id'] = $id;
 
         return $this;
     }
@@ -452,49 +452,25 @@ class Deal implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets details
+     * Gets issue_date
      *
-     * @return \Freee\Accounting\Model\DealDetails[]|null
+     * @return string
      */
-    public function getDetails()
+    public function getIssueDate()
     {
-        return $this->container['details'];
+        return $this->container['issue_date'];
     }
 
     /**
-     * Sets details
+     * Sets issue_date
      *
-     * @param \Freee\Accounting\Model\DealDetails[]|null $details 取引の明細行
+     * @param string $issue_date 発生日 (yyyy-mm-dd)
      *
      * @return self
      */
-    public function setDetails($details)
+    public function setIssueDate($issue_date)
     {
-        $this->container['details'] = $details;
-
-        return $this;
-    }
-
-    /**
-     * Gets due_amount
-     *
-     * @return int|null
-     */
-    public function getDueAmount()
-    {
-        return $this->container['due_amount'];
-    }
-
-    /**
-     * Sets due_amount
-     *
-     * @param int|null $due_amount 支払残額
-     *
-     * @return self
-     */
-    public function setDueAmount($due_amount)
-    {
-        $this->container['due_amount'] = $due_amount;
+        $this->container['issue_date'] = $issue_date;
 
         return $this;
     }
@@ -524,81 +500,91 @@ class Deal implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets id
+     * Gets amount
      *
      * @return int
      */
-    public function getId()
+    public function getAmount()
     {
-        return $this->container['id'];
+        return $this->container['amount'];
     }
 
     /**
-     * Sets id
+     * Sets amount
      *
-     * @param int $id 取引ID
+     * @param int $amount 金額
      *
      * @return self
      */
-    public function setId($id)
+    public function setAmount($amount)
     {
 
-        if (($id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling Deal., must be smaller than or equal to 2147483647.');
+        if (($amount > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling Deal., must be smaller than or equal to 9223372036854775807.');
         }
-        if (($id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling Deal., must be bigger than or equal to 1.');
+        if (($amount < -9223372036854775808)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling Deal., must be bigger than or equal to -9223372036854775808.');
         }
 
-        $this->container['id'] = $id;
+        $this->container['amount'] = $amount;
 
         return $this;
     }
 
     /**
-     * Gets issue_date
+     * Gets due_amount
      *
-     * @return string
+     * @return int|null
      */
-    public function getIssueDate()
+    public function getDueAmount()
     {
-        return $this->container['issue_date'];
+        return $this->container['due_amount'];
     }
 
     /**
-     * Sets issue_date
+     * Sets due_amount
      *
-     * @param string $issue_date 発生日 (yyyy-mm-dd)
+     * @param int|null $due_amount 支払残額
      *
      * @return self
      */
-    public function setIssueDate($issue_date)
+    public function setDueAmount($due_amount)
     {
-        $this->container['issue_date'] = $issue_date;
+        $this->container['due_amount'] = $due_amount;
 
         return $this;
     }
 
     /**
-     * Gets partner_code
+     * Gets type
      *
      * @return string|null
      */
-    public function getPartnerCode()
+    public function getType()
     {
-        return $this->container['partner_code'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets partner_code
+     * Sets type
      *
-     * @param string|null $partner_code 取引先コード
+     * @param string|null $type 収支区分 (収入: income, 支出: expense)
      *
      * @return self
      */
-    public function setPartnerCode($partner_code)
+    public function setType($type)
     {
-        $this->container['partner_code'] = $partner_code;
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'type', must be one of '%s'",
+                    $type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['type'] = $type;
 
         return $this;
     }
@@ -636,49 +622,25 @@ class Deal implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets payments
+     * Gets partner_code
      *
-     * @return \Freee\Accounting\Model\DealPayments[]|null
+     * @return string|null
      */
-    public function getPayments()
+    public function getPartnerCode()
     {
-        return $this->container['payments'];
+        return $this->container['partner_code'];
     }
 
     /**
-     * Sets payments
+     * Sets partner_code
      *
-     * @param \Freee\Accounting\Model\DealPayments[]|null $payments 取引の支払行
+     * @param string|null $partner_code 取引先コード
      *
      * @return self
      */
-    public function setPayments($payments)
+    public function setPartnerCode($partner_code)
     {
-        $this->container['payments'] = $payments;
-
-        return $this;
-    }
-
-    /**
-     * Gets receipts
-     *
-     * @return \Freee\Accounting\Model\DealReceipts[]|null
-     */
-    public function getReceipts()
-    {
-        return $this->container['receipts'];
-    }
-
-    /**
-     * Sets receipts
-     *
-     * @param \Freee\Accounting\Model\DealReceipts[]|null $receipts 証憑ファイル（ファイルボックスのファイル）
-     *
-     * @return self
-     */
-    public function setReceipts($receipts)
-    {
-        $this->container['receipts'] = $receipts;
+        $this->container['partner_code'] = $partner_code;
 
         return $this;
     }
@@ -703,30 +665,6 @@ class Deal implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setRefNumber($ref_number)
     {
         $this->container['ref_number'] = $ref_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets renews
-     *
-     * @return \Freee\Accounting\Model\DealRenews[]|null
-     */
-    public function getRenews()
-    {
-        return $this->container['renews'];
-    }
-
-    /**
-     * Sets renews
-     *
-     * @param \Freee\Accounting\Model\DealRenews[]|null $renews 取引の+更新行
-     *
-     * @return self
-     */
-    public function setRenews($renews)
-    {
-        $this->container['renews'] = $renews;
 
         return $this;
     }
@@ -766,35 +704,97 @@ class Deal implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets type
+     * Gets details
      *
-     * @return string|null
+     * @return \Freee\Accounting\Model\DealCreateResponseDealDetails[]|null
      */
-    public function getType()
+    public function getDetails()
     {
-        return $this->container['type'];
+        return $this->container['details'];
     }
 
     /**
-     * Sets type
+     * Sets details
      *
-     * @param string|null $type 収支区分 (収入: income, 支出: expense)
+     * @param \Freee\Accounting\Model\DealCreateResponseDealDetails[]|null $details 取引の明細行
      *
      * @return self
      */
-    public function setType($type)
+    public function setDetails($details)
     {
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'type', must be one of '%s'",
-                    $type,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['type'] = $type;
+        $this->container['details'] = $details;
+
+        return $this;
+    }
+
+    /**
+     * Gets renews
+     *
+     * @return \Freee\Accounting\Model\DealRenews[]|null
+     */
+    public function getRenews()
+    {
+        return $this->container['renews'];
+    }
+
+    /**
+     * Sets renews
+     *
+     * @param \Freee\Accounting\Model\DealRenews[]|null $renews 取引の+更新行
+     *
+     * @return self
+     */
+    public function setRenews($renews)
+    {
+        $this->container['renews'] = $renews;
+
+        return $this;
+    }
+
+    /**
+     * Gets payments
+     *
+     * @return \Freee\Accounting\Model\DealCreateResponseDealPayments[]|null
+     */
+    public function getPayments()
+    {
+        return $this->container['payments'];
+    }
+
+    /**
+     * Sets payments
+     *
+     * @param \Freee\Accounting\Model\DealCreateResponseDealPayments[]|null $payments 取引の支払行
+     *
+     * @return self
+     */
+    public function setPayments($payments)
+    {
+        $this->container['payments'] = $payments;
+
+        return $this;
+    }
+
+    /**
+     * Gets receipts
+     *
+     * @return \Freee\Accounting\Model\DealReceipts[]|null
+     */
+    public function getReceipts()
+    {
+        return $this->container['receipts'];
+    }
+
+    /**
+     * Sets receipts
+     *
+     * @param \Freee\Accounting\Model\DealReceipts[]|null $receipts 証憑ファイル（ファイルボックスのファイル）
+     *
+     * @return self
+     */
+    public function setReceipts($receipts)
+    {
+        $this->container['receipts'] = $receipts;
 
         return $this;
     }

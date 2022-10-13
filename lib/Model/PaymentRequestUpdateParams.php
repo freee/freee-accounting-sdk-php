@@ -59,30 +59,30 @@ class PaymentRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'account_name' => 'string',
-        'account_number' => 'string',
-        'account_type' => 'string',
+        'company_id' => 'int',
+        'title' => 'string',
         'application_date' => 'string',
-        'approval_flow_route_id' => 'int',
+        'description' => 'string',
+        'payment_request_lines' => '\Freee\Accounting\Model\PaymentRequestUpdateParamsPaymentRequestLines[]',
         'approver_id' => 'int',
+        'approval_flow_route_id' => 'int',
+        'draft' => 'bool',
+        'document_code' => 'string',
+        'receipt_ids' => 'int[]',
+        'issue_date' => 'string',
+        'payment_date' => 'string',
+        'payment_method' => 'string',
+        'partner_id' => 'int',
+        'partner_code' => 'string',
         'bank_code' => 'string',
         'bank_name' => 'string',
         'bank_name_kana' => 'string',
         'branch_code' => 'string',
-        'branch_kana' => 'string',
         'branch_name' => 'string',
-        'company_id' => 'int',
-        'description' => 'string',
-        'document_code' => 'string',
-        'draft' => 'bool',
-        'issue_date' => 'string',
-        'partner_code' => 'string',
-        'partner_id' => 'int',
-        'payment_date' => 'string',
-        'payment_method' => 'string',
-        'payment_request_lines' => '\Freee\Accounting\Model\PaymentRequestUpdateParamsPaymentRequestLines[]',
-        'receipt_ids' => 'int[]',
-        'title' => 'string'
+        'branch_kana' => 'string',
+        'account_name' => 'string',
+        'account_number' => 'string',
+        'account_type' => 'string'
     ];
 
     /**
@@ -93,30 +93,30 @@ class PaymentRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'account_name' => null,
-        'account_number' => null,
-        'account_type' => null,
+        'company_id' => null,
+        'title' => null,
         'application_date' => null,
-        'approval_flow_route_id' => null,
+        'description' => null,
+        'payment_request_lines' => null,
         'approver_id' => null,
+        'approval_flow_route_id' => null,
+        'draft' => null,
+        'document_code' => null,
+        'receipt_ids' => null,
+        'issue_date' => null,
+        'payment_date' => null,
+        'payment_method' => null,
+        'partner_id' => null,
+        'partner_code' => null,
         'bank_code' => null,
         'bank_name' => null,
         'bank_name_kana' => null,
         'branch_code' => null,
-        'branch_kana' => null,
         'branch_name' => null,
-        'company_id' => null,
-        'description' => null,
-        'document_code' => null,
-        'draft' => null,
-        'issue_date' => null,
-        'partner_code' => null,
-        'partner_id' => null,
-        'payment_date' => null,
-        'payment_method' => null,
-        'payment_request_lines' => null,
-        'receipt_ids' => null,
-        'title' => null
+        'branch_kana' => null,
+        'account_name' => null,
+        'account_number' => null,
+        'account_type' => null
     ];
 
     /**
@@ -146,30 +146,30 @@ class PaymentRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $attributeMap = [
-        'account_name' => 'account_name',
-        'account_number' => 'account_number',
-        'account_type' => 'account_type',
+        'company_id' => 'company_id',
+        'title' => 'title',
         'application_date' => 'application_date',
-        'approval_flow_route_id' => 'approval_flow_route_id',
+        'description' => 'description',
+        'payment_request_lines' => 'payment_request_lines',
         'approver_id' => 'approver_id',
+        'approval_flow_route_id' => 'approval_flow_route_id',
+        'draft' => 'draft',
+        'document_code' => 'document_code',
+        'receipt_ids' => 'receipt_ids',
+        'issue_date' => 'issue_date',
+        'payment_date' => 'payment_date',
+        'payment_method' => 'payment_method',
+        'partner_id' => 'partner_id',
+        'partner_code' => 'partner_code',
         'bank_code' => 'bank_code',
         'bank_name' => 'bank_name',
         'bank_name_kana' => 'bank_name_kana',
         'branch_code' => 'branch_code',
-        'branch_kana' => 'branch_kana',
         'branch_name' => 'branch_name',
-        'company_id' => 'company_id',
-        'description' => 'description',
-        'document_code' => 'document_code',
-        'draft' => 'draft',
-        'issue_date' => 'issue_date',
-        'partner_code' => 'partner_code',
-        'partner_id' => 'partner_id',
-        'payment_date' => 'payment_date',
-        'payment_method' => 'payment_method',
-        'payment_request_lines' => 'payment_request_lines',
-        'receipt_ids' => 'receipt_ids',
-        'title' => 'title'
+        'branch_kana' => 'branch_kana',
+        'account_name' => 'account_name',
+        'account_number' => 'account_number',
+        'account_type' => 'account_type'
     ];
 
     /**
@@ -178,30 +178,30 @@ class PaymentRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        'account_name' => 'setAccountName',
-        'account_number' => 'setAccountNumber',
-        'account_type' => 'setAccountType',
+        'company_id' => 'setCompanyId',
+        'title' => 'setTitle',
         'application_date' => 'setApplicationDate',
-        'approval_flow_route_id' => 'setApprovalFlowRouteId',
+        'description' => 'setDescription',
+        'payment_request_lines' => 'setPaymentRequestLines',
         'approver_id' => 'setApproverId',
+        'approval_flow_route_id' => 'setApprovalFlowRouteId',
+        'draft' => 'setDraft',
+        'document_code' => 'setDocumentCode',
+        'receipt_ids' => 'setReceiptIds',
+        'issue_date' => 'setIssueDate',
+        'payment_date' => 'setPaymentDate',
+        'payment_method' => 'setPaymentMethod',
+        'partner_id' => 'setPartnerId',
+        'partner_code' => 'setPartnerCode',
         'bank_code' => 'setBankCode',
         'bank_name' => 'setBankName',
         'bank_name_kana' => 'setBankNameKana',
         'branch_code' => 'setBranchCode',
-        'branch_kana' => 'setBranchKana',
         'branch_name' => 'setBranchName',
-        'company_id' => 'setCompanyId',
-        'description' => 'setDescription',
-        'document_code' => 'setDocumentCode',
-        'draft' => 'setDraft',
-        'issue_date' => 'setIssueDate',
-        'partner_code' => 'setPartnerCode',
-        'partner_id' => 'setPartnerId',
-        'payment_date' => 'setPaymentDate',
-        'payment_method' => 'setPaymentMethod',
-        'payment_request_lines' => 'setPaymentRequestLines',
-        'receipt_ids' => 'setReceiptIds',
-        'title' => 'setTitle'
+        'branch_kana' => 'setBranchKana',
+        'account_name' => 'setAccountName',
+        'account_number' => 'setAccountNumber',
+        'account_type' => 'setAccountType'
     ];
 
     /**
@@ -210,30 +210,30 @@ class PaymentRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $getters = [
-        'account_name' => 'getAccountName',
-        'account_number' => 'getAccountNumber',
-        'account_type' => 'getAccountType',
+        'company_id' => 'getCompanyId',
+        'title' => 'getTitle',
         'application_date' => 'getApplicationDate',
-        'approval_flow_route_id' => 'getApprovalFlowRouteId',
+        'description' => 'getDescription',
+        'payment_request_lines' => 'getPaymentRequestLines',
         'approver_id' => 'getApproverId',
+        'approval_flow_route_id' => 'getApprovalFlowRouteId',
+        'draft' => 'getDraft',
+        'document_code' => 'getDocumentCode',
+        'receipt_ids' => 'getReceiptIds',
+        'issue_date' => 'getIssueDate',
+        'payment_date' => 'getPaymentDate',
+        'payment_method' => 'getPaymentMethod',
+        'partner_id' => 'getPartnerId',
+        'partner_code' => 'getPartnerCode',
         'bank_code' => 'getBankCode',
         'bank_name' => 'getBankName',
         'bank_name_kana' => 'getBankNameKana',
         'branch_code' => 'getBranchCode',
-        'branch_kana' => 'getBranchKana',
         'branch_name' => 'getBranchName',
-        'company_id' => 'getCompanyId',
-        'description' => 'getDescription',
-        'document_code' => 'getDocumentCode',
-        'draft' => 'getDraft',
-        'issue_date' => 'getIssueDate',
-        'partner_code' => 'getPartnerCode',
-        'partner_id' => 'getPartnerId',
-        'payment_date' => 'getPaymentDate',
-        'payment_method' => 'getPaymentMethod',
-        'payment_request_lines' => 'getPaymentRequestLines',
-        'receipt_ids' => 'getReceiptIds',
-        'title' => 'getTitle'
+        'branch_kana' => 'getBranchKana',
+        'account_name' => 'getAccountName',
+        'account_number' => 'getAccountNumber',
+        'account_type' => 'getAccountType'
     ];
 
     /**
@@ -277,32 +277,16 @@ class PaymentRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonSe
         return self::$openAPIModelName;
     }
 
-    const ACCOUNT_TYPE_ORDINARY = 'ordinary';
-    const ACCOUNT_TYPE_CHECKING = 'checking';
-    const ACCOUNT_TYPE_EARMARKED = 'earmarked';
-    const ACCOUNT_TYPE_SAVINGS = 'savings';
-    const ACCOUNT_TYPE_OTHER = 'other';
     const PAYMENT_METHOD_NONE = 'none';
     const PAYMENT_METHOD_DOMESTIC_BANK_TRANSFER = 'domestic_bank_transfer';
     const PAYMENT_METHOD_ABROAD_BANK_TRANSFER = 'abroad_bank_transfer';
     const PAYMENT_METHOD_ACCOUNT_TRANSFER = 'account_transfer';
     const PAYMENT_METHOD_CREDIT_CARD = 'credit_card';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getAccountTypeAllowableValues()
-    {
-        return [
-            self::ACCOUNT_TYPE_ORDINARY,
-            self::ACCOUNT_TYPE_CHECKING,
-            self::ACCOUNT_TYPE_EARMARKED,
-            self::ACCOUNT_TYPE_SAVINGS,
-            self::ACCOUNT_TYPE_OTHER,
-        ];
-    }
+    const ACCOUNT_TYPE_ORDINARY = 'ordinary';
+    const ACCOUNT_TYPE_CHECKING = 'checking';
+    const ACCOUNT_TYPE_EARMARKED = 'earmarked';
+    const ACCOUNT_TYPE_SAVINGS = 'savings';
+    const ACCOUNT_TYPE_OTHER = 'other';
 
     /**
      * Gets allowable values of the enum
@@ -321,6 +305,22 @@ class PaymentRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getAccountTypeAllowableValues()
+    {
+        return [
+            self::ACCOUNT_TYPE_ORDINARY,
+            self::ACCOUNT_TYPE_CHECKING,
+            self::ACCOUNT_TYPE_EARMARKED,
+            self::ACCOUNT_TYPE_SAVINGS,
+            self::ACCOUNT_TYPE_OTHER,
+        ];
+    }
+
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
@@ -335,30 +335,30 @@ class PaymentRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(array $data = null)
     {
-        $this->container['account_name'] = $data['account_name'] ?? null;
-        $this->container['account_number'] = $data['account_number'] ?? null;
-        $this->container['account_type'] = $data['account_type'] ?? null;
+        $this->container['company_id'] = $data['company_id'] ?? null;
+        $this->container['title'] = $data['title'] ?? null;
         $this->container['application_date'] = $data['application_date'] ?? null;
-        $this->container['approval_flow_route_id'] = $data['approval_flow_route_id'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
+        $this->container['payment_request_lines'] = $data['payment_request_lines'] ?? null;
         $this->container['approver_id'] = $data['approver_id'] ?? null;
+        $this->container['approval_flow_route_id'] = $data['approval_flow_route_id'] ?? null;
+        $this->container['draft'] = $data['draft'] ?? null;
+        $this->container['document_code'] = $data['document_code'] ?? null;
+        $this->container['receipt_ids'] = $data['receipt_ids'] ?? null;
+        $this->container['issue_date'] = $data['issue_date'] ?? null;
+        $this->container['payment_date'] = $data['payment_date'] ?? null;
+        $this->container['payment_method'] = $data['payment_method'] ?? null;
+        $this->container['partner_id'] = $data['partner_id'] ?? null;
+        $this->container['partner_code'] = $data['partner_code'] ?? null;
         $this->container['bank_code'] = $data['bank_code'] ?? null;
         $this->container['bank_name'] = $data['bank_name'] ?? null;
         $this->container['bank_name_kana'] = $data['bank_name_kana'] ?? null;
         $this->container['branch_code'] = $data['branch_code'] ?? null;
-        $this->container['branch_kana'] = $data['branch_kana'] ?? null;
         $this->container['branch_name'] = $data['branch_name'] ?? null;
-        $this->container['company_id'] = $data['company_id'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
-        $this->container['document_code'] = $data['document_code'] ?? null;
-        $this->container['draft'] = $data['draft'] ?? null;
-        $this->container['issue_date'] = $data['issue_date'] ?? null;
-        $this->container['partner_code'] = $data['partner_code'] ?? null;
-        $this->container['partner_id'] = $data['partner_id'] ?? null;
-        $this->container['payment_date'] = $data['payment_date'] ?? null;
-        $this->container['payment_method'] = $data['payment_method'] ?? null;
-        $this->container['payment_request_lines'] = $data['payment_request_lines'] ?? null;
-        $this->container['receipt_ids'] = $data['receipt_ids'] ?? null;
-        $this->container['title'] = $data['title'] ?? null;
+        $this->container['branch_kana'] = $data['branch_kana'] ?? null;
+        $this->container['account_name'] = $data['account_name'] ?? null;
+        $this->container['account_number'] = $data['account_number'] ?? null;
+        $this->container['account_type'] = $data['account_type'] ?? null;
     }
 
     /**
@@ -370,21 +370,29 @@ class PaymentRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonSe
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['account_name']) && (mb_strlen($this->container['account_name']) > 48)) {
-            $invalidProperties[] = "invalid value for 'account_name', the character length must be smaller than or equal to 48.";
+        if ($this->container['company_id'] === null) {
+            $invalidProperties[] = "'company_id' can't be null";
+        }
+        if (($this->container['company_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
         }
 
-        if (!is_null($this->container['account_number']) && (mb_strlen($this->container['account_number']) > 7)) {
-            $invalidProperties[] = "invalid value for 'account_number', the character length must be smaller than or equal to 7.";
+        if (($this->container['company_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
         }
 
-        $allowedValues = $this->getAccountTypeAllowableValues();
-        if (!is_null($this->container['account_type']) && !in_array($this->container['account_type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'account_type', must be one of '%s'",
-                $this->container['account_type'],
-                implode("', '", $allowedValues)
-            );
+        if ($this->container['title'] === null) {
+            $invalidProperties[] = "'title' can't be null";
+        }
+        if ($this->container['payment_request_lines'] === null) {
+            $invalidProperties[] = "'payment_request_lines' can't be null";
+        }
+        if (!is_null($this->container['approver_id']) && ($this->container['approver_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'approver_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (!is_null($this->container['approver_id']) && ($this->container['approver_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'approver_id', must be bigger than or equal to 1.";
         }
 
         if ($this->container['approval_flow_route_id'] === null) {
@@ -398,12 +406,31 @@ class PaymentRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonSe
             $invalidProperties[] = "invalid value for 'approval_flow_route_id', must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['approver_id']) && ($this->container['approver_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'approver_id', must be smaller than or equal to 2147483647.";
+        if ($this->container['draft'] === null) {
+            $invalidProperties[] = "'draft' can't be null";
+        }
+        if (!is_null($this->container['document_code']) && (mb_strlen($this->container['document_code']) > 255)) {
+            $invalidProperties[] = "invalid value for 'document_code', the character length must be smaller than or equal to 255.";
         }
 
-        if (!is_null($this->container['approver_id']) && ($this->container['approver_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'approver_id', must be bigger than or equal to 1.";
+        if ($this->container['issue_date'] === null) {
+            $invalidProperties[] = "'issue_date' can't be null";
+        }
+        $allowedValues = $this->getPaymentMethodAllowableValues();
+        if (!is_null($this->container['payment_method']) && !in_array($this->container['payment_method'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'payment_method', must be one of '%s'",
+                $this->container['payment_method'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if (!is_null($this->container['partner_id']) && ($this->container['partner_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'partner_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (!is_null($this->container['partner_id']) && ($this->container['partner_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'partner_id', must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['bank_code']) && (mb_strlen($this->container['bank_code']) > 4)) {
@@ -422,58 +449,31 @@ class PaymentRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonSe
             $invalidProperties[] = "invalid value for 'branch_code', the character length must be smaller than or equal to 3.";
         }
 
-        if (!is_null($this->container['branch_kana']) && (mb_strlen($this->container['branch_kana']) > 15)) {
-            $invalidProperties[] = "invalid value for 'branch_kana', the character length must be smaller than or equal to 15.";
-        }
-
         if (!is_null($this->container['branch_name']) && (mb_strlen($this->container['branch_name']) > 255)) {
             $invalidProperties[] = "invalid value for 'branch_name', the character length must be smaller than or equal to 255.";
         }
 
-        if ($this->container['company_id'] === null) {
-            $invalidProperties[] = "'company_id' can't be null";
-        }
-        if (($this->container['company_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
+        if (!is_null($this->container['branch_kana']) && (mb_strlen($this->container['branch_kana']) > 15)) {
+            $invalidProperties[] = "invalid value for 'branch_kana', the character length must be smaller than or equal to 15.";
         }
 
-        if (($this->container['company_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
+        if (!is_null($this->container['account_name']) && (mb_strlen($this->container['account_name']) > 48)) {
+            $invalidProperties[] = "invalid value for 'account_name', the character length must be smaller than or equal to 48.";
         }
 
-        if (!is_null($this->container['document_code']) && (mb_strlen($this->container['document_code']) > 255)) {
-            $invalidProperties[] = "invalid value for 'document_code', the character length must be smaller than or equal to 255.";
+        if (!is_null($this->container['account_number']) && (mb_strlen($this->container['account_number']) > 7)) {
+            $invalidProperties[] = "invalid value for 'account_number', the character length must be smaller than or equal to 7.";
         }
 
-        if ($this->container['draft'] === null) {
-            $invalidProperties[] = "'draft' can't be null";
-        }
-        if ($this->container['issue_date'] === null) {
-            $invalidProperties[] = "'issue_date' can't be null";
-        }
-        if (!is_null($this->container['partner_id']) && ($this->container['partner_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'partner_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (!is_null($this->container['partner_id']) && ($this->container['partner_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'partner_id', must be bigger than or equal to 1.";
-        }
-
-        $allowedValues = $this->getPaymentMethodAllowableValues();
-        if (!is_null($this->container['payment_method']) && !in_array($this->container['payment_method'], $allowedValues, true)) {
+        $allowedValues = $this->getAccountTypeAllowableValues();
+        if (!is_null($this->container['account_type']) && !in_array($this->container['account_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'payment_method', must be one of '%s'",
-                $this->container['payment_method'],
+                "invalid value '%s' for 'account_type', must be one of '%s'",
+                $this->container['account_type'],
                 implode("', '", $allowedValues)
             );
         }
 
-        if ($this->container['payment_request_lines'] === null) {
-            $invalidProperties[] = "'payment_request_lines' can't be null";
-        }
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -490,91 +490,57 @@ class PaymentRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonSe
 
 
     /**
-     * Gets account_name
+     * Gets company_id
      *
-     * @return string|null
+     * @return int
      */
-    public function getAccountName()
+    public function getCompanyId()
     {
-        return $this->container['account_name'];
+        return $this->container['company_id'];
     }
 
     /**
-     * Sets account_name
+     * Sets company_id
      *
-     * @param string|null $account_name 受取人名（カナ）（48文字以内）<br> 支払先指定時には無効
+     * @param int $company_id 事業所ID
      *
      * @return self
      */
-    public function setAccountName($account_name)
+    public function setCompanyId($company_id)
     {
-        if (!is_null($account_name) && (mb_strlen($account_name) > 48)) {
-            throw new \InvalidArgumentException('invalid length for $account_name when calling PaymentRequestUpdateParams., must be smaller than or equal to 48.');
+
+        if (($company_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $company_id when calling PaymentRequestUpdateParams., must be smaller than or equal to 2147483647.');
+        }
+        if (($company_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $company_id when calling PaymentRequestUpdateParams., must be bigger than or equal to 1.');
         }
 
-        $this->container['account_name'] = $account_name;
+        $this->container['company_id'] = $company_id;
 
         return $this;
     }
 
     /**
-     * Gets account_number
+     * Gets title
      *
-     * @return string|null
+     * @return string
      */
-    public function getAccountNumber()
+    public function getTitle()
     {
-        return $this->container['account_number'];
+        return $this->container['title'];
     }
 
     /**
-     * Sets account_number
+     * Sets title
      *
-     * @param string|null $account_number 口座番号（半角数字1桁〜7桁）<br> 支払先指定時には無効
+     * @param string $title 申請タイトル<br> 申請者が、下書き状態もしくは差戻し状態の支払依頼に対して指定する場合のみ有効
      *
      * @return self
      */
-    public function setAccountNumber($account_number)
+    public function setTitle($title)
     {
-        if (!is_null($account_number) && (mb_strlen($account_number) > 7)) {
-            throw new \InvalidArgumentException('invalid length for $account_number when calling PaymentRequestUpdateParams., must be smaller than or equal to 7.');
-        }
-
-        $this->container['account_number'] = $account_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets account_type
-     *
-     * @return string|null
-     */
-    public function getAccountType()
-    {
-        return $this->container['account_type'];
-    }
-
-    /**
-     * Sets account_type
-     *
-     * @param string|null $account_type '口座種別(ordinary: 普通、checking: 当座、earmarked: 納税準備預金、savings: 貯蓄、other: その他)'<br> '支払先指定時には無効'<br> 'デフォルトは ordinary: 普通 です'
-     *
-     * @return self
-     */
-    public function setAccountType($account_type)
-    {
-        $allowedValues = $this->getAccountTypeAllowableValues();
-        if (!is_null($account_type) && !in_array($account_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'account_type', must be one of '%s'",
-                    $account_type,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['account_type'] = $account_type;
+        $this->container['title'] = $title;
 
         return $this;
     }
@@ -599,6 +565,86 @@ class PaymentRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonSe
     public function setApplicationDate($application_date)
     {
         $this->container['application_date'] = $application_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string|null $description 備考
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets payment_request_lines
+     *
+     * @return \Freee\Accounting\Model\PaymentRequestUpdateParamsPaymentRequestLines[]
+     */
+    public function getPaymentRequestLines()
+    {
+        return $this->container['payment_request_lines'];
+    }
+
+    /**
+     * Sets payment_request_lines
+     *
+     * @param \Freee\Accounting\Model\PaymentRequestUpdateParamsPaymentRequestLines[] $payment_request_lines 支払依頼の項目行一覧（配列）
+     *
+     * @return self
+     */
+    public function setPaymentRequestLines($payment_request_lines)
+    {
+        $this->container['payment_request_lines'] = $payment_request_lines;
+
+        return $this;
+    }
+
+    /**
+     * Gets approver_id
+     *
+     * @return int|null
+     */
+    public function getApproverId()
+    {
+        return $this->container['approver_id'];
+    }
+
+    /**
+     * Sets approver_id
+     *
+     * @param int|null $approver_id 承認者のユーザーID<br> 「承認者を指定」の経路を申請経路として使用する場合に指定してください。<br> 指定する承認者のユーザーIDは、申請経路APIを利用して取得してください。
+     *
+     * @return self
+     */
+    public function setApproverId($approver_id)
+    {
+
+        if (!is_null($approver_id) && ($approver_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $approver_id when calling PaymentRequestUpdateParams., must be smaller than or equal to 2147483647.');
+        }
+        if (!is_null($approver_id) && ($approver_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $approver_id when calling PaymentRequestUpdateParams., must be bigger than or equal to 1.');
+        }
+
+        $this->container['approver_id'] = $approver_id;
 
         return $this;
     }
@@ -636,33 +682,215 @@ class PaymentRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets approver_id
+     * Gets draft
      *
-     * @return int|null
+     * @return bool
      */
-    public function getApproverId()
+    public function getDraft()
     {
-        return $this->container['approver_id'];
+        return $this->container['draft'];
     }
 
     /**
-     * Sets approver_id
+     * Sets draft
      *
-     * @param int|null $approver_id 承認者のユーザーID<br> 「承認者を指定」の経路を申請経路として使用する場合に指定してください。<br> 指定する承認者のユーザーIDは、申請経路APIを利用して取得してください。
+     * @param bool $draft 支払依頼のステータス<br> falseを指定した時は申請中（in_progress）で支払依頼を更新します。<br> trueを指定した時は下書き（draft）で支払依頼を更新します。
      *
      * @return self
      */
-    public function setApproverId($approver_id)
+    public function setDraft($draft)
+    {
+        $this->container['draft'] = $draft;
+
+        return $this;
+    }
+
+    /**
+     * Gets document_code
+     *
+     * @return string|null
+     */
+    public function getDocumentCode()
+    {
+        return $this->container['document_code'];
+    }
+
+    /**
+     * Sets document_code
+     *
+     * @param string|null $document_code 請求書番号（255文字以内）
+     *
+     * @return self
+     */
+    public function setDocumentCode($document_code)
+    {
+        if (!is_null($document_code) && (mb_strlen($document_code) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $document_code when calling PaymentRequestUpdateParams., must be smaller than or equal to 255.');
+        }
+
+        $this->container['document_code'] = $document_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets receipt_ids
+     *
+     * @return int[]|null
+     */
+    public function getReceiptIds()
+    {
+        return $this->container['receipt_ids'];
+    }
+
+    /**
+     * Sets receipt_ids
+     *
+     * @param int[]|null $receipt_ids 証憑ファイルID（ファイルボックスのファイルID）（配列）
+     *
+     * @return self
+     */
+    public function setReceiptIds($receipt_ids)
+    {
+        $this->container['receipt_ids'] = $receipt_ids;
+
+        return $this;
+    }
+
+    /**
+     * Gets issue_date
+     *
+     * @return string
+     */
+    public function getIssueDate()
+    {
+        return $this->container['issue_date'];
+    }
+
+    /**
+     * Sets issue_date
+     *
+     * @param string $issue_date 発生日 (yyyy-mm-dd)
+     *
+     * @return self
+     */
+    public function setIssueDate($issue_date)
+    {
+        $this->container['issue_date'] = $issue_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets payment_date
+     *
+     * @return string|null
+     */
+    public function getPaymentDate()
+    {
+        return $this->container['payment_date'];
+    }
+
+    /**
+     * Sets payment_date
+     *
+     * @param string|null $payment_date 支払期限 (yyyy-mm-dd)
+     *
+     * @return self
+     */
+    public function setPaymentDate($payment_date)
+    {
+        $this->container['payment_date'] = $payment_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets payment_method
+     *
+     * @return string|null
+     */
+    public function getPaymentMethod()
+    {
+        return $this->container['payment_method'];
+    }
+
+    /**
+     * Sets payment_method
+     *
+     * @param string|null $payment_method '支払方法(none: 指定なし, domestic_bank_transfer: 国内振込, abroad_bank_transfer: 国外振込, account_transfer: 口座振替, credit_card: クレジットカード)'<br> 'デフォルトは none: 指定なし です。'
+     *
+     * @return self
+     */
+    public function setPaymentMethod($payment_method)
+    {
+        $allowedValues = $this->getPaymentMethodAllowableValues();
+        if (!is_null($payment_method) && !in_array($payment_method, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'payment_method', must be one of '%s'",
+                    $payment_method,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['payment_method'] = $payment_method;
+
+        return $this;
+    }
+
+    /**
+     * Gets partner_id
+     *
+     * @return int|null
+     */
+    public function getPartnerId()
+    {
+        return $this->container['partner_id'];
+    }
+
+    /**
+     * Sets partner_id
+     *
+     * @param int|null $partner_id 支払先の取引先ID
+     *
+     * @return self
+     */
+    public function setPartnerId($partner_id)
     {
 
-        if (!is_null($approver_id) && ($approver_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $approver_id when calling PaymentRequestUpdateParams., must be smaller than or equal to 2147483647.');
+        if (!is_null($partner_id) && ($partner_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $partner_id when calling PaymentRequestUpdateParams., must be smaller than or equal to 2147483647.');
         }
-        if (!is_null($approver_id) && ($approver_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $approver_id when calling PaymentRequestUpdateParams., must be bigger than or equal to 1.');
+        if (!is_null($partner_id) && ($partner_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $partner_id when calling PaymentRequestUpdateParams., must be bigger than or equal to 1.');
         }
 
-        $this->container['approver_id'] = $approver_id;
+        $this->container['partner_id'] = $partner_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets partner_code
+     *
+     * @return string|null
+     */
+    public function getPartnerCode()
+    {
+        return $this->container['partner_code'];
+    }
+
+    /**
+     * Sets partner_code
+     *
+     * @param string|null $partner_code 支払先の取引先コード<br> 支払先の取引先ID指定時には無効
+     *
+     * @return self
+     */
+    public function setPartnerCode($partner_code)
+    {
+        $this->container['partner_code'] = $partner_code;
 
         return $this;
     }
@@ -780,34 +1008,6 @@ class PaymentRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets branch_kana
-     *
-     * @return string|null
-     */
-    public function getBranchKana()
-    {
-        return $this->container['branch_kana'];
-    }
-
-    /**
-     * Sets branch_kana
-     *
-     * @param string|null $branch_kana 支店名（カナ）（15文字以内）<br> 指定可能な文字は、英数・カナ・丸括弧・ハイフン・スペースのみです。<br> 支払先指定時には無効
-     *
-     * @return self
-     */
-    public function setBranchKana($branch_kana)
-    {
-        if (!is_null($branch_kana) && (mb_strlen($branch_kana) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $branch_kana when calling PaymentRequestUpdateParams., must be smaller than or equal to 15.');
-        }
-
-        $this->container['branch_kana'] = $branch_kana;
-
-        return $this;
-    }
-
-    /**
      * Gets branch_name
      *
      * @return string|null
@@ -836,319 +1036,119 @@ class PaymentRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets company_id
-     *
-     * @return int
-     */
-    public function getCompanyId()
-    {
-        return $this->container['company_id'];
-    }
-
-    /**
-     * Sets company_id
-     *
-     * @param int $company_id 事業所ID
-     *
-     * @return self
-     */
-    public function setCompanyId($company_id)
-    {
-
-        if (($company_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling PaymentRequestUpdateParams., must be smaller than or equal to 2147483647.');
-        }
-        if (($company_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling PaymentRequestUpdateParams., must be bigger than or equal to 1.');
-        }
-
-        $this->container['company_id'] = $company_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
+     * Gets branch_kana
      *
      * @return string|null
      */
-    public function getDescription()
+    public function getBranchKana()
     {
-        return $this->container['description'];
+        return $this->container['branch_kana'];
     }
 
     /**
-     * Sets description
+     * Sets branch_kana
      *
-     * @param string|null $description 備考
+     * @param string|null $branch_kana 支店名（カナ）（15文字以内）<br> 指定可能な文字は、英数・カナ・丸括弧・ハイフン・スペースのみです。<br> 支払先指定時には無効
      *
      * @return self
      */
-    public function setDescription($description)
+    public function setBranchKana($branch_kana)
     {
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets document_code
-     *
-     * @return string|null
-     */
-    public function getDocumentCode()
-    {
-        return $this->container['document_code'];
-    }
-
-    /**
-     * Sets document_code
-     *
-     * @param string|null $document_code 請求書番号（255文字以内）
-     *
-     * @return self
-     */
-    public function setDocumentCode($document_code)
-    {
-        if (!is_null($document_code) && (mb_strlen($document_code) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $document_code when calling PaymentRequestUpdateParams., must be smaller than or equal to 255.');
+        if (!is_null($branch_kana) && (mb_strlen($branch_kana) > 15)) {
+            throw new \InvalidArgumentException('invalid length for $branch_kana when calling PaymentRequestUpdateParams., must be smaller than or equal to 15.');
         }
 
-        $this->container['document_code'] = $document_code;
+        $this->container['branch_kana'] = $branch_kana;
 
         return $this;
     }
 
     /**
-     * Gets draft
-     *
-     * @return bool
-     */
-    public function getDraft()
-    {
-        return $this->container['draft'];
-    }
-
-    /**
-     * Sets draft
-     *
-     * @param bool $draft 支払依頼のステータス<br> falseを指定した時は申請中（in_progress）で支払依頼を更新します。<br> trueを指定した時は下書き（draft）で支払依頼を更新します。<br> 未指定の時は下書きとみなして支払依頼を更新します。
-     *
-     * @return self
-     */
-    public function setDraft($draft)
-    {
-        $this->container['draft'] = $draft;
-
-        return $this;
-    }
-
-    /**
-     * Gets issue_date
-     *
-     * @return string
-     */
-    public function getIssueDate()
-    {
-        return $this->container['issue_date'];
-    }
-
-    /**
-     * Sets issue_date
-     *
-     * @param string $issue_date 発生日 (yyyy-mm-dd)
-     *
-     * @return self
-     */
-    public function setIssueDate($issue_date)
-    {
-        $this->container['issue_date'] = $issue_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets partner_code
+     * Gets account_name
      *
      * @return string|null
      */
-    public function getPartnerCode()
+    public function getAccountName()
     {
-        return $this->container['partner_code'];
+        return $this->container['account_name'];
     }
 
     /**
-     * Sets partner_code
+     * Sets account_name
      *
-     * @param string|null $partner_code 支払先の取引先コード<br> 支払先の取引先ID指定時には無効
+     * @param string|null $account_name 受取人名（カナ）（48文字以内）<br> 支払先指定時には無効
      *
      * @return self
      */
-    public function setPartnerCode($partner_code)
+    public function setAccountName($account_name)
     {
-        $this->container['partner_code'] = $partner_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets partner_id
-     *
-     * @return int|null
-     */
-    public function getPartnerId()
-    {
-        return $this->container['partner_id'];
-    }
-
-    /**
-     * Sets partner_id
-     *
-     * @param int|null $partner_id 支払先の取引先ID
-     *
-     * @return self
-     */
-    public function setPartnerId($partner_id)
-    {
-
-        if (!is_null($partner_id) && ($partner_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $partner_id when calling PaymentRequestUpdateParams., must be smaller than or equal to 2147483647.');
-        }
-        if (!is_null($partner_id) && ($partner_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $partner_id when calling PaymentRequestUpdateParams., must be bigger than or equal to 1.');
+        if (!is_null($account_name) && (mb_strlen($account_name) > 48)) {
+            throw new \InvalidArgumentException('invalid length for $account_name when calling PaymentRequestUpdateParams., must be smaller than or equal to 48.');
         }
 
-        $this->container['partner_id'] = $partner_id;
+        $this->container['account_name'] = $account_name;
 
         return $this;
     }
 
     /**
-     * Gets payment_date
+     * Gets account_number
      *
      * @return string|null
      */
-    public function getPaymentDate()
+    public function getAccountNumber()
     {
-        return $this->container['payment_date'];
+        return $this->container['account_number'];
     }
 
     /**
-     * Sets payment_date
+     * Sets account_number
      *
-     * @param string|null $payment_date 支払期限 (yyyy-mm-dd)
+     * @param string|null $account_number 口座番号（半角数字1桁〜7桁）<br> 支払先指定時には無効
      *
      * @return self
      */
-    public function setPaymentDate($payment_date)
+    public function setAccountNumber($account_number)
     {
-        $this->container['payment_date'] = $payment_date;
+        if (!is_null($account_number) && (mb_strlen($account_number) > 7)) {
+            throw new \InvalidArgumentException('invalid length for $account_number when calling PaymentRequestUpdateParams., must be smaller than or equal to 7.');
+        }
+
+        $this->container['account_number'] = $account_number;
 
         return $this;
     }
 
     /**
-     * Gets payment_method
+     * Gets account_type
      *
      * @return string|null
      */
-    public function getPaymentMethod()
+    public function getAccountType()
     {
-        return $this->container['payment_method'];
+        return $this->container['account_type'];
     }
 
     /**
-     * Sets payment_method
+     * Sets account_type
      *
-     * @param string|null $payment_method '支払方法(none: 指定なし, domestic_bank_transfer: 国内振込, abroad_bank_transfer: 国外振込, account_transfer: 口座振替, credit_card: クレジットカード)'<br> 'デフォルトは none: 指定なし です。'
+     * @param string|null $account_type '口座種別(ordinary: 普通、checking: 当座、earmarked: 納税準備預金、savings: 貯蓄、other: その他)'<br> '支払先指定時には無効'<br> 'デフォルトは ordinary: 普通 です'
      *
      * @return self
      */
-    public function setPaymentMethod($payment_method)
+    public function setAccountType($account_type)
     {
-        $allowedValues = $this->getPaymentMethodAllowableValues();
-        if (!is_null($payment_method) && !in_array($payment_method, $allowedValues, true)) {
+        $allowedValues = $this->getAccountTypeAllowableValues();
+        if (!is_null($account_type) && !in_array($account_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'payment_method', must be one of '%s'",
-                    $payment_method,
+                    "Invalid value '%s' for 'account_type', must be one of '%s'",
+                    $account_type,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['payment_method'] = $payment_method;
-
-        return $this;
-    }
-
-    /**
-     * Gets payment_request_lines
-     *
-     * @return \Freee\Accounting\Model\PaymentRequestUpdateParamsPaymentRequestLines[]
-     */
-    public function getPaymentRequestLines()
-    {
-        return $this->container['payment_request_lines'];
-    }
-
-    /**
-     * Sets payment_request_lines
-     *
-     * @param \Freee\Accounting\Model\PaymentRequestUpdateParamsPaymentRequestLines[] $payment_request_lines 支払依頼の項目行一覧（配列）
-     *
-     * @return self
-     */
-    public function setPaymentRequestLines($payment_request_lines)
-    {
-        $this->container['payment_request_lines'] = $payment_request_lines;
-
-        return $this;
-    }
-
-    /**
-     * Gets receipt_ids
-     *
-     * @return int[]|null
-     */
-    public function getReceiptIds()
-    {
-        return $this->container['receipt_ids'];
-    }
-
-    /**
-     * Sets receipt_ids
-     *
-     * @param int[]|null $receipt_ids 証憑ファイルID（ファイルボックスのファイルID）（配列）
-     *
-     * @return self
-     */
-    public function setReceiptIds($receipt_ids)
-    {
-        $this->container['receipt_ids'] = $receipt_ids;
-
-        return $this;
-    }
-
-    /**
-     * Gets title
-     *
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->container['title'];
-    }
-
-    /**
-     * Sets title
-     *
-     * @param string $title 申請タイトル<br> 申請者が、下書き状態もしくは差戻し状態の支払依頼に対して指定する場合のみ有効
-     *
-     * @return self
-     */
-    public function setTitle($title)
-    {
-        $this->container['title'] = $title;
+        $this->container['account_type'] = $account_type;
 
         return $this;
     }

@@ -80,18 +80,9 @@ class PaymentRequestCreateParamsPaymentRequestLinesTest extends TestCase
     }
 
     /**
-     * Test attribute "account_item_id"
+     * Test attribute "line_type"
      */
-    public function testPropertyAccountItemId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "amount"
-     */
-    public function testPropertyAmount()
+    public function testPropertyLineType()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -107,6 +98,33 @@ class PaymentRequestCreateParamsPaymentRequestLinesTest extends TestCase
     }
 
     /**
+     * Test attribute "amount"
+     */
+    public function testPropertyAmount()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "account_item_id"
+     */
+    public function testPropertyAccountItemId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tax_code"
+     */
+    public function testPropertyTaxCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "item_id"
      */
     public function testPropertyItemId()
@@ -116,18 +134,18 @@ class PaymentRequestCreateParamsPaymentRequestLinesTest extends TestCase
     }
 
     /**
-     * Test attribute "line_type"
+     * Test attribute "section_id"
      */
-    public function testPropertyLineType()
+    public function testPropertySectionId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "section_id"
+     * Test attribute "tag_ids"
      */
-    public function testPropertySectionId()
+    public function testPropertyTagIds()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -155,24 +173,6 @@ class PaymentRequestCreateParamsPaymentRequestLinesTest extends TestCase
      * Test attribute "segment_3_tag_id"
      */
     public function testPropertySegment3TagId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "tag_ids"
-     */
-    public function testPropertyTagIds()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "tax_code"
-     */
-    public function testPropertyTaxCode()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

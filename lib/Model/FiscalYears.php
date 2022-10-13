@@ -59,16 +59,16 @@ class FiscalYears implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'depreciation_record_method' => 'int',
-        'end_date' => 'string',
+        'use_industry_template' => 'bool',
         'indirect_write_off_method' => 'bool',
-        'return_code' => 'int',
-        'sales_tax_business_code' => 'int',
         'start_date' => 'string',
-        'tax_account_method' => 'int',
-        'tax_fraction' => 'int',
+        'end_date' => 'string',
+        'depreciation_record_method' => 'int',
         'tax_method' => 'int',
-        'use_industry_template' => 'bool'
+        'sales_tax_business_code' => 'int',
+        'tax_fraction' => 'int',
+        'tax_account_method' => 'int',
+        'return_code' => 'int'
     ];
 
     /**
@@ -79,16 +79,16 @@ class FiscalYears implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'depreciation_record_method' => null,
-        'end_date' => null,
+        'use_industry_template' => null,
         'indirect_write_off_method' => null,
-        'return_code' => null,
-        'sales_tax_business_code' => null,
         'start_date' => null,
-        'tax_account_method' => null,
-        'tax_fraction' => null,
+        'end_date' => null,
+        'depreciation_record_method' => null,
         'tax_method' => null,
-        'use_industry_template' => null
+        'sales_tax_business_code' => null,
+        'tax_fraction' => null,
+        'tax_account_method' => null,
+        'return_code' => null
     ];
 
     /**
@@ -118,16 +118,16 @@ class FiscalYears implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'depreciation_record_method' => 'depreciation_record_method',
-        'end_date' => 'end_date',
+        'use_industry_template' => 'use_industry_template',
         'indirect_write_off_method' => 'indirect_write_off_method',
-        'return_code' => 'return_code',
-        'sales_tax_business_code' => 'sales_tax_business_code',
         'start_date' => 'start_date',
-        'tax_account_method' => 'tax_account_method',
-        'tax_fraction' => 'tax_fraction',
+        'end_date' => 'end_date',
+        'depreciation_record_method' => 'depreciation_record_method',
         'tax_method' => 'tax_method',
-        'use_industry_template' => 'use_industry_template'
+        'sales_tax_business_code' => 'sales_tax_business_code',
+        'tax_fraction' => 'tax_fraction',
+        'tax_account_method' => 'tax_account_method',
+        'return_code' => 'return_code'
     ];
 
     /**
@@ -136,16 +136,16 @@ class FiscalYears implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'depreciation_record_method' => 'setDepreciationRecordMethod',
-        'end_date' => 'setEndDate',
+        'use_industry_template' => 'setUseIndustryTemplate',
         'indirect_write_off_method' => 'setIndirectWriteOffMethod',
-        'return_code' => 'setReturnCode',
-        'sales_tax_business_code' => 'setSalesTaxBusinessCode',
         'start_date' => 'setStartDate',
-        'tax_account_method' => 'setTaxAccountMethod',
-        'tax_fraction' => 'setTaxFraction',
+        'end_date' => 'setEndDate',
+        'depreciation_record_method' => 'setDepreciationRecordMethod',
         'tax_method' => 'setTaxMethod',
-        'use_industry_template' => 'setUseIndustryTemplate'
+        'sales_tax_business_code' => 'setSalesTaxBusinessCode',
+        'tax_fraction' => 'setTaxFraction',
+        'tax_account_method' => 'setTaxAccountMethod',
+        'return_code' => 'setReturnCode'
     ];
 
     /**
@@ -154,16 +154,16 @@ class FiscalYears implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'depreciation_record_method' => 'getDepreciationRecordMethod',
-        'end_date' => 'getEndDate',
+        'use_industry_template' => 'getUseIndustryTemplate',
         'indirect_write_off_method' => 'getIndirectWriteOffMethod',
-        'return_code' => 'getReturnCode',
-        'sales_tax_business_code' => 'getSalesTaxBusinessCode',
         'start_date' => 'getStartDate',
-        'tax_account_method' => 'getTaxAccountMethod',
-        'tax_fraction' => 'getTaxFraction',
+        'end_date' => 'getEndDate',
+        'depreciation_record_method' => 'getDepreciationRecordMethod',
         'tax_method' => 'getTaxMethod',
-        'use_industry_template' => 'getUseIndustryTemplate'
+        'sales_tax_business_code' => 'getSalesTaxBusinessCode',
+        'tax_fraction' => 'getTaxFraction',
+        'tax_account_method' => 'getTaxAccountMethod',
+        'return_code' => 'getReturnCode'
     ];
 
     /**
@@ -223,16 +223,16 @@ class FiscalYears implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['depreciation_record_method'] = $data['depreciation_record_method'] ?? null;
-        $this->container['end_date'] = $data['end_date'] ?? null;
-        $this->container['indirect_write_off_method'] = $data['indirect_write_off_method'] ?? null;
-        $this->container['return_code'] = $data['return_code'] ?? null;
-        $this->container['sales_tax_business_code'] = $data['sales_tax_business_code'] ?? null;
-        $this->container['start_date'] = $data['start_date'] ?? null;
-        $this->container['tax_account_method'] = $data['tax_account_method'] ?? null;
-        $this->container['tax_fraction'] = $data['tax_fraction'] ?? null;
-        $this->container['tax_method'] = $data['tax_method'] ?? null;
         $this->container['use_industry_template'] = $data['use_industry_template'] ?? null;
+        $this->container['indirect_write_off_method'] = $data['indirect_write_off_method'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['end_date'] = $data['end_date'] ?? null;
+        $this->container['depreciation_record_method'] = $data['depreciation_record_method'] ?? null;
+        $this->container['tax_method'] = $data['tax_method'] ?? null;
+        $this->container['sales_tax_business_code'] = $data['sales_tax_business_code'] ?? null;
+        $this->container['tax_fraction'] = $data['tax_fraction'] ?? null;
+        $this->container['tax_account_method'] = $data['tax_account_method'] ?? null;
+        $this->container['return_code'] = $data['return_code'] ?? null;
     }
 
     /**
@@ -244,6 +244,12 @@ class FiscalYears implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['use_industry_template'] === null) {
+            $invalidProperties[] = "'use_industry_template' can't be null";
+        }
+        if ($this->container['indirect_write_off_method'] === null) {
+            $invalidProperties[] = "'indirect_write_off_method' can't be null";
+        }
         if ($this->container['depreciation_record_method'] === null) {
             $invalidProperties[] = "'depreciation_record_method' can't be null";
         }
@@ -253,53 +259,6 @@ class FiscalYears implements ModelInterface, ArrayAccess, \JsonSerializable
 
         if (($this->container['depreciation_record_method'] < 0)) {
             $invalidProperties[] = "invalid value for 'depreciation_record_method', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['indirect_write_off_method'] === null) {
-            $invalidProperties[] = "'indirect_write_off_method' can't be null";
-        }
-        if ($this->container['return_code'] === null) {
-            $invalidProperties[] = "'return_code' can't be null";
-        }
-        if (($this->container['return_code'] > 3)) {
-            $invalidProperties[] = "invalid value for 'return_code', must be smaller than or equal to 3.";
-        }
-
-        if (($this->container['return_code'] < 0)) {
-            $invalidProperties[] = "invalid value for 'return_code', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['sales_tax_business_code'] === null) {
-            $invalidProperties[] = "'sales_tax_business_code' can't be null";
-        }
-        if (($this->container['sales_tax_business_code'] > 5)) {
-            $invalidProperties[] = "invalid value for 'sales_tax_business_code', must be smaller than or equal to 5.";
-        }
-
-        if (($this->container['sales_tax_business_code'] < 0)) {
-            $invalidProperties[] = "invalid value for 'sales_tax_business_code', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['tax_account_method'] === null) {
-            $invalidProperties[] = "'tax_account_method' can't be null";
-        }
-        if (($this->container['tax_account_method'] > 2)) {
-            $invalidProperties[] = "invalid value for 'tax_account_method', must be smaller than or equal to 2.";
-        }
-
-        if (($this->container['tax_account_method'] < 0)) {
-            $invalidProperties[] = "invalid value for 'tax_account_method', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['tax_fraction'] === null) {
-            $invalidProperties[] = "'tax_fraction' can't be null";
-        }
-        if (($this->container['tax_fraction'] > 2)) {
-            $invalidProperties[] = "invalid value for 'tax_fraction', must be smaller than or equal to 2.";
-        }
-
-        if (($this->container['tax_fraction'] < 0)) {
-            $invalidProperties[] = "invalid value for 'tax_fraction', must be bigger than or equal to 0.";
         }
 
         if ($this->container['tax_method'] === null) {
@@ -313,9 +272,50 @@ class FiscalYears implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'tax_method', must be bigger than or equal to 0.";
         }
 
-        if ($this->container['use_industry_template'] === null) {
-            $invalidProperties[] = "'use_industry_template' can't be null";
+        if ($this->container['sales_tax_business_code'] === null) {
+            $invalidProperties[] = "'sales_tax_business_code' can't be null";
         }
+        if (($this->container['sales_tax_business_code'] > 5)) {
+            $invalidProperties[] = "invalid value for 'sales_tax_business_code', must be smaller than or equal to 5.";
+        }
+
+        if (($this->container['sales_tax_business_code'] < 0)) {
+            $invalidProperties[] = "invalid value for 'sales_tax_business_code', must be bigger than or equal to 0.";
+        }
+
+        if ($this->container['tax_fraction'] === null) {
+            $invalidProperties[] = "'tax_fraction' can't be null";
+        }
+        if (($this->container['tax_fraction'] > 2)) {
+            $invalidProperties[] = "invalid value for 'tax_fraction', must be smaller than or equal to 2.";
+        }
+
+        if (($this->container['tax_fraction'] < 0)) {
+            $invalidProperties[] = "invalid value for 'tax_fraction', must be bigger than or equal to 0.";
+        }
+
+        if ($this->container['tax_account_method'] === null) {
+            $invalidProperties[] = "'tax_account_method' can't be null";
+        }
+        if (($this->container['tax_account_method'] > 2)) {
+            $invalidProperties[] = "invalid value for 'tax_account_method', must be smaller than or equal to 2.";
+        }
+
+        if (($this->container['tax_account_method'] < 0)) {
+            $invalidProperties[] = "invalid value for 'tax_account_method', must be bigger than or equal to 0.";
+        }
+
+        if ($this->container['return_code'] === null) {
+            $invalidProperties[] = "'return_code' can't be null";
+        }
+        if (($this->container['return_code'] > 3)) {
+            $invalidProperties[] = "invalid value for 'return_code', must be smaller than or equal to 3.";
+        }
+
+        if (($this->container['return_code'] < 0)) {
+            $invalidProperties[] = "invalid value for 'return_code', must be bigger than or equal to 0.";
+        }
+
         return $invalidProperties;
     }
 
@@ -332,57 +332,25 @@ class FiscalYears implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets depreciation_record_method
+     * Gets use_industry_template
      *
-     * @return int
+     * @return bool
      */
-    public function getDepreciationRecordMethod()
+    public function getUseIndustryTemplate()
     {
-        return $this->container['depreciation_record_method'];
+        return $this->container['use_industry_template'];
     }
 
     /**
-     * Sets depreciation_record_method
+     * Sets use_industry_template
      *
-     * @param int $depreciation_record_method 月次償却（0: しない、1: する）
+     * @param bool $use_industry_template 製造業向け機能（true: 使用する、false: 使用しない）
      *
      * @return self
      */
-    public function setDepreciationRecordMethod($depreciation_record_method)
+    public function setUseIndustryTemplate($use_industry_template)
     {
-
-        if (($depreciation_record_method > 1)) {
-            throw new \InvalidArgumentException('invalid value for $depreciation_record_method when calling FiscalYears., must be smaller than or equal to 1.');
-        }
-        if (($depreciation_record_method < 0)) {
-            throw new \InvalidArgumentException('invalid value for $depreciation_record_method when calling FiscalYears., must be bigger than or equal to 0.');
-        }
-
-        $this->container['depreciation_record_method'] = $depreciation_record_method;
-
-        return $this;
-    }
-
-    /**
-     * Gets end_date
-     *
-     * @return string|null
-     */
-    public function getEndDate()
-    {
-        return $this->container['end_date'];
-    }
-
-    /**
-     * Sets end_date
-     *
-     * @param string|null $end_date 期末日
-     *
-     * @return self
-     */
-    public function setEndDate($end_date)
-    {
-        $this->container['end_date'] = $end_date;
+        $this->container['use_industry_template'] = $use_industry_template;
 
         return $this;
     }
@@ -412,70 +380,6 @@ class FiscalYears implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets return_code
-     *
-     * @return int
-     */
-    public function getReturnCode()
-    {
-        return $this->container['return_code'];
-    }
-
-    /**
-     * Sets return_code
-     *
-     * @param int $return_code 不動産所得使用区分（0: 一般、3: 一般/不動産） ※個人事業主のみ設定可能
-     *
-     * @return self
-     */
-    public function setReturnCode($return_code)
-    {
-
-        if (($return_code > 3)) {
-            throw new \InvalidArgumentException('invalid value for $return_code when calling FiscalYears., must be smaller than or equal to 3.');
-        }
-        if (($return_code < 0)) {
-            throw new \InvalidArgumentException('invalid value for $return_code when calling FiscalYears., must be bigger than or equal to 0.');
-        }
-
-        $this->container['return_code'] = $return_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets sales_tax_business_code
-     *
-     * @return int
-     */
-    public function getSalesTaxBusinessCode()
-    {
-        return $this->container['sales_tax_business_code'];
-    }
-
-    /**
-     * Sets sales_tax_business_code
-     *
-     * @param int $sales_tax_business_code 簡易課税用事業区分（0: 第一種：卸売業、1: 第二種：小売業、2: 第三種：農林水産業、工業、建設業、製造業など、3: 第四種：飲食店業など、4: 第五種：金融・保険業、運輸通信業、サービス業など、5: 第六種：不動産業など
-     *
-     * @return self
-     */
-    public function setSalesTaxBusinessCode($sales_tax_business_code)
-    {
-
-        if (($sales_tax_business_code > 5)) {
-            throw new \InvalidArgumentException('invalid value for $sales_tax_business_code when calling FiscalYears., must be smaller than or equal to 5.');
-        }
-        if (($sales_tax_business_code < 0)) {
-            throw new \InvalidArgumentException('invalid value for $sales_tax_business_code when calling FiscalYears., must be bigger than or equal to 0.');
-        }
-
-        $this->container['sales_tax_business_code'] = $sales_tax_business_code;
-
-        return $this;
-    }
-
-    /**
      * Gets start_date
      *
      * @return string|null
@@ -500,65 +404,57 @@ class FiscalYears implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets tax_account_method
+     * Gets end_date
      *
-     * @return int
+     * @return string|null
      */
-    public function getTaxAccountMethod()
+    public function getEndDate()
     {
-        return $this->container['tax_account_method'];
+        return $this->container['end_date'];
     }
 
     /**
-     * Sets tax_account_method
+     * Sets end_date
      *
-     * @param int $tax_account_method 消費税経理処理方法（0: 税込経理、1: 旧税抜経理、2: 税抜経理）
+     * @param string|null $end_date 期末日
      *
      * @return self
      */
-    public function setTaxAccountMethod($tax_account_method)
+    public function setEndDate($end_date)
     {
-
-        if (($tax_account_method > 2)) {
-            throw new \InvalidArgumentException('invalid value for $tax_account_method when calling FiscalYears., must be smaller than or equal to 2.');
-        }
-        if (($tax_account_method < 0)) {
-            throw new \InvalidArgumentException('invalid value for $tax_account_method when calling FiscalYears., must be bigger than or equal to 0.');
-        }
-
-        $this->container['tax_account_method'] = $tax_account_method;
+        $this->container['end_date'] = $end_date;
 
         return $this;
     }
 
     /**
-     * Gets tax_fraction
+     * Gets depreciation_record_method
      *
      * @return int
      */
-    public function getTaxFraction()
+    public function getDepreciationRecordMethod()
     {
-        return $this->container['tax_fraction'];
+        return $this->container['depreciation_record_method'];
     }
 
     /**
-     * Sets tax_fraction
+     * Sets depreciation_record_method
      *
-     * @param int $tax_fraction 消費税端数処理方法（0: 切り捨て、1: 切り上げ、2: 四捨五入）
+     * @param int $depreciation_record_method 月次償却（0: しない、1: する）
      *
      * @return self
      */
-    public function setTaxFraction($tax_fraction)
+    public function setDepreciationRecordMethod($depreciation_record_method)
     {
 
-        if (($tax_fraction > 2)) {
-            throw new \InvalidArgumentException('invalid value for $tax_fraction when calling FiscalYears., must be smaller than or equal to 2.');
+        if (($depreciation_record_method > 1)) {
+            throw new \InvalidArgumentException('invalid value for $depreciation_record_method when calling FiscalYears., must be smaller than or equal to 1.');
         }
-        if (($tax_fraction < 0)) {
-            throw new \InvalidArgumentException('invalid value for $tax_fraction when calling FiscalYears., must be bigger than or equal to 0.');
+        if (($depreciation_record_method < 0)) {
+            throw new \InvalidArgumentException('invalid value for $depreciation_record_method when calling FiscalYears., must be bigger than or equal to 0.');
         }
 
-        $this->container['tax_fraction'] = $tax_fraction;
+        $this->container['depreciation_record_method'] = $depreciation_record_method;
 
         return $this;
     }
@@ -596,25 +492,129 @@ class FiscalYears implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets use_industry_template
+     * Gets sales_tax_business_code
      *
-     * @return bool
+     * @return int
      */
-    public function getUseIndustryTemplate()
+    public function getSalesTaxBusinessCode()
     {
-        return $this->container['use_industry_template'];
+        return $this->container['sales_tax_business_code'];
     }
 
     /**
-     * Sets use_industry_template
+     * Sets sales_tax_business_code
      *
-     * @param bool $use_industry_template 製造業向け機能（true: 使用する、false: 使用しない）
+     * @param int $sales_tax_business_code 簡易課税用事業区分（0: 第一種：卸売業、1: 第二種：小売業、2: 第三種：農林水産業、工業、建設業、製造業など、3: 第四種：飲食店業など、4: 第五種：金融・保険業、運輸通信業、サービス業など、5: 第六種：不動産業など
      *
      * @return self
      */
-    public function setUseIndustryTemplate($use_industry_template)
+    public function setSalesTaxBusinessCode($sales_tax_business_code)
     {
-        $this->container['use_industry_template'] = $use_industry_template;
+
+        if (($sales_tax_business_code > 5)) {
+            throw new \InvalidArgumentException('invalid value for $sales_tax_business_code when calling FiscalYears., must be smaller than or equal to 5.');
+        }
+        if (($sales_tax_business_code < 0)) {
+            throw new \InvalidArgumentException('invalid value for $sales_tax_business_code when calling FiscalYears., must be bigger than or equal to 0.');
+        }
+
+        $this->container['sales_tax_business_code'] = $sales_tax_business_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_fraction
+     *
+     * @return int
+     */
+    public function getTaxFraction()
+    {
+        return $this->container['tax_fraction'];
+    }
+
+    /**
+     * Sets tax_fraction
+     *
+     * @param int $tax_fraction 消費税端数処理方法（0: 切り捨て、1: 切り上げ、2: 四捨五入）
+     *
+     * @return self
+     */
+    public function setTaxFraction($tax_fraction)
+    {
+
+        if (($tax_fraction > 2)) {
+            throw new \InvalidArgumentException('invalid value for $tax_fraction when calling FiscalYears., must be smaller than or equal to 2.');
+        }
+        if (($tax_fraction < 0)) {
+            throw new \InvalidArgumentException('invalid value for $tax_fraction when calling FiscalYears., must be bigger than or equal to 0.');
+        }
+
+        $this->container['tax_fraction'] = $tax_fraction;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_account_method
+     *
+     * @return int
+     */
+    public function getTaxAccountMethod()
+    {
+        return $this->container['tax_account_method'];
+    }
+
+    /**
+     * Sets tax_account_method
+     *
+     * @param int $tax_account_method 消費税経理処理方法（0: 税込経理、1: 旧税抜経理、2: 税抜経理）
+     *
+     * @return self
+     */
+    public function setTaxAccountMethod($tax_account_method)
+    {
+
+        if (($tax_account_method > 2)) {
+            throw new \InvalidArgumentException('invalid value for $tax_account_method when calling FiscalYears., must be smaller than or equal to 2.');
+        }
+        if (($tax_account_method < 0)) {
+            throw new \InvalidArgumentException('invalid value for $tax_account_method when calling FiscalYears., must be bigger than or equal to 0.');
+        }
+
+        $this->container['tax_account_method'] = $tax_account_method;
+
+        return $this;
+    }
+
+    /**
+     * Gets return_code
+     *
+     * @return int
+     */
+    public function getReturnCode()
+    {
+        return $this->container['return_code'];
+    }
+
+    /**
+     * Sets return_code
+     *
+     * @param int $return_code 不動産所得使用区分（0: 一般、3: 一般/不動産） ※個人事業主のみ設定可能
+     *
+     * @return self
+     */
+    public function setReturnCode($return_code)
+    {
+
+        if (($return_code > 3)) {
+            throw new \InvalidArgumentException('invalid value for $return_code when calling FiscalYears., must be smaller than or equal to 3.');
+        }
+        if (($return_code < 0)) {
+            throw new \InvalidArgumentException('invalid value for $return_code when calling FiscalYears., must be bigger than or equal to 0.');
+        }
+
+        $this->container['return_code'] = $return_code;
 
         return $this;
     }

@@ -59,11 +59,11 @@ class UserCapabilityWithSelfOnly implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'allowed_target' => 'string',
-        'create' => 'bool',
-        'destroy' => 'bool',
         'read' => 'bool',
-        'update' => 'bool'
+        'create' => 'bool',
+        'update' => 'bool',
+        'destroy' => 'bool',
+        'allowed_target' => 'string'
     ];
 
     /**
@@ -74,11 +74,11 @@ class UserCapabilityWithSelfOnly implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'allowed_target' => null,
-        'create' => null,
-        'destroy' => null,
         'read' => null,
-        'update' => null
+        'create' => null,
+        'update' => null,
+        'destroy' => null,
+        'allowed_target' => null
     ];
 
     /**
@@ -108,11 +108,11 @@ class UserCapabilityWithSelfOnly implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $attributeMap = [
-        'allowed_target' => 'allowed_target',
-        'create' => 'create',
-        'destroy' => 'destroy',
         'read' => 'read',
-        'update' => 'update'
+        'create' => 'create',
+        'update' => 'update',
+        'destroy' => 'destroy',
+        'allowed_target' => 'allowed_target'
     ];
 
     /**
@@ -121,11 +121,11 @@ class UserCapabilityWithSelfOnly implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        'allowed_target' => 'setAllowedTarget',
-        'create' => 'setCreate',
-        'destroy' => 'setDestroy',
         'read' => 'setRead',
-        'update' => 'setUpdate'
+        'create' => 'setCreate',
+        'update' => 'setUpdate',
+        'destroy' => 'setDestroy',
+        'allowed_target' => 'setAllowedTarget'
     ];
 
     /**
@@ -134,11 +134,11 @@ class UserCapabilityWithSelfOnly implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $getters = [
-        'allowed_target' => 'getAllowedTarget',
-        'create' => 'getCreate',
-        'destroy' => 'getDestroy',
         'read' => 'getRead',
-        'update' => 'getUpdate'
+        'create' => 'getCreate',
+        'update' => 'getUpdate',
+        'destroy' => 'getDestroy',
+        'allowed_target' => 'getAllowedTarget'
     ];
 
     /**
@@ -213,11 +213,11 @@ class UserCapabilityWithSelfOnly implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(array $data = null)
     {
-        $this->container['allowed_target'] = $data['allowed_target'] ?? null;
-        $this->container['create'] = $data['create'] ?? null;
-        $this->container['destroy'] = $data['destroy'] ?? null;
         $this->container['read'] = $data['read'] ?? null;
+        $this->container['create'] = $data['create'] ?? null;
         $this->container['update'] = $data['update'] ?? null;
+        $this->container['destroy'] = $data['destroy'] ?? null;
+        $this->container['allowed_target'] = $data['allowed_target'] ?? null;
     }
 
     /**
@@ -254,35 +254,25 @@ class UserCapabilityWithSelfOnly implements ModelInterface, ArrayAccess, \JsonSe
 
 
     /**
-     * Gets allowed_target
+     * Gets read
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getAllowedTarget()
+    public function getRead()
     {
-        return $this->container['allowed_target'];
+        return $this->container['read'];
     }
 
     /**
-     * Sets allowed_target
+     * Sets read
      *
-     * @param string|null $allowed_target 「自分のみ」がonになっている場合はself_only、offになっている場合はallになります。
+     * @param bool|null $read 閲覧
      *
      * @return self
      */
-    public function setAllowedTarget($allowed_target)
+    public function setRead($read)
     {
-        $allowedValues = $this->getAllowedTargetAllowableValues();
-        if (!is_null($allowed_target) && !in_array($allowed_target, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'allowed_target', must be one of '%s'",
-                    $allowed_target,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['allowed_target'] = $allowed_target;
+        $this->container['read'] = $read;
 
         return $this;
     }
@@ -312,6 +302,30 @@ class UserCapabilityWithSelfOnly implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
+     * Gets update
+     *
+     * @return bool|null
+     */
+    public function getUpdate()
+    {
+        return $this->container['update'];
+    }
+
+    /**
+     * Sets update
+     *
+     * @param bool|null $update 更新
+     *
+     * @return self
+     */
+    public function setUpdate($update)
+    {
+        $this->container['update'] = $update;
+
+        return $this;
+    }
+
+    /**
      * Gets destroy
      *
      * @return bool|null
@@ -336,49 +350,35 @@ class UserCapabilityWithSelfOnly implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets read
+     * Gets allowed_target
      *
-     * @return bool|null
+     * @return string|null
      */
-    public function getRead()
+    public function getAllowedTarget()
     {
-        return $this->container['read'];
+        return $this->container['allowed_target'];
     }
 
     /**
-     * Sets read
+     * Sets allowed_target
      *
-     * @param bool|null $read 閲覧
+     * @param string|null $allowed_target 「自分のみ」がonになっている場合はself_only、offになっている場合はallになります。
      *
      * @return self
      */
-    public function setRead($read)
+    public function setAllowedTarget($allowed_target)
     {
-        $this->container['read'] = $read;
-
-        return $this;
-    }
-
-    /**
-     * Gets update
-     *
-     * @return bool|null
-     */
-    public function getUpdate()
-    {
-        return $this->container['update'];
-    }
-
-    /**
-     * Sets update
-     *
-     * @param bool|null $update 更新
-     *
-     * @return self
-     */
-    public function setUpdate($update)
-    {
-        $this->container['update'] = $update;
+        $allowedValues = $this->getAllowedTargetAllowableValues();
+        if (!is_null($allowed_target) && !in_array($allowed_target, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'allowed_target', must be one of '%s'",
+                    $allowed_target,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['allowed_target'] = $allowed_target;
 
         return $this;
     }

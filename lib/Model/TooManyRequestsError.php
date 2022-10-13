@@ -59,8 +59,8 @@ class TooManyRequestsError implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'meta' => '\Freee\Accounting\Model\TooManyRequestsErrorMeta',
-        'status_code' => 'int'
+        'status_code' => 'int',
+        'meta' => '\Freee\Accounting\Model\TooManyRequestsErrorMeta'
     ];
 
     /**
@@ -71,8 +71,8 @@ class TooManyRequestsError implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'meta' => null,
-        'status_code' => null
+        'status_code' => null,
+        'meta' => null
     ];
 
     /**
@@ -102,8 +102,8 @@ class TooManyRequestsError implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'meta' => 'meta',
-        'status_code' => 'status_code'
+        'status_code' => 'status_code',
+        'meta' => 'meta'
     ];
 
     /**
@@ -112,8 +112,8 @@ class TooManyRequestsError implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'meta' => 'setMeta',
-        'status_code' => 'setStatusCode'
+        'status_code' => 'setStatusCode',
+        'meta' => 'setMeta'
     ];
 
     /**
@@ -122,8 +122,8 @@ class TooManyRequestsError implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'meta' => 'getMeta',
-        'status_code' => 'getStatusCode'
+        'status_code' => 'getStatusCode',
+        'meta' => 'getMeta'
     ];
 
     /**
@@ -183,8 +183,8 @@ class TooManyRequestsError implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
-        $this->container['meta'] = $data['meta'] ?? null;
         $this->container['status_code'] = $data['status_code'] ?? null;
+        $this->container['meta'] = $data['meta'] ?? null;
     }
 
     /**
@@ -196,11 +196,11 @@ class TooManyRequestsError implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if ($this->container['meta'] === null) {
-            $invalidProperties[] = "'meta' can't be null";
-        }
         if ($this->container['status_code'] === null) {
             $invalidProperties[] = "'status_code' can't be null";
+        }
+        if ($this->container['meta'] === null) {
+            $invalidProperties[] = "'meta' can't be null";
         }
         return $invalidProperties;
     }
@@ -216,30 +216,6 @@ class TooManyRequestsError implements ModelInterface, ArrayAccess, \JsonSerializ
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets meta
-     *
-     * @return \Freee\Accounting\Model\TooManyRequestsErrorMeta
-     */
-    public function getMeta()
-    {
-        return $this->container['meta'];
-    }
-
-    /**
-     * Sets meta
-     *
-     * @param \Freee\Accounting\Model\TooManyRequestsErrorMeta $meta meta
-     *
-     * @return self
-     */
-    public function setMeta($meta)
-    {
-        $this->container['meta'] = $meta;
-
-        return $this;
-    }
 
     /**
      * Gets status_code
@@ -261,6 +237,30 @@ class TooManyRequestsError implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setStatusCode($status_code)
     {
         $this->container['status_code'] = $status_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets meta
+     *
+     * @return \Freee\Accounting\Model\TooManyRequestsErrorMeta
+     */
+    public function getMeta()
+    {
+        return $this->container['meta'];
+    }
+
+    /**
+     * Sets meta
+     *
+     * @param \Freee\Accounting\Model\TooManyRequestsErrorMeta $meta meta
+     *
+     * @return self
+     */
+    public function setMeta($meta)
+    {
+        $this->container['meta'] = $meta;
 
         return $this;
     }

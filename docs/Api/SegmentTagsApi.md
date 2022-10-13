@@ -134,7 +134,7 @@ void (empty response body)
 ## `getSegmentTags()`
 
 ```php
-getSegmentTags($company_id, $segment_id, $offset, $limit): \Freee\Accounting\Model\InlineResponse2007
+getSegmentTags($company_id, $segment_id, $offset, $limit): \Freee\Accounting\Model\InlineResponse20016
 ```
 
 セグメントタグ一覧の取得
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse2007**](../Model/InlineResponse2007.md)
+[**\Freee\Accounting\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
 
 ### Authorization
 

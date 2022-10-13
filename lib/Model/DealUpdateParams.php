@@ -59,15 +59,15 @@ class DealUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'company_id' => 'int',
-        'details' => '\Freee\Accounting\Model\DealUpdateParamsDetails[]',
-        'due_date' => 'string',
         'issue_date' => 'string',
-        'partner_code' => 'string',
+        'type' => 'string',
+        'company_id' => 'int',
+        'due_date' => 'string',
         'partner_id' => 'int',
-        'receipt_ids' => 'int[]',
+        'partner_code' => 'string',
         'ref_number' => 'string',
-        'type' => 'string'
+        'details' => '\Freee\Accounting\Model\DealUpdateParamsDetails[]',
+        'receipt_ids' => 'int[]'
     ];
 
     /**
@@ -78,15 +78,15 @@ class DealUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'company_id' => null,
-        'details' => null,
-        'due_date' => null,
         'issue_date' => null,
-        'partner_code' => null,
+        'type' => null,
+        'company_id' => null,
+        'due_date' => null,
         'partner_id' => null,
-        'receipt_ids' => null,
+        'partner_code' => null,
         'ref_number' => null,
-        'type' => null
+        'details' => null,
+        'receipt_ids' => null
     ];
 
     /**
@@ -116,15 +116,15 @@ class DealUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'company_id' => 'company_id',
-        'details' => 'details',
-        'due_date' => 'due_date',
         'issue_date' => 'issue_date',
-        'partner_code' => 'partner_code',
+        'type' => 'type',
+        'company_id' => 'company_id',
+        'due_date' => 'due_date',
         'partner_id' => 'partner_id',
-        'receipt_ids' => 'receipt_ids',
+        'partner_code' => 'partner_code',
         'ref_number' => 'ref_number',
-        'type' => 'type'
+        'details' => 'details',
+        'receipt_ids' => 'receipt_ids'
     ];
 
     /**
@@ -133,15 +133,15 @@ class DealUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'company_id' => 'setCompanyId',
-        'details' => 'setDetails',
-        'due_date' => 'setDueDate',
         'issue_date' => 'setIssueDate',
-        'partner_code' => 'setPartnerCode',
+        'type' => 'setType',
+        'company_id' => 'setCompanyId',
+        'due_date' => 'setDueDate',
         'partner_id' => 'setPartnerId',
-        'receipt_ids' => 'setReceiptIds',
+        'partner_code' => 'setPartnerCode',
         'ref_number' => 'setRefNumber',
-        'type' => 'setType'
+        'details' => 'setDetails',
+        'receipt_ids' => 'setReceiptIds'
     ];
 
     /**
@@ -150,15 +150,15 @@ class DealUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'company_id' => 'getCompanyId',
-        'details' => 'getDetails',
-        'due_date' => 'getDueDate',
         'issue_date' => 'getIssueDate',
-        'partner_code' => 'getPartnerCode',
+        'type' => 'getType',
+        'company_id' => 'getCompanyId',
+        'due_date' => 'getDueDate',
         'partner_id' => 'getPartnerId',
-        'receipt_ids' => 'getReceiptIds',
+        'partner_code' => 'getPartnerCode',
         'ref_number' => 'getRefNumber',
-        'type' => 'getType'
+        'details' => 'getDetails',
+        'receipt_ids' => 'getReceiptIds'
     ];
 
     /**
@@ -233,15 +233,15 @@ class DealUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['company_id'] = $data['company_id'] ?? null;
-        $this->container['details'] = $data['details'] ?? null;
-        $this->container['due_date'] = $data['due_date'] ?? null;
         $this->container['issue_date'] = $data['issue_date'] ?? null;
-        $this->container['partner_code'] = $data['partner_code'] ?? null;
-        $this->container['partner_id'] = $data['partner_id'] ?? null;
-        $this->container['receipt_ids'] = $data['receipt_ids'] ?? null;
-        $this->container['ref_number'] = $data['ref_number'] ?? null;
         $this->container['type'] = $data['type'] ?? null;
+        $this->container['company_id'] = $data['company_id'] ?? null;
+        $this->container['due_date'] = $data['due_date'] ?? null;
+        $this->container['partner_id'] = $data['partner_id'] ?? null;
+        $this->container['partner_code'] = $data['partner_code'] ?? null;
+        $this->container['ref_number'] = $data['ref_number'] ?? null;
+        $this->container['details'] = $data['details'] ?? null;
+        $this->container['receipt_ids'] = $data['receipt_ids'] ?? null;
     }
 
     /**
@@ -253,31 +253,9 @@ class DealUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['company_id'] === null) {
-            $invalidProperties[] = "'company_id' can't be null";
-        }
-        if (($this->container['company_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['company_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['details'] === null) {
-            $invalidProperties[] = "'details' can't be null";
-        }
         if ($this->container['issue_date'] === null) {
             $invalidProperties[] = "'issue_date' can't be null";
         }
-        if (!is_null($this->container['partner_id']) && ($this->container['partner_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'partner_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (!is_null($this->container['partner_id']) && ($this->container['partner_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'partner_id', must be bigger than or equal to 1.";
-        }
-
         if ($this->container['type'] === null) {
             $invalidProperties[] = "'type' can't be null";
         }
@@ -290,6 +268,28 @@ class DealUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
 
+        if ($this->container['company_id'] === null) {
+            $invalidProperties[] = "'company_id' can't be null";
+        }
+        if (($this->container['company_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['company_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['partner_id']) && ($this->container['partner_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'partner_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (!is_null($this->container['partner_id']) && ($this->container['partner_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'partner_id', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['details'] === null) {
+            $invalidProperties[] = "'details' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -304,6 +304,64 @@ class DealUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets issue_date
+     *
+     * @return string
+     */
+    public function getIssueDate()
+    {
+        return $this->container['issue_date'];
+    }
+
+    /**
+     * Sets issue_date
+     *
+     * @param string $issue_date 発生日 (yyyy-mm-dd)
+     *
+     * @return self
+     */
+    public function setIssueDate($issue_date)
+    {
+        $this->container['issue_date'] = $issue_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type 収支区分 (収入: income, 支出: expense)
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!in_array($type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'type', must be one of '%s'",
+                    $type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['type'] = $type;
+
+        return $this;
+    }
 
     /**
      * Gets company_id
@@ -338,30 +396,6 @@ class DealUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets details
-     *
-     * @return \Freee\Accounting\Model\DealUpdateParamsDetails[]
-     */
-    public function getDetails()
-    {
-        return $this->container['details'];
-    }
-
-    /**
-     * Sets details
-     *
-     * @param \Freee\Accounting\Model\DealUpdateParamsDetails[] $details details
-     *
-     * @return self
-     */
-    public function setDetails($details)
-    {
-        $this->container['details'] = $details;
-
-        return $this;
-    }
-
-    /**
      * Gets due_date
      *
      * @return string|null
@@ -381,54 +415,6 @@ class DealUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDueDate($due_date)
     {
         $this->container['due_date'] = $due_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets issue_date
-     *
-     * @return string
-     */
-    public function getIssueDate()
-    {
-        return $this->container['issue_date'];
-    }
-
-    /**
-     * Sets issue_date
-     *
-     * @param string $issue_date 発生日 (yyyy-mm-dd)
-     *
-     * @return self
-     */
-    public function setIssueDate($issue_date)
-    {
-        $this->container['issue_date'] = $issue_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets partner_code
-     *
-     * @return string|null
-     */
-    public function getPartnerCode()
-    {
-        return $this->container['partner_code'];
-    }
-
-    /**
-     * Sets partner_code
-     *
-     * @param string|null $partner_code 取引先コード
-     *
-     * @return self
-     */
-    public function setPartnerCode($partner_code)
-    {
-        $this->container['partner_code'] = $partner_code;
 
         return $this;
     }
@@ -466,25 +452,25 @@ class DealUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets receipt_ids
+     * Gets partner_code
      *
-     * @return int[]|null
+     * @return string|null
      */
-    public function getReceiptIds()
+    public function getPartnerCode()
     {
-        return $this->container['receipt_ids'];
+        return $this->container['partner_code'];
     }
 
     /**
-     * Sets receipt_ids
+     * Sets partner_code
      *
-     * @param int[]|null $receipt_ids 証憑ファイルID（ファイルボックスのファイルID）（配列）
+     * @param string|null $partner_code 取引先コード
      *
      * @return self
      */
-    public function setReceiptIds($receipt_ids)
+    public function setPartnerCode($partner_code)
     {
-        $this->container['receipt_ids'] = $receipt_ids;
+        $this->container['partner_code'] = $partner_code;
 
         return $this;
     }
@@ -514,35 +500,49 @@ class DealUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets type
+     * Gets details
      *
-     * @return string
+     * @return \Freee\Accounting\Model\DealUpdateParamsDetails[]
      */
-    public function getType()
+    public function getDetails()
     {
-        return $this->container['type'];
+        return $this->container['details'];
     }
 
     /**
-     * Sets type
+     * Sets details
      *
-     * @param string $type 収支区分 (収入: income, 支出: expense)
+     * @param \Freee\Accounting\Model\DealUpdateParamsDetails[] $details details
      *
      * @return self
      */
-    public function setType($type)
+    public function setDetails($details)
     {
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!in_array($type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'type', must be one of '%s'",
-                    $type,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['type'] = $type;
+        $this->container['details'] = $details;
+
+        return $this;
+    }
+
+    /**
+     * Gets receipt_ids
+     *
+     * @return int[]|null
+     */
+    public function getReceiptIds()
+    {
+        return $this->container['receipt_ids'];
+    }
+
+    /**
+     * Sets receipt_ids
+     *
+     * @param int[]|null $receipt_ids 証憑ファイルID（ファイルボックスのファイルID）（配列）
+     *
+     * @return self
+     */
+    public function setReceiptIds($receipt_ids)
+    {
+        $this->container['receipt_ids'] = $receipt_ids;
 
         return $this;
     }

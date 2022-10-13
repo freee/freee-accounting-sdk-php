@@ -59,7 +59,7 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'sections' => '\Freee\Accounting\Model\Section[]'
+        'items' => '\Freee\Accounting\Model\Item[]'
     ];
 
     /**
@@ -70,7 +70,7 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'sections' => null
+        'items' => null
     ];
 
     /**
@@ -100,7 +100,7 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'sections' => 'sections'
+        'items' => 'items'
     ];
 
     /**
@@ -109,7 +109,7 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'sections' => 'setSections'
+        'items' => 'setItems'
     ];
 
     /**
@@ -118,7 +118,7 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'sections' => 'getSections'
+        'items' => 'getItems'
     ];
 
     /**
@@ -178,7 +178,7 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['sections'] = $data['sections'] ?? null;
+        $this->container['items'] = $data['items'] ?? null;
     }
 
     /**
@@ -190,8 +190,8 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['sections'] === null) {
-            $invalidProperties[] = "'sections' can't be null";
+        if ($this->container['items'] === null) {
+            $invalidProperties[] = "'items' can't be null";
         }
         return $invalidProperties;
     }
@@ -209,25 +209,25 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets sections
+     * Gets items
      *
-     * @return \Freee\Accounting\Model\Section[]
+     * @return \Freee\Accounting\Model\Item[]
      */
-    public function getSections()
+    public function getItems()
     {
-        return $this->container['sections'];
+        return $this->container['items'];
     }
 
     /**
-     * Sets sections
+     * Sets items
      *
-     * @param \Freee\Accounting\Model\Section[] $sections sections
+     * @param \Freee\Accounting\Model\Item[] $items items
      *
      * @return self
      */
-    public function setSections($sections)
+    public function setItems($items)
     {
-        $this->container['sections'] = $sections;
+        $this->container['items'] = $items;
 
         return $this;
     }

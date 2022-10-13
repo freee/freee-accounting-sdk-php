@@ -59,31 +59,31 @@ class InvoiceIndexResponseInvoiceContents implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
+        'id' => 'int',
+        'order' => 'int',
+        'type' => 'string',
+        'qty' => 'float',
+        'unit' => 'string',
+        'unit_price' => 'float',
+        'amount' => 'int',
+        'vat' => 'int',
+        'reduced_vat' => 'bool',
+        'description' => 'string',
         'account_item_id' => 'int',
         'account_item_name' => 'string',
-        'amount' => 'int',
-        'description' => 'string',
-        'id' => 'int',
+        'tax_code' => 'int',
         'item_id' => 'int',
         'item_name' => 'string',
-        'order' => 'int',
-        'qty' => 'float',
-        'reduced_vat' => 'bool',
         'section_id' => 'int',
         'section_name' => 'string',
+        'tag_ids' => 'int[]',
+        'tag_names' => 'string[]',
         'segment_1_tag_id' => 'int',
         'segment_1_tag_name' => 'string',
         'segment_2_tag_id' => 'int',
         'segment_2_tag_name' => 'string',
         'segment_3_tag_id' => 'int',
-        'segment_3_tag_name' => 'string',
-        'tag_ids' => 'int[]',
-        'tag_names' => 'string[]',
-        'tax_code' => 'int',
-        'type' => 'string',
-        'unit' => 'string',
-        'unit_price' => 'float',
-        'vat' => 'int'
+        'segment_3_tag_name' => 'string'
     ];
 
     /**
@@ -94,31 +94,31 @@ class InvoiceIndexResponseInvoiceContents implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'id' => null,
+        'order' => null,
+        'type' => null,
+        'qty' => null,
+        'unit' => null,
+        'unit_price' => null,
+        'amount' => 'int64',
+        'vat' => null,
+        'reduced_vat' => null,
+        'description' => null,
         'account_item_id' => null,
         'account_item_name' => null,
-        'amount' => 'int64',
-        'description' => null,
-        'id' => null,
+        'tax_code' => null,
         'item_id' => null,
         'item_name' => null,
-        'order' => null,
-        'qty' => null,
-        'reduced_vat' => null,
         'section_id' => null,
         'section_name' => null,
+        'tag_ids' => null,
+        'tag_names' => null,
         'segment_1_tag_id' => 'int64',
         'segment_1_tag_name' => null,
         'segment_2_tag_id' => 'int64',
         'segment_2_tag_name' => null,
         'segment_3_tag_id' => 'int64',
-        'segment_3_tag_name' => null,
-        'tag_ids' => null,
-        'tag_names' => null,
-        'tax_code' => null,
-        'type' => null,
-        'unit' => null,
-        'unit_price' => null,
-        'vat' => null
+        'segment_3_tag_name' => null
     ];
 
     /**
@@ -148,31 +148,31 @@ class InvoiceIndexResponseInvoiceContents implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
+        'order' => 'order',
+        'type' => 'type',
+        'qty' => 'qty',
+        'unit' => 'unit',
+        'unit_price' => 'unit_price',
+        'amount' => 'amount',
+        'vat' => 'vat',
+        'reduced_vat' => 'reduced_vat',
+        'description' => 'description',
         'account_item_id' => 'account_item_id',
         'account_item_name' => 'account_item_name',
-        'amount' => 'amount',
-        'description' => 'description',
-        'id' => 'id',
+        'tax_code' => 'tax_code',
         'item_id' => 'item_id',
         'item_name' => 'item_name',
-        'order' => 'order',
-        'qty' => 'qty',
-        'reduced_vat' => 'reduced_vat',
         'section_id' => 'section_id',
         'section_name' => 'section_name',
+        'tag_ids' => 'tag_ids',
+        'tag_names' => 'tag_names',
         'segment_1_tag_id' => 'segment_1_tag_id',
         'segment_1_tag_name' => 'segment_1_tag_name',
         'segment_2_tag_id' => 'segment_2_tag_id',
         'segment_2_tag_name' => 'segment_2_tag_name',
         'segment_3_tag_id' => 'segment_3_tag_id',
-        'segment_3_tag_name' => 'segment_3_tag_name',
-        'tag_ids' => 'tag_ids',
-        'tag_names' => 'tag_names',
-        'tax_code' => 'tax_code',
-        'type' => 'type',
-        'unit' => 'unit',
-        'unit_price' => 'unit_price',
-        'vat' => 'vat'
+        'segment_3_tag_name' => 'segment_3_tag_name'
     ];
 
     /**
@@ -181,31 +181,31 @@ class InvoiceIndexResponseInvoiceContents implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
+        'order' => 'setOrder',
+        'type' => 'setType',
+        'qty' => 'setQty',
+        'unit' => 'setUnit',
+        'unit_price' => 'setUnitPrice',
+        'amount' => 'setAmount',
+        'vat' => 'setVat',
+        'reduced_vat' => 'setReducedVat',
+        'description' => 'setDescription',
         'account_item_id' => 'setAccountItemId',
         'account_item_name' => 'setAccountItemName',
-        'amount' => 'setAmount',
-        'description' => 'setDescription',
-        'id' => 'setId',
+        'tax_code' => 'setTaxCode',
         'item_id' => 'setItemId',
         'item_name' => 'setItemName',
-        'order' => 'setOrder',
-        'qty' => 'setQty',
-        'reduced_vat' => 'setReducedVat',
         'section_id' => 'setSectionId',
         'section_name' => 'setSectionName',
+        'tag_ids' => 'setTagIds',
+        'tag_names' => 'setTagNames',
         'segment_1_tag_id' => 'setSegment1TagId',
         'segment_1_tag_name' => 'setSegment1TagName',
         'segment_2_tag_id' => 'setSegment2TagId',
         'segment_2_tag_name' => 'setSegment2TagName',
         'segment_3_tag_id' => 'setSegment3TagId',
-        'segment_3_tag_name' => 'setSegment3TagName',
-        'tag_ids' => 'setTagIds',
-        'tag_names' => 'setTagNames',
-        'tax_code' => 'setTaxCode',
-        'type' => 'setType',
-        'unit' => 'setUnit',
-        'unit_price' => 'setUnitPrice',
-        'vat' => 'setVat'
+        'segment_3_tag_name' => 'setSegment3TagName'
     ];
 
     /**
@@ -214,31 +214,31 @@ class InvoiceIndexResponseInvoiceContents implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
+        'order' => 'getOrder',
+        'type' => 'getType',
+        'qty' => 'getQty',
+        'unit' => 'getUnit',
+        'unit_price' => 'getUnitPrice',
+        'amount' => 'getAmount',
+        'vat' => 'getVat',
+        'reduced_vat' => 'getReducedVat',
+        'description' => 'getDescription',
         'account_item_id' => 'getAccountItemId',
         'account_item_name' => 'getAccountItemName',
-        'amount' => 'getAmount',
-        'description' => 'getDescription',
-        'id' => 'getId',
+        'tax_code' => 'getTaxCode',
         'item_id' => 'getItemId',
         'item_name' => 'getItemName',
-        'order' => 'getOrder',
-        'qty' => 'getQty',
-        'reduced_vat' => 'getReducedVat',
         'section_id' => 'getSectionId',
         'section_name' => 'getSectionName',
+        'tag_ids' => 'getTagIds',
+        'tag_names' => 'getTagNames',
         'segment_1_tag_id' => 'getSegment1TagId',
         'segment_1_tag_name' => 'getSegment1TagName',
         'segment_2_tag_id' => 'getSegment2TagId',
         'segment_2_tag_name' => 'getSegment2TagName',
         'segment_3_tag_id' => 'getSegment3TagId',
-        'segment_3_tag_name' => 'getSegment3TagName',
-        'tag_ids' => 'getTagIds',
-        'tag_names' => 'getTagNames',
-        'tax_code' => 'getTaxCode',
-        'type' => 'getType',
-        'unit' => 'getUnit',
-        'unit_price' => 'getUnitPrice',
-        'vat' => 'getVat'
+        'segment_3_tag_name' => 'getSegment3TagName'
     ];
 
     /**
@@ -315,31 +315,31 @@ class InvoiceIndexResponseInvoiceContents implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['order'] = $data['order'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
+        $this->container['qty'] = $data['qty'] ?? null;
+        $this->container['unit'] = $data['unit'] ?? null;
+        $this->container['unit_price'] = $data['unit_price'] ?? null;
+        $this->container['amount'] = $data['amount'] ?? null;
+        $this->container['vat'] = $data['vat'] ?? null;
+        $this->container['reduced_vat'] = $data['reduced_vat'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
         $this->container['account_item_id'] = $data['account_item_id'] ?? null;
         $this->container['account_item_name'] = $data['account_item_name'] ?? null;
-        $this->container['amount'] = $data['amount'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
-        $this->container['id'] = $data['id'] ?? null;
+        $this->container['tax_code'] = $data['tax_code'] ?? null;
         $this->container['item_id'] = $data['item_id'] ?? null;
         $this->container['item_name'] = $data['item_name'] ?? null;
-        $this->container['order'] = $data['order'] ?? null;
-        $this->container['qty'] = $data['qty'] ?? null;
-        $this->container['reduced_vat'] = $data['reduced_vat'] ?? null;
         $this->container['section_id'] = $data['section_id'] ?? null;
         $this->container['section_name'] = $data['section_name'] ?? null;
+        $this->container['tag_ids'] = $data['tag_ids'] ?? null;
+        $this->container['tag_names'] = $data['tag_names'] ?? null;
         $this->container['segment_1_tag_id'] = $data['segment_1_tag_id'] ?? null;
         $this->container['segment_1_tag_name'] = $data['segment_1_tag_name'] ?? null;
         $this->container['segment_2_tag_id'] = $data['segment_2_tag_id'] ?? null;
         $this->container['segment_2_tag_name'] = $data['segment_2_tag_name'] ?? null;
         $this->container['segment_3_tag_id'] = $data['segment_3_tag_id'] ?? null;
         $this->container['segment_3_tag_name'] = $data['segment_3_tag_name'] ?? null;
-        $this->container['tag_ids'] = $data['tag_ids'] ?? null;
-        $this->container['tag_names'] = $data['tag_names'] ?? null;
-        $this->container['tax_code'] = $data['tax_code'] ?? null;
-        $this->container['type'] = $data['type'] ?? null;
-        $this->container['unit'] = $data['unit'] ?? null;
-        $this->container['unit_price'] = $data['unit_price'] ?? null;
-        $this->container['vat'] = $data['vat'] ?? null;
     }
 
     /**
@@ -351,6 +351,69 @@ class InvoiceIndexResponseInvoiceContents implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
+        }
+        if (($this->container['id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['order'] === null) {
+            $invalidProperties[] = "'order' can't be null";
+        }
+        if (($this->container['order'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'order', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['order'] < 0)) {
+            $invalidProperties[] = "invalid value for 'order', must be bigger than or equal to 0.";
+        }
+
+        if ($this->container['type'] === null) {
+            $invalidProperties[] = "'type' can't be null";
+        }
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'type', must be one of '%s'",
+                $this->container['type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if ($this->container['qty'] === null) {
+            $invalidProperties[] = "'qty' can't be null";
+        }
+        if ($this->container['unit'] === null) {
+            $invalidProperties[] = "'unit' can't be null";
+        }
+        if ($this->container['unit_price'] === null) {
+            $invalidProperties[] = "'unit_price' can't be null";
+        }
+        if ($this->container['amount'] === null) {
+            $invalidProperties[] = "'amount' can't be null";
+        }
+        if (($this->container['amount'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 9223372036854775807.";
+        }
+
+        if (($this->container['amount'] < -9223372036854775808)) {
+            $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to -9223372036854775808.";
+        }
+
+        if ($this->container['vat'] === null) {
+            $invalidProperties[] = "'vat' can't be null";
+        }
+        if ($this->container['reduced_vat'] === null) {
+            $invalidProperties[] = "'reduced_vat' can't be null";
+        }
+        if ($this->container['description'] === null) {
+            $invalidProperties[] = "'description' can't be null";
+        }
         if ($this->container['account_item_id'] === null) {
             $invalidProperties[] = "'account_item_id' can't be null";
         }
@@ -365,29 +428,15 @@ class InvoiceIndexResponseInvoiceContents implements ModelInterface, ArrayAccess
         if ($this->container['account_item_name'] === null) {
             $invalidProperties[] = "'account_item_name' can't be null";
         }
-        if ($this->container['amount'] === null) {
-            $invalidProperties[] = "'amount' can't be null";
+        if ($this->container['tax_code'] === null) {
+            $invalidProperties[] = "'tax_code' can't be null";
         }
-        if (($this->container['amount'] > 9223372036854775807)) {
-            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 9223372036854775807.";
-        }
-
-        if (($this->container['amount'] < -9223372036854775808)) {
-            $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to -9223372036854775808.";
+        if (($this->container['tax_code'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'tax_code', must be smaller than or equal to 2147483647.";
         }
 
-        if ($this->container['description'] === null) {
-            $invalidProperties[] = "'description' can't be null";
-        }
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if (($this->container['id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
+        if (($this->container['tax_code'] < 0)) {
+            $invalidProperties[] = "invalid value for 'tax_code', must be bigger than or equal to 0.";
         }
 
         if ($this->container['item_id'] === null) {
@@ -404,23 +453,6 @@ class InvoiceIndexResponseInvoiceContents implements ModelInterface, ArrayAccess
         if ($this->container['item_name'] === null) {
             $invalidProperties[] = "'item_name' can't be null";
         }
-        if ($this->container['order'] === null) {
-            $invalidProperties[] = "'order' can't be null";
-        }
-        if (($this->container['order'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'order', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['order'] < 0)) {
-            $invalidProperties[] = "invalid value for 'order', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['qty'] === null) {
-            $invalidProperties[] = "'qty' can't be null";
-        }
-        if ($this->container['reduced_vat'] === null) {
-            $invalidProperties[] = "'reduced_vat' can't be null";
-        }
         if ($this->container['section_id'] === null) {
             $invalidProperties[] = "'section_id' can't be null";
         }
@@ -434,6 +466,12 @@ class InvoiceIndexResponseInvoiceContents implements ModelInterface, ArrayAccess
 
         if ($this->container['section_name'] === null) {
             $invalidProperties[] = "'section_name' can't be null";
+        }
+        if ($this->container['tag_ids'] === null) {
+            $invalidProperties[] = "'tag_ids' can't be null";
+        }
+        if ($this->container['tag_names'] === null) {
+            $invalidProperties[] = "'tag_names' can't be null";
         }
         if (!is_null($this->container['segment_1_tag_id']) && ($this->container['segment_1_tag_id'] > 9223372036854775807)) {
             $invalidProperties[] = "invalid value for 'segment_1_tag_id', must be smaller than or equal to 9223372036854775807.";
@@ -459,44 +497,6 @@ class InvoiceIndexResponseInvoiceContents implements ModelInterface, ArrayAccess
             $invalidProperties[] = "invalid value for 'segment_3_tag_id', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['tag_ids'] === null) {
-            $invalidProperties[] = "'tag_ids' can't be null";
-        }
-        if ($this->container['tag_names'] === null) {
-            $invalidProperties[] = "'tag_names' can't be null";
-        }
-        if ($this->container['tax_code'] === null) {
-            $invalidProperties[] = "'tax_code' can't be null";
-        }
-        if (($this->container['tax_code'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'tax_code', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['tax_code'] < 0)) {
-            $invalidProperties[] = "invalid value for 'tax_code', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
-        }
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'type', must be one of '%s'",
-                $this->container['type'],
-                implode("', '", $allowedValues)
-            );
-        }
-
-        if ($this->container['unit'] === null) {
-            $invalidProperties[] = "'unit' can't be null";
-        }
-        if ($this->container['unit_price'] === null) {
-            $invalidProperties[] = "'unit_price' can't be null";
-        }
-        if ($this->container['vat'] === null) {
-            $invalidProperties[] = "'vat' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -511,6 +511,280 @@ class InvoiceIndexResponseInvoiceContents implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int $id 請求内容ID
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+
+        if (($id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling InvoiceIndexResponseInvoiceContents., must be smaller than or equal to 2147483647.');
+        }
+        if (($id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling InvoiceIndexResponseInvoiceContents., must be bigger than or equal to 1.');
+        }
+
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets order
+     *
+     * @return int
+     */
+    public function getOrder()
+    {
+        return $this->container['order'];
+    }
+
+    /**
+     * Sets order
+     *
+     * @param int $order 順序
+     *
+     * @return self
+     */
+    public function setOrder($order)
+    {
+
+        if (($order > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $order when calling InvoiceIndexResponseInvoiceContents., must be smaller than or equal to 2147483647.');
+        }
+        if (($order < 0)) {
+            throw new \InvalidArgumentException('invalid value for $order when calling InvoiceIndexResponseInvoiceContents., must be bigger than or equal to 0.');
+        }
+
+        $this->container['order'] = $order;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type 行の種類
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!in_array($type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'type', must be one of '%s'",
+                    $type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets qty
+     *
+     * @return float
+     */
+    public function getQty()
+    {
+        return $this->container['qty'];
+    }
+
+    /**
+     * Sets qty
+     *
+     * @param float $qty 数量
+     *
+     * @return self
+     */
+    public function setQty($qty)
+    {
+        $this->container['qty'] = $qty;
+
+        return $this;
+    }
+
+    /**
+     * Gets unit
+     *
+     * @return string
+     */
+    public function getUnit()
+    {
+        return $this->container['unit'];
+    }
+
+    /**
+     * Sets unit
+     *
+     * @param string $unit 単位
+     *
+     * @return self
+     */
+    public function setUnit($unit)
+    {
+        $this->container['unit'] = $unit;
+
+        return $this;
+    }
+
+    /**
+     * Gets unit_price
+     *
+     * @return float
+     */
+    public function getUnitPrice()
+    {
+        return $this->container['unit_price'];
+    }
+
+    /**
+     * Sets unit_price
+     *
+     * @param float $unit_price 単価
+     *
+     * @return self
+     */
+    public function setUnitPrice($unit_price)
+    {
+        $this->container['unit_price'] = $unit_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount
+     *
+     * @return int
+     */
+    public function getAmount()
+    {
+        return $this->container['amount'];
+    }
+
+    /**
+     * Sets amount
+     *
+     * @param int $amount 内税/外税の判別とamountの税込み、税抜きについて <ul> <li>tax_entry_methodがexclusive (外税)の場合</li> <ul> <li>amount: 消費税抜きの金額</li> <li>vat: 消費税の金額</li> </ul> <li>tax_entry_methodがinclusive (内税)の場合</li> <ul> <li>amount: 消費税込みの金額</li> <li>vat: 消費税の金額</li> </ul> </ul>
+     *
+     * @return self
+     */
+    public function setAmount($amount)
+    {
+
+        if (($amount > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling InvoiceIndexResponseInvoiceContents., must be smaller than or equal to 9223372036854775807.');
+        }
+        if (($amount < -9223372036854775808)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling InvoiceIndexResponseInvoiceContents., must be bigger than or equal to -9223372036854775808.');
+        }
+
+        $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets vat
+     *
+     * @return int
+     */
+    public function getVat()
+    {
+        return $this->container['vat'];
+    }
+
+    /**
+     * Sets vat
+     *
+     * @param int $vat 消費税額
+     *
+     * @return self
+     */
+    public function setVat($vat)
+    {
+        $this->container['vat'] = $vat;
+
+        return $this;
+    }
+
+    /**
+     * Gets reduced_vat
+     *
+     * @return bool
+     */
+    public function getReducedVat()
+    {
+        return $this->container['reduced_vat'];
+    }
+
+    /**
+     * Sets reduced_vat
+     *
+     * @param bool $reduced_vat 軽減税率税区分（true: 対象、false: 対象外）
+     *
+     * @return self
+     */
+    public function setReducedVat($reduced_vat)
+    {
+        $this->container['reduced_vat'] = $reduced_vat;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string $description 備考
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
+
+        return $this;
+    }
 
     /**
      * Gets account_item_id
@@ -569,89 +843,33 @@ class InvoiceIndexResponseInvoiceContents implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets amount
+     * Gets tax_code
      *
      * @return int
      */
-    public function getAmount()
+    public function getTaxCode()
     {
-        return $this->container['amount'];
+        return $this->container['tax_code'];
     }
 
     /**
-     * Sets amount
+     * Sets tax_code
      *
-     * @param int $amount 内税/外税の判別とamountの税込み、税抜きについて <ul> <li>tax_entry_methodがexclusive (外税)の場合</li> <ul> <li>amount: 消費税抜きの金額</li> <li>vat: 消費税の金額</li> </ul> <li>tax_entry_methodがinclusive (内税)の場合</li> <ul> <li>amount: 消費税込みの金額</li> <li>vat: 消費税の金額</li> </ul> </ul>
+     * @param int $tax_code 税区分コード
      *
      * @return self
      */
-    public function setAmount($amount)
+    public function setTaxCode($tax_code)
     {
 
-        if (($amount > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling InvoiceIndexResponseInvoiceContents., must be smaller than or equal to 9223372036854775807.');
+        if (($tax_code > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling InvoiceIndexResponseInvoiceContents., must be smaller than or equal to 2147483647.');
         }
-        if (($amount < -9223372036854775808)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling InvoiceIndexResponseInvoiceContents., must be bigger than or equal to -9223372036854775808.');
-        }
-
-        $this->container['amount'] = $amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string $description 備考
-     *
-     * @return self
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int $id 請求内容ID
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-
-        if (($id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling InvoiceIndexResponseInvoiceContents., must be smaller than or equal to 2147483647.');
-        }
-        if (($id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling InvoiceIndexResponseInvoiceContents., must be bigger than or equal to 1.');
+        if (($tax_code < 0)) {
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling InvoiceIndexResponseInvoiceContents., must be bigger than or equal to 0.');
         }
 
-        $this->container['id'] = $id;
+        $this->container['tax_code'] = $tax_code;
 
         return $this;
     }
@@ -713,86 +931,6 @@ class InvoiceIndexResponseInvoiceContents implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets order
-     *
-     * @return int
-     */
-    public function getOrder()
-    {
-        return $this->container['order'];
-    }
-
-    /**
-     * Sets order
-     *
-     * @param int $order 順序
-     *
-     * @return self
-     */
-    public function setOrder($order)
-    {
-
-        if (($order > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $order when calling InvoiceIndexResponseInvoiceContents., must be smaller than or equal to 2147483647.');
-        }
-        if (($order < 0)) {
-            throw new \InvalidArgumentException('invalid value for $order when calling InvoiceIndexResponseInvoiceContents., must be bigger than or equal to 0.');
-        }
-
-        $this->container['order'] = $order;
-
-        return $this;
-    }
-
-    /**
-     * Gets qty
-     *
-     * @return float
-     */
-    public function getQty()
-    {
-        return $this->container['qty'];
-    }
-
-    /**
-     * Sets qty
-     *
-     * @param float $qty 数量
-     *
-     * @return self
-     */
-    public function setQty($qty)
-    {
-        $this->container['qty'] = $qty;
-
-        return $this;
-    }
-
-    /**
-     * Gets reduced_vat
-     *
-     * @return bool
-     */
-    public function getReducedVat()
-    {
-        return $this->container['reduced_vat'];
-    }
-
-    /**
-     * Sets reduced_vat
-     *
-     * @param bool $reduced_vat 軽減税率税区分（true: 対象、false: 対象外）
-     *
-     * @return self
-     */
-    public function setReducedVat($reduced_vat)
-    {
-        $this->container['reduced_vat'] = $reduced_vat;
-
-        return $this;
-    }
-
-    /**
      * Gets section_id
      *
      * @return int
@@ -844,6 +982,54 @@ class InvoiceIndexResponseInvoiceContents implements ModelInterface, ArrayAccess
     public function setSectionName($section_name)
     {
         $this->container['section_name'] = $section_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets tag_ids
+     *
+     * @return int[]
+     */
+    public function getTagIds()
+    {
+        return $this->container['tag_ids'];
+    }
+
+    /**
+     * Sets tag_ids
+     *
+     * @param int[] $tag_ids tag_ids
+     *
+     * @return self
+     */
+    public function setTagIds($tag_ids)
+    {
+        $this->container['tag_ids'] = $tag_ids;
+
+        return $this;
+    }
+
+    /**
+     * Gets tag_names
+     *
+     * @return string[]
+     */
+    public function getTagNames()
+    {
+        return $this->container['tag_names'];
+    }
+
+    /**
+     * Sets tag_names
+     *
+     * @param string[] $tag_names tag_names
+     *
+     * @return self
+     */
+    public function setTagNames($tag_names)
+    {
+        $this->container['tag_names'] = $tag_names;
 
         return $this;
     }
@@ -1012,192 +1198,6 @@ class InvoiceIndexResponseInvoiceContents implements ModelInterface, ArrayAccess
     public function setSegment3TagName($segment_3_tag_name)
     {
         $this->container['segment_3_tag_name'] = $segment_3_tag_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets tag_ids
-     *
-     * @return int[]
-     */
-    public function getTagIds()
-    {
-        return $this->container['tag_ids'];
-    }
-
-    /**
-     * Sets tag_ids
-     *
-     * @param int[] $tag_ids tag_ids
-     *
-     * @return self
-     */
-    public function setTagIds($tag_ids)
-    {
-        $this->container['tag_ids'] = $tag_ids;
-
-        return $this;
-    }
-
-    /**
-     * Gets tag_names
-     *
-     * @return string[]
-     */
-    public function getTagNames()
-    {
-        return $this->container['tag_names'];
-    }
-
-    /**
-     * Sets tag_names
-     *
-     * @param string[] $tag_names tag_names
-     *
-     * @return self
-     */
-    public function setTagNames($tag_names)
-    {
-        $this->container['tag_names'] = $tag_names;
-
-        return $this;
-    }
-
-    /**
-     * Gets tax_code
-     *
-     * @return int
-     */
-    public function getTaxCode()
-    {
-        return $this->container['tax_code'];
-    }
-
-    /**
-     * Sets tax_code
-     *
-     * @param int $tax_code 税区分コード
-     *
-     * @return self
-     */
-    public function setTaxCode($tax_code)
-    {
-
-        if (($tax_code > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $tax_code when calling InvoiceIndexResponseInvoiceContents., must be smaller than or equal to 2147483647.');
-        }
-        if (($tax_code < 0)) {
-            throw new \InvalidArgumentException('invalid value for $tax_code when calling InvoiceIndexResponseInvoiceContents., must be bigger than or equal to 0.');
-        }
-
-        $this->container['tax_code'] = $tax_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type 行の種類
-     *
-     * @return self
-     */
-    public function setType($type)
-    {
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!in_array($type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'type', must be one of '%s'",
-                    $type,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets unit
-     *
-     * @return string
-     */
-    public function getUnit()
-    {
-        return $this->container['unit'];
-    }
-
-    /**
-     * Sets unit
-     *
-     * @param string $unit 単位
-     *
-     * @return self
-     */
-    public function setUnit($unit)
-    {
-        $this->container['unit'] = $unit;
-
-        return $this;
-    }
-
-    /**
-     * Gets unit_price
-     *
-     * @return float
-     */
-    public function getUnitPrice()
-    {
-        return $this->container['unit_price'];
-    }
-
-    /**
-     * Sets unit_price
-     *
-     * @param float $unit_price 単価
-     *
-     * @return self
-     */
-    public function setUnitPrice($unit_price)
-    {
-        $this->container['unit_price'] = $unit_price;
-
-        return $this;
-    }
-
-    /**
-     * Gets vat
-     *
-     * @return int
-     */
-    public function getVat()
-    {
-        return $this->container['vat'];
-    }
-
-    /**
-     * Sets vat
-     *
-     * @param int $vat 消費税額
-     *
-     * @return self
-     */
-    public function setVat($vat)
-    {
-        $this->container['vat'] = $vat;
 
         return $this;
     }

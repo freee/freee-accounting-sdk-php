@@ -59,8 +59,7 @@ class InlineResponse20015 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'meta' => '\Freee\Accounting\Model\InlineResponse20015Meta',
-        'walletables' => '\Freee\Accounting\Model\Walletable[]'
+        'expense_application_line_templates' => '\Freee\Accounting\Model\ExpenseApplicationLineTemplate[]'
     ];
 
     /**
@@ -71,8 +70,7 @@ class InlineResponse20015 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'meta' => null,
-        'walletables' => null
+        'expense_application_line_templates' => null
     ];
 
     /**
@@ -102,8 +100,7 @@ class InlineResponse20015 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'meta' => 'meta',
-        'walletables' => 'walletables'
+        'expense_application_line_templates' => 'expense_application_line_templates'
     ];
 
     /**
@@ -112,8 +109,7 @@ class InlineResponse20015 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'meta' => 'setMeta',
-        'walletables' => 'setWalletables'
+        'expense_application_line_templates' => 'setExpenseApplicationLineTemplates'
     ];
 
     /**
@@ -122,8 +118,7 @@ class InlineResponse20015 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'meta' => 'getMeta',
-        'walletables' => 'getWalletables'
+        'expense_application_line_templates' => 'getExpenseApplicationLineTemplates'
     ];
 
     /**
@@ -183,8 +178,7 @@ class InlineResponse20015 implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['meta'] = $data['meta'] ?? null;
-        $this->container['walletables'] = $data['walletables'] ?? null;
+        $this->container['expense_application_line_templates'] = $data['expense_application_line_templates'] ?? null;
     }
 
     /**
@@ -196,8 +190,8 @@ class InlineResponse20015 implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
-        if ($this->container['walletables'] === null) {
-            $invalidProperties[] = "'walletables' can't be null";
+        if ($this->container['expense_application_line_templates'] === null) {
+            $invalidProperties[] = "'expense_application_line_templates' can't be null";
         }
         return $invalidProperties;
     }
@@ -215,49 +209,25 @@ class InlineResponse20015 implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets meta
+     * Gets expense_application_line_templates
      *
-     * @return \Freee\Accounting\Model\InlineResponse20015Meta|null
+     * @return \Freee\Accounting\Model\ExpenseApplicationLineTemplate[]
      */
-    public function getMeta()
+    public function getExpenseApplicationLineTemplates()
     {
-        return $this->container['meta'];
+        return $this->container['expense_application_line_templates'];
     }
 
     /**
-     * Sets meta
+     * Sets expense_application_line_templates
      *
-     * @param \Freee\Accounting\Model\InlineResponse20015Meta|null $meta meta
+     * @param \Freee\Accounting\Model\ExpenseApplicationLineTemplate[] $expense_application_line_templates expense_application_line_templates
      *
      * @return self
      */
-    public function setMeta($meta)
+    public function setExpenseApplicationLineTemplates($expense_application_line_templates)
     {
-        $this->container['meta'] = $meta;
-
-        return $this;
-    }
-
-    /**
-     * Gets walletables
-     *
-     * @return \Freee\Accounting\Model\Walletable[]
-     */
-    public function getWalletables()
-    {
-        return $this->container['walletables'];
-    }
-
-    /**
-     * Sets walletables
-     *
-     * @param \Freee\Accounting\Model\Walletable[] $walletables walletables
-     *
-     * @return self
-     */
-    public function setWalletables($walletables)
-    {
-        $this->container['walletables'] = $walletables;
+        $this->container['expense_application_line_templates'] = $expense_application_line_templates;
 
         return $this;
     }

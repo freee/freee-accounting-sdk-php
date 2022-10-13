@@ -80,42 +80,6 @@ class ApprovalFlowRoutesIndexResponseApprovalFlowRoutesTest extends TestCase
     }
 
     /**
-     * Test attribute "default_route"
-     */
-    public function testPropertyDefaultRoute()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "definition_system"
-     */
-    public function testPropertyDefinitionSystem()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "first_step_id"
-     */
-    public function testPropertyFirstStepId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "id"
      */
     public function testPropertyId()
@@ -134,9 +98,36 @@ class ApprovalFlowRoutesIndexResponseApprovalFlowRoutesTest extends TestCase
     }
 
     /**
-     * Test attribute "request_form_ids"
+     * Test attribute "description"
      */
-    public function testPropertyRequestFormIds()
+    public function testPropertyDescription()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "user_id"
+     */
+    public function testPropertyUserId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "definition_system"
+     */
+    public function testPropertyDefinitionSystem()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "first_step_id"
+     */
+    public function testPropertyFirstStepId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -152,9 +143,18 @@ class ApprovalFlowRoutesIndexResponseApprovalFlowRoutesTest extends TestCase
     }
 
     /**
-     * Test attribute "user_id"
+     * Test attribute "request_form_ids"
      */
-    public function testPropertyUserId()
+    public function testPropertyRequestFormIds()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "default_route"
+     */
+    public function testPropertyDefaultRoute()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

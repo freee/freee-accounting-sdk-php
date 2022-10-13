@@ -80,6 +80,15 @@ class JournalStatusResponseJournalsTest extends TestCase
     }
 
     /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "company_id"
      */
     public function testPropertyCompanyId()
@@ -98,27 +107,9 @@ class JournalStatusResponseJournalsTest extends TestCase
     }
 
     /**
-     * Test attribute "download_url"
+     * Test attribute "status"
      */
-    public function testPropertyDownloadUrl()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "end_date"
-     */
-    public function testPropertyEndDate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
+    public function testPropertyStatus()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -134,9 +125,18 @@ class JournalStatusResponseJournalsTest extends TestCase
     }
 
     /**
-     * Test attribute "status"
+     * Test attribute "end_date"
      */
-    public function testPropertyStatus()
+    public function testPropertyEndDate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "visible_tags"
+     */
+    public function testPropertyVisibleTags()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -152,9 +152,9 @@ class JournalStatusResponseJournalsTest extends TestCase
     }
 
     /**
-     * Test attribute "visible_tags"
+     * Test attribute "download_url"
      */
-    public function testPropertyVisibleTags()
+    public function testPropertyDownloadUrl()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

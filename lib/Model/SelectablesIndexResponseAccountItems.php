@@ -59,12 +59,12 @@ class SelectablesIndexResponseAccountItems implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'default_tax' => '\Freee\Accounting\Model\SelectablesIndexResponseDefaultTax',
-        'desc' => 'string',
-        'help' => 'string',
         'id' => 'int',
         'name' => 'string',
-        'shortcut' => 'string'
+        'desc' => 'string',
+        'help' => 'string',
+        'shortcut' => 'string',
+        'default_tax' => '\Freee\Accounting\Model\SelectablesIndexResponseDefaultTax'
     ];
 
     /**
@@ -75,12 +75,12 @@ class SelectablesIndexResponseAccountItems implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'default_tax' => null,
-        'desc' => null,
-        'help' => null,
         'id' => null,
         'name' => null,
-        'shortcut' => null
+        'desc' => null,
+        'help' => null,
+        'shortcut' => null,
+        'default_tax' => null
     ];
 
     /**
@@ -110,12 +110,12 @@ class SelectablesIndexResponseAccountItems implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
-        'default_tax' => 'default_tax',
-        'desc' => 'desc',
-        'help' => 'help',
         'id' => 'id',
         'name' => 'name',
-        'shortcut' => 'shortcut'
+        'desc' => 'desc',
+        'help' => 'help',
+        'shortcut' => 'shortcut',
+        'default_tax' => 'default_tax'
     ];
 
     /**
@@ -124,12 +124,12 @@ class SelectablesIndexResponseAccountItems implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-        'default_tax' => 'setDefaultTax',
-        'desc' => 'setDesc',
-        'help' => 'setHelp',
         'id' => 'setId',
         'name' => 'setName',
-        'shortcut' => 'setShortcut'
+        'desc' => 'setDesc',
+        'help' => 'setHelp',
+        'shortcut' => 'setShortcut',
+        'default_tax' => 'setDefaultTax'
     ];
 
     /**
@@ -138,12 +138,12 @@ class SelectablesIndexResponseAccountItems implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $getters = [
-        'default_tax' => 'getDefaultTax',
-        'desc' => 'getDesc',
-        'help' => 'getHelp',
         'id' => 'getId',
         'name' => 'getName',
-        'shortcut' => 'getShortcut'
+        'desc' => 'getDesc',
+        'help' => 'getHelp',
+        'shortcut' => 'getShortcut',
+        'default_tax' => 'getDefaultTax'
     ];
 
     /**
@@ -203,12 +203,12 @@ class SelectablesIndexResponseAccountItems implements ModelInterface, ArrayAcces
      */
     public function __construct(array $data = null)
     {
-        $this->container['default_tax'] = $data['default_tax'] ?? null;
-        $this->container['desc'] = $data['desc'] ?? null;
-        $this->container['help'] = $data['help'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['desc'] = $data['desc'] ?? null;
+        $this->container['help'] = $data['help'] ?? null;
         $this->container['shortcut'] = $data['shortcut'] ?? null;
+        $this->container['default_tax'] = $data['default_tax'] ?? null;
     }
 
     /**
@@ -245,78 +245,6 @@ class SelectablesIndexResponseAccountItems implements ModelInterface, ArrayAcces
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets default_tax
-     *
-     * @return \Freee\Accounting\Model\SelectablesIndexResponseDefaultTax|null
-     */
-    public function getDefaultTax()
-    {
-        return $this->container['default_tax'];
-    }
-
-    /**
-     * Sets default_tax
-     *
-     * @param \Freee\Accounting\Model\SelectablesIndexResponseDefaultTax|null $default_tax default_tax
-     *
-     * @return self
-     */
-    public function setDefaultTax($default_tax)
-    {
-        $this->container['default_tax'] = $default_tax;
-
-        return $this;
-    }
-
-    /**
-     * Gets desc
-     *
-     * @return string|null
-     */
-    public function getDesc()
-    {
-        return $this->container['desc'];
-    }
-
-    /**
-     * Sets desc
-     *
-     * @param string|null $desc 勘定科目の説明
-     *
-     * @return self
-     */
-    public function setDesc($desc)
-    {
-        $this->container['desc'] = $desc;
-
-        return $this;
-    }
-
-    /**
-     * Gets help
-     *
-     * @return string|null
-     */
-    public function getHelp()
-    {
-        return $this->container['help'];
-    }
-
-    /**
-     * Sets help
-     *
-     * @param string|null $help 勘定科目の説明（詳細）
-     *
-     * @return self
-     */
-    public function setHelp($help)
-    {
-        $this->container['help'] = $help;
-
-        return $this;
-    }
 
     /**
      * Gets id
@@ -375,6 +303,54 @@ class SelectablesIndexResponseAccountItems implements ModelInterface, ArrayAcces
     }
 
     /**
+     * Gets desc
+     *
+     * @return string|null
+     */
+    public function getDesc()
+    {
+        return $this->container['desc'];
+    }
+
+    /**
+     * Sets desc
+     *
+     * @param string|null $desc 勘定科目の説明
+     *
+     * @return self
+     */
+    public function setDesc($desc)
+    {
+        $this->container['desc'] = $desc;
+
+        return $this;
+    }
+
+    /**
+     * Gets help
+     *
+     * @return string|null
+     */
+    public function getHelp()
+    {
+        return $this->container['help'];
+    }
+
+    /**
+     * Sets help
+     *
+     * @param string|null $help 勘定科目の説明（詳細）
+     *
+     * @return self
+     */
+    public function setHelp($help)
+    {
+        $this->container['help'] = $help;
+
+        return $this;
+    }
+
+    /**
      * Gets shortcut
      *
      * @return string|null
@@ -394,6 +370,30 @@ class SelectablesIndexResponseAccountItems implements ModelInterface, ArrayAcces
     public function setShortcut($shortcut)
     {
         $this->container['shortcut'] = $shortcut;
+
+        return $this;
+    }
+
+    /**
+     * Gets default_tax
+     *
+     * @return \Freee\Accounting\Model\SelectablesIndexResponseDefaultTax|null
+     */
+    public function getDefaultTax()
+    {
+        return $this->container['default_tax'];
+    }
+
+    /**
+     * Sets default_tax
+     *
+     * @param \Freee\Accounting\Model\SelectablesIndexResponseDefaultTax|null $default_tax default_tax
+     *
+     * @return self
+     */
+    public function setDefaultTax($default_tax)
+    {
+        $this->container['default_tax'] = $default_tax;
 
         return $this;
     }

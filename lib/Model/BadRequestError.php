@@ -59,8 +59,8 @@ class BadRequestError implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'errors' => '\Freee\Accounting\Model\BadRequestErrorErrors[]',
-        'status_code' => 'int'
+        'status_code' => 'int',
+        'errors' => '\Freee\Accounting\Model\BadRequestErrorErrors[]'
     ];
 
     /**
@@ -71,8 +71,8 @@ class BadRequestError implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'errors' => null,
-        'status_code' => null
+        'status_code' => null,
+        'errors' => null
     ];
 
     /**
@@ -102,8 +102,8 @@ class BadRequestError implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'errors' => 'errors',
-        'status_code' => 'status_code'
+        'status_code' => 'status_code',
+        'errors' => 'errors'
     ];
 
     /**
@@ -112,8 +112,8 @@ class BadRequestError implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'errors' => 'setErrors',
-        'status_code' => 'setStatusCode'
+        'status_code' => 'setStatusCode',
+        'errors' => 'setErrors'
     ];
 
     /**
@@ -122,8 +122,8 @@ class BadRequestError implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'errors' => 'getErrors',
-        'status_code' => 'getStatusCode'
+        'status_code' => 'getStatusCode',
+        'errors' => 'getErrors'
     ];
 
     /**
@@ -183,8 +183,8 @@ class BadRequestError implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['errors'] = $data['errors'] ?? null;
         $this->container['status_code'] = $data['status_code'] ?? null;
+        $this->container['errors'] = $data['errors'] ?? null;
     }
 
     /**
@@ -212,30 +212,6 @@ class BadRequestError implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets errors
-     *
-     * @return \Freee\Accounting\Model\BadRequestErrorErrors[]|null
-     */
-    public function getErrors()
-    {
-        return $this->container['errors'];
-    }
-
-    /**
-     * Sets errors
-     *
-     * @param \Freee\Accounting\Model\BadRequestErrorErrors[]|null $errors errors
-     *
-     * @return self
-     */
-    public function setErrors($errors)
-    {
-        $this->container['errors'] = $errors;
-
-        return $this;
-    }
-
-    /**
      * Gets status_code
      *
      * @return int|null
@@ -255,6 +231,30 @@ class BadRequestError implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setStatusCode($status_code)
     {
         $this->container['status_code'] = $status_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets errors
+     *
+     * @return \Freee\Accounting\Model\BadRequestErrorErrors[]|null
+     */
+    public function getErrors()
+    {
+        return $this->container['errors'];
+    }
+
+    /**
+     * Sets errors
+     *
+     * @param \Freee\Accounting\Model\BadRequestErrorErrors[]|null $errors errors
+     *
+     * @return self
+     */
+    public function setErrors($errors)
+    {
+        $this->container['errors'] = $errors;
 
         return $this;
     }

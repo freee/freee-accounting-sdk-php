@@ -89,6 +89,15 @@ class RenewUpdateParamsDetailsTest extends TestCase
     }
 
     /**
+     * Test attribute "tax_code"
+     */
+    public function testPropertyTaxCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "amount"
      */
     public function testPropertyAmount()
@@ -98,9 +107,9 @@ class RenewUpdateParamsDetailsTest extends TestCase
     }
 
     /**
-     * Test attribute "description"
+     * Test attribute "vat"
      */
-    public function testPropertyDescription()
+    public function testPropertyVat()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -119,6 +128,15 @@ class RenewUpdateParamsDetailsTest extends TestCase
      * Test attribute "section_id"
      */
     public function testPropertySectionId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tag_ids"
+     */
+    public function testPropertyTagIds()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -152,27 +170,9 @@ class RenewUpdateParamsDetailsTest extends TestCase
     }
 
     /**
-     * Test attribute "tag_ids"
+     * Test attribute "description"
      */
-    public function testPropertyTagIds()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "tax_code"
-     */
-    public function testPropertyTaxCode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "vat"
-     */
-    public function testPropertyVat()
+    public function testPropertyDescription()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

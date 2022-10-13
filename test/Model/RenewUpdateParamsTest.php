@@ -89,18 +89,18 @@ class RenewUpdateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "details"
+     * Test attribute "update_date"
      */
-    public function testPropertyDetails()
+    public function testPropertyUpdateDate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "update_date"
+     * Test attribute "details"
      */
-    public function testPropertyUpdateDate()
+    public function testPropertyDetails()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

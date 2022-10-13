@@ -59,7 +59,7 @@ class InlineResponse20012 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'users' => '\Freee\Accounting\Model\User[]'
+        'transfers' => '\Freee\Accounting\Model\Transfer[]'
     ];
 
     /**
@@ -70,7 +70,7 @@ class InlineResponse20012 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'users' => null
+        'transfers' => null
     ];
 
     /**
@@ -100,7 +100,7 @@ class InlineResponse20012 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'users' => 'users'
+        'transfers' => 'transfers'
     ];
 
     /**
@@ -109,7 +109,7 @@ class InlineResponse20012 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'users' => 'setUsers'
+        'transfers' => 'setTransfers'
     ];
 
     /**
@@ -118,7 +118,7 @@ class InlineResponse20012 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'users' => 'getUsers'
+        'transfers' => 'getTransfers'
     ];
 
     /**
@@ -178,7 +178,7 @@ class InlineResponse20012 implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['users'] = $data['users'] ?? null;
+        $this->container['transfers'] = $data['transfers'] ?? null;
     }
 
     /**
@@ -190,8 +190,8 @@ class InlineResponse20012 implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
-        if ($this->container['users'] === null) {
-            $invalidProperties[] = "'users' can't be null";
+        if ($this->container['transfers'] === null) {
+            $invalidProperties[] = "'transfers' can't be null";
         }
         return $invalidProperties;
     }
@@ -209,25 +209,25 @@ class InlineResponse20012 implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets users
+     * Gets transfers
      *
-     * @return \Freee\Accounting\Model\User[]
+     * @return \Freee\Accounting\Model\Transfer[]
      */
-    public function getUsers()
+    public function getTransfers()
     {
-        return $this->container['users'];
+        return $this->container['transfers'];
     }
 
     /**
-     * Sets users
+     * Sets transfers
      *
-     * @param \Freee\Accounting\Model\User[] $users users
+     * @param \Freee\Accounting\Model\Transfer[] $transfers transfers
      *
      * @return self
      */
-    public function setUsers($users)
+    public function setTransfers($transfers)
     {
-        $this->container['users'] = $users;
+        $this->container['transfers'] = $transfers;
 
         return $this;
     }

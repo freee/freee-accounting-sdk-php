@@ -80,27 +80,9 @@ class ManualJournalDetailsTest extends TestCase
     }
 
     /**
-     * Test attribute "account_item_id"
+     * Test attribute "id"
      */
-    public function testPropertyAccountItemId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "amount"
-     */
-    public function testPropertyAmount()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
+    public function testPropertyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -116,9 +98,54 @@ class ManualJournalDetailsTest extends TestCase
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "account_item_id"
      */
-    public function testPropertyId()
+    public function testPropertyAccountItemId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tax_code"
+     */
+    public function testPropertyTaxCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partner_id"
+     */
+    public function testPropertyPartnerId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partner_name"
+     */
+    public function testPropertyPartnerName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partner_code"
+     */
+    public function testPropertyPartnerCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partner_long_name"
+     */
+    public function testPropertyPartnerLongName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -143,42 +170,6 @@ class ManualJournalDetailsTest extends TestCase
     }
 
     /**
-     * Test attribute "partner_code"
-     */
-    public function testPropertyPartnerCode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partner_id"
-     */
-    public function testPropertyPartnerId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partner_long_name"
-     */
-    public function testPropertyPartnerLongName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partner_name"
-     */
-    public function testPropertyPartnerName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "section_id"
      */
     public function testPropertySectionId()
@@ -191,6 +182,24 @@ class ManualJournalDetailsTest extends TestCase
      * Test attribute "section_name"
      */
     public function testPropertySectionName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tag_ids"
+     */
+    public function testPropertyTagIds()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tag_names"
+     */
+    public function testPropertyTagNames()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -251,27 +260,9 @@ class ManualJournalDetailsTest extends TestCase
     }
 
     /**
-     * Test attribute "tag_ids"
+     * Test attribute "amount"
      */
-    public function testPropertyTagIds()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "tag_names"
-     */
-    public function testPropertyTagNames()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "tax_code"
-     */
-    public function testPropertyTaxCode()
+    public function testPropertyAmount()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -281,6 +272,15 @@ class ManualJournalDetailsTest extends TestCase
      * Test attribute "vat"
      */
     public function testPropertyVat()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

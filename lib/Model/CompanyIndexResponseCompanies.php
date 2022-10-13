@@ -59,10 +59,10 @@ class CompanyIndexResponseCompanies implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'display_name' => 'string',
         'id' => 'int',
         'name' => 'string',
         'name_kana' => 'string',
+        'display_name' => 'string',
         'role' => 'string'
     ];
 
@@ -74,10 +74,10 @@ class CompanyIndexResponseCompanies implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'display_name' => null,
         'id' => null,
         'name' => null,
         'name_kana' => null,
+        'display_name' => null,
         'role' => null
     ];
 
@@ -108,10 +108,10 @@ class CompanyIndexResponseCompanies implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
-        'display_name' => 'display_name',
         'id' => 'id',
         'name' => 'name',
         'name_kana' => 'name_kana',
+        'display_name' => 'display_name',
         'role' => 'role'
     ];
 
@@ -121,10 +121,10 @@ class CompanyIndexResponseCompanies implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-        'display_name' => 'setDisplayName',
         'id' => 'setId',
         'name' => 'setName',
         'name_kana' => 'setNameKana',
+        'display_name' => 'setDisplayName',
         'role' => 'setRole'
     ];
 
@@ -134,10 +134,10 @@ class CompanyIndexResponseCompanies implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
-        'display_name' => 'getDisplayName',
         'id' => 'getId',
         'name' => 'getName',
         'name_kana' => 'getNameKana',
+        'display_name' => 'getDisplayName',
         'role' => 'getRole'
     ];
 
@@ -219,10 +219,10 @@ class CompanyIndexResponseCompanies implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(array $data = null)
     {
-        $this->container['display_name'] = $data['display_name'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['name_kana'] = $data['name_kana'] ?? null;
+        $this->container['display_name'] = $data['display_name'] ?? null;
         $this->container['role'] = $data['role'] ?? null;
     }
 
@@ -235,9 +235,6 @@ class CompanyIndexResponseCompanies implements ModelInterface, ArrayAccess, \Jso
     {
         $invalidProperties = [];
 
-        if ($this->container['display_name'] === null) {
-            $invalidProperties[] = "'display_name' can't be null";
-        }
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
@@ -254,6 +251,9 @@ class CompanyIndexResponseCompanies implements ModelInterface, ArrayAccess, \Jso
         }
         if ($this->container['name_kana'] === null) {
             $invalidProperties[] = "'name_kana' can't be null";
+        }
+        if ($this->container['display_name'] === null) {
+            $invalidProperties[] = "'display_name' can't be null";
         }
         if ($this->container['role'] === null) {
             $invalidProperties[] = "'role' can't be null";
@@ -281,30 +281,6 @@ class CompanyIndexResponseCompanies implements ModelInterface, ArrayAccess, \Jso
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets display_name
-     *
-     * @return string
-     */
-    public function getDisplayName()
-    {
-        return $this->container['display_name'];
-    }
-
-    /**
-     * Sets display_name
-     *
-     * @param string $display_name 事業所名
-     *
-     * @return self
-     */
-    public function setDisplayName($display_name)
-    {
-        $this->container['display_name'] = $display_name;
-
-        return $this;
-    }
 
     /**
      * Gets id
@@ -382,6 +358,30 @@ class CompanyIndexResponseCompanies implements ModelInterface, ArrayAccess, \Jso
     public function setNameKana($name_kana)
     {
         $this->container['name_kana'] = $name_kana;
+
+        return $this;
+    }
+
+    /**
+     * Gets display_name
+     *
+     * @return string
+     */
+    public function getDisplayName()
+    {
+        return $this->container['display_name'];
+    }
+
+    /**
+     * Sets display_name
+     *
+     * @param string $display_name 事業所名
+     *
+     * @return self
+     */
+    public function setDisplayName($display_name)
+    {
+        $this->container['display_name'] = $display_name;
 
         return $this;
     }

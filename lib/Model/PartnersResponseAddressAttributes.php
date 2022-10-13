@@ -59,10 +59,10 @@ class PartnersResponseAddressAttributes implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
+        'zipcode' => 'string',
         'prefecture_code' => 'int',
         'street_name1' => 'string',
-        'street_name2' => 'string',
-        'zipcode' => 'string'
+        'street_name2' => 'string'
     ];
 
     /**
@@ -73,10 +73,10 @@ class PartnersResponseAddressAttributes implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'zipcode' => null,
         'prefecture_code' => null,
         'street_name1' => null,
-        'street_name2' => null,
-        'zipcode' => null
+        'street_name2' => null
     ];
 
     /**
@@ -106,10 +106,10 @@ class PartnersResponseAddressAttributes implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $attributeMap = [
+        'zipcode' => 'zipcode',
         'prefecture_code' => 'prefecture_code',
         'street_name1' => 'street_name1',
-        'street_name2' => 'street_name2',
-        'zipcode' => 'zipcode'
+        'street_name2' => 'street_name2'
     ];
 
     /**
@@ -118,10 +118,10 @@ class PartnersResponseAddressAttributes implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
+        'zipcode' => 'setZipcode',
         'prefecture_code' => 'setPrefectureCode',
         'street_name1' => 'setStreetName1',
-        'street_name2' => 'setStreetName2',
-        'zipcode' => 'setZipcode'
+        'street_name2' => 'setStreetName2'
     ];
 
     /**
@@ -130,10 +130,10 @@ class PartnersResponseAddressAttributes implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $getters = [
+        'zipcode' => 'getZipcode',
         'prefecture_code' => 'getPrefectureCode',
         'street_name1' => 'getStreetName1',
-        'street_name2' => 'getStreetName2',
-        'zipcode' => 'getZipcode'
+        'street_name2' => 'getStreetName2'
     ];
 
     /**
@@ -193,10 +193,10 @@ class PartnersResponseAddressAttributes implements ModelInterface, ArrayAccess, 
      */
     public function __construct(array $data = null)
     {
+        $this->container['zipcode'] = $data['zipcode'] ?? null;
         $this->container['prefecture_code'] = $data['prefecture_code'] ?? null;
         $this->container['street_name1'] = $data['street_name1'] ?? null;
         $this->container['street_name2'] = $data['street_name2'] ?? null;
-        $this->container['zipcode'] = $data['zipcode'] ?? null;
     }
 
     /**
@@ -230,6 +230,30 @@ class PartnersResponseAddressAttributes implements ModelInterface, ArrayAccess, 
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets zipcode
+     *
+     * @return string|null
+     */
+    public function getZipcode()
+    {
+        return $this->container['zipcode'];
+    }
+
+    /**
+     * Sets zipcode
+     *
+     * @param string|null $zipcode 郵便番号
+     *
+     * @return self
+     */
+    public function setZipcode($zipcode)
+    {
+        $this->container['zipcode'] = $zipcode;
+
+        return $this;
+    }
 
     /**
      * Gets prefecture_code
@@ -307,30 +331,6 @@ class PartnersResponseAddressAttributes implements ModelInterface, ArrayAccess, 
     public function setStreetName2($street_name2)
     {
         $this->container['street_name2'] = $street_name2;
-
-        return $this;
-    }
-
-    /**
-     * Gets zipcode
-     *
-     * @return string|null
-     */
-    public function getZipcode()
-    {
-        return $this->container['zipcode'];
-    }
-
-    /**
-     * Sets zipcode
-     *
-     * @param string|null $zipcode 郵便番号
-     *
-     * @return self
-     */
-    public function setZipcode($zipcode)
-    {
-        $this->container['zipcode'] = $zipcode;
 
         return $this;
     }

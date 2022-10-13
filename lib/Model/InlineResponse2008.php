@@ -59,7 +59,7 @@ class InlineResponse2008 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => '\Freee\Accounting\Model\Tag[]'
+        'taxes' => '\Freee\Accounting\Model\InlineResponse2008Taxes[]'
     ];
 
     /**
@@ -70,7 +70,7 @@ class InlineResponse2008 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null
+        'taxes' => null
     ];
 
     /**
@@ -100,7 +100,7 @@ class InlineResponse2008 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags'
+        'taxes' => 'taxes'
     ];
 
     /**
@@ -109,7 +109,7 @@ class InlineResponse2008 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags'
+        'taxes' => 'setTaxes'
     ];
 
     /**
@@ -118,7 +118,7 @@ class InlineResponse2008 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags'
+        'taxes' => 'getTaxes'
     ];
 
     /**
@@ -178,7 +178,7 @@ class InlineResponse2008 implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['tags'] = $data['tags'] ?? null;
+        $this->container['taxes'] = $data['taxes'] ?? null;
     }
 
     /**
@@ -190,8 +190,8 @@ class InlineResponse2008 implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['tags'] === null) {
-            $invalidProperties[] = "'tags' can't be null";
+        if ($this->container['taxes'] === null) {
+            $invalidProperties[] = "'taxes' can't be null";
         }
         return $invalidProperties;
     }
@@ -209,25 +209,25 @@ class InlineResponse2008 implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets tags
+     * Gets taxes
      *
-     * @return \Freee\Accounting\Model\Tag[]
+     * @return \Freee\Accounting\Model\InlineResponse2008Taxes[]
      */
-    public function getTags()
+    public function getTaxes()
     {
-        return $this->container['tags'];
+        return $this->container['taxes'];
     }
 
     /**
-     * Sets tags
+     * Sets taxes
      *
-     * @param \Freee\Accounting\Model\Tag[] $tags tags
+     * @param \Freee\Accounting\Model\InlineResponse2008Taxes[] $taxes taxes
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTaxes($taxes)
     {
-        $this->container['tags'] = $tags;
+        $this->container['taxes'] = $taxes;
 
         return $this;
     }

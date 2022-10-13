@@ -80,105 +80,6 @@ class AccountItemsResponseAccountItemsTest extends TestCase
     }
 
     /**
-     * Test attribute "account_category"
-     */
-    public function testPropertyAccountCategory()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "account_category_id"
-     */
-    public function testPropertyAccountCategoryId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "available"
-     */
-    public function testPropertyAvailable()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "categories"
-     */
-    public function testPropertyCategories()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "corresponding_expense_id"
-     */
-    public function testPropertyCorrespondingExpenseId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "corresponding_expense_name"
-     */
-    public function testPropertyCorrespondingExpenseName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "corresponding_income_id"
-     */
-    public function testPropertyCorrespondingIncomeId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "corresponding_income_name"
-     */
-    public function testPropertyCorrespondingIncomeName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "default_tax_code"
-     */
-    public function testPropertyDefaultTaxCode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "default_tax_id"
-     */
-    public function testPropertyDefaultTaxId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "group_name"
-     */
-    public function testPropertyGroupName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "id"
      */
     public function testPropertyId()
@@ -191,6 +92,15 @@ class AccountItemsResponseAccountItemsTest extends TestCase
      * Test attribute "name"
      */
     public function testPropertyName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tax_code"
+     */
+    public function testPropertyTaxCode()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -215,9 +125,54 @@ class AccountItemsResponseAccountItemsTest extends TestCase
     }
 
     /**
-     * Test attribute "tax_code"
+     * Test attribute "default_tax_id"
      */
-    public function testPropertyTaxCode()
+    public function testPropertyDefaultTaxId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "default_tax_code"
+     */
+    public function testPropertyDefaultTaxCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "account_category"
+     */
+    public function testPropertyAccountCategory()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "account_category_id"
+     */
+    public function testPropertyAccountCategoryId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "categories"
+     */
+    public function testPropertyCategories()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "available"
+     */
+    public function testPropertyAvailable()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -227,6 +182,51 @@ class AccountItemsResponseAccountItemsTest extends TestCase
      * Test attribute "walletable_id"
      */
     public function testPropertyWalletableId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "group_name"
+     */
+    public function testPropertyGroupName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "corresponding_income_name"
+     */
+    public function testPropertyCorrespondingIncomeName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "corresponding_income_id"
+     */
+    public function testPropertyCorrespondingIncomeId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "corresponding_expense_name"
+     */
+    public function testPropertyCorrespondingExpenseName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "corresponding_expense_id"
+     */
+    public function testPropertyCorrespondingExpenseId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

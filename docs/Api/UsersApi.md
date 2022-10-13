@@ -13,7 +13,7 @@ Method | HTTP request | Description
 ## `getUsers()`
 
 ```php
-getUsers($company_id, $limit): \Freee\Accounting\Model\InlineResponse20012
+getUsers($company_id, $limit): \Freee\Accounting\Model\InlineResponse2004
 ```
 
 事業所に所属するユーザー一覧の取得
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse20012**](../Model/InlineResponse20012.md)
+[**\Freee\Accounting\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 ## `getUsersCapabilities()`
 
 ```php
-getUsersCapabilities($company_id): \Freee\Accounting\Model\InlineResponse20013
+getUsersCapabilities($company_id): \Freee\Accounting\Model\InlineResponse2005
 ```
 
 ログインユーザーの権限の取得
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse20013**](../Model/InlineResponse20013.md)
+[**\Freee\Accounting\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
 
 ### Authorization
 

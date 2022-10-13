@@ -59,13 +59,13 @@ class TrialBsResponseTrialBsSegment2Tags implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'closing_balance' => 'int',
-        'composition_ratio' => 'float',
-        'credit_amount' => 'int',
-        'debit_amount' => 'int',
         'id' => 'int',
         'name' => 'string',
-        'opening_balance' => 'int'
+        'opening_balance' => 'int',
+        'debit_amount' => 'int',
+        'credit_amount' => 'int',
+        'closing_balance' => 'int',
+        'composition_ratio' => 'float'
     ];
 
     /**
@@ -76,13 +76,13 @@ class TrialBsResponseTrialBsSegment2Tags implements ModelInterface, ArrayAccess,
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'closing_balance' => null,
-        'composition_ratio' => null,
-        'credit_amount' => null,
-        'debit_amount' => null,
         'id' => null,
         'name' => null,
-        'opening_balance' => null
+        'opening_balance' => null,
+        'debit_amount' => null,
+        'credit_amount' => null,
+        'closing_balance' => null,
+        'composition_ratio' => null
     ];
 
     /**
@@ -112,13 +112,13 @@ class TrialBsResponseTrialBsSegment2Tags implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $attributeMap = [
-        'closing_balance' => 'closing_balance',
-        'composition_ratio' => 'composition_ratio',
-        'credit_amount' => 'credit_amount',
-        'debit_amount' => 'debit_amount',
         'id' => 'id',
         'name' => 'name',
-        'opening_balance' => 'opening_balance'
+        'opening_balance' => 'opening_balance',
+        'debit_amount' => 'debit_amount',
+        'credit_amount' => 'credit_amount',
+        'closing_balance' => 'closing_balance',
+        'composition_ratio' => 'composition_ratio'
     ];
 
     /**
@@ -127,13 +127,13 @@ class TrialBsResponseTrialBsSegment2Tags implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-        'closing_balance' => 'setClosingBalance',
-        'composition_ratio' => 'setCompositionRatio',
-        'credit_amount' => 'setCreditAmount',
-        'debit_amount' => 'setDebitAmount',
         'id' => 'setId',
         'name' => 'setName',
-        'opening_balance' => 'setOpeningBalance'
+        'opening_balance' => 'setOpeningBalance',
+        'debit_amount' => 'setDebitAmount',
+        'credit_amount' => 'setCreditAmount',
+        'closing_balance' => 'setClosingBalance',
+        'composition_ratio' => 'setCompositionRatio'
     ];
 
     /**
@@ -142,13 +142,13 @@ class TrialBsResponseTrialBsSegment2Tags implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $getters = [
-        'closing_balance' => 'getClosingBalance',
-        'composition_ratio' => 'getCompositionRatio',
-        'credit_amount' => 'getCreditAmount',
-        'debit_amount' => 'getDebitAmount',
         'id' => 'getId',
         'name' => 'getName',
-        'opening_balance' => 'getOpeningBalance'
+        'opening_balance' => 'getOpeningBalance',
+        'debit_amount' => 'getDebitAmount',
+        'credit_amount' => 'getCreditAmount',
+        'closing_balance' => 'getClosingBalance',
+        'composition_ratio' => 'getCompositionRatio'
     ];
 
     /**
@@ -208,13 +208,13 @@ class TrialBsResponseTrialBsSegment2Tags implements ModelInterface, ArrayAccess,
      */
     public function __construct(array $data = null)
     {
-        $this->container['closing_balance'] = $data['closing_balance'] ?? null;
-        $this->container['composition_ratio'] = $data['composition_ratio'] ?? null;
-        $this->container['credit_amount'] = $data['credit_amount'] ?? null;
-        $this->container['debit_amount'] = $data['debit_amount'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['opening_balance'] = $data['opening_balance'] ?? null;
+        $this->container['debit_amount'] = $data['debit_amount'] ?? null;
+        $this->container['credit_amount'] = $data['credit_amount'] ?? null;
+        $this->container['closing_balance'] = $data['closing_balance'] ?? null;
+        $this->container['composition_ratio'] = $data['composition_ratio'] ?? null;
     }
 
     /**
@@ -251,102 +251,6 @@ class TrialBsResponseTrialBsSegment2Tags implements ModelInterface, ArrayAccess,
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets closing_balance
-     *
-     * @return int|null
-     */
-    public function getClosingBalance()
-    {
-        return $this->container['closing_balance'];
-    }
-
-    /**
-     * Sets closing_balance
-     *
-     * @param int|null $closing_balance 期末残高
-     *
-     * @return self
-     */
-    public function setClosingBalance($closing_balance)
-    {
-        $this->container['closing_balance'] = $closing_balance;
-
-        return $this;
-    }
-
-    /**
-     * Gets composition_ratio
-     *
-     * @return float|null
-     */
-    public function getCompositionRatio()
-    {
-        return $this->container['composition_ratio'];
-    }
-
-    /**
-     * Sets composition_ratio
-     *
-     * @param float|null $composition_ratio 構成比
-     *
-     * @return self
-     */
-    public function setCompositionRatio($composition_ratio)
-    {
-        $this->container['composition_ratio'] = $composition_ratio;
-
-        return $this;
-    }
-
-    /**
-     * Gets credit_amount
-     *
-     * @return int|null
-     */
-    public function getCreditAmount()
-    {
-        return $this->container['credit_amount'];
-    }
-
-    /**
-     * Sets credit_amount
-     *
-     * @param int|null $credit_amount 貸方金額
-     *
-     * @return self
-     */
-    public function setCreditAmount($credit_amount)
-    {
-        $this->container['credit_amount'] = $credit_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets debit_amount
-     *
-     * @return int|null
-     */
-    public function getDebitAmount()
-    {
-        return $this->container['debit_amount'];
-    }
-
-    /**
-     * Sets debit_amount
-     *
-     * @param int|null $debit_amount 借方金額
-     *
-     * @return self
-     */
-    public function setDebitAmount($debit_amount)
-    {
-        $this->container['debit_amount'] = $debit_amount;
-
-        return $this;
-    }
 
     /**
      * Gets id
@@ -424,6 +328,102 @@ class TrialBsResponseTrialBsSegment2Tags implements ModelInterface, ArrayAccess,
     public function setOpeningBalance($opening_balance)
     {
         $this->container['opening_balance'] = $opening_balance;
+
+        return $this;
+    }
+
+    /**
+     * Gets debit_amount
+     *
+     * @return int|null
+     */
+    public function getDebitAmount()
+    {
+        return $this->container['debit_amount'];
+    }
+
+    /**
+     * Sets debit_amount
+     *
+     * @param int|null $debit_amount 借方金額
+     *
+     * @return self
+     */
+    public function setDebitAmount($debit_amount)
+    {
+        $this->container['debit_amount'] = $debit_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets credit_amount
+     *
+     * @return int|null
+     */
+    public function getCreditAmount()
+    {
+        return $this->container['credit_amount'];
+    }
+
+    /**
+     * Sets credit_amount
+     *
+     * @param int|null $credit_amount 貸方金額
+     *
+     * @return self
+     */
+    public function setCreditAmount($credit_amount)
+    {
+        $this->container['credit_amount'] = $credit_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets closing_balance
+     *
+     * @return int|null
+     */
+    public function getClosingBalance()
+    {
+        return $this->container['closing_balance'];
+    }
+
+    /**
+     * Sets closing_balance
+     *
+     * @param int|null $closing_balance 期末残高
+     *
+     * @return self
+     */
+    public function setClosingBalance($closing_balance)
+    {
+        $this->container['closing_balance'] = $closing_balance;
+
+        return $this;
+    }
+
+    /**
+     * Gets composition_ratio
+     *
+     * @return float|null
+     */
+    public function getCompositionRatio()
+    {
+        return $this->container['composition_ratio'];
+    }
+
+    /**
+     * Sets composition_ratio
+     *
+     * @param float|null $composition_ratio 構成比
+     *
+     * @return self
+     */
+    public function setCompositionRatio($composition_ratio)
+    {
+        $this->container['composition_ratio'] = $composition_ratio;
 
         return $this;
     }

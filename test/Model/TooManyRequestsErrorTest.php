@@ -80,18 +80,18 @@ class TooManyRequestsErrorTest extends TestCase
     }
 
     /**
-     * Test attribute "meta"
+     * Test attribute "status_code"
      */
-    public function testPropertyMeta()
+    public function testPropertyStatusCode()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "status_code"
+     * Test attribute "meta"
      */
-    public function testPropertyStatusCode()
+    public function testPropertyMeta()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

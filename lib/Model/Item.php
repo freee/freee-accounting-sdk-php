@@ -59,13 +59,13 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'available' => 'bool',
-        'company_id' => 'int',
         'id' => 'int',
+        'company_id' => 'int',
         'name' => 'string',
+        'update_date' => 'string',
+        'available' => 'bool',
         'shortcut1' => 'string',
-        'shortcut2' => 'string',
-        'update_date' => 'string'
+        'shortcut2' => 'string'
     ];
 
     /**
@@ -76,13 +76,13 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'available' => null,
-        'company_id' => null,
         'id' => null,
+        'company_id' => null,
         'name' => null,
+        'update_date' => null,
+        'available' => null,
         'shortcut1' => null,
-        'shortcut2' => null,
-        'update_date' => null
+        'shortcut2' => null
     ];
 
     /**
@@ -112,13 +112,13 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'available' => 'available',
-        'company_id' => 'company_id',
         'id' => 'id',
+        'company_id' => 'company_id',
         'name' => 'name',
+        'update_date' => 'update_date',
+        'available' => 'available',
         'shortcut1' => 'shortcut1',
-        'shortcut2' => 'shortcut2',
-        'update_date' => 'update_date'
+        'shortcut2' => 'shortcut2'
     ];
 
     /**
@@ -127,13 +127,13 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'available' => 'setAvailable',
-        'company_id' => 'setCompanyId',
         'id' => 'setId',
+        'company_id' => 'setCompanyId',
         'name' => 'setName',
+        'update_date' => 'setUpdateDate',
+        'available' => 'setAvailable',
         'shortcut1' => 'setShortcut1',
-        'shortcut2' => 'setShortcut2',
-        'update_date' => 'setUpdateDate'
+        'shortcut2' => 'setShortcut2'
     ];
 
     /**
@@ -142,13 +142,13 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'available' => 'getAvailable',
-        'company_id' => 'getCompanyId',
         'id' => 'getId',
+        'company_id' => 'getCompanyId',
         'name' => 'getName',
+        'update_date' => 'getUpdateDate',
+        'available' => 'getAvailable',
         'shortcut1' => 'getShortcut1',
-        'shortcut2' => 'getShortcut2',
-        'update_date' => 'getUpdateDate'
+        'shortcut2' => 'getShortcut2'
     ];
 
     /**
@@ -208,13 +208,13 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['available'] = $data['available'] ?? null;
-        $this->container['company_id'] = $data['company_id'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
+        $this->container['company_id'] = $data['company_id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['update_date'] = $data['update_date'] ?? null;
+        $this->container['available'] = $data['available'] ?? null;
         $this->container['shortcut1'] = $data['shortcut1'] ?? null;
         $this->container['shortcut2'] = $data['shortcut2'] ?? null;
-        $this->container['update_date'] = $data['update_date'] ?? null;
     }
 
     /**
@@ -225,20 +225,6 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        if ($this->container['available'] === null) {
-            $invalidProperties[] = "'available' can't be null";
-        }
-        if ($this->container['company_id'] === null) {
-            $invalidProperties[] = "'company_id' can't be null";
-        }
-        if (($this->container['company_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['company_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
-        }
 
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
@@ -251,6 +237,17 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
         }
 
+        if ($this->container['company_id'] === null) {
+            $invalidProperties[] = "'company_id' can't be null";
+        }
+        if (($this->container['company_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['company_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
+        }
+
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
@@ -260,6 +257,9 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
 
         if ($this->container['update_date'] === null) {
             $invalidProperties[] = "'update_date' can't be null";
+        }
+        if ($this->container['available'] === null) {
+            $invalidProperties[] = "'available' can't be null";
         }
         return $invalidProperties;
     }
@@ -277,25 +277,33 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets available
+     * Gets id
      *
-     * @return bool
+     * @return int
      */
-    public function getAvailable()
+    public function getId()
     {
-        return $this->container['available'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets available
+     * Sets id
      *
-     * @param bool $available 品目の使用設定（true: 使用する、false: 使用しない） <br> <ul>   <li>     本APIでitemを作成した場合はtrueになります。   </li>   <li>     falseにする場合はWeb画面から変更できます。   </li>   <li>     trueの場合、Web画面での取引登録時などに入力候補として表示されます。   </li>   <li>     falseの場合、品目自体は削除せず、Web画面での取引登録時などに入力候補として表示されません。ただし取引（収入／支出）の作成APIなどでfalseの品目をパラメータに指定すれば、取引などにfalseの品目を設定できます。   </li> </ul>
+     * @param int $id 品目ID
      *
      * @return self
      */
-    public function setAvailable($available)
+    public function setId($id)
     {
-        $this->container['available'] = $available;
+
+        if (($id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling Item., must be smaller than or equal to 2147483647.');
+        }
+        if (($id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling Item., must be bigger than or equal to 1.');
+        }
+
+        $this->container['id'] = $id;
 
         return $this;
     }
@@ -333,38 +341,6 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int $id 品目ID
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-
-        if (($id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling Item., must be smaller than or equal to 2147483647.');
-        }
-        if (($id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling Item., must be bigger than or equal to 1.');
-        }
-
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
      * Gets name
      *
      * @return string
@@ -388,6 +364,54 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets update_date
+     *
+     * @return string
+     */
+    public function getUpdateDate()
+    {
+        return $this->container['update_date'];
+    }
+
+    /**
+     * Sets update_date
+     *
+     * @param string $update_date 更新日(yyyy-mm-dd)
+     *
+     * @return self
+     */
+    public function setUpdateDate($update_date)
+    {
+        $this->container['update_date'] = $update_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets available
+     *
+     * @return bool
+     */
+    public function getAvailable()
+    {
+        return $this->container['available'];
+    }
+
+    /**
+     * Sets available
+     *
+     * @param bool $available 品目の使用設定（true: 使用する、false: 使用しない） <br> <ul>   <li>     本APIでitemを作成した場合はtrueになります。   </li>   <li>     falseにする場合はWeb画面から変更できます。   </li>   <li>     trueの場合、Web画面での取引登録時などに入力候補として表示されます。   </li>   <li>     falseの場合、品目自体は削除せず、Web画面での取引登録時などに入力候補として表示されません。ただし取引（収入／支出）の作成APIなどでfalseの品目をパラメータに指定すれば、取引などにfalseの品目を設定できます。   </li> </ul>
+     *
+     * @return self
+     */
+    public function setAvailable($available)
+    {
+        $this->container['available'] = $available;
 
         return $this;
     }
@@ -436,30 +460,6 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setShortcut2($shortcut2)
     {
         $this->container['shortcut2'] = $shortcut2;
-
-        return $this;
-    }
-
-    /**
-     * Gets update_date
-     *
-     * @return string
-     */
-    public function getUpdateDate()
-    {
-        return $this->container['update_date'];
-    }
-
-    /**
-     * Sets update_date
-     *
-     * @param string $update_date 更新日(yyyy-mm-dd)
-     *
-     * @return self
-     */
-    public function setUpdateDate($update_date)
-    {
-        $this->container['update_date'] = $update_date;
 
         return $this;
     }

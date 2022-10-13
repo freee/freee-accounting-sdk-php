@@ -80,36 +80,18 @@ class TransferParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "amount"
+     * Test attribute "to_walletable_id"
      */
-    public function testPropertyAmount()
+    public function testPropertyToWalletableId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "company_id"
+     * Test attribute "to_walletable_type"
      */
-    public function testPropertyCompanyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "date"
-     */
-    public function testPropertyDate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
+    public function testPropertyToWalletableType()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -134,18 +116,36 @@ class TransferParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "to_walletable_id"
+     * Test attribute "amount"
      */
-    public function testPropertyToWalletableId()
+    public function testPropertyAmount()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "to_walletable_type"
+     * Test attribute "date"
      */
-    public function testPropertyToWalletableType()
+    public function testPropertyDate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "company_id"
+     */
+    public function testPropertyCompanyId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

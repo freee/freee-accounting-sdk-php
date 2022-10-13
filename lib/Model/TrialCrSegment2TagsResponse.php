@@ -59,7 +59,7 @@ class TrialCrSegment2TagsResponse implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'trial_cr_segment_2_tags' => '\Freee\Accounting\Model\TrialCrSegment2TagsResponseTrialCrSegment2Tags',
+        'trial_cr_segment_2_tags' => '\Freee\Accounting\Model\TrialPlSegment2TagsResponseTrialPlSegment2Tags',
         'up_to_date' => 'bool',
         'up_to_date_reasons' => '\Freee\Accounting\Model\JournalsResponseJournalsUpToDateReasons[]'
     ];
@@ -226,7 +226,7 @@ class TrialCrSegment2TagsResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets trial_cr_segment_2_tags
      *
-     * @return \Freee\Accounting\Model\TrialCrSegment2TagsResponseTrialCrSegment2Tags
+     * @return \Freee\Accounting\Model\TrialPlSegment2TagsResponseTrialPlSegment2Tags
      */
     public function getTrialCrSegment2Tags()
     {
@@ -236,7 +236,7 @@ class TrialCrSegment2TagsResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets trial_cr_segment_2_tags
      *
-     * @param \Freee\Accounting\Model\TrialCrSegment2TagsResponseTrialCrSegment2Tags $trial_cr_segment_2_tags trial_cr_segment_2_tags
+     * @param \Freee\Accounting\Model\TrialPlSegment2TagsResponseTrialPlSegment2Tags $trial_cr_segment_2_tags trial_cr_segment_2_tags
      *
      * @return self
      */

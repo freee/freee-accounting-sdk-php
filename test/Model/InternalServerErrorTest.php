@@ -80,18 +80,18 @@ class InternalServerErrorTest extends TestCase
     }
 
     /**
-     * Test attribute "errors"
+     * Test attribute "status_code"
      */
-    public function testPropertyErrors()
+    public function testPropertyStatusCode()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "status_code"
+     * Test attribute "errors"
      */
-    public function testPropertyStatusCode()
+    public function testPropertyErrors()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

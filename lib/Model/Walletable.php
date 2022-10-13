@@ -59,11 +59,11 @@ class Walletable implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'bank_id' => 'int',
         'id' => 'int',
-        'last_balance' => 'int',
         'name' => 'string',
+        'bank_id' => 'int',
         'type' => 'string',
+        'last_balance' => 'int',
         'walletable_balance' => 'int'
     ];
 
@@ -75,11 +75,11 @@ class Walletable implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'bank_id' => null,
         'id' => null,
-        'last_balance' => null,
         'name' => null,
+        'bank_id' => null,
         'type' => null,
+        'last_balance' => null,
         'walletable_balance' => null
     ];
 
@@ -110,11 +110,11 @@ class Walletable implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'bank_id' => 'bank_id',
         'id' => 'id',
-        'last_balance' => 'last_balance',
         'name' => 'name',
+        'bank_id' => 'bank_id',
         'type' => 'type',
+        'last_balance' => 'last_balance',
         'walletable_balance' => 'walletable_balance'
     ];
 
@@ -124,11 +124,11 @@ class Walletable implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'bank_id' => 'setBankId',
         'id' => 'setId',
-        'last_balance' => 'setLastBalance',
         'name' => 'setName',
+        'bank_id' => 'setBankId',
         'type' => 'setType',
+        'last_balance' => 'setLastBalance',
         'walletable_balance' => 'setWalletableBalance'
     ];
 
@@ -138,11 +138,11 @@ class Walletable implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'bank_id' => 'getBankId',
         'id' => 'getId',
-        'last_balance' => 'getLastBalance',
         'name' => 'getName',
+        'bank_id' => 'getBankId',
         'type' => 'getType',
+        'last_balance' => 'getLastBalance',
         'walletable_balance' => 'getWalletableBalance'
     ];
 
@@ -220,11 +220,11 @@ class Walletable implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['bank_id'] = $data['bank_id'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['last_balance'] = $data['last_balance'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['bank_id'] = $data['bank_id'] ?? null;
         $this->container['type'] = $data['type'] ?? null;
+        $this->container['last_balance'] = $data['last_balance'] ?? null;
         $this->container['walletable_balance'] = $data['walletable_balance'] ?? null;
     }
 
@@ -236,17 +236,6 @@ class Walletable implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        if ($this->container['bank_id'] === null) {
-            $invalidProperties[] = "'bank_id' can't be null";
-        }
-        if (($this->container['bank_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'bank_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['bank_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'bank_id', must be bigger than or equal to 1.";
-        }
 
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
@@ -264,6 +253,17 @@ class Walletable implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ((mb_strlen($this->container['name']) > 255)) {
             $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 255.";
+        }
+
+        if ($this->container['bank_id'] === null) {
+            $invalidProperties[] = "'bank_id' can't be null";
+        }
+        if (($this->container['bank_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'bank_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['bank_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'bank_id', must be bigger than or equal to 1.";
         }
 
         if ($this->container['type'] === null) {
@@ -292,38 +292,6 @@ class Walletable implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets bank_id
-     *
-     * @return int
-     */
-    public function getBankId()
-    {
-        return $this->container['bank_id'];
-    }
-
-    /**
-     * Sets bank_id
-     *
-     * @param int $bank_id サービスID
-     *
-     * @return self
-     */
-    public function setBankId($bank_id)
-    {
-
-        if (($bank_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $bank_id when calling Walletable., must be smaller than or equal to 2147483647.');
-        }
-        if (($bank_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $bank_id when calling Walletable., must be bigger than or equal to 1.');
-        }
-
-        $this->container['bank_id'] = $bank_id;
-
-        return $this;
-    }
 
     /**
      * Gets id
@@ -358,30 +326,6 @@ class Walletable implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets last_balance
-     *
-     * @return int|null
-     */
-    public function getLastBalance()
-    {
-        return $this->container['last_balance'];
-    }
-
-    /**
-     * Sets last_balance
-     *
-     * @param int|null $last_balance 同期残高
-     *
-     * @return self
-     */
-    public function setLastBalance($last_balance)
-    {
-        $this->container['last_balance'] = $last_balance;
-
-        return $this;
-    }
-
-    /**
      * Gets name
      *
      * @return string
@@ -405,6 +349,38 @@ class Walletable implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets bank_id
+     *
+     * @return int
+     */
+    public function getBankId()
+    {
+        return $this->container['bank_id'];
+    }
+
+    /**
+     * Sets bank_id
+     *
+     * @param int $bank_id サービスID
+     *
+     * @return self
+     */
+    public function setBankId($bank_id)
+    {
+
+        if (($bank_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $bank_id when calling Walletable., must be smaller than or equal to 2147483647.');
+        }
+        if (($bank_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $bank_id when calling Walletable., must be bigger than or equal to 1.');
+        }
+
+        $this->container['bank_id'] = $bank_id;
 
         return $this;
     }
@@ -439,6 +415,30 @@ class Walletable implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets last_balance
+     *
+     * @return int|null
+     */
+    public function getLastBalance()
+    {
+        return $this->container['last_balance'];
+    }
+
+    /**
+     * Sets last_balance
+     *
+     * @param int|null $last_balance 同期残高
+     *
+     * @return self
+     */
+    public function setLastBalance($last_balance)
+    {
+        $this->container['last_balance'] = $last_balance;
 
         return $this;
     }

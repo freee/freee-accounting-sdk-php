@@ -80,9 +80,9 @@ class ItemTest extends TestCase
     }
 
     /**
-     * Test attribute "available"
+     * Test attribute "id"
      */
-    public function testPropertyAvailable()
+    public function testPropertyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -98,18 +98,27 @@ class ItemTest extends TestCase
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "name"
      */
-    public function testPropertyId()
+    public function testPropertyName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "update_date"
      */
-    public function testPropertyName()
+    public function testPropertyUpdateDate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "available"
+     */
+    public function testPropertyAvailable()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -128,15 +137,6 @@ class ItemTest extends TestCase
      * Test attribute "shortcut2"
      */
     public function testPropertyShortcut2()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "update_date"
-     */
-    public function testPropertyUpdateDate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

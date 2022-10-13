@@ -80,24 +80,6 @@ class InvoiceIndexResponseTotalAmountPerVatRateTest extends TestCase
     }
 
     /**
-     * Test attribute "reduced_vat_8"
-     */
-    public function testPropertyReducedVat8()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "vat_10"
-     */
-    public function testPropertyVat10()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "vat_5"
      */
     public function testPropertyVat5()
@@ -110,6 +92,24 @@ class InvoiceIndexResponseTotalAmountPerVatRateTest extends TestCase
      * Test attribute "vat_8"
      */
     public function testPropertyVat8()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "reduced_vat_8"
+     */
+    public function testPropertyReducedVat8()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "vat_10"
+     */
+    public function testPropertyVat10()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

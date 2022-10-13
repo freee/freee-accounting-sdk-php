@@ -80,15 +80,6 @@ class CompanyIndexResponseCompaniesTest extends TestCase
     }
 
     /**
-     * Test attribute "display_name"
-     */
-    public function testPropertyDisplayName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "id"
      */
     public function testPropertyId()
@@ -110,6 +101,15 @@ class CompanyIndexResponseCompaniesTest extends TestCase
      * Test attribute "name_kana"
      */
     public function testPropertyNameKana()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "display_name"
+     */
+    public function testPropertyDisplayName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

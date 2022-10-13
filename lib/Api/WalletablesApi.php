@@ -798,7 +798,7 @@ class WalletablesApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\InlineResponse20016|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
+     * @return \Freee\Accounting\Model\InlineResponse20010|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
      */
     public function getWalletable($id, $type, $company_id)
     {
@@ -817,7 +817,7 @@ class WalletablesApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\InlineResponse20016|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Freee\Accounting\Model\InlineResponse20010|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWalletableWithHttpInfo($id, $type, $company_id)
     {
@@ -860,14 +860,14 @@ class WalletablesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Freee\Accounting\Model\InlineResponse20016' === '\SplFileObject') {
+                    if ('\Freee\Accounting\Model\InlineResponse20010' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InlineResponse20016', []),
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InlineResponse20010', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -933,7 +933,7 @@ class WalletablesApi
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\InlineResponse20016';
+            $returnType = '\Freee\Accounting\Model\InlineResponse20010';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -951,7 +951,7 @@ class WalletablesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InlineResponse20016',
+                        '\Freee\Accounting\Model\InlineResponse20010',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1037,7 +1037,7 @@ class WalletablesApi
      */
     public function getWalletableAsyncWithHttpInfo($id, $type, $company_id)
     {
-        $returnType = '\Freee\Accounting\Model\InlineResponse20016';
+        $returnType = '\Freee\Accounting\Model\InlineResponse20010';
         $request = $this->getWalletableRequest($id, $type, $company_id);
 
         return $this->client
@@ -1228,7 +1228,7 @@ class WalletablesApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\InlineResponse20015|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError
+     * @return \Freee\Accounting\Model\InlineResponse2009|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError
      */
     public function getWalletables($company_id, $with_balance = null, $type = null)
     {
@@ -1247,7 +1247,7 @@ class WalletablesApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\InlineResponse20015|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Freee\Accounting\Model\InlineResponse2009|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWalletablesWithHttpInfo($company_id, $with_balance = null, $type = null)
     {
@@ -1290,14 +1290,14 @@ class WalletablesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Freee\Accounting\Model\InlineResponse20015' === '\SplFileObject') {
+                    if ('\Freee\Accounting\Model\InlineResponse2009' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InlineResponse20015', []),
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InlineResponse2009', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1351,7 +1351,7 @@ class WalletablesApi
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\InlineResponse20015';
+            $returnType = '\Freee\Accounting\Model\InlineResponse2009';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1369,7 +1369,7 @@ class WalletablesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InlineResponse20015',
+                        '\Freee\Accounting\Model\InlineResponse2009',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1447,7 +1447,7 @@ class WalletablesApi
      */
     public function getWalletablesAsyncWithHttpInfo($company_id, $with_balance = null, $type = null)
     {
-        $returnType = '\Freee\Accounting\Model\InlineResponse20015';
+        $returnType = '\Freee\Accounting\Model\InlineResponse2009';
         $request = $this->getWalletablesRequest($company_id, $with_balance, $type);
 
         return $this->client
@@ -1625,7 +1625,7 @@ class WalletablesApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\InlineResponse20016|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
+     * @return \Freee\Accounting\Model\InlineResponse20010|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
      */
     public function updateWalletable($id, $type, $walletable_update_params = null)
     {
@@ -1644,7 +1644,7 @@ class WalletablesApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\InlineResponse20016|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Freee\Accounting\Model\InlineResponse20010|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateWalletableWithHttpInfo($id, $type, $walletable_update_params = null)
     {
@@ -1687,14 +1687,14 @@ class WalletablesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Freee\Accounting\Model\InlineResponse20016' === '\SplFileObject') {
+                    if ('\Freee\Accounting\Model\InlineResponse20010' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InlineResponse20016', []),
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InlineResponse20010', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1760,7 +1760,7 @@ class WalletablesApi
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\InlineResponse20016';
+            $returnType = '\Freee\Accounting\Model\InlineResponse20010';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1778,7 +1778,7 @@ class WalletablesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InlineResponse20016',
+                        '\Freee\Accounting\Model\InlineResponse20010',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1864,7 +1864,7 @@ class WalletablesApi
      */
     public function updateWalletableAsyncWithHttpInfo($id, $type, $walletable_update_params = null)
     {
-        $returnType = '\Freee\Accounting\Model\InlineResponse20016';
+        $returnType = '\Freee\Accounting\Model\InlineResponse20010';
         $request = $this->updateWalletableRequest($id, $type, $walletable_update_params);
 
         return $this->client

@@ -80,9 +80,180 @@ class InvoiceCreateParamsTest extends TestCase
     }
 
     /**
+     * Test attribute "company_id"
+     */
+    public function testPropertyCompanyId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "issue_date"
+     */
+    public function testPropertyIssueDate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partner_id"
+     */
+    public function testPropertyPartnerId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partner_code"
+     */
+    public function testPropertyPartnerCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "invoice_number"
+     */
+    public function testPropertyInvoiceNumber()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "title"
+     */
+    public function testPropertyTitle()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "due_date"
+     */
+    public function testPropertyDueDate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "booking_date"
      */
     public function testPropertyBookingDate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "invoice_status"
+     */
+    public function testPropertyInvoiceStatus()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partner_display_name"
+     */
+    public function testPropertyPartnerDisplayName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partner_title"
+     */
+    public function testPropertyPartnerTitle()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partner_contact_info"
+     */
+    public function testPropertyPartnerContactInfo()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partner_zipcode"
+     */
+    public function testPropertyPartnerZipcode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partner_prefecture_code"
+     */
+    public function testPropertyPartnerPrefectureCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partner_address1"
+     */
+    public function testPropertyPartnerAddress1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partner_address2"
+     */
+    public function testPropertyPartnerAddress2()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "company_name"
+     */
+    public function testPropertyCompanyName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "company_zipcode"
+     */
+    public function testPropertyCompanyZipcode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "company_prefecture_code"
+     */
+    public function testPropertyCompanyPrefectureCode()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -116,99 +287,27 @@ class InvoiceCreateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "company_id"
+     * Test attribute "payment_type"
      */
-    public function testPropertyCompanyId()
+    public function testPropertyPaymentType()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "company_name"
+     * Test attribute "payment_bank_info"
      */
-    public function testPropertyCompanyName()
+    public function testPropertyPaymentBankInfo()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "company_prefecture_code"
+     * Test attribute "use_virtual_transfer_account"
      */
-    public function testPropertyCompanyPrefectureCode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "company_zipcode"
-     */
-    public function testPropertyCompanyZipcode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "due_date"
-     */
-    public function testPropertyDueDate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "invoice_contents"
-     */
-    public function testPropertyInvoiceContents()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "invoice_layout"
-     */
-    public function testPropertyInvoiceLayout()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "invoice_number"
-     */
-    public function testPropertyInvoiceNumber()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "invoice_status"
-     */
-    public function testPropertyInvoiceStatus()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "issue_date"
-     */
-    public function testPropertyIssueDate()
+    public function testPropertyUseVirtualTransferAccount()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -233,99 +332,9 @@ class InvoiceCreateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "partner_address1"
+     * Test attribute "invoice_layout"
      */
-    public function testPropertyPartnerAddress1()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partner_address2"
-     */
-    public function testPropertyPartnerAddress2()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partner_code"
-     */
-    public function testPropertyPartnerCode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partner_contact_info"
-     */
-    public function testPropertyPartnerContactInfo()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partner_display_name"
-     */
-    public function testPropertyPartnerDisplayName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partner_id"
-     */
-    public function testPropertyPartnerId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partner_prefecture_code"
-     */
-    public function testPropertyPartnerPrefectureCode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partner_title"
-     */
-    public function testPropertyPartnerTitle()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partner_zipcode"
-     */
-    public function testPropertyPartnerZipcode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "payment_bank_info"
-     */
-    public function testPropertyPaymentBankInfo()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "payment_type"
-     */
-    public function testPropertyPaymentType()
+    public function testPropertyInvoiceLayout()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -341,18 +350,9 @@ class InvoiceCreateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "title"
+     * Test attribute "invoice_contents"
      */
-    public function testPropertyTitle()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "use_virtual_transfer_account"
-     */
-    public function testPropertyUseVirtualTransferAccount()
+    public function testPropertyInvoiceContents()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

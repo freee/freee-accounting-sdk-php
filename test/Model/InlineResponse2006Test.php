@@ -80,9 +80,9 @@ class InlineResponse2006Test extends TestCase
     }
 
     /**
-     * Test attribute "sections"
+     * Test attribute "items"
      */
-    public function testPropertySections()
+    public function testPropertyItems()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

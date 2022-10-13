@@ -59,26 +59,26 @@ class PaymentRequestsIndexResponsePaymentRequests implements ModelInterface, Arr
       * @var string[]
       */
     protected static $openAPITypes = [
-        'applicant_id' => 'int',
-        'application_date' => 'string',
-        'application_number' => 'string',
-        'approvers' => '\Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovers[]',
+        'id' => 'int',
         'company_id' => 'int',
-        'current_round' => 'int',
-        'current_step_id' => 'int',
+        'title' => 'string',
+        'application_date' => 'string',
+        'total_amount' => 'int',
+        'status' => 'string',
         'deal_id' => 'int',
         'deal_status' => 'string',
+        'applicant_id' => 'int',
+        'approvers' => '\Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplicationApprovers[]',
+        'application_number' => 'string',
+        'current_step_id' => 'int',
+        'current_round' => 'int',
         'document_code' => 'string',
-        'id' => 'int',
         'issue_date' => 'string',
-        'partner_code' => 'string',
-        'partner_id' => 'int',
-        'partner_name' => 'string',
         'payment_date' => 'string',
         'payment_method' => 'string',
-        'status' => 'string',
-        'title' => 'string',
-        'total_amount' => 'int'
+        'partner_id' => 'int',
+        'partner_code' => 'string',
+        'partner_name' => 'string'
     ];
 
     /**
@@ -89,26 +89,26 @@ class PaymentRequestsIndexResponsePaymentRequests implements ModelInterface, Arr
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'applicant_id' => null,
-        'application_date' => null,
-        'application_number' => null,
-        'approvers' => null,
+        'id' => null,
         'company_id' => null,
-        'current_round' => null,
-        'current_step_id' => null,
+        'title' => null,
+        'application_date' => null,
+        'total_amount' => 'int64',
+        'status' => null,
         'deal_id' => null,
         'deal_status' => null,
+        'applicant_id' => null,
+        'approvers' => null,
+        'application_number' => null,
+        'current_step_id' => null,
+        'current_round' => null,
         'document_code' => null,
-        'id' => null,
         'issue_date' => null,
-        'partner_code' => null,
-        'partner_id' => null,
-        'partner_name' => null,
         'payment_date' => null,
         'payment_method' => null,
-        'status' => null,
-        'title' => null,
-        'total_amount' => 'int64'
+        'partner_id' => null,
+        'partner_code' => null,
+        'partner_name' => null
     ];
 
     /**
@@ -138,26 +138,26 @@ class PaymentRequestsIndexResponsePaymentRequests implements ModelInterface, Arr
      * @var string[]
      */
     protected static $attributeMap = [
-        'applicant_id' => 'applicant_id',
-        'application_date' => 'application_date',
-        'application_number' => 'application_number',
-        'approvers' => 'approvers',
+        'id' => 'id',
         'company_id' => 'company_id',
-        'current_round' => 'current_round',
-        'current_step_id' => 'current_step_id',
+        'title' => 'title',
+        'application_date' => 'application_date',
+        'total_amount' => 'total_amount',
+        'status' => 'status',
         'deal_id' => 'deal_id',
         'deal_status' => 'deal_status',
+        'applicant_id' => 'applicant_id',
+        'approvers' => 'approvers',
+        'application_number' => 'application_number',
+        'current_step_id' => 'current_step_id',
+        'current_round' => 'current_round',
         'document_code' => 'document_code',
-        'id' => 'id',
         'issue_date' => 'issue_date',
-        'partner_code' => 'partner_code',
-        'partner_id' => 'partner_id',
-        'partner_name' => 'partner_name',
         'payment_date' => 'payment_date',
         'payment_method' => 'payment_method',
-        'status' => 'status',
-        'title' => 'title',
-        'total_amount' => 'total_amount'
+        'partner_id' => 'partner_id',
+        'partner_code' => 'partner_code',
+        'partner_name' => 'partner_name'
     ];
 
     /**
@@ -166,26 +166,26 @@ class PaymentRequestsIndexResponsePaymentRequests implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-        'applicant_id' => 'setApplicantId',
-        'application_date' => 'setApplicationDate',
-        'application_number' => 'setApplicationNumber',
-        'approvers' => 'setApprovers',
+        'id' => 'setId',
         'company_id' => 'setCompanyId',
-        'current_round' => 'setCurrentRound',
-        'current_step_id' => 'setCurrentStepId',
+        'title' => 'setTitle',
+        'application_date' => 'setApplicationDate',
+        'total_amount' => 'setTotalAmount',
+        'status' => 'setStatus',
         'deal_id' => 'setDealId',
         'deal_status' => 'setDealStatus',
+        'applicant_id' => 'setApplicantId',
+        'approvers' => 'setApprovers',
+        'application_number' => 'setApplicationNumber',
+        'current_step_id' => 'setCurrentStepId',
+        'current_round' => 'setCurrentRound',
         'document_code' => 'setDocumentCode',
-        'id' => 'setId',
         'issue_date' => 'setIssueDate',
-        'partner_code' => 'setPartnerCode',
-        'partner_id' => 'setPartnerId',
-        'partner_name' => 'setPartnerName',
         'payment_date' => 'setPaymentDate',
         'payment_method' => 'setPaymentMethod',
-        'status' => 'setStatus',
-        'title' => 'setTitle',
-        'total_amount' => 'setTotalAmount'
+        'partner_id' => 'setPartnerId',
+        'partner_code' => 'setPartnerCode',
+        'partner_name' => 'setPartnerName'
     ];
 
     /**
@@ -194,26 +194,26 @@ class PaymentRequestsIndexResponsePaymentRequests implements ModelInterface, Arr
      * @var string[]
      */
     protected static $getters = [
-        'applicant_id' => 'getApplicantId',
-        'application_date' => 'getApplicationDate',
-        'application_number' => 'getApplicationNumber',
-        'approvers' => 'getApprovers',
+        'id' => 'getId',
         'company_id' => 'getCompanyId',
-        'current_round' => 'getCurrentRound',
-        'current_step_id' => 'getCurrentStepId',
+        'title' => 'getTitle',
+        'application_date' => 'getApplicationDate',
+        'total_amount' => 'getTotalAmount',
+        'status' => 'getStatus',
         'deal_id' => 'getDealId',
         'deal_status' => 'getDealStatus',
+        'applicant_id' => 'getApplicantId',
+        'approvers' => 'getApprovers',
+        'application_number' => 'getApplicationNumber',
+        'current_step_id' => 'getCurrentStepId',
+        'current_round' => 'getCurrentRound',
         'document_code' => 'getDocumentCode',
-        'id' => 'getId',
         'issue_date' => 'getIssueDate',
-        'partner_code' => 'getPartnerCode',
-        'partner_id' => 'getPartnerId',
-        'partner_name' => 'getPartnerName',
         'payment_date' => 'getPaymentDate',
         'payment_method' => 'getPaymentMethod',
-        'status' => 'getStatus',
-        'title' => 'getTitle',
-        'total_amount' => 'getTotalAmount'
+        'partner_id' => 'getPartnerId',
+        'partner_code' => 'getPartnerCode',
+        'partner_name' => 'getPartnerName'
     ];
 
     /**
@@ -257,6 +257,11 @@ class PaymentRequestsIndexResponsePaymentRequests implements ModelInterface, Arr
         return self::$openAPIModelName;
     }
 
+    const STATUS_DRAFT = 'draft';
+    const STATUS_IN_PROGRESS = 'in_progress';
+    const STATUS_APPROVED = 'approved';
+    const STATUS_REJECTED = 'rejected';
+    const STATUS_FEEDBACK = 'feedback';
     const DEAL_STATUS_SETTLED = 'settled';
     const DEAL_STATUS_UNSETTLED = 'unsettled';
     const PAYMENT_METHOD_NONE = 'none';
@@ -264,11 +269,22 @@ class PaymentRequestsIndexResponsePaymentRequests implements ModelInterface, Arr
     const PAYMENT_METHOD_ABROAD_BANK_TRANSFER = 'abroad_bank_transfer';
     const PAYMENT_METHOD_ACCOUNT_TRANSFER = 'account_transfer';
     const PAYMENT_METHOD_CREDIT_CARD = 'credit_card';
-    const STATUS_DRAFT = 'draft';
-    const STATUS_IN_PROGRESS = 'in_progress';
-    const STATUS_APPROVED = 'approved';
-    const STATUS_REJECTED = 'rejected';
-    const STATUS_FEEDBACK = 'feedback';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getStatusAllowableValues()
+    {
+        return [
+            self::STATUS_DRAFT,
+            self::STATUS_IN_PROGRESS,
+            self::STATUS_APPROVED,
+            self::STATUS_REJECTED,
+            self::STATUS_FEEDBACK,
+        ];
+    }
 
     /**
      * Gets allowable values of the enum
@@ -300,22 +316,6 @@ class PaymentRequestsIndexResponsePaymentRequests implements ModelInterface, Arr
     }
 
     /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getStatusAllowableValues()
-    {
-        return [
-            self::STATUS_DRAFT,
-            self::STATUS_IN_PROGRESS,
-            self::STATUS_APPROVED,
-            self::STATUS_REJECTED,
-            self::STATUS_FEEDBACK,
-        ];
-    }
-
-    /**
      * Associative array for storing property values
      *
      * @var mixed[]
@@ -330,26 +330,26 @@ class PaymentRequestsIndexResponsePaymentRequests implements ModelInterface, Arr
      */
     public function __construct(array $data = null)
     {
-        $this->container['applicant_id'] = $data['applicant_id'] ?? null;
-        $this->container['application_date'] = $data['application_date'] ?? null;
-        $this->container['application_number'] = $data['application_number'] ?? null;
-        $this->container['approvers'] = $data['approvers'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['company_id'] = $data['company_id'] ?? null;
-        $this->container['current_round'] = $data['current_round'] ?? null;
-        $this->container['current_step_id'] = $data['current_step_id'] ?? null;
+        $this->container['title'] = $data['title'] ?? null;
+        $this->container['application_date'] = $data['application_date'] ?? null;
+        $this->container['total_amount'] = $data['total_amount'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
         $this->container['deal_id'] = $data['deal_id'] ?? null;
         $this->container['deal_status'] = $data['deal_status'] ?? null;
+        $this->container['applicant_id'] = $data['applicant_id'] ?? null;
+        $this->container['approvers'] = $data['approvers'] ?? null;
+        $this->container['application_number'] = $data['application_number'] ?? null;
+        $this->container['current_step_id'] = $data['current_step_id'] ?? null;
+        $this->container['current_round'] = $data['current_round'] ?? null;
         $this->container['document_code'] = $data['document_code'] ?? null;
-        $this->container['id'] = $data['id'] ?? null;
         $this->container['issue_date'] = $data['issue_date'] ?? null;
-        $this->container['partner_code'] = $data['partner_code'] ?? null;
-        $this->container['partner_id'] = $data['partner_id'] ?? null;
-        $this->container['partner_name'] = $data['partner_name'] ?? null;
         $this->container['payment_date'] = $data['payment_date'] ?? null;
         $this->container['payment_method'] = $data['payment_method'] ?? null;
-        $this->container['status'] = $data['status'] ?? null;
-        $this->container['title'] = $data['title'] ?? null;
-        $this->container['total_amount'] = $data['total_amount'] ?? null;
+        $this->container['partner_id'] = $data['partner_id'] ?? null;
+        $this->container['partner_code'] = $data['partner_code'] ?? null;
+        $this->container['partner_name'] = $data['partner_name'] ?? null;
     }
 
     /**
@@ -361,26 +361,17 @@ class PaymentRequestsIndexResponsePaymentRequests implements ModelInterface, Arr
     {
         $invalidProperties = [];
 
-        if ($this->container['applicant_id'] === null) {
-            $invalidProperties[] = "'applicant_id' can't be null";
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
         }
-        if (($this->container['applicant_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'applicant_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['applicant_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'applicant_id', must be bigger than or equal to 1.";
+        if (($this->container['id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 2147483647.";
         }
 
-        if ($this->container['application_date'] === null) {
-            $invalidProperties[] = "'application_date' can't be null";
+        if (($this->container['id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
         }
-        if ($this->container['application_number'] === null) {
-            $invalidProperties[] = "'application_number' can't be null";
-        }
-        if ($this->container['approvers'] === null) {
-            $invalidProperties[] = "'approvers' can't be null";
-        }
+
         if ($this->container['company_id'] === null) {
             $invalidProperties[] = "'company_id' can't be null";
         }
@@ -392,26 +383,25 @@ class PaymentRequestsIndexResponsePaymentRequests implements ModelInterface, Arr
             $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['current_round'] === null) {
-            $invalidProperties[] = "'current_round' can't be null";
+        if ($this->container['title'] === null) {
+            $invalidProperties[] = "'title' can't be null";
         }
-        if (($this->container['current_round'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'current_round', must be smaller than or equal to 2147483647.";
+        if ($this->container['application_date'] === null) {
+            $invalidProperties[] = "'application_date' can't be null";
         }
-
-        if (($this->container['current_round'] < 0)) {
-            $invalidProperties[] = "invalid value for 'current_round', must be bigger than or equal to 0.";
+        if ($this->container['total_amount'] === null) {
+            $invalidProperties[] = "'total_amount' can't be null";
         }
-
-        if ($this->container['current_step_id'] === null) {
-            $invalidProperties[] = "'current_step_id' can't be null";
+        if ($this->container['status'] === null) {
+            $invalidProperties[] = "'status' can't be null";
         }
-        if (($this->container['current_step_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'current_step_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['current_step_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'current_step_id', must be bigger than or equal to 1.";
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'status', must be one of '%s'",
+                $this->container['status'],
+                implode("', '", $allowedValues)
+            );
         }
 
         if (!is_null($this->container['deal_id']) && ($this->container['deal_id'] > 2147483647)) {
@@ -431,39 +421,50 @@ class PaymentRequestsIndexResponsePaymentRequests implements ModelInterface, Arr
             );
         }
 
+        if ($this->container['applicant_id'] === null) {
+            $invalidProperties[] = "'applicant_id' can't be null";
+        }
+        if (($this->container['applicant_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'applicant_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['applicant_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'applicant_id', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['approvers'] === null) {
+            $invalidProperties[] = "'approvers' can't be null";
+        }
+        if ($this->container['application_number'] === null) {
+            $invalidProperties[] = "'application_number' can't be null";
+        }
+        if ($this->container['current_step_id'] === null) {
+            $invalidProperties[] = "'current_step_id' can't be null";
+        }
+        if (($this->container['current_step_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'current_step_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['current_step_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'current_step_id', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['current_round'] === null) {
+            $invalidProperties[] = "'current_round' can't be null";
+        }
+        if (($this->container['current_round'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'current_round', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['current_round'] < 0)) {
+            $invalidProperties[] = "invalid value for 'current_round', must be bigger than or equal to 0.";
+        }
+
         if ($this->container['document_code'] === null) {
             $invalidProperties[] = "'document_code' can't be null";
         }
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if (($this->container['id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
-        }
-
         if ($this->container['issue_date'] === null) {
             $invalidProperties[] = "'issue_date' can't be null";
-        }
-        if ($this->container['partner_code'] === null) {
-            $invalidProperties[] = "'partner_code' can't be null";
-        }
-        if ($this->container['partner_id'] === null) {
-            $invalidProperties[] = "'partner_id' can't be null";
-        }
-        if (($this->container['partner_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'partner_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['partner_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'partner_id', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['partner_name'] === null) {
-            $invalidProperties[] = "'partner_name' can't be null";
         }
         if ($this->container['payment_date'] === null) {
             $invalidProperties[] = "'payment_date' can't be null";
@@ -480,23 +481,22 @@ class PaymentRequestsIndexResponsePaymentRequests implements ModelInterface, Arr
             );
         }
 
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
+        if ($this->container['partner_id'] === null) {
+            $invalidProperties[] = "'partner_id' can't be null";
         }
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'status', must be one of '%s'",
-                $this->container['status'],
-                implode("', '", $allowedValues)
-            );
+        if (($this->container['partner_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'partner_id', must be smaller than or equal to 2147483647.";
         }
 
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
+        if (($this->container['partner_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'partner_id', must be bigger than or equal to 1.";
         }
-        if ($this->container['total_amount'] === null) {
-            $invalidProperties[] = "'total_amount' can't be null";
+
+        if ($this->container['partner_code'] === null) {
+            $invalidProperties[] = "'partner_code' can't be null";
+        }
+        if ($this->container['partner_name'] === null) {
+            $invalidProperties[] = "'partner_name' can't be null";
         }
         return $invalidProperties;
     }
@@ -514,105 +514,33 @@ class PaymentRequestsIndexResponsePaymentRequests implements ModelInterface, Arr
 
 
     /**
-     * Gets applicant_id
+     * Gets id
      *
      * @return int
      */
-    public function getApplicantId()
+    public function getId()
     {
-        return $this->container['applicant_id'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets applicant_id
+     * Sets id
      *
-     * @param int $applicant_id 申請者のユーザーID
+     * @param int $id 支払依頼ID
      *
      * @return self
      */
-    public function setApplicantId($applicant_id)
+    public function setId($id)
     {
 
-        if (($applicant_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $applicant_id when calling PaymentRequestsIndexResponsePaymentRequests., must be smaller than or equal to 2147483647.');
+        if (($id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling PaymentRequestsIndexResponsePaymentRequests., must be smaller than or equal to 2147483647.');
         }
-        if (($applicant_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $applicant_id when calling PaymentRequestsIndexResponsePaymentRequests., must be bigger than or equal to 1.');
+        if (($id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling PaymentRequestsIndexResponsePaymentRequests., must be bigger than or equal to 1.');
         }
 
-        $this->container['applicant_id'] = $applicant_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets application_date
-     *
-     * @return string
-     */
-    public function getApplicationDate()
-    {
-        return $this->container['application_date'];
-    }
-
-    /**
-     * Sets application_date
-     *
-     * @param string $application_date 申請日 (yyyy-mm-dd)
-     *
-     * @return self
-     */
-    public function setApplicationDate($application_date)
-    {
-        $this->container['application_date'] = $application_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets application_number
-     *
-     * @return string
-     */
-    public function getApplicationNumber()
-    {
-        return $this->container['application_number'];
-    }
-
-    /**
-     * Sets application_number
-     *
-     * @param string $application_number 申請No.
-     *
-     * @return self
-     */
-    public function setApplicationNumber($application_number)
-    {
-        $this->container['application_number'] = $application_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets approvers
-     *
-     * @return \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovers[]
-     */
-    public function getApprovers()
-    {
-        return $this->container['approvers'];
-    }
-
-    /**
-     * Sets approvers
-     *
-     * @param \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovers[] $approvers 承認者（配列）   承認ステップのresource_typeがunspecified (指定なし)の場合はapproversはレスポンスに含まれません。   しかし、resource_typeがunspecifiedの承認ステップにおいて誰かが承認・却下・差し戻しのいずれかのアクションを取った後は、   approversはレスポンスに含まれるようになります。   その場合approversにはアクションを行ったステップのIDとアクションを行ったユーザーのIDが含まれます。
-     *
-     * @return self
-     */
-    public function setApprovers($approvers)
-    {
-        $this->container['approvers'] = $approvers;
+        $this->container['id'] = $id;
 
         return $this;
     }
@@ -650,65 +578,107 @@ class PaymentRequestsIndexResponsePaymentRequests implements ModelInterface, Arr
     }
 
     /**
-     * Gets current_round
+     * Gets title
      *
-     * @return int
+     * @return string
      */
-    public function getCurrentRound()
+    public function getTitle()
     {
-        return $this->container['current_round'];
+        return $this->container['title'];
     }
 
     /**
-     * Sets current_round
+     * Sets title
      *
-     * @param int $current_round 現在のround。差し戻し等により申請がstepの最初からやり直しになるとroundの値が増えます。
+     * @param string $title 申請タイトル
      *
      * @return self
      */
-    public function setCurrentRound($current_round)
+    public function setTitle($title)
     {
-
-        if (($current_round > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $current_round when calling PaymentRequestsIndexResponsePaymentRequests., must be smaller than or equal to 2147483647.');
-        }
-        if (($current_round < 0)) {
-            throw new \InvalidArgumentException('invalid value for $current_round when calling PaymentRequestsIndexResponsePaymentRequests., must be bigger than or equal to 0.');
-        }
-
-        $this->container['current_round'] = $current_round;
+        $this->container['title'] = $title;
 
         return $this;
     }
 
     /**
-     * Gets current_step_id
+     * Gets application_date
      *
-     * @return int
+     * @return string
      */
-    public function getCurrentStepId()
+    public function getApplicationDate()
     {
-        return $this->container['current_step_id'];
+        return $this->container['application_date'];
     }
 
     /**
-     * Sets current_step_id
+     * Sets application_date
      *
-     * @param int $current_step_id 現在承認ステップID
+     * @param string $application_date 申請日 (yyyy-mm-dd)
      *
      * @return self
      */
-    public function setCurrentStepId($current_step_id)
+    public function setApplicationDate($application_date)
     {
+        $this->container['application_date'] = $application_date;
 
-        if (($current_step_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $current_step_id when calling PaymentRequestsIndexResponsePaymentRequests., must be smaller than or equal to 2147483647.');
-        }
-        if (($current_step_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $current_step_id when calling PaymentRequestsIndexResponsePaymentRequests., must be bigger than or equal to 1.');
-        }
+        return $this;
+    }
 
-        $this->container['current_step_id'] = $current_step_id;
+    /**
+     * Gets total_amount
+     *
+     * @return int
+     */
+    public function getTotalAmount()
+    {
+        return $this->container['total_amount'];
+    }
+
+    /**
+     * Sets total_amount
+     *
+     * @param int $total_amount 合計金額
+     *
+     * @return self
+     */
+    public function setTotalAmount($total_amount)
+    {
+        $this->container['total_amount'] = $total_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string $status 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)
+     *
+     * @return self
+     */
+    public function setStatus($status)
+    {
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!in_array($status, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'status', must be one of '%s'",
+                    $status,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['status'] = $status;
 
         return $this;
     }
@@ -780,6 +750,150 @@ class PaymentRequestsIndexResponsePaymentRequests implements ModelInterface, Arr
     }
 
     /**
+     * Gets applicant_id
+     *
+     * @return int
+     */
+    public function getApplicantId()
+    {
+        return $this->container['applicant_id'];
+    }
+
+    /**
+     * Sets applicant_id
+     *
+     * @param int $applicant_id 申請者のユーザーID
+     *
+     * @return self
+     */
+    public function setApplicantId($applicant_id)
+    {
+
+        if (($applicant_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $applicant_id when calling PaymentRequestsIndexResponsePaymentRequests., must be smaller than or equal to 2147483647.');
+        }
+        if (($applicant_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $applicant_id when calling PaymentRequestsIndexResponsePaymentRequests., must be bigger than or equal to 1.');
+        }
+
+        $this->container['applicant_id'] = $applicant_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets approvers
+     *
+     * @return \Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplicationApprovers[]
+     */
+    public function getApprovers()
+    {
+        return $this->container['approvers'];
+    }
+
+    /**
+     * Sets approvers
+     *
+     * @param \Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplicationApprovers[] $approvers 承認者（配列）   承認ステップのresource_typeがunspecified (指定なし)の場合はapproversはレスポンスに含まれません。   しかし、resource_typeがunspecifiedの承認ステップにおいて誰かが承認・却下・差し戻しのいずれかのアクションを取った後は、   approversはレスポンスに含まれるようになります。   その場合approversにはアクションを行ったステップのIDとアクションを行ったユーザーのIDが含まれます。
+     *
+     * @return self
+     */
+    public function setApprovers($approvers)
+    {
+        $this->container['approvers'] = $approvers;
+
+        return $this;
+    }
+
+    /**
+     * Gets application_number
+     *
+     * @return string
+     */
+    public function getApplicationNumber()
+    {
+        return $this->container['application_number'];
+    }
+
+    /**
+     * Sets application_number
+     *
+     * @param string $application_number 申請No.
+     *
+     * @return self
+     */
+    public function setApplicationNumber($application_number)
+    {
+        $this->container['application_number'] = $application_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets current_step_id
+     *
+     * @return int
+     */
+    public function getCurrentStepId()
+    {
+        return $this->container['current_step_id'];
+    }
+
+    /**
+     * Sets current_step_id
+     *
+     * @param int $current_step_id 現在承認ステップID
+     *
+     * @return self
+     */
+    public function setCurrentStepId($current_step_id)
+    {
+
+        if (($current_step_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $current_step_id when calling PaymentRequestsIndexResponsePaymentRequests., must be smaller than or equal to 2147483647.');
+        }
+        if (($current_step_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $current_step_id when calling PaymentRequestsIndexResponsePaymentRequests., must be bigger than or equal to 1.');
+        }
+
+        $this->container['current_step_id'] = $current_step_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets current_round
+     *
+     * @return int
+     */
+    public function getCurrentRound()
+    {
+        return $this->container['current_round'];
+    }
+
+    /**
+     * Sets current_round
+     *
+     * @param int $current_round 現在のround。差し戻し等により申請がstepの最初からやり直しになるとroundの値が増えます。
+     *
+     * @return self
+     */
+    public function setCurrentRound($current_round)
+    {
+
+        if (($current_round > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $current_round when calling PaymentRequestsIndexResponsePaymentRequests., must be smaller than or equal to 2147483647.');
+        }
+        if (($current_round < 0)) {
+            throw new \InvalidArgumentException('invalid value for $current_round when calling PaymentRequestsIndexResponsePaymentRequests., must be bigger than or equal to 0.');
+        }
+
+        $this->container['current_round'] = $current_round;
+
+        return $this;
+    }
+
+    /**
      * Gets document_code
      *
      * @return string
@@ -804,38 +918,6 @@ class PaymentRequestsIndexResponsePaymentRequests implements ModelInterface, Arr
     }
 
     /**
-     * Gets id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int $id 支払依頼ID
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-
-        if (($id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling PaymentRequestsIndexResponsePaymentRequests., must be smaller than or equal to 2147483647.');
-        }
-        if (($id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling PaymentRequestsIndexResponsePaymentRequests., must be bigger than or equal to 1.');
-        }
-
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
      * Gets issue_date
      *
      * @return string
@@ -855,86 +937,6 @@ class PaymentRequestsIndexResponsePaymentRequests implements ModelInterface, Arr
     public function setIssueDate($issue_date)
     {
         $this->container['issue_date'] = $issue_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets partner_code
-     *
-     * @return string
-     */
-    public function getPartnerCode()
-    {
-        return $this->container['partner_code'];
-    }
-
-    /**
-     * Sets partner_code
-     *
-     * @param string $partner_code 取引先コード
-     *
-     * @return self
-     */
-    public function setPartnerCode($partner_code)
-    {
-        $this->container['partner_code'] = $partner_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets partner_id
-     *
-     * @return int
-     */
-    public function getPartnerId()
-    {
-        return $this->container['partner_id'];
-    }
-
-    /**
-     * Sets partner_id
-     *
-     * @param int $partner_id 取引先ID
-     *
-     * @return self
-     */
-    public function setPartnerId($partner_id)
-    {
-
-        if (($partner_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $partner_id when calling PaymentRequestsIndexResponsePaymentRequests., must be smaller than or equal to 2147483647.');
-        }
-        if (($partner_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $partner_id when calling PaymentRequestsIndexResponsePaymentRequests., must be bigger than or equal to 1.');
-        }
-
-        $this->container['partner_id'] = $partner_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets partner_name
-     *
-     * @return string
-     */
-    public function getPartnerName()
-    {
-        return $this->container['partner_name'];
-    }
-
-    /**
-     * Sets partner_name
-     *
-     * @param string $partner_name 取引先名
-     *
-     * @return self
-     */
-    public function setPartnerName($partner_name)
-    {
-        $this->container['partner_name'] = $partner_name;
 
         return $this;
     }
@@ -998,83 +1000,81 @@ class PaymentRequestsIndexResponsePaymentRequests implements ModelInterface, Arr
     }
 
     /**
-     * Gets status
-     *
-     * @return string
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     *
-     * @param string $status 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)
-     *
-     * @return self
-     */
-    public function setStatus($status)
-    {
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!in_array($status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'status', must be one of '%s'",
-                    $status,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets title
-     *
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->container['title'];
-    }
-
-    /**
-     * Sets title
-     *
-     * @param string $title 申請タイトル
-     *
-     * @return self
-     */
-    public function setTitle($title)
-    {
-        $this->container['title'] = $title;
-
-        return $this;
-    }
-
-    /**
-     * Gets total_amount
+     * Gets partner_id
      *
      * @return int
      */
-    public function getTotalAmount()
+    public function getPartnerId()
     {
-        return $this->container['total_amount'];
+        return $this->container['partner_id'];
     }
 
     /**
-     * Sets total_amount
+     * Sets partner_id
      *
-     * @param int $total_amount 合計金額
+     * @param int $partner_id 取引先ID
      *
      * @return self
      */
-    public function setTotalAmount($total_amount)
+    public function setPartnerId($partner_id)
     {
-        $this->container['total_amount'] = $total_amount;
+
+        if (($partner_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $partner_id when calling PaymentRequestsIndexResponsePaymentRequests., must be smaller than or equal to 2147483647.');
+        }
+        if (($partner_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $partner_id when calling PaymentRequestsIndexResponsePaymentRequests., must be bigger than or equal to 1.');
+        }
+
+        $this->container['partner_id'] = $partner_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets partner_code
+     *
+     * @return string
+     */
+    public function getPartnerCode()
+    {
+        return $this->container['partner_code'];
+    }
+
+    /**
+     * Sets partner_code
+     *
+     * @param string $partner_code 取引先コード
+     *
+     * @return self
+     */
+    public function setPartnerCode($partner_code)
+    {
+        $this->container['partner_code'] = $partner_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets partner_name
+     *
+     * @return string
+     */
+    public function getPartnerName()
+    {
+        return $this->container['partner_name'];
+    }
+
+    /**
+     * Sets partner_name
+     *
+     * @param string $partner_name 取引先名
+     *
+     * @return self
+     */
+    public function setPartnerName($partner_name)
+    {
+        $this->container['partner_name'] = $partner_name;
 
         return $this;
     }

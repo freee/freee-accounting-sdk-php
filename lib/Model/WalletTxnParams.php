@@ -59,14 +59,14 @@ class WalletTxnParams implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'amount' => 'int',
-        'balance' => 'int',
-        'company_id' => 'int',
-        'date' => 'string',
-        'description' => 'string',
         'entry_side' => 'string',
+        'description' => 'string',
+        'amount' => 'int',
         'walletable_id' => 'int',
-        'walletable_type' => 'string'
+        'walletable_type' => 'string',
+        'date' => 'string',
+        'company_id' => 'int',
+        'balance' => 'int'
     ];
 
     /**
@@ -77,14 +77,14 @@ class WalletTxnParams implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'amount' => 'int64',
-        'balance' => 'int64',
-        'company_id' => null,
-        'date' => null,
-        'description' => null,
         'entry_side' => null,
+        'description' => null,
+        'amount' => 'int64',
         'walletable_id' => null,
-        'walletable_type' => null
+        'walletable_type' => null,
+        'date' => null,
+        'company_id' => null,
+        'balance' => 'int64'
     ];
 
     /**
@@ -114,14 +114,14 @@ class WalletTxnParams implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'amount' => 'amount',
-        'balance' => 'balance',
-        'company_id' => 'company_id',
-        'date' => 'date',
-        'description' => 'description',
         'entry_side' => 'entry_side',
+        'description' => 'description',
+        'amount' => 'amount',
         'walletable_id' => 'walletable_id',
-        'walletable_type' => 'walletable_type'
+        'walletable_type' => 'walletable_type',
+        'date' => 'date',
+        'company_id' => 'company_id',
+        'balance' => 'balance'
     ];
 
     /**
@@ -130,14 +130,14 @@ class WalletTxnParams implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'amount' => 'setAmount',
-        'balance' => 'setBalance',
-        'company_id' => 'setCompanyId',
-        'date' => 'setDate',
-        'description' => 'setDescription',
         'entry_side' => 'setEntrySide',
+        'description' => 'setDescription',
+        'amount' => 'setAmount',
         'walletable_id' => 'setWalletableId',
-        'walletable_type' => 'setWalletableType'
+        'walletable_type' => 'setWalletableType',
+        'date' => 'setDate',
+        'company_id' => 'setCompanyId',
+        'balance' => 'setBalance'
     ];
 
     /**
@@ -146,14 +146,14 @@ class WalletTxnParams implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'amount' => 'getAmount',
-        'balance' => 'getBalance',
-        'company_id' => 'getCompanyId',
-        'date' => 'getDate',
-        'description' => 'getDescription',
         'entry_side' => 'getEntrySide',
+        'description' => 'getDescription',
+        'amount' => 'getAmount',
         'walletable_id' => 'getWalletableId',
-        'walletable_type' => 'getWalletableType'
+        'walletable_type' => 'getWalletableType',
+        'date' => 'getDate',
+        'company_id' => 'getCompanyId',
+        'balance' => 'getBalance'
     ];
 
     /**
@@ -245,14 +245,14 @@ class WalletTxnParams implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['amount'] = $data['amount'] ?? null;
-        $this->container['balance'] = $data['balance'] ?? null;
-        $this->container['company_id'] = $data['company_id'] ?? null;
-        $this->container['date'] = $data['date'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
         $this->container['entry_side'] = $data['entry_side'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
+        $this->container['amount'] = $data['amount'] ?? null;
         $this->container['walletable_id'] = $data['walletable_id'] ?? null;
         $this->container['walletable_type'] = $data['walletable_type'] ?? null;
+        $this->container['date'] = $data['date'] ?? null;
+        $this->container['company_id'] = $data['company_id'] ?? null;
+        $this->container['balance'] = $data['balance'] ?? null;
     }
 
     /**
@@ -264,39 +264,6 @@ class WalletTxnParams implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['amount'] === null) {
-            $invalidProperties[] = "'amount' can't be null";
-        }
-        if (($this->container['amount'] > 9223372036854775807)) {
-            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 9223372036854775807.";
-        }
-
-        if (($this->container['amount'] < -9223372036854775808)) {
-            $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to -9223372036854775808.";
-        }
-
-        if (!is_null($this->container['balance']) && ($this->container['balance'] > 9223372036854775807)) {
-            $invalidProperties[] = "invalid value for 'balance', must be smaller than or equal to 9223372036854775807.";
-        }
-
-        if (!is_null($this->container['balance']) && ($this->container['balance'] < -9223372036854775808)) {
-            $invalidProperties[] = "invalid value for 'balance', must be bigger than or equal to -9223372036854775808.";
-        }
-
-        if ($this->container['company_id'] === null) {
-            $invalidProperties[] = "'company_id' can't be null";
-        }
-        if (($this->container['company_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['company_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['date'] === null) {
-            $invalidProperties[] = "'date' can't be null";
-        }
         if ($this->container['entry_side'] === null) {
             $invalidProperties[] = "'entry_side' can't be null";
         }
@@ -307,6 +274,17 @@ class WalletTxnParams implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->container['entry_side'],
                 implode("', '", $allowedValues)
             );
+        }
+
+        if ($this->container['amount'] === null) {
+            $invalidProperties[] = "'amount' can't be null";
+        }
+        if (($this->container['amount'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 9223372036854775807.";
+        }
+
+        if (($this->container['amount'] < -9223372036854775808)) {
+            $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to -9223372036854775808.";
         }
 
         if ($this->container['walletable_id'] === null) {
@@ -332,6 +310,28 @@ class WalletTxnParams implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
 
+        if ($this->container['date'] === null) {
+            $invalidProperties[] = "'date' can't be null";
+        }
+        if ($this->container['company_id'] === null) {
+            $invalidProperties[] = "'company_id' can't be null";
+        }
+        if (($this->container['company_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['company_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['balance']) && ($this->container['balance'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'balance', must be smaller than or equal to 9223372036854775807.";
+        }
+
+        if (!is_null($this->container['balance']) && ($this->container['balance'] < -9223372036854775808)) {
+            $invalidProperties[] = "invalid value for 'balance', must be bigger than or equal to -9223372036854775808.";
+        }
+
         return $invalidProperties;
     }
 
@@ -346,150 +346,6 @@ class WalletTxnParams implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets amount
-     *
-     * @return int
-     */
-    public function getAmount()
-    {
-        return $this->container['amount'];
-    }
-
-    /**
-     * Sets amount
-     *
-     * @param int $amount 取引金額
-     *
-     * @return self
-     */
-    public function setAmount($amount)
-    {
-
-        if (($amount > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling WalletTxnParams., must be smaller than or equal to 9223372036854775807.');
-        }
-        if (($amount < -9223372036854775808)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling WalletTxnParams., must be bigger than or equal to -9223372036854775808.');
-        }
-
-        $this->container['amount'] = $amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets balance
-     *
-     * @return int|null
-     */
-    public function getBalance()
-    {
-        return $this->container['balance'];
-    }
-
-    /**
-     * Sets balance
-     *
-     * @param int|null $balance 残高 (銀行口座等)
-     *
-     * @return self
-     */
-    public function setBalance($balance)
-    {
-
-        if (!is_null($balance) && ($balance > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $balance when calling WalletTxnParams., must be smaller than or equal to 9223372036854775807.');
-        }
-        if (!is_null($balance) && ($balance < -9223372036854775808)) {
-            throw new \InvalidArgumentException('invalid value for $balance when calling WalletTxnParams., must be bigger than or equal to -9223372036854775808.');
-        }
-
-        $this->container['balance'] = $balance;
-
-        return $this;
-    }
-
-    /**
-     * Gets company_id
-     *
-     * @return int
-     */
-    public function getCompanyId()
-    {
-        return $this->container['company_id'];
-    }
-
-    /**
-     * Sets company_id
-     *
-     * @param int $company_id 事業所ID
-     *
-     * @return self
-     */
-    public function setCompanyId($company_id)
-    {
-
-        if (($company_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling WalletTxnParams., must be smaller than or equal to 2147483647.');
-        }
-        if (($company_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling WalletTxnParams., must be bigger than or equal to 1.');
-        }
-
-        $this->container['company_id'] = $company_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets date
-     *
-     * @return string
-     */
-    public function getDate()
-    {
-        return $this->container['date'];
-    }
-
-    /**
-     * Sets date
-     *
-     * @param string $date 取引日 (yyyy-mm-dd)
-     *
-     * @return self
-     */
-    public function setDate($date)
-    {
-        $this->container['date'] = $date;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string|null
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string|null $description 取引内容
-     *
-     * @return self
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
-
-        return $this;
-    }
 
     /**
      * Gets entry_side
@@ -521,6 +377,62 @@ class WalletTxnParams implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
         $this->container['entry_side'] = $entry_side;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string|null $description 取引内容
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount
+     *
+     * @return int
+     */
+    public function getAmount()
+    {
+        return $this->container['amount'];
+    }
+
+    /**
+     * Sets amount
+     *
+     * @param int $amount 取引金額
+     *
+     * @return self
+     */
+    public function setAmount($amount)
+    {
+
+        if (($amount > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling WalletTxnParams., must be smaller than or equal to 9223372036854775807.');
+        }
+        if (($amount < -9223372036854775808)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling WalletTxnParams., must be bigger than or equal to -9223372036854775808.');
+        }
+
+        $this->container['amount'] = $amount;
 
         return $this;
     }
@@ -587,6 +499,94 @@ class WalletTxnParams implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
         $this->container['walletable_type'] = $walletable_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets date
+     *
+     * @return string
+     */
+    public function getDate()
+    {
+        return $this->container['date'];
+    }
+
+    /**
+     * Sets date
+     *
+     * @param string $date 取引日 (yyyy-mm-dd)
+     *
+     * @return self
+     */
+    public function setDate($date)
+    {
+        $this->container['date'] = $date;
+
+        return $this;
+    }
+
+    /**
+     * Gets company_id
+     *
+     * @return int
+     */
+    public function getCompanyId()
+    {
+        return $this->container['company_id'];
+    }
+
+    /**
+     * Sets company_id
+     *
+     * @param int $company_id 事業所ID
+     *
+     * @return self
+     */
+    public function setCompanyId($company_id)
+    {
+
+        if (($company_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $company_id when calling WalletTxnParams., must be smaller than or equal to 2147483647.');
+        }
+        if (($company_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $company_id when calling WalletTxnParams., must be bigger than or equal to 1.');
+        }
+
+        $this->container['company_id'] = $company_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets balance
+     *
+     * @return int|null
+     */
+    public function getBalance()
+    {
+        return $this->container['balance'];
+    }
+
+    /**
+     * Sets balance
+     *
+     * @param int|null $balance 残高 (銀行口座等)
+     *
+     * @return self
+     */
+    public function setBalance($balance)
+    {
+
+        if (!is_null($balance) && ($balance > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $balance when calling WalletTxnParams., must be smaller than or equal to 9223372036854775807.');
+        }
+        if (!is_null($balance) && ($balance < -9223372036854775808)) {
+            throw new \InvalidArgumentException('invalid value for $balance when calling WalletTxnParams., must be bigger than or equal to -9223372036854775808.');
+        }
+
+        $this->container['balance'] = $balance;
 
         return $this;
     }

@@ -80,42 +80,6 @@ class PartnerCreateParamsPartnerBankAccountAttributesTest extends TestCase
     }
 
     /**
-     * Test attribute "account_name"
-     */
-    public function testPropertyAccountName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "account_number"
-     */
-    public function testPropertyAccountNumber()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "account_type"
-     */
-    public function testPropertyAccountType()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bank_code"
-     */
-    public function testPropertyBankCode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "bank_name"
      */
     public function testPropertyBankName()
@@ -134,18 +98,9 @@ class PartnerCreateParamsPartnerBankAccountAttributesTest extends TestCase
     }
 
     /**
-     * Test attribute "branch_code"
+     * Test attribute "bank_code"
      */
-    public function testPropertyBranchCode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "branch_kana"
-     */
-    public function testPropertyBranchKana()
+    public function testPropertyBankCode()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -161,9 +116,54 @@ class PartnerCreateParamsPartnerBankAccountAttributesTest extends TestCase
     }
 
     /**
+     * Test attribute "branch_kana"
+     */
+    public function testPropertyBranchKana()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "branch_code"
+     */
+    public function testPropertyBranchCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "account_type"
+     */
+    public function testPropertyAccountType()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "account_number"
+     */
+    public function testPropertyAccountNumber()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "long_account_name"
      */
     public function testPropertyLongAccountName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "account_name"
+     */
+    public function testPropertyAccountName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

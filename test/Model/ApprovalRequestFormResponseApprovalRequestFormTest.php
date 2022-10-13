@@ -80,6 +80,15 @@ class ApprovalRequestFormResponseApprovalRequestFormTest extends TestCase
     }
 
     /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "company_id"
      */
     public function testPropertyCompanyId()
@@ -89,9 +98,9 @@ class ApprovalRequestFormResponseApprovalRequestFormTest extends TestCase
     }
 
     /**
-     * Test attribute "created_date"
+     * Test attribute "name"
      */
-    public function testPropertyCreatedDate()
+    public function testPropertyName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -107,27 +116,27 @@ class ApprovalRequestFormResponseApprovalRequestFormTest extends TestCase
     }
 
     /**
+     * Test attribute "status"
+     */
+    public function testPropertyStatus()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "created_date"
+     */
+    public function testPropertyCreatedDate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "form_order"
      */
     public function testPropertyFormOrder()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "name"
-     */
-    public function testPropertyName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -146,15 +155,6 @@ class ApprovalRequestFormResponseApprovalRequestFormTest extends TestCase
      * Test attribute "route_setting_count"
      */
     public function testPropertyRouteSettingCount()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "status"
-     */
-    public function testPropertyStatus()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

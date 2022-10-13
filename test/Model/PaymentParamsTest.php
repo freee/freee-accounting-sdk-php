@@ -80,15 +80,6 @@ class PaymentParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "amount"
-     */
-    public function testPropertyAmount()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "company_id"
      */
     public function testPropertyCompanyId()
@@ -107,6 +98,15 @@ class PaymentParamsTest extends TestCase
     }
 
     /**
+     * Test attribute "from_walletable_type"
+     */
+    public function testPropertyFromWalletableType()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "from_walletable_id"
      */
     public function testPropertyFromWalletableId()
@@ -116,9 +116,9 @@ class PaymentParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "from_walletable_type"
+     * Test attribute "amount"
      */
-    public function testPropertyFromWalletableType()
+    public function testPropertyAmount()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

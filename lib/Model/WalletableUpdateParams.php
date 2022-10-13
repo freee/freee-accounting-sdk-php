@@ -59,8 +59,8 @@ class WalletableUpdateParams implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'company_id' => 'int',
-        'name' => 'string'
+        'name' => 'string',
+        'company_id' => 'int'
     ];
 
     /**
@@ -71,8 +71,8 @@ class WalletableUpdateParams implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'company_id' => null,
-        'name' => null
+        'name' => null,
+        'company_id' => null
     ];
 
     /**
@@ -102,8 +102,8 @@ class WalletableUpdateParams implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'company_id' => 'company_id',
-        'name' => 'name'
+        'name' => 'name',
+        'company_id' => 'company_id'
     ];
 
     /**
@@ -112,8 +112,8 @@ class WalletableUpdateParams implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'company_id' => 'setCompanyId',
-        'name' => 'setName'
+        'name' => 'setName',
+        'company_id' => 'setCompanyId'
     ];
 
     /**
@@ -122,8 +122,8 @@ class WalletableUpdateParams implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'company_id' => 'getCompanyId',
-        'name' => 'getName'
+        'name' => 'getName',
+        'company_id' => 'getCompanyId'
     ];
 
     /**
@@ -183,8 +183,8 @@ class WalletableUpdateParams implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
-        $this->container['company_id'] = $data['company_id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['company_id'] = $data['company_id'] ?? null;
     }
 
     /**
@@ -196,6 +196,13 @@ class WalletableUpdateParams implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ((mb_strlen($this->container['name']) > 255)) {
+            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 255.";
+        }
+
         if ($this->container['company_id'] === null) {
             $invalidProperties[] = "'company_id' can't be null";
         }
@@ -205,13 +212,6 @@ class WalletableUpdateParams implements ModelInterface, ArrayAccess, \JsonSerial
 
         if (($this->container['company_id'] < 1)) {
             $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ((mb_strlen($this->container['name']) > 255)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 255.";
         }
 
         return $invalidProperties;
@@ -228,6 +228,34 @@ class WalletableUpdateParams implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name 口座名 (255文字以内)
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        if ((mb_strlen($name) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling WalletableUpdateParams., must be smaller than or equal to 255.');
+        }
+
+        $this->container['name'] = $name;
+
+        return $this;
+    }
 
     /**
      * Gets company_id
@@ -257,34 +285,6 @@ class WalletableUpdateParams implements ModelInterface, ArrayAccess, \JsonSerial
         }
 
         $this->container['company_id'] = $company_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name 口座名 (255文字以内)
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        if ((mb_strlen($name) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling WalletableUpdateParams., must be smaller than or equal to 255.');
-        }
-
-        $this->container['name'] = $name;
 
         return $this;
     }

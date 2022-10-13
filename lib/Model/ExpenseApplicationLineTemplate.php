@@ -59,15 +59,15 @@ class ExpenseApplicationLineTemplate implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
+        'id' => 'int',
+        'name' => 'string',
         'account_item_id' => 'int',
         'account_item_name' => 'string',
-        'description' => 'string',
-        'id' => 'int',
-        'line_description' => 'string',
-        'name' => 'string',
-        'required_receipt' => 'bool',
         'tax_code' => 'int',
-        'tax_name' => 'string'
+        'tax_name' => 'string',
+        'description' => 'string',
+        'line_description' => 'string',
+        'required_receipt' => 'bool'
     ];
 
     /**
@@ -78,15 +78,15 @@ class ExpenseApplicationLineTemplate implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'id' => null,
+        'name' => null,
         'account_item_id' => null,
         'account_item_name' => null,
-        'description' => null,
-        'id' => null,
-        'line_description' => null,
-        'name' => null,
-        'required_receipt' => null,
         'tax_code' => null,
-        'tax_name' => null
+        'tax_name' => null,
+        'description' => null,
+        'line_description' => null,
+        'required_receipt' => null
     ];
 
     /**
@@ -116,15 +116,15 @@ class ExpenseApplicationLineTemplate implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
+        'name' => 'name',
         'account_item_id' => 'account_item_id',
         'account_item_name' => 'account_item_name',
-        'description' => 'description',
-        'id' => 'id',
-        'line_description' => 'line_description',
-        'name' => 'name',
-        'required_receipt' => 'required_receipt',
         'tax_code' => 'tax_code',
-        'tax_name' => 'tax_name'
+        'tax_name' => 'tax_name',
+        'description' => 'description',
+        'line_description' => 'line_description',
+        'required_receipt' => 'required_receipt'
     ];
 
     /**
@@ -133,15 +133,15 @@ class ExpenseApplicationLineTemplate implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
+        'name' => 'setName',
         'account_item_id' => 'setAccountItemId',
         'account_item_name' => 'setAccountItemName',
-        'description' => 'setDescription',
-        'id' => 'setId',
-        'line_description' => 'setLineDescription',
-        'name' => 'setName',
-        'required_receipt' => 'setRequiredReceipt',
         'tax_code' => 'setTaxCode',
-        'tax_name' => 'setTaxName'
+        'tax_name' => 'setTaxName',
+        'description' => 'setDescription',
+        'line_description' => 'setLineDescription',
+        'required_receipt' => 'setRequiredReceipt'
     ];
 
     /**
@@ -150,15 +150,15 @@ class ExpenseApplicationLineTemplate implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
+        'name' => 'getName',
         'account_item_id' => 'getAccountItemId',
         'account_item_name' => 'getAccountItemName',
-        'description' => 'getDescription',
-        'id' => 'getId',
-        'line_description' => 'getLineDescription',
-        'name' => 'getName',
-        'required_receipt' => 'getRequiredReceipt',
         'tax_code' => 'getTaxCode',
-        'tax_name' => 'getTaxName'
+        'tax_name' => 'getTaxName',
+        'description' => 'getDescription',
+        'line_description' => 'getLineDescription',
+        'required_receipt' => 'getRequiredReceipt'
     ];
 
     /**
@@ -218,15 +218,15 @@ class ExpenseApplicationLineTemplate implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
         $this->container['account_item_id'] = $data['account_item_id'] ?? null;
         $this->container['account_item_name'] = $data['account_item_name'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['line_description'] = $data['line_description'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['required_receipt'] = $data['required_receipt'] ?? null;
         $this->container['tax_code'] = $data['tax_code'] ?? null;
         $this->container['tax_name'] = $data['tax_name'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
+        $this->container['line_description'] = $data['line_description'] ?? null;
+        $this->container['required_receipt'] = $data['required_receipt'] ?? null;
     }
 
     /**
@@ -238,13 +238,6 @@ class ExpenseApplicationLineTemplate implements ModelInterface, ArrayAccess, \Js
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['account_item_id']) && ($this->container['account_item_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'account_item_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if ($this->container['account_item_name'] === null) {
-            $invalidProperties[] = "'account_item_name' can't be null";
-        }
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
@@ -258,6 +251,13 @@ class ExpenseApplicationLineTemplate implements ModelInterface, ArrayAccess, \Js
 
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
+        }
+        if (!is_null($this->container['account_item_id']) && ($this->container['account_item_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'account_item_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if ($this->container['account_item_name'] === null) {
+            $invalidProperties[] = "'account_item_name' can't be null";
         }
         if (!is_null($this->container['tax_code']) && ($this->container['tax_code'] > 2147483647)) {
             $invalidProperties[] = "invalid value for 'tax_code', must be smaller than or equal to 2147483647.";
@@ -284,6 +284,62 @@ class ExpenseApplicationLineTemplate implements ModelInterface, ArrayAccess, \Js
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int $id 経費科目ID
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+
+        if (($id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling ExpenseApplicationLineTemplate., must be smaller than or equal to 2147483647.');
+        }
+        if (($id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling ExpenseApplicationLineTemplate., must be bigger than or equal to 1.');
+        }
+
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name 経費科目名
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
 
     /**
      * Gets account_item_id
@@ -334,134 +390,6 @@ class ExpenseApplicationLineTemplate implements ModelInterface, ArrayAccess, \Js
     public function setAccountItemName($account_item_name)
     {
         $this->container['account_item_name'] = $account_item_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string|null
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string|null $description 経費科目の説明
-     *
-     * @return self
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int $id 経費科目ID
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-
-        if (($id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling ExpenseApplicationLineTemplate., must be smaller than or equal to 2147483647.');
-        }
-        if (($id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling ExpenseApplicationLineTemplate., must be bigger than or equal to 1.');
-        }
-
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets line_description
-     *
-     * @return string|null
-     */
-    public function getLineDescription()
-    {
-        return $this->container['line_description'];
-    }
-
-    /**
-     * Sets line_description
-     *
-     * @param string|null $line_description 内容の補足
-     *
-     * @return self
-     */
-    public function setLineDescription($line_description)
-    {
-        $this->container['line_description'] = $line_description;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name 経費科目名
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets required_receipt
-     *
-     * @return bool|null
-     */
-    public function getRequiredReceipt()
-    {
-        return $this->container['required_receipt'];
-    }
-
-    /**
-     * Sets required_receipt
-     *
-     * @param bool|null $required_receipt 添付ファイルの必須/任意
-     *
-     * @return self
-     */
-    public function setRequiredReceipt($required_receipt)
-    {
-        $this->container['required_receipt'] = $required_receipt;
 
         return $this;
     }
@@ -518,6 +446,78 @@ class ExpenseApplicationLineTemplate implements ModelInterface, ArrayAccess, \Js
     public function setTaxName($tax_name)
     {
         $this->container['tax_name'] = $tax_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string|null $description 経費科目の説明
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets line_description
+     *
+     * @return string|null
+     */
+    public function getLineDescription()
+    {
+        return $this->container['line_description'];
+    }
+
+    /**
+     * Sets line_description
+     *
+     * @param string|null $line_description 内容の補足
+     *
+     * @return self
+     */
+    public function setLineDescription($line_description)
+    {
+        $this->container['line_description'] = $line_description;
+
+        return $this;
+    }
+
+    /**
+     * Gets required_receipt
+     *
+     * @return bool|null
+     */
+    public function getRequiredReceipt()
+    {
+        return $this->container['required_receipt'];
+    }
+
+    /**
+     * Sets required_receipt
+     *
+     * @param bool|null $required_receipt 添付ファイルの必須/任意
+     *
+     * @return self
+     */
+    public function setRequiredReceipt($required_receipt)
+    {
+        $this->container['required_receipt'] = $required_receipt;
 
         return $this;
     }

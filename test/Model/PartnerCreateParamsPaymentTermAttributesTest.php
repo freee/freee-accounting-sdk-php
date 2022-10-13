@@ -80,18 +80,18 @@ class PartnerCreateParamsPaymentTermAttributesTest extends TestCase
     }
 
     /**
-     * Test attribute "additional_months"
+     * Test attribute "cutoff_day"
      */
-    public function testPropertyAdditionalMonths()
+    public function testPropertyCutoffDay()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "cutoff_day"
+     * Test attribute "additional_months"
      */
-    public function testPropertyCutoffDay()
+    public function testPropertyAdditionalMonths()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

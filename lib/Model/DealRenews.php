@@ -59,11 +59,11 @@ class DealRenews implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'details' => '\Freee\Accounting\Model\DealDetails1[]',
         'id' => 'int',
+        'update_date' => 'string',
         'renew_target_id' => 'int',
         'renew_target_type' => 'string',
-        'update_date' => 'string'
+        'details' => '\Freee\Accounting\Model\DealDetails[]'
     ];
 
     /**
@@ -74,11 +74,11 @@ class DealRenews implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'details' => null,
         'id' => 'int64',
+        'update_date' => null,
         'renew_target_id' => 'int64',
         'renew_target_type' => null,
-        'update_date' => null
+        'details' => null
     ];
 
     /**
@@ -108,11 +108,11 @@ class DealRenews implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'details' => 'details',
         'id' => 'id',
+        'update_date' => 'update_date',
         'renew_target_id' => 'renew_target_id',
         'renew_target_type' => 'renew_target_type',
-        'update_date' => 'update_date'
+        'details' => 'details'
     ];
 
     /**
@@ -121,11 +121,11 @@ class DealRenews implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'details' => 'setDetails',
         'id' => 'setId',
+        'update_date' => 'setUpdateDate',
         'renew_target_id' => 'setRenewTargetId',
         'renew_target_type' => 'setRenewTargetType',
-        'update_date' => 'setUpdateDate'
+        'details' => 'setDetails'
     ];
 
     /**
@@ -134,11 +134,11 @@ class DealRenews implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'details' => 'getDetails',
         'id' => 'getId',
+        'update_date' => 'getUpdateDate',
         'renew_target_id' => 'getRenewTargetId',
         'renew_target_type' => 'getRenewTargetType',
-        'update_date' => 'getUpdateDate'
+        'details' => 'getDetails'
     ];
 
     /**
@@ -215,11 +215,11 @@ class DealRenews implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['details'] = $data['details'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
+        $this->container['update_date'] = $data['update_date'] ?? null;
         $this->container['renew_target_id'] = $data['renew_target_id'] ?? null;
         $this->container['renew_target_type'] = $data['renew_target_type'] ?? null;
-        $this->container['update_date'] = $data['update_date'] ?? null;
+        $this->container['details'] = $data['details'] ?? null;
     }
 
     /**
@@ -231,9 +231,6 @@ class DealRenews implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['details'] === null) {
-            $invalidProperties[] = "'details' can't be null";
-        }
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
@@ -245,6 +242,9 @@ class DealRenews implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
         }
 
+        if ($this->container['update_date'] === null) {
+            $invalidProperties[] = "'update_date' can't be null";
+        }
         if ($this->container['renew_target_id'] === null) {
             $invalidProperties[] = "'renew_target_id' can't be null";
         }
@@ -268,8 +268,8 @@ class DealRenews implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
 
-        if ($this->container['update_date'] === null) {
-            $invalidProperties[] = "'update_date' can't be null";
+        if ($this->container['details'] === null) {
+            $invalidProperties[] = "'details' can't be null";
         }
         return $invalidProperties;
     }
@@ -285,30 +285,6 @@ class DealRenews implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets details
-     *
-     * @return \Freee\Accounting\Model\DealDetails1[]
-     */
-    public function getDetails()
-    {
-        return $this->container['details'];
-    }
-
-    /**
-     * Sets details
-     *
-     * @param \Freee\Accounting\Model\DealDetails1[] $details +更新の明細行一覧（配列）
-     *
-     * @return self
-     */
-    public function setDetails($details)
-    {
-        $this->container['details'] = $details;
-
-        return $this;
-    }
 
     /**
      * Gets id
@@ -338,6 +314,30 @@ class DealRenews implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets update_date
+     *
+     * @return string
+     */
+    public function getUpdateDate()
+    {
+        return $this->container['update_date'];
+    }
+
+    /**
+     * Sets update_date
+     *
+     * @param string $update_date 更新日 (yyyy-mm-dd)
+     *
+     * @return self
+     */
+    public function setUpdateDate($update_date)
+    {
+        $this->container['update_date'] = $update_date;
 
         return $this;
     }
@@ -409,25 +409,25 @@ class DealRenews implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets update_date
+     * Gets details
      *
-     * @return string
+     * @return \Freee\Accounting\Model\DealDetails[]
      */
-    public function getUpdateDate()
+    public function getDetails()
     {
-        return $this->container['update_date'];
+        return $this->container['details'];
     }
 
     /**
-     * Sets update_date
+     * Sets details
      *
-     * @param string $update_date 更新日 (yyyy-mm-dd)
+     * @param \Freee\Accounting\Model\DealDetails[] $details +更新の明細行一覧（配列）
      *
      * @return self
      */
-    public function setUpdateDate($update_date)
+    public function setDetails($details)
     {
-        $this->container['update_date'] = $update_date;
+        $this->container['details'] = $details;
 
         return $this;
     }

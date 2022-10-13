@@ -1,3 +1,8 @@
+## yml to json
+リリース日時 2022-10-13 11:35:31  
+対象差分  
+https://github.com/freee/freee-api-schema/releases/tag/
+
 ## 2.14.0
 リリース日時 2022-09-15 12:56:34  
 対象差分  

@@ -59,11 +59,11 @@ class TrialBsThreeYearsResponseTrialBsThreeYearsSegment1Tags implements ModelInt
       * @var string[]
       */
     protected static $openAPITypes = [
-        'closing_balance' => 'int',
         'id' => 'int',
-        'last_year_closing_balance' => 'int',
         'name' => 'string',
         'two_years_before_closing_balance' => 'int',
+        'last_year_closing_balance' => 'int',
+        'closing_balance' => 'int',
         'year_on_year' => 'float'
     ];
 
@@ -75,11 +75,11 @@ class TrialBsThreeYearsResponseTrialBsThreeYearsSegment1Tags implements ModelInt
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'closing_balance' => null,
         'id' => null,
-        'last_year_closing_balance' => null,
         'name' => null,
         'two_years_before_closing_balance' => null,
+        'last_year_closing_balance' => null,
+        'closing_balance' => null,
         'year_on_year' => null
     ];
 
@@ -110,11 +110,11 @@ class TrialBsThreeYearsResponseTrialBsThreeYearsSegment1Tags implements ModelInt
      * @var string[]
      */
     protected static $attributeMap = [
-        'closing_balance' => 'closing_balance',
         'id' => 'id',
-        'last_year_closing_balance' => 'last_year_closing_balance',
         'name' => 'name',
         'two_years_before_closing_balance' => 'two_years_before_closing_balance',
+        'last_year_closing_balance' => 'last_year_closing_balance',
+        'closing_balance' => 'closing_balance',
         'year_on_year' => 'year_on_year'
     ];
 
@@ -124,11 +124,11 @@ class TrialBsThreeYearsResponseTrialBsThreeYearsSegment1Tags implements ModelInt
      * @var string[]
      */
     protected static $setters = [
-        'closing_balance' => 'setClosingBalance',
         'id' => 'setId',
-        'last_year_closing_balance' => 'setLastYearClosingBalance',
         'name' => 'setName',
         'two_years_before_closing_balance' => 'setTwoYearsBeforeClosingBalance',
+        'last_year_closing_balance' => 'setLastYearClosingBalance',
+        'closing_balance' => 'setClosingBalance',
         'year_on_year' => 'setYearOnYear'
     ];
 
@@ -138,11 +138,11 @@ class TrialBsThreeYearsResponseTrialBsThreeYearsSegment1Tags implements ModelInt
      * @var string[]
      */
     protected static $getters = [
-        'closing_balance' => 'getClosingBalance',
         'id' => 'getId',
-        'last_year_closing_balance' => 'getLastYearClosingBalance',
         'name' => 'getName',
         'two_years_before_closing_balance' => 'getTwoYearsBeforeClosingBalance',
+        'last_year_closing_balance' => 'getLastYearClosingBalance',
+        'closing_balance' => 'getClosingBalance',
         'year_on_year' => 'getYearOnYear'
     ];
 
@@ -203,11 +203,11 @@ class TrialBsThreeYearsResponseTrialBsThreeYearsSegment1Tags implements ModelInt
      */
     public function __construct(array $data = null)
     {
-        $this->container['closing_balance'] = $data['closing_balance'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['last_year_closing_balance'] = $data['last_year_closing_balance'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['two_years_before_closing_balance'] = $data['two_years_before_closing_balance'] ?? null;
+        $this->container['last_year_closing_balance'] = $data['last_year_closing_balance'] ?? null;
+        $this->container['closing_balance'] = $data['closing_balance'] ?? null;
         $this->container['year_on_year'] = $data['year_on_year'] ?? null;
     }
 
@@ -247,30 +247,6 @@ class TrialBsThreeYearsResponseTrialBsThreeYearsSegment1Tags implements ModelInt
 
 
     /**
-     * Gets closing_balance
-     *
-     * @return int|null
-     */
-    public function getClosingBalance()
-    {
-        return $this->container['closing_balance'];
-    }
-
-    /**
-     * Sets closing_balance
-     *
-     * @param int|null $closing_balance 期末残高
-     *
-     * @return self
-     */
-    public function setClosingBalance($closing_balance)
-    {
-        $this->container['closing_balance'] = $closing_balance;
-
-        return $this;
-    }
-
-    /**
      * Gets id
      *
      * @return int
@@ -298,30 +274,6 @@ class TrialBsThreeYearsResponseTrialBsThreeYearsSegment1Tags implements ModelInt
         }
 
         $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets last_year_closing_balance
-     *
-     * @return int|null
-     */
-    public function getLastYearClosingBalance()
-    {
-        return $this->container['last_year_closing_balance'];
-    }
-
-    /**
-     * Sets last_year_closing_balance
-     *
-     * @param int|null $last_year_closing_balance 前年度期末残高
-     *
-     * @return self
-     */
-    public function setLastYearClosingBalance($last_year_closing_balance)
-    {
-        $this->container['last_year_closing_balance'] = $last_year_closing_balance;
 
         return $this;
     }
@@ -370,6 +322,54 @@ class TrialBsThreeYearsResponseTrialBsThreeYearsSegment1Tags implements ModelInt
     public function setTwoYearsBeforeClosingBalance($two_years_before_closing_balance)
     {
         $this->container['two_years_before_closing_balance'] = $two_years_before_closing_balance;
+
+        return $this;
+    }
+
+    /**
+     * Gets last_year_closing_balance
+     *
+     * @return int|null
+     */
+    public function getLastYearClosingBalance()
+    {
+        return $this->container['last_year_closing_balance'];
+    }
+
+    /**
+     * Sets last_year_closing_balance
+     *
+     * @param int|null $last_year_closing_balance 前年度期末残高
+     *
+     * @return self
+     */
+    public function setLastYearClosingBalance($last_year_closing_balance)
+    {
+        $this->container['last_year_closing_balance'] = $last_year_closing_balance;
+
+        return $this;
+    }
+
+    /**
+     * Gets closing_balance
+     *
+     * @return int|null
+     */
+    public function getClosingBalance()
+    {
+        return $this->container['closing_balance'];
+    }
+
+    /**
+     * Sets closing_balance
+     *
+     * @param int|null $closing_balance 期末残高
+     *
+     * @return self
+     */
+    public function setClosingBalance($closing_balance)
+    {
+        $this->container['closing_balance'] = $closing_balance;
 
         return $this;
     }

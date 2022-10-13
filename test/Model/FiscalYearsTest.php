@@ -80,18 +80,9 @@ class FiscalYearsTest extends TestCase
     }
 
     /**
-     * Test attribute "depreciation_record_method"
+     * Test attribute "use_industry_template"
      */
-    public function testPropertyDepreciationRecordMethod()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "end_date"
-     */
-    public function testPropertyEndDate()
+    public function testPropertyUseIndustryTemplate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -107,24 +98,6 @@ class FiscalYearsTest extends TestCase
     }
 
     /**
-     * Test attribute "return_code"
-     */
-    public function testPropertyReturnCode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sales_tax_business_code"
-     */
-    public function testPropertySalesTaxBusinessCode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "start_date"
      */
     public function testPropertyStartDate()
@@ -134,18 +107,18 @@ class FiscalYearsTest extends TestCase
     }
 
     /**
-     * Test attribute "tax_account_method"
+     * Test attribute "end_date"
      */
-    public function testPropertyTaxAccountMethod()
+    public function testPropertyEndDate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "tax_fraction"
+     * Test attribute "depreciation_record_method"
      */
-    public function testPropertyTaxFraction()
+    public function testPropertyDepreciationRecordMethod()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -161,9 +134,36 @@ class FiscalYearsTest extends TestCase
     }
 
     /**
-     * Test attribute "use_industry_template"
+     * Test attribute "sales_tax_business_code"
      */
-    public function testPropertyUseIndustryTemplate()
+    public function testPropertySalesTaxBusinessCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tax_fraction"
+     */
+    public function testPropertyTaxFraction()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tax_account_method"
+     */
+    public function testPropertyTaxAccountMethod()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "return_code"
+     */
+    public function testPropertyReturnCode()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

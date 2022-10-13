@@ -59,8 +59,8 @@ class PartnerCreateParamsInvoicePaymentTermAttributes implements ModelInterface,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'additional_months' => 'int',
         'cutoff_day' => 'int',
+        'additional_months' => 'int',
         'fixed_day' => 'int'
     ];
 
@@ -72,8 +72,8 @@ class PartnerCreateParamsInvoicePaymentTermAttributes implements ModelInterface,
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'additional_months' => null,
         'cutoff_day' => null,
+        'additional_months' => null,
         'fixed_day' => null
     ];
 
@@ -104,8 +104,8 @@ class PartnerCreateParamsInvoicePaymentTermAttributes implements ModelInterface,
      * @var string[]
      */
     protected static $attributeMap = [
-        'additional_months' => 'additional_months',
         'cutoff_day' => 'cutoff_day',
+        'additional_months' => 'additional_months',
         'fixed_day' => 'fixed_day'
     ];
 
@@ -115,8 +115,8 @@ class PartnerCreateParamsInvoicePaymentTermAttributes implements ModelInterface,
      * @var string[]
      */
     protected static $setters = [
-        'additional_months' => 'setAdditionalMonths',
         'cutoff_day' => 'setCutoffDay',
+        'additional_months' => 'setAdditionalMonths',
         'fixed_day' => 'setFixedDay'
     ];
 
@@ -126,8 +126,8 @@ class PartnerCreateParamsInvoicePaymentTermAttributes implements ModelInterface,
      * @var string[]
      */
     protected static $getters = [
-        'additional_months' => 'getAdditionalMonths',
         'cutoff_day' => 'getCutoffDay',
+        'additional_months' => 'getAdditionalMonths',
         'fixed_day' => 'getFixedDay'
     ];
 
@@ -188,8 +188,8 @@ class PartnerCreateParamsInvoicePaymentTermAttributes implements ModelInterface,
      */
     public function __construct(array $data = null)
     {
-        $this->container['additional_months'] = $data['additional_months'] ?? null;
         $this->container['cutoff_day'] = $data['cutoff_day'] ?? null;
+        $this->container['additional_months'] = $data['additional_months'] ?? null;
         $this->container['fixed_day'] = $data['fixed_day'] ?? null;
     }
 
@@ -202,20 +202,20 @@ class PartnerCreateParamsInvoicePaymentTermAttributes implements ModelInterface,
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['additional_months']) && ($this->container['additional_months'] > 6)) {
-            $invalidProperties[] = "invalid value for 'additional_months', must be smaller than or equal to 6.";
-        }
-
-        if (!is_null($this->container['additional_months']) && ($this->container['additional_months'] < 1)) {
-            $invalidProperties[] = "invalid value for 'additional_months', must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['cutoff_day']) && ($this->container['cutoff_day'] > 32)) {
             $invalidProperties[] = "invalid value for 'cutoff_day', must be smaller than or equal to 32.";
         }
 
         if (!is_null($this->container['cutoff_day']) && ($this->container['cutoff_day'] < 1)) {
             $invalidProperties[] = "invalid value for 'cutoff_day', must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['additional_months']) && ($this->container['additional_months'] > 6)) {
+            $invalidProperties[] = "invalid value for 'additional_months', must be smaller than or equal to 6.";
+        }
+
+        if (!is_null($this->container['additional_months']) && ($this->container['additional_months'] < 1)) {
+            $invalidProperties[] = "invalid value for 'additional_months', must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['fixed_day']) && ($this->container['fixed_day'] > 32)) {
@@ -240,38 +240,6 @@ class PartnerCreateParamsInvoicePaymentTermAttributes implements ModelInterface,
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets additional_months
-     *
-     * @return int|null
-     */
-    public function getAdditionalMonths()
-    {
-        return $this->container['additional_months'];
-    }
-
-    /**
-     * Sets additional_months
-     *
-     * @param int|null $additional_months 入金月
-     *
-     * @return self
-     */
-    public function setAdditionalMonths($additional_months)
-    {
-
-        if (!is_null($additional_months) && ($additional_months > 6)) {
-            throw new \InvalidArgumentException('invalid value for $additional_months when calling PartnerCreateParamsInvoicePaymentTermAttributes., must be smaller than or equal to 6.');
-        }
-        if (!is_null($additional_months) && ($additional_months < 1)) {
-            throw new \InvalidArgumentException('invalid value for $additional_months when calling PartnerCreateParamsInvoicePaymentTermAttributes., must be bigger than or equal to 1.');
-        }
-
-        $this->container['additional_months'] = $additional_months;
-
-        return $this;
-    }
 
     /**
      * Gets cutoff_day
@@ -301,6 +269,38 @@ class PartnerCreateParamsInvoicePaymentTermAttributes implements ModelInterface,
         }
 
         $this->container['cutoff_day'] = $cutoff_day;
+
+        return $this;
+    }
+
+    /**
+     * Gets additional_months
+     *
+     * @return int|null
+     */
+    public function getAdditionalMonths()
+    {
+        return $this->container['additional_months'];
+    }
+
+    /**
+     * Sets additional_months
+     *
+     * @param int|null $additional_months 入金月
+     *
+     * @return self
+     */
+    public function setAdditionalMonths($additional_months)
+    {
+
+        if (!is_null($additional_months) && ($additional_months > 6)) {
+            throw new \InvalidArgumentException('invalid value for $additional_months when calling PartnerCreateParamsInvoicePaymentTermAttributes., must be smaller than or equal to 6.');
+        }
+        if (!is_null($additional_months) && ($additional_months < 1)) {
+            throw new \InvalidArgumentException('invalid value for $additional_months when calling PartnerCreateParamsInvoicePaymentTermAttributes., must be bigger than or equal to 1.');
+        }
+
+        $this->container['additional_months'] = $additional_months;
 
         return $this;
     }

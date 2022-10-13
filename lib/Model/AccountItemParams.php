@@ -59,8 +59,8 @@ class AccountItemParams implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'account_item' => '\Freee\Accounting\Model\AccountItemParamsAccountItem',
-        'company_id' => 'int'
+        'company_id' => 'int',
+        'account_item' => '\Freee\Accounting\Model\AccountItemParamsAccountItem'
     ];
 
     /**
@@ -71,8 +71,8 @@ class AccountItemParams implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'account_item' => null,
-        'company_id' => null
+        'company_id' => null,
+        'account_item' => null
     ];
 
     /**
@@ -102,8 +102,8 @@ class AccountItemParams implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $attributeMap = [
-        'account_item' => 'account_item',
-        'company_id' => 'company_id'
+        'company_id' => 'company_id',
+        'account_item' => 'account_item'
     ];
 
     /**
@@ -112,8 +112,8 @@ class AccountItemParams implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'account_item' => 'setAccountItem',
-        'company_id' => 'setCompanyId'
+        'company_id' => 'setCompanyId',
+        'account_item' => 'setAccountItem'
     ];
 
     /**
@@ -122,8 +122,8 @@ class AccountItemParams implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
-        'account_item' => 'getAccountItem',
-        'company_id' => 'getCompanyId'
+        'company_id' => 'getCompanyId',
+        'account_item' => 'getAccountItem'
     ];
 
     /**
@@ -183,8 +183,8 @@ class AccountItemParams implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function __construct(array $data = null)
     {
-        $this->container['account_item'] = $data['account_item'] ?? null;
         $this->container['company_id'] = $data['company_id'] ?? null;
+        $this->container['account_item'] = $data['account_item'] ?? null;
     }
 
     /**
@@ -196,9 +196,6 @@ class AccountItemParams implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $invalidProperties = [];
 
-        if ($this->container['account_item'] === null) {
-            $invalidProperties[] = "'account_item' can't be null";
-        }
         if ($this->container['company_id'] === null) {
             $invalidProperties[] = "'company_id' can't be null";
         }
@@ -210,6 +207,9 @@ class AccountItemParams implements ModelInterface, ArrayAccess, \JsonSerializabl
             $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
         }
 
+        if ($this->container['account_item'] === null) {
+            $invalidProperties[] = "'account_item' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -224,30 +224,6 @@ class AccountItemParams implements ModelInterface, ArrayAccess, \JsonSerializabl
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets account_item
-     *
-     * @return \Freee\Accounting\Model\AccountItemParamsAccountItem
-     */
-    public function getAccountItem()
-    {
-        return $this->container['account_item'];
-    }
-
-    /**
-     * Sets account_item
-     *
-     * @param \Freee\Accounting\Model\AccountItemParamsAccountItem $account_item account_item
-     *
-     * @return self
-     */
-    public function setAccountItem($account_item)
-    {
-        $this->container['account_item'] = $account_item;
-
-        return $this;
-    }
 
     /**
      * Gets company_id
@@ -277,6 +253,30 @@ class AccountItemParams implements ModelInterface, ArrayAccess, \JsonSerializabl
         }
 
         $this->container['company_id'] = $company_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets account_item
+     *
+     * @return \Freee\Accounting\Model\AccountItemParamsAccountItem
+     */
+    public function getAccountItem()
+    {
+        return $this->container['account_item'];
+    }
+
+    /**
+     * Sets account_item
+     *
+     * @param \Freee\Accounting\Model\AccountItemParamsAccountItem $account_item account_item
+     *
+     * @return self
+     */
+    public function setAccountItem($account_item)
+    {
+        $this->container['account_item'] = $account_item;
 
         return $this;
     }

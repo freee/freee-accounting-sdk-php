@@ -59,10 +59,10 @@ class ManualJournalCreateParams implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'adjustment' => 'bool',
         'company_id' => 'int',
-        'details' => '\Freee\Accounting\Model\ManualJournalCreateParamsDetails[]',
         'issue_date' => 'string',
+        'adjustment' => 'bool',
+        'details' => '\Freee\Accounting\Model\ManualJournalCreateParamsDetails[]',
         'receipt_ids' => 'int[]'
     ];
 
@@ -74,10 +74,10 @@ class ManualJournalCreateParams implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'adjustment' => null,
         'company_id' => null,
-        'details' => null,
         'issue_date' => null,
+        'adjustment' => null,
+        'details' => null,
         'receipt_ids' => null
     ];
 
@@ -108,10 +108,10 @@ class ManualJournalCreateParams implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'adjustment' => 'adjustment',
         'company_id' => 'company_id',
-        'details' => 'details',
         'issue_date' => 'issue_date',
+        'adjustment' => 'adjustment',
+        'details' => 'details',
         'receipt_ids' => 'receipt_ids'
     ];
 
@@ -121,10 +121,10 @@ class ManualJournalCreateParams implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'adjustment' => 'setAdjustment',
         'company_id' => 'setCompanyId',
-        'details' => 'setDetails',
         'issue_date' => 'setIssueDate',
+        'adjustment' => 'setAdjustment',
+        'details' => 'setDetails',
         'receipt_ids' => 'setReceiptIds'
     ];
 
@@ -134,10 +134,10 @@ class ManualJournalCreateParams implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'adjustment' => 'getAdjustment',
         'company_id' => 'getCompanyId',
-        'details' => 'getDetails',
         'issue_date' => 'getIssueDate',
+        'adjustment' => 'getAdjustment',
+        'details' => 'getDetails',
         'receipt_ids' => 'getReceiptIds'
     ];
 
@@ -198,10 +198,10 @@ class ManualJournalCreateParams implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(array $data = null)
     {
-        $this->container['adjustment'] = $data['adjustment'] ?? null;
         $this->container['company_id'] = $data['company_id'] ?? null;
-        $this->container['details'] = $data['details'] ?? null;
         $this->container['issue_date'] = $data['issue_date'] ?? null;
+        $this->container['adjustment'] = $data['adjustment'] ?? null;
+        $this->container['details'] = $data['details'] ?? null;
         $this->container['receipt_ids'] = $data['receipt_ids'] ?? null;
     }
 
@@ -225,11 +225,11 @@ class ManualJournalCreateParams implements ModelInterface, ArrayAccess, \JsonSer
             $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['details'] === null) {
-            $invalidProperties[] = "'details' can't be null";
-        }
         if ($this->container['issue_date'] === null) {
             $invalidProperties[] = "'issue_date' can't be null";
+        }
+        if ($this->container['details'] === null) {
+            $invalidProperties[] = "'details' can't be null";
         }
         return $invalidProperties;
     }
@@ -245,30 +245,6 @@ class ManualJournalCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets adjustment
-     *
-     * @return bool|null
-     */
-    public function getAdjustment()
-    {
-        return $this->container['adjustment'];
-    }
-
-    /**
-     * Sets adjustment
-     *
-     * @param bool|null $adjustment 決算整理仕訳フラグ（falseまたは未指定の場合: 日常仕訳）
-     *
-     * @return self
-     */
-    public function setAdjustment($adjustment)
-    {
-        $this->container['adjustment'] = $adjustment;
-
-        return $this;
-    }
 
     /**
      * Gets company_id
@@ -303,30 +279,6 @@ class ManualJournalCreateParams implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets details
-     *
-     * @return \Freee\Accounting\Model\ManualJournalCreateParamsDetails[]
-     */
-    public function getDetails()
-    {
-        return $this->container['details'];
-    }
-
-    /**
-     * Sets details
-     *
-     * @param \Freee\Accounting\Model\ManualJournalCreateParamsDetails[] $details details
-     *
-     * @return self
-     */
-    public function setDetails($details)
-    {
-        $this->container['details'] = $details;
-
-        return $this;
-    }
-
-    /**
      * Gets issue_date
      *
      * @return string
@@ -346,6 +298,54 @@ class ManualJournalCreateParams implements ModelInterface, ArrayAccess, \JsonSer
     public function setIssueDate($issue_date)
     {
         $this->container['issue_date'] = $issue_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets adjustment
+     *
+     * @return bool|null
+     */
+    public function getAdjustment()
+    {
+        return $this->container['adjustment'];
+    }
+
+    /**
+     * Sets adjustment
+     *
+     * @param bool|null $adjustment 決算整理仕訳フラグ（falseまたは未指定の場合: 日常仕訳）
+     *
+     * @return self
+     */
+    public function setAdjustment($adjustment)
+    {
+        $this->container['adjustment'] = $adjustment;
+
+        return $this;
+    }
+
+    /**
+     * Gets details
+     *
+     * @return \Freee\Accounting\Model\ManualJournalCreateParamsDetails[]
+     */
+    public function getDetails()
+    {
+        return $this->container['details'];
+    }
+
+    /**
+     * Sets details
+     *
+     * @param \Freee\Accounting\Model\ManualJournalCreateParamsDetails[] $details details
+     *
+     * @return self
+     */
+    public function setDetails($details)
+    {
+        $this->container['details'] = $details;
 
         return $this;
     }

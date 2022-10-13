@@ -59,10 +59,10 @@ class UserCapability implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'create' => 'bool',
-        'destroy' => 'bool',
         'read' => 'bool',
-        'update' => 'bool'
+        'create' => 'bool',
+        'update' => 'bool',
+        'destroy' => 'bool'
     ];
 
     /**
@@ -73,10 +73,10 @@ class UserCapability implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'create' => null,
-        'destroy' => null,
         'read' => null,
-        'update' => null
+        'create' => null,
+        'update' => null,
+        'destroy' => null
     ];
 
     /**
@@ -106,10 +106,10 @@ class UserCapability implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'create' => 'create',
-        'destroy' => 'destroy',
         'read' => 'read',
-        'update' => 'update'
+        'create' => 'create',
+        'update' => 'update',
+        'destroy' => 'destroy'
     ];
 
     /**
@@ -118,10 +118,10 @@ class UserCapability implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'create' => 'setCreate',
-        'destroy' => 'setDestroy',
         'read' => 'setRead',
-        'update' => 'setUpdate'
+        'create' => 'setCreate',
+        'update' => 'setUpdate',
+        'destroy' => 'setDestroy'
     ];
 
     /**
@@ -130,10 +130,10 @@ class UserCapability implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'create' => 'getCreate',
-        'destroy' => 'getDestroy',
         'read' => 'getRead',
-        'update' => 'getUpdate'
+        'create' => 'getCreate',
+        'update' => 'getUpdate',
+        'destroy' => 'getDestroy'
     ];
 
     /**
@@ -193,10 +193,10 @@ class UserCapability implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['create'] = $data['create'] ?? null;
-        $this->container['destroy'] = $data['destroy'] ?? null;
         $this->container['read'] = $data['read'] ?? null;
+        $this->container['create'] = $data['create'] ?? null;
         $this->container['update'] = $data['update'] ?? null;
+        $this->container['destroy'] = $data['destroy'] ?? null;
     }
 
     /**
@@ -224,54 +224,6 @@ class UserCapability implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets create
-     *
-     * @return bool|null
-     */
-    public function getCreate()
-    {
-        return $this->container['create'];
-    }
-
-    /**
-     * Sets create
-     *
-     * @param bool|null $create 作成
-     *
-     * @return self
-     */
-    public function setCreate($create)
-    {
-        $this->container['create'] = $create;
-
-        return $this;
-    }
-
-    /**
-     * Gets destroy
-     *
-     * @return bool|null
-     */
-    public function getDestroy()
-    {
-        return $this->container['destroy'];
-    }
-
-    /**
-     * Sets destroy
-     *
-     * @param bool|null $destroy 削除
-     *
-     * @return self
-     */
-    public function setDestroy($destroy)
-    {
-        $this->container['destroy'] = $destroy;
-
-        return $this;
-    }
-
-    /**
      * Gets read
      *
      * @return bool|null
@@ -296,6 +248,30 @@ class UserCapability implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets create
+     *
+     * @return bool|null
+     */
+    public function getCreate()
+    {
+        return $this->container['create'];
+    }
+
+    /**
+     * Sets create
+     *
+     * @param bool|null $create 作成
+     *
+     * @return self
+     */
+    public function setCreate($create)
+    {
+        $this->container['create'] = $create;
+
+        return $this;
+    }
+
+    /**
      * Gets update
      *
      * @return bool|null
@@ -315,6 +291,30 @@ class UserCapability implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setUpdate($update)
     {
         $this->container['update'] = $update;
+
+        return $this;
+    }
+
+    /**
+     * Gets destroy
+     *
+     * @return bool|null
+     */
+    public function getDestroy()
+    {
+        return $this->container['destroy'];
+    }
+
+    /**
+     * Sets destroy
+     *
+     * @param bool|null $destroy 削除
+     *
+     * @return self
+     */
+    public function setDestroy($destroy)
+    {
+        $this->container['destroy'] = $destroy;
 
         return $this;
     }

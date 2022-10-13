@@ -80,9 +80,9 @@ class InlineResponse2007Test extends TestCase
     }
 
     /**
-     * Test attribute "segment_tags"
+     * Test attribute "taxes"
      */
-    public function testPropertySegmentTags()
+    public function testPropertyTaxes()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

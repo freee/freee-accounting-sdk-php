@@ -80,9 +80,18 @@ class ExpenseApplicationsIndexResponseExpenseApplicationLinesTest extends TestCa
     }
 
     /**
-     * Test attribute "amount"
+     * Test attribute "id"
      */
-    public function testPropertyAmount()
+    public function testPropertyId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "transaction_date"
+     */
+    public function testPropertyTransactionDate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -98,6 +107,15 @@ class ExpenseApplicationsIndexResponseExpenseApplicationLinesTest extends TestCa
     }
 
     /**
+     * Test attribute "amount"
+     */
+    public function testPropertyAmount()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "expense_application_line_template_id"
      */
     public function testPropertyExpenseApplicationLineTemplateId()
@@ -107,27 +125,9 @@ class ExpenseApplicationsIndexResponseExpenseApplicationLinesTest extends TestCa
     }
 
     /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "receipt_id"
      */
     public function testPropertyReceiptId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "transaction_date"
-     */
-    public function testPropertyTransactionDate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -59,11 +59,11 @@ class ApprovalRequestActionCreateParams implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'approval_action' => 'string',
         'company_id' => 'int',
-        'next_approver_id' => 'int',
+        'approval_action' => 'string',
+        'target_step_id' => 'int',
         'target_round' => 'int',
-        'target_step_id' => 'int'
+        'next_approver_id' => 'int'
     ];
 
     /**
@@ -74,11 +74,11 @@ class ApprovalRequestActionCreateParams implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'approval_action' => null,
         'company_id' => null,
-        'next_approver_id' => null,
+        'approval_action' => null,
+        'target_step_id' => null,
         'target_round' => null,
-        'target_step_id' => null
+        'next_approver_id' => null
     ];
 
     /**
@@ -108,11 +108,11 @@ class ApprovalRequestActionCreateParams implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'approval_action' => 'approval_action',
         'company_id' => 'company_id',
-        'next_approver_id' => 'next_approver_id',
+        'approval_action' => 'approval_action',
+        'target_step_id' => 'target_step_id',
         'target_round' => 'target_round',
-        'target_step_id' => 'target_step_id'
+        'next_approver_id' => 'next_approver_id'
     ];
 
     /**
@@ -121,11 +121,11 @@ class ApprovalRequestActionCreateParams implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-        'approval_action' => 'setApprovalAction',
         'company_id' => 'setCompanyId',
-        'next_approver_id' => 'setNextApproverId',
+        'approval_action' => 'setApprovalAction',
+        'target_step_id' => 'setTargetStepId',
         'target_round' => 'setTargetRound',
-        'target_step_id' => 'setTargetStepId'
+        'next_approver_id' => 'setNextApproverId'
     ];
 
     /**
@@ -134,11 +134,11 @@ class ApprovalRequestActionCreateParams implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $getters = [
-        'approval_action' => 'getApprovalAction',
         'company_id' => 'getCompanyId',
-        'next_approver_id' => 'getNextApproverId',
+        'approval_action' => 'getApprovalAction',
+        'target_step_id' => 'getTargetStepId',
         'target_round' => 'getTargetRound',
-        'target_step_id' => 'getTargetStepId'
+        'next_approver_id' => 'getNextApproverId'
     ];
 
     /**
@@ -221,11 +221,11 @@ class ApprovalRequestActionCreateParams implements ModelInterface, ArrayAccess, 
      */
     public function __construct(array $data = null)
     {
-        $this->container['approval_action'] = $data['approval_action'] ?? null;
         $this->container['company_id'] = $data['company_id'] ?? null;
-        $this->container['next_approver_id'] = $data['next_approver_id'] ?? null;
-        $this->container['target_round'] = $data['target_round'] ?? null;
+        $this->container['approval_action'] = $data['approval_action'] ?? null;
         $this->container['target_step_id'] = $data['target_step_id'] ?? null;
+        $this->container['target_round'] = $data['target_round'] ?? null;
+        $this->container['next_approver_id'] = $data['next_approver_id'] ?? null;
     }
 
     /**
@@ -236,6 +236,17 @@ class ApprovalRequestActionCreateParams implements ModelInterface, ArrayAccess, 
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if ($this->container['company_id'] === null) {
+            $invalidProperties[] = "'company_id' can't be null";
+        }
+        if (($this->container['company_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['company_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
+        }
 
         if ($this->container['approval_action'] === null) {
             $invalidProperties[] = "'approval_action' can't be null";
@@ -249,23 +260,15 @@ class ApprovalRequestActionCreateParams implements ModelInterface, ArrayAccess, 
             );
         }
 
-        if ($this->container['company_id'] === null) {
-            $invalidProperties[] = "'company_id' can't be null";
+        if ($this->container['target_step_id'] === null) {
+            $invalidProperties[] = "'target_step_id' can't be null";
         }
-        if (($this->container['company_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['company_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
+        if (($this->container['target_step_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'target_step_id', must be smaller than or equal to 2147483647.";
         }
 
-        if (!is_null($this->container['next_approver_id']) && ($this->container['next_approver_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'next_approver_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (!is_null($this->container['next_approver_id']) && ($this->container['next_approver_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'next_approver_id', must be bigger than or equal to 1.";
+        if (($this->container['target_step_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'target_step_id', must be bigger than or equal to 1.";
         }
 
         if ($this->container['target_round'] === null) {
@@ -279,15 +282,12 @@ class ApprovalRequestActionCreateParams implements ModelInterface, ArrayAccess, 
             $invalidProperties[] = "invalid value for 'target_round', must be bigger than or equal to 0.";
         }
 
-        if ($this->container['target_step_id'] === null) {
-            $invalidProperties[] = "'target_step_id' can't be null";
-        }
-        if (($this->container['target_step_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'target_step_id', must be smaller than or equal to 2147483647.";
+        if (!is_null($this->container['next_approver_id']) && ($this->container['next_approver_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'next_approver_id', must be smaller than or equal to 2147483647.";
         }
 
-        if (($this->container['target_step_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'target_step_id', must be bigger than or equal to 1.";
+        if (!is_null($this->container['next_approver_id']) && ($this->container['next_approver_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'next_approver_id', must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -304,6 +304,38 @@ class ApprovalRequestActionCreateParams implements ModelInterface, ArrayAccess, 
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets company_id
+     *
+     * @return int
+     */
+    public function getCompanyId()
+    {
+        return $this->container['company_id'];
+    }
+
+    /**
+     * Sets company_id
+     *
+     * @param int $company_id 事業所ID
+     *
+     * @return self
+     */
+    public function setCompanyId($company_id)
+    {
+
+        if (($company_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $company_id when calling ApprovalRequestActionCreateParams., must be smaller than or equal to 2147483647.');
+        }
+        if (($company_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $company_id when calling ApprovalRequestActionCreateParams., must be bigger than or equal to 1.');
+        }
+
+        $this->container['company_id'] = $company_id;
+
+        return $this;
+    }
 
     /**
      * Gets approval_action
@@ -340,65 +372,33 @@ class ApprovalRequestActionCreateParams implements ModelInterface, ArrayAccess, 
     }
 
     /**
-     * Gets company_id
+     * Gets target_step_id
      *
      * @return int
      */
-    public function getCompanyId()
+    public function getTargetStepId()
     {
-        return $this->container['company_id'];
+        return $this->container['target_step_id'];
     }
 
     /**
-     * Sets company_id
+     * Sets target_step_id
      *
-     * @param int $company_id 事業所ID
+     * @param int $target_step_id 対象承認ステップID 各種申請の取得APIレスポンス.current_step_idを送信してください。
      *
      * @return self
      */
-    public function setCompanyId($company_id)
+    public function setTargetStepId($target_step_id)
     {
 
-        if (($company_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling ApprovalRequestActionCreateParams., must be smaller than or equal to 2147483647.');
+        if (($target_step_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $target_step_id when calling ApprovalRequestActionCreateParams., must be smaller than or equal to 2147483647.');
         }
-        if (($company_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling ApprovalRequestActionCreateParams., must be bigger than or equal to 1.');
-        }
-
-        $this->container['company_id'] = $company_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets next_approver_id
-     *
-     * @return int|null
-     */
-    public function getNextApproverId()
-    {
-        return $this->container['next_approver_id'];
-    }
-
-    /**
-     * Sets next_approver_id
-     *
-     * @param int|null $next_approver_id 次ステップの承認者のユーザーID
-     *
-     * @return self
-     */
-    public function setNextApproverId($next_approver_id)
-    {
-
-        if (!is_null($next_approver_id) && ($next_approver_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $next_approver_id when calling ApprovalRequestActionCreateParams., must be smaller than or equal to 2147483647.');
-        }
-        if (!is_null($next_approver_id) && ($next_approver_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $next_approver_id when calling ApprovalRequestActionCreateParams., must be bigger than or equal to 1.');
+        if (($target_step_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $target_step_id when calling ApprovalRequestActionCreateParams., must be bigger than or equal to 1.');
         }
 
-        $this->container['next_approver_id'] = $next_approver_id;
+        $this->container['target_step_id'] = $target_step_id;
 
         return $this;
     }
@@ -436,33 +436,33 @@ class ApprovalRequestActionCreateParams implements ModelInterface, ArrayAccess, 
     }
 
     /**
-     * Gets target_step_id
+     * Gets next_approver_id
      *
-     * @return int
+     * @return int|null
      */
-    public function getTargetStepId()
+    public function getNextApproverId()
     {
-        return $this->container['target_step_id'];
+        return $this->container['next_approver_id'];
     }
 
     /**
-     * Sets target_step_id
+     * Sets next_approver_id
      *
-     * @param int $target_step_id 対象承認ステップID 各種申請の取得APIレスポンス.current_step_idを送信してください。
+     * @param int|null $next_approver_id 次ステップの承認者のユーザーID
      *
      * @return self
      */
-    public function setTargetStepId($target_step_id)
+    public function setNextApproverId($next_approver_id)
     {
 
-        if (($target_step_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $target_step_id when calling ApprovalRequestActionCreateParams., must be smaller than or equal to 2147483647.');
+        if (!is_null($next_approver_id) && ($next_approver_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $next_approver_id when calling ApprovalRequestActionCreateParams., must be smaller than or equal to 2147483647.');
         }
-        if (($target_step_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $target_step_id when calling ApprovalRequestActionCreateParams., must be bigger than or equal to 1.');
+        if (!is_null($next_approver_id) && ($next_approver_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $next_approver_id when calling ApprovalRequestActionCreateParams., must be bigger than or equal to 1.');
         }
 
-        $this->container['target_step_id'] = $target_step_id;
+        $this->container['next_approver_id'] = $next_approver_id;
 
         return $this;
     }

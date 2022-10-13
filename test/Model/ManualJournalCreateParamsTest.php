@@ -80,15 +80,6 @@ class ManualJournalCreateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "adjustment"
-     */
-    public function testPropertyAdjustment()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "company_id"
      */
     public function testPropertyCompanyId()
@@ -98,18 +89,27 @@ class ManualJournalCreateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "details"
+     * Test attribute "issue_date"
      */
-    public function testPropertyDetails()
+    public function testPropertyIssueDate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "issue_date"
+     * Test attribute "adjustment"
      */
-    public function testPropertyIssueDate()
+    public function testPropertyAdjustment()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "details"
+     */
+    public function testPropertyDetails()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

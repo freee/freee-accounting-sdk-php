@@ -80,18 +80,9 @@ class MeResponseUserTest extends TestCase
     }
 
     /**
-     * Test attribute "companies"
+     * Test attribute "id"
      */
-    public function testPropertyCompanies()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "display_name"
-     */
-    public function testPropertyDisplayName()
+    public function testPropertyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -107,27 +98,18 @@ class MeResponseUserTest extends TestCase
     }
 
     /**
+     * Test attribute "display_name"
+     */
+    public function testPropertyDisplayName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "first_name"
      */
     public function testPropertyFirstName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "first_name_kana"
-     */
-    public function testPropertyFirstNameKana()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -143,9 +125,27 @@ class MeResponseUserTest extends TestCase
     }
 
     /**
+     * Test attribute "first_name_kana"
+     */
+    public function testPropertyFirstNameKana()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "last_name_kana"
      */
     public function testPropertyLastNameKana()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "companies"
+     */
+    public function testPropertyCompanies()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

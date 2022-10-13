@@ -80,6 +80,15 @@ class ApprovalRequestUpdateParamsTest extends TestCase
     }
 
     /**
+     * Test attribute "company_id"
+     */
+    public function testPropertyCompanyId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "application_date"
      */
     public function testPropertyApplicationDate()
@@ -101,15 +110,6 @@ class ApprovalRequestUpdateParamsTest extends TestCase
      * Test attribute "approver_id"
      */
     public function testPropertyApproverId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "company_id"
-     */
-    public function testPropertyCompanyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

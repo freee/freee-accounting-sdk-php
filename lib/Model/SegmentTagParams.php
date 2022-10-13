@@ -60,8 +60,8 @@ class SegmentTagParams implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'company_id' => 'int',
-        'description' => 'string',
         'name' => 'string',
+        'description' => 'string',
         'shortcut1' => 'string',
         'shortcut2' => 'string'
     ];
@@ -75,8 +75,8 @@ class SegmentTagParams implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'company_id' => null,
-        'description' => null,
         'name' => null,
+        'description' => null,
         'shortcut1' => null,
         'shortcut2' => null
     ];
@@ -109,8 +109,8 @@ class SegmentTagParams implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'company_id' => 'company_id',
-        'description' => 'description',
         'name' => 'name',
+        'description' => 'description',
         'shortcut1' => 'shortcut1',
         'shortcut2' => 'shortcut2'
     ];
@@ -122,8 +122,8 @@ class SegmentTagParams implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'company_id' => 'setCompanyId',
-        'description' => 'setDescription',
         'name' => 'setName',
+        'description' => 'setDescription',
         'shortcut1' => 'setShortcut1',
         'shortcut2' => 'setShortcut2'
     ];
@@ -135,8 +135,8 @@ class SegmentTagParams implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'company_id' => 'getCompanyId',
-        'description' => 'getDescription',
         'name' => 'getName',
+        'description' => 'getDescription',
         'shortcut1' => 'getShortcut1',
         'shortcut2' => 'getShortcut2'
     ];
@@ -199,8 +199,8 @@ class SegmentTagParams implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['company_id'] = $data['company_id'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
         $this->container['shortcut1'] = $data['shortcut1'] ?? null;
         $this->container['shortcut2'] = $data['shortcut2'] ?? null;
     }
@@ -225,15 +225,15 @@ class SegmentTagParams implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['description']) && (mb_strlen($this->container['description']) > 30)) {
-            $invalidProperties[] = "invalid value for 'description', the character length must be smaller than or equal to 30.";
-        }
-
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
         if ((mb_strlen($this->container['name']) > 30)) {
             $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 30.";
+        }
+
+        if (!is_null($this->container['description']) && (mb_strlen($this->container['description']) > 30)) {
+            $invalidProperties[] = "invalid value for 'description', the character length must be smaller than or equal to 30.";
         }
 
         if (!is_null($this->container['shortcut1']) && (mb_strlen($this->container['shortcut1']) > 20)) {
@@ -292,34 +292,6 @@ class SegmentTagParams implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets description
-     *
-     * @return string|null
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string|null $description 備考 (30文字以内)
-     *
-     * @return self
-     */
-    public function setDescription($description)
-    {
-        if (!is_null($description) && (mb_strlen($description) > 30)) {
-            throw new \InvalidArgumentException('invalid length for $description when calling SegmentTagParams., must be smaller than or equal to 30.');
-        }
-
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
      * Gets name
      *
      * @return string
@@ -343,6 +315,34 @@ class SegmentTagParams implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string|null $description 備考 (30文字以内)
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        if (!is_null($description) && (mb_strlen($description) > 30)) {
+            throw new \InvalidArgumentException('invalid length for $description when calling SegmentTagParams., must be smaller than or equal to 30.');
+        }
+
+        $this->container['description'] = $description;
 
         return $this;
     }

@@ -59,25 +59,25 @@ class ExpenseApplicationsIndexResponseExpenseApplications implements ModelInterf
       * @var string[]
       */
     protected static $openAPITypes = [
-        'applicant_id' => 'int',
-        'application_number' => 'string',
+        'id' => 'int',
         'company_id' => 'int',
-        'current_round' => 'int',
-        'current_step_id' => 'int',
+        'title' => 'string',
+        'issue_date' => 'string',
+        'description' => 'string',
+        'total_amount' => 'int',
+        'status' => 'string',
+        'section_id' => 'int',
+        'tag_ids' => 'int[]',
+        'expense_application_lines' => '\Freee\Accounting\Model\ExpenseApplicationsIndexResponseExpenseApplicationLines[]',
         'deal_id' => 'int',
         'deal_status' => 'string',
-        'description' => 'string',
-        'expense_application_lines' => '\Freee\Accounting\Model\ExpenseApplicationsIndexResponseExpenseApplicationLines[]',
-        'id' => 'int',
-        'issue_date' => 'string',
-        'section_id' => 'int',
+        'applicant_id' => 'int',
+        'application_number' => 'string',
+        'current_step_id' => 'int',
+        'current_round' => 'int',
         'segment_1_tag_id' => 'int',
         'segment_2_tag_id' => 'int',
-        'segment_3_tag_id' => 'int',
-        'status' => 'string',
-        'tag_ids' => 'int[]',
-        'title' => 'string',
-        'total_amount' => 'int'
+        'segment_3_tag_id' => 'int'
     ];
 
     /**
@@ -88,25 +88,25 @@ class ExpenseApplicationsIndexResponseExpenseApplications implements ModelInterf
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'applicant_id' => null,
-        'application_number' => null,
+        'id' => null,
         'company_id' => null,
-        'current_round' => null,
-        'current_step_id' => null,
+        'title' => null,
+        'issue_date' => null,
+        'description' => null,
+        'total_amount' => null,
+        'status' => null,
+        'section_id' => null,
+        'tag_ids' => null,
+        'expense_application_lines' => null,
         'deal_id' => null,
         'deal_status' => null,
-        'description' => null,
-        'expense_application_lines' => null,
-        'id' => null,
-        'issue_date' => null,
-        'section_id' => null,
+        'applicant_id' => null,
+        'application_number' => null,
+        'current_step_id' => null,
+        'current_round' => null,
         'segment_1_tag_id' => 'int64',
         'segment_2_tag_id' => 'int64',
-        'segment_3_tag_id' => 'int64',
-        'status' => null,
-        'tag_ids' => null,
-        'title' => null,
-        'total_amount' => null
+        'segment_3_tag_id' => 'int64'
     ];
 
     /**
@@ -136,25 +136,25 @@ class ExpenseApplicationsIndexResponseExpenseApplications implements ModelInterf
      * @var string[]
      */
     protected static $attributeMap = [
-        'applicant_id' => 'applicant_id',
-        'application_number' => 'application_number',
+        'id' => 'id',
         'company_id' => 'company_id',
-        'current_round' => 'current_round',
-        'current_step_id' => 'current_step_id',
+        'title' => 'title',
+        'issue_date' => 'issue_date',
+        'description' => 'description',
+        'total_amount' => 'total_amount',
+        'status' => 'status',
+        'section_id' => 'section_id',
+        'tag_ids' => 'tag_ids',
+        'expense_application_lines' => 'expense_application_lines',
         'deal_id' => 'deal_id',
         'deal_status' => 'deal_status',
-        'description' => 'description',
-        'expense_application_lines' => 'expense_application_lines',
-        'id' => 'id',
-        'issue_date' => 'issue_date',
-        'section_id' => 'section_id',
+        'applicant_id' => 'applicant_id',
+        'application_number' => 'application_number',
+        'current_step_id' => 'current_step_id',
+        'current_round' => 'current_round',
         'segment_1_tag_id' => 'segment_1_tag_id',
         'segment_2_tag_id' => 'segment_2_tag_id',
-        'segment_3_tag_id' => 'segment_3_tag_id',
-        'status' => 'status',
-        'tag_ids' => 'tag_ids',
-        'title' => 'title',
-        'total_amount' => 'total_amount'
+        'segment_3_tag_id' => 'segment_3_tag_id'
     ];
 
     /**
@@ -163,25 +163,25 @@ class ExpenseApplicationsIndexResponseExpenseApplications implements ModelInterf
      * @var string[]
      */
     protected static $setters = [
-        'applicant_id' => 'setApplicantId',
-        'application_number' => 'setApplicationNumber',
+        'id' => 'setId',
         'company_id' => 'setCompanyId',
-        'current_round' => 'setCurrentRound',
-        'current_step_id' => 'setCurrentStepId',
+        'title' => 'setTitle',
+        'issue_date' => 'setIssueDate',
+        'description' => 'setDescription',
+        'total_amount' => 'setTotalAmount',
+        'status' => 'setStatus',
+        'section_id' => 'setSectionId',
+        'tag_ids' => 'setTagIds',
+        'expense_application_lines' => 'setExpenseApplicationLines',
         'deal_id' => 'setDealId',
         'deal_status' => 'setDealStatus',
-        'description' => 'setDescription',
-        'expense_application_lines' => 'setExpenseApplicationLines',
-        'id' => 'setId',
-        'issue_date' => 'setIssueDate',
-        'section_id' => 'setSectionId',
+        'applicant_id' => 'setApplicantId',
+        'application_number' => 'setApplicationNumber',
+        'current_step_id' => 'setCurrentStepId',
+        'current_round' => 'setCurrentRound',
         'segment_1_tag_id' => 'setSegment1TagId',
         'segment_2_tag_id' => 'setSegment2TagId',
-        'segment_3_tag_id' => 'setSegment3TagId',
-        'status' => 'setStatus',
-        'tag_ids' => 'setTagIds',
-        'title' => 'setTitle',
-        'total_amount' => 'setTotalAmount'
+        'segment_3_tag_id' => 'setSegment3TagId'
     ];
 
     /**
@@ -190,25 +190,25 @@ class ExpenseApplicationsIndexResponseExpenseApplications implements ModelInterf
      * @var string[]
      */
     protected static $getters = [
-        'applicant_id' => 'getApplicantId',
-        'application_number' => 'getApplicationNumber',
+        'id' => 'getId',
         'company_id' => 'getCompanyId',
-        'current_round' => 'getCurrentRound',
-        'current_step_id' => 'getCurrentStepId',
+        'title' => 'getTitle',
+        'issue_date' => 'getIssueDate',
+        'description' => 'getDescription',
+        'total_amount' => 'getTotalAmount',
+        'status' => 'getStatus',
+        'section_id' => 'getSectionId',
+        'tag_ids' => 'getTagIds',
+        'expense_application_lines' => 'getExpenseApplicationLines',
         'deal_id' => 'getDealId',
         'deal_status' => 'getDealStatus',
-        'description' => 'getDescription',
-        'expense_application_lines' => 'getExpenseApplicationLines',
-        'id' => 'getId',
-        'issue_date' => 'getIssueDate',
-        'section_id' => 'getSectionId',
+        'applicant_id' => 'getApplicantId',
+        'application_number' => 'getApplicationNumber',
+        'current_step_id' => 'getCurrentStepId',
+        'current_round' => 'getCurrentRound',
         'segment_1_tag_id' => 'getSegment1TagId',
         'segment_2_tag_id' => 'getSegment2TagId',
-        'segment_3_tag_id' => 'getSegment3TagId',
-        'status' => 'getStatus',
-        'tag_ids' => 'getTagIds',
-        'title' => 'getTitle',
-        'total_amount' => 'getTotalAmount'
+        'segment_3_tag_id' => 'getSegment3TagId'
     ];
 
     /**
@@ -252,26 +252,13 @@ class ExpenseApplicationsIndexResponseExpenseApplications implements ModelInterf
         return self::$openAPIModelName;
     }
 
-    const DEAL_STATUS_SETTLED = 'settled';
-    const DEAL_STATUS_UNSETTLED = 'unsettled';
     const STATUS_DRAFT = 'draft';
     const STATUS_IN_PROGRESS = 'in_progress';
     const STATUS_APPROVED = 'approved';
     const STATUS_REJECTED = 'rejected';
     const STATUS_FEEDBACK = 'feedback';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getDealStatusAllowableValues()
-    {
-        return [
-            self::DEAL_STATUS_SETTLED,
-            self::DEAL_STATUS_UNSETTLED,
-        ];
-    }
+    const DEAL_STATUS_SETTLED = 'settled';
+    const DEAL_STATUS_UNSETTLED = 'unsettled';
 
     /**
      * Gets allowable values of the enum
@@ -290,6 +277,19 @@ class ExpenseApplicationsIndexResponseExpenseApplications implements ModelInterf
     }
 
     /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getDealStatusAllowableValues()
+    {
+        return [
+            self::DEAL_STATUS_SETTLED,
+            self::DEAL_STATUS_UNSETTLED,
+        ];
+    }
+
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
@@ -304,25 +304,25 @@ class ExpenseApplicationsIndexResponseExpenseApplications implements ModelInterf
      */
     public function __construct(array $data = null)
     {
-        $this->container['applicant_id'] = $data['applicant_id'] ?? null;
-        $this->container['application_number'] = $data['application_number'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['company_id'] = $data['company_id'] ?? null;
-        $this->container['current_round'] = $data['current_round'] ?? null;
-        $this->container['current_step_id'] = $data['current_step_id'] ?? null;
+        $this->container['title'] = $data['title'] ?? null;
+        $this->container['issue_date'] = $data['issue_date'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
+        $this->container['total_amount'] = $data['total_amount'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
+        $this->container['section_id'] = $data['section_id'] ?? null;
+        $this->container['tag_ids'] = $data['tag_ids'] ?? null;
+        $this->container['expense_application_lines'] = $data['expense_application_lines'] ?? null;
         $this->container['deal_id'] = $data['deal_id'] ?? null;
         $this->container['deal_status'] = $data['deal_status'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
-        $this->container['expense_application_lines'] = $data['expense_application_lines'] ?? null;
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['issue_date'] = $data['issue_date'] ?? null;
-        $this->container['section_id'] = $data['section_id'] ?? null;
+        $this->container['applicant_id'] = $data['applicant_id'] ?? null;
+        $this->container['application_number'] = $data['application_number'] ?? null;
+        $this->container['current_step_id'] = $data['current_step_id'] ?? null;
+        $this->container['current_round'] = $data['current_round'] ?? null;
         $this->container['segment_1_tag_id'] = $data['segment_1_tag_id'] ?? null;
         $this->container['segment_2_tag_id'] = $data['segment_2_tag_id'] ?? null;
         $this->container['segment_3_tag_id'] = $data['segment_3_tag_id'] ?? null;
-        $this->container['status'] = $data['status'] ?? null;
-        $this->container['tag_ids'] = $data['tag_ids'] ?? null;
-        $this->container['title'] = $data['title'] ?? null;
-        $this->container['total_amount'] = $data['total_amount'] ?? null;
     }
 
     /**
@@ -334,20 +334,17 @@ class ExpenseApplicationsIndexResponseExpenseApplications implements ModelInterf
     {
         $invalidProperties = [];
 
-        if ($this->container['applicant_id'] === null) {
-            $invalidProperties[] = "'applicant_id' can't be null";
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
         }
-        if (($this->container['applicant_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'applicant_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['applicant_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'applicant_id', must be bigger than or equal to 1.";
+        if (($this->container['id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 2147483647.";
         }
 
-        if ($this->container['application_number'] === null) {
-            $invalidProperties[] = "'application_number' can't be null";
+        if (($this->container['id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
         }
+
         if ($this->container['company_id'] === null) {
             $invalidProperties[] = "'company_id' can't be null";
         }
@@ -359,22 +356,35 @@ class ExpenseApplicationsIndexResponseExpenseApplications implements ModelInterf
             $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['current_round']) && ($this->container['current_round'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'current_round', must be smaller than or equal to 2147483647.";
+        if ($this->container['title'] === null) {
+            $invalidProperties[] = "'title' can't be null";
+        }
+        if ($this->container['issue_date'] === null) {
+            $invalidProperties[] = "'issue_date' can't be null";
+        }
+        if ($this->container['status'] === null) {
+            $invalidProperties[] = "'status' can't be null";
+        }
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'status', must be one of '%s'",
+                $this->container['status'],
+                implode("', '", $allowedValues)
+            );
         }
 
-        if (!is_null($this->container['current_round']) && ($this->container['current_round'] < 0)) {
-            $invalidProperties[] = "invalid value for 'current_round', must be bigger than or equal to 0.";
+        if (!is_null($this->container['section_id']) && ($this->container['section_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'section_id', must be smaller than or equal to 2147483647.";
         }
 
-        if (!is_null($this->container['current_step_id']) && ($this->container['current_step_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'current_step_id', must be smaller than or equal to 2147483647.";
+        if (!is_null($this->container['section_id']) && ($this->container['section_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'section_id', must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['current_step_id']) && ($this->container['current_step_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'current_step_id', must be bigger than or equal to 1.";
+        if ($this->container['expense_application_lines'] === null) {
+            $invalidProperties[] = "'expense_application_lines' can't be null";
         }
-
         if ($this->container['deal_id'] === null) {
             $invalidProperties[] = "'deal_id' can't be null";
         }
@@ -398,29 +408,34 @@ class ExpenseApplicationsIndexResponseExpenseApplications implements ModelInterf
             );
         }
 
-        if ($this->container['expense_application_lines'] === null) {
-            $invalidProperties[] = "'expense_application_lines' can't be null";
+        if ($this->container['applicant_id'] === null) {
+            $invalidProperties[] = "'applicant_id' can't be null";
         }
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if (($this->container['id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 2147483647.";
+        if (($this->container['applicant_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'applicant_id', must be smaller than or equal to 2147483647.";
         }
 
-        if (($this->container['id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
+        if (($this->container['applicant_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'applicant_id', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['issue_date'] === null) {
-            $invalidProperties[] = "'issue_date' can't be null";
+        if ($this->container['application_number'] === null) {
+            $invalidProperties[] = "'application_number' can't be null";
         }
-        if (!is_null($this->container['section_id']) && ($this->container['section_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'section_id', must be smaller than or equal to 2147483647.";
+        if (!is_null($this->container['current_step_id']) && ($this->container['current_step_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'current_step_id', must be smaller than or equal to 2147483647.";
         }
 
-        if (!is_null($this->container['section_id']) && ($this->container['section_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'section_id', must be bigger than or equal to 1.";
+        if (!is_null($this->container['current_step_id']) && ($this->container['current_step_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'current_step_id', must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['current_round']) && ($this->container['current_round'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'current_round', must be smaller than or equal to 2147483647.";
+        }
+
+        if (!is_null($this->container['current_round']) && ($this->container['current_round'] < 0)) {
+            $invalidProperties[] = "invalid value for 'current_round', must be bigger than or equal to 0.";
         }
 
         if (!is_null($this->container['segment_1_tag_id']) && ($this->container['segment_1_tag_id'] > 9223372036854775807)) {
@@ -447,21 +462,6 @@ class ExpenseApplicationsIndexResponseExpenseApplications implements ModelInterf
             $invalidProperties[] = "invalid value for 'segment_3_tag_id', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
-        }
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'status', must be one of '%s'",
-                $this->container['status'],
-                implode("', '", $allowedValues)
-            );
-        }
-
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -478,57 +478,33 @@ class ExpenseApplicationsIndexResponseExpenseApplications implements ModelInterf
 
 
     /**
-     * Gets applicant_id
+     * Gets id
      *
      * @return int
      */
-    public function getApplicantId()
+    public function getId()
     {
-        return $this->container['applicant_id'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets applicant_id
+     * Sets id
      *
-     * @param int $applicant_id 申請者のユーザーID
+     * @param int $id 経費申請ID
      *
      * @return self
      */
-    public function setApplicantId($applicant_id)
+    public function setId($id)
     {
 
-        if (($applicant_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $applicant_id when calling ExpenseApplicationsIndexResponseExpenseApplications., must be smaller than or equal to 2147483647.');
+        if (($id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling ExpenseApplicationsIndexResponseExpenseApplications., must be smaller than or equal to 2147483647.');
         }
-        if (($applicant_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $applicant_id when calling ExpenseApplicationsIndexResponseExpenseApplications., must be bigger than or equal to 1.');
+        if (($id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling ExpenseApplicationsIndexResponseExpenseApplications., must be bigger than or equal to 1.');
         }
 
-        $this->container['applicant_id'] = $applicant_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets application_number
-     *
-     * @return string
-     */
-    public function getApplicationNumber()
-    {
-        return $this->container['application_number'];
-    }
-
-    /**
-     * Sets application_number
-     *
-     * @param string $application_number 申請No.
-     *
-     * @return self
-     */
-    public function setApplicationNumber($application_number)
-    {
-        $this->container['application_number'] = $application_number;
+        $this->container['id'] = $id;
 
         return $this;
     }
@@ -566,65 +542,211 @@ class ExpenseApplicationsIndexResponseExpenseApplications implements ModelInterf
     }
 
     /**
-     * Gets current_round
+     * Gets title
      *
-     * @return int|null
+     * @return string
      */
-    public function getCurrentRound()
+    public function getTitle()
     {
-        return $this->container['current_round'];
+        return $this->container['title'];
     }
 
     /**
-     * Sets current_round
+     * Sets title
      *
-     * @param int|null $current_round 現在のround。差し戻し等により申請がstepの最初からやり直しになるとroundの値が増えます。
+     * @param string $title 申請タイトル
      *
      * @return self
      */
-    public function setCurrentRound($current_round)
+    public function setTitle($title)
     {
-
-        if (!is_null($current_round) && ($current_round > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $current_round when calling ExpenseApplicationsIndexResponseExpenseApplications., must be smaller than or equal to 2147483647.');
-        }
-        if (!is_null($current_round) && ($current_round < 0)) {
-            throw new \InvalidArgumentException('invalid value for $current_round when calling ExpenseApplicationsIndexResponseExpenseApplications., must be bigger than or equal to 0.');
-        }
-
-        $this->container['current_round'] = $current_round;
+        $this->container['title'] = $title;
 
         return $this;
     }
 
     /**
-     * Gets current_step_id
+     * Gets issue_date
      *
-     * @return int|null
+     * @return string
      */
-    public function getCurrentStepId()
+    public function getIssueDate()
     {
-        return $this->container['current_step_id'];
+        return $this->container['issue_date'];
     }
 
     /**
-     * Sets current_step_id
+     * Sets issue_date
      *
-     * @param int|null $current_step_id 現在承認ステップID
+     * @param string $issue_date 申請日 (yyyy-mm-dd)
      *
      * @return self
      */
-    public function setCurrentStepId($current_step_id)
+    public function setIssueDate($issue_date)
+    {
+        $this->container['issue_date'] = $issue_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string|null $description 備考
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_amount
+     *
+     * @return int|null
+     */
+    public function getTotalAmount()
+    {
+        return $this->container['total_amount'];
+    }
+
+    /**
+     * Sets total_amount
+     *
+     * @param int|null $total_amount 合計金額
+     *
+     * @return self
+     */
+    public function setTotalAmount($total_amount)
+    {
+        $this->container['total_amount'] = $total_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string $status 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)
+     *
+     * @return self
+     */
+    public function setStatus($status)
+    {
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!in_array($status, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'status', must be one of '%s'",
+                    $status,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets section_id
+     *
+     * @return int|null
+     */
+    public function getSectionId()
+    {
+        return $this->container['section_id'];
+    }
+
+    /**
+     * Sets section_id
+     *
+     * @param int|null $section_id 部門ID
+     *
+     * @return self
+     */
+    public function setSectionId($section_id)
     {
 
-        if (!is_null($current_step_id) && ($current_step_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $current_step_id when calling ExpenseApplicationsIndexResponseExpenseApplications., must be smaller than or equal to 2147483647.');
+        if (!is_null($section_id) && ($section_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $section_id when calling ExpenseApplicationsIndexResponseExpenseApplications., must be smaller than or equal to 2147483647.');
         }
-        if (!is_null($current_step_id) && ($current_step_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $current_step_id when calling ExpenseApplicationsIndexResponseExpenseApplications., must be bigger than or equal to 1.');
+        if (!is_null($section_id) && ($section_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $section_id when calling ExpenseApplicationsIndexResponseExpenseApplications., must be bigger than or equal to 1.');
         }
 
-        $this->container['current_step_id'] = $current_step_id;
+        $this->container['section_id'] = $section_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets tag_ids
+     *
+     * @return int[]|null
+     */
+    public function getTagIds()
+    {
+        return $this->container['tag_ids'];
+    }
+
+    /**
+     * Sets tag_ids
+     *
+     * @param int[]|null $tag_ids メモタグID
+     *
+     * @return self
+     */
+    public function setTagIds($tag_ids)
+    {
+        $this->container['tag_ids'] = $tag_ids;
+
+        return $this;
+    }
+
+    /**
+     * Gets expense_application_lines
+     *
+     * @return \Freee\Accounting\Model\ExpenseApplicationsIndexResponseExpenseApplicationLines[]
+     */
+    public function getExpenseApplicationLines()
+    {
+        return $this->container['expense_application_lines'];
+    }
+
+    /**
+     * Sets expense_application_lines
+     *
+     * @param \Freee\Accounting\Model\ExpenseApplicationsIndexResponseExpenseApplicationLines[] $expense_application_lines 経費申請の項目行一覧（配列）
+     *
+     * @return self
+     */
+    public function setExpenseApplicationLines($expense_application_lines)
+    {
+        $this->container['expense_application_lines'] = $expense_application_lines;
 
         return $this;
     }
@@ -696,137 +818,121 @@ class ExpenseApplicationsIndexResponseExpenseApplications implements ModelInterf
     }
 
     /**
-     * Gets description
-     *
-     * @return string|null
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string|null $description 備考
-     *
-     * @return self
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets expense_application_lines
-     *
-     * @return \Freee\Accounting\Model\ExpenseApplicationsIndexResponseExpenseApplicationLines[]
-     */
-    public function getExpenseApplicationLines()
-    {
-        return $this->container['expense_application_lines'];
-    }
-
-    /**
-     * Sets expense_application_lines
-     *
-     * @param \Freee\Accounting\Model\ExpenseApplicationsIndexResponseExpenseApplicationLines[] $expense_application_lines 経費申請の項目行一覧（配列）
-     *
-     * @return self
-     */
-    public function setExpenseApplicationLines($expense_application_lines)
-    {
-        $this->container['expense_application_lines'] = $expense_application_lines;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
+     * Gets applicant_id
      *
      * @return int
      */
-    public function getId()
+    public function getApplicantId()
     {
-        return $this->container['id'];
+        return $this->container['applicant_id'];
     }
 
     /**
-     * Sets id
+     * Sets applicant_id
      *
-     * @param int $id 経費申請ID
+     * @param int $applicant_id 申請者のユーザーID
      *
      * @return self
      */
-    public function setId($id)
+    public function setApplicantId($applicant_id)
     {
 
-        if (($id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling ExpenseApplicationsIndexResponseExpenseApplications., must be smaller than or equal to 2147483647.');
+        if (($applicant_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $applicant_id when calling ExpenseApplicationsIndexResponseExpenseApplications., must be smaller than or equal to 2147483647.');
         }
-        if (($id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling ExpenseApplicationsIndexResponseExpenseApplications., must be bigger than or equal to 1.');
+        if (($applicant_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $applicant_id when calling ExpenseApplicationsIndexResponseExpenseApplications., must be bigger than or equal to 1.');
         }
 
-        $this->container['id'] = $id;
+        $this->container['applicant_id'] = $applicant_id;
 
         return $this;
     }
 
     /**
-     * Gets issue_date
+     * Gets application_number
      *
      * @return string
      */
-    public function getIssueDate()
+    public function getApplicationNumber()
     {
-        return $this->container['issue_date'];
+        return $this->container['application_number'];
     }
 
     /**
-     * Sets issue_date
+     * Sets application_number
      *
-     * @param string $issue_date 申請日 (yyyy-mm-dd)
+     * @param string $application_number 申請No.
      *
      * @return self
      */
-    public function setIssueDate($issue_date)
+    public function setApplicationNumber($application_number)
     {
-        $this->container['issue_date'] = $issue_date;
+        $this->container['application_number'] = $application_number;
 
         return $this;
     }
 
     /**
-     * Gets section_id
+     * Gets current_step_id
      *
      * @return int|null
      */
-    public function getSectionId()
+    public function getCurrentStepId()
     {
-        return $this->container['section_id'];
+        return $this->container['current_step_id'];
     }
 
     /**
-     * Sets section_id
+     * Sets current_step_id
      *
-     * @param int|null $section_id 部門ID
+     * @param int|null $current_step_id 現在承認ステップID
      *
      * @return self
      */
-    public function setSectionId($section_id)
+    public function setCurrentStepId($current_step_id)
     {
 
-        if (!is_null($section_id) && ($section_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $section_id when calling ExpenseApplicationsIndexResponseExpenseApplications., must be smaller than or equal to 2147483647.');
+        if (!is_null($current_step_id) && ($current_step_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $current_step_id when calling ExpenseApplicationsIndexResponseExpenseApplications., must be smaller than or equal to 2147483647.');
         }
-        if (!is_null($section_id) && ($section_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $section_id when calling ExpenseApplicationsIndexResponseExpenseApplications., must be bigger than or equal to 1.');
+        if (!is_null($current_step_id) && ($current_step_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $current_step_id when calling ExpenseApplicationsIndexResponseExpenseApplications., must be bigger than or equal to 1.');
         }
 
-        $this->container['section_id'] = $section_id;
+        $this->container['current_step_id'] = $current_step_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets current_round
+     *
+     * @return int|null
+     */
+    public function getCurrentRound()
+    {
+        return $this->container['current_round'];
+    }
+
+    /**
+     * Sets current_round
+     *
+     * @param int|null $current_round 現在のround。差し戻し等により申請がstepの最初からやり直しになるとroundの値が増えます。
+     *
+     * @return self
+     */
+    public function setCurrentRound($current_round)
+    {
+
+        if (!is_null($current_round) && ($current_round > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $current_round when calling ExpenseApplicationsIndexResponseExpenseApplications., must be smaller than or equal to 2147483647.');
+        }
+        if (!is_null($current_round) && ($current_round < 0)) {
+            throw new \InvalidArgumentException('invalid value for $current_round when calling ExpenseApplicationsIndexResponseExpenseApplications., must be bigger than or equal to 0.');
+        }
+
+        $this->container['current_round'] = $current_round;
 
         return $this;
     }
@@ -923,112 +1029,6 @@ class ExpenseApplicationsIndexResponseExpenseApplications implements ModelInterf
         }
 
         $this->container['segment_3_tag_id'] = $segment_3_tag_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets status
-     *
-     * @return string
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     *
-     * @param string $status 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)
-     *
-     * @return self
-     */
-    public function setStatus($status)
-    {
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!in_array($status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'status', must be one of '%s'",
-                    $status,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets tag_ids
-     *
-     * @return int[]|null
-     */
-    public function getTagIds()
-    {
-        return $this->container['tag_ids'];
-    }
-
-    /**
-     * Sets tag_ids
-     *
-     * @param int[]|null $tag_ids メモタグID
-     *
-     * @return self
-     */
-    public function setTagIds($tag_ids)
-    {
-        $this->container['tag_ids'] = $tag_ids;
-
-        return $this;
-    }
-
-    /**
-     * Gets title
-     *
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->container['title'];
-    }
-
-    /**
-     * Sets title
-     *
-     * @param string $title 申請タイトル
-     *
-     * @return self
-     */
-    public function setTitle($title)
-    {
-        $this->container['title'] = $title;
-
-        return $this;
-    }
-
-    /**
-     * Gets total_amount
-     *
-     * @return int|null
-     */
-    public function getTotalAmount()
-    {
-        return $this->container['total_amount'];
-    }
-
-    /**
-     * Sets total_amount
-     *
-     * @param int|null $total_amount 合計金額
-     *
-     * @return self
-     */
-    public function setTotalAmount($total_amount)
-    {
-        $this->container['total_amount'] = $total_amount;
 
         return $this;
     }

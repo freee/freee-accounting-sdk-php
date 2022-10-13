@@ -59,13 +59,13 @@ class SelectablesIndexResponseAccountGroups implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static $openAPITypes = [
-        'account_category_id' => 'int',
-        'account_structure_id' => 'int',
-        'created_at' => 'string',
-        'detail_type' => 'int',
         'id' => 'int',
-        'index' => 'int',
         'name' => 'string',
+        'account_structure_id' => 'int',
+        'account_category_id' => 'int',
+        'detail_type' => 'int',
+        'index' => 'int',
+        'created_at' => 'string',
         'updated_at' => 'string'
     ];
 
@@ -77,13 +77,13 @@ class SelectablesIndexResponseAccountGroups implements ModelInterface, ArrayAcce
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'account_category_id' => null,
-        'account_structure_id' => null,
-        'created_at' => null,
-        'detail_type' => null,
         'id' => null,
-        'index' => null,
         'name' => null,
+        'account_structure_id' => null,
+        'account_category_id' => null,
+        'detail_type' => null,
+        'index' => null,
+        'created_at' => null,
         'updated_at' => null
     ];
 
@@ -114,13 +114,13 @@ class SelectablesIndexResponseAccountGroups implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $attributeMap = [
-        'account_category_id' => 'account_category_id',
-        'account_structure_id' => 'account_structure_id',
-        'created_at' => 'created_at',
-        'detail_type' => 'detail_type',
         'id' => 'id',
-        'index' => 'index',
         'name' => 'name',
+        'account_structure_id' => 'account_structure_id',
+        'account_category_id' => 'account_category_id',
+        'detail_type' => 'detail_type',
+        'index' => 'index',
+        'created_at' => 'created_at',
         'updated_at' => 'updated_at'
     ];
 
@@ -130,13 +130,13 @@ class SelectablesIndexResponseAccountGroups implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-        'account_category_id' => 'setAccountCategoryId',
-        'account_structure_id' => 'setAccountStructureId',
-        'created_at' => 'setCreatedAt',
-        'detail_type' => 'setDetailType',
         'id' => 'setId',
-        'index' => 'setIndex',
         'name' => 'setName',
+        'account_structure_id' => 'setAccountStructureId',
+        'account_category_id' => 'setAccountCategoryId',
+        'detail_type' => 'setDetailType',
+        'index' => 'setIndex',
+        'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt'
     ];
 
@@ -146,13 +146,13 @@ class SelectablesIndexResponseAccountGroups implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $getters = [
-        'account_category_id' => 'getAccountCategoryId',
-        'account_structure_id' => 'getAccountStructureId',
-        'created_at' => 'getCreatedAt',
-        'detail_type' => 'getDetailType',
         'id' => 'getId',
-        'index' => 'getIndex',
         'name' => 'getName',
+        'account_structure_id' => 'getAccountStructureId',
+        'account_category_id' => 'getAccountCategoryId',
+        'detail_type' => 'getDetailType',
+        'index' => 'getIndex',
+        'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt'
     ];
 
@@ -213,13 +213,13 @@ class SelectablesIndexResponseAccountGroups implements ModelInterface, ArrayAcce
      */
     public function __construct(array $data = null)
     {
-        $this->container['account_category_id'] = $data['account_category_id'] ?? null;
-        $this->container['account_structure_id'] = $data['account_structure_id'] ?? null;
-        $this->container['created_at'] = $data['created_at'] ?? null;
-        $this->container['detail_type'] = $data['detail_type'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['index'] = $data['index'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['account_structure_id'] = $data['account_structure_id'] ?? null;
+        $this->container['account_category_id'] = $data['account_category_id'] ?? null;
+        $this->container['detail_type'] = $data['detail_type'] ?? null;
+        $this->container['index'] = $data['index'] ?? null;
+        $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
     }
 
@@ -232,36 +232,6 @@ class SelectablesIndexResponseAccountGroups implements ModelInterface, ArrayAcce
     {
         $invalidProperties = [];
 
-        if ($this->container['account_category_id'] === null) {
-            $invalidProperties[] = "'account_category_id' can't be null";
-        }
-        if (($this->container['account_category_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'account_category_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['account_category_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'account_category_id', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['account_structure_id'] === null) {
-            $invalidProperties[] = "'account_structure_id' can't be null";
-        }
-        if (($this->container['account_structure_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'account_structure_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['account_structure_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'account_structure_id', must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['detail_type']) && ($this->container['detail_type'] > 4)) {
-            $invalidProperties[] = "invalid value for 'detail_type', must be smaller than or equal to 4.";
-        }
-
-        if (!is_null($this->container['detail_type']) && ($this->container['detail_type'] < 0)) {
-            $invalidProperties[] = "invalid value for 'detail_type', must be bigger than or equal to 0.";
-        }
-
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
@@ -273,11 +243,41 @@ class SelectablesIndexResponseAccountGroups implements ModelInterface, ArrayAcce
             $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['index'] === null) {
-            $invalidProperties[] = "'index' can't be null";
-        }
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
+        }
+        if ($this->container['account_structure_id'] === null) {
+            $invalidProperties[] = "'account_structure_id' can't be null";
+        }
+        if (($this->container['account_structure_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'account_structure_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['account_structure_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'account_structure_id', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['account_category_id'] === null) {
+            $invalidProperties[] = "'account_category_id' can't be null";
+        }
+        if (($this->container['account_category_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'account_category_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['account_category_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'account_category_id', must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['detail_type']) && ($this->container['detail_type'] > 4)) {
+            $invalidProperties[] = "invalid value for 'detail_type', must be smaller than or equal to 4.";
+        }
+
+        if (!is_null($this->container['detail_type']) && ($this->container['detail_type'] < 0)) {
+            $invalidProperties[] = "invalid value for 'detail_type', must be bigger than or equal to 0.";
+        }
+
+        if ($this->container['index'] === null) {
+            $invalidProperties[] = "'index' can't be null";
         }
         return $invalidProperties;
     }
@@ -295,33 +295,57 @@ class SelectablesIndexResponseAccountGroups implements ModelInterface, ArrayAcce
 
 
     /**
-     * Gets account_category_id
+     * Gets id
      *
      * @return int
      */
-    public function getAccountCategoryId()
+    public function getId()
     {
-        return $this->container['account_category_id'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets account_category_id
+     * Sets id
      *
-     * @param int $account_category_id 勘定科目カテゴリーID
+     * @param int $id 決算書表示名（小カテゴリー）ID
      *
      * @return self
      */
-    public function setAccountCategoryId($account_category_id)
+    public function setId($id)
     {
 
-        if (($account_category_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $account_category_id when calling SelectablesIndexResponseAccountGroups., must be smaller than or equal to 2147483647.');
+        if (($id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling SelectablesIndexResponseAccountGroups., must be smaller than or equal to 2147483647.');
         }
-        if (($account_category_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $account_category_id when calling SelectablesIndexResponseAccountGroups., must be bigger than or equal to 1.');
+        if (($id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling SelectablesIndexResponseAccountGroups., must be bigger than or equal to 1.');
         }
 
-        $this->container['account_category_id'] = $account_category_id;
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name 決算書表示名
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
 
         return $this;
     }
@@ -359,25 +383,33 @@ class SelectablesIndexResponseAccountGroups implements ModelInterface, ArrayAcce
     }
 
     /**
-     * Gets created_at
+     * Gets account_category_id
      *
-     * @return string|null
+     * @return int
      */
-    public function getCreatedAt()
+    public function getAccountCategoryId()
     {
-        return $this->container['created_at'];
+        return $this->container['account_category_id'];
     }
 
     /**
-     * Sets created_at
+     * Sets account_category_id
      *
-     * @param string|null $created_at 作成日時
+     * @param int $account_category_id 勘定科目カテゴリーID
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setAccountCategoryId($account_category_id)
     {
-        $this->container['created_at'] = $created_at;
+
+        if (($account_category_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $account_category_id when calling SelectablesIndexResponseAccountGroups., must be smaller than or equal to 2147483647.');
+        }
+        if (($account_category_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $account_category_id when calling SelectablesIndexResponseAccountGroups., must be bigger than or equal to 1.');
+        }
+
+        $this->container['account_category_id'] = $account_category_id;
 
         return $this;
     }
@@ -415,38 +447,6 @@ class SelectablesIndexResponseAccountGroups implements ModelInterface, ArrayAcce
     }
 
     /**
-     * Gets id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int $id 決算書表示名（小カテゴリー）ID
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-
-        if (($id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling SelectablesIndexResponseAccountGroups., must be smaller than or equal to 2147483647.');
-        }
-        if (($id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling SelectablesIndexResponseAccountGroups., must be bigger than or equal to 1.');
-        }
-
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
      * Gets index
      *
      * @return int
@@ -471,25 +471,25 @@ class SelectablesIndexResponseAccountGroups implements ModelInterface, ArrayAcce
     }
 
     /**
-     * Gets name
+     * Gets created_at
      *
-     * @return string
+     * @return string|null
      */
-    public function getName()
+    public function getCreatedAt()
     {
-        return $this->container['name'];
+        return $this->container['created_at'];
     }
 
     /**
-     * Sets name
+     * Sets created_at
      *
-     * @param string $name 決算書表示名
+     * @param string|null $created_at 作成日時
      *
      * @return self
      */
-    public function setName($name)
+    public function setCreatedAt($created_at)
     {
-        $this->container['name'] = $name;
+        $this->container['created_at'] = $created_at;
 
         return $this;
     }

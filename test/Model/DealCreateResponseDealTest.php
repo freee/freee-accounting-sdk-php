@@ -80,9 +80,9 @@ class DealCreateResponseDealTest extends TestCase
     }
 
     /**
-     * Test attribute "amount"
+     * Test attribute "id"
      */
-    public function testPropertyAmount()
+    public function testPropertyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -98,18 +98,9 @@ class DealCreateResponseDealTest extends TestCase
     }
 
     /**
-     * Test attribute "details"
+     * Test attribute "issue_date"
      */
-    public function testPropertyDetails()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "due_amount"
-     */
-    public function testPropertyDueAmount()
+    public function testPropertyIssueDate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -125,27 +116,27 @@ class DealCreateResponseDealTest extends TestCase
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "amount"
      */
-    public function testPropertyId()
+    public function testPropertyAmount()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "issue_date"
+     * Test attribute "due_amount"
      */
-    public function testPropertyIssueDate()
+    public function testPropertyDueAmount()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "partner_code"
+     * Test attribute "type"
      */
-    public function testPropertyPartnerCode()
+    public function testPropertyType()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -161,18 +152,9 @@ class DealCreateResponseDealTest extends TestCase
     }
 
     /**
-     * Test attribute "payments"
+     * Test attribute "partner_code"
      */
-    public function testPropertyPayments()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "receipts"
-     */
-    public function testPropertyReceipts()
+    public function testPropertyPartnerCode()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -197,9 +179,27 @@ class DealCreateResponseDealTest extends TestCase
     }
 
     /**
-     * Test attribute "type"
+     * Test attribute "details"
      */
-    public function testPropertyType()
+    public function testPropertyDetails()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "payments"
+     */
+    public function testPropertyPayments()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "receipts"
+     */
+    public function testPropertyReceipts()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

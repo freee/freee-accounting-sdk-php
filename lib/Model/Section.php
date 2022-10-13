@@ -59,15 +59,15 @@ class Section implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'available' => 'bool',
-        'company_id' => 'int',
         'id' => 'int',
-        'indent_count' => 'int',
-        'long_name' => 'string',
         'name' => 'string',
-        'parent_id' => 'int',
+        'available' => 'bool',
+        'long_name' => 'string',
+        'company_id' => 'int',
         'shortcut1' => 'string',
-        'shortcut2' => 'string'
+        'shortcut2' => 'string',
+        'indent_count' => 'int',
+        'parent_id' => 'int'
     ];
 
     /**
@@ -78,15 +78,15 @@ class Section implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'available' => null,
-        'company_id' => null,
         'id' => null,
-        'indent_count' => null,
-        'long_name' => null,
         'name' => null,
-        'parent_id' => null,
+        'available' => null,
+        'long_name' => null,
+        'company_id' => null,
         'shortcut1' => null,
-        'shortcut2' => null
+        'shortcut2' => null,
+        'indent_count' => null,
+        'parent_id' => null
     ];
 
     /**
@@ -116,15 +116,15 @@ class Section implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'available' => 'available',
-        'company_id' => 'company_id',
         'id' => 'id',
-        'indent_count' => 'indent_count',
-        'long_name' => 'long_name',
         'name' => 'name',
-        'parent_id' => 'parent_id',
+        'available' => 'available',
+        'long_name' => 'long_name',
+        'company_id' => 'company_id',
         'shortcut1' => 'shortcut1',
-        'shortcut2' => 'shortcut2'
+        'shortcut2' => 'shortcut2',
+        'indent_count' => 'indent_count',
+        'parent_id' => 'parent_id'
     ];
 
     /**
@@ -133,15 +133,15 @@ class Section implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'available' => 'setAvailable',
-        'company_id' => 'setCompanyId',
         'id' => 'setId',
-        'indent_count' => 'setIndentCount',
-        'long_name' => 'setLongName',
         'name' => 'setName',
-        'parent_id' => 'setParentId',
+        'available' => 'setAvailable',
+        'long_name' => 'setLongName',
+        'company_id' => 'setCompanyId',
         'shortcut1' => 'setShortcut1',
-        'shortcut2' => 'setShortcut2'
+        'shortcut2' => 'setShortcut2',
+        'indent_count' => 'setIndentCount',
+        'parent_id' => 'setParentId'
     ];
 
     /**
@@ -150,15 +150,15 @@ class Section implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'available' => 'getAvailable',
-        'company_id' => 'getCompanyId',
         'id' => 'getId',
-        'indent_count' => 'getIndentCount',
-        'long_name' => 'getLongName',
         'name' => 'getName',
-        'parent_id' => 'getParentId',
+        'available' => 'getAvailable',
+        'long_name' => 'getLongName',
+        'company_id' => 'getCompanyId',
         'shortcut1' => 'getShortcut1',
-        'shortcut2' => 'getShortcut2'
+        'shortcut2' => 'getShortcut2',
+        'indent_count' => 'getIndentCount',
+        'parent_id' => 'getParentId'
     ];
 
     /**
@@ -218,15 +218,15 @@ class Section implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['available'] = $data['available'] ?? null;
-        $this->container['company_id'] = $data['company_id'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['indent_count'] = $data['indent_count'] ?? null;
-        $this->container['long_name'] = $data['long_name'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['parent_id'] = $data['parent_id'] ?? null;
+        $this->container['available'] = $data['available'] ?? null;
+        $this->container['long_name'] = $data['long_name'] ?? null;
+        $this->container['company_id'] = $data['company_id'] ?? null;
         $this->container['shortcut1'] = $data['shortcut1'] ?? null;
         $this->container['shortcut2'] = $data['shortcut2'] ?? null;
+        $this->container['indent_count'] = $data['indent_count'] ?? null;
+        $this->container['parent_id'] = $data['parent_id'] ?? null;
     }
 
     /**
@@ -237,20 +237,6 @@ class Section implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        if ($this->container['available'] === null) {
-            $invalidProperties[] = "'available' can't be null";
-        }
-        if ($this->container['company_id'] === null) {
-            $invalidProperties[] = "'company_id' can't be null";
-        }
-        if (($this->container['company_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['company_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
-        }
 
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
@@ -263,19 +249,29 @@ class Section implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['indent_count']) && ($this->container['indent_count'] < 0)) {
-            $invalidProperties[] = "invalid value for 'indent_count', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['long_name']) && (mb_strlen($this->container['long_name']) > 255)) {
-            $invalidProperties[] = "invalid value for 'long_name', the character length must be smaller than or equal to 255.";
-        }
-
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
         if ((mb_strlen($this->container['name']) > 30)) {
             $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 30.";
+        }
+
+        if ($this->container['available'] === null) {
+            $invalidProperties[] = "'available' can't be null";
+        }
+        if (!is_null($this->container['long_name']) && (mb_strlen($this->container['long_name']) > 255)) {
+            $invalidProperties[] = "invalid value for 'long_name', the character length must be smaller than or equal to 255.";
+        }
+
+        if ($this->container['company_id'] === null) {
+            $invalidProperties[] = "'company_id' can't be null";
+        }
+        if (($this->container['company_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['company_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['shortcut1']) && (mb_strlen($this->container['shortcut1']) > 20)) {
@@ -284,6 +280,10 @@ class Section implements ModelInterface, ArrayAccess, \JsonSerializable
 
         if (!is_null($this->container['shortcut2']) && (mb_strlen($this->container['shortcut2']) > 20)) {
             $invalidProperties[] = "invalid value for 'shortcut2', the character length must be smaller than or equal to 20.";
+        }
+
+        if (!is_null($this->container['indent_count']) && ($this->container['indent_count'] < 0)) {
+            $invalidProperties[] = "invalid value for 'indent_count', must be bigger than or equal to 0.";
         }
 
         return $invalidProperties;
@@ -300,62 +300,6 @@ class Section implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets available
-     *
-     * @return bool
-     */
-    public function getAvailable()
-    {
-        return $this->container['available'];
-    }
-
-    /**
-     * Sets available
-     *
-     * @param bool $available 部門の使用設定（true: 使用する、false: 使用しない） <br> <ul>   <li>     本APIでsectionを作成した場合はtrueになります。   </li>   <li>     falseにする場合はWeb画面から変更できます。   </li>   <li>     trueの場合、Web画面での取引登録時などに入力候補として表示されます。   </li>   <li>     falseの場合、部門自体は削除せず、Web画面での取引登録時などに入力候補として表示されません。ただし取引（収入／支出）の作成APIなどでfalseの部門をパラメータに指定すれば、取引などにfalseの部門を設定できます。   </li> </ul>
-     *
-     * @return self
-     */
-    public function setAvailable($available)
-    {
-        $this->container['available'] = $available;
-
-        return $this;
-    }
-
-    /**
-     * Gets company_id
-     *
-     * @return int
-     */
-    public function getCompanyId()
-    {
-        return $this->container['company_id'];
-    }
-
-    /**
-     * Sets company_id
-     *
-     * @param int $company_id 事業所ID
-     *
-     * @return self
-     */
-    public function setCompanyId($company_id)
-    {
-
-        if (($company_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling Section., must be smaller than or equal to 2147483647.');
-        }
-        if (($company_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling Section., must be bigger than or equal to 1.');
-        }
-
-        $this->container['company_id'] = $company_id;
-
-        return $this;
-    }
 
     /**
      * Gets id
@@ -390,30 +334,53 @@ class Section implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets indent_count
+     * Gets name
      *
-     * @return int|null
+     * @return string
      */
-    public function getIndentCount()
+    public function getName()
     {
-        return $this->container['indent_count'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets indent_count
+     * Sets name
      *
-     * @param int|null $indent_count <a target=\"_blank\" href=\"https://support.freee.co.jp/hc/ja/articles/209093566\">部門階層</a> <br> ※ indent_count が 0 のときは第一階層の親部門です。
+     * @param string $name 部門名 (30文字以内)
      *
      * @return self
      */
-    public function setIndentCount($indent_count)
+    public function setName($name)
     {
-
-        if (!is_null($indent_count) && ($indent_count < 0)) {
-            throw new \InvalidArgumentException('invalid value for $indent_count when calling Section., must be bigger than or equal to 0.');
+        if ((mb_strlen($name) > 30)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling Section., must be smaller than or equal to 30.');
         }
 
-        $this->container['indent_count'] = $indent_count;
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets available
+     *
+     * @return bool
+     */
+    public function getAvailable()
+    {
+        return $this->container['available'];
+    }
+
+    /**
+     * Sets available
+     *
+     * @param bool $available 部門の使用設定（true: 使用する、false: 使用しない） <br> <ul>   <li>     本APIでsectionを作成した場合はtrueになります。   </li>   <li>     falseにする場合はWeb画面から変更できます。   </li>   <li>     trueの場合、Web画面での取引登録時などに入力候補として表示されます。   </li>   <li>     falseの場合、部門自体は削除せず、Web画面での取引登録時などに入力候補として表示されません。ただし取引（収入／支出）の作成APIなどでfalseの部門をパラメータに指定すれば、取引などにfalseの部門を設定できます。   </li> </ul>
+     *
+     * @return self
+     */
+    public function setAvailable($available)
+    {
+        $this->container['available'] = $available;
 
         return $this;
     }
@@ -447,53 +414,33 @@ class Section implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets name
+     * Gets company_id
      *
-     * @return string
+     * @return int
      */
-    public function getName()
+    public function getCompanyId()
     {
-        return $this->container['name'];
+        return $this->container['company_id'];
     }
 
     /**
-     * Sets name
+     * Sets company_id
      *
-     * @param string $name 部門名 (30文字以内)
+     * @param int $company_id 事業所ID
      *
      * @return self
      */
-    public function setName($name)
+    public function setCompanyId($company_id)
     {
-        if ((mb_strlen($name) > 30)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling Section., must be smaller than or equal to 30.');
+
+        if (($company_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $company_id when calling Section., must be smaller than or equal to 2147483647.');
+        }
+        if (($company_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $company_id when calling Section., must be bigger than or equal to 1.');
         }
 
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets parent_id
-     *
-     * @return int|null
-     */
-    public function getParentId()
-    {
-        return $this->container['parent_id'];
-    }
-
-    /**
-     * Sets parent_id
-     *
-     * @param int|null $parent_id <a target=\"_blank\" href=\"https://support.freee.co.jp/hc/ja/articles/209093566\">親部門ID</a> <br> ※ parent_id が null のときは第一階層の親部門です。
-     *
-     * @return self
-     */
-    public function setParentId($parent_id)
-    {
-        $this->container['parent_id'] = $parent_id;
+        $this->container['company_id'] = $company_id;
 
         return $this;
     }
@@ -550,6 +497,59 @@ class Section implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['shortcut2'] = $shortcut2;
+
+        return $this;
+    }
+
+    /**
+     * Gets indent_count
+     *
+     * @return int|null
+     */
+    public function getIndentCount()
+    {
+        return $this->container['indent_count'];
+    }
+
+    /**
+     * Sets indent_count
+     *
+     * @param int|null $indent_count <a target=\"_blank\" href=\"https://support.freee.co.jp/hc/ja/articles/209093566\">部門階層</a> <br> ※ indent_count が 0 のときは第一階層の親部門です。
+     *
+     * @return self
+     */
+    public function setIndentCount($indent_count)
+    {
+
+        if (!is_null($indent_count) && ($indent_count < 0)) {
+            throw new \InvalidArgumentException('invalid value for $indent_count when calling Section., must be bigger than or equal to 0.');
+        }
+
+        $this->container['indent_count'] = $indent_count;
+
+        return $this;
+    }
+
+    /**
+     * Gets parent_id
+     *
+     * @return int|null
+     */
+    public function getParentId()
+    {
+        return $this->container['parent_id'];
+    }
+
+    /**
+     * Sets parent_id
+     *
+     * @param int|null $parent_id <a target=\"_blank\" href=\"https://support.freee.co.jp/hc/ja/articles/209093566\">親部門ID</a> <br> ※ parent_id が null のときは第一階層の親部門です。
+     *
+     * @return self
+     */
+    public function setParentId($parent_id)
+    {
+        $this->container['parent_id'] = $parent_id;
 
         return $this;
     }

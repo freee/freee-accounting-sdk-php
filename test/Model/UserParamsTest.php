@@ -98,18 +98,18 @@ class UserParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "first_name_kana"
+     * Test attribute "last_name"
      */
-    public function testPropertyFirstNameKana()
+    public function testPropertyLastName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "last_name"
+     * Test attribute "first_name_kana"
      */
-    public function testPropertyLastName()
+    public function testPropertyFirstNameKana()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

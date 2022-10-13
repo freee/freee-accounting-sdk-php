@@ -80,9 +80,18 @@ class SelectablesIndexResponseAccountGroupsTest extends TestCase
     }
 
     /**
-     * Test attribute "account_category_id"
+     * Test attribute "id"
      */
-    public function testPropertyAccountCategoryId()
+    public function testPropertyId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -98,9 +107,9 @@ class SelectablesIndexResponseAccountGroupsTest extends TestCase
     }
 
     /**
-     * Test attribute "created_at"
+     * Test attribute "account_category_id"
      */
-    public function testPropertyCreatedAt()
+    public function testPropertyAccountCategoryId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -116,15 +125,6 @@ class SelectablesIndexResponseAccountGroupsTest extends TestCase
     }
 
     /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "index"
      */
     public function testPropertyIndex()
@@ -134,9 +134,9 @@ class SelectablesIndexResponseAccountGroupsTest extends TestCase
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "created_at"
      */
-    public function testPropertyName()
+    public function testPropertyCreatedAt()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

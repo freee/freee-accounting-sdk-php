@@ -80,6 +80,15 @@ class ApprovalRequestCreateParamsTest extends TestCase
     }
 
     /**
+     * Test attribute "company_id"
+     */
+    public function testPropertyCompanyId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "application_date"
      */
     public function testPropertyApplicationDate()
@@ -98,6 +107,15 @@ class ApprovalRequestCreateParamsTest extends TestCase
     }
 
     /**
+     * Test attribute "form_id"
+     */
+    public function testPropertyFormId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "approver_id"
      */
     public function testPropertyApproverId()
@@ -107,27 +125,9 @@ class ApprovalRequestCreateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "company_id"
-     */
-    public function testPropertyCompanyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "draft"
      */
     public function testPropertyDraft()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "form_id"
-     */
-    public function testPropertyFormId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

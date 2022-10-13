@@ -80,6 +80,96 @@ class QuotationIndexResponseQuotationContentsTest extends TestCase
     }
 
     /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "order"
+     */
+    public function testPropertyOrder()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "qty"
+     */
+    public function testPropertyQty()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "unit"
+     */
+    public function testPropertyUnit()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "unit_price"
+     */
+    public function testPropertyUnitPrice()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "amount"
+     */
+    public function testPropertyAmount()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "vat"
+     */
+    public function testPropertyVat()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "reduced_vat"
+     */
+    public function testPropertyReducedVat()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "account_item_id"
      */
     public function testPropertyAccountItemId()
@@ -98,27 +188,9 @@ class QuotationIndexResponseQuotationContentsTest extends TestCase
     }
 
     /**
-     * Test attribute "amount"
+     * Test attribute "tax_code"
      */
-    public function testPropertyAmount()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
+    public function testPropertyTaxCode()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -143,33 +215,6 @@ class QuotationIndexResponseQuotationContentsTest extends TestCase
     }
 
     /**
-     * Test attribute "order"
-     */
-    public function testPropertyOrder()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "qty"
-     */
-    public function testPropertyQty()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "reduced_vat"
-     */
-    public function testPropertyReducedVat()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "section_id"
      */
     public function testPropertySectionId()
@@ -182,6 +227,24 @@ class QuotationIndexResponseQuotationContentsTest extends TestCase
      * Test attribute "section_name"
      */
     public function testPropertySectionName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tag_ids"
+     */
+    public function testPropertyTagIds()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tag_names"
+     */
+    public function testPropertyTagNames()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -236,69 +299,6 @@ class QuotationIndexResponseQuotationContentsTest extends TestCase
      * Test attribute "segment_3_tag_name"
      */
     public function testPropertySegment3TagName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "tag_ids"
-     */
-    public function testPropertyTagIds()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "tag_names"
-     */
-    public function testPropertyTagNames()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "tax_code"
-     */
-    public function testPropertyTaxCode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "unit"
-     */
-    public function testPropertyUnit()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "unit_price"
-     */
-    public function testPropertyUnitPrice()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "vat"
-     */
-    public function testPropertyVat()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

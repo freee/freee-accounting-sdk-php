@@ -80,18 +80,18 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsSectionsTest extends TestCase
     }
 
     /**
-     * Test attribute "closing_balance"
+     * Test attribute "id"
      */
-    public function testPropertyClosingBalance()
+    public function testPropertyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "name"
      */
-    public function testPropertyId()
+    public function testPropertyName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -107,9 +107,9 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsSectionsTest extends TestCase
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "closing_balance"
      */
-    public function testPropertyName()
+    public function testPropertyClosingBalance()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

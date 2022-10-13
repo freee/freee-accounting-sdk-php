@@ -59,15 +59,15 @@ class JournalStatusResponseJournals implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
+        'id' => 'int',
         'company_id' => 'int',
         'download_type' => 'string',
-        'download_url' => 'string',
-        'end_date' => 'string',
-        'id' => 'int',
-        'start_date' => 'string',
         'status' => 'string',
+        'start_date' => 'string',
+        'end_date' => 'string',
+        'visible_tags' => 'string[]',
         'visible_ids' => 'string[]',
-        'visible_tags' => 'string[]'
+        'download_url' => 'string'
     ];
 
     /**
@@ -78,15 +78,15 @@ class JournalStatusResponseJournals implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'id' => null,
         'company_id' => null,
         'download_type' => null,
-        'download_url' => null,
-        'end_date' => null,
-        'id' => null,
-        'start_date' => null,
         'status' => null,
+        'start_date' => null,
+        'end_date' => null,
+        'visible_tags' => null,
         'visible_ids' => null,
-        'visible_tags' => null
+        'download_url' => null
     ];
 
     /**
@@ -116,15 +116,15 @@ class JournalStatusResponseJournals implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
         'company_id' => 'company_id',
         'download_type' => 'download_type',
-        'download_url' => 'download_url',
-        'end_date' => 'end_date',
-        'id' => 'id',
-        'start_date' => 'start_date',
         'status' => 'status',
+        'start_date' => 'start_date',
+        'end_date' => 'end_date',
+        'visible_tags' => 'visible_tags',
         'visible_ids' => 'visible_ids',
-        'visible_tags' => 'visible_tags'
+        'download_url' => 'download_url'
     ];
 
     /**
@@ -133,15 +133,15 @@ class JournalStatusResponseJournals implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
         'company_id' => 'setCompanyId',
         'download_type' => 'setDownloadType',
-        'download_url' => 'setDownloadUrl',
-        'end_date' => 'setEndDate',
-        'id' => 'setId',
-        'start_date' => 'setStartDate',
         'status' => 'setStatus',
+        'start_date' => 'setStartDate',
+        'end_date' => 'setEndDate',
+        'visible_tags' => 'setVisibleTags',
         'visible_ids' => 'setVisibleIds',
-        'visible_tags' => 'setVisibleTags'
+        'download_url' => 'setDownloadUrl'
     ];
 
     /**
@@ -150,15 +150,15 @@ class JournalStatusResponseJournals implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
         'company_id' => 'getCompanyId',
         'download_type' => 'getDownloadType',
-        'download_url' => 'getDownloadUrl',
-        'end_date' => 'getEndDate',
-        'id' => 'getId',
-        'start_date' => 'getStartDate',
         'status' => 'getStatus',
+        'start_date' => 'getStartDate',
+        'end_date' => 'getEndDate',
+        'visible_tags' => 'getVisibleTags',
         'visible_ids' => 'getVisibleIds',
-        'visible_tags' => 'getVisibleTags'
+        'download_url' => 'getDownloadUrl'
     ];
 
     /**
@@ -209,9 +209,6 @@ class JournalStatusResponseJournals implements ModelInterface, ArrayAccess, \Jso
     const STATUS_WORKING = 'working';
     const STATUS_UPLOADED = 'uploaded';
     const STATUS_FAILED = 'failed';
-    const VISIBLE_IDS_DEAL_ID = 'deal_id';
-    const VISIBLE_IDS_TRANSFER_ID = 'transfer_id';
-    const VISIBLE_IDS_MANUAL_JOURNAL_ID = 'manual_journal_id';
     const VISIBLE_TAGS_PARTNER = 'partner';
     const VISIBLE_TAGS_ITEM = 'item';
     const VISIBLE_TAGS_TAG = 'tag';
@@ -222,6 +219,9 @@ class JournalStatusResponseJournals implements ModelInterface, ArrayAccess, \Jso
     const VISIBLE_TAGS_SEGMENT_1_TAG = 'segment_1_tag';
     const VISIBLE_TAGS_SEGMENT_2_TAG = 'segment_2_tag';
     const VISIBLE_TAGS_SEGMENT_3_TAG = 'segment_3_tag';
+    const VISIBLE_IDS_DEAL_ID = 'deal_id';
+    const VISIBLE_IDS_TRANSFER_ID = 'transfer_id';
+    const VISIBLE_IDS_MANUAL_JOURNAL_ID = 'manual_journal_id';
 
     /**
      * Gets allowable values of the enum
@@ -257,20 +257,6 @@ class JournalStatusResponseJournals implements ModelInterface, ArrayAccess, \Jso
      *
      * @return string[]
      */
-    public function getVisibleIdsAllowableValues()
-    {
-        return [
-            self::VISIBLE_IDS_DEAL_ID,
-            self::VISIBLE_IDS_TRANSFER_ID,
-            self::VISIBLE_IDS_MANUAL_JOURNAL_ID,
-        ];
-    }
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
     public function getVisibleTagsAllowableValues()
     {
         return [
@@ -284,6 +270,20 @@ class JournalStatusResponseJournals implements ModelInterface, ArrayAccess, \Jso
             self::VISIBLE_TAGS_SEGMENT_1_TAG,
             self::VISIBLE_TAGS_SEGMENT_2_TAG,
             self::VISIBLE_TAGS_SEGMENT_3_TAG,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getVisibleIdsAllowableValues()
+    {
+        return [
+            self::VISIBLE_IDS_DEAL_ID,
+            self::VISIBLE_IDS_TRANSFER_ID,
+            self::VISIBLE_IDS_MANUAL_JOURNAL_ID,
         ];
     }
 
@@ -302,15 +302,15 @@ class JournalStatusResponseJournals implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['company_id'] = $data['company_id'] ?? null;
         $this->container['download_type'] = $data['download_type'] ?? null;
-        $this->container['download_url'] = $data['download_url'] ?? null;
-        $this->container['end_date'] = $data['end_date'] ?? null;
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['start_date'] = $data['start_date'] ?? null;
         $this->container['status'] = $data['status'] ?? null;
-        $this->container['visible_ids'] = $data['visible_ids'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['end_date'] = $data['end_date'] ?? null;
         $this->container['visible_tags'] = $data['visible_tags'] ?? null;
+        $this->container['visible_ids'] = $data['visible_ids'] ?? null;
+        $this->container['download_url'] = $data['download_url'] ?? null;
     }
 
     /**
@@ -321,6 +321,17 @@ class JournalStatusResponseJournals implements ModelInterface, ArrayAccess, \Jso
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
+        }
+        if (($this->container['id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
+        }
 
         if ($this->container['company_id'] === null) {
             $invalidProperties[] = "'company_id' can't be null";
@@ -345,23 +356,6 @@ class JournalStatusResponseJournals implements ModelInterface, ArrayAccess, \Jso
             );
         }
 
-        if ($this->container['end_date'] === null) {
-            $invalidProperties[] = "'end_date' can't be null";
-        }
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if (($this->container['id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['start_date'] === null) {
-            $invalidProperties[] = "'start_date' can't be null";
-        }
         if ($this->container['status'] === null) {
             $invalidProperties[] = "'status' can't be null";
         }
@@ -374,6 +368,12 @@ class JournalStatusResponseJournals implements ModelInterface, ArrayAccess, \Jso
             );
         }
 
+        if ($this->container['start_date'] === null) {
+            $invalidProperties[] = "'start_date' can't be null";
+        }
+        if ($this->container['end_date'] === null) {
+            $invalidProperties[] = "'end_date' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -388,6 +388,38 @@ class JournalStatusResponseJournals implements ModelInterface, ArrayAccess, \Jso
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int $id 受け付けID
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+
+        if (($id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling JournalStatusResponseJournals., must be smaller than or equal to 2147483647.');
+        }
+        if (($id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling JournalStatusResponseJournals., must be bigger than or equal to 1.');
+        }
+
+        $this->container['id'] = $id;
+
+        return $this;
+    }
 
     /**
      * Gets company_id
@@ -456,110 +488,6 @@ class JournalStatusResponseJournals implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
-     * Gets download_url
-     *
-     * @return string|null
-     */
-    public function getDownloadUrl()
-    {
-        return $this->container['download_url'];
-    }
-
-    /**
-     * Sets download_url
-     *
-     * @param string|null $download_url ダウンロードURL
-     *
-     * @return self
-     */
-    public function setDownloadUrl($download_url)
-    {
-        $this->container['download_url'] = $download_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets end_date
-     *
-     * @return string
-     */
-    public function getEndDate()
-    {
-        return $this->container['end_date'];
-    }
-
-    /**
-     * Sets end_date
-     *
-     * @param string $end_date 取得終了日 (yyyy-mm-dd)
-     *
-     * @return self
-     */
-    public function setEndDate($end_date)
-    {
-        $this->container['end_date'] = $end_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int $id 受け付けID
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-
-        if (($id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling JournalStatusResponseJournals., must be smaller than or equal to 2147483647.');
-        }
-        if (($id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling JournalStatusResponseJournals., must be bigger than or equal to 1.');
-        }
-
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_date
-     *
-     * @return string
-     */
-    public function getStartDate()
-    {
-        return $this->container['start_date'];
-    }
-
-    /**
-     * Sets start_date
-     *
-     * @param string $start_date 取得開始日 (yyyy-mm-dd)
-     *
-     * @return self
-     */
-    public function setStartDate($start_date)
-    {
-        $this->container['start_date'] = $start_date;
-
-        return $this;
-    }
-
-    /**
      * Gets status
      *
      * @return string
@@ -589,6 +517,87 @@ class JournalStatusResponseJournals implements ModelInterface, ArrayAccess, \Jso
             );
         }
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_date
+     *
+     * @return string
+     */
+    public function getStartDate()
+    {
+        return $this->container['start_date'];
+    }
+
+    /**
+     * Sets start_date
+     *
+     * @param string $start_date 取得開始日 (yyyy-mm-dd)
+     *
+     * @return self
+     */
+    public function setStartDate($start_date)
+    {
+        $this->container['start_date'] = $start_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets end_date
+     *
+     * @return string
+     */
+    public function getEndDate()
+    {
+        return $this->container['end_date'];
+    }
+
+    /**
+     * Sets end_date
+     *
+     * @param string $end_date 取得終了日 (yyyy-mm-dd)
+     *
+     * @return self
+     */
+    public function setEndDate($end_date)
+    {
+        $this->container['end_date'] = $end_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets visible_tags
+     *
+     * @return string[]|null
+     */
+    public function getVisibleTags()
+    {
+        return $this->container['visible_tags'];
+    }
+
+    /**
+     * Sets visible_tags
+     *
+     * @param string[]|null $visible_tags visible_tags
+     *
+     * @return self
+     */
+    public function setVisibleTags($visible_tags)
+    {
+        $allowedValues = $this->getVisibleTagsAllowableValues();
+        if (!is_null($visible_tags) && array_diff($visible_tags, $allowedValues)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'visible_tags', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['visible_tags'] = $visible_tags;
 
         return $this;
     }
@@ -627,34 +636,25 @@ class JournalStatusResponseJournals implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
-     * Gets visible_tags
+     * Gets download_url
      *
-     * @return string[]|null
+     * @return string|null
      */
-    public function getVisibleTags()
+    public function getDownloadUrl()
     {
-        return $this->container['visible_tags'];
+        return $this->container['download_url'];
     }
 
     /**
-     * Sets visible_tags
+     * Sets download_url
      *
-     * @param string[]|null $visible_tags visible_tags
+     * @param string|null $download_url ダウンロードURL
      *
      * @return self
      */
-    public function setVisibleTags($visible_tags)
+    public function setDownloadUrl($download_url)
     {
-        $allowedValues = $this->getVisibleTagsAllowableValues();
-        if (!is_null($visible_tags) && array_diff($visible_tags, $allowedValues)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'visible_tags', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['visible_tags'] = $visible_tags;
+        $this->container['download_url'] = $download_url;
 
         return $this;
     }

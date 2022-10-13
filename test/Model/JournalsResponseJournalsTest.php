@@ -80,33 +80,6 @@ class JournalsResponseJournalsTest extends TestCase
     }
 
     /**
-     * Test attribute "company_id"
-     */
-    public function testPropertyCompanyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "download_type"
-     */
-    public function testPropertyDownloadType()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "end_date"
-     */
-    public function testPropertyEndDate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "id"
      */
     public function testPropertyId()
@@ -125,9 +98,54 @@ class JournalsResponseJournalsTest extends TestCase
     }
 
     /**
+     * Test attribute "company_id"
+     */
+    public function testPropertyCompanyId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "download_type"
+     */
+    public function testPropertyDownloadType()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "start_date"
      */
     public function testPropertyStartDate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "end_date"
+     */
+    public function testPropertyEndDate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "visible_tags"
+     */
+    public function testPropertyVisibleTags()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "visible_ids"
+     */
+    public function testPropertyVisibleIds()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -155,24 +173,6 @@ class JournalsResponseJournalsTest extends TestCase
      * Test attribute "up_to_date_reasons"
      */
     public function testPropertyUpToDateReasons()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "visible_ids"
-     */
-    public function testPropertyVisibleIds()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "visible_tags"
-     */
-    public function testPropertyVisibleTags()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

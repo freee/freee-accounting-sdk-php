@@ -80,27 +80,9 @@ class ApprovalRequestsIndexResponseApprovalRequestsTest extends TestCase
     }
 
     /**
-     * Test attribute "applicant_id"
+     * Test attribute "id"
      */
-    public function testPropertyApplicantId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "application_date"
-     */
-    public function testPropertyApplicationDate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "application_number"
-     */
-    public function testPropertyApplicationNumber()
+    public function testPropertyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -116,72 +98,36 @@ class ApprovalRequestsIndexResponseApprovalRequestsTest extends TestCase
     }
 
     /**
-     * Test attribute "current_round"
+     * Test attribute "application_date"
      */
-    public function testPropertyCurrentRound()
+    public function testPropertyApplicationDate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "current_step_id"
+     * Test attribute "title"
      */
-    public function testPropertyCurrentStepId()
+    public function testPropertyTitle()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "deal_id"
+     * Test attribute "applicant_id"
      */
-    public function testPropertyDealId()
+    public function testPropertyApplicantId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "deal_status"
+     * Test attribute "application_number"
      */
-    public function testPropertyDealStatus()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "form_id"
-     */
-    public function testPropertyFormId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "manual_journal_id"
-     */
-    public function testPropertyManualJournalId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "request_items"
-     */
-    public function testPropertyRequestItems()
+    public function testPropertyApplicationNumber()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -197,9 +143,63 @@ class ApprovalRequestsIndexResponseApprovalRequestsTest extends TestCase
     }
 
     /**
-     * Test attribute "title"
+     * Test attribute "request_items"
      */
-    public function testPropertyTitle()
+    public function testPropertyRequestItems()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "form_id"
+     */
+    public function testPropertyFormId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "current_step_id"
+     */
+    public function testPropertyCurrentStepId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "current_round"
+     */
+    public function testPropertyCurrentRound()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "deal_id"
+     */
+    public function testPropertyDealId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "manual_journal_id"
+     */
+    public function testPropertyManualJournalId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "deal_status"
+     */
+    public function testPropertyDealStatus()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

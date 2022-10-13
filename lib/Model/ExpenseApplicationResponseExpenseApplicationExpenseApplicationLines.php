@@ -59,12 +59,12 @@ class ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines implem
       * @var string[]
       */
     protected static $openAPITypes = [
-        'amount' => 'int',
-        'description' => 'string',
-        'expense_application_line_template_id' => 'int',
         'id' => 'int',
-        'receipt_id' => 'int',
-        'transaction_date' => 'string'
+        'transaction_date' => 'string',
+        'description' => 'string',
+        'amount' => 'int',
+        'expense_application_line_template_id' => 'int',
+        'receipt_id' => 'int'
     ];
 
     /**
@@ -75,12 +75,12 @@ class ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines implem
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'amount' => null,
-        'description' => null,
-        'expense_application_line_template_id' => null,
         'id' => 'int64',
-        'receipt_id' => null,
-        'transaction_date' => null
+        'transaction_date' => null,
+        'description' => null,
+        'amount' => null,
+        'expense_application_line_template_id' => null,
+        'receipt_id' => null
     ];
 
     /**
@@ -110,12 +110,12 @@ class ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines implem
      * @var string[]
      */
     protected static $attributeMap = [
-        'amount' => 'amount',
-        'description' => 'description',
-        'expense_application_line_template_id' => 'expense_application_line_template_id',
         'id' => 'id',
-        'receipt_id' => 'receipt_id',
-        'transaction_date' => 'transaction_date'
+        'transaction_date' => 'transaction_date',
+        'description' => 'description',
+        'amount' => 'amount',
+        'expense_application_line_template_id' => 'expense_application_line_template_id',
+        'receipt_id' => 'receipt_id'
     ];
 
     /**
@@ -124,12 +124,12 @@ class ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines implem
      * @var string[]
      */
     protected static $setters = [
-        'amount' => 'setAmount',
-        'description' => 'setDescription',
-        'expense_application_line_template_id' => 'setExpenseApplicationLineTemplateId',
         'id' => 'setId',
-        'receipt_id' => 'setReceiptId',
-        'transaction_date' => 'setTransactionDate'
+        'transaction_date' => 'setTransactionDate',
+        'description' => 'setDescription',
+        'amount' => 'setAmount',
+        'expense_application_line_template_id' => 'setExpenseApplicationLineTemplateId',
+        'receipt_id' => 'setReceiptId'
     ];
 
     /**
@@ -138,12 +138,12 @@ class ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines implem
      * @var string[]
      */
     protected static $getters = [
-        'amount' => 'getAmount',
-        'description' => 'getDescription',
-        'expense_application_line_template_id' => 'getExpenseApplicationLineTemplateId',
         'id' => 'getId',
-        'receipt_id' => 'getReceiptId',
-        'transaction_date' => 'getTransactionDate'
+        'transaction_date' => 'getTransactionDate',
+        'description' => 'getDescription',
+        'amount' => 'getAmount',
+        'expense_application_line_template_id' => 'getExpenseApplicationLineTemplateId',
+        'receipt_id' => 'getReceiptId'
     ];
 
     /**
@@ -203,12 +203,12 @@ class ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines implem
      */
     public function __construct(array $data = null)
     {
-        $this->container['amount'] = $data['amount'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
-        $this->container['expense_application_line_template_id'] = $data['expense_application_line_template_id'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['receipt_id'] = $data['receipt_id'] ?? null;
         $this->container['transaction_date'] = $data['transaction_date'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
+        $this->container['amount'] = $data['amount'] ?? null;
+        $this->container['expense_application_line_template_id'] = $data['expense_application_line_template_id'] ?? null;
+        $this->container['receipt_id'] = $data['receipt_id'] ?? null;
     }
 
     /**
@@ -219,6 +219,17 @@ class ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines implem
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
+        }
+        if (($this->container['id'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 9223372036854775807.";
+        }
+
+        if (($this->container['id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
+        }
 
         if (!is_null($this->container['amount']) && ($this->container['amount'] > 2147483647)) {
             $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 2147483647.";
@@ -234,17 +245,6 @@ class ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines implem
 
         if (!is_null($this->container['expense_application_line_template_id']) && ($this->container['expense_application_line_template_id'] < 1)) {
             $invalidProperties[] = "invalid value for 'expense_application_line_template_id', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if (($this->container['id'] > 9223372036854775807)) {
-            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 9223372036854775807.";
-        }
-
-        if (($this->container['id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['receipt_id']) && ($this->container['receipt_id'] > 2147483647)) {
@@ -269,6 +269,86 @@ class ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines implem
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int $id 経費申請の項目行ID
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+
+        if (($id > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines., must be smaller than or equal to 9223372036854775807.');
+        }
+        if (($id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines., must be bigger than or equal to 1.');
+        }
+
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets transaction_date
+     *
+     * @return string|null
+     */
+    public function getTransactionDate()
+    {
+        return $this->container['transaction_date'];
+    }
+
+    /**
+     * Sets transaction_date
+     *
+     * @param string|null $transaction_date 日付 (yyyy-mm-dd)
+     *
+     * @return self
+     */
+    public function setTransactionDate($transaction_date)
+    {
+        $this->container['transaction_date'] = $transaction_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string|null $description 内容
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
+
+        return $this;
+    }
 
     /**
      * Gets amount
@@ -298,30 +378,6 @@ class ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines implem
         }
 
         $this->container['amount'] = $amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string|null
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string|null $description 内容
-     *
-     * @return self
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
 
         return $this;
     }
@@ -359,38 +415,6 @@ class ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines implem
     }
 
     /**
-     * Gets id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int $id 経費申請の項目行ID
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-
-        if (($id > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines., must be smaller than or equal to 9223372036854775807.');
-        }
-        if (($id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines., must be bigger than or equal to 1.');
-        }
-
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
      * Gets receipt_id
      *
      * @return int|null
@@ -418,30 +442,6 @@ class ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines implem
         }
 
         $this->container['receipt_id'] = $receipt_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets transaction_date
-     *
-     * @return string|null
-     */
-    public function getTransactionDate()
-    {
-        return $this->container['transaction_date'];
-    }
-
-    /**
-     * Sets transaction_date
-     *
-     * @param string|null $transaction_date 日付 (yyyy-mm-dd)
-     *
-     * @return self
-     */
-    public function setTransactionDate($transaction_date)
-    {
-        $this->container['transaction_date'] = $transaction_date;
 
         return $this;
     }

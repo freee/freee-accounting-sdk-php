@@ -59,10 +59,10 @@ class InvoiceIndexResponseTotalAmountPerVatRate implements ModelInterface, Array
       * @var string[]
       */
     protected static $openAPITypes = [
-        'reduced_vat_8' => 'int',
-        'vat_10' => 'int',
         'vat_5' => 'int',
-        'vat_8' => 'int'
+        'vat_8' => 'int',
+        'reduced_vat_8' => 'int',
+        'vat_10' => 'int'
     ];
 
     /**
@@ -73,10 +73,10 @@ class InvoiceIndexResponseTotalAmountPerVatRate implements ModelInterface, Array
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'reduced_vat_8' => 'int64',
-        'vat_10' => 'int64',
         'vat_5' => 'int64',
-        'vat_8' => 'int64'
+        'vat_8' => 'int64',
+        'reduced_vat_8' => 'int64',
+        'vat_10' => 'int64'
     ];
 
     /**
@@ -106,10 +106,10 @@ class InvoiceIndexResponseTotalAmountPerVatRate implements ModelInterface, Array
      * @var string[]
      */
     protected static $attributeMap = [
-        'reduced_vat_8' => 'reduced_vat_8',
-        'vat_10' => 'vat_10',
         'vat_5' => 'vat_5',
-        'vat_8' => 'vat_8'
+        'vat_8' => 'vat_8',
+        'reduced_vat_8' => 'reduced_vat_8',
+        'vat_10' => 'vat_10'
     ];
 
     /**
@@ -118,10 +118,10 @@ class InvoiceIndexResponseTotalAmountPerVatRate implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-        'reduced_vat_8' => 'setReducedVat8',
-        'vat_10' => 'setVat10',
         'vat_5' => 'setVat5',
-        'vat_8' => 'setVat8'
+        'vat_8' => 'setVat8',
+        'reduced_vat_8' => 'setReducedVat8',
+        'vat_10' => 'setVat10'
     ];
 
     /**
@@ -130,10 +130,10 @@ class InvoiceIndexResponseTotalAmountPerVatRate implements ModelInterface, Array
      * @var string[]
      */
     protected static $getters = [
-        'reduced_vat_8' => 'getReducedVat8',
-        'vat_10' => 'getVat10',
         'vat_5' => 'getVat5',
-        'vat_8' => 'getVat8'
+        'vat_8' => 'getVat8',
+        'reduced_vat_8' => 'getReducedVat8',
+        'vat_10' => 'getVat10'
     ];
 
     /**
@@ -193,10 +193,10 @@ class InvoiceIndexResponseTotalAmountPerVatRate implements ModelInterface, Array
      */
     public function __construct(array $data = null)
     {
-        $this->container['reduced_vat_8'] = $data['reduced_vat_8'] ?? null;
-        $this->container['vat_10'] = $data['vat_10'] ?? null;
         $this->container['vat_5'] = $data['vat_5'] ?? null;
         $this->container['vat_8'] = $data['vat_8'] ?? null;
+        $this->container['reduced_vat_8'] = $data['reduced_vat_8'] ?? null;
+        $this->container['vat_10'] = $data['vat_10'] ?? null;
     }
 
     /**
@@ -207,20 +207,6 @@ class InvoiceIndexResponseTotalAmountPerVatRate implements ModelInterface, Array
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        if ($this->container['reduced_vat_8'] === null) {
-            $invalidProperties[] = "'reduced_vat_8' can't be null";
-        }
-        if (($this->container['reduced_vat_8'] > 9223372036854775807)) {
-            $invalidProperties[] = "invalid value for 'reduced_vat_8', must be smaller than or equal to 9223372036854775807.";
-        }
-
-        if ($this->container['vat_10'] === null) {
-            $invalidProperties[] = "'vat_10' can't be null";
-        }
-        if (($this->container['vat_10'] > 9223372036854775807)) {
-            $invalidProperties[] = "invalid value for 'vat_10', must be smaller than or equal to 9223372036854775807.";
-        }
 
         if ($this->container['vat_5'] === null) {
             $invalidProperties[] = "'vat_5' can't be null";
@@ -234,6 +220,20 @@ class InvoiceIndexResponseTotalAmountPerVatRate implements ModelInterface, Array
         }
         if (($this->container['vat_8'] > 9223372036854775807)) {
             $invalidProperties[] = "invalid value for 'vat_8', must be smaller than or equal to 9223372036854775807.";
+        }
+
+        if ($this->container['reduced_vat_8'] === null) {
+            $invalidProperties[] = "'reduced_vat_8' can't be null";
+        }
+        if (($this->container['reduced_vat_8'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'reduced_vat_8', must be smaller than or equal to 9223372036854775807.";
+        }
+
+        if ($this->container['vat_10'] === null) {
+            $invalidProperties[] = "'vat_10' can't be null";
+        }
+        if (($this->container['vat_10'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'vat_10', must be smaller than or equal to 9223372036854775807.";
         }
 
         return $invalidProperties;
@@ -250,64 +250,6 @@ class InvoiceIndexResponseTotalAmountPerVatRate implements ModelInterface, Array
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets reduced_vat_8
-     *
-     * @return int
-     */
-    public function getReducedVat8()
-    {
-        return $this->container['reduced_vat_8'];
-    }
-
-    /**
-     * Sets reduced_vat_8
-     *
-     * @param int $reduced_vat_8 軽減税率8%の税込み金額合計
-     *
-     * @return self
-     */
-    public function setReducedVat8($reduced_vat_8)
-    {
-
-        if (($reduced_vat_8 > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $reduced_vat_8 when calling InvoiceIndexResponseTotalAmountPerVatRate., must be smaller than or equal to 9223372036854775807.');
-        }
-
-        $this->container['reduced_vat_8'] = $reduced_vat_8;
-
-        return $this;
-    }
-
-    /**
-     * Gets vat_10
-     *
-     * @return int
-     */
-    public function getVat10()
-    {
-        return $this->container['vat_10'];
-    }
-
-    /**
-     * Sets vat_10
-     *
-     * @param int $vat_10 税率10%の税込み金額合計
-     *
-     * @return self
-     */
-    public function setVat10($vat_10)
-    {
-
-        if (($vat_10 > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $vat_10 when calling InvoiceIndexResponseTotalAmountPerVatRate., must be smaller than or equal to 9223372036854775807.');
-        }
-
-        $this->container['vat_10'] = $vat_10;
-
-        return $this;
-    }
 
     /**
      * Gets vat_5
@@ -363,6 +305,64 @@ class InvoiceIndexResponseTotalAmountPerVatRate implements ModelInterface, Array
         }
 
         $this->container['vat_8'] = $vat_8;
+
+        return $this;
+    }
+
+    /**
+     * Gets reduced_vat_8
+     *
+     * @return int
+     */
+    public function getReducedVat8()
+    {
+        return $this->container['reduced_vat_8'];
+    }
+
+    /**
+     * Sets reduced_vat_8
+     *
+     * @param int $reduced_vat_8 軽減税率8%の税込み金額合計
+     *
+     * @return self
+     */
+    public function setReducedVat8($reduced_vat_8)
+    {
+
+        if (($reduced_vat_8 > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $reduced_vat_8 when calling InvoiceIndexResponseTotalAmountPerVatRate., must be smaller than or equal to 9223372036854775807.');
+        }
+
+        $this->container['reduced_vat_8'] = $reduced_vat_8;
+
+        return $this;
+    }
+
+    /**
+     * Gets vat_10
+     *
+     * @return int
+     */
+    public function getVat10()
+    {
+        return $this->container['vat_10'];
+    }
+
+    /**
+     * Sets vat_10
+     *
+     * @param int $vat_10 税率10%の税込み金額合計
+     *
+     * @return self
+     */
+    public function setVat10($vat_10)
+    {
+
+        if (($vat_10 > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $vat_10 when calling InvoiceIndexResponseTotalAmountPerVatRate., must be smaller than or equal to 9223372036854775807.');
+        }
+
+        $this->container['vat_10'] = $vat_10;
 
         return $this;
     }

@@ -59,41 +59,41 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => '\Freee\Accounting\Model\CompanyResponseCompanyTags[]',
-        'account_items' => '\Freee\Accounting\Model\CompanyResponseCompanyAccountItems[]',
-        'amount_fraction' => 'int',
-        'contact_name' => 'string',
-        'corporate_number' => 'string',
-        'default_wallet_account_id' => 'int',
-        'display_name' => 'string',
-        'fax' => 'string',
-        'fiscal_years' => '\Freee\Accounting\Model\FiscalYears[]',
-        'head_count' => 'int',
         'id' => 'int',
-        'industry_class' => 'string',
-        'industry_code' => 'string',
-        'invoice_layout' => 'string',
-        'items' => '\Freee\Accounting\Model\CompanyResponseCompanyItems[]',
-        'minus_format' => 'int',
         'name' => 'string',
         'name_kana' => 'string',
-        'partners' => '\Freee\Accounting\Model\CompanyResponseCompanyPartners[]',
+        'display_name' => 'string',
+        'tax_at_source_calc_type' => 'int',
+        'contact_name' => 'string',
+        'head_count' => 'int',
+        'corporate_number' => 'string',
+        'txn_number_format' => 'string',
+        'default_wallet_account_id' => 'int',
+        'private_settlement' => 'bool',
+        'minus_format' => 'int',
+        'role' => 'string',
         'phone1' => 'string',
         'phone2' => 'string',
+        'fax' => 'string',
+        'zipcode' => 'string',
         'prefecture_code' => 'int',
-        'private_settlement' => 'bool',
-        'role' => 'string',
-        'sections' => '\Freee\Accounting\Model\CompanyResponseCompanySections[]',
         'street_name1' => 'string',
         'street_name2' => 'string',
-        'tax_at_source_calc_type' => 'int',
+        'invoice_layout' => 'string',
+        'amount_fraction' => 'int',
+        'industry_class' => 'string',
+        'industry_code' => 'string',
+        'workflow_setting' => 'string',
+        'use_partner_code' => 'bool',
+        'fiscal_years' => '\Freee\Accounting\Model\FiscalYears[]',
+        'account_items' => '\Freee\Accounting\Model\CompanyResponseCompanyAccountItems[]',
         'tax_codes' => '\Freee\Accounting\Model\CompanyResponseCompanyTaxCodes[]',
         'taxes' => '\Freee\Accounting\Model\CompanyResponseCompanyTaxes[]',
-        'txn_number_format' => 'string',
-        'use_partner_code' => 'bool',
-        'walletables' => '\Freee\Accounting\Model\CompanyResponseCompanyWalletables[]',
-        'workflow_setting' => 'string',
-        'zipcode' => 'string'
+        'items' => '\Freee\Accounting\Model\CompanyResponseCompanyItems[]',
+        'partners' => '\Freee\Accounting\Model\CompanyResponseCompanyPartners[]',
+        'sections' => '\Freee\Accounting\Model\CompanyResponseCompanySections[]',
+        'tags' => '\Freee\Accounting\Model\CompanyResponseCompanyTags[]',
+        'walletables' => '\Freee\Accounting\Model\CompanyResponseCompanyWalletables[]'
     ];
 
     /**
@@ -104,41 +104,41 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null,
-        'account_items' => null,
-        'amount_fraction' => null,
-        'contact_name' => null,
-        'corporate_number' => null,
-        'default_wallet_account_id' => null,
-        'display_name' => null,
-        'fax' => null,
-        'fiscal_years' => null,
-        'head_count' => null,
         'id' => null,
-        'industry_class' => null,
-        'industry_code' => null,
-        'invoice_layout' => null,
-        'items' => null,
-        'minus_format' => null,
         'name' => null,
         'name_kana' => null,
-        'partners' => null,
+        'display_name' => null,
+        'tax_at_source_calc_type' => null,
+        'contact_name' => null,
+        'head_count' => null,
+        'corporate_number' => null,
+        'txn_number_format' => null,
+        'default_wallet_account_id' => null,
+        'private_settlement' => null,
+        'minus_format' => null,
+        'role' => null,
         'phone1' => null,
         'phone2' => null,
+        'fax' => null,
+        'zipcode' => null,
         'prefecture_code' => null,
-        'private_settlement' => null,
-        'role' => null,
-        'sections' => null,
         'street_name1' => null,
         'street_name2' => null,
-        'tax_at_source_calc_type' => null,
+        'invoice_layout' => null,
+        'amount_fraction' => null,
+        'industry_class' => null,
+        'industry_code' => null,
+        'workflow_setting' => null,
+        'use_partner_code' => null,
+        'fiscal_years' => null,
+        'account_items' => null,
         'tax_codes' => null,
         'taxes' => null,
-        'txn_number_format' => null,
-        'use_partner_code' => null,
-        'walletables' => null,
-        'workflow_setting' => null,
-        'zipcode' => null
+        'items' => null,
+        'partners' => null,
+        'sections' => null,
+        'tags' => null,
+        'walletables' => null
     ];
 
     /**
@@ -168,41 +168,41 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags',
-        'account_items' => 'account_items',
-        'amount_fraction' => 'amount_fraction',
-        'contact_name' => 'contact_name',
-        'corporate_number' => 'corporate_number',
-        'default_wallet_account_id' => 'default_wallet_account_id',
-        'display_name' => 'display_name',
-        'fax' => 'fax',
-        'fiscal_years' => 'fiscal_years',
-        'head_count' => 'head_count',
         'id' => 'id',
-        'industry_class' => 'industry_class',
-        'industry_code' => 'industry_code',
-        'invoice_layout' => 'invoice_layout',
-        'items' => 'items',
-        'minus_format' => 'minus_format',
         'name' => 'name',
         'name_kana' => 'name_kana',
-        'partners' => 'partners',
+        'display_name' => 'display_name',
+        'tax_at_source_calc_type' => 'tax_at_source_calc_type',
+        'contact_name' => 'contact_name',
+        'head_count' => 'head_count',
+        'corporate_number' => 'corporate_number',
+        'txn_number_format' => 'txn_number_format',
+        'default_wallet_account_id' => 'default_wallet_account_id',
+        'private_settlement' => 'private_settlement',
+        'minus_format' => 'minus_format',
+        'role' => 'role',
         'phone1' => 'phone1',
         'phone2' => 'phone2',
+        'fax' => 'fax',
+        'zipcode' => 'zipcode',
         'prefecture_code' => 'prefecture_code',
-        'private_settlement' => 'private_settlement',
-        'role' => 'role',
-        'sections' => 'sections',
         'street_name1' => 'street_name1',
         'street_name2' => 'street_name2',
-        'tax_at_source_calc_type' => 'tax_at_source_calc_type',
+        'invoice_layout' => 'invoice_layout',
+        'amount_fraction' => 'amount_fraction',
+        'industry_class' => 'industry_class',
+        'industry_code' => 'industry_code',
+        'workflow_setting' => 'workflow_setting',
+        'use_partner_code' => 'use_partner_code',
+        'fiscal_years' => 'fiscal_years',
+        'account_items' => 'account_items',
         'tax_codes' => 'tax_codes',
         'taxes' => 'taxes',
-        'txn_number_format' => 'txn_number_format',
-        'use_partner_code' => 'use_partner_code',
-        'walletables' => 'walletables',
-        'workflow_setting' => 'workflow_setting',
-        'zipcode' => 'zipcode'
+        'items' => 'items',
+        'partners' => 'partners',
+        'sections' => 'sections',
+        'tags' => 'tags',
+        'walletables' => 'walletables'
     ];
 
     /**
@@ -211,41 +211,41 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags',
-        'account_items' => 'setAccountItems',
-        'amount_fraction' => 'setAmountFraction',
-        'contact_name' => 'setContactName',
-        'corporate_number' => 'setCorporateNumber',
-        'default_wallet_account_id' => 'setDefaultWalletAccountId',
-        'display_name' => 'setDisplayName',
-        'fax' => 'setFax',
-        'fiscal_years' => 'setFiscalYears',
-        'head_count' => 'setHeadCount',
         'id' => 'setId',
-        'industry_class' => 'setIndustryClass',
-        'industry_code' => 'setIndustryCode',
-        'invoice_layout' => 'setInvoiceLayout',
-        'items' => 'setItems',
-        'minus_format' => 'setMinusFormat',
         'name' => 'setName',
         'name_kana' => 'setNameKana',
-        'partners' => 'setPartners',
+        'display_name' => 'setDisplayName',
+        'tax_at_source_calc_type' => 'setTaxAtSourceCalcType',
+        'contact_name' => 'setContactName',
+        'head_count' => 'setHeadCount',
+        'corporate_number' => 'setCorporateNumber',
+        'txn_number_format' => 'setTxnNumberFormat',
+        'default_wallet_account_id' => 'setDefaultWalletAccountId',
+        'private_settlement' => 'setPrivateSettlement',
+        'minus_format' => 'setMinusFormat',
+        'role' => 'setRole',
         'phone1' => 'setPhone1',
         'phone2' => 'setPhone2',
+        'fax' => 'setFax',
+        'zipcode' => 'setZipcode',
         'prefecture_code' => 'setPrefectureCode',
-        'private_settlement' => 'setPrivateSettlement',
-        'role' => 'setRole',
-        'sections' => 'setSections',
         'street_name1' => 'setStreetName1',
         'street_name2' => 'setStreetName2',
-        'tax_at_source_calc_type' => 'setTaxAtSourceCalcType',
+        'invoice_layout' => 'setInvoiceLayout',
+        'amount_fraction' => 'setAmountFraction',
+        'industry_class' => 'setIndustryClass',
+        'industry_code' => 'setIndustryCode',
+        'workflow_setting' => 'setWorkflowSetting',
+        'use_partner_code' => 'setUsePartnerCode',
+        'fiscal_years' => 'setFiscalYears',
+        'account_items' => 'setAccountItems',
         'tax_codes' => 'setTaxCodes',
         'taxes' => 'setTaxes',
-        'txn_number_format' => 'setTxnNumberFormat',
-        'use_partner_code' => 'setUsePartnerCode',
-        'walletables' => 'setWalletables',
-        'workflow_setting' => 'setWorkflowSetting',
-        'zipcode' => 'setZipcode'
+        'items' => 'setItems',
+        'partners' => 'setPartners',
+        'sections' => 'setSections',
+        'tags' => 'setTags',
+        'walletables' => 'setWalletables'
     ];
 
     /**
@@ -254,41 +254,41 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags',
-        'account_items' => 'getAccountItems',
-        'amount_fraction' => 'getAmountFraction',
-        'contact_name' => 'getContactName',
-        'corporate_number' => 'getCorporateNumber',
-        'default_wallet_account_id' => 'getDefaultWalletAccountId',
-        'display_name' => 'getDisplayName',
-        'fax' => 'getFax',
-        'fiscal_years' => 'getFiscalYears',
-        'head_count' => 'getHeadCount',
         'id' => 'getId',
-        'industry_class' => 'getIndustryClass',
-        'industry_code' => 'getIndustryCode',
-        'invoice_layout' => 'getInvoiceLayout',
-        'items' => 'getItems',
-        'minus_format' => 'getMinusFormat',
         'name' => 'getName',
         'name_kana' => 'getNameKana',
-        'partners' => 'getPartners',
+        'display_name' => 'getDisplayName',
+        'tax_at_source_calc_type' => 'getTaxAtSourceCalcType',
+        'contact_name' => 'getContactName',
+        'head_count' => 'getHeadCount',
+        'corporate_number' => 'getCorporateNumber',
+        'txn_number_format' => 'getTxnNumberFormat',
+        'default_wallet_account_id' => 'getDefaultWalletAccountId',
+        'private_settlement' => 'getPrivateSettlement',
+        'minus_format' => 'getMinusFormat',
+        'role' => 'getRole',
         'phone1' => 'getPhone1',
         'phone2' => 'getPhone2',
+        'fax' => 'getFax',
+        'zipcode' => 'getZipcode',
         'prefecture_code' => 'getPrefectureCode',
-        'private_settlement' => 'getPrivateSettlement',
-        'role' => 'getRole',
-        'sections' => 'getSections',
         'street_name1' => 'getStreetName1',
         'street_name2' => 'getStreetName2',
-        'tax_at_source_calc_type' => 'getTaxAtSourceCalcType',
+        'invoice_layout' => 'getInvoiceLayout',
+        'amount_fraction' => 'getAmountFraction',
+        'industry_class' => 'getIndustryClass',
+        'industry_code' => 'getIndustryCode',
+        'workflow_setting' => 'getWorkflowSetting',
+        'use_partner_code' => 'getUsePartnerCode',
+        'fiscal_years' => 'getFiscalYears',
+        'account_items' => 'getAccountItems',
         'tax_codes' => 'getTaxCodes',
         'taxes' => 'getTaxes',
-        'txn_number_format' => 'getTxnNumberFormat',
-        'use_partner_code' => 'getUsePartnerCode',
-        'walletables' => 'getWalletables',
-        'workflow_setting' => 'getWorkflowSetting',
-        'zipcode' => 'getZipcode'
+        'items' => 'getItems',
+        'partners' => 'getPartners',
+        'sections' => 'getSections',
+        'tags' => 'getTags',
+        'walletables' => 'getWalletables'
     ];
 
     /**
@@ -332,6 +332,22 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
         return self::$openAPIModelName;
     }
 
+    const TXN_NUMBER_FORMAT_NOT_USED = 'not_used';
+    const TXN_NUMBER_FORMAT_DIGITS = 'digits';
+    const TXN_NUMBER_FORMAT_ALNUM = 'alnum';
+    const ROLE_ADMIN = 'admin';
+    const ROLE_SIMPLE_ACCOUNTING = 'simple_accounting';
+    const ROLE_SELF_ONLY = 'self_only';
+    const ROLE_READ_ONLY = 'read_only';
+    const ROLE_WORKFLOW = 'workflow';
+    const INVOICE_LAYOUT_DEFAULT_CLASSIC = 'default_classic';
+    const INVOICE_LAYOUT_STANDARD_CLASSIC = 'standard_classic';
+    const INVOICE_LAYOUT_ENVELOPE_CLASSIC = 'envelope_classic';
+    const INVOICE_LAYOUT_CARRIED_FORWARD_STANDARD_CLASSIC = 'carried_forward_standard_classic';
+    const INVOICE_LAYOUT_CARRIED_FORWARD_ENVELOPE_CLASSIC = 'carried_forward_envelope_classic';
+    const INVOICE_LAYOUT_DEFAULT_MODERN = 'default_modern';
+    const INVOICE_LAYOUT_STANDARD_MODERN = 'standard_modern';
+    const INVOICE_LAYOUT_ENVELOPE_MODERN = 'envelope_modern';
     const INDUSTRY_CLASS_AGRICULTURE_FORESTRY_FISHERIES_ORE = 'agriculture_forestry_fisheries_ore';
     const INDUSTRY_CLASS_CONSTRUCTION = 'construction';
     const INDUSTRY_CLASS_MANUFACTURING_PROCESSING = 'manufacturing_processing';
@@ -454,24 +470,57 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     const INDUSTRY_CODE_GENERAL_INCORPORATED_ASSOCIATION = 'general_incorporated_association';
     const INDUSTRY_CODE_GENERAL_INCORPORATED_FOUNDATION = 'general_incorporated_foundation';
     const INDUSTRY_CODE_OTHER_ASSOCIATION = 'other_association';
-    const INVOICE_LAYOUT_DEFAULT_CLASSIC = 'default_classic';
-    const INVOICE_LAYOUT_STANDARD_CLASSIC = 'standard_classic';
-    const INVOICE_LAYOUT_ENVELOPE_CLASSIC = 'envelope_classic';
-    const INVOICE_LAYOUT_CARRIED_FORWARD_STANDARD_CLASSIC = 'carried_forward_standard_classic';
-    const INVOICE_LAYOUT_CARRIED_FORWARD_ENVELOPE_CLASSIC = 'carried_forward_envelope_classic';
-    const INVOICE_LAYOUT_DEFAULT_MODERN = 'default_modern';
-    const INVOICE_LAYOUT_STANDARD_MODERN = 'standard_modern';
-    const INVOICE_LAYOUT_ENVELOPE_MODERN = 'envelope_modern';
-    const ROLE_ADMIN = 'admin';
-    const ROLE_SIMPLE_ACCOUNTING = 'simple_accounting';
-    const ROLE_SELF_ONLY = 'self_only';
-    const ROLE_READ_ONLY = 'read_only';
-    const ROLE_WORKFLOW = 'workflow';
-    const TXN_NUMBER_FORMAT_NOT_USED = 'not_used';
-    const TXN_NUMBER_FORMAT_DIGITS = 'digits';
-    const TXN_NUMBER_FORMAT_ALNUM = 'alnum';
     const WORKFLOW_SETTING_ENABLE = 'enable';
     const WORKFLOW_SETTING_DISABLE = 'disable';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTxnNumberFormatAllowableValues()
+    {
+        return [
+            self::TXN_NUMBER_FORMAT_NOT_USED,
+            self::TXN_NUMBER_FORMAT_DIGITS,
+            self::TXN_NUMBER_FORMAT_ALNUM,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getRoleAllowableValues()
+    {
+        return [
+            self::ROLE_ADMIN,
+            self::ROLE_SIMPLE_ACCOUNTING,
+            self::ROLE_SELF_ONLY,
+            self::ROLE_READ_ONLY,
+            self::ROLE_WORKFLOW,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getInvoiceLayoutAllowableValues()
+    {
+        return [
+            self::INVOICE_LAYOUT_DEFAULT_CLASSIC,
+            self::INVOICE_LAYOUT_STANDARD_CLASSIC,
+            self::INVOICE_LAYOUT_ENVELOPE_CLASSIC,
+            self::INVOICE_LAYOUT_CARRIED_FORWARD_STANDARD_CLASSIC,
+            self::INVOICE_LAYOUT_CARRIED_FORWARD_ENVELOPE_CLASSIC,
+            self::INVOICE_LAYOUT_DEFAULT_MODERN,
+            self::INVOICE_LAYOUT_STANDARD_MODERN,
+            self::INVOICE_LAYOUT_ENVELOPE_MODERN,
+        ];
+    }
 
     /**
      * Gets allowable values of the enum
@@ -622,55 +671,6 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string[]
      */
-    public function getInvoiceLayoutAllowableValues()
-    {
-        return [
-            self::INVOICE_LAYOUT_DEFAULT_CLASSIC,
-            self::INVOICE_LAYOUT_STANDARD_CLASSIC,
-            self::INVOICE_LAYOUT_ENVELOPE_CLASSIC,
-            self::INVOICE_LAYOUT_CARRIED_FORWARD_STANDARD_CLASSIC,
-            self::INVOICE_LAYOUT_CARRIED_FORWARD_ENVELOPE_CLASSIC,
-            self::INVOICE_LAYOUT_DEFAULT_MODERN,
-            self::INVOICE_LAYOUT_STANDARD_MODERN,
-            self::INVOICE_LAYOUT_ENVELOPE_MODERN,
-        ];
-    }
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getRoleAllowableValues()
-    {
-        return [
-            self::ROLE_ADMIN,
-            self::ROLE_SIMPLE_ACCOUNTING,
-            self::ROLE_SELF_ONLY,
-            self::ROLE_READ_ONLY,
-            self::ROLE_WORKFLOW,
-        ];
-    }
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getTxnNumberFormatAllowableValues()
-    {
-        return [
-            self::TXN_NUMBER_FORMAT_NOT_USED,
-            self::TXN_NUMBER_FORMAT_DIGITS,
-            self::TXN_NUMBER_FORMAT_ALNUM,
-        ];
-    }
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
     public function getWorkflowSettingAllowableValues()
     {
         return [
@@ -694,41 +694,41 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
-        $this->container['tags'] = $data['tags'] ?? null;
-        $this->container['account_items'] = $data['account_items'] ?? null;
-        $this->container['amount_fraction'] = $data['amount_fraction'] ?? null;
-        $this->container['contact_name'] = $data['contact_name'] ?? null;
-        $this->container['corporate_number'] = $data['corporate_number'] ?? null;
-        $this->container['default_wallet_account_id'] = $data['default_wallet_account_id'] ?? null;
-        $this->container['display_name'] = $data['display_name'] ?? null;
-        $this->container['fax'] = $data['fax'] ?? null;
-        $this->container['fiscal_years'] = $data['fiscal_years'] ?? null;
-        $this->container['head_count'] = $data['head_count'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['industry_class'] = $data['industry_class'] ?? null;
-        $this->container['industry_code'] = $data['industry_code'] ?? null;
-        $this->container['invoice_layout'] = $data['invoice_layout'] ?? null;
-        $this->container['items'] = $data['items'] ?? null;
-        $this->container['minus_format'] = $data['minus_format'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['name_kana'] = $data['name_kana'] ?? null;
-        $this->container['partners'] = $data['partners'] ?? null;
+        $this->container['display_name'] = $data['display_name'] ?? null;
+        $this->container['tax_at_source_calc_type'] = $data['tax_at_source_calc_type'] ?? null;
+        $this->container['contact_name'] = $data['contact_name'] ?? null;
+        $this->container['head_count'] = $data['head_count'] ?? null;
+        $this->container['corporate_number'] = $data['corporate_number'] ?? null;
+        $this->container['txn_number_format'] = $data['txn_number_format'] ?? null;
+        $this->container['default_wallet_account_id'] = $data['default_wallet_account_id'] ?? null;
+        $this->container['private_settlement'] = $data['private_settlement'] ?? null;
+        $this->container['minus_format'] = $data['minus_format'] ?? null;
+        $this->container['role'] = $data['role'] ?? null;
         $this->container['phone1'] = $data['phone1'] ?? null;
         $this->container['phone2'] = $data['phone2'] ?? null;
+        $this->container['fax'] = $data['fax'] ?? null;
+        $this->container['zipcode'] = $data['zipcode'] ?? null;
         $this->container['prefecture_code'] = $data['prefecture_code'] ?? null;
-        $this->container['private_settlement'] = $data['private_settlement'] ?? null;
-        $this->container['role'] = $data['role'] ?? null;
-        $this->container['sections'] = $data['sections'] ?? null;
         $this->container['street_name1'] = $data['street_name1'] ?? null;
         $this->container['street_name2'] = $data['street_name2'] ?? null;
-        $this->container['tax_at_source_calc_type'] = $data['tax_at_source_calc_type'] ?? null;
+        $this->container['invoice_layout'] = $data['invoice_layout'] ?? null;
+        $this->container['amount_fraction'] = $data['amount_fraction'] ?? null;
+        $this->container['industry_class'] = $data['industry_class'] ?? null;
+        $this->container['industry_code'] = $data['industry_code'] ?? null;
+        $this->container['workflow_setting'] = $data['workflow_setting'] ?? null;
+        $this->container['use_partner_code'] = $data['use_partner_code'] ?? null;
+        $this->container['fiscal_years'] = $data['fiscal_years'] ?? null;
+        $this->container['account_items'] = $data['account_items'] ?? null;
         $this->container['tax_codes'] = $data['tax_codes'] ?? null;
         $this->container['taxes'] = $data['taxes'] ?? null;
-        $this->container['txn_number_format'] = $data['txn_number_format'] ?? null;
-        $this->container['use_partner_code'] = $data['use_partner_code'] ?? null;
+        $this->container['items'] = $data['items'] ?? null;
+        $this->container['partners'] = $data['partners'] ?? null;
+        $this->container['sections'] = $data['sections'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['walletables'] = $data['walletables'] ?? null;
-        $this->container['workflow_setting'] = $data['workflow_setting'] ?? null;
-        $this->container['zipcode'] = $data['zipcode'] ?? null;
     }
 
     /**
@@ -740,15 +740,43 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
-        if ($this->container['amount_fraction'] === null) {
-            $invalidProperties[] = "'amount_fraction' can't be null";
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
         }
-        if (($this->container['amount_fraction'] > 2)) {
-            $invalidProperties[] = "invalid value for 'amount_fraction', must be smaller than or equal to 2.";
+        if (($this->container['id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 2147483647.";
         }
 
-        if (($this->container['amount_fraction'] < 0)) {
-            $invalidProperties[] = "invalid value for 'amount_fraction', must be bigger than or equal to 0.";
+        if (($this->container['id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ((mb_strlen($this->container['name']) > 100)) {
+            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 100.";
+        }
+
+        if ($this->container['name_kana'] === null) {
+            $invalidProperties[] = "'name_kana' can't be null";
+        }
+        if ((mb_strlen($this->container['name_kana']) > 100)) {
+            $invalidProperties[] = "invalid value for 'name_kana', the character length must be smaller than or equal to 100.";
+        }
+
+        if ($this->container['display_name'] === null) {
+            $invalidProperties[] = "'display_name' can't be null";
+        }
+        if ($this->container['tax_at_source_calc_type'] === null) {
+            $invalidProperties[] = "'tax_at_source_calc_type' can't be null";
+        }
+        if (($this->container['tax_at_source_calc_type'] > 1)) {
+            $invalidProperties[] = "invalid value for 'tax_at_source_calc_type', must be smaller than or equal to 1.";
+        }
+
+        if (($this->container['tax_at_source_calc_type'] < 0)) {
+            $invalidProperties[] = "invalid value for 'tax_at_source_calc_type', must be bigger than or equal to 0.";
         }
 
         if ($this->container['contact_name'] === null) {
@@ -758,26 +786,6 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
             $invalidProperties[] = "invalid value for 'contact_name', the character length must be smaller than or equal to 50.";
         }
 
-        if ($this->container['corporate_number'] === null) {
-            $invalidProperties[] = "'corporate_number' can't be null";
-        }
-        if (!is_null($this->container['default_wallet_account_id']) && ($this->container['default_wallet_account_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'default_wallet_account_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (!is_null($this->container['default_wallet_account_id']) && ($this->container['default_wallet_account_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'default_wallet_account_id', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['display_name'] === null) {
-            $invalidProperties[] = "'display_name' can't be null";
-        }
-        if ($this->container['fax'] === null) {
-            $invalidProperties[] = "'fax' can't be null";
-        }
-        if ($this->container['fiscal_years'] === null) {
-            $invalidProperties[] = "'fiscal_years' can't be null";
-        }
         if ($this->container['head_count'] === null) {
             $invalidProperties[] = "'head_count' can't be null";
         }
@@ -789,15 +797,105 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
             $invalidProperties[] = "invalid value for 'head_count', must be bigger than or equal to 0.";
         }
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
+        if ($this->container['corporate_number'] === null) {
+            $invalidProperties[] = "'corporate_number' can't be null";
         }
-        if (($this->container['id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 2147483647.";
+        if ($this->container['txn_number_format'] === null) {
+            $invalidProperties[] = "'txn_number_format' can't be null";
+        }
+        $allowedValues = $this->getTxnNumberFormatAllowableValues();
+        if (!is_null($this->container['txn_number_format']) && !in_array($this->container['txn_number_format'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'txn_number_format', must be one of '%s'",
+                $this->container['txn_number_format'],
+                implode("', '", $allowedValues)
+            );
         }
 
-        if (($this->container['id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
+        if (!is_null($this->container['default_wallet_account_id']) && ($this->container['default_wallet_account_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'default_wallet_account_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (!is_null($this->container['default_wallet_account_id']) && ($this->container['default_wallet_account_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'default_wallet_account_id', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['private_settlement'] === null) {
+            $invalidProperties[] = "'private_settlement' can't be null";
+        }
+        if ($this->container['minus_format'] === null) {
+            $invalidProperties[] = "'minus_format' can't be null";
+        }
+        if (($this->container['minus_format'] > 1)) {
+            $invalidProperties[] = "invalid value for 'minus_format', must be smaller than or equal to 1.";
+        }
+
+        if (($this->container['minus_format'] < 0)) {
+            $invalidProperties[] = "invalid value for 'minus_format', must be bigger than or equal to 0.";
+        }
+
+        if ($this->container['role'] === null) {
+            $invalidProperties[] = "'role' can't be null";
+        }
+        $allowedValues = $this->getRoleAllowableValues();
+        if (!is_null($this->container['role']) && !in_array($this->container['role'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'role', must be one of '%s'",
+                $this->container['role'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if ($this->container['phone1'] === null) {
+            $invalidProperties[] = "'phone1' can't be null";
+        }
+        if ($this->container['phone2'] === null) {
+            $invalidProperties[] = "'phone2' can't be null";
+        }
+        if ($this->container['fax'] === null) {
+            $invalidProperties[] = "'fax' can't be null";
+        }
+        if ($this->container['zipcode'] === null) {
+            $invalidProperties[] = "'zipcode' can't be null";
+        }
+        if ($this->container['prefecture_code'] === null) {
+            $invalidProperties[] = "'prefecture_code' can't be null";
+        }
+        if (($this->container['prefecture_code'] > 46)) {
+            $invalidProperties[] = "invalid value for 'prefecture_code', must be smaller than or equal to 46.";
+        }
+
+        if (($this->container['prefecture_code'] < -1)) {
+            $invalidProperties[] = "invalid value for 'prefecture_code', must be bigger than or equal to -1.";
+        }
+
+        if ($this->container['street_name1'] === null) {
+            $invalidProperties[] = "'street_name1' can't be null";
+        }
+        if ($this->container['street_name2'] === null) {
+            $invalidProperties[] = "'street_name2' can't be null";
+        }
+        if ($this->container['invoice_layout'] === null) {
+            $invalidProperties[] = "'invoice_layout' can't be null";
+        }
+        $allowedValues = $this->getInvoiceLayoutAllowableValues();
+        if (!is_null($this->container['invoice_layout']) && !in_array($this->container['invoice_layout'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'invoice_layout', must be one of '%s'",
+                $this->container['invoice_layout'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if ($this->container['amount_fraction'] === null) {
+            $invalidProperties[] = "'amount_fraction' can't be null";
+        }
+        if (($this->container['amount_fraction'] > 2)) {
+            $invalidProperties[] = "invalid value for 'amount_fraction', must be smaller than or equal to 2.";
+        }
+
+        if (($this->container['amount_fraction'] < 0)) {
+            $invalidProperties[] = "invalid value for 'amount_fraction', must be bigger than or equal to 0.";
         }
 
         if ($this->container['industry_class'] === null) {
@@ -824,107 +922,6 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
             );
         }
 
-        if ($this->container['invoice_layout'] === null) {
-            $invalidProperties[] = "'invoice_layout' can't be null";
-        }
-        $allowedValues = $this->getInvoiceLayoutAllowableValues();
-        if (!is_null($this->container['invoice_layout']) && !in_array($this->container['invoice_layout'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'invoice_layout', must be one of '%s'",
-                $this->container['invoice_layout'],
-                implode("', '", $allowedValues)
-            );
-        }
-
-        if ($this->container['minus_format'] === null) {
-            $invalidProperties[] = "'minus_format' can't be null";
-        }
-        if (($this->container['minus_format'] > 1)) {
-            $invalidProperties[] = "invalid value for 'minus_format', must be smaller than or equal to 1.";
-        }
-
-        if (($this->container['minus_format'] < 0)) {
-            $invalidProperties[] = "invalid value for 'minus_format', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ((mb_strlen($this->container['name']) > 100)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 100.";
-        }
-
-        if ($this->container['name_kana'] === null) {
-            $invalidProperties[] = "'name_kana' can't be null";
-        }
-        if ((mb_strlen($this->container['name_kana']) > 100)) {
-            $invalidProperties[] = "invalid value for 'name_kana', the character length must be smaller than or equal to 100.";
-        }
-
-        if ($this->container['phone1'] === null) {
-            $invalidProperties[] = "'phone1' can't be null";
-        }
-        if ($this->container['phone2'] === null) {
-            $invalidProperties[] = "'phone2' can't be null";
-        }
-        if ($this->container['prefecture_code'] === null) {
-            $invalidProperties[] = "'prefecture_code' can't be null";
-        }
-        if (($this->container['prefecture_code'] > 46)) {
-            $invalidProperties[] = "invalid value for 'prefecture_code', must be smaller than or equal to 46.";
-        }
-
-        if (($this->container['prefecture_code'] < -1)) {
-            $invalidProperties[] = "invalid value for 'prefecture_code', must be bigger than or equal to -1.";
-        }
-
-        if ($this->container['private_settlement'] === null) {
-            $invalidProperties[] = "'private_settlement' can't be null";
-        }
-        if ($this->container['role'] === null) {
-            $invalidProperties[] = "'role' can't be null";
-        }
-        $allowedValues = $this->getRoleAllowableValues();
-        if (!is_null($this->container['role']) && !in_array($this->container['role'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'role', must be one of '%s'",
-                $this->container['role'],
-                implode("', '", $allowedValues)
-            );
-        }
-
-        if ($this->container['street_name1'] === null) {
-            $invalidProperties[] = "'street_name1' can't be null";
-        }
-        if ($this->container['street_name2'] === null) {
-            $invalidProperties[] = "'street_name2' can't be null";
-        }
-        if ($this->container['tax_at_source_calc_type'] === null) {
-            $invalidProperties[] = "'tax_at_source_calc_type' can't be null";
-        }
-        if (($this->container['tax_at_source_calc_type'] > 1)) {
-            $invalidProperties[] = "invalid value for 'tax_at_source_calc_type', must be smaller than or equal to 1.";
-        }
-
-        if (($this->container['tax_at_source_calc_type'] < 0)) {
-            $invalidProperties[] = "invalid value for 'tax_at_source_calc_type', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['txn_number_format'] === null) {
-            $invalidProperties[] = "'txn_number_format' can't be null";
-        }
-        $allowedValues = $this->getTxnNumberFormatAllowableValues();
-        if (!is_null($this->container['txn_number_format']) && !in_array($this->container['txn_number_format'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'txn_number_format', must be one of '%s'",
-                $this->container['txn_number_format'],
-                implode("', '", $allowedValues)
-            );
-        }
-
-        if ($this->container['use_partner_code'] === null) {
-            $invalidProperties[] = "'use_partner_code' can't be null";
-        }
         if ($this->container['workflow_setting'] === null) {
             $invalidProperties[] = "'workflow_setting' can't be null";
         }
@@ -937,8 +934,11 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
             );
         }
 
-        if ($this->container['zipcode'] === null) {
-            $invalidProperties[] = "'zipcode' can't be null";
+        if ($this->container['use_partner_code'] === null) {
+            $invalidProperties[] = "'use_partner_code' can't be null";
+        }
+        if ($this->container['fiscal_years'] === null) {
+            $invalidProperties[] = "'fiscal_years' can't be null";
         }
         return $invalidProperties;
     }
@@ -956,165 +956,89 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
-     * Gets tags
-     *
-     * @return \Freee\Accounting\Model\CompanyResponseCompanyTags[]|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param \Freee\Accounting\Model\CompanyResponseCompanyTags[]|null $tags tags
-     *
-     * @return self
-     */
-    public function setTags($tags)
-    {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
-     * Gets account_items
-     *
-     * @return \Freee\Accounting\Model\CompanyResponseCompanyAccountItems[]|null
-     */
-    public function getAccountItems()
-    {
-        return $this->container['account_items'];
-    }
-
-    /**
-     * Sets account_items
-     *
-     * @param \Freee\Accounting\Model\CompanyResponseCompanyAccountItems[]|null $account_items account_items
-     *
-     * @return self
-     */
-    public function setAccountItems($account_items)
-    {
-        $this->container['account_items'] = $account_items;
-
-        return $this;
-    }
-
-    /**
-     * Gets amount_fraction
+     * Gets id
      *
      * @return int
      */
-    public function getAmountFraction()
+    public function getId()
     {
-        return $this->container['amount_fraction'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets amount_fraction
+     * Sets id
      *
-     * @param int $amount_fraction 金額端数処理方法（0: 切り捨て、1: 切り上げ、2: 四捨五入）
+     * @param int $id 事業所ID
      *
      * @return self
      */
-    public function setAmountFraction($amount_fraction)
+    public function setId($id)
     {
 
-        if (($amount_fraction > 2)) {
-            throw new \InvalidArgumentException('invalid value for $amount_fraction when calling CompanyResponseCompany., must be smaller than or equal to 2.');
+        if (($id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling CompanyResponseCompany., must be smaller than or equal to 2147483647.');
         }
-        if (($amount_fraction < 0)) {
-            throw new \InvalidArgumentException('invalid value for $amount_fraction when calling CompanyResponseCompany., must be bigger than or equal to 0.');
+        if (($id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling CompanyResponseCompany., must be bigger than or equal to 1.');
         }
 
-        $this->container['amount_fraction'] = $amount_fraction;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets contact_name
+     * Gets name
      *
      * @return string
      */
-    public function getContactName()
+    public function getName()
     {
-        return $this->container['contact_name'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets contact_name
+     * Sets name
      *
-     * @param string $contact_name 担当者名 (50文字以内)
+     * @param string $name 事業所の正式名称 (100文字以内)
      *
      * @return self
      */
-    public function setContactName($contact_name)
+    public function setName($name)
     {
-        if ((mb_strlen($contact_name) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $contact_name when calling CompanyResponseCompany., must be smaller than or equal to 50.');
+        if ((mb_strlen($name) > 100)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling CompanyResponseCompany., must be smaller than or equal to 100.');
         }
 
-        $this->container['contact_name'] = $contact_name;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets corporate_number
+     * Gets name_kana
      *
      * @return string
      */
-    public function getCorporateNumber()
+    public function getNameKana()
     {
-        return $this->container['corporate_number'];
+        return $this->container['name_kana'];
     }
 
     /**
-     * Sets corporate_number
+     * Sets name_kana
      *
-     * @param string $corporate_number 法人番号 (半角数字13桁、法人のみ)
+     * @param string $name_kana 正式名称フリガナ (100文字以内)
      *
      * @return self
      */
-    public function setCorporateNumber($corporate_number)
+    public function setNameKana($name_kana)
     {
-        $this->container['corporate_number'] = $corporate_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets default_wallet_account_id
-     *
-     * @return int|null
-     */
-    public function getDefaultWalletAccountId()
-    {
-        return $this->container['default_wallet_account_id'];
-    }
-
-    /**
-     * Sets default_wallet_account_id
-     *
-     * @param int|null $default_wallet_account_id 決済口座のデフォルト
-     *
-     * @return self
-     */
-    public function setDefaultWalletAccountId($default_wallet_account_id)
-    {
-
-        if (!is_null($default_wallet_account_id) && ($default_wallet_account_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $default_wallet_account_id when calling CompanyResponseCompany., must be smaller than or equal to 2147483647.');
-        }
-        if (!is_null($default_wallet_account_id) && ($default_wallet_account_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $default_wallet_account_id when calling CompanyResponseCompany., must be bigger than or equal to 1.');
+        if ((mb_strlen($name_kana) > 100)) {
+            throw new \InvalidArgumentException('invalid length for $name_kana when calling CompanyResponseCompany., must be smaller than or equal to 100.');
         }
 
-        $this->container['default_wallet_account_id'] = $default_wallet_account_id;
+        $this->container['name_kana'] = $name_kana;
 
         return $this;
     }
@@ -1144,49 +1068,61 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
-     * Gets fax
+     * Gets tax_at_source_calc_type
      *
-     * @return string
+     * @return int
      */
-    public function getFax()
+    public function getTaxAtSourceCalcType()
     {
-        return $this->container['fax'];
+        return $this->container['tax_at_source_calc_type'];
     }
 
     /**
-     * Sets fax
+     * Sets tax_at_source_calc_type
      *
-     * @param string $fax FAX
+     * @param int $tax_at_source_calc_type 源泉徴収税計算（0: 消費税を含める、1: 消費税を含めない）
      *
      * @return self
      */
-    public function setFax($fax)
+    public function setTaxAtSourceCalcType($tax_at_source_calc_type)
     {
-        $this->container['fax'] = $fax;
+
+        if (($tax_at_source_calc_type > 1)) {
+            throw new \InvalidArgumentException('invalid value for $tax_at_source_calc_type when calling CompanyResponseCompany., must be smaller than or equal to 1.');
+        }
+        if (($tax_at_source_calc_type < 0)) {
+            throw new \InvalidArgumentException('invalid value for $tax_at_source_calc_type when calling CompanyResponseCompany., must be bigger than or equal to 0.');
+        }
+
+        $this->container['tax_at_source_calc_type'] = $tax_at_source_calc_type;
 
         return $this;
     }
 
     /**
-     * Gets fiscal_years
+     * Gets contact_name
      *
-     * @return \Freee\Accounting\Model\FiscalYears[]
+     * @return string
      */
-    public function getFiscalYears()
+    public function getContactName()
     {
-        return $this->container['fiscal_years'];
+        return $this->container['contact_name'];
     }
 
     /**
-     * Sets fiscal_years
+     * Sets contact_name
      *
-     * @param \Freee\Accounting\Model\FiscalYears[] $fiscal_years fiscal_years
+     * @param string $contact_name 担当者名 (50文字以内)
      *
      * @return self
      */
-    public function setFiscalYears($fiscal_years)
+    public function setContactName($contact_name)
     {
-        $this->container['fiscal_years'] = $fiscal_years;
+        if ((mb_strlen($contact_name) > 50)) {
+            throw new \InvalidArgumentException('invalid length for $contact_name when calling CompanyResponseCompany., must be smaller than or equal to 50.');
+        }
+
+        $this->container['contact_name'] = $contact_name;
 
         return $this;
     }
@@ -1224,33 +1160,423 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
-     * Gets id
+     * Gets corporate_number
      *
-     * @return int
+     * @return string
      */
-    public function getId()
+    public function getCorporateNumber()
     {
-        return $this->container['id'];
+        return $this->container['corporate_number'];
     }
 
     /**
-     * Sets id
+     * Sets corporate_number
      *
-     * @param int $id 事業所ID
+     * @param string $corporate_number 法人番号 (半角数字13桁、法人のみ)
      *
      * @return self
      */
-    public function setId($id)
+    public function setCorporateNumber($corporate_number)
+    {
+        $this->container['corporate_number'] = $corporate_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets txn_number_format
+     *
+     * @return string
+     */
+    public function getTxnNumberFormat()
+    {
+        return $this->container['txn_number_format'];
+    }
+
+    /**
+     * Sets txn_number_format
+     *
+     * @param string $txn_number_format 仕訳番号形式（not_used: 使用しない、digits: 数字（例：5091824）、alnum: 英数字（例：59J0P））
+     *
+     * @return self
+     */
+    public function setTxnNumberFormat($txn_number_format)
+    {
+        $allowedValues = $this->getTxnNumberFormatAllowableValues();
+        if (!in_array($txn_number_format, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'txn_number_format', must be one of '%s'",
+                    $txn_number_format,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['txn_number_format'] = $txn_number_format;
+
+        return $this;
+    }
+
+    /**
+     * Gets default_wallet_account_id
+     *
+     * @return int|null
+     */
+    public function getDefaultWalletAccountId()
+    {
+        return $this->container['default_wallet_account_id'];
+    }
+
+    /**
+     * Sets default_wallet_account_id
+     *
+     * @param int|null $default_wallet_account_id 決済口座のデフォルト
+     *
+     * @return self
+     */
+    public function setDefaultWalletAccountId($default_wallet_account_id)
     {
 
-        if (($id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling CompanyResponseCompany., must be smaller than or equal to 2147483647.');
+        if (!is_null($default_wallet_account_id) && ($default_wallet_account_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $default_wallet_account_id when calling CompanyResponseCompany., must be smaller than or equal to 2147483647.');
         }
-        if (($id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling CompanyResponseCompany., must be bigger than or equal to 1.');
+        if (!is_null($default_wallet_account_id) && ($default_wallet_account_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $default_wallet_account_id when calling CompanyResponseCompany., must be bigger than or equal to 1.');
         }
 
-        $this->container['id'] = $id;
+        $this->container['default_wallet_account_id'] = $default_wallet_account_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets private_settlement
+     *
+     * @return bool
+     */
+    public function getPrivateSettlement()
+    {
+        return $this->container['private_settlement'];
+    }
+
+    /**
+     * Sets private_settlement
+     *
+     * @param bool $private_settlement プライベート資金/役員資金（false: 使用しない、true: 使用する）
+     *
+     * @return self
+     */
+    public function setPrivateSettlement($private_settlement)
+    {
+        $this->container['private_settlement'] = $private_settlement;
+
+        return $this;
+    }
+
+    /**
+     * Gets minus_format
+     *
+     * @return int
+     */
+    public function getMinusFormat()
+    {
+        return $this->container['minus_format'];
+    }
+
+    /**
+     * Sets minus_format
+     *
+     * @param int $minus_format マイナスの表示方法（0: -、 1: △）
+     *
+     * @return self
+     */
+    public function setMinusFormat($minus_format)
+    {
+
+        if (($minus_format > 1)) {
+            throw new \InvalidArgumentException('invalid value for $minus_format when calling CompanyResponseCompany., must be smaller than or equal to 1.');
+        }
+        if (($minus_format < 0)) {
+            throw new \InvalidArgumentException('invalid value for $minus_format when calling CompanyResponseCompany., must be bigger than or equal to 0.');
+        }
+
+        $this->container['minus_format'] = $minus_format;
+
+        return $this;
+    }
+
+    /**
+     * Gets role
+     *
+     * @return string
+     */
+    public function getRole()
+    {
+        return $this->container['role'];
+    }
+
+    /**
+     * Sets role
+     *
+     * @param string $role ユーザーの権限
+     *
+     * @return self
+     */
+    public function setRole($role)
+    {
+        $allowedValues = $this->getRoleAllowableValues();
+        if (!in_array($role, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'role', must be one of '%s'",
+                    $role,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['role'] = $role;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone1
+     *
+     * @return string
+     */
+    public function getPhone1()
+    {
+        return $this->container['phone1'];
+    }
+
+    /**
+     * Sets phone1
+     *
+     * @param string $phone1 電話番号１
+     *
+     * @return self
+     */
+    public function setPhone1($phone1)
+    {
+        $this->container['phone1'] = $phone1;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone2
+     *
+     * @return string
+     */
+    public function getPhone2()
+    {
+        return $this->container['phone2'];
+    }
+
+    /**
+     * Sets phone2
+     *
+     * @param string $phone2 電話番号２
+     *
+     * @return self
+     */
+    public function setPhone2($phone2)
+    {
+        $this->container['phone2'] = $phone2;
+
+        return $this;
+    }
+
+    /**
+     * Gets fax
+     *
+     * @return string
+     */
+    public function getFax()
+    {
+        return $this->container['fax'];
+    }
+
+    /**
+     * Sets fax
+     *
+     * @param string $fax FAX
+     *
+     * @return self
+     */
+    public function setFax($fax)
+    {
+        $this->container['fax'] = $fax;
+
+        return $this;
+    }
+
+    /**
+     * Gets zipcode
+     *
+     * @return string
+     */
+    public function getZipcode()
+    {
+        return $this->container['zipcode'];
+    }
+
+    /**
+     * Sets zipcode
+     *
+     * @param string $zipcode 郵便番号
+     *
+     * @return self
+     */
+    public function setZipcode($zipcode)
+    {
+        $this->container['zipcode'] = $zipcode;
+
+        return $this;
+    }
+
+    /**
+     * Gets prefecture_code
+     *
+     * @return int
+     */
+    public function getPrefectureCode()
+    {
+        return $this->container['prefecture_code'];
+    }
+
+    /**
+     * Sets prefecture_code
+     *
+     * @param int $prefecture_code 都道府県コード（-1: 設定しない、0: 北海道、1:青森、2:岩手、3:宮城、4:秋田、5:山形、6:福島、7:茨城、8:栃木、9:群馬、10:埼玉、11:千葉、12:東京、13:神奈川、14:新潟、15:富山、16:石川、17:福井、18:山梨、19:長野、20:岐阜、21:静岡、22:愛知、23:三重、24:滋賀、25:京都、26:大阪、27:兵庫、28:奈良、29:和歌山、30:鳥取、31:島根、32:岡山、33:広島、34:山口、35:徳島、36:香川、37:愛媛、38:高知、39:福岡、40:佐賀、41:長崎、42:熊本、43:大分、44:宮崎、45:鹿児島、46:沖縄
+     *
+     * @return self
+     */
+    public function setPrefectureCode($prefecture_code)
+    {
+
+        if (($prefecture_code > 46)) {
+            throw new \InvalidArgumentException('invalid value for $prefecture_code when calling CompanyResponseCompany., must be smaller than or equal to 46.');
+        }
+        if (($prefecture_code < -1)) {
+            throw new \InvalidArgumentException('invalid value for $prefecture_code when calling CompanyResponseCompany., must be bigger than or equal to -1.');
+        }
+
+        $this->container['prefecture_code'] = $prefecture_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets street_name1
+     *
+     * @return string
+     */
+    public function getStreetName1()
+    {
+        return $this->container['street_name1'];
+    }
+
+    /**
+     * Sets street_name1
+     *
+     * @param string $street_name1 市区町村・番地
+     *
+     * @return self
+     */
+    public function setStreetName1($street_name1)
+    {
+        $this->container['street_name1'] = $street_name1;
+
+        return $this;
+    }
+
+    /**
+     * Gets street_name2
+     *
+     * @return string
+     */
+    public function getStreetName2()
+    {
+        return $this->container['street_name2'];
+    }
+
+    /**
+     * Sets street_name2
+     *
+     * @param string $street_name2 建物名・部屋番号など
+     *
+     * @return self
+     */
+    public function setStreetName2($street_name2)
+    {
+        $this->container['street_name2'] = $street_name2;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoice_layout
+     *
+     * @return string
+     */
+    public function getInvoiceLayout()
+    {
+        return $this->container['invoice_layout'];
+    }
+
+    /**
+     * Sets invoice_layout
+     *
+     * @param string $invoice_layout 請求書レイアウト * `default_classic` - レイアウト１/クラシック (デフォルト)  * `standard_classic` - レイアウト２/クラシック  * `envelope_classic` - 封筒１/クラシック  * `carried_forward_standard_classic` - レイアウト３（繰越金額欄あり）/クラシック  * `carried_forward_envelope_classic` - 封筒２（繰越金額欄あり）/クラシック  * `default_modern` - レイアウト１/モダン  * `standard_modern` - レイアウト２/モダン  * `envelope_modern` - 封筒/モダン
+     *
+     * @return self
+     */
+    public function setInvoiceLayout($invoice_layout)
+    {
+        $allowedValues = $this->getInvoiceLayoutAllowableValues();
+        if (!in_array($invoice_layout, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'invoice_layout', must be one of '%s'",
+                    $invoice_layout,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['invoice_layout'] = $invoice_layout;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount_fraction
+     *
+     * @return int
+     */
+    public function getAmountFraction()
+    {
+        return $this->container['amount_fraction'];
+    }
+
+    /**
+     * Sets amount_fraction
+     *
+     * @param int $amount_fraction 金額端数処理方法（0: 切り捨て、1: 切り上げ、2: 四捨五入）
+     *
+     * @return self
+     */
+    public function setAmountFraction($amount_fraction)
+    {
+
+        if (($amount_fraction > 2)) {
+            throw new \InvalidArgumentException('invalid value for $amount_fraction when calling CompanyResponseCompany., must be smaller than or equal to 2.');
+        }
+        if (($amount_fraction < 0)) {
+            throw new \InvalidArgumentException('invalid value for $amount_fraction when calling CompanyResponseCompany., must be bigger than or equal to 0.');
+        }
+
+        $this->container['amount_fraction'] = $amount_fraction;
 
         return $this;
     }
@@ -1324,413 +1650,107 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
-     * Gets invoice_layout
+     * Gets workflow_setting
      *
      * @return string
      */
-    public function getInvoiceLayout()
+    public function getWorkflowSetting()
     {
-        return $this->container['invoice_layout'];
+        return $this->container['workflow_setting'];
     }
 
     /**
-     * Sets invoice_layout
+     * Sets workflow_setting
      *
-     * @param string $invoice_layout 請求書レイアウト * `default_classic` - レイアウト１/クラシック (デフォルト)  * `standard_classic` - レイアウト２/クラシック  * `envelope_classic` - 封筒１/クラシック  * `carried_forward_standard_classic` - レイアウト３（繰越金額欄あり）/クラシック  * `carried_forward_envelope_classic` - 封筒２（繰越金額欄あり）/クラシック  * `default_modern` - レイアウト１/モダン  * `standard_modern` - レイアウト２/モダン  * `envelope_modern` - 封筒/モダン
+     * @param string $workflow_setting 仕訳承認フロー（enable: 有効、 disable: 無効）
      *
      * @return self
      */
-    public function setInvoiceLayout($invoice_layout)
+    public function setWorkflowSetting($workflow_setting)
     {
-        $allowedValues = $this->getInvoiceLayoutAllowableValues();
-        if (!in_array($invoice_layout, $allowedValues, true)) {
+        $allowedValues = $this->getWorkflowSettingAllowableValues();
+        if (!in_array($workflow_setting, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'invoice_layout', must be one of '%s'",
-                    $invoice_layout,
+                    "Invalid value '%s' for 'workflow_setting', must be one of '%s'",
+                    $workflow_setting,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['invoice_layout'] = $invoice_layout;
+        $this->container['workflow_setting'] = $workflow_setting;
 
         return $this;
     }
 
     /**
-     * Gets items
-     *
-     * @return \Freee\Accounting\Model\CompanyResponseCompanyItems[]|null
-     */
-    public function getItems()
-    {
-        return $this->container['items'];
-    }
-
-    /**
-     * Sets items
-     *
-     * @param \Freee\Accounting\Model\CompanyResponseCompanyItems[]|null $items items
-     *
-     * @return self
-     */
-    public function setItems($items)
-    {
-        $this->container['items'] = $items;
-
-        return $this;
-    }
-
-    /**
-     * Gets minus_format
-     *
-     * @return int
-     */
-    public function getMinusFormat()
-    {
-        return $this->container['minus_format'];
-    }
-
-    /**
-     * Sets minus_format
-     *
-     * @param int $minus_format マイナスの表示方法（0: -、 1: △）
-     *
-     * @return self
-     */
-    public function setMinusFormat($minus_format)
-    {
-
-        if (($minus_format > 1)) {
-            throw new \InvalidArgumentException('invalid value for $minus_format when calling CompanyResponseCompany., must be smaller than or equal to 1.');
-        }
-        if (($minus_format < 0)) {
-            throw new \InvalidArgumentException('invalid value for $minus_format when calling CompanyResponseCompany., must be bigger than or equal to 0.');
-        }
-
-        $this->container['minus_format'] = $minus_format;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name 事業所の正式名称 (100文字以内)
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        if ((mb_strlen($name) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling CompanyResponseCompany., must be smaller than or equal to 100.');
-        }
-
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets name_kana
-     *
-     * @return string
-     */
-    public function getNameKana()
-    {
-        return $this->container['name_kana'];
-    }
-
-    /**
-     * Sets name_kana
-     *
-     * @param string $name_kana 正式名称フリガナ (100文字以内)
-     *
-     * @return self
-     */
-    public function setNameKana($name_kana)
-    {
-        if ((mb_strlen($name_kana) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $name_kana when calling CompanyResponseCompany., must be smaller than or equal to 100.');
-        }
-
-        $this->container['name_kana'] = $name_kana;
-
-        return $this;
-    }
-
-    /**
-     * Gets partners
-     *
-     * @return \Freee\Accounting\Model\CompanyResponseCompanyPartners[]|null
-     */
-    public function getPartners()
-    {
-        return $this->container['partners'];
-    }
-
-    /**
-     * Sets partners
-     *
-     * @param \Freee\Accounting\Model\CompanyResponseCompanyPartners[]|null $partners partners
-     *
-     * @return self
-     */
-    public function setPartners($partners)
-    {
-        $this->container['partners'] = $partners;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone1
-     *
-     * @return string
-     */
-    public function getPhone1()
-    {
-        return $this->container['phone1'];
-    }
-
-    /**
-     * Sets phone1
-     *
-     * @param string $phone1 電話番号１
-     *
-     * @return self
-     */
-    public function setPhone1($phone1)
-    {
-        $this->container['phone1'] = $phone1;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone2
-     *
-     * @return string
-     */
-    public function getPhone2()
-    {
-        return $this->container['phone2'];
-    }
-
-    /**
-     * Sets phone2
-     *
-     * @param string $phone2 電話番号２
-     *
-     * @return self
-     */
-    public function setPhone2($phone2)
-    {
-        $this->container['phone2'] = $phone2;
-
-        return $this;
-    }
-
-    /**
-     * Gets prefecture_code
-     *
-     * @return int
-     */
-    public function getPrefectureCode()
-    {
-        return $this->container['prefecture_code'];
-    }
-
-    /**
-     * Sets prefecture_code
-     *
-     * @param int $prefecture_code 都道府県コード（-1: 設定しない、0: 北海道、1:青森、2:岩手、3:宮城、4:秋田、5:山形、6:福島、7:茨城、8:栃木、9:群馬、10:埼玉、11:千葉、12:東京、13:神奈川、14:新潟、15:富山、16:石川、17:福井、18:山梨、19:長野、20:岐阜、21:静岡、22:愛知、23:三重、24:滋賀、25:京都、26:大阪、27:兵庫、28:奈良、29:和歌山、30:鳥取、31:島根、32:岡山、33:広島、34:山口、35:徳島、36:香川、37:愛媛、38:高知、39:福岡、40:佐賀、41:長崎、42:熊本、43:大分、44:宮崎、45:鹿児島、46:沖縄
-     *
-     * @return self
-     */
-    public function setPrefectureCode($prefecture_code)
-    {
-
-        if (($prefecture_code > 46)) {
-            throw new \InvalidArgumentException('invalid value for $prefecture_code when calling CompanyResponseCompany., must be smaller than or equal to 46.');
-        }
-        if (($prefecture_code < -1)) {
-            throw new \InvalidArgumentException('invalid value for $prefecture_code when calling CompanyResponseCompany., must be bigger than or equal to -1.');
-        }
-
-        $this->container['prefecture_code'] = $prefecture_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets private_settlement
+     * Gets use_partner_code
      *
      * @return bool
      */
-    public function getPrivateSettlement()
+    public function getUsePartnerCode()
     {
-        return $this->container['private_settlement'];
+        return $this->container['use_partner_code'];
     }
 
     /**
-     * Sets private_settlement
+     * Sets use_partner_code
      *
-     * @param bool $private_settlement プライベート資金/役員資金（false: 使用しない、true: 使用する）
+     * @param bool $use_partner_code 取引先コードの利用設定（true: 有効、 false: 無効）
      *
      * @return self
      */
-    public function setPrivateSettlement($private_settlement)
+    public function setUsePartnerCode($use_partner_code)
     {
-        $this->container['private_settlement'] = $private_settlement;
+        $this->container['use_partner_code'] = $use_partner_code;
 
         return $this;
     }
 
     /**
-     * Gets role
+     * Gets fiscal_years
      *
-     * @return string
+     * @return \Freee\Accounting\Model\FiscalYears[]
      */
-    public function getRole()
+    public function getFiscalYears()
     {
-        return $this->container['role'];
+        return $this->container['fiscal_years'];
     }
 
     /**
-     * Sets role
+     * Sets fiscal_years
      *
-     * @param string $role ユーザーの権限
+     * @param \Freee\Accounting\Model\FiscalYears[] $fiscal_years fiscal_years
      *
      * @return self
      */
-    public function setRole($role)
+    public function setFiscalYears($fiscal_years)
     {
-        $allowedValues = $this->getRoleAllowableValues();
-        if (!in_array($role, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'role', must be one of '%s'",
-                    $role,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['role'] = $role;
+        $this->container['fiscal_years'] = $fiscal_years;
 
         return $this;
     }
 
     /**
-     * Gets sections
+     * Gets account_items
      *
-     * @return \Freee\Accounting\Model\CompanyResponseCompanySections[]|null
+     * @return \Freee\Accounting\Model\CompanyResponseCompanyAccountItems[]|null
      */
-    public function getSections()
+    public function getAccountItems()
     {
-        return $this->container['sections'];
+        return $this->container['account_items'];
     }
 
     /**
-     * Sets sections
+     * Sets account_items
      *
-     * @param \Freee\Accounting\Model\CompanyResponseCompanySections[]|null $sections sections
+     * @param \Freee\Accounting\Model\CompanyResponseCompanyAccountItems[]|null $account_items account_items
      *
      * @return self
      */
-    public function setSections($sections)
+    public function setAccountItems($account_items)
     {
-        $this->container['sections'] = $sections;
-
-        return $this;
-    }
-
-    /**
-     * Gets street_name1
-     *
-     * @return string
-     */
-    public function getStreetName1()
-    {
-        return $this->container['street_name1'];
-    }
-
-    /**
-     * Sets street_name1
-     *
-     * @param string $street_name1 市区町村・番地
-     *
-     * @return self
-     */
-    public function setStreetName1($street_name1)
-    {
-        $this->container['street_name1'] = $street_name1;
-
-        return $this;
-    }
-
-    /**
-     * Gets street_name2
-     *
-     * @return string
-     */
-    public function getStreetName2()
-    {
-        return $this->container['street_name2'];
-    }
-
-    /**
-     * Sets street_name2
-     *
-     * @param string $street_name2 建物名・部屋番号など
-     *
-     * @return self
-     */
-    public function setStreetName2($street_name2)
-    {
-        $this->container['street_name2'] = $street_name2;
-
-        return $this;
-    }
-
-    /**
-     * Gets tax_at_source_calc_type
-     *
-     * @return int
-     */
-    public function getTaxAtSourceCalcType()
-    {
-        return $this->container['tax_at_source_calc_type'];
-    }
-
-    /**
-     * Sets tax_at_source_calc_type
-     *
-     * @param int $tax_at_source_calc_type 源泉徴収税計算（0: 消費税を含める、1: 消費税を含めない）
-     *
-     * @return self
-     */
-    public function setTaxAtSourceCalcType($tax_at_source_calc_type)
-    {
-
-        if (($tax_at_source_calc_type > 1)) {
-            throw new \InvalidArgumentException('invalid value for $tax_at_source_calc_type when calling CompanyResponseCompany., must be smaller than or equal to 1.');
-        }
-        if (($tax_at_source_calc_type < 0)) {
-            throw new \InvalidArgumentException('invalid value for $tax_at_source_calc_type when calling CompanyResponseCompany., must be bigger than or equal to 0.');
-        }
-
-        $this->container['tax_at_source_calc_type'] = $tax_at_source_calc_type;
+        $this->container['account_items'] = $account_items;
 
         return $this;
     }
@@ -1784,59 +1804,97 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
-     * Gets txn_number_format
+     * Gets items
      *
-     * @return string
+     * @return \Freee\Accounting\Model\CompanyResponseCompanyItems[]|null
      */
-    public function getTxnNumberFormat()
+    public function getItems()
     {
-        return $this->container['txn_number_format'];
+        return $this->container['items'];
     }
 
     /**
-     * Sets txn_number_format
+     * Sets items
      *
-     * @param string $txn_number_format 仕訳番号形式（not_used: 使用しない、digits: 数字（例：5091824）、alnum: 英数字（例：59J0P））
+     * @param \Freee\Accounting\Model\CompanyResponseCompanyItems[]|null $items items
      *
      * @return self
      */
-    public function setTxnNumberFormat($txn_number_format)
+    public function setItems($items)
     {
-        $allowedValues = $this->getTxnNumberFormatAllowableValues();
-        if (!in_array($txn_number_format, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'txn_number_format', must be one of '%s'",
-                    $txn_number_format,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['txn_number_format'] = $txn_number_format;
+        $this->container['items'] = $items;
 
         return $this;
     }
 
     /**
-     * Gets use_partner_code
+     * Gets partners
      *
-     * @return bool
+     * @return \Freee\Accounting\Model\CompanyResponseCompanyPartners[]|null
      */
-    public function getUsePartnerCode()
+    public function getPartners()
     {
-        return $this->container['use_partner_code'];
+        return $this->container['partners'];
     }
 
     /**
-     * Sets use_partner_code
+     * Sets partners
      *
-     * @param bool $use_partner_code 取引先コードの利用設定（true: 有効、 false: 無効）
+     * @param \Freee\Accounting\Model\CompanyResponseCompanyPartners[]|null $partners partners
      *
      * @return self
      */
-    public function setUsePartnerCode($use_partner_code)
+    public function setPartners($partners)
     {
-        $this->container['use_partner_code'] = $use_partner_code;
+        $this->container['partners'] = $partners;
+
+        return $this;
+    }
+
+    /**
+     * Gets sections
+     *
+     * @return \Freee\Accounting\Model\CompanyResponseCompanySections[]|null
+     */
+    public function getSections()
+    {
+        return $this->container['sections'];
+    }
+
+    /**
+     * Sets sections
+     *
+     * @param \Freee\Accounting\Model\CompanyResponseCompanySections[]|null $sections sections
+     *
+     * @return self
+     */
+    public function setSections($sections)
+    {
+        $this->container['sections'] = $sections;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return \Freee\Accounting\Model\CompanyResponseCompanyTags[]|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param \Freee\Accounting\Model\CompanyResponseCompanyTags[]|null $tags tags
+     *
+     * @return self
+     */
+    public function setTags($tags)
+    {
+        $this->container['tags'] = $tags;
 
         return $this;
     }
@@ -1861,64 +1919,6 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     public function setWalletables($walletables)
     {
         $this->container['walletables'] = $walletables;
-
-        return $this;
-    }
-
-    /**
-     * Gets workflow_setting
-     *
-     * @return string
-     */
-    public function getWorkflowSetting()
-    {
-        return $this->container['workflow_setting'];
-    }
-
-    /**
-     * Sets workflow_setting
-     *
-     * @param string $workflow_setting 仕訳承認フロー（enable: 有効、 disable: 無効）
-     *
-     * @return self
-     */
-    public function setWorkflowSetting($workflow_setting)
-    {
-        $allowedValues = $this->getWorkflowSettingAllowableValues();
-        if (!in_array($workflow_setting, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'workflow_setting', must be one of '%s'",
-                    $workflow_setting,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['workflow_setting'] = $workflow_setting;
-
-        return $this;
-    }
-
-    /**
-     * Gets zipcode
-     *
-     * @return string
-     */
-    public function getZipcode()
-    {
-        return $this->container['zipcode'];
-    }
-
-    /**
-     * Sets zipcode
-     *
-     * @param string $zipcode 郵便番号
-     *
-     * @return self
-     */
-    public function setZipcode($zipcode)
-    {
-        $this->container['zipcode'] = $zipcode;
 
         return $this;
     }

@@ -80,27 +80,9 @@ class DealDetailsTest extends TestCase
     }
 
     /**
-     * Test attribute "account_item_id"
+     * Test attribute "id"
      */
-    public function testPropertyAccountItemId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "amount"
-     */
-    public function testPropertyAmount()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
+    public function testPropertyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -116,9 +98,18 @@ class DealDetailsTest extends TestCase
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "account_item_id"
      */
-    public function testPropertyId()
+    public function testPropertyAccountItemId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tax_code"
+     */
+    public function testPropertyTaxCode()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -137,6 +128,15 @@ class DealDetailsTest extends TestCase
      * Test attribute "section_id"
      */
     public function testPropertySectionId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tag_ids"
+     */
+    public function testPropertyTagIds()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -170,18 +170,9 @@ class DealDetailsTest extends TestCase
     }
 
     /**
-     * Test attribute "tag_ids"
+     * Test attribute "amount"
      */
-    public function testPropertyTagIds()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "tax_code"
-     */
-    public function testPropertyTaxCode()
+    public function testPropertyAmount()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -191,6 +182,15 @@ class DealDetailsTest extends TestCase
      * Test attribute "vat"
      */
     public function testPropertyVat()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

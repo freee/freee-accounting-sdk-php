@@ -59,7 +59,7 @@ class InlineResponse2004 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'manual_journals' => '\Freee\Accounting\Model\ManualJournal[]'
+        'users' => '\Freee\Accounting\Model\User[]'
     ];
 
     /**
@@ -70,7 +70,7 @@ class InlineResponse2004 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'manual_journals' => null
+        'users' => null
     ];
 
     /**
@@ -100,7 +100,7 @@ class InlineResponse2004 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'manual_journals' => 'manual_journals'
+        'users' => 'users'
     ];
 
     /**
@@ -109,7 +109,7 @@ class InlineResponse2004 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'manual_journals' => 'setManualJournals'
+        'users' => 'setUsers'
     ];
 
     /**
@@ -118,7 +118,7 @@ class InlineResponse2004 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'manual_journals' => 'getManualJournals'
+        'users' => 'getUsers'
     ];
 
     /**
@@ -178,7 +178,7 @@ class InlineResponse2004 implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['manual_journals'] = $data['manual_journals'] ?? null;
+        $this->container['users'] = $data['users'] ?? null;
     }
 
     /**
@@ -190,8 +190,8 @@ class InlineResponse2004 implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['manual_journals'] === null) {
-            $invalidProperties[] = "'manual_journals' can't be null";
+        if ($this->container['users'] === null) {
+            $invalidProperties[] = "'users' can't be null";
         }
         return $invalidProperties;
     }
@@ -209,25 +209,25 @@ class InlineResponse2004 implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets manual_journals
+     * Gets users
      *
-     * @return \Freee\Accounting\Model\ManualJournal[]
+     * @return \Freee\Accounting\Model\User[]
      */
-    public function getManualJournals()
+    public function getUsers()
     {
-        return $this->container['manual_journals'];
+        return $this->container['users'];
     }
 
     /**
-     * Sets manual_journals
+     * Sets users
      *
-     * @param \Freee\Accounting\Model\ManualJournal[] $manual_journals manual_journals
+     * @param \Freee\Accounting\Model\User[] $users users
      *
      * @return self
      */
-    public function setManualJournals($manual_journals)
+    public function setUsers($users)
     {
-        $this->container['manual_journals'] = $manual_journals;
+        $this->container['users'] = $users;
 
         return $this;
     }

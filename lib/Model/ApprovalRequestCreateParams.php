@@ -59,12 +59,12 @@ class ApprovalRequestCreateParams implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
+        'company_id' => 'int',
         'application_date' => 'string',
         'approval_flow_route_id' => 'int',
-        'approver_id' => 'int',
-        'company_id' => 'int',
-        'draft' => 'bool',
         'form_id' => 'int',
+        'approver_id' => 'int',
+        'draft' => 'bool',
         'parent_id' => 'int',
         'request_items' => '\Freee\Accounting\Model\ApprovalRequestCreateParamsRequestItems[]'
     ];
@@ -77,12 +77,12 @@ class ApprovalRequestCreateParams implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'company_id' => null,
         'application_date' => null,
         'approval_flow_route_id' => null,
-        'approver_id' => null,
-        'company_id' => null,
-        'draft' => null,
         'form_id' => null,
+        'approver_id' => null,
+        'draft' => null,
         'parent_id' => null,
         'request_items' => null
     ];
@@ -114,12 +114,12 @@ class ApprovalRequestCreateParams implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $attributeMap = [
+        'company_id' => 'company_id',
         'application_date' => 'application_date',
         'approval_flow_route_id' => 'approval_flow_route_id',
-        'approver_id' => 'approver_id',
-        'company_id' => 'company_id',
-        'draft' => 'draft',
         'form_id' => 'form_id',
+        'approver_id' => 'approver_id',
+        'draft' => 'draft',
         'parent_id' => 'parent_id',
         'request_items' => 'request_items'
     ];
@@ -130,12 +130,12 @@ class ApprovalRequestCreateParams implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
+        'company_id' => 'setCompanyId',
         'application_date' => 'setApplicationDate',
         'approval_flow_route_id' => 'setApprovalFlowRouteId',
-        'approver_id' => 'setApproverId',
-        'company_id' => 'setCompanyId',
-        'draft' => 'setDraft',
         'form_id' => 'setFormId',
+        'approver_id' => 'setApproverId',
+        'draft' => 'setDraft',
         'parent_id' => 'setParentId',
         'request_items' => 'setRequestItems'
     ];
@@ -146,12 +146,12 @@ class ApprovalRequestCreateParams implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
+        'company_id' => 'getCompanyId',
         'application_date' => 'getApplicationDate',
         'approval_flow_route_id' => 'getApprovalFlowRouteId',
-        'approver_id' => 'getApproverId',
-        'company_id' => 'getCompanyId',
-        'draft' => 'getDraft',
         'form_id' => 'getFormId',
+        'approver_id' => 'getApproverId',
+        'draft' => 'getDraft',
         'parent_id' => 'getParentId',
         'request_items' => 'getRequestItems'
     ];
@@ -213,12 +213,12 @@ class ApprovalRequestCreateParams implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(array $data = null)
     {
+        $this->container['company_id'] = $data['company_id'] ?? null;
         $this->container['application_date'] = $data['application_date'] ?? null;
         $this->container['approval_flow_route_id'] = $data['approval_flow_route_id'] ?? null;
-        $this->container['approver_id'] = $data['approver_id'] ?? null;
-        $this->container['company_id'] = $data['company_id'] ?? null;
-        $this->container['draft'] = $data['draft'] ?? null;
         $this->container['form_id'] = $data['form_id'] ?? null;
+        $this->container['approver_id'] = $data['approver_id'] ?? null;
+        $this->container['draft'] = $data['draft'] ?? null;
         $this->container['parent_id'] = $data['parent_id'] ?? null;
         $this->container['request_items'] = $data['request_items'] ?? null;
     }
@@ -232,25 +232,6 @@ class ApprovalRequestCreateParams implements ModelInterface, ArrayAccess, \JsonS
     {
         $invalidProperties = [];
 
-        if ($this->container['approval_flow_route_id'] === null) {
-            $invalidProperties[] = "'approval_flow_route_id' can't be null";
-        }
-        if (($this->container['approval_flow_route_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'approval_flow_route_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['approval_flow_route_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'approval_flow_route_id', must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['approver_id']) && ($this->container['approver_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'approver_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (!is_null($this->container['approver_id']) && ($this->container['approver_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'approver_id', must be bigger than or equal to 1.";
-        }
-
         if ($this->container['company_id'] === null) {
             $invalidProperties[] = "'company_id' can't be null";
         }
@@ -262,9 +243,17 @@ class ApprovalRequestCreateParams implements ModelInterface, ArrayAccess, \JsonS
             $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['draft'] === null) {
-            $invalidProperties[] = "'draft' can't be null";
+        if ($this->container['approval_flow_route_id'] === null) {
+            $invalidProperties[] = "'approval_flow_route_id' can't be null";
         }
+        if (($this->container['approval_flow_route_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'approval_flow_route_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['approval_flow_route_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'approval_flow_route_id', must be bigger than or equal to 1.";
+        }
+
         if ($this->container['form_id'] === null) {
             $invalidProperties[] = "'form_id' can't be null";
         }
@@ -276,6 +265,17 @@ class ApprovalRequestCreateParams implements ModelInterface, ArrayAccess, \JsonS
             $invalidProperties[] = "invalid value for 'form_id', must be bigger than or equal to 1.";
         }
 
+        if (!is_null($this->container['approver_id']) && ($this->container['approver_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'approver_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (!is_null($this->container['approver_id']) && ($this->container['approver_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'approver_id', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['draft'] === null) {
+            $invalidProperties[] = "'draft' can't be null";
+        }
         if (!is_null($this->container['parent_id']) && ($this->container['parent_id'] > 2147483647)) {
             $invalidProperties[] = "invalid value for 'parent_id', must be smaller than or equal to 2147483647.";
         }
@@ -301,6 +301,38 @@ class ApprovalRequestCreateParams implements ModelInterface, ArrayAccess, \JsonS
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets company_id
+     *
+     * @return int
+     */
+    public function getCompanyId()
+    {
+        return $this->container['company_id'];
+    }
+
+    /**
+     * Sets company_id
+     *
+     * @param int $company_id 事業所ID
+     *
+     * @return self
+     */
+    public function setCompanyId($company_id)
+    {
+
+        if (($company_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $company_id when calling ApprovalRequestCreateParams., must be smaller than or equal to 2147483647.');
+        }
+        if (($company_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $company_id when calling ApprovalRequestCreateParams., must be bigger than or equal to 1.');
+        }
+
+        $this->container['company_id'] = $company_id;
+
+        return $this;
+    }
 
     /**
      * Gets application_date
@@ -359,6 +391,38 @@ class ApprovalRequestCreateParams implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
+     * Gets form_id
+     *
+     * @return int
+     */
+    public function getFormId()
+    {
+        return $this->container['form_id'];
+    }
+
+    /**
+     * Sets form_id
+     *
+     * @param int $form_id 申請フォームID
+     *
+     * @return self
+     */
+    public function setFormId($form_id)
+    {
+
+        if (($form_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $form_id when calling ApprovalRequestCreateParams., must be smaller than or equal to 2147483647.');
+        }
+        if (($form_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $form_id when calling ApprovalRequestCreateParams., must be bigger than or equal to 1.');
+        }
+
+        $this->container['form_id'] = $form_id;
+
+        return $this;
+    }
+
+    /**
      * Gets approver_id
      *
      * @return int|null
@@ -391,38 +455,6 @@ class ApprovalRequestCreateParams implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets company_id
-     *
-     * @return int
-     */
-    public function getCompanyId()
-    {
-        return $this->container['company_id'];
-    }
-
-    /**
-     * Sets company_id
-     *
-     * @param int $company_id 事業所ID
-     *
-     * @return self
-     */
-    public function setCompanyId($company_id)
-    {
-
-        if (($company_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling ApprovalRequestCreateParams., must be smaller than or equal to 2147483647.');
-        }
-        if (($company_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling ApprovalRequestCreateParams., must be bigger than or equal to 1.');
-        }
-
-        $this->container['company_id'] = $company_id;
-
-        return $this;
-    }
-
-    /**
      * Gets draft
      *
      * @return bool
@@ -435,45 +467,13 @@ class ApprovalRequestCreateParams implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets draft
      *
-     * @param bool $draft falseの時、in_progress:申請中で作成する。それ以外の時はdraft:下書きで作成する
+     * @param bool $draft 各種申請のステータス<br> falseを指定した時は申請中（in_progress）で各種申請を作成します。<br> trueを指定した時は下書き（draft）で各種申請を作成します。
      *
      * @return self
      */
     public function setDraft($draft)
     {
         $this->container['draft'] = $draft;
-
-        return $this;
-    }
-
-    /**
-     * Gets form_id
-     *
-     * @return int
-     */
-    public function getFormId()
-    {
-        return $this->container['form_id'];
-    }
-
-    /**
-     * Sets form_id
-     *
-     * @param int $form_id 申請フォームID
-     *
-     * @return self
-     */
-    public function setFormId($form_id)
-    {
-
-        if (($form_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $form_id when calling ApprovalRequestCreateParams., must be smaller than or equal to 2147483647.');
-        }
-        if (($form_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $form_id when calling ApprovalRequestCreateParams., must be bigger than or equal to 1.');
-        }
-
-        $this->container['form_id'] = $form_id;
 
         return $this;
     }

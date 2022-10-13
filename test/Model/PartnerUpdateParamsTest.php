@@ -80,15 +80,6 @@ class PartnerUpdateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "address_attributes"
-     */
-    public function testPropertyAddressAttributes()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "company_id"
      */
     public function testPropertyCompanyId()
@@ -98,126 +89,9 @@ class PartnerUpdateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "contact_name"
-     */
-    public function testPropertyContactName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "country_code"
-     */
-    public function testPropertyCountryCode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "default_title"
-     */
-    public function testPropertyDefaultTitle()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "email"
-     */
-    public function testPropertyEmail()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "invoice_payment_term_attributes"
-     */
-    public function testPropertyInvoicePaymentTermAttributes()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "long_name"
-     */
-    public function testPropertyLongName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "name"
      */
     public function testPropertyName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "name_kana"
-     */
-    public function testPropertyNameKana()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "org_code"
-     */
-    public function testPropertyOrgCode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partner_bank_account_attributes"
-     */
-    public function testPropertyPartnerBankAccountAttributes()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partner_doc_setting_attributes"
-     */
-    public function testPropertyPartnerDocSettingAttributes()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "payer_walletable_id"
-     */
-    public function testPropertyPayerWalletableId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "payment_term_attributes"
-     */
-    public function testPropertyPaymentTermAttributes()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "phone"
-     */
-    public function testPropertyPhone()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -242,9 +116,135 @@ class PartnerUpdateParamsTest extends TestCase
     }
 
     /**
+     * Test attribute "org_code"
+     */
+    public function testPropertyOrgCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "country_code"
+     */
+    public function testPropertyCountryCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "long_name"
+     */
+    public function testPropertyLongName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "name_kana"
+     */
+    public function testPropertyNameKana()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "default_title"
+     */
+    public function testPropertyDefaultTitle()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "phone"
+     */
+    public function testPropertyPhone()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "contact_name"
+     */
+    public function testPropertyContactName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "email"
+     */
+    public function testPropertyEmail()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "payer_walletable_id"
+     */
+    public function testPropertyPayerWalletableId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "transfer_fee_handling_side"
      */
     public function testPropertyTransferFeeHandlingSide()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "address_attributes"
+     */
+    public function testPropertyAddressAttributes()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partner_doc_setting_attributes"
+     */
+    public function testPropertyPartnerDocSettingAttributes()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partner_bank_account_attributes"
+     */
+    public function testPropertyPartnerBankAccountAttributes()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "payment_term_attributes"
+     */
+    public function testPropertyPaymentTermAttributes()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "invoice_payment_term_attributes"
+     */
+    public function testPropertyInvoicePaymentTermAttributes()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

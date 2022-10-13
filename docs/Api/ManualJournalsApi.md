@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 ## `getManualJournals()`
 
 ```php
-getManualJournals($company_id, $start_issue_date, $end_issue_date, $entry_side, $account_item_id, $min_amount, $max_amount, $partner_id, $partner_code, $item_id, $section_id, $segment_1_tag_id, $segment_2_tag_id, $segment_3_tag_id, $comment_status, $comment_important, $adjustment, $txn_number, $offset, $limit): \Freee\Accounting\Model\InlineResponse2004
+getManualJournals($company_id, $start_issue_date, $end_issue_date, $entry_side, $account_item_id, $min_amount, $max_amount, $partner_id, $partner_code, $item_id, $section_id, $segment_1_tag_id, $segment_2_tag_id, $segment_3_tag_id, $comment_status, $comment_important, $adjustment, $txn_number, $offset, $limit): \Freee\Accounting\Model\InlineResponse2003
 ```
 
 振替伝票一覧の取得
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
+[**\Freee\Accounting\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
 
 ### Authorization
 

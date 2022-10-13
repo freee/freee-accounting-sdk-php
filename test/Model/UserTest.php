@@ -80,9 +80,9 @@ class UserTest extends TestCase
     }
 
     /**
-     * Test attribute "display_name"
+     * Test attribute "id"
      */
-    public function testPropertyDisplayName()
+    public function testPropertyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -98,6 +98,15 @@ class UserTest extends TestCase
     }
 
     /**
+     * Test attribute "display_name"
+     */
+    public function testPropertyDisplayName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "first_name"
      */
     public function testPropertyFirstName()
@@ -107,27 +116,18 @@ class UserTest extends TestCase
     }
 
     /**
-     * Test attribute "first_name_kana"
-     */
-    public function testPropertyFirstNameKana()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "last_name"
      */
     public function testPropertyLastName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "first_name_kana"
+     */
+    public function testPropertyFirstNameKana()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

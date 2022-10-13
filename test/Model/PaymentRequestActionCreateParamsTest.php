@@ -80,15 +80,6 @@ class PaymentRequestActionCreateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "approval_action"
-     */
-    public function testPropertyApprovalAction()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "company_id"
      */
     public function testPropertyCompanyId()
@@ -98,9 +89,18 @@ class PaymentRequestActionCreateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "next_approver_id"
+     * Test attribute "approval_action"
      */
-    public function testPropertyNextApproverId()
+    public function testPropertyApprovalAction()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "target_step_id"
+     */
+    public function testPropertyTargetStepId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -116,9 +116,9 @@ class PaymentRequestActionCreateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "target_step_id"
+     * Test attribute "next_approver_id"
      */
-    public function testPropertyTargetStepId()
+    public function testPropertyNextApproverId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 ## `getSections()`
 
 ```php
-getSections($company_id): \Freee\Accounting\Model\InlineResponse2006
+getSections($company_id): \Freee\Accounting\Model\InlineResponse2001
 ```
 
 部門一覧の取得
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
+[**\Freee\Accounting\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
 
 ### Authorization
 

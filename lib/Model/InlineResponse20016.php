@@ -59,8 +59,7 @@ class InlineResponse20016 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'meta' => '\Freee\Accounting\Model\InlineResponse20015Meta',
-        'walletable' => '\Freee\Accounting\Model\Walletable'
+        'segment_tags' => '\Freee\Accounting\Model\SegmentTag[]'
     ];
 
     /**
@@ -71,8 +70,7 @@ class InlineResponse20016 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'meta' => null,
-        'walletable' => null
+        'segment_tags' => null
     ];
 
     /**
@@ -102,8 +100,7 @@ class InlineResponse20016 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'meta' => 'meta',
-        'walletable' => 'walletable'
+        'segment_tags' => 'segment_tags'
     ];
 
     /**
@@ -112,8 +109,7 @@ class InlineResponse20016 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'meta' => 'setMeta',
-        'walletable' => 'setWalletable'
+        'segment_tags' => 'setSegmentTags'
     ];
 
     /**
@@ -122,8 +118,7 @@ class InlineResponse20016 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'meta' => 'getMeta',
-        'walletable' => 'getWalletable'
+        'segment_tags' => 'getSegmentTags'
     ];
 
     /**
@@ -183,8 +178,7 @@ class InlineResponse20016 implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['meta'] = $data['meta'] ?? null;
-        $this->container['walletable'] = $data['walletable'] ?? null;
+        $this->container['segment_tags'] = $data['segment_tags'] ?? null;
     }
 
     /**
@@ -196,8 +190,8 @@ class InlineResponse20016 implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
-        if ($this->container['walletable'] === null) {
-            $invalidProperties[] = "'walletable' can't be null";
+        if ($this->container['segment_tags'] === null) {
+            $invalidProperties[] = "'segment_tags' can't be null";
         }
         return $invalidProperties;
     }
@@ -215,49 +209,25 @@ class InlineResponse20016 implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets meta
+     * Gets segment_tags
      *
-     * @return \Freee\Accounting\Model\InlineResponse20015Meta|null
+     * @return \Freee\Accounting\Model\SegmentTag[]
      */
-    public function getMeta()
+    public function getSegmentTags()
     {
-        return $this->container['meta'];
+        return $this->container['segment_tags'];
     }
 
     /**
-     * Sets meta
+     * Sets segment_tags
      *
-     * @param \Freee\Accounting\Model\InlineResponse20015Meta|null $meta meta
+     * @param \Freee\Accounting\Model\SegmentTag[] $segment_tags segment_tags
      *
      * @return self
      */
-    public function setMeta($meta)
+    public function setSegmentTags($segment_tags)
     {
-        $this->container['meta'] = $meta;
-
-        return $this;
-    }
-
-    /**
-     * Gets walletable
-     *
-     * @return \Freee\Accounting\Model\Walletable
-     */
-    public function getWalletable()
-    {
-        return $this->container['walletable'];
-    }
-
-    /**
-     * Sets walletable
-     *
-     * @param \Freee\Accounting\Model\Walletable $walletable walletable
-     *
-     * @return self
-     */
-    public function setWalletable($walletable)
-    {
-        $this->container['walletable'] = $walletable;
+        $this->container['segment_tags'] = $segment_tags;
 
         return $this;
     }

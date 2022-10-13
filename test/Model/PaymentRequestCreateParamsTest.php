@@ -80,27 +80,18 @@ class PaymentRequestCreateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "account_name"
+     * Test attribute "company_id"
      */
-    public function testPropertyAccountName()
+    public function testPropertyCompanyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "account_number"
+     * Test attribute "title"
      */
-    public function testPropertyAccountNumber()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "account_type"
-     */
-    public function testPropertyAccountType()
+    public function testPropertyTitle()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -116,9 +107,18 @@ class PaymentRequestCreateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "approval_flow_route_id"
+     * Test attribute "description"
      */
-    public function testPropertyApprovalFlowRouteId()
+    public function testPropertyDescription()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "payment_request_lines"
+     */
+    public function testPropertyPaymentRequestLines()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -128,6 +128,96 @@ class PaymentRequestCreateParamsTest extends TestCase
      * Test attribute "approver_id"
      */
     public function testPropertyApproverId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "approval_flow_route_id"
+     */
+    public function testPropertyApprovalFlowRouteId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "parent_id"
+     */
+    public function testPropertyParentId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "draft"
+     */
+    public function testPropertyDraft()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "document_code"
+     */
+    public function testPropertyDocumentCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "receipt_ids"
+     */
+    public function testPropertyReceiptIds()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "issue_date"
+     */
+    public function testPropertyIssueDate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "payment_date"
+     */
+    public function testPropertyPaymentDate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "payment_method"
+     */
+    public function testPropertyPaymentMethod()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partner_id"
+     */
+    public function testPropertyPartnerId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partner_code"
+     */
+    public function testPropertyPartnerCode()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -170,15 +260,6 @@ class PaymentRequestCreateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "branch_kana"
-     */
-    public function testPropertyBranchKana()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "branch_name"
      */
     public function testPropertyBranchName()
@@ -188,117 +269,36 @@ class PaymentRequestCreateParamsTest extends TestCase
     }
 
     /**
-     * Test attribute "company_id"
+     * Test attribute "branch_kana"
      */
-    public function testPropertyCompanyId()
+    public function testPropertyBranchKana()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "description"
+     * Test attribute "account_name"
      */
-    public function testPropertyDescription()
+    public function testPropertyAccountName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "document_code"
+     * Test attribute "account_number"
      */
-    public function testPropertyDocumentCode()
+    public function testPropertyAccountNumber()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "draft"
+     * Test attribute "account_type"
      */
-    public function testPropertyDraft()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "issue_date"
-     */
-    public function testPropertyIssueDate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "parent_id"
-     */
-    public function testPropertyParentId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partner_code"
-     */
-    public function testPropertyPartnerCode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "partner_id"
-     */
-    public function testPropertyPartnerId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "payment_date"
-     */
-    public function testPropertyPaymentDate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "payment_method"
-     */
-    public function testPropertyPaymentMethod()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "payment_request_lines"
-     */
-    public function testPropertyPaymentRequestLines()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "receipt_ids"
-     */
-    public function testPropertyReceiptIds()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "title"
-     */
-    public function testPropertyTitle()
+    public function testPropertyAccountType()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

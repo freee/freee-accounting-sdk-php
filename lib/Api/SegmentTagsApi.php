@@ -830,7 +830,7 @@ class SegmentTagsApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\InlineResponse2007|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError
+     * @return \Freee\Accounting\Model\InlineResponse20016|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError
      */
     public function getSegmentTags($company_id, $segment_id, $offset = null, $limit = null)
     {
@@ -850,7 +850,7 @@ class SegmentTagsApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\InlineResponse2007|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Freee\Accounting\Model\InlineResponse20016|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSegmentTagsWithHttpInfo($company_id, $segment_id, $offset = null, $limit = null)
     {
@@ -893,14 +893,14 @@ class SegmentTagsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Freee\Accounting\Model\InlineResponse2007' === '\SplFileObject') {
+                    if ('\Freee\Accounting\Model\InlineResponse20016' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InlineResponse2007', []),
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InlineResponse20016', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -954,7 +954,7 @@ class SegmentTagsApi
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\InlineResponse2007';
+            $returnType = '\Freee\Accounting\Model\InlineResponse20016';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -972,7 +972,7 @@ class SegmentTagsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InlineResponse2007',
+                        '\Freee\Accounting\Model\InlineResponse20016',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1052,7 +1052,7 @@ class SegmentTagsApi
      */
     public function getSegmentTagsAsyncWithHttpInfo($company_id, $segment_id, $offset = null, $limit = null)
     {
-        $returnType = '\Freee\Accounting\Model\InlineResponse2007';
+        $returnType = '\Freee\Accounting\Model\InlineResponse20016';
         $request = $this->getSegmentTagsRequest($company_id, $segment_id, $offset, $limit);
 
         return $this->client

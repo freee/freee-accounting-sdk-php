@@ -59,21 +59,21 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsBalances implements ModelInterface, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'account_category_name' => 'string',
-        'account_group_name' => 'string',
         'account_item_id' => 'int',
         'account_item_name' => 'string',
-        'closing_balance' => 'int',
-        'hierarchy_level' => 'int',
-        'items' => '\Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsItems[]',
-        'last_year_closing_balance' => 'int',
-        'parent_account_category_name' => 'string',
+        'account_group_name' => 'string',
         'partners' => '\Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsPartners[]',
+        'items' => '\Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsItems[]',
         'sections' => '\Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSections[]',
         'segment_1_tags' => '\Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSegment1Tags[]',
         'segment_2_tags' => '\Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSegment2Tags[]',
         'segment_3_tags' => '\Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSegment3Tags[]',
+        'account_category_name' => 'string',
         'total_line' => 'bool',
+        'hierarchy_level' => 'int',
+        'parent_account_category_name' => 'string',
+        'last_year_closing_balance' => 'int',
+        'closing_balance' => 'int',
         'year_on_year' => 'float'
     ];
 
@@ -85,21 +85,21 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsBalances implements ModelInterface, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'account_category_name' => null,
-        'account_group_name' => null,
         'account_item_id' => null,
         'account_item_name' => null,
-        'closing_balance' => null,
-        'hierarchy_level' => null,
-        'items' => null,
-        'last_year_closing_balance' => null,
-        'parent_account_category_name' => null,
+        'account_group_name' => null,
         'partners' => null,
+        'items' => null,
         'sections' => null,
         'segment_1_tags' => null,
         'segment_2_tags' => null,
         'segment_3_tags' => null,
+        'account_category_name' => null,
         'total_line' => null,
+        'hierarchy_level' => null,
+        'parent_account_category_name' => null,
+        'last_year_closing_balance' => null,
+        'closing_balance' => null,
         'year_on_year' => null
     ];
 
@@ -130,21 +130,21 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsBalances implements ModelInterface, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'account_category_name' => 'account_category_name',
-        'account_group_name' => 'account_group_name',
         'account_item_id' => 'account_item_id',
         'account_item_name' => 'account_item_name',
-        'closing_balance' => 'closing_balance',
-        'hierarchy_level' => 'hierarchy_level',
-        'items' => 'items',
-        'last_year_closing_balance' => 'last_year_closing_balance',
-        'parent_account_category_name' => 'parent_account_category_name',
+        'account_group_name' => 'account_group_name',
         'partners' => 'partners',
+        'items' => 'items',
         'sections' => 'sections',
         'segment_1_tags' => 'segment_1_tags',
         'segment_2_tags' => 'segment_2_tags',
         'segment_3_tags' => 'segment_3_tags',
+        'account_category_name' => 'account_category_name',
         'total_line' => 'total_line',
+        'hierarchy_level' => 'hierarchy_level',
+        'parent_account_category_name' => 'parent_account_category_name',
+        'last_year_closing_balance' => 'last_year_closing_balance',
+        'closing_balance' => 'closing_balance',
         'year_on_year' => 'year_on_year'
     ];
 
@@ -154,21 +154,21 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsBalances implements ModelInterface, 
      * @var string[]
      */
     protected static $setters = [
-        'account_category_name' => 'setAccountCategoryName',
-        'account_group_name' => 'setAccountGroupName',
         'account_item_id' => 'setAccountItemId',
         'account_item_name' => 'setAccountItemName',
-        'closing_balance' => 'setClosingBalance',
-        'hierarchy_level' => 'setHierarchyLevel',
-        'items' => 'setItems',
-        'last_year_closing_balance' => 'setLastYearClosingBalance',
-        'parent_account_category_name' => 'setParentAccountCategoryName',
+        'account_group_name' => 'setAccountGroupName',
         'partners' => 'setPartners',
+        'items' => 'setItems',
         'sections' => 'setSections',
         'segment_1_tags' => 'setSegment1Tags',
         'segment_2_tags' => 'setSegment2Tags',
         'segment_3_tags' => 'setSegment3Tags',
+        'account_category_name' => 'setAccountCategoryName',
         'total_line' => 'setTotalLine',
+        'hierarchy_level' => 'setHierarchyLevel',
+        'parent_account_category_name' => 'setParentAccountCategoryName',
+        'last_year_closing_balance' => 'setLastYearClosingBalance',
+        'closing_balance' => 'setClosingBalance',
         'year_on_year' => 'setYearOnYear'
     ];
 
@@ -178,21 +178,21 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsBalances implements ModelInterface, 
      * @var string[]
      */
     protected static $getters = [
-        'account_category_name' => 'getAccountCategoryName',
-        'account_group_name' => 'getAccountGroupName',
         'account_item_id' => 'getAccountItemId',
         'account_item_name' => 'getAccountItemName',
-        'closing_balance' => 'getClosingBalance',
-        'hierarchy_level' => 'getHierarchyLevel',
-        'items' => 'getItems',
-        'last_year_closing_balance' => 'getLastYearClosingBalance',
-        'parent_account_category_name' => 'getParentAccountCategoryName',
+        'account_group_name' => 'getAccountGroupName',
         'partners' => 'getPartners',
+        'items' => 'getItems',
         'sections' => 'getSections',
         'segment_1_tags' => 'getSegment1Tags',
         'segment_2_tags' => 'getSegment2Tags',
         'segment_3_tags' => 'getSegment3Tags',
+        'account_category_name' => 'getAccountCategoryName',
         'total_line' => 'getTotalLine',
+        'hierarchy_level' => 'getHierarchyLevel',
+        'parent_account_category_name' => 'getParentAccountCategoryName',
+        'last_year_closing_balance' => 'getLastYearClosingBalance',
+        'closing_balance' => 'getClosingBalance',
         'year_on_year' => 'getYearOnYear'
     ];
 
@@ -253,21 +253,21 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsBalances implements ModelInterface, 
      */
     public function __construct(array $data = null)
     {
-        $this->container['account_category_name'] = $data['account_category_name'] ?? null;
-        $this->container['account_group_name'] = $data['account_group_name'] ?? null;
         $this->container['account_item_id'] = $data['account_item_id'] ?? null;
         $this->container['account_item_name'] = $data['account_item_name'] ?? null;
-        $this->container['closing_balance'] = $data['closing_balance'] ?? null;
-        $this->container['hierarchy_level'] = $data['hierarchy_level'] ?? null;
-        $this->container['items'] = $data['items'] ?? null;
-        $this->container['last_year_closing_balance'] = $data['last_year_closing_balance'] ?? null;
-        $this->container['parent_account_category_name'] = $data['parent_account_category_name'] ?? null;
+        $this->container['account_group_name'] = $data['account_group_name'] ?? null;
         $this->container['partners'] = $data['partners'] ?? null;
+        $this->container['items'] = $data['items'] ?? null;
         $this->container['sections'] = $data['sections'] ?? null;
         $this->container['segment_1_tags'] = $data['segment_1_tags'] ?? null;
         $this->container['segment_2_tags'] = $data['segment_2_tags'] ?? null;
         $this->container['segment_3_tags'] = $data['segment_3_tags'] ?? null;
+        $this->container['account_category_name'] = $data['account_category_name'] ?? null;
         $this->container['total_line'] = $data['total_line'] ?? null;
+        $this->container['hierarchy_level'] = $data['hierarchy_level'] ?? null;
+        $this->container['parent_account_category_name'] = $data['parent_account_category_name'] ?? null;
+        $this->container['last_year_closing_balance'] = $data['last_year_closing_balance'] ?? null;
+        $this->container['closing_balance'] = $data['closing_balance'] ?? null;
         $this->container['year_on_year'] = $data['year_on_year'] ?? null;
     }
 
@@ -302,54 +302,6 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsBalances implements ModelInterface, 
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets account_category_name
-     *
-     * @return string|null
-     */
-    public function getAccountCategoryName()
-    {
-        return $this->container['account_category_name'];
-    }
-
-    /**
-     * Sets account_category_name
-     *
-     * @param string|null $account_category_name 勘定科目カテゴリー名
-     *
-     * @return self
-     */
-    public function setAccountCategoryName($account_category_name)
-    {
-        $this->container['account_category_name'] = $account_category_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets account_group_name
-     *
-     * @return string|null
-     */
-    public function getAccountGroupName()
-    {
-        return $this->container['account_group_name'];
-    }
-
-    /**
-     * Sets account_group_name
-     *
-     * @param string|null $account_group_name 決算書表示名(account_item_display_type:group指定時に決算書表示名の時のみ含まれる)
-     *
-     * @return self
-     */
-    public function setAccountGroupName($account_group_name)
-    {
-        $this->container['account_group_name'] = $account_group_name;
-
-        return $this;
-    }
 
     /**
      * Gets account_item_id
@@ -408,121 +360,25 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsBalances implements ModelInterface, 
     }
 
     /**
-     * Gets closing_balance
-     *
-     * @return int|null
-     */
-    public function getClosingBalance()
-    {
-        return $this->container['closing_balance'];
-    }
-
-    /**
-     * Sets closing_balance
-     *
-     * @param int|null $closing_balance 期末残高
-     *
-     * @return self
-     */
-    public function setClosingBalance($closing_balance)
-    {
-        $this->container['closing_balance'] = $closing_balance;
-
-        return $this;
-    }
-
-    /**
-     * Gets hierarchy_level
-     *
-     * @return int|null
-     */
-    public function getHierarchyLevel()
-    {
-        return $this->container['hierarchy_level'];
-    }
-
-    /**
-     * Sets hierarchy_level
-     *
-     * @param int|null $hierarchy_level 階層レベル
-     *
-     * @return self
-     */
-    public function setHierarchyLevel($hierarchy_level)
-    {
-        $this->container['hierarchy_level'] = $hierarchy_level;
-
-        return $this;
-    }
-
-    /**
-     * Gets items
-     *
-     * @return \Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsItems[]|null
-     */
-    public function getItems()
-    {
-        return $this->container['items'];
-    }
-
-    /**
-     * Sets items
-     *
-     * @param \Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsItems[]|null $items breakdown_display_type:item, account_item_display_type:account_item指定時のみ含まれる
-     *
-     * @return self
-     */
-    public function setItems($items)
-    {
-        $this->container['items'] = $items;
-
-        return $this;
-    }
-
-    /**
-     * Gets last_year_closing_balance
-     *
-     * @return int|null
-     */
-    public function getLastYearClosingBalance()
-    {
-        return $this->container['last_year_closing_balance'];
-    }
-
-    /**
-     * Sets last_year_closing_balance
-     *
-     * @param int|null $last_year_closing_balance 前年度期末残高
-     *
-     * @return self
-     */
-    public function setLastYearClosingBalance($last_year_closing_balance)
-    {
-        $this->container['last_year_closing_balance'] = $last_year_closing_balance;
-
-        return $this;
-    }
-
-    /**
-     * Gets parent_account_category_name
+     * Gets account_group_name
      *
      * @return string|null
      */
-    public function getParentAccountCategoryName()
+    public function getAccountGroupName()
     {
-        return $this->container['parent_account_category_name'];
+        return $this->container['account_group_name'];
     }
 
     /**
-     * Sets parent_account_category_name
+     * Sets account_group_name
      *
-     * @param string|null $parent_account_category_name 上位勘定科目カテゴリー名(勘定科目カテゴリーの時のみ、上層が存在する場合含まれる)
+     * @param string|null $account_group_name 決算書表示名(account_item_display_type:group指定時に決算書表示名の時のみ含まれる)
      *
      * @return self
      */
-    public function setParentAccountCategoryName($parent_account_category_name)
+    public function setAccountGroupName($account_group_name)
     {
-        $this->container['parent_account_category_name'] = $parent_account_category_name;
+        $this->container['account_group_name'] = $account_group_name;
 
         return $this;
     }
@@ -547,6 +403,30 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsBalances implements ModelInterface, 
     public function setPartners($partners)
     {
         $this->container['partners'] = $partners;
+
+        return $this;
+    }
+
+    /**
+     * Gets items
+     *
+     * @return \Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsItems[]|null
+     */
+    public function getItems()
+    {
+        return $this->container['items'];
+    }
+
+    /**
+     * Sets items
+     *
+     * @param \Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsItems[]|null $items breakdown_display_type:item, account_item_display_type:account_item指定時のみ含まれる
+     *
+     * @return self
+     */
+    public function setItems($items)
+    {
+        $this->container['items'] = $items;
 
         return $this;
     }
@@ -648,6 +528,30 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsBalances implements ModelInterface, 
     }
 
     /**
+     * Gets account_category_name
+     *
+     * @return string|null
+     */
+    public function getAccountCategoryName()
+    {
+        return $this->container['account_category_name'];
+    }
+
+    /**
+     * Sets account_category_name
+     *
+     * @param string|null $account_category_name 勘定科目カテゴリー名
+     *
+     * @return self
+     */
+    public function setAccountCategoryName($account_category_name)
+    {
+        $this->container['account_category_name'] = $account_category_name;
+
+        return $this;
+    }
+
+    /**
      * Gets total_line
      *
      * @return bool|null
@@ -667,6 +571,102 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsBalances implements ModelInterface, 
     public function setTotalLine($total_line)
     {
         $this->container['total_line'] = $total_line;
+
+        return $this;
+    }
+
+    /**
+     * Gets hierarchy_level
+     *
+     * @return int|null
+     */
+    public function getHierarchyLevel()
+    {
+        return $this->container['hierarchy_level'];
+    }
+
+    /**
+     * Sets hierarchy_level
+     *
+     * @param int|null $hierarchy_level 階層レベル
+     *
+     * @return self
+     */
+    public function setHierarchyLevel($hierarchy_level)
+    {
+        $this->container['hierarchy_level'] = $hierarchy_level;
+
+        return $this;
+    }
+
+    /**
+     * Gets parent_account_category_name
+     *
+     * @return string|null
+     */
+    public function getParentAccountCategoryName()
+    {
+        return $this->container['parent_account_category_name'];
+    }
+
+    /**
+     * Sets parent_account_category_name
+     *
+     * @param string|null $parent_account_category_name 上位勘定科目カテゴリー名(勘定科目カテゴリーの時のみ、上層が存在する場合含まれる)
+     *
+     * @return self
+     */
+    public function setParentAccountCategoryName($parent_account_category_name)
+    {
+        $this->container['parent_account_category_name'] = $parent_account_category_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets last_year_closing_balance
+     *
+     * @return int|null
+     */
+    public function getLastYearClosingBalance()
+    {
+        return $this->container['last_year_closing_balance'];
+    }
+
+    /**
+     * Sets last_year_closing_balance
+     *
+     * @param int|null $last_year_closing_balance 前年度期末残高
+     *
+     * @return self
+     */
+    public function setLastYearClosingBalance($last_year_closing_balance)
+    {
+        $this->container['last_year_closing_balance'] = $last_year_closing_balance;
+
+        return $this;
+    }
+
+    /**
+     * Gets closing_balance
+     *
+     * @return int|null
+     */
+    public function getClosingBalance()
+    {
+        return $this->container['closing_balance'];
+    }
+
+    /**
+     * Sets closing_balance
+     *
+     * @param int|null $closing_balance 期末残高
+     *
+     * @return self
+     */
+    public function setClosingBalance($closing_balance)
+    {
+        $this->container['closing_balance'] = $closing_balance;
 
         return $this;
     }

@@ -59,11 +59,11 @@ class WalletableCreateParams implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'bank_id' => 'int',
-        'company_id' => 'int',
-        'is_asset' => 'bool',
         'name' => 'string',
-        'type' => 'string'
+        'type' => 'string',
+        'company_id' => 'int',
+        'bank_id' => 'int',
+        'is_asset' => 'bool'
     ];
 
     /**
@@ -74,11 +74,11 @@ class WalletableCreateParams implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'bank_id' => null,
-        'company_id' => null,
-        'is_asset' => null,
         'name' => null,
-        'type' => null
+        'type' => null,
+        'company_id' => null,
+        'bank_id' => null,
+        'is_asset' => null
     ];
 
     /**
@@ -108,11 +108,11 @@ class WalletableCreateParams implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'bank_id' => 'bank_id',
-        'company_id' => 'company_id',
-        'is_asset' => 'is_asset',
         'name' => 'name',
-        'type' => 'type'
+        'type' => 'type',
+        'company_id' => 'company_id',
+        'bank_id' => 'bank_id',
+        'is_asset' => 'is_asset'
     ];
 
     /**
@@ -121,11 +121,11 @@ class WalletableCreateParams implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'bank_id' => 'setBankId',
-        'company_id' => 'setCompanyId',
-        'is_asset' => 'setIsAsset',
         'name' => 'setName',
-        'type' => 'setType'
+        'type' => 'setType',
+        'company_id' => 'setCompanyId',
+        'bank_id' => 'setBankId',
+        'is_asset' => 'setIsAsset'
     ];
 
     /**
@@ -134,11 +134,11 @@ class WalletableCreateParams implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'bank_id' => 'getBankId',
-        'company_id' => 'getCompanyId',
-        'is_asset' => 'getIsAsset',
         'name' => 'getName',
-        'type' => 'getType'
+        'type' => 'getType',
+        'company_id' => 'getCompanyId',
+        'bank_id' => 'getBankId',
+        'is_asset' => 'getIsAsset'
     ];
 
     /**
@@ -215,11 +215,11 @@ class WalletableCreateParams implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
-        $this->container['bank_id'] = $data['bank_id'] ?? null;
-        $this->container['company_id'] = $data['company_id'] ?? null;
-        $this->container['is_asset'] = $data['is_asset'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['type'] = $data['type'] ?? null;
+        $this->container['company_id'] = $data['company_id'] ?? null;
+        $this->container['bank_id'] = $data['bank_id'] ?? null;
+        $this->container['is_asset'] = $data['is_asset'] ?? null;
     }
 
     /**
@@ -230,25 +230,6 @@ class WalletableCreateParams implements ModelInterface, ArrayAccess, \JsonSerial
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        if (!is_null($this->container['bank_id']) && ($this->container['bank_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'bank_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (!is_null($this->container['bank_id']) && ($this->container['bank_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'bank_id', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['company_id'] === null) {
-            $invalidProperties[] = "'company_id' can't be null";
-        }
-        if (($this->container['company_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['company_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
-        }
 
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
@@ -269,6 +250,25 @@ class WalletableCreateParams implements ModelInterface, ArrayAccess, \JsonSerial
             );
         }
 
+        if ($this->container['company_id'] === null) {
+            $invalidProperties[] = "'company_id' can't be null";
+        }
+        if (($this->container['company_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['company_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['bank_id']) && ($this->container['bank_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'bank_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (!is_null($this->container['bank_id']) && ($this->container['bank_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'bank_id', must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -283,94 +283,6 @@ class WalletableCreateParams implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets bank_id
-     *
-     * @return int|null
-     */
-    public function getBankId()
-    {
-        return $this->container['bank_id'];
-    }
-
-    /**
-     * Sets bank_id
-     *
-     * @param int|null $bank_id 連携サービスID（typeにbank_account、credit_cardを指定する場合は必須）
-     *
-     * @return self
-     */
-    public function setBankId($bank_id)
-    {
-
-        if (!is_null($bank_id) && ($bank_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $bank_id when calling WalletableCreateParams., must be smaller than or equal to 2147483647.');
-        }
-        if (!is_null($bank_id) && ($bank_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $bank_id when calling WalletableCreateParams., must be bigger than or equal to 1.');
-        }
-
-        $this->container['bank_id'] = $bank_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets company_id
-     *
-     * @return int
-     */
-    public function getCompanyId()
-    {
-        return $this->container['company_id'];
-    }
-
-    /**
-     * Sets company_id
-     *
-     * @param int $company_id 事業所ID
-     *
-     * @return self
-     */
-    public function setCompanyId($company_id)
-    {
-
-        if (($company_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling WalletableCreateParams., must be smaller than or equal to 2147483647.');
-        }
-        if (($company_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling WalletableCreateParams., must be bigger than or equal to 1.');
-        }
-
-        $this->container['company_id'] = $company_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_asset
-     *
-     * @return bool|null
-     */
-    public function getIsAsset()
-    {
-        return $this->container['is_asset'];
-    }
-
-    /**
-     * Sets is_asset
-     *
-     * @param bool|null $is_asset 口座を資産口座とするか負債口座とするか（true: 資産口座 (デフォルト), false: 負債口座）<br> bank_idを指定しない場合にのみ使われます。<br> bank_idを指定する場合には資産口座か負債口座かはbank_idに指定したサービスに応じて決定され、is_assetに指定した値は無視されます。
-     *
-     * @return self
-     */
-    public function setIsAsset($is_asset)
-    {
-        $this->container['is_asset'] = $is_asset;
-
-        return $this;
-    }
 
     /**
      * Gets name
@@ -430,6 +342,94 @@ class WalletableCreateParams implements ModelInterface, ArrayAccess, \JsonSerial
             );
         }
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets company_id
+     *
+     * @return int
+     */
+    public function getCompanyId()
+    {
+        return $this->container['company_id'];
+    }
+
+    /**
+     * Sets company_id
+     *
+     * @param int $company_id 事業所ID
+     *
+     * @return self
+     */
+    public function setCompanyId($company_id)
+    {
+
+        if (($company_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $company_id when calling WalletableCreateParams., must be smaller than or equal to 2147483647.');
+        }
+        if (($company_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $company_id when calling WalletableCreateParams., must be bigger than or equal to 1.');
+        }
+
+        $this->container['company_id'] = $company_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets bank_id
+     *
+     * @return int|null
+     */
+    public function getBankId()
+    {
+        return $this->container['bank_id'];
+    }
+
+    /**
+     * Sets bank_id
+     *
+     * @param int|null $bank_id 連携サービスID（typeにbank_account、credit_cardを指定する場合は必須）
+     *
+     * @return self
+     */
+    public function setBankId($bank_id)
+    {
+
+        if (!is_null($bank_id) && ($bank_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $bank_id when calling WalletableCreateParams., must be smaller than or equal to 2147483647.');
+        }
+        if (!is_null($bank_id) && ($bank_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $bank_id when calling WalletableCreateParams., must be bigger than or equal to 1.');
+        }
+
+        $this->container['bank_id'] = $bank_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_asset
+     *
+     * @return bool|null
+     */
+    public function getIsAsset()
+    {
+        return $this->container['is_asset'];
+    }
+
+    /**
+     * Sets is_asset
+     *
+     * @param bool|null $is_asset 口座を資産口座とするか負債口座とするか（true: 資産口座 (デフォルト), false: 負債口座）<br> bank_idを指定しない場合にのみ使われます。<br> bank_idを指定する場合には資産口座か負債口座かはbank_idに指定したサービスに応じて決定され、is_assetに指定した値は無視されます。
+     *
+     * @return self
+     */
+    public function setIsAsset($is_asset)
+    {
+        $this->container['is_asset'] = $is_asset;
 
         return $this;
     }

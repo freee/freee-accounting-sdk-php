@@ -61,8 +61,8 @@ class Bank implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'int',
         'name' => 'string',
-        'name_kana' => 'string',
-        'type' => 'string'
+        'type' => 'string',
+        'name_kana' => 'string'
     ];
 
     /**
@@ -75,8 +75,8 @@ class Bank implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'id' => null,
         'name' => null,
-        'name_kana' => null,
-        'type' => null
+        'type' => null,
+        'name_kana' => null
     ];
 
     /**
@@ -108,8 +108,8 @@ class Bank implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
-        'name_kana' => 'name_kana',
-        'type' => 'type'
+        'type' => 'type',
+        'name_kana' => 'name_kana'
     ];
 
     /**
@@ -120,8 +120,8 @@ class Bank implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
-        'name_kana' => 'setNameKana',
-        'type' => 'setType'
+        'type' => 'setType',
+        'name_kana' => 'setNameKana'
     ];
 
     /**
@@ -132,8 +132,8 @@ class Bank implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
-        'name_kana' => 'getNameKana',
-        'type' => 'getType'
+        'type' => 'getType',
+        'name_kana' => 'getNameKana'
     ];
 
     /**
@@ -212,8 +212,8 @@ class Bank implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['name_kana'] = $data['name_kana'] ?? null;
         $this->container['type'] = $data['type'] ?? null;
+        $this->container['name_kana'] = $data['name_kana'] ?? null;
     }
 
     /**
@@ -317,30 +317,6 @@ class Bank implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets name_kana
-     *
-     * @return string|null
-     */
-    public function getNameKana()
-    {
-        return $this->container['name_kana'];
-    }
-
-    /**
-     * Sets name_kana
-     *
-     * @param string|null $name_kana 連携サービス名(カナ)
-     *
-     * @return self
-     */
-    public function setNameKana($name_kana)
-    {
-        $this->container['name_kana'] = $name_kana;
-
-        return $this;
-    }
-
-    /**
      * Gets type
      *
      * @return string|null
@@ -370,6 +346,30 @@ class Bank implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets name_kana
+     *
+     * @return string|null
+     */
+    public function getNameKana()
+    {
+        return $this->container['name_kana'];
+    }
+
+    /**
+     * Sets name_kana
+     *
+     * @param string|null $name_kana 連携サービス名(カナ)
+     *
+     * @return self
+     */
+    public function setNameKana($name_kana)
+    {
+        $this->container['name_kana'] = $name_kana;
 
         return $this;
     }

@@ -1227,7 +1227,7 @@ class ManualJournalsApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\InlineResponse2004|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError
+     * @return \Freee\Accounting\Model\InlineResponse2003|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError
      */
     public function getManualJournals($company_id, $start_issue_date = null, $end_issue_date = null, $entry_side = null, $account_item_id = null, $min_amount = null, $max_amount = null, $partner_id = null, $partner_code = null, $item_id = null, $section_id = null, $segment_1_tag_id = null, $segment_2_tag_id = null, $segment_3_tag_id = null, $comment_status = null, $comment_important = null, $adjustment = null, $txn_number = null, $offset = null, $limit = null)
     {
@@ -1263,7 +1263,7 @@ class ManualJournalsApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\InlineResponse2004|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Freee\Accounting\Model\InlineResponse2003|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getManualJournalsWithHttpInfo($company_id, $start_issue_date = null, $end_issue_date = null, $entry_side = null, $account_item_id = null, $min_amount = null, $max_amount = null, $partner_id = null, $partner_code = null, $item_id = null, $section_id = null, $segment_1_tag_id = null, $segment_2_tag_id = null, $segment_3_tag_id = null, $comment_status = null, $comment_important = null, $adjustment = null, $txn_number = null, $offset = null, $limit = null)
     {
@@ -1306,14 +1306,14 @@ class ManualJournalsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Freee\Accounting\Model\InlineResponse2004' === '\SplFileObject') {
+                    if ('\Freee\Accounting\Model\InlineResponse2003' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InlineResponse2004', []),
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InlineResponse2003', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1367,7 +1367,7 @@ class ManualJournalsApi
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\InlineResponse2004';
+            $returnType = '\Freee\Accounting\Model\InlineResponse2003';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1385,7 +1385,7 @@ class ManualJournalsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InlineResponse2004',
+                        '\Freee\Accounting\Model\InlineResponse2003',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1497,7 +1497,7 @@ class ManualJournalsApi
      */
     public function getManualJournalsAsyncWithHttpInfo($company_id, $start_issue_date = null, $end_issue_date = null, $entry_side = null, $account_item_id = null, $min_amount = null, $max_amount = null, $partner_id = null, $partner_code = null, $item_id = null, $section_id = null, $segment_1_tag_id = null, $segment_2_tag_id = null, $segment_3_tag_id = null, $comment_status = null, $comment_important = null, $adjustment = null, $txn_number = null, $offset = null, $limit = null)
     {
-        $returnType = '\Freee\Accounting\Model\InlineResponse2004';
+        $returnType = '\Freee\Accounting\Model\InlineResponse2003';
         $request = $this->getManualJournalsRequest($company_id, $start_issue_date, $end_issue_date, $entry_side, $account_item_id, $min_amount, $max_amount, $partner_id, $partner_code, $item_id, $section_id, $segment_1_tag_id, $segment_2_tag_id, $segment_3_tag_id, $comment_status, $comment_important, $adjustment, $txn_number, $offset, $limit);
 
         return $this->client

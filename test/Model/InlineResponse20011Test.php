@@ -80,9 +80,9 @@ class InlineResponse20011Test extends TestCase
     }
 
     /**
-     * Test attribute "transfers"
+     * Test attribute "banks"
      */
-    public function testPropertyTransfers()
+    public function testPropertyBanks()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

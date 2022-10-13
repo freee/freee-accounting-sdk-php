@@ -98,18 +98,18 @@ class BankTest extends TestCase
     }
 
     /**
-     * Test attribute "name_kana"
+     * Test attribute "type"
      */
-    public function testPropertyNameKana()
+    public function testPropertyType()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "type"
+     * Test attribute "name_kana"
      */
-    public function testPropertyType()
+    public function testPropertyNameKana()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

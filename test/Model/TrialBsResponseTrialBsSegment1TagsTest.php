@@ -80,42 +80,6 @@ class TrialBsResponseTrialBsSegment1TagsTest extends TestCase
     }
 
     /**
-     * Test attribute "closing_balance"
-     */
-    public function testPropertyClosingBalance()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "composition_ratio"
-     */
-    public function testPropertyCompositionRatio()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "credit_amount"
-     */
-    public function testPropertyCreditAmount()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "debit_amount"
-     */
-    public function testPropertyDebitAmount()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "id"
      */
     public function testPropertyId()
@@ -137,6 +101,42 @@ class TrialBsResponseTrialBsSegment1TagsTest extends TestCase
      * Test attribute "opening_balance"
      */
     public function testPropertyOpeningBalance()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "debit_amount"
+     */
+    public function testPropertyDebitAmount()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "credit_amount"
+     */
+    public function testPropertyCreditAmount()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "closing_balance"
+     */
+    public function testPropertyClosingBalance()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "composition_ratio"
+     */
+    public function testPropertyCompositionRatio()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

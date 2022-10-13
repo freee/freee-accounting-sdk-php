@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 ## `getDeals()`
 
 ```php
-getDeals($company_id, $partner_id, $account_item_id, $partner_code, $status, $type, $start_issue_date, $end_issue_date, $start_due_date, $end_due_date, $start_renew_date, $end_renew_date, $offset, $limit, $registered_from, $accruals): \Freee\Accounting\Model\InlineResponse2001
+getDeals($company_id, $partner_id, $account_item_id, $partner_code, $status, $type, $start_issue_date, $end_issue_date, $start_due_date, $end_due_date, $start_renew_date, $end_renew_date, $offset, $limit, $registered_from, $accruals): \Freee\Accounting\Model\InlineResponse2002
 ```
 
 取引（収入／支出）一覧の取得
@@ -263,7 +263,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\Freee\Accounting\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
 
 ### Authorization
 

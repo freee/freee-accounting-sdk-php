@@ -80,18 +80,9 @@ class InlineResponse2001Test extends TestCase
     }
 
     /**
-     * Test attribute "deals"
+     * Test attribute "sections"
      */
-    public function testPropertyDeals()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "meta"
-     */
-    public function testPropertyMeta()
+    public function testPropertySections()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

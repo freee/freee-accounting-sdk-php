@@ -59,8 +59,8 @@ class ServiceUnavailableError implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'errors' => '\Freee\Accounting\Model\ServiceUnavailableErrorErrors[]',
-        'status_code' => 'int'
+        'status_code' => 'int',
+        'errors' => '\Freee\Accounting\Model\ServiceUnavailableErrorErrors[]'
     ];
 
     /**
@@ -71,8 +71,8 @@ class ServiceUnavailableError implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'errors' => null,
-        'status_code' => null
+        'status_code' => null,
+        'errors' => null
     ];
 
     /**
@@ -102,8 +102,8 @@ class ServiceUnavailableError implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'errors' => 'errors',
-        'status_code' => 'status_code'
+        'status_code' => 'status_code',
+        'errors' => 'errors'
     ];
 
     /**
@@ -112,8 +112,8 @@ class ServiceUnavailableError implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'errors' => 'setErrors',
-        'status_code' => 'setStatusCode'
+        'status_code' => 'setStatusCode',
+        'errors' => 'setErrors'
     ];
 
     /**
@@ -122,8 +122,8 @@ class ServiceUnavailableError implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'errors' => 'getErrors',
-        'status_code' => 'getStatusCode'
+        'status_code' => 'getStatusCode',
+        'errors' => 'getErrors'
     ];
 
     /**
@@ -183,8 +183,8 @@ class ServiceUnavailableError implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
-        $this->container['errors'] = $data['errors'] ?? null;
         $this->container['status_code'] = $data['status_code'] ?? null;
+        $this->container['errors'] = $data['errors'] ?? null;
     }
 
     /**
@@ -196,11 +196,11 @@ class ServiceUnavailableError implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
-        if ($this->container['errors'] === null) {
-            $invalidProperties[] = "'errors' can't be null";
-        }
         if ($this->container['status_code'] === null) {
             $invalidProperties[] = "'status_code' can't be null";
+        }
+        if ($this->container['errors'] === null) {
+            $invalidProperties[] = "'errors' can't be null";
         }
         return $invalidProperties;
     }
@@ -216,30 +216,6 @@ class ServiceUnavailableError implements ModelInterface, ArrayAccess, \JsonSeria
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets errors
-     *
-     * @return \Freee\Accounting\Model\ServiceUnavailableErrorErrors[]
-     */
-    public function getErrors()
-    {
-        return $this->container['errors'];
-    }
-
-    /**
-     * Sets errors
-     *
-     * @param \Freee\Accounting\Model\ServiceUnavailableErrorErrors[] $errors errors
-     *
-     * @return self
-     */
-    public function setErrors($errors)
-    {
-        $this->container['errors'] = $errors;
-
-        return $this;
-    }
 
     /**
      * Gets status_code
@@ -261,6 +237,30 @@ class ServiceUnavailableError implements ModelInterface, ArrayAccess, \JsonSeria
     public function setStatusCode($status_code)
     {
         $this->container['status_code'] = $status_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets errors
+     *
+     * @return \Freee\Accounting\Model\ServiceUnavailableErrorErrors[]
+     */
+    public function getErrors()
+    {
+        return $this->container['errors'];
+    }
+
+    /**
+     * Sets errors
+     *
+     * @param \Freee\Accounting\Model\ServiceUnavailableErrorErrors[] $errors errors
+     *
+     * @return self
+     */
+    public function setErrors($errors)
+    {
+        $this->container['errors'] = $errors;
 
         return $this;
     }

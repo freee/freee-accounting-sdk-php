@@ -59,14 +59,14 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'account_item_id' => 'int',
         'company_id' => 'int',
-        'description' => 'string',
-        'item_id' => 'int',
-        'line_description' => 'string',
         'name' => 'string',
-        'required_receipt' => 'bool',
-        'tax_code' => 'int'
+        'account_item_id' => 'int',
+        'item_id' => 'int',
+        'tax_code' => 'int',
+        'description' => 'string',
+        'line_description' => 'string',
+        'required_receipt' => 'bool'
     ];
 
     /**
@@ -77,14 +77,14 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'account_item_id' => null,
         'company_id' => null,
-        'description' => null,
-        'item_id' => null,
-        'line_description' => null,
         'name' => null,
-        'required_receipt' => null,
-        'tax_code' => null
+        'account_item_id' => null,
+        'item_id' => null,
+        'tax_code' => null,
+        'description' => null,
+        'line_description' => null,
+        'required_receipt' => null
     ];
 
     /**
@@ -114,14 +114,14 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
-        'account_item_id' => 'account_item_id',
         'company_id' => 'company_id',
-        'description' => 'description',
-        'item_id' => 'item_id',
-        'line_description' => 'line_description',
         'name' => 'name',
-        'required_receipt' => 'required_receipt',
-        'tax_code' => 'tax_code'
+        'account_item_id' => 'account_item_id',
+        'item_id' => 'item_id',
+        'tax_code' => 'tax_code',
+        'description' => 'description',
+        'line_description' => 'line_description',
+        'required_receipt' => 'required_receipt'
     ];
 
     /**
@@ -130,14 +130,14 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-        'account_item_id' => 'setAccountItemId',
         'company_id' => 'setCompanyId',
-        'description' => 'setDescription',
-        'item_id' => 'setItemId',
-        'line_description' => 'setLineDescription',
         'name' => 'setName',
-        'required_receipt' => 'setRequiredReceipt',
-        'tax_code' => 'setTaxCode'
+        'account_item_id' => 'setAccountItemId',
+        'item_id' => 'setItemId',
+        'tax_code' => 'setTaxCode',
+        'description' => 'setDescription',
+        'line_description' => 'setLineDescription',
+        'required_receipt' => 'setRequiredReceipt'
     ];
 
     /**
@@ -146,14 +146,14 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $getters = [
-        'account_item_id' => 'getAccountItemId',
         'company_id' => 'getCompanyId',
-        'description' => 'getDescription',
-        'item_id' => 'getItemId',
-        'line_description' => 'getLineDescription',
         'name' => 'getName',
-        'required_receipt' => 'getRequiredReceipt',
-        'tax_code' => 'getTaxCode'
+        'account_item_id' => 'getAccountItemId',
+        'item_id' => 'getItemId',
+        'tax_code' => 'getTaxCode',
+        'description' => 'getDescription',
+        'line_description' => 'getLineDescription',
+        'required_receipt' => 'getRequiredReceipt'
     ];
 
     /**
@@ -213,14 +213,14 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
      */
     public function __construct(array $data = null)
     {
-        $this->container['account_item_id'] = $data['account_item_id'] ?? null;
         $this->container['company_id'] = $data['company_id'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
-        $this->container['item_id'] = $data['item_id'] ?? null;
-        $this->container['line_description'] = $data['line_description'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['required_receipt'] = $data['required_receipt'] ?? null;
+        $this->container['account_item_id'] = $data['account_item_id'] ?? null;
+        $this->container['item_id'] = $data['item_id'] ?? null;
         $this->container['tax_code'] = $data['tax_code'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
+        $this->container['line_description'] = $data['line_description'] ?? null;
+        $this->container['required_receipt'] = $data['required_receipt'] ?? null;
     }
 
     /**
@@ -231,17 +231,6 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        if ($this->container['account_item_id'] === null) {
-            $invalidProperties[] = "'account_item_id' can't be null";
-        }
-        if (($this->container['account_item_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'account_item_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['account_item_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'account_item_id', must be bigger than or equal to 1.";
-        }
 
         if ($this->container['company_id'] === null) {
             $invalidProperties[] = "'company_id' can't be null";
@@ -254,8 +243,22 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
             $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['description']) && (mb_strlen($this->container['description']) > 1000)) {
-            $invalidProperties[] = "invalid value for 'description', the character length must be smaller than or equal to 1000.";
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ((mb_strlen($this->container['name']) > 1000)) {
+            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 1000.";
+        }
+
+        if ($this->container['account_item_id'] === null) {
+            $invalidProperties[] = "'account_item_id' can't be null";
+        }
+        if (($this->container['account_item_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'account_item_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['account_item_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'account_item_id', must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['item_id']) && ($this->container['item_id'] > 2147483647)) {
@@ -264,17 +267,6 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
 
         if (!is_null($this->container['item_id']) && ($this->container['item_id'] < 1)) {
             $invalidProperties[] = "invalid value for 'item_id', must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['line_description']) && (mb_strlen($this->container['line_description']) > 1000)) {
-            $invalidProperties[] = "invalid value for 'line_description', the character length must be smaller than or equal to 1000.";
-        }
-
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ((mb_strlen($this->container['name']) > 1000)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 1000.";
         }
 
         if ($this->container['tax_code'] === null) {
@@ -286,6 +278,14 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
 
         if (($this->container['tax_code'] < 0)) {
             $invalidProperties[] = "invalid value for 'tax_code', must be bigger than or equal to 0.";
+        }
+
+        if (!is_null($this->container['description']) && (mb_strlen($this->container['description']) > 1000)) {
+            $invalidProperties[] = "invalid value for 'description', the character length must be smaller than or equal to 1000.";
+        }
+
+        if (!is_null($this->container['line_description']) && (mb_strlen($this->container['line_description']) > 1000)) {
+            $invalidProperties[] = "invalid value for 'line_description', the character length must be smaller than or equal to 1000.";
         }
 
         return $invalidProperties;
@@ -302,38 +302,6 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets account_item_id
-     *
-     * @return int
-     */
-    public function getAccountItemId()
-    {
-        return $this->container['account_item_id'];
-    }
-
-    /**
-     * Sets account_item_id
-     *
-     * @param int $account_item_id 勘定科目ID
-     *
-     * @return self
-     */
-    public function setAccountItemId($account_item_id)
-    {
-
-        if (($account_item_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $account_item_id when calling ExpenseApplicationLineTemplateParams., must be smaller than or equal to 2147483647.');
-        }
-        if (($account_item_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $account_item_id when calling ExpenseApplicationLineTemplateParams., must be bigger than or equal to 1.');
-        }
-
-        $this->container['account_item_id'] = $account_item_id;
-
-        return $this;
-    }
 
     /**
      * Gets company_id
@@ -368,29 +336,61 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets description
+     * Gets name
      *
-     * @return string|null
+     * @return string
      */
-    public function getDescription()
+    public function getName()
     {
-        return $this->container['description'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets description
+     * Sets name
      *
-     * @param string|null $description 経費科目の説明 (1000文字以内)
+     * @param string $name 経費科目名 (100文字以内)
      *
      * @return self
      */
-    public function setDescription($description)
+    public function setName($name)
     {
-        if (!is_null($description) && (mb_strlen($description) > 1000)) {
-            throw new \InvalidArgumentException('invalid length for $description when calling ExpenseApplicationLineTemplateParams., must be smaller than or equal to 1000.');
+        if ((mb_strlen($name) > 1000)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling ExpenseApplicationLineTemplateParams., must be smaller than or equal to 1000.');
         }
 
-        $this->container['description'] = $description;
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets account_item_id
+     *
+     * @return int
+     */
+    public function getAccountItemId()
+    {
+        return $this->container['account_item_id'];
+    }
+
+    /**
+     * Sets account_item_id
+     *
+     * @param int $account_item_id 勘定科目ID
+     *
+     * @return self
+     */
+    public function setAccountItemId($account_item_id)
+    {
+
+        if (($account_item_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $account_item_id when calling ExpenseApplicationLineTemplateParams., must be smaller than or equal to 2147483647.');
+        }
+        if (($account_item_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $account_item_id when calling ExpenseApplicationLineTemplateParams., must be bigger than or equal to 1.');
+        }
+
+        $this->container['account_item_id'] = $account_item_id;
 
         return $this;
     }
@@ -428,6 +428,66 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
     }
 
     /**
+     * Gets tax_code
+     *
+     * @return int
+     */
+    public function getTaxCode()
+    {
+        return $this->container['tax_code'];
+    }
+
+    /**
+     * Sets tax_code
+     *
+     * @param int $tax_code 税区分コード（税区分のdisplay_categoryがtax_5: 5%表示の税区分, tax_r8: 軽減税率8%表示の税区分に該当するtax_codeのみ利用可能です。税区分のdisplay_categoryは /taxes/companies/{:company_id}のAPIから取得可能です。）
+     *
+     * @return self
+     */
+    public function setTaxCode($tax_code)
+    {
+
+        if (($tax_code > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling ExpenseApplicationLineTemplateParams., must be smaller than or equal to 2147483647.');
+        }
+        if (($tax_code < 0)) {
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling ExpenseApplicationLineTemplateParams., must be bigger than or equal to 0.');
+        }
+
+        $this->container['tax_code'] = $tax_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string|null $description 経費科目の説明 (1000文字以内)
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        if (!is_null($description) && (mb_strlen($description) > 1000)) {
+            throw new \InvalidArgumentException('invalid length for $description when calling ExpenseApplicationLineTemplateParams., must be smaller than or equal to 1000.');
+        }
+
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
      * Gets line_description
      *
      * @return string|null
@@ -456,34 +516,6 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name 経費科目名 (100文字以内)
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        if ((mb_strlen($name) > 1000)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling ExpenseApplicationLineTemplateParams., must be smaller than or equal to 1000.');
-        }
-
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
      * Gets required_receipt
      *
      * @return bool|null
@@ -503,38 +535,6 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
     public function setRequiredReceipt($required_receipt)
     {
         $this->container['required_receipt'] = $required_receipt;
-
-        return $this;
-    }
-
-    /**
-     * Gets tax_code
-     *
-     * @return int
-     */
-    public function getTaxCode()
-    {
-        return $this->container['tax_code'];
-    }
-
-    /**
-     * Sets tax_code
-     *
-     * @param int $tax_code 税区分コード（税区分のdisplay_categoryがtax_5: 5%表示の税区分, tax_r8: 軽減税率8%表示の税区分に該当するtax_codeのみ利用可能です。税区分のdisplay_categoryは /taxes/companies/{:company_id}のAPIから取得可能です。）
-     *
-     * @return self
-     */
-    public function setTaxCode($tax_code)
-    {
-
-        if (($tax_code > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $tax_code when calling ExpenseApplicationLineTemplateParams., must be smaller than or equal to 2147483647.');
-        }
-        if (($tax_code < 0)) {
-            throw new \InvalidArgumentException('invalid value for $tax_code when calling ExpenseApplicationLineTemplateParams., must be bigger than or equal to 0.');
-        }
-
-        $this->container['tax_code'] = $tax_code;
 
         return $this;
     }

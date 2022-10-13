@@ -59,15 +59,15 @@ class ApprovalRequestFormResponseApprovalRequestForm implements ModelInterface, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'company_id' => 'int',
-        'created_date' => 'string',
-        'description' => 'string',
-        'form_order' => 'int',
         'id' => 'int',
+        'company_id' => 'int',
         'name' => 'string',
-        'parts' => '\Freee\Accounting\Model\ApprovalRequestFormResponseApprovalRequestFormParts[]',
-        'route_setting_count' => 'int',
-        'status' => 'string'
+        'description' => 'string',
+        'status' => 'string',
+        'created_date' => 'string',
+        'form_order' => 'int',
+        'parts' => '\Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovalRequestFormParts[]',
+        'route_setting_count' => 'int'
     ];
 
     /**
@@ -78,15 +78,15 @@ class ApprovalRequestFormResponseApprovalRequestForm implements ModelInterface, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'company_id' => null,
-        'created_date' => null,
-        'description' => null,
-        'form_order' => null,
         'id' => null,
+        'company_id' => null,
         'name' => null,
+        'description' => null,
+        'status' => null,
+        'created_date' => null,
+        'form_order' => null,
         'parts' => null,
-        'route_setting_count' => null,
-        'status' => null
+        'route_setting_count' => null
     ];
 
     /**
@@ -116,15 +116,15 @@ class ApprovalRequestFormResponseApprovalRequestForm implements ModelInterface, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'company_id' => 'company_id',
-        'created_date' => 'created_date',
-        'description' => 'description',
-        'form_order' => 'form_order',
         'id' => 'id',
+        'company_id' => 'company_id',
         'name' => 'name',
+        'description' => 'description',
+        'status' => 'status',
+        'created_date' => 'created_date',
+        'form_order' => 'form_order',
         'parts' => 'parts',
-        'route_setting_count' => 'route_setting_count',
-        'status' => 'status'
+        'route_setting_count' => 'route_setting_count'
     ];
 
     /**
@@ -133,15 +133,15 @@ class ApprovalRequestFormResponseApprovalRequestForm implements ModelInterface, 
      * @var string[]
      */
     protected static $setters = [
-        'company_id' => 'setCompanyId',
-        'created_date' => 'setCreatedDate',
-        'description' => 'setDescription',
-        'form_order' => 'setFormOrder',
         'id' => 'setId',
+        'company_id' => 'setCompanyId',
         'name' => 'setName',
+        'description' => 'setDescription',
+        'status' => 'setStatus',
+        'created_date' => 'setCreatedDate',
+        'form_order' => 'setFormOrder',
         'parts' => 'setParts',
-        'route_setting_count' => 'setRouteSettingCount',
-        'status' => 'setStatus'
+        'route_setting_count' => 'setRouteSettingCount'
     ];
 
     /**
@@ -150,15 +150,15 @@ class ApprovalRequestFormResponseApprovalRequestForm implements ModelInterface, 
      * @var string[]
      */
     protected static $getters = [
-        'company_id' => 'getCompanyId',
-        'created_date' => 'getCreatedDate',
-        'description' => 'getDescription',
-        'form_order' => 'getFormOrder',
         'id' => 'getId',
+        'company_id' => 'getCompanyId',
         'name' => 'getName',
+        'description' => 'getDescription',
+        'status' => 'getStatus',
+        'created_date' => 'getCreatedDate',
+        'form_order' => 'getFormOrder',
         'parts' => 'getParts',
-        'route_setting_count' => 'getRouteSettingCount',
-        'status' => 'getStatus'
+        'route_setting_count' => 'getRouteSettingCount'
     ];
 
     /**
@@ -204,7 +204,6 @@ class ApprovalRequestFormResponseApprovalRequestForm implements ModelInterface, 
 
     const STATUS_DRAFT = 'draft';
     const STATUS_ACTIVE = 'active';
-    const STATUS_DELETED = 'deleted';
 
     /**
      * Gets allowable values of the enum
@@ -216,7 +215,6 @@ class ApprovalRequestFormResponseApprovalRequestForm implements ModelInterface, 
         return [
             self::STATUS_DRAFT,
             self::STATUS_ACTIVE,
-            self::STATUS_DELETED,
         ];
     }
 
@@ -235,15 +233,15 @@ class ApprovalRequestFormResponseApprovalRequestForm implements ModelInterface, 
      */
     public function __construct(array $data = null)
     {
-        $this->container['company_id'] = $data['company_id'] ?? null;
-        $this->container['created_date'] = $data['created_date'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
-        $this->container['form_order'] = $data['form_order'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
+        $this->container['company_id'] = $data['company_id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
+        $this->container['created_date'] = $data['created_date'] ?? null;
+        $this->container['form_order'] = $data['form_order'] ?? null;
         $this->container['parts'] = $data['parts'] ?? null;
         $this->container['route_setting_count'] = $data['route_setting_count'] ?? null;
-        $this->container['status'] = $data['status'] ?? null;
     }
 
     /**
@@ -254,34 +252,6 @@ class ApprovalRequestFormResponseApprovalRequestForm implements ModelInterface, 
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        if ($this->container['company_id'] === null) {
-            $invalidProperties[] = "'company_id' can't be null";
-        }
-        if (($this->container['company_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['company_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['created_date'] === null) {
-            $invalidProperties[] = "'created_date' can't be null";
-        }
-        if ($this->container['description'] === null) {
-            $invalidProperties[] = "'description' can't be null";
-        }
-        if ($this->container['form_order'] === null) {
-            $invalidProperties[] = "'form_order' can't be null";
-        }
-        if (($this->container['form_order'] > 1000)) {
-            $invalidProperties[] = "invalid value for 'form_order', must be smaller than or equal to 1000.";
-        }
-
-        if (($this->container['form_order'] < 1)) {
-            $invalidProperties[] = "invalid value for 'form_order', must be bigger than or equal to 1.";
-        }
 
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
@@ -294,20 +264,23 @@ class ApprovalRequestFormResponseApprovalRequestForm implements ModelInterface, 
             $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
         }
 
+        if ($this->container['company_id'] === null) {
+            $invalidProperties[] = "'company_id' can't be null";
+        }
+        if (($this->container['company_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['company_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
+        }
+
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
-        if ($this->container['route_setting_count'] === null) {
-            $invalidProperties[] = "'route_setting_count' can't be null";
+        if ($this->container['description'] === null) {
+            $invalidProperties[] = "'description' can't be null";
         }
-        if (($this->container['route_setting_count'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'route_setting_count', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['route_setting_count'] < 0)) {
-            $invalidProperties[] = "invalid value for 'route_setting_count', must be bigger than or equal to 0.";
-        }
-
         if ($this->container['status'] === null) {
             $invalidProperties[] = "'status' can't be null";
         }
@@ -318,6 +291,31 @@ class ApprovalRequestFormResponseApprovalRequestForm implements ModelInterface, 
                 $this->container['status'],
                 implode("', '", $allowedValues)
             );
+        }
+
+        if ($this->container['created_date'] === null) {
+            $invalidProperties[] = "'created_date' can't be null";
+        }
+        if ($this->container['form_order'] === null) {
+            $invalidProperties[] = "'form_order' can't be null";
+        }
+        if (($this->container['form_order'] > 1000)) {
+            $invalidProperties[] = "invalid value for 'form_order', must be smaller than or equal to 1000.";
+        }
+
+        if (($this->container['form_order'] < 1)) {
+            $invalidProperties[] = "invalid value for 'form_order', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['route_setting_count'] === null) {
+            $invalidProperties[] = "'route_setting_count' can't be null";
+        }
+        if (($this->container['route_setting_count'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'route_setting_count', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['route_setting_count'] < 0)) {
+            $invalidProperties[] = "invalid value for 'route_setting_count', must be bigger than or equal to 0.";
         }
 
         return $invalidProperties;
@@ -334,6 +332,38 @@ class ApprovalRequestFormResponseApprovalRequestForm implements ModelInterface, 
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int $id 申請フォームID
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+
+        if (($id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling ApprovalRequestFormResponseApprovalRequestForm., must be smaller than or equal to 2147483647.');
+        }
+        if (($id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling ApprovalRequestFormResponseApprovalRequestForm., must be bigger than or equal to 1.');
+        }
+
+        $this->container['id'] = $id;
+
+        return $this;
+    }
 
     /**
      * Gets company_id
@@ -368,25 +398,25 @@ class ApprovalRequestFormResponseApprovalRequestForm implements ModelInterface, 
     }
 
     /**
-     * Gets created_date
+     * Gets name
      *
      * @return string
      */
-    public function getCreatedDate()
+    public function getName()
     {
-        return $this->container['created_date'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets created_date
+     * Sets name
      *
-     * @param string $created_date 作成日時
+     * @param string $name 申請フォームの名前
      *
      * @return self
      */
-    public function setCreatedDate($created_date)
+    public function setName($name)
     {
-        $this->container['created_date'] = $created_date;
+        $this->container['name'] = $name;
 
         return $this;
     }
@@ -411,6 +441,64 @@ class ApprovalRequestFormResponseApprovalRequestForm implements ModelInterface, 
     public function setDescription($description)
     {
         $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string $status ステータス(draft: 申請で使用しない、active: 申請で使用する)
+     *
+     * @return self
+     */
+    public function setStatus($status)
+    {
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!in_array($status, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'status', must be one of '%s'",
+                    $status,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets created_date
+     *
+     * @return string
+     */
+    public function getCreatedDate()
+    {
+        return $this->container['created_date'];
+    }
+
+    /**
+     * Sets created_date
+     *
+     * @param string $created_date 作成日時
+     *
+     * @return self
+     */
+    public function setCreatedDate($created_date)
+    {
+        $this->container['created_date'] = $created_date;
 
         return $this;
     }
@@ -448,65 +536,9 @@ class ApprovalRequestFormResponseApprovalRequestForm implements ModelInterface, 
     }
 
     /**
-     * Gets id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int $id 申請フォームID
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-
-        if (($id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling ApprovalRequestFormResponseApprovalRequestForm., must be smaller than or equal to 2147483647.');
-        }
-        if (($id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling ApprovalRequestFormResponseApprovalRequestForm., must be bigger than or equal to 1.');
-        }
-
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name 申請フォームの名前
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
      * Gets parts
      *
-     * @return \Freee\Accounting\Model\ApprovalRequestFormResponseApprovalRequestFormParts[]|null
+     * @return \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovalRequestFormParts[]|null
      */
     public function getParts()
     {
@@ -516,7 +548,7 @@ class ApprovalRequestFormResponseApprovalRequestForm implements ModelInterface, 
     /**
      * Sets parts
      *
-     * @param \Freee\Accounting\Model\ApprovalRequestFormResponseApprovalRequestFormParts[]|null $parts 申請フォームの項目
+     * @param \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovalRequestFormParts[]|null $parts 申請フォームの項目
      *
      * @return self
      */
@@ -555,40 +587,6 @@ class ApprovalRequestFormResponseApprovalRequestForm implements ModelInterface, 
         }
 
         $this->container['route_setting_count'] = $route_setting_count;
-
-        return $this;
-    }
-
-    /**
-     * Gets status
-     *
-     * @return string
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     *
-     * @param string $status ステータス(draft: 申請で使用しない、active: 申請で使用する、deleted: 削除済み)
-     *
-     * @return self
-     */
-    public function setStatus($status)
-    {
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!in_array($status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'status', must be one of '%s'",
-                    $status,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['status'] = $status;
 
         return $this;
     }

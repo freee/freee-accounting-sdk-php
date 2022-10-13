@@ -59,7 +59,7 @@ class TrialCrResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'trial_cr' => '\Freee\Accounting\Model\TrialCrResponseTrialCr',
+        'trial_cr' => '\Freee\Accounting\Model\TrialPlResponseTrialPl',
         'up_to_date' => 'bool',
         'up_to_date_reasons' => '\Freee\Accounting\Model\JournalsResponseJournalsUpToDateReasons[]'
     ];
@@ -226,7 +226,7 @@ class TrialCrResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets trial_cr
      *
-     * @return \Freee\Accounting\Model\TrialCrResponseTrialCr
+     * @return \Freee\Accounting\Model\TrialPlResponseTrialPl
      */
     public function getTrialCr()
     {
@@ -236,7 +236,7 @@ class TrialCrResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets trial_cr
      *
-     * @param \Freee\Accounting\Model\TrialCrResponseTrialCr $trial_cr trial_cr
+     * @param \Freee\Accounting\Model\TrialPlResponseTrialPl $trial_cr trial_cr
      *
      * @return self
      */

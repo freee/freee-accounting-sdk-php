@@ -59,8 +59,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'deals' => '\Freee\Accounting\Model\Deal[]',
-        'meta' => '\Freee\Accounting\Model\InlineResponse2001Meta'
+        'sections' => '\Freee\Accounting\Model\Section[]'
     ];
 
     /**
@@ -71,8 +70,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'deals' => null,
-        'meta' => null
+        'sections' => null
     ];
 
     /**
@@ -102,8 +100,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'deals' => 'deals',
-        'meta' => 'meta'
+        'sections' => 'sections'
     ];
 
     /**
@@ -112,8 +109,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'deals' => 'setDeals',
-        'meta' => 'setMeta'
+        'sections' => 'setSections'
     ];
 
     /**
@@ -122,8 +118,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'deals' => 'getDeals',
-        'meta' => 'getMeta'
+        'sections' => 'getSections'
     ];
 
     /**
@@ -183,8 +178,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['deals'] = $data['deals'] ?? null;
-        $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['sections'] = $data['sections'] ?? null;
     }
 
     /**
@@ -196,11 +190,8 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['deals'] === null) {
-            $invalidProperties[] = "'deals' can't be null";
-        }
-        if ($this->container['meta'] === null) {
-            $invalidProperties[] = "'meta' can't be null";
+        if ($this->container['sections'] === null) {
+            $invalidProperties[] = "'sections' can't be null";
         }
         return $invalidProperties;
     }
@@ -218,49 +209,25 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets deals
+     * Gets sections
      *
-     * @return \Freee\Accounting\Model\Deal[]
+     * @return \Freee\Accounting\Model\Section[]
      */
-    public function getDeals()
+    public function getSections()
     {
-        return $this->container['deals'];
+        return $this->container['sections'];
     }
 
     /**
-     * Sets deals
+     * Sets sections
      *
-     * @param \Freee\Accounting\Model\Deal[] $deals deals
+     * @param \Freee\Accounting\Model\Section[] $sections sections
      *
      * @return self
      */
-    public function setDeals($deals)
+    public function setSections($sections)
     {
-        $this->container['deals'] = $deals;
-
-        return $this;
-    }
-
-    /**
-     * Gets meta
-     *
-     * @return \Freee\Accounting\Model\InlineResponse2001Meta
-     */
-    public function getMeta()
-    {
-        return $this->container['meta'];
-    }
-
-    /**
-     * Sets meta
-     *
-     * @param \Freee\Accounting\Model\InlineResponse2001Meta $meta meta
-     *
-     * @return self
-     */
-    public function setMeta($meta)
-    {
-        $this->container['meta'] = $meta;
+        $this->container['sections'] = $sections;
 
         return $this;
     }

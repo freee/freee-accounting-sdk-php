@@ -59,7 +59,7 @@ class InlineResponse20014 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'wallet_txns' => '\Freee\Accounting\Model\WalletTxn[]'
+        'receipts' => '\Freee\Accounting\Model\Receipt[]'
     ];
 
     /**
@@ -70,7 +70,7 @@ class InlineResponse20014 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'wallet_txns' => null
+        'receipts' => null
     ];
 
     /**
@@ -100,7 +100,7 @@ class InlineResponse20014 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'wallet_txns' => 'wallet_txns'
+        'receipts' => 'receipts'
     ];
 
     /**
@@ -109,7 +109,7 @@ class InlineResponse20014 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'wallet_txns' => 'setWalletTxns'
+        'receipts' => 'setReceipts'
     ];
 
     /**
@@ -118,7 +118,7 @@ class InlineResponse20014 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'wallet_txns' => 'getWalletTxns'
+        'receipts' => 'getReceipts'
     ];
 
     /**
@@ -178,7 +178,7 @@ class InlineResponse20014 implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['wallet_txns'] = $data['wallet_txns'] ?? null;
+        $this->container['receipts'] = $data['receipts'] ?? null;
     }
 
     /**
@@ -190,8 +190,8 @@ class InlineResponse20014 implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
-        if ($this->container['wallet_txns'] === null) {
-            $invalidProperties[] = "'wallet_txns' can't be null";
+        if ($this->container['receipts'] === null) {
+            $invalidProperties[] = "'receipts' can't be null";
         }
         return $invalidProperties;
     }
@@ -209,25 +209,25 @@ class InlineResponse20014 implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets wallet_txns
+     * Gets receipts
      *
-     * @return \Freee\Accounting\Model\WalletTxn[]
+     * @return \Freee\Accounting\Model\Receipt[]
      */
-    public function getWalletTxns()
+    public function getReceipts()
     {
-        return $this->container['wallet_txns'];
+        return $this->container['receipts'];
     }
 
     /**
-     * Sets wallet_txns
+     * Sets receipts
      *
-     * @param \Freee\Accounting\Model\WalletTxn[] $wallet_txns wallet_txns
+     * @param \Freee\Accounting\Model\Receipt[] $receipts receipts
      *
      * @return self
      */
-    public function setWalletTxns($wallet_txns)
+    public function setReceipts($receipts)
     {
-        $this->container['wallet_txns'] = $wallet_txns;
+        $this->container['receipts'] = $receipts;
 
         return $this;
     }

@@ -59,16 +59,16 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'created_at' => 'string',
-        'description' => 'string',
-        'file_src' => 'string',
         'id' => 'int',
-        'issue_date' => 'string',
-        'mime_type' => 'string',
-        'origin' => 'string',
-        'receipt_metadatum' => '\Freee\Accounting\Model\DealReceiptMetadatum',
         'status' => 'string',
-        'user' => '\Freee\Accounting\Model\DealUser'
+        'description' => 'string',
+        'mime_type' => 'string',
+        'issue_date' => 'string',
+        'origin' => 'string',
+        'created_at' => 'string',
+        'file_src' => 'string',
+        'user' => '\Freee\Accounting\Model\DealCreateResponseDealUser',
+        'receipt_metadatum' => '\Freee\Accounting\Model\ReceiptUpdateParamsReceiptMetadatum'
     ];
 
     /**
@@ -79,16 +79,16 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'created_at' => null,
-        'description' => null,
-        'file_src' => null,
         'id' => null,
-        'issue_date' => null,
-        'mime_type' => null,
-        'origin' => null,
-        'receipt_metadatum' => null,
         'status' => null,
-        'user' => null
+        'description' => null,
+        'mime_type' => null,
+        'issue_date' => null,
+        'origin' => null,
+        'created_at' => null,
+        'file_src' => null,
+        'user' => null,
+        'receipt_metadatum' => null
     ];
 
     /**
@@ -118,16 +118,16 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'created_at' => 'created_at',
-        'description' => 'description',
-        'file_src' => 'file_src',
         'id' => 'id',
-        'issue_date' => 'issue_date',
-        'mime_type' => 'mime_type',
-        'origin' => 'origin',
-        'receipt_metadatum' => 'receipt_metadatum',
         'status' => 'status',
-        'user' => 'user'
+        'description' => 'description',
+        'mime_type' => 'mime_type',
+        'issue_date' => 'issue_date',
+        'origin' => 'origin',
+        'created_at' => 'created_at',
+        'file_src' => 'file_src',
+        'user' => 'user',
+        'receipt_metadatum' => 'receipt_metadatum'
     ];
 
     /**
@@ -136,16 +136,16 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'created_at' => 'setCreatedAt',
-        'description' => 'setDescription',
-        'file_src' => 'setFileSrc',
         'id' => 'setId',
-        'issue_date' => 'setIssueDate',
-        'mime_type' => 'setMimeType',
-        'origin' => 'setOrigin',
-        'receipt_metadatum' => 'setReceiptMetadatum',
         'status' => 'setStatus',
-        'user' => 'setUser'
+        'description' => 'setDescription',
+        'mime_type' => 'setMimeType',
+        'issue_date' => 'setIssueDate',
+        'origin' => 'setOrigin',
+        'created_at' => 'setCreatedAt',
+        'file_src' => 'setFileSrc',
+        'user' => 'setUser',
+        'receipt_metadatum' => 'setReceiptMetadatum'
     ];
 
     /**
@@ -154,16 +154,16 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'created_at' => 'getCreatedAt',
-        'description' => 'getDescription',
-        'file_src' => 'getFileSrc',
         'id' => 'getId',
-        'issue_date' => 'getIssueDate',
-        'mime_type' => 'getMimeType',
-        'origin' => 'getOrigin',
-        'receipt_metadatum' => 'getReceiptMetadatum',
         'status' => 'getStatus',
-        'user' => 'getUser'
+        'description' => 'getDescription',
+        'mime_type' => 'getMimeType',
+        'issue_date' => 'getIssueDate',
+        'origin' => 'getOrigin',
+        'created_at' => 'getCreatedAt',
+        'file_src' => 'getFileSrc',
+        'user' => 'getUser',
+        'receipt_metadatum' => 'getReceiptMetadatum'
     ];
 
     /**
@@ -207,6 +207,9 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    const STATUS_CONFIRMED = 'confirmed';
+    const STATUS_DELETED = 'deleted';
+    const STATUS_IGNORED = 'ignored';
     const ORIGIN_UNKNOWN = 'unknown';
     const ORIGIN_WEB = 'web';
     const ORIGIN_MOBILE_CAMERA = 'mobile_camera';
@@ -217,9 +220,20 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
     const ORIGIN_MAIL = 'mail';
     const ORIGIN_SAFETY_CONTACT_FILE = 'safety_contact_file';
     const ORIGIN_PUBLIC_API = 'public_api';
-    const STATUS_CONFIRMED = 'confirmed';
-    const STATUS_DELETED = 'deleted';
-    const STATUS_IGNORED = 'ignored';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getStatusAllowableValues()
+    {
+        return [
+            self::STATUS_CONFIRMED,
+            self::STATUS_DELETED,
+            self::STATUS_IGNORED,
+        ];
+    }
 
     /**
      * Gets allowable values of the enum
@@ -243,20 +257,6 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getStatusAllowableValues()
-    {
-        return [
-            self::STATUS_CONFIRMED,
-            self::STATUS_DELETED,
-            self::STATUS_IGNORED,
-        ];
-    }
-
-    /**
      * Associative array for storing property values
      *
      * @var mixed[]
@@ -271,16 +271,16 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['created_at'] = $data['created_at'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
-        $this->container['file_src'] = $data['file_src'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['issue_date'] = $data['issue_date'] ?? null;
-        $this->container['mime_type'] = $data['mime_type'] ?? null;
-        $this->container['origin'] = $data['origin'] ?? null;
-        $this->container['receipt_metadatum'] = $data['receipt_metadatum'] ?? null;
         $this->container['status'] = $data['status'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
+        $this->container['mime_type'] = $data['mime_type'] ?? null;
+        $this->container['issue_date'] = $data['issue_date'] ?? null;
+        $this->container['origin'] = $data['origin'] ?? null;
+        $this->container['created_at'] = $data['created_at'] ?? null;
+        $this->container['file_src'] = $data['file_src'] ?? null;
         $this->container['user'] = $data['user'] ?? null;
+        $this->container['receipt_metadatum'] = $data['receipt_metadatum'] ?? null;
     }
 
     /**
@@ -292,12 +292,6 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['created_at'] === null) {
-            $invalidProperties[] = "'created_at' can't be null";
-        }
-        if ($this->container['file_src'] === null) {
-            $invalidProperties[] = "'file_src' can't be null";
-        }
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
@@ -307,6 +301,18 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
 
         if (($this->container['id'] < 1)) {
             $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['status'] === null) {
+            $invalidProperties[] = "'status' can't be null";
+        }
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'status', must be one of '%s'",
+                $this->container['status'],
+                implode("', '", $allowedValues)
+            );
         }
 
         if ($this->container['mime_type'] === null) {
@@ -324,18 +330,12 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
 
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
+        if ($this->container['created_at'] === null) {
+            $invalidProperties[] = "'created_at' can't be null";
         }
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'status', must be one of '%s'",
-                $this->container['status'],
-                implode("', '", $allowedValues)
-            );
+        if ($this->container['file_src'] === null) {
+            $invalidProperties[] = "'file_src' can't be null";
         }
-
         if ($this->container['user'] === null) {
             $invalidProperties[] = "'user' can't be null";
         }
@@ -353,80 +353,6 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets created_at
-     *
-     * @return string
-     */
-    public function getCreatedAt()
-    {
-        return $this->container['created_at'];
-    }
-
-    /**
-     * Sets created_at
-     *
-     * @param string $created_at 作成日時（ISO8601形式）
-     *
-     * @return self
-     */
-    public function setCreatedAt($created_at)
-    {
-        $this->container['created_at'] = $created_at;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string|null
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string|null $description メモ
-     *
-     * @return self
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets file_src
-     *
-     * @return string
-     * @deprecated
-     */
-    public function getFileSrc()
-    {
-        return $this->container['file_src'];
-    }
-
-    /**
-     * Sets file_src
-     *
-     * @param string $file_src ファイルのダウンロードURL（freeeにログインした状態でのみ閲覧可能です。） <br> <br> file_srcは廃止予定の属性になります。<br> file_srcに替わり、証憑ファイルのダウンロード APIをご利用ください。<br> 証憑ファイルのダウンロードAPIを利用することで、以下のようになります。 <ul>   <li>アプリケーション利用者はfreee APIアプリケーションにログインしていれば、証憑ダウンロード毎にfreeeに改めてログインすることなくファイルが参照できるようになります。</li> </ul>
-     *
-     * @return self
-     * @deprecated
-     */
-    public function setFileSrc($file_src)
-    {
-        $this->container['file_src'] = $file_src;
-
-        return $this;
-    }
 
     /**
      * Gets id
@@ -456,112 +382,6 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets issue_date
-     *
-     * @return string|null
-     */
-    public function getIssueDate()
-    {
-        return $this->container['issue_date'];
-    }
-
-    /**
-     * Sets issue_date
-     *
-     * @param string|null $issue_date 発生日
-     *
-     * @return self
-     */
-    public function setIssueDate($issue_date)
-    {
-        $this->container['issue_date'] = $issue_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets mime_type
-     *
-     * @return string
-     */
-    public function getMimeType()
-    {
-        return $this->container['mime_type'];
-    }
-
-    /**
-     * Sets mime_type
-     *
-     * @param string $mime_type MIMEタイプ
-     *
-     * @return self
-     */
-    public function setMimeType($mime_type)
-    {
-        $this->container['mime_type'] = $mime_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets origin
-     *
-     * @return string
-     */
-    public function getOrigin()
-    {
-        return $this->container['origin'];
-    }
-
-    /**
-     * Sets origin
-     *
-     * @param string $origin アップロード元種別
-     *
-     * @return self
-     */
-    public function setOrigin($origin)
-    {
-        $allowedValues = $this->getOriginAllowableValues();
-        if (!in_array($origin, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'origin', must be one of '%s'",
-                    $origin,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['origin'] = $origin;
-
-        return $this;
-    }
-
-    /**
-     * Gets receipt_metadatum
-     *
-     * @return \Freee\Accounting\Model\DealReceiptMetadatum|null
-     */
-    public function getReceiptMetadatum()
-    {
-        return $this->container['receipt_metadatum'];
-    }
-
-    /**
-     * Sets receipt_metadatum
-     *
-     * @param \Freee\Accounting\Model\DealReceiptMetadatum|null $receipt_metadatum receipt_metadatum
-     *
-     * @return self
-     */
-    public function setReceiptMetadatum($receipt_metadatum)
-    {
-        $this->container['receipt_metadatum'] = $receipt_metadatum;
 
         return $this;
     }
@@ -601,9 +421,165 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string|null $description メモ
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets mime_type
+     *
+     * @return string
+     */
+    public function getMimeType()
+    {
+        return $this->container['mime_type'];
+    }
+
+    /**
+     * Sets mime_type
+     *
+     * @param string $mime_type MIMEタイプ
+     *
+     * @return self
+     */
+    public function setMimeType($mime_type)
+    {
+        $this->container['mime_type'] = $mime_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets issue_date
+     *
+     * @return string|null
+     */
+    public function getIssueDate()
+    {
+        return $this->container['issue_date'];
+    }
+
+    /**
+     * Sets issue_date
+     *
+     * @param string|null $issue_date 発生日
+     *
+     * @return self
+     */
+    public function setIssueDate($issue_date)
+    {
+        $this->container['issue_date'] = $issue_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets origin
+     *
+     * @return string
+     */
+    public function getOrigin()
+    {
+        return $this->container['origin'];
+    }
+
+    /**
+     * Sets origin
+     *
+     * @param string $origin アップロード元種別
+     *
+     * @return self
+     */
+    public function setOrigin($origin)
+    {
+        $allowedValues = $this->getOriginAllowableValues();
+        if (!in_array($origin, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'origin', must be one of '%s'",
+                    $origin,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['origin'] = $origin;
+
+        return $this;
+    }
+
+    /**
+     * Gets created_at
+     *
+     * @return string
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['created_at'];
+    }
+
+    /**
+     * Sets created_at
+     *
+     * @param string $created_at 作成日時（ISO8601形式）
+     *
+     * @return self
+     */
+    public function setCreatedAt($created_at)
+    {
+        $this->container['created_at'] = $created_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets file_src
+     *
+     * @return string
+     * @deprecated
+     */
+    public function getFileSrc()
+    {
+        return $this->container['file_src'];
+    }
+
+    /**
+     * Sets file_src
+     *
+     * @param string $file_src ファイルのダウンロードURL（freeeにログインした状態でのみ閲覧可能です。） <br> <br> file_srcは廃止予定の属性になります。<br> file_srcに替わり、証憑ファイルのダウンロード APIをご利用ください。<br> 証憑ファイルのダウンロードAPIを利用することで、以下のようになります。 <ul>   <li>アプリケーション利用者はfreee APIアプリケーションにログインしていれば、証憑ダウンロード毎にfreeeに改めてログインすることなくファイルが参照できるようになります。</li> </ul>
+     *
+     * @return self
+     * @deprecated
+     */
+    public function setFileSrc($file_src)
+    {
+        $this->container['file_src'] = $file_src;
+
+        return $this;
+    }
+
+    /**
      * Gets user
      *
-     * @return \Freee\Accounting\Model\DealUser
+     * @return \Freee\Accounting\Model\DealCreateResponseDealUser
      */
     public function getUser()
     {
@@ -613,13 +589,37 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets user
      *
-     * @param \Freee\Accounting\Model\DealUser $user user
+     * @param \Freee\Accounting\Model\DealCreateResponseDealUser $user user
      *
      * @return self
      */
     public function setUser($user)
     {
         $this->container['user'] = $user;
+
+        return $this;
+    }
+
+    /**
+     * Gets receipt_metadatum
+     *
+     * @return \Freee\Accounting\Model\ReceiptUpdateParamsReceiptMetadatum|null
+     */
+    public function getReceiptMetadatum()
+    {
+        return $this->container['receipt_metadatum'];
+    }
+
+    /**
+     * Sets receipt_metadatum
+     *
+     * @param \Freee\Accounting\Model\ReceiptUpdateParamsReceiptMetadatum|null $receipt_metadatum receipt_metadatum
+     *
+     * @return self
+     */
+    public function setReceiptMetadatum($receipt_metadatum)
+    {
+        $this->container['receipt_metadatum'] = $receipt_metadatum;
 
         return $this;
     }

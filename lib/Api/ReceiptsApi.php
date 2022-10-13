@@ -124,17 +124,17 @@ class ReceiptsApi
      * @param  \SplFileObject $receipt 証憑ファイル (required)
      * @param  string $description メモ (255文字以内) (optional)
      * @param  string $issue_date 取引日 (yyyy-mm-dd) (optional)
-     * @param  int $receipt_metadatum_amount 金額 (optional)
-     * @param  string $receipt_metadatum_issue_date 発行日 (yyyy-mm-dd) (optional)
      * @param  string $receipt_metadatum_partner_name 発行元 (optional)
+     * @param  string $receipt_metadatum_issue_date 発行日 (yyyy-mm-dd) (optional)
+     * @param  int $receipt_metadatum_amount 金額 (optional)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Freee\Accounting\Model\ReceiptResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError
      */
-    public function createReceipt($company_id, $receipt, $description = null, $issue_date = null, $receipt_metadatum_amount = null, $receipt_metadatum_issue_date = null, $receipt_metadatum_partner_name = null)
+    public function createReceipt($company_id, $receipt, $description = null, $issue_date = null, $receipt_metadatum_partner_name = null, $receipt_metadatum_issue_date = null, $receipt_metadatum_amount = null)
     {
-        list($response) = $this->createReceiptWithHttpInfo($company_id, $receipt, $description, $issue_date, $receipt_metadatum_amount, $receipt_metadatum_issue_date, $receipt_metadatum_partner_name);
+        list($response) = $this->createReceiptWithHttpInfo($company_id, $receipt, $description, $issue_date, $receipt_metadatum_partner_name, $receipt_metadatum_issue_date, $receipt_metadatum_amount);
         return $response;
     }
 
@@ -147,17 +147,17 @@ class ReceiptsApi
      * @param  \SplFileObject $receipt 証憑ファイル (required)
      * @param  string $description メモ (255文字以内) (optional)
      * @param  string $issue_date 取引日 (yyyy-mm-dd) (optional)
-     * @param  int $receipt_metadatum_amount 金額 (optional)
-     * @param  string $receipt_metadatum_issue_date 発行日 (yyyy-mm-dd) (optional)
      * @param  string $receipt_metadatum_partner_name 発行元 (optional)
+     * @param  string $receipt_metadatum_issue_date 発行日 (yyyy-mm-dd) (optional)
+     * @param  int $receipt_metadatum_amount 金額 (optional)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Freee\Accounting\Model\ReceiptResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createReceiptWithHttpInfo($company_id, $receipt, $description = null, $issue_date = null, $receipt_metadatum_amount = null, $receipt_metadatum_issue_date = null, $receipt_metadatum_partner_name = null)
+    public function createReceiptWithHttpInfo($company_id, $receipt, $description = null, $issue_date = null, $receipt_metadatum_partner_name = null, $receipt_metadatum_issue_date = null, $receipt_metadatum_amount = null)
     {
-        $request = $this->createReceiptRequest($company_id, $receipt, $description, $issue_date, $receipt_metadatum_amount, $receipt_metadatum_issue_date, $receipt_metadatum_partner_name);
+        $request = $this->createReceiptRequest($company_id, $receipt, $description, $issue_date, $receipt_metadatum_partner_name, $receipt_metadatum_issue_date, $receipt_metadatum_amount);
 
         try {
             $options = $this->createHttpClientOption();
@@ -326,16 +326,16 @@ class ReceiptsApi
      * @param  \SplFileObject $receipt 証憑ファイル (required)
      * @param  string $description メモ (255文字以内) (optional)
      * @param  string $issue_date 取引日 (yyyy-mm-dd) (optional)
-     * @param  int $receipt_metadatum_amount 金額 (optional)
-     * @param  string $receipt_metadatum_issue_date 発行日 (yyyy-mm-dd) (optional)
      * @param  string $receipt_metadatum_partner_name 発行元 (optional)
+     * @param  string $receipt_metadatum_issue_date 発行日 (yyyy-mm-dd) (optional)
+     * @param  int $receipt_metadatum_amount 金額 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createReceiptAsync($company_id, $receipt, $description = null, $issue_date = null, $receipt_metadatum_amount = null, $receipt_metadatum_issue_date = null, $receipt_metadatum_partner_name = null)
+    public function createReceiptAsync($company_id, $receipt, $description = null, $issue_date = null, $receipt_metadatum_partner_name = null, $receipt_metadatum_issue_date = null, $receipt_metadatum_amount = null)
     {
-        return $this->createReceiptAsyncWithHttpInfo($company_id, $receipt, $description, $issue_date, $receipt_metadatum_amount, $receipt_metadatum_issue_date, $receipt_metadatum_partner_name)
+        return $this->createReceiptAsyncWithHttpInfo($company_id, $receipt, $description, $issue_date, $receipt_metadatum_partner_name, $receipt_metadatum_issue_date, $receipt_metadatum_amount)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -352,17 +352,17 @@ class ReceiptsApi
      * @param  \SplFileObject $receipt 証憑ファイル (required)
      * @param  string $description メモ (255文字以内) (optional)
      * @param  string $issue_date 取引日 (yyyy-mm-dd) (optional)
-     * @param  int $receipt_metadatum_amount 金額 (optional)
-     * @param  string $receipt_metadatum_issue_date 発行日 (yyyy-mm-dd) (optional)
      * @param  string $receipt_metadatum_partner_name 発行元 (optional)
+     * @param  string $receipt_metadatum_issue_date 発行日 (yyyy-mm-dd) (optional)
+     * @param  int $receipt_metadatum_amount 金額 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createReceiptAsyncWithHttpInfo($company_id, $receipt, $description = null, $issue_date = null, $receipt_metadatum_amount = null, $receipt_metadatum_issue_date = null, $receipt_metadatum_partner_name = null)
+    public function createReceiptAsyncWithHttpInfo($company_id, $receipt, $description = null, $issue_date = null, $receipt_metadatum_partner_name = null, $receipt_metadatum_issue_date = null, $receipt_metadatum_amount = null)
     {
         $returnType = '\Freee\Accounting\Model\ReceiptResponse';
-        $request = $this->createReceiptRequest($company_id, $receipt, $description, $issue_date, $receipt_metadatum_amount, $receipt_metadatum_issue_date, $receipt_metadatum_partner_name);
+        $request = $this->createReceiptRequest($company_id, $receipt, $description, $issue_date, $receipt_metadatum_partner_name, $receipt_metadatum_issue_date, $receipt_metadatum_amount);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -404,14 +404,14 @@ class ReceiptsApi
      * @param  \SplFileObject $receipt 証憑ファイル (required)
      * @param  string $description メモ (255文字以内) (optional)
      * @param  string $issue_date 取引日 (yyyy-mm-dd) (optional)
-     * @param  int $receipt_metadatum_amount 金額 (optional)
-     * @param  string $receipt_metadatum_issue_date 発行日 (yyyy-mm-dd) (optional)
      * @param  string $receipt_metadatum_partner_name 発行元 (optional)
+     * @param  string $receipt_metadatum_issue_date 発行日 (yyyy-mm-dd) (optional)
+     * @param  int $receipt_metadatum_amount 金額 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createReceiptRequest($company_id, $receipt, $description = null, $issue_date = null, $receipt_metadatum_amount = null, $receipt_metadatum_issue_date = null, $receipt_metadatum_partner_name = null)
+    public function createReceiptRequest($company_id, $receipt, $description = null, $issue_date = null, $receipt_metadatum_partner_name = null, $receipt_metadatum_issue_date = null, $receipt_metadatum_amount = null)
     {
         // verify the required parameter 'company_id' is set
         if ($company_id === null || (is_array($company_id) && count($company_id) === 0)) {
@@ -436,15 +436,15 @@ class ReceiptsApi
             throw new \InvalidArgumentException('invalid length for "$description" when calling ReceiptsApi.createReceipt, must be smaller than or equal to 255.');
         }
 
+        if ($receipt_metadatum_partner_name !== null && strlen($receipt_metadatum_partner_name) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$receipt_metadatum_partner_name" when calling ReceiptsApi.createReceipt, must be smaller than or equal to 255.');
+        }
+
         if ($receipt_metadatum_amount !== null && $receipt_metadatum_amount > 9223372036854775807) {
             throw new \InvalidArgumentException('invalid value for "$receipt_metadatum_amount" when calling ReceiptsApi.createReceipt, must be smaller than or equal to 9223372036854775807.');
         }
         if ($receipt_metadatum_amount !== null && $receipt_metadatum_amount < -9223372036854775808) {
             throw new \InvalidArgumentException('invalid value for "$receipt_metadatum_amount" when calling ReceiptsApi.createReceipt, must be bigger than or equal to -9223372036854775808.');
-        }
-
-        if ($receipt_metadatum_partner_name !== null && strlen($receipt_metadatum_partner_name) > 255) {
-            throw new \InvalidArgumentException('invalid length for "$receipt_metadatum_partner_name" when calling ReceiptsApi.createReceipt, must be smaller than or equal to 255.');
         }
 
 
@@ -483,16 +483,16 @@ class ReceiptsApi
             }
         }
         // form params
-        if ($receipt_metadatum_amount !== null) {
-            $formParams['receipt_metadatum_amount'] = ObjectSerializer::toFormValue($receipt_metadatum_amount);
+        if ($receipt_metadatum_partner_name !== null) {
+            $formParams['receipt_metadatum_partner_name'] = ObjectSerializer::toFormValue($receipt_metadatum_partner_name);
         }
         // form params
         if ($receipt_metadatum_issue_date !== null) {
             $formParams['receipt_metadatum_issue_date'] = ObjectSerializer::toFormValue($receipt_metadatum_issue_date);
         }
         // form params
-        if ($receipt_metadatum_partner_name !== null) {
-            $formParams['receipt_metadatum_partner_name'] = ObjectSerializer::toFormValue($receipt_metadatum_partner_name);
+        if ($receipt_metadatum_amount !== null) {
+            $formParams['receipt_metadatum_amount'] = ObjectSerializer::toFormValue($receipt_metadatum_amount);
         }
 
         if ($multipart) {
@@ -872,7 +872,7 @@ class ReceiptsApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
+     * @return string|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
      */
     public function downloadReceipt($id, $company_id)
     {
@@ -890,7 +890,7 @@ class ReceiptsApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of string|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function downloadReceiptWithHttpInfo($id, $company_id)
     {
@@ -933,14 +933,14 @@ class ReceiptsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\SplFileObject' === '\SplFileObject') {
+                    if ('string' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\SplFileObject', []),
+                        ObjectSerializer::deserialize($content, 'string', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1006,7 +1006,7 @@ class ReceiptsApi
                     ];
             }
 
-            $returnType = '\SplFileObject';
+            $returnType = 'string';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1024,7 +1024,7 @@ class ReceiptsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SplFileObject',
+                        'string',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1108,7 +1108,7 @@ class ReceiptsApi
      */
     public function downloadReceiptAsyncWithHttpInfo($id, $company_id)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'string';
         $request = $this->downloadReceiptRequest($id, $company_id);
 
         return $this->client
@@ -1214,11 +1214,11 @@ class ReceiptsApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/pdf', 'image/_*', 'text/csv', 'application/json']
+                ['text/csv', 'application/pdf', 'image/_*', 'application/json']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/pdf', 'image/_*', 'text/csv', 'application/json'],
+                ['text/csv', 'application/pdf', 'image/_*', 'application/json'],
                 []
             );
         }
@@ -1702,7 +1702,7 @@ class ReceiptsApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\InlineResponse2005|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError
+     * @return \Freee\Accounting\Model\InlineResponse20014|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError
      */
     public function getReceipts($company_id, $start_date, $end_date, $user_name = null, $number = null, $comment_type = null, $comment_important = null, $category = null, $offset = null, $limit = null)
     {
@@ -1728,7 +1728,7 @@ class ReceiptsApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\InlineResponse2005|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Freee\Accounting\Model\InlineResponse20014|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getReceiptsWithHttpInfo($company_id, $start_date, $end_date, $user_name = null, $number = null, $comment_type = null, $comment_important = null, $category = null, $offset = null, $limit = null)
     {
@@ -1771,14 +1771,14 @@ class ReceiptsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Freee\Accounting\Model\InlineResponse2005' === '\SplFileObject') {
+                    if ('\Freee\Accounting\Model\InlineResponse20014' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InlineResponse2005', []),
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InlineResponse20014', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1832,7 +1832,7 @@ class ReceiptsApi
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\InlineResponse2005';
+            $returnType = '\Freee\Accounting\Model\InlineResponse20014';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1850,7 +1850,7 @@ class ReceiptsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InlineResponse2005',
+                        '\Freee\Accounting\Model\InlineResponse20014',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1942,7 +1942,7 @@ class ReceiptsApi
      */
     public function getReceiptsAsyncWithHttpInfo($company_id, $start_date, $end_date, $user_name = null, $number = null, $comment_type = null, $comment_important = null, $category = null, $offset = null, $limit = null)
     {
-        $returnType = '\Freee\Accounting\Model\InlineResponse2005';
+        $returnType = '\Freee\Accounting\Model\InlineResponse20014';
         $request = $this->getReceiptsRequest($company_id, $start_date, $end_date, $user_name, $number, $comment_type, $comment_important, $category, $offset, $limit);
 
         return $this->client

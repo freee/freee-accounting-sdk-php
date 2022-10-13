@@ -60,16 +60,16 @@ class RenewCreateParamsDetails implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static $openAPITypes = [
         'account_item_id' => 'int',
+        'tax_code' => 'int',
         'amount' => 'int',
-        'description' => 'string',
+        'vat' => 'int',
         'item_id' => 'int',
         'section_id' => 'int',
+        'tag_ids' => 'int[]',
         'segment_1_tag_id' => 'int',
         'segment_2_tag_id' => 'int',
         'segment_3_tag_id' => 'int',
-        'tag_ids' => 'int[]',
-        'tax_code' => 'int',
-        'vat' => 'int'
+        'description' => 'string'
     ];
 
     /**
@@ -81,16 +81,16 @@ class RenewCreateParamsDetails implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static $openAPIFormats = [
         'account_item_id' => null,
+        'tax_code' => null,
         'amount' => 'int64',
-        'description' => null,
+        'vat' => 'int64',
         'item_id' => null,
         'section_id' => null,
+        'tag_ids' => null,
         'segment_1_tag_id' => 'int64',
         'segment_2_tag_id' => 'int64',
         'segment_3_tag_id' => 'int64',
-        'tag_ids' => null,
-        'tax_code' => null,
-        'vat' => 'int64'
+        'description' => null
     ];
 
     /**
@@ -121,16 +121,16 @@ class RenewCreateParamsDetails implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static $attributeMap = [
         'account_item_id' => 'account_item_id',
+        'tax_code' => 'tax_code',
         'amount' => 'amount',
-        'description' => 'description',
+        'vat' => 'vat',
         'item_id' => 'item_id',
         'section_id' => 'section_id',
+        'tag_ids' => 'tag_ids',
         'segment_1_tag_id' => 'segment_1_tag_id',
         'segment_2_tag_id' => 'segment_2_tag_id',
         'segment_3_tag_id' => 'segment_3_tag_id',
-        'tag_ids' => 'tag_ids',
-        'tax_code' => 'tax_code',
-        'vat' => 'vat'
+        'description' => 'description'
     ];
 
     /**
@@ -140,16 +140,16 @@ class RenewCreateParamsDetails implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static $setters = [
         'account_item_id' => 'setAccountItemId',
+        'tax_code' => 'setTaxCode',
         'amount' => 'setAmount',
-        'description' => 'setDescription',
+        'vat' => 'setVat',
         'item_id' => 'setItemId',
         'section_id' => 'setSectionId',
+        'tag_ids' => 'setTagIds',
         'segment_1_tag_id' => 'setSegment1TagId',
         'segment_2_tag_id' => 'setSegment2TagId',
         'segment_3_tag_id' => 'setSegment3TagId',
-        'tag_ids' => 'setTagIds',
-        'tax_code' => 'setTaxCode',
-        'vat' => 'setVat'
+        'description' => 'setDescription'
     ];
 
     /**
@@ -159,16 +159,16 @@ class RenewCreateParamsDetails implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static $getters = [
         'account_item_id' => 'getAccountItemId',
+        'tax_code' => 'getTaxCode',
         'amount' => 'getAmount',
-        'description' => 'getDescription',
+        'vat' => 'getVat',
         'item_id' => 'getItemId',
         'section_id' => 'getSectionId',
+        'tag_ids' => 'getTagIds',
         'segment_1_tag_id' => 'getSegment1TagId',
         'segment_2_tag_id' => 'getSegment2TagId',
         'segment_3_tag_id' => 'getSegment3TagId',
-        'tag_ids' => 'getTagIds',
-        'tax_code' => 'getTaxCode',
-        'vat' => 'getVat'
+        'description' => 'getDescription'
     ];
 
     /**
@@ -229,16 +229,16 @@ class RenewCreateParamsDetails implements ModelInterface, ArrayAccess, \JsonSeri
     public function __construct(array $data = null)
     {
         $this->container['account_item_id'] = $data['account_item_id'] ?? null;
+        $this->container['tax_code'] = $data['tax_code'] ?? null;
         $this->container['amount'] = $data['amount'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
+        $this->container['vat'] = $data['vat'] ?? null;
         $this->container['item_id'] = $data['item_id'] ?? null;
         $this->container['section_id'] = $data['section_id'] ?? null;
+        $this->container['tag_ids'] = $data['tag_ids'] ?? null;
         $this->container['segment_1_tag_id'] = $data['segment_1_tag_id'] ?? null;
         $this->container['segment_2_tag_id'] = $data['segment_2_tag_id'] ?? null;
         $this->container['segment_3_tag_id'] = $data['segment_3_tag_id'] ?? null;
-        $this->container['tag_ids'] = $data['tag_ids'] ?? null;
-        $this->container['tax_code'] = $data['tax_code'] ?? null;
-        $this->container['vat'] = $data['vat'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
     }
 
     /**
@@ -261,6 +261,17 @@ class RenewCreateParamsDetails implements ModelInterface, ArrayAccess, \JsonSeri
             $invalidProperties[] = "invalid value for 'account_item_id', must be bigger than or equal to 1.";
         }
 
+        if ($this->container['tax_code'] === null) {
+            $invalidProperties[] = "'tax_code' can't be null";
+        }
+        if (($this->container['tax_code'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'tax_code', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['tax_code'] < 0)) {
+            $invalidProperties[] = "invalid value for 'tax_code', must be bigger than or equal to 0.";
+        }
+
         if ($this->container['amount'] === null) {
             $invalidProperties[] = "'amount' can't be null";
         }
@@ -270,6 +281,14 @@ class RenewCreateParamsDetails implements ModelInterface, ArrayAccess, \JsonSeri
 
         if (($this->container['amount'] < -9223372036854775808)) {
             $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to -9223372036854775808.";
+        }
+
+        if (!is_null($this->container['vat']) && ($this->container['vat'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'vat', must be smaller than or equal to 9223372036854775807.";
+        }
+
+        if (!is_null($this->container['vat']) && ($this->container['vat'] < -9223372036854775808)) {
+            $invalidProperties[] = "invalid value for 'vat', must be bigger than or equal to -9223372036854775808.";
         }
 
         if (!is_null($this->container['item_id']) && ($this->container['item_id'] > 2147483647)) {
@@ -310,25 +329,6 @@ class RenewCreateParamsDetails implements ModelInterface, ArrayAccess, \JsonSeri
 
         if (!is_null($this->container['segment_3_tag_id']) && ($this->container['segment_3_tag_id'] < 1)) {
             $invalidProperties[] = "invalid value for 'segment_3_tag_id', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['tax_code'] === null) {
-            $invalidProperties[] = "'tax_code' can't be null";
-        }
-        if (($this->container['tax_code'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'tax_code', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['tax_code'] < 0)) {
-            $invalidProperties[] = "invalid value for 'tax_code', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['vat']) && ($this->container['vat'] > 9223372036854775807)) {
-            $invalidProperties[] = "invalid value for 'vat', must be smaller than or equal to 9223372036854775807.";
-        }
-
-        if (!is_null($this->container['vat']) && ($this->container['vat'] < -9223372036854775808)) {
-            $invalidProperties[] = "invalid value for 'vat', must be bigger than or equal to -9223372036854775808.";
         }
 
         return $invalidProperties;
@@ -379,6 +379,38 @@ class RenewCreateParamsDetails implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
+     * Gets tax_code
+     *
+     * @return int
+     */
+    public function getTaxCode()
+    {
+        return $this->container['tax_code'];
+    }
+
+    /**
+     * Sets tax_code
+     *
+     * @param int $tax_code 税区分コード
+     *
+     * @return self
+     */
+    public function setTaxCode($tax_code)
+    {
+
+        if (($tax_code > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling RenewCreateParamsDetails., must be smaller than or equal to 2147483647.');
+        }
+        if (($tax_code < 0)) {
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling RenewCreateParamsDetails., must be bigger than or equal to 0.');
+        }
+
+        $this->container['tax_code'] = $tax_code;
+
+        return $this;
+    }
+
+    /**
      * Gets amount
      *
      * @return int
@@ -411,25 +443,33 @@ class RenewCreateParamsDetails implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
-     * Gets description
+     * Gets vat
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getDescription()
+    public function getVat()
     {
-        return $this->container['description'];
+        return $this->container['vat'];
     }
 
     /**
-     * Sets description
+     * Sets vat
      *
-     * @param string|null $description 備考
+     * @param int|null $vat 消費税額（指定しない場合は自動で計算されます）
      *
      * @return self
      */
-    public function setDescription($description)
+    public function setVat($vat)
     {
-        $this->container['description'] = $description;
+
+        if (!is_null($vat) && ($vat > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $vat when calling RenewCreateParamsDetails., must be smaller than or equal to 9223372036854775807.');
+        }
+        if (!is_null($vat) && ($vat < -9223372036854775808)) {
+            throw new \InvalidArgumentException('invalid value for $vat when calling RenewCreateParamsDetails., must be bigger than or equal to -9223372036854775808.');
+        }
+
+        $this->container['vat'] = $vat;
 
         return $this;
     }
@@ -494,6 +534,30 @@ class RenewCreateParamsDetails implements ModelInterface, ArrayAccess, \JsonSeri
         }
 
         $this->container['section_id'] = $section_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets tag_ids
+     *
+     * @return int[]|null
+     */
+    public function getTagIds()
+    {
+        return $this->container['tag_ids'];
+    }
+
+    /**
+     * Sets tag_ids
+     *
+     * @param int[]|null $tag_ids メモタグID
+     *
+     * @return self
+     */
+    public function setTagIds($tag_ids)
+    {
+        $this->container['tag_ids'] = $tag_ids;
 
         return $this;
     }
@@ -595,89 +659,25 @@ class RenewCreateParamsDetails implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
-     * Gets tag_ids
+     * Gets description
      *
-     * @return int[]|null
+     * @return string|null
      */
-    public function getTagIds()
+    public function getDescription()
     {
-        return $this->container['tag_ids'];
+        return $this->container['description'];
     }
 
     /**
-     * Sets tag_ids
+     * Sets description
      *
-     * @param int[]|null $tag_ids メモタグID
+     * @param string|null $description 備考
      *
      * @return self
      */
-    public function setTagIds($tag_ids)
+    public function setDescription($description)
     {
-        $this->container['tag_ids'] = $tag_ids;
-
-        return $this;
-    }
-
-    /**
-     * Gets tax_code
-     *
-     * @return int
-     */
-    public function getTaxCode()
-    {
-        return $this->container['tax_code'];
-    }
-
-    /**
-     * Sets tax_code
-     *
-     * @param int $tax_code 税区分コード
-     *
-     * @return self
-     */
-    public function setTaxCode($tax_code)
-    {
-
-        if (($tax_code > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $tax_code when calling RenewCreateParamsDetails., must be smaller than or equal to 2147483647.');
-        }
-        if (($tax_code < 0)) {
-            throw new \InvalidArgumentException('invalid value for $tax_code when calling RenewCreateParamsDetails., must be bigger than or equal to 0.');
-        }
-
-        $this->container['tax_code'] = $tax_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets vat
-     *
-     * @return int|null
-     */
-    public function getVat()
-    {
-        return $this->container['vat'];
-    }
-
-    /**
-     * Sets vat
-     *
-     * @param int|null $vat 消費税額（指定しない場合は自動で計算されます）
-     *
-     * @return self
-     */
-    public function setVat($vat)
-    {
-
-        if (!is_null($vat) && ($vat > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $vat when calling RenewCreateParamsDetails., must be smaller than or equal to 9223372036854775807.');
-        }
-        if (!is_null($vat) && ($vat < -9223372036854775808)) {
-            throw new \InvalidArgumentException('invalid value for $vat when calling RenewCreateParamsDetails., must be bigger than or equal to -9223372036854775808.');
-        }
-
-        $this->container['vat'] = $vat;
+        $this->container['description'] = $description;
 
         return $this;
     }

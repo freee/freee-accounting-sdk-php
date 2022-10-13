@@ -60,11 +60,11 @@ class SectionParams implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'company_id' => 'int',
-        'long_name' => 'string',
         'name' => 'string',
-        'parent_id' => 'int',
+        'long_name' => 'string',
         'shortcut1' => 'string',
-        'shortcut2' => 'string'
+        'shortcut2' => 'string',
+        'parent_id' => 'int'
     ];
 
     /**
@@ -76,11 +76,11 @@ class SectionParams implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'company_id' => null,
-        'long_name' => null,
         'name' => null,
-        'parent_id' => null,
+        'long_name' => null,
         'shortcut1' => null,
-        'shortcut2' => null
+        'shortcut2' => null,
+        'parent_id' => null
     ];
 
     /**
@@ -111,11 +111,11 @@ class SectionParams implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'company_id' => 'company_id',
-        'long_name' => 'long_name',
         'name' => 'name',
-        'parent_id' => 'parent_id',
+        'long_name' => 'long_name',
         'shortcut1' => 'shortcut1',
-        'shortcut2' => 'shortcut2'
+        'shortcut2' => 'shortcut2',
+        'parent_id' => 'parent_id'
     ];
 
     /**
@@ -125,11 +125,11 @@ class SectionParams implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'company_id' => 'setCompanyId',
-        'long_name' => 'setLongName',
         'name' => 'setName',
-        'parent_id' => 'setParentId',
+        'long_name' => 'setLongName',
         'shortcut1' => 'setShortcut1',
-        'shortcut2' => 'setShortcut2'
+        'shortcut2' => 'setShortcut2',
+        'parent_id' => 'setParentId'
     ];
 
     /**
@@ -139,11 +139,11 @@ class SectionParams implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'company_id' => 'getCompanyId',
-        'long_name' => 'getLongName',
         'name' => 'getName',
-        'parent_id' => 'getParentId',
+        'long_name' => 'getLongName',
         'shortcut1' => 'getShortcut1',
-        'shortcut2' => 'getShortcut2'
+        'shortcut2' => 'getShortcut2',
+        'parent_id' => 'getParentId'
     ];
 
     /**
@@ -204,11 +204,11 @@ class SectionParams implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['company_id'] = $data['company_id'] ?? null;
-        $this->container['long_name'] = $data['long_name'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['parent_id'] = $data['parent_id'] ?? null;
+        $this->container['long_name'] = $data['long_name'] ?? null;
         $this->container['shortcut1'] = $data['shortcut1'] ?? null;
         $this->container['shortcut2'] = $data['shortcut2'] ?? null;
+        $this->container['parent_id'] = $data['parent_id'] ?? null;
     }
 
     /**
@@ -231,10 +231,6 @@ class SectionParams implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['long_name']) && (mb_strlen($this->container['long_name']) > 255)) {
-            $invalidProperties[] = "invalid value for 'long_name', the character length must be smaller than or equal to 255.";
-        }
-
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
@@ -242,12 +238,8 @@ class SectionParams implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 30.";
         }
 
-        if (!is_null($this->container['parent_id']) && ($this->container['parent_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'parent_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (!is_null($this->container['parent_id']) && ($this->container['parent_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'parent_id', must be bigger than or equal to 1.";
+        if (!is_null($this->container['long_name']) && (mb_strlen($this->container['long_name']) > 255)) {
+            $invalidProperties[] = "invalid value for 'long_name', the character length must be smaller than or equal to 255.";
         }
 
         if (!is_null($this->container['shortcut1']) && (mb_strlen($this->container['shortcut1']) > 20)) {
@@ -256,6 +248,14 @@ class SectionParams implements ModelInterface, ArrayAccess, \JsonSerializable
 
         if (!is_null($this->container['shortcut2']) && (mb_strlen($this->container['shortcut2']) > 20)) {
             $invalidProperties[] = "invalid value for 'shortcut2', the character length must be smaller than or equal to 20.";
+        }
+
+        if (!is_null($this->container['parent_id']) && ($this->container['parent_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'parent_id', must be smaller than or equal to 2147483647.";
+        }
+
+        if (!is_null($this->container['parent_id']) && ($this->container['parent_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'parent_id', must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -306,34 +306,6 @@ class SectionParams implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets long_name
-     *
-     * @return string|null
-     */
-    public function getLongName()
-    {
-        return $this->container['long_name'];
-    }
-
-    /**
-     * Sets long_name
-     *
-     * @param string|null $long_name 正式名称 (255文字以内)
-     *
-     * @return self
-     */
-    public function setLongName($long_name)
-    {
-        if (!is_null($long_name) && (mb_strlen($long_name) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $long_name when calling SectionParams., must be smaller than or equal to 255.');
-        }
-
-        $this->container['long_name'] = $long_name;
-
-        return $this;
-    }
-
-    /**
      * Gets name
      *
      * @return string
@@ -362,33 +334,29 @@ class SectionParams implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets parent_id
+     * Gets long_name
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getParentId()
+    public function getLongName()
     {
-        return $this->container['parent_id'];
+        return $this->container['long_name'];
     }
 
     /**
-     * Sets parent_id
+     * Sets long_name
      *
-     * @param int|null $parent_id 親部門ID (個人:プレミアムプラン、法人:ベーシックプラン以上)
+     * @param string|null $long_name 正式名称 (255文字以内)
      *
      * @return self
      */
-    public function setParentId($parent_id)
+    public function setLongName($long_name)
     {
-
-        if (!is_null($parent_id) && ($parent_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $parent_id when calling SectionParams., must be smaller than or equal to 2147483647.');
-        }
-        if (!is_null($parent_id) && ($parent_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $parent_id when calling SectionParams., must be bigger than or equal to 1.');
+        if (!is_null($long_name) && (mb_strlen($long_name) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $long_name when calling SectionParams., must be smaller than or equal to 255.');
         }
 
-        $this->container['parent_id'] = $parent_id;
+        $this->container['long_name'] = $long_name;
 
         return $this;
     }
@@ -445,6 +413,38 @@ class SectionParams implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['shortcut2'] = $shortcut2;
+
+        return $this;
+    }
+
+    /**
+     * Gets parent_id
+     *
+     * @return int|null
+     */
+    public function getParentId()
+    {
+        return $this->container['parent_id'];
+    }
+
+    /**
+     * Sets parent_id
+     *
+     * @param int|null $parent_id 親部門ID (個人:プレミアムプラン、法人:ベーシックプラン以上)
+     *
+     * @return self
+     */
+    public function setParentId($parent_id)
+    {
+
+        if (!is_null($parent_id) && ($parent_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $parent_id when calling SectionParams., must be smaller than or equal to 2147483647.');
+        }
+        if (!is_null($parent_id) && ($parent_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $parent_id when calling SectionParams., must be bigger than or equal to 1.');
+        }
+
+        $this->container['parent_id'] = $parent_id;
 
         return $this;
     }
