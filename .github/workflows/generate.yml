@@ -13,7 +13,7 @@ env:
 jobs:
   generate:
     name: Generate code and push them
-    if: ${{ contains(github.event.pull_request.labels.*.name, 'auto-generate') }}
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'auto-generate-test') }}
     runs-on: ubuntu-latest
 
     steps:
@@ -44,7 +44,7 @@ jobs:
 
       - name: Generate APIs
         env:
-          SCHEMA_URL: https://raw.githubusercontent.com/freee/freee-api-schema/${{ steps.get_original_repo_tag.outputs.tag }}/_sdk_compatible/open-api-3/api-schema.yml
+          SCHEMA_URL: https://raw.githubusercontent.com/freee/freee-api-schema/openapi3-autogenerator/_sdk_compatible/open-api-3/convert-api-schema.yml
         run: |
           docker run --rm -u "$(id -u $USER):$(id -g $USER)" -v "${PWD}:/local" openapitools/openapi-generator-cli:v5.4.0 generate \
             -i ${{ env.SCHEMA_URL }} \
