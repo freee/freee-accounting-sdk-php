@@ -1,6 +1,6 @@
 <?php
 /**
- * AccountItemParamsAccountItem
+ * AccountItemUpdateParamsAccountItem
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Freee\Accounting\ObjectSerializer;
 
 /**
- * AccountItemParamsAccountItem Class Doc Comment
+ * AccountItemUpdateParamsAccountItem Class Doc Comment
  *
  * @category Class
  * @package  Freee\Accounting
@@ -42,7 +42,7 @@ use \Freee\Accounting\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess, \JsonSerializable
+class AccountItemUpdateParamsAccountItem implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess, \Json
       *
       * @var string
       */
-    protected static $openAPIModelName = 'accountItemParams_account_item';
+    protected static $openAPIModelName = 'accountItemUpdateParams_account_item';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -64,9 +64,9 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess, \Json
         'corresponding_expense_id' => 'int',
         'corresponding_income_id' => 'int',
         'group_name' => 'string',
-        'items' => '\Freee\Accounting\Model\AccountItemParamsAccountItemItems[]',
+        'items' => '\Freee\Accounting\Model\AccountItemCreateParamsAccountItemItems[]',
         'name' => 'string',
-        'partners' => '\Freee\Accounting\Model\AccountItemParamsAccountItemItems[]',
+        'partners' => '\Freee\Accounting\Model\AccountItemCreateParamsAccountItemItems[]',
         'searchable' => 'int',
         'shortcut' => 'string',
         'shortcut_num' => 'string',
@@ -276,10 +276,7 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess, \Json
         if ($this->container['group_name'] === null) {
             $invalidProperties[] = "'group_name' can't be null";
         }
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ((mb_strlen($this->container['name']) > 30)) {
+        if (!is_null($this->container['name']) && (mb_strlen($this->container['name']) > 30)) {
             $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 30.";
         }
 
@@ -346,10 +343,10 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess, \Json
     {
 
         if (($account_category_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $account_category_id when calling AccountItemParamsAccountItem., must be smaller than or equal to 2147483647.');
+            throw new \InvalidArgumentException('invalid value for $account_category_id when calling AccountItemUpdateParamsAccountItem., must be smaller than or equal to 2147483647.');
         }
         if (($account_category_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $account_category_id when calling AccountItemParamsAccountItem., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid value for $account_category_id when calling AccountItemUpdateParamsAccountItem., must be bigger than or equal to 1.');
         }
 
         $this->container['account_category_id'] = $account_category_id;
@@ -456,7 +453,7 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets items
      *
-     * @return \Freee\Accounting\Model\AccountItemParamsAccountItemItems[]|null
+     * @return \Freee\Accounting\Model\AccountItemCreateParamsAccountItemItems[]|null
      */
     public function getItems()
     {
@@ -466,7 +463,7 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets items
      *
-     * @param \Freee\Accounting\Model\AccountItemParamsAccountItemItems[]|null $items 品目
+     * @param \Freee\Accounting\Model\AccountItemCreateParamsAccountItemItems[]|null $items 品目
      *
      * @return self
      */
@@ -480,7 +477,7 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets name
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -490,14 +487,14 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets name
      *
-     * @param string $name 勘定科目名 (30文字以内)
+     * @param string|null $name 勘定科目名 (30文字以内) 口座に紐付かない勘定科目の更新時は必須です。 口座に紐付く勘定科目の更新時は指定することができません。
      *
      * @return self
      */
     public function setName($name)
     {
-        if ((mb_strlen($name) > 30)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling AccountItemParamsAccountItem., must be smaller than or equal to 30.');
+        if (!is_null($name) && (mb_strlen($name) > 30)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling AccountItemUpdateParamsAccountItem., must be smaller than or equal to 30.');
         }
 
         $this->container['name'] = $name;
@@ -508,7 +505,7 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets partners
      *
-     * @return \Freee\Accounting\Model\AccountItemParamsAccountItemItems[]|null
+     * @return \Freee\Accounting\Model\AccountItemCreateParamsAccountItemItems[]|null
      */
     public function getPartners()
     {
@@ -518,7 +515,7 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets partners
      *
-     * @param \Freee\Accounting\Model\AccountItemParamsAccountItemItems[]|null $partners 取引先
+     * @param \Freee\Accounting\Model\AccountItemCreateParamsAccountItemItems[]|null $partners 取引先
      *
      * @return self
      */
@@ -550,10 +547,10 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess, \Json
     {
 
         if (!is_null($searchable) && ($searchable > 3)) {
-            throw new \InvalidArgumentException('invalid value for $searchable when calling AccountItemParamsAccountItem., must be smaller than or equal to 3.');
+            throw new \InvalidArgumentException('invalid value for $searchable when calling AccountItemUpdateParamsAccountItem., must be smaller than or equal to 3.');
         }
         if (!is_null($searchable) && ($searchable < 2)) {
-            throw new \InvalidArgumentException('invalid value for $searchable when calling AccountItemParamsAccountItem., must be bigger than or equal to 2.');
+            throw new \InvalidArgumentException('invalid value for $searchable when calling AccountItemUpdateParamsAccountItem., must be bigger than or equal to 2.');
         }
 
         $this->container['searchable'] = $searchable;
@@ -581,7 +578,7 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess, \Json
     public function setShortcut($shortcut)
     {
         if (!is_null($shortcut) && (mb_strlen($shortcut) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $shortcut when calling AccountItemParamsAccountItem., must be smaller than or equal to 20.');
+            throw new \InvalidArgumentException('invalid length for $shortcut when calling AccountItemUpdateParamsAccountItem., must be smaller than or equal to 20.');
         }
 
         $this->container['shortcut'] = $shortcut;
@@ -609,7 +606,7 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess, \Json
     public function setShortcutNum($shortcut_num)
     {
         if (!is_null($shortcut_num) && (mb_strlen($shortcut_num) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $shortcut_num when calling AccountItemParamsAccountItem., must be smaller than or equal to 20.');
+            throw new \InvalidArgumentException('invalid length for $shortcut_num when calling AccountItemUpdateParamsAccountItem., must be smaller than or equal to 20.');
         }
 
         $this->container['shortcut_num'] = $shortcut_num;
@@ -638,10 +635,10 @@ class AccountItemParamsAccountItem implements ModelInterface, ArrayAccess, \Json
     {
 
         if (($tax_code > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $tax_code when calling AccountItemParamsAccountItem., must be smaller than or equal to 2147483647.');
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling AccountItemUpdateParamsAccountItem., must be smaller than or equal to 2147483647.');
         }
         if (($tax_code < 0)) {
-            throw new \InvalidArgumentException('invalid value for $tax_code when calling AccountItemParamsAccountItem., must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling AccountItemUpdateParamsAccountItem., must be bigger than or equal to 0.');
         }
 
         $this->container['tax_code'] = $tax_code;

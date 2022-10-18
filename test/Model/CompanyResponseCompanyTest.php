@@ -341,15 +341,6 @@ class CompanyResponseCompanyTest extends TestCase
     }
 
     /**
-     * Test attribute "taxes"
-     */
-    public function testPropertyTaxes()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "txn_number_format"
      */
     public function testPropertyTxnNumberFormat()

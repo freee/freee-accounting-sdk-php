@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **company_id** | **int** | 事業所ID |
 **description** | **string** | 備考 | [optional]
 **document_code** | **string** | 請求書番号（255文字以内） | [optional]
-**draft** | **bool** | 支払依頼のステータス&lt;br&gt; falseを指定した時は申請中（in_progress）で支払依頼を更新します。&lt;br&gt; trueを指定した時は下書き（draft）で支払依頼を更新します。&lt;br&gt; 未指定の時は下書きとみなして支払依頼を更新します。 |
+**draft** | **bool** | 支払依頼のステータス&lt;br&gt; falseを指定した時は申請中（in_progress）で支払依頼を更新します。&lt;br&gt; trueを指定した時は下書き（draft）で支払依頼を更新します。 |
 **issue_date** | **string** | 発生日 (yyyy-mm-dd) |
 **partner_code** | **string** | 支払先の取引先コード&lt;br&gt; 支払先の取引先ID指定時には無効 | [optional]
 **partner_id** | **int** | 支払先の取引先ID | [optional]

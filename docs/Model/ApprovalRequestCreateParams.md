@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **approval_flow_route_id** | **int** | 申請経路ID |
 **approver_id** | **int** | 承認者のユーザーID | [optional]
 **company_id** | **int** | 事業所ID |
-**draft** | **bool** | falseの時、in_progress:申請中で作成する。それ以外の時はdraft:下書きで作成する |
+**draft** | **bool** | 各種申請のステータス&lt;br&gt; falseを指定した時は申請中（in_progress）で各種申請を作成します。&lt;br&gt; trueを指定した時は下書き（draft）で各種申請を作成します。 |
 **form_id** | **int** | 申請フォームID |
 **parent_id** | **int** | 親申請ID(既存各種申請IDのみ指定可能です。) | [optional]
 **request_items** | [**\Freee\Accounting\Model\ApprovalRequestCreateParamsRequestItems[]**](ApprovalRequestCreateParamsRequestItems.md) |  |

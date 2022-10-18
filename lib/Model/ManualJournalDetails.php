@@ -73,11 +73,11 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess, \JsonSerializ
         'section_id' => 'int',
         'section_name' => 'string',
         'segment_1_tag_id' => 'int',
-        'segment_1_tag_name' => 'int',
+        'segment_1_tag_name' => 'string',
         'segment_2_tag_id' => 'int',
-        'segment_2_tag_name' => 'int',
+        'segment_2_tag_name' => 'string',
         'segment_3_tag_id' => 'int',
-        'segment_3_tag_name' => 'int',
+        'segment_3_tag_name' => 'string',
         'tag_ids' => 'int[]',
         'tag_names' => 'string[]',
         'tax_code' => 'int',
@@ -902,7 +902,7 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets segment_1_tag_name
      *
-     * @return int|null
+     * @return string|null
      */
     public function getSegment1TagName()
     {
@@ -912,7 +912,7 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets segment_1_tag_name
      *
-     * @param int|null $segment_1_tag_name セグメント１ID
+     * @param string|null $segment_1_tag_name セグメント１
      *
      * @return self
      */
@@ -958,7 +958,7 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets segment_2_tag_name
      *
-     * @return int|null
+     * @return string|null
      */
     public function getSegment2TagName()
     {
@@ -968,7 +968,7 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets segment_2_tag_name
      *
-     * @param int|null $segment_2_tag_name セグメント２
+     * @param string|null $segment_2_tag_name セグメント２
      *
      * @return self
      */
@@ -1014,7 +1014,7 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets segment_3_tag_name
      *
-     * @return int|null
+     * @return string|null
      */
     public function getSegment3TagName()
     {
@@ -1024,7 +1024,7 @@ class ManualJournalDetails implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets segment_3_tag_name
      *
-     * @param int|null $segment_3_tag_name セグメント３
+     * @param string|null $segment_3_tag_name セグメント３
      *
      * @return self
      */

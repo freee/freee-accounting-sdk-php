@@ -404,7 +404,7 @@ class ApprovalRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets draft
      *
-     * @param bool $draft falseの時、in_progress:申請中で更新する。それ以外の時はdraft:下書きで更新する
+     * @param bool $draft 各種申請のステータス<br> falseを指定した時は申請中（in_progress）で各種申請を更新します。<br> trueを指定した時は下書き（draft）で各種申請を更新します。
      *
      * @return self
      */

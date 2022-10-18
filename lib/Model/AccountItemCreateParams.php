@@ -1,6 +1,6 @@
 <?php
 /**
- * AccountItemParamsAccountItemItems
+ * AccountItemCreateParams
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Freee\Accounting\ObjectSerializer;
 
 /**
- * AccountItemParamsAccountItemItems Class Doc Comment
+ * AccountItemCreateParams Class Doc Comment
  *
  * @category Class
  * @package  Freee\Accounting
@@ -42,7 +42,7 @@ use \Freee\Accounting\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class AccountItemParamsAccountItemItems implements ModelInterface, ArrayAccess, \JsonSerializable
+class AccountItemCreateParams implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class AccountItemParamsAccountItemItems implements ModelInterface, ArrayAccess, 
       *
       * @var string
       */
-    protected static $openAPIModelName = 'accountItemParams_account_item_items';
+    protected static $openAPIModelName = 'accountItemCreateParams';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,7 +59,8 @@ class AccountItemParamsAccountItemItems implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int'
+        'account_item' => '\Freee\Accounting\Model\AccountItemCreateParamsAccountItem',
+        'company_id' => 'int'
     ];
 
     /**
@@ -70,7 +71,8 @@ class AccountItemParamsAccountItemItems implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null
+        'account_item' => null,
+        'company_id' => null
     ];
 
     /**
@@ -100,7 +102,8 @@ class AccountItemParamsAccountItemItems implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id'
+        'account_item' => 'account_item',
+        'company_id' => 'company_id'
     ];
 
     /**
@@ -109,7 +112,8 @@ class AccountItemParamsAccountItemItems implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId'
+        'account_item' => 'setAccountItem',
+        'company_id' => 'setCompanyId'
     ];
 
     /**
@@ -118,7 +122,8 @@ class AccountItemParamsAccountItemItems implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId'
+        'account_item' => 'getAccountItem',
+        'company_id' => 'getCompanyId'
     ];
 
     /**
@@ -178,7 +183,8 @@ class AccountItemParamsAccountItemItems implements ModelInterface, ArrayAccess, 
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
+        $this->container['account_item'] = $data['account_item'] ?? null;
+        $this->container['company_id'] = $data['company_id'] ?? null;
     }
 
     /**
@@ -190,12 +196,18 @@ class AccountItemParamsAccountItemItems implements ModelInterface, ArrayAccess, 
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['id']) && ($this->container['id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 2147483647.";
+        if ($this->container['account_item'] === null) {
+            $invalidProperties[] = "'account_item' can't be null";
+        }
+        if ($this->container['company_id'] === null) {
+            $invalidProperties[] = "'company_id' can't be null";
+        }
+        if (($this->container['company_id'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be smaller than or equal to 2147483647.";
         }
 
-        if (!is_null($this->container['id']) && ($this->container['id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
+        if (($this->container['company_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'company_id', must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -214,33 +226,57 @@ class AccountItemParamsAccountItemItems implements ModelInterface, ArrayAccess, 
 
 
     /**
-     * Gets id
+     * Gets account_item
      *
-     * @return int|null
+     * @return \Freee\Accounting\Model\AccountItemCreateParamsAccountItem
      */
-    public function getId()
+    public function getAccountItem()
     {
-        return $this->container['id'];
+        return $this->container['account_item'];
     }
 
     /**
-     * Sets id
+     * Sets account_item
      *
-     * @param int|null $id id
+     * @param \Freee\Accounting\Model\AccountItemCreateParamsAccountItem $account_item account_item
      *
      * @return self
      */
-    public function setId($id)
+    public function setAccountItem($account_item)
+    {
+        $this->container['account_item'] = $account_item;
+
+        return $this;
+    }
+
+    /**
+     * Gets company_id
+     *
+     * @return int
+     */
+    public function getCompanyId()
+    {
+        return $this->container['company_id'];
+    }
+
+    /**
+     * Sets company_id
+     *
+     * @param int $company_id 事業所ID
+     *
+     * @return self
+     */
+    public function setCompanyId($company_id)
     {
 
-        if (!is_null($id) && ($id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling AccountItemParamsAccountItemItems., must be smaller than or equal to 2147483647.');
+        if (($company_id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $company_id when calling AccountItemCreateParams., must be smaller than or equal to 2147483647.');
         }
-        if (!is_null($id) && ($id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling AccountItemParamsAccountItemItems., must be bigger than or equal to 1.');
+        if (($company_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $company_id when calling AccountItemCreateParams., must be bigger than or equal to 1.');
         }
 
-        $this->container['id'] = $id;
+        $this->container['company_id'] = $company_id;
 
         return $this;
     }

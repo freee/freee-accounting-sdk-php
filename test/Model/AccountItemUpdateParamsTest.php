@@ -1,6 +1,6 @@
 <?php
 /**
- * AccountItemParamsAccountItemItemsTest
+ * AccountItemUpdateParamsTest
  *
  * PHP version 7.3
  *
@@ -31,15 +31,15 @@ namespace Freee\Accounting\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * AccountItemParamsAccountItemItemsTest Class Doc Comment
+ * AccountItemUpdateParamsTest Class Doc Comment
  *
  * @category    Class
- * @description AccountItemParamsAccountItemItems
+ * @description AccountItemUpdateParams
  * @package     Freee\Accounting
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class AccountItemParamsAccountItemItemsTest extends TestCase
+class AccountItemUpdateParamsTest extends TestCase
 {
 
     /**
@@ -71,18 +71,27 @@ class AccountItemParamsAccountItemItemsTest extends TestCase
     }
 
     /**
-     * Test "AccountItemParamsAccountItemItems"
+     * Test "AccountItemUpdateParams"
      */
-    public function testAccountItemParamsAccountItemItems()
+    public function testAccountItemUpdateParams()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "account_item"
      */
-    public function testPropertyId()
+    public function testPropertyAccountItem()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "company_id"
+     */
+    public function testPropertyCompanyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

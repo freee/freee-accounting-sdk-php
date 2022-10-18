@@ -1,6 +1,6 @@
 <?php
 /**
- * AccountItemParams
+ * AccountItemUpdateParams
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Freee\Accounting\ObjectSerializer;
 
 /**
- * AccountItemParams Class Doc Comment
+ * AccountItemUpdateParams Class Doc Comment
  *
  * @category Class
  * @package  Freee\Accounting
@@ -42,7 +42,7 @@ use \Freee\Accounting\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class AccountItemParams implements ModelInterface, ArrayAccess, \JsonSerializable
+class AccountItemUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class AccountItemParams implements ModelInterface, ArrayAccess, \JsonSerializabl
       *
       * @var string
       */
-    protected static $openAPIModelName = 'accountItemParams';
+    protected static $openAPIModelName = 'accountItemUpdateParams';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,7 +59,7 @@ class AccountItemParams implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'account_item' => '\Freee\Accounting\Model\AccountItemParamsAccountItem',
+        'account_item' => '\Freee\Accounting\Model\AccountItemUpdateParamsAccountItem',
         'company_id' => 'int'
     ];
 
@@ -228,7 +228,7 @@ class AccountItemParams implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets account_item
      *
-     * @return \Freee\Accounting\Model\AccountItemParamsAccountItem
+     * @return \Freee\Accounting\Model\AccountItemUpdateParamsAccountItem
      */
     public function getAccountItem()
     {
@@ -238,7 +238,7 @@ class AccountItemParams implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets account_item
      *
-     * @param \Freee\Accounting\Model\AccountItemParamsAccountItem $account_item account_item
+     * @param \Freee\Accounting\Model\AccountItemUpdateParamsAccountItem $account_item account_item
      *
      * @return self
      */
@@ -270,10 +270,10 @@ class AccountItemParams implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
 
         if (($company_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling AccountItemParams., must be smaller than or equal to 2147483647.');
+            throw new \InvalidArgumentException('invalid value for $company_id when calling AccountItemUpdateParams., must be smaller than or equal to 2147483647.');
         }
         if (($company_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $company_id when calling AccountItemParams., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid value for $company_id when calling AccountItemUpdateParams., must be bigger than or equal to 1.');
         }
 
         $this->container['company_id'] = $company_id;

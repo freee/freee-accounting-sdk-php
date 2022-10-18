@@ -12,6 +12,6 @@ Name | Type | Description | Notes
 **name** | **string** | 申請フォームの名前 |
 **parts** | [**\Freee\Accounting\Model\ApprovalRequestFormResponseApprovalRequestFormParts[]**](ApprovalRequestFormResponseApprovalRequestFormParts.md) | 申請フォームの項目 | [optional]
 **route_setting_count** | **int** | 適用された経路数 |
-**status** | **string** | ステータス(draft: 申請で使用しない、active: 申請で使用する、deleted: 削除済み) |
+**status** | **string** | ステータス(draft: 申請で使用しない、active: 申請で使用する) |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

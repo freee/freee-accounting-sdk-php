@@ -1,6 +1,6 @@
 <?php
 /**
- * CompanyResponseCompanyTaxes
+ * AccountItemCreateParamsAccountItemItems
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Freee\Accounting\ObjectSerializer;
 
 /**
- * CompanyResponseCompanyTaxes Class Doc Comment
+ * AccountItemCreateParamsAccountItemItems Class Doc Comment
  *
  * @category Class
  * @package  Freee\Accounting
@@ -42,7 +42,7 @@ use \Freee\Accounting\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CompanyResponseCompanyTaxes implements ModelInterface, ArrayAccess, \JsonSerializable
+class AccountItemCreateParamsAccountItemItems implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class CompanyResponseCompanyTaxes implements ModelInterface, ArrayAccess, \JsonS
       *
       * @var string
       */
-    protected static $openAPIModelName = 'companyResponse_company_taxes';
+    protected static $openAPIModelName = 'accountItemCreateParams_account_item_items';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,8 +59,7 @@ class CompanyResponseCompanyTaxes implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'name' => 'string'
+        'id' => 'int'
     ];
 
     /**
@@ -71,8 +70,7 @@ class CompanyResponseCompanyTaxes implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'name' => null
+        'id' => null
     ];
 
     /**
@@ -102,8 +100,7 @@ class CompanyResponseCompanyTaxes implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name'
+        'id' => 'id'
     ];
 
     /**
@@ -112,8 +109,7 @@ class CompanyResponseCompanyTaxes implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName'
+        'id' => 'setId'
     ];
 
     /**
@@ -122,8 +118,7 @@ class CompanyResponseCompanyTaxes implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName'
+        'id' => 'getId'
     ];
 
     /**
@@ -184,7 +179,6 @@ class CompanyResponseCompanyTaxes implements ModelInterface, ArrayAccess, \JsonS
     public function __construct(array $data = null)
     {
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
     }
 
     /**
@@ -196,20 +190,14 @@ class CompanyResponseCompanyTaxes implements ModelInterface, ArrayAccess, \JsonS
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if (($this->container['id'] > 2147483647)) {
+        if (!is_null($this->container['id']) && ($this->container['id'] > 2147483647)) {
             $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 2147483647.";
         }
 
-        if (($this->container['id'] < 1)) {
+        if (!is_null($this->container['id']) && ($this->container['id'] < 1)) {
             $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -228,7 +216,7 @@ class CompanyResponseCompanyTaxes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets id
      *
-     * @return int
+     * @return int|null
      */
     public function getId()
     {
@@ -238,45 +226,21 @@ class CompanyResponseCompanyTaxes implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets id
      *
-     * @param int $id 税区分ID（廃止予定。tax_codeを使用してください。）
+     * @param int|null $id id
      *
      * @return self
      */
     public function setId($id)
     {
 
-        if (($id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling CompanyResponseCompanyTaxes., must be smaller than or equal to 2147483647.');
+        if (!is_null($id) && ($id > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling AccountItemCreateParamsAccountItemItems., must be smaller than or equal to 2147483647.');
         }
-        if (($id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling CompanyResponseCompanyTaxes., must be bigger than or equal to 1.');
+        if (!is_null($id) && ($id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling AccountItemCreateParamsAccountItemItems., must be bigger than or equal to 1.');
         }
 
         $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name 税区分名
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
 
         return $this;
     }
