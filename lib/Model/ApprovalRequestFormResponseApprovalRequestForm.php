@@ -204,7 +204,6 @@ class ApprovalRequestFormResponseApprovalRequestForm implements ModelInterface, 
 
     const STATUS_DRAFT = 'draft';
     const STATUS_ACTIVE = 'active';
-    const STATUS_DELETED = 'deleted';
 
     /**
      * Gets allowable values of the enum
@@ -216,7 +215,6 @@ class ApprovalRequestFormResponseApprovalRequestForm implements ModelInterface, 
         return [
             self::STATUS_DRAFT,
             self::STATUS_ACTIVE,
-            self::STATUS_DELETED,
         ];
     }
 
@@ -572,7 +570,7 @@ class ApprovalRequestFormResponseApprovalRequestForm implements ModelInterface, 
     /**
      * Sets status
      *
-     * @param string $status ステータス(draft: 申請で使用しない、active: 申請で使用する、deleted: 削除済み)
+     * @param string $status ステータス(draft: 申請で使用しない、active: 申請で使用する)
      *
      * @return self
      */

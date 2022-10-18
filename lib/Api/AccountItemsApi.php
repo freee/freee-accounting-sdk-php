@@ -120,15 +120,15 @@ class AccountItemsApi
      *
      * 勘定科目の作成
      *
-     * @param  \Freee\Accounting\Model\AccountItemParams $account_item_params 勘定科目の作成 (required)
+     * @param  \Freee\Accounting\Model\AccountItemCreateParams $account_item_create_params 勘定科目の作成 (required)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Freee\Accounting\Model\AccountItemResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError
      */
-    public function createAccountItem($account_item_params)
+    public function createAccountItem($account_item_create_params)
     {
-        list($response) = $this->createAccountItemWithHttpInfo($account_item_params);
+        list($response) = $this->createAccountItemWithHttpInfo($account_item_create_params);
         return $response;
     }
 
@@ -137,15 +137,15 @@ class AccountItemsApi
      *
      * 勘定科目の作成
      *
-     * @param  \Freee\Accounting\Model\AccountItemParams $account_item_params 勘定科目の作成 (required)
+     * @param  \Freee\Accounting\Model\AccountItemCreateParams $account_item_create_params 勘定科目の作成 (required)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Freee\Accounting\Model\AccountItemResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createAccountItemWithHttpInfo($account_item_params)
+    public function createAccountItemWithHttpInfo($account_item_create_params)
     {
-        $request = $this->createAccountItemRequest($account_item_params);
+        $request = $this->createAccountItemRequest($account_item_create_params);
 
         try {
             $options = $this->createHttpClientOption();
@@ -310,14 +310,14 @@ class AccountItemsApi
      *
      * 勘定科目の作成
      *
-     * @param  \Freee\Accounting\Model\AccountItemParams $account_item_params 勘定科目の作成 (required)
+     * @param  \Freee\Accounting\Model\AccountItemCreateParams $account_item_create_params 勘定科目の作成 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createAccountItemAsync($account_item_params)
+    public function createAccountItemAsync($account_item_create_params)
     {
-        return $this->createAccountItemAsyncWithHttpInfo($account_item_params)
+        return $this->createAccountItemAsyncWithHttpInfo($account_item_create_params)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -330,15 +330,15 @@ class AccountItemsApi
      *
      * 勘定科目の作成
      *
-     * @param  \Freee\Accounting\Model\AccountItemParams $account_item_params 勘定科目の作成 (required)
+     * @param  \Freee\Accounting\Model\AccountItemCreateParams $account_item_create_params 勘定科目の作成 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createAccountItemAsyncWithHttpInfo($account_item_params)
+    public function createAccountItemAsyncWithHttpInfo($account_item_create_params)
     {
         $returnType = '\Freee\Accounting\Model\AccountItemResponse';
-        $request = $this->createAccountItemRequest($account_item_params);
+        $request = $this->createAccountItemRequest($account_item_create_params);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -376,17 +376,17 @@ class AccountItemsApi
     /**
      * Create request for operation 'createAccountItem'
      *
-     * @param  \Freee\Accounting\Model\AccountItemParams $account_item_params 勘定科目の作成 (required)
+     * @param  \Freee\Accounting\Model\AccountItemCreateParams $account_item_create_params 勘定科目の作成 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createAccountItemRequest($account_item_params)
+    public function createAccountItemRequest($account_item_create_params)
     {
-        // verify the required parameter 'account_item_params' is set
-        if ($account_item_params === null || (is_array($account_item_params) && count($account_item_params) === 0)) {
+        // verify the required parameter 'account_item_create_params' is set
+        if ($account_item_create_params === null || (is_array($account_item_create_params) && count($account_item_create_params) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $account_item_params when calling createAccountItem'
+                'Missing the required parameter $account_item_create_params when calling createAccountItem'
             );
         }
 
@@ -413,11 +413,11 @@ class AccountItemsApi
         }
 
         // for model (json/xml)
-        if (isset($account_item_params)) {
+        if (isset($account_item_create_params)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($account_item_params));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($account_item_create_params));
             } else {
-                $httpBody = $account_item_params;
+                $httpBody = $account_item_create_params;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1564,15 +1564,15 @@ class AccountItemsApi
      * 勘定科目の更新
      *
      * @param  int $id id (required)
-     * @param  \Freee\Accounting\Model\AccountItemParams $account_item_params 勘定科目の更新 (required)
+     * @param  \Freee\Accounting\Model\AccountItemUpdateParams $account_item_update_params 勘定科目の更新 (required)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Freee\Accounting\Model\AccountItemResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError|\Freee\Accounting\Model\ServiceUnavailableError
      */
-    public function updateAccountItem($id, $account_item_params)
+    public function updateAccountItem($id, $account_item_update_params)
     {
-        list($response) = $this->updateAccountItemWithHttpInfo($id, $account_item_params);
+        list($response) = $this->updateAccountItemWithHttpInfo($id, $account_item_update_params);
         return $response;
     }
 
@@ -1582,15 +1582,15 @@ class AccountItemsApi
      * 勘定科目の更新
      *
      * @param  int $id (required)
-     * @param  \Freee\Accounting\Model\AccountItemParams $account_item_params 勘定科目の更新 (required)
+     * @param  \Freee\Accounting\Model\AccountItemUpdateParams $account_item_update_params 勘定科目の更新 (required)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Freee\Accounting\Model\AccountItemResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError|\Freee\Accounting\Model\ServiceUnavailableError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateAccountItemWithHttpInfo($id, $account_item_params)
+    public function updateAccountItemWithHttpInfo($id, $account_item_update_params)
     {
-        $request = $this->updateAccountItemRequest($id, $account_item_params);
+        $request = $this->updateAccountItemRequest($id, $account_item_update_params);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1776,14 +1776,14 @@ class AccountItemsApi
      * 勘定科目の更新
      *
      * @param  int $id (required)
-     * @param  \Freee\Accounting\Model\AccountItemParams $account_item_params 勘定科目の更新 (required)
+     * @param  \Freee\Accounting\Model\AccountItemUpdateParams $account_item_update_params 勘定科目の更新 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateAccountItemAsync($id, $account_item_params)
+    public function updateAccountItemAsync($id, $account_item_update_params)
     {
-        return $this->updateAccountItemAsyncWithHttpInfo($id, $account_item_params)
+        return $this->updateAccountItemAsyncWithHttpInfo($id, $account_item_update_params)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1797,15 +1797,15 @@ class AccountItemsApi
      * 勘定科目の更新
      *
      * @param  int $id (required)
-     * @param  \Freee\Accounting\Model\AccountItemParams $account_item_params 勘定科目の更新 (required)
+     * @param  \Freee\Accounting\Model\AccountItemUpdateParams $account_item_update_params 勘定科目の更新 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateAccountItemAsyncWithHttpInfo($id, $account_item_params)
+    public function updateAccountItemAsyncWithHttpInfo($id, $account_item_update_params)
     {
         $returnType = '\Freee\Accounting\Model\AccountItemResponse';
-        $request = $this->updateAccountItemRequest($id, $account_item_params);
+        $request = $this->updateAccountItemRequest($id, $account_item_update_params);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1844,12 +1844,12 @@ class AccountItemsApi
      * Create request for operation 'updateAccountItem'
      *
      * @param  int $id (required)
-     * @param  \Freee\Accounting\Model\AccountItemParams $account_item_params 勘定科目の更新 (required)
+     * @param  \Freee\Accounting\Model\AccountItemUpdateParams $account_item_update_params 勘定科目の更新 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateAccountItemRequest($id, $account_item_params)
+    public function updateAccountItemRequest($id, $account_item_update_params)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -1864,10 +1864,10 @@ class AccountItemsApi
             throw new \InvalidArgumentException('invalid value for "$id" when calling AccountItemsApi.updateAccountItem, must be bigger than or equal to 1.');
         }
 
-        // verify the required parameter 'account_item_params' is set
-        if ($account_item_params === null || (is_array($account_item_params) && count($account_item_params) === 0)) {
+        // verify the required parameter 'account_item_update_params' is set
+        if ($account_item_update_params === null || (is_array($account_item_update_params) && count($account_item_update_params) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $account_item_params when calling updateAccountItem'
+                'Missing the required parameter $account_item_update_params when calling updateAccountItem'
             );
         }
 
@@ -1902,11 +1902,11 @@ class AccountItemsApi
         }
 
         // for model (json/xml)
-        if (isset($account_item_params)) {
+        if (isset($account_item_update_params)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($account_item_params));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($account_item_update_params));
             } else {
-                $httpBody = $account_item_params;
+                $httpBody = $account_item_update_params;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

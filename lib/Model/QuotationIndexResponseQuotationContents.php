@@ -757,7 +757,7 @@ class QuotationIndexResponseQuotationContents implements ModelInterface, ArrayAc
     /**
      * Sets segment_1_tag_name
      *
-     * @param string|null $segment_1_tag_name セグメント１ID
+     * @param string|null $segment_1_tag_name セグメント１
      *
      * @return self
      */

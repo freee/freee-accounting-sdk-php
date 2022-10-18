@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **section_id** | **int** | 部門ID |
 **section_name** | **string** | 部門 |
 **segment_1_tag_id** | **int** | セグメント１ID | [optional]
-**segment_1_tag_name** | **string** | セグメント１ID | [optional]
+**segment_1_tag_name** | **string** | セグメント１ | [optional]
 **segment_2_tag_id** | **int** | セグメント２ID | [optional]
 **segment_2_tag_name** | **string** | セグメント２ | [optional]
 **segment_3_tag_id** | **int** | セグメント３ID | [optional]

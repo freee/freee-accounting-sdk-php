@@ -14,7 +14,7 @@ Method | HTTP request | Description
 ## `createAccountItem()`
 
 ```php
-createAccountItem($account_item_params): \Freee\Accounting\Model\AccountItemResponse
+createAccountItem($account_item_create_params): \Freee\Accounting\Model\AccountItemResponse
 ```
 
 勘定科目の作成
@@ -36,10 +36,10 @@ $apiInstance = new Freee\Accounting\Api\AccountItemsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_item_params = new \Freee\Accounting\Model\AccountItemParams(); // \Freee\Accounting\Model\AccountItemParams | 勘定科目の作成
+$account_item_create_params = new \Freee\Accounting\Model\AccountItemCreateParams(); // \Freee\Accounting\Model\AccountItemCreateParams | 勘定科目の作成
 
 try {
-    $result = $apiInstance->createAccountItem($account_item_params);
+    $result = $apiInstance->createAccountItem($account_item_create_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountItemsApi->createAccountItem: ', $e->getMessage(), PHP_EOL;
@@ -50,7 +50,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_item_params** | [**\Freee\Accounting\Model\AccountItemParams**](../Model/AccountItemParams.md)| 勘定科目の作成 |
+ **account_item_create_params** | [**\Freee\Accounting\Model\AccountItemCreateParams**](../Model/AccountItemCreateParams.md)| 勘定科目の作成 |
 
 ### Return type
 
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 ## `updateAccountItem()`
 
 ```php
-updateAccountItem($id, $account_item_params): \Freee\Accounting\Model\AccountItemResponse
+updateAccountItem($id, $account_item_update_params): \Freee\Accounting\Model\AccountItemResponse
 ```
 
 勘定科目の更新
@@ -274,10 +274,10 @@ $apiInstance = new Freee\Accounting\Api\AccountItemsApi(
     $config
 );
 $id = 56; // int
-$account_item_params = new \Freee\Accounting\Model\AccountItemParams(); // \Freee\Accounting\Model\AccountItemParams | 勘定科目の更新
+$account_item_update_params = new \Freee\Accounting\Model\AccountItemUpdateParams(); // \Freee\Accounting\Model\AccountItemUpdateParams | 勘定科目の更新
 
 try {
-    $result = $apiInstance->updateAccountItem($id, $account_item_params);
+    $result = $apiInstance->updateAccountItem($id, $account_item_update_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountItemsApi->updateAccountItem: ', $e->getMessage(), PHP_EOL;
@@ -289,7 +289,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **account_item_params** | [**\Freee\Accounting\Model\AccountItemParams**](../Model/AccountItemParams.md)| 勘定科目の更新 |
+ **account_item_update_params** | [**\Freee\Accounting\Model\AccountItemUpdateParams**](../Model/AccountItemUpdateParams.md)| 勘定科目の更新 |
 
 ### Return type
 

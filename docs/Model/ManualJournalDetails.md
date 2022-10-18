@@ -18,11 +18,11 @@ Name | Type | Description | Notes
 **section_id** | **int** | 部門ID |
 **section_name** | **string** | 部門 |
 **segment_1_tag_id** | **int** | セグメント１ID | [optional]
-**segment_1_tag_name** | **int** | セグメント１ID | [optional]
+**segment_1_tag_name** | **string** | セグメント１ | [optional]
 **segment_2_tag_id** | **int** | セグメント２ID | [optional]
-**segment_2_tag_name** | **int** | セグメント２ | [optional]
+**segment_2_tag_name** | **string** | セグメント２ | [optional]
 **segment_3_tag_id** | **int** | セグメント３ID | [optional]
-**segment_3_tag_name** | **int** | セグメント３ | [optional]
+**segment_3_tag_name** | **string** | セグメント３ | [optional]
 **tag_ids** | **int[]** |  |
 **tag_names** | **string[]** |  |
 **tax_code** | **int** | 税区分コード |

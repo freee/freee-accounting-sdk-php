@@ -89,9 +89,9 @@ $apiInstance = new Freee\Accounting\Api\CompaniesApi(
     $config
 );
 $id = 56; // int | 事業所ID
-$details = True; // bool | 取得情報に勘定科目・税区分コード・税区分・品目・取引先・部門・メモタグ・口座の一覧を含める
+$details = True; // bool | 取得情報に勘定科目・税区分コード・品目・取引先・部門・メモタグ・口座の一覧を含める
 $account_items = True; // bool | 取得情報に勘定科目一覧を含める
-$taxes = True; // bool | 取得情報に税区分コード・税区分一覧を含める
+$taxes = True; // bool | 取得情報に税区分コード一覧を含める
 $items = True; // bool | 取得情報に品目一覧を含める
 $partners = True; // bool | 取得情報に取引先一覧を含める
 $sections = True; // bool | 取得情報に部門一覧を含める
@@ -111,9 +111,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 事業所ID |
- **details** | **bool**| 取得情報に勘定科目・税区分コード・税区分・品目・取引先・部門・メモタグ・口座の一覧を含める | [optional]
+ **details** | **bool**| 取得情報に勘定科目・税区分コード・品目・取引先・部門・メモタグ・口座の一覧を含める | [optional]
  **account_items** | **bool**| 取得情報に勘定科目一覧を含める | [optional]
- **taxes** | **bool**| 取得情報に税区分コード・税区分一覧を含める | [optional]
+ **taxes** | **bool**| 取得情報に税区分コード一覧を含める | [optional]
  **items** | **bool**| 取得情報に品目一覧を含める | [optional]
  **partners** | **bool**| 取得情報に取引先一覧を含める | [optional]
  **sections** | **bool**| 取得情報に部門一覧を含める | [optional]

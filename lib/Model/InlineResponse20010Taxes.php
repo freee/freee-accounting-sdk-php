@@ -293,7 +293,7 @@ class InlineResponse20010Taxes implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets available
      *
-     * @param bool $available true: 使用する、false: 使用しない
+     * @param bool $available 税区分の使用設定。true: 使用する、false: 使用しない
      *
      * @return self
      */

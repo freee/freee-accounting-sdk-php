@@ -932,7 +932,7 @@ class PaymentRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets draft
      *
-     * @param bool $draft 支払依頼のステータス<br> falseを指定した時は申請中（in_progress）で支払依頼を更新します。<br> trueを指定した時は下書き（draft）で支払依頼を更新します。<br> 未指定の時は下書きとみなして支払依頼を更新します。
+     * @param bool $draft 支払依頼のステータス<br> falseを指定した時は申請中（in_progress）で支払依頼を更新します。<br> trueを指定した時は下書き（draft）で支払依頼を更新します。
      *
      * @return self
      */

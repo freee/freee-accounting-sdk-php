@@ -88,7 +88,6 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
         'street_name2' => 'string',
         'tax_at_source_calc_type' => 'int',
         'tax_codes' => '\Freee\Accounting\Model\CompanyResponseCompanyTaxCodes[]',
-        'taxes' => '\Freee\Accounting\Model\CompanyResponseCompanyTaxes[]',
         'txn_number_format' => 'string',
         'use_partner_code' => 'bool',
         'walletables' => '\Freee\Accounting\Model\CompanyResponseCompanyWalletables[]',
@@ -133,7 +132,6 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
         'street_name2' => null,
         'tax_at_source_calc_type' => null,
         'tax_codes' => null,
-        'taxes' => null,
         'txn_number_format' => null,
         'use_partner_code' => null,
         'walletables' => null,
@@ -197,7 +195,6 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
         'street_name2' => 'street_name2',
         'tax_at_source_calc_type' => 'tax_at_source_calc_type',
         'tax_codes' => 'tax_codes',
-        'taxes' => 'taxes',
         'txn_number_format' => 'txn_number_format',
         'use_partner_code' => 'use_partner_code',
         'walletables' => 'walletables',
@@ -240,7 +237,6 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
         'street_name2' => 'setStreetName2',
         'tax_at_source_calc_type' => 'setTaxAtSourceCalcType',
         'tax_codes' => 'setTaxCodes',
-        'taxes' => 'setTaxes',
         'txn_number_format' => 'setTxnNumberFormat',
         'use_partner_code' => 'setUsePartnerCode',
         'walletables' => 'setWalletables',
@@ -283,7 +279,6 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
         'street_name2' => 'getStreetName2',
         'tax_at_source_calc_type' => 'getTaxAtSourceCalcType',
         'tax_codes' => 'getTaxCodes',
-        'taxes' => 'getTaxes',
         'txn_number_format' => 'getTxnNumberFormat',
         'use_partner_code' => 'getUsePartnerCode',
         'walletables' => 'getWalletables',
@@ -723,7 +718,6 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
         $this->container['street_name2'] = $data['street_name2'] ?? null;
         $this->container['tax_at_source_calc_type'] = $data['tax_at_source_calc_type'] ?? null;
         $this->container['tax_codes'] = $data['tax_codes'] ?? null;
-        $this->container['taxes'] = $data['taxes'] ?? null;
         $this->container['txn_number_format'] = $data['txn_number_format'] ?? null;
         $this->container['use_partner_code'] = $data['use_partner_code'] ?? null;
         $this->container['walletables'] = $data['walletables'] ?? null;
@@ -1755,30 +1749,6 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     public function setTaxCodes($tax_codes)
     {
         $this->container['tax_codes'] = $tax_codes;
-
-        return $this;
-    }
-
-    /**
-     * Gets taxes
-     *
-     * @return \Freee\Accounting\Model\CompanyResponseCompanyTaxes[]|null
-     */
-    public function getTaxes()
-    {
-        return $this->container['taxes'];
-    }
-
-    /**
-     * Sets taxes
-     *
-     * @param \Freee\Accounting\Model\CompanyResponseCompanyTaxes[]|null $taxes taxes
-     *
-     * @return self
-     */
-    public function setTaxes($taxes)
-    {
-        $this->container['taxes'] = $taxes;
 
         return $this;
     }

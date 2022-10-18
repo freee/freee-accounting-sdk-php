@@ -244,7 +244,7 @@ class PartnerCreateParamsPartnerDocSettingAttributes implements ModelInterface, 
     /**
      * Sets sending_method
      *
-     * @param string|null $sending_method 請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送)
+     * @param string|null $sending_method 請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送、null:設定しない)
      *
      * @return self
      */

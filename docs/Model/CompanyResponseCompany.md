@@ -33,7 +33,6 @@ Name | Type | Description | Notes
 **street_name2** | **string** | 建物名・部屋番号など |
 **tax_at_source_calc_type** | **int** | 源泉徴収税計算（0: 消費税を含める、1: 消費税を含めない） |
 **tax_codes** | [**\Freee\Accounting\Model\CompanyResponseCompanyTaxCodes[]**](CompanyResponseCompanyTaxCodes.md) |  | [optional]
-**taxes** | [**\Freee\Accounting\Model\CompanyResponseCompanyTaxes[]**](CompanyResponseCompanyTaxes.md) |  | [optional]
 **txn_number_format** | **string** | 仕訳番号形式（not_used: 使用しない、digits: 数字（例：5091824）、alnum: 英数字（例：59J0P）） |
 **use_partner_code** | **bool** | 取引先コードの利用設定（true: 有効、 false: 無効） |
 **walletables** | [**\Freee\Accounting\Model\CompanyResponseCompanyWalletables[]**](CompanyResponseCompanyWalletables.md) |  | [optional]

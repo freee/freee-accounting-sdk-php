@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **approval_flow_route_id** | **int** | 申請経路ID |
 **approver_id** | **int** | 承認者のユーザーID | [optional]
 **company_id** | **int** | 事業所ID |
-**draft** | **bool** | falseの時、in_progress:申請中で更新する。それ以外の時はdraft:下書きで更新する |
+**draft** | **bool** | 各種申請のステータス&lt;br&gt; falseを指定した時は申請中（in_progress）で各種申請を更新します。&lt;br&gt; trueを指定した時は下書き（draft）で各種申請を更新します。 |
 **request_items** | [**\Freee\Accounting\Model\ApprovalRequestCreateParamsRequestItems[]**](ApprovalRequestCreateParamsRequestItems.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

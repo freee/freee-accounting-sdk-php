@@ -1,6 +1,6 @@
 <?php
 /**
- * AccountItemsResponseAccountItemsTest
+ * AccountItemUpdateParamsAccountItemTest
  *
  * PHP version 7.3
  *
@@ -31,15 +31,15 @@ namespace Freee\Accounting\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * AccountItemsResponseAccountItemsTest Class Doc Comment
+ * AccountItemUpdateParamsAccountItemTest Class Doc Comment
  *
  * @category    Class
- * @description AccountItemsResponseAccountItems
+ * @description AccountItemUpdateParamsAccountItem
  * @package     Freee\Accounting
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class AccountItemsResponseAccountItemsTest extends TestCase
+class AccountItemUpdateParamsAccountItemTest extends TestCase
 {
 
     /**
@@ -71,18 +71,9 @@ class AccountItemsResponseAccountItemsTest extends TestCase
     }
 
     /**
-     * Test "AccountItemsResponseAccountItems"
+     * Test "AccountItemUpdateParamsAccountItem"
      */
-    public function testAccountItemsResponseAccountItems()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "account_category"
-     */
-    public function testPropertyAccountCategory()
+    public function testAccountItemUpdateParamsAccountItem()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -98,18 +89,9 @@ class AccountItemsResponseAccountItemsTest extends TestCase
     }
 
     /**
-     * Test attribute "available"
+     * Test attribute "accumulated_dep_account_item_id"
      */
-    public function testPropertyAvailable()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "categories"
-     */
-    public function testPropertyCategories()
+    public function testPropertyAccumulatedDepAccountItemId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -125,36 +107,9 @@ class AccountItemsResponseAccountItemsTest extends TestCase
     }
 
     /**
-     * Test attribute "corresponding_expense_name"
-     */
-    public function testPropertyCorrespondingExpenseName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "corresponding_income_id"
      */
     public function testPropertyCorrespondingIncomeId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "corresponding_income_name"
-     */
-    public function testPropertyCorrespondingIncomeName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "default_tax_code"
-     */
-    public function testPropertyDefaultTaxCode()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -170,9 +125,9 @@ class AccountItemsResponseAccountItemsTest extends TestCase
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "items"
      */
-    public function testPropertyId()
+    public function testPropertyItems()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -182,6 +137,24 @@ class AccountItemsResponseAccountItemsTest extends TestCase
      * Test attribute "name"
      */
     public function testPropertyName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partners"
+     */
+    public function testPropertyPartners()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "searchable"
+     */
+    public function testPropertySearchable()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -209,15 +182,6 @@ class AccountItemsResponseAccountItemsTest extends TestCase
      * Test attribute "tax_code"
      */
     public function testPropertyTaxCode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "walletable_id"
-     */
-    public function testPropertyWalletableId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

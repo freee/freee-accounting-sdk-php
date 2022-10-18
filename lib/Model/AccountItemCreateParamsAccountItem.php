@@ -1,6 +1,6 @@
 <?php
 /**
- * AccountItemsResponseAccountItems
+ * AccountItemCreateParamsAccountItem
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Freee\Accounting\ObjectSerializer;
 
 /**
- * AccountItemsResponseAccountItems Class Doc Comment
+ * AccountItemCreateParamsAccountItem Class Doc Comment
  *
  * @category Class
  * @package  Freee\Accounting
@@ -42,7 +42,7 @@ use \Freee\Accounting\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class AccountItemsResponseAccountItems implements ModelInterface, ArrayAccess, \JsonSerializable
+class AccountItemCreateParamsAccountItem implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class AccountItemsResponseAccountItems implements ModelInterface, ArrayAccess, \
       *
       * @var string
       */
-    protected static $openAPIModelName = 'accountItemsResponse_account_items';
+    protected static $openAPIModelName = 'accountItemCreateParams_account_item';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,22 +59,18 @@ class AccountItemsResponseAccountItems implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'account_category' => 'string',
         'account_category_id' => 'int',
-        'available' => 'bool',
-        'categories' => 'string[]',
+        'accumulated_dep_account_item_id' => 'int',
         'corresponding_expense_id' => 'int',
-        'corresponding_expense_name' => 'string',
         'corresponding_income_id' => 'int',
-        'corresponding_income_name' => 'string',
-        'default_tax_code' => 'int',
         'group_name' => 'string',
-        'id' => 'int',
+        'items' => '\Freee\Accounting\Model\AccountItemCreateParamsAccountItemItems[]',
         'name' => 'string',
+        'partners' => '\Freee\Accounting\Model\AccountItemCreateParamsAccountItemItems[]',
+        'searchable' => 'int',
         'shortcut' => 'string',
         'shortcut_num' => 'string',
-        'tax_code' => 'int',
-        'walletable_id' => 'int'
+        'tax_code' => 'int'
     ];
 
     /**
@@ -85,22 +81,18 @@ class AccountItemsResponseAccountItems implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'account_category' => null,
         'account_category_id' => null,
-        'available' => null,
-        'categories' => null,
+        'accumulated_dep_account_item_id' => null,
         'corresponding_expense_id' => null,
-        'corresponding_expense_name' => null,
         'corresponding_income_id' => null,
-        'corresponding_income_name' => null,
-        'default_tax_code' => null,
         'group_name' => null,
-        'id' => null,
+        'items' => null,
         'name' => null,
+        'partners' => null,
+        'searchable' => null,
         'shortcut' => null,
         'shortcut_num' => null,
-        'tax_code' => null,
-        'walletable_id' => null
+        'tax_code' => null
     ];
 
     /**
@@ -130,22 +122,18 @@ class AccountItemsResponseAccountItems implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $attributeMap = [
-        'account_category' => 'account_category',
         'account_category_id' => 'account_category_id',
-        'available' => 'available',
-        'categories' => 'categories',
+        'accumulated_dep_account_item_id' => 'accumulated_dep_account_item_id',
         'corresponding_expense_id' => 'corresponding_expense_id',
-        'corresponding_expense_name' => 'corresponding_expense_name',
         'corresponding_income_id' => 'corresponding_income_id',
-        'corresponding_income_name' => 'corresponding_income_name',
-        'default_tax_code' => 'default_tax_code',
         'group_name' => 'group_name',
-        'id' => 'id',
+        'items' => 'items',
         'name' => 'name',
+        'partners' => 'partners',
+        'searchable' => 'searchable',
         'shortcut' => 'shortcut',
         'shortcut_num' => 'shortcut_num',
-        'tax_code' => 'tax_code',
-        'walletable_id' => 'walletable_id'
+        'tax_code' => 'tax_code'
     ];
 
     /**
@@ -154,22 +142,18 @@ class AccountItemsResponseAccountItems implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-        'account_category' => 'setAccountCategory',
         'account_category_id' => 'setAccountCategoryId',
-        'available' => 'setAvailable',
-        'categories' => 'setCategories',
+        'accumulated_dep_account_item_id' => 'setAccumulatedDepAccountItemId',
         'corresponding_expense_id' => 'setCorrespondingExpenseId',
-        'corresponding_expense_name' => 'setCorrespondingExpenseName',
         'corresponding_income_id' => 'setCorrespondingIncomeId',
-        'corresponding_income_name' => 'setCorrespondingIncomeName',
-        'default_tax_code' => 'setDefaultTaxCode',
         'group_name' => 'setGroupName',
-        'id' => 'setId',
+        'items' => 'setItems',
         'name' => 'setName',
+        'partners' => 'setPartners',
+        'searchable' => 'setSearchable',
         'shortcut' => 'setShortcut',
         'shortcut_num' => 'setShortcutNum',
-        'tax_code' => 'setTaxCode',
-        'walletable_id' => 'setWalletableId'
+        'tax_code' => 'setTaxCode'
     ];
 
     /**
@@ -178,22 +162,18 @@ class AccountItemsResponseAccountItems implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $getters = [
-        'account_category' => 'getAccountCategory',
         'account_category_id' => 'getAccountCategoryId',
-        'available' => 'getAvailable',
-        'categories' => 'getCategories',
+        'accumulated_dep_account_item_id' => 'getAccumulatedDepAccountItemId',
         'corresponding_expense_id' => 'getCorrespondingExpenseId',
-        'corresponding_expense_name' => 'getCorrespondingExpenseName',
         'corresponding_income_id' => 'getCorrespondingIncomeId',
-        'corresponding_income_name' => 'getCorrespondingIncomeName',
-        'default_tax_code' => 'getDefaultTaxCode',
         'group_name' => 'getGroupName',
-        'id' => 'getId',
+        'items' => 'getItems',
         'name' => 'getName',
+        'partners' => 'getPartners',
+        'searchable' => 'getSearchable',
         'shortcut' => 'getShortcut',
         'shortcut_num' => 'getShortcutNum',
-        'tax_code' => 'getTaxCode',
-        'walletable_id' => 'getWalletableId'
+        'tax_code' => 'getTaxCode'
     ];
 
     /**
@@ -253,22 +233,18 @@ class AccountItemsResponseAccountItems implements ModelInterface, ArrayAccess, \
      */
     public function __construct(array $data = null)
     {
-        $this->container['account_category'] = $data['account_category'] ?? null;
         $this->container['account_category_id'] = $data['account_category_id'] ?? null;
-        $this->container['available'] = $data['available'] ?? null;
-        $this->container['categories'] = $data['categories'] ?? null;
+        $this->container['accumulated_dep_account_item_id'] = $data['accumulated_dep_account_item_id'] ?? null;
         $this->container['corresponding_expense_id'] = $data['corresponding_expense_id'] ?? null;
-        $this->container['corresponding_expense_name'] = $data['corresponding_expense_name'] ?? null;
         $this->container['corresponding_income_id'] = $data['corresponding_income_id'] ?? null;
-        $this->container['corresponding_income_name'] = $data['corresponding_income_name'] ?? null;
-        $this->container['default_tax_code'] = $data['default_tax_code'] ?? null;
         $this->container['group_name'] = $data['group_name'] ?? null;
-        $this->container['id'] = $data['id'] ?? null;
+        $this->container['items'] = $data['items'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['partners'] = $data['partners'] ?? null;
+        $this->container['searchable'] = $data['searchable'] ?? null;
         $this->container['shortcut'] = $data['shortcut'] ?? null;
         $this->container['shortcut_num'] = $data['shortcut_num'] ?? null;
         $this->container['tax_code'] = $data['tax_code'] ?? null;
-        $this->container['walletable_id'] = $data['walletable_id'] ?? null;
     }
 
     /**
@@ -280,9 +256,6 @@ class AccountItemsResponseAccountItems implements ModelInterface, ArrayAccess, \
     {
         $invalidProperties = [];
 
-        if ($this->container['account_category'] === null) {
-            $invalidProperties[] = "'account_category' can't be null";
-        }
         if ($this->container['account_category_id'] === null) {
             $invalidProperties[] = "'account_category_id' can't be null";
         }
@@ -294,37 +267,30 @@ class AccountItemsResponseAccountItems implements ModelInterface, ArrayAccess, \
             $invalidProperties[] = "invalid value for 'account_category_id', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['available'] === null) {
-            $invalidProperties[] = "'available' can't be null";
+        if ($this->container['corresponding_expense_id'] === null) {
+            $invalidProperties[] = "'corresponding_expense_id' can't be null";
         }
-        if ($this->container['categories'] === null) {
-            $invalidProperties[] = "'categories' can't be null";
+        if ($this->container['corresponding_income_id'] === null) {
+            $invalidProperties[] = "'corresponding_income_id' can't be null";
         }
-        if ($this->container['default_tax_code'] === null) {
-            $invalidProperties[] = "'default_tax_code' can't be null";
+        if ($this->container['group_name'] === null) {
+            $invalidProperties[] = "'group_name' can't be null";
         }
-        if (($this->container['default_tax_code'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'default_tax_code', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['default_tax_code'] < 0)) {
-            $invalidProperties[] = "invalid value for 'default_tax_code', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if (($this->container['id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
-        }
-
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
+        if ((mb_strlen($this->container['name']) > 30)) {
+            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 30.";
+        }
+
+        if (!is_null($this->container['searchable']) && ($this->container['searchable'] > 3)) {
+            $invalidProperties[] = "invalid value for 'searchable', must be smaller than or equal to 3.";
+        }
+
+        if (!is_null($this->container['searchable']) && ($this->container['searchable'] < 2)) {
+            $invalidProperties[] = "invalid value for 'searchable', must be bigger than or equal to 2.";
+        }
+
         if (!is_null($this->container['shortcut']) && (mb_strlen($this->container['shortcut']) > 20)) {
             $invalidProperties[] = "invalid value for 'shortcut', the character length must be smaller than or equal to 20.";
         }
@@ -344,17 +310,6 @@ class AccountItemsResponseAccountItems implements ModelInterface, ArrayAccess, \
             $invalidProperties[] = "invalid value for 'tax_code', must be bigger than or equal to 0.";
         }
 
-        if ($this->container['walletable_id'] === null) {
-            $invalidProperties[] = "'walletable_id' can't be null";
-        }
-        if (($this->container['walletable_id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'walletable_id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (($this->container['walletable_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'walletable_id', must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -371,30 +326,6 @@ class AccountItemsResponseAccountItems implements ModelInterface, ArrayAccess, \
 
 
     /**
-     * Gets account_category
-     *
-     * @return string
-     */
-    public function getAccountCategory()
-    {
-        return $this->container['account_category'];
-    }
-
-    /**
-     * Sets account_category
-     *
-     * @param string $account_category 勘定科目カテゴリー
-     *
-     * @return self
-     */
-    public function setAccountCategory($account_category)
-    {
-        $this->container['account_category'] = $account_category;
-
-        return $this;
-    }
-
-    /**
      * Gets account_category_id
      *
      * @return int
@@ -407,7 +338,7 @@ class AccountItemsResponseAccountItems implements ModelInterface, ArrayAccess, \
     /**
      * Sets account_category_id
      *
-     * @param int $account_category_id 勘定科目のカテゴリーID
+     * @param int $account_category_id 勘定科目カテゴリーID Selectablesフォーム用選択項目情報エンドポイント(account_groups.account_category_id)で取得可能です
      *
      * @return self
      */
@@ -415,10 +346,10 @@ class AccountItemsResponseAccountItems implements ModelInterface, ArrayAccess, \
     {
 
         if (($account_category_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $account_category_id when calling AccountItemsResponseAccountItems., must be smaller than or equal to 2147483647.');
+            throw new \InvalidArgumentException('invalid value for $account_category_id when calling AccountItemCreateParamsAccountItem., must be smaller than or equal to 2147483647.');
         }
         if (($account_category_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $account_category_id when calling AccountItemsResponseAccountItems., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid value for $account_category_id when calling AccountItemCreateParamsAccountItem., must be bigger than or equal to 1.');
         }
 
         $this->container['account_category_id'] = $account_category_id;
@@ -427,49 +358,25 @@ class AccountItemsResponseAccountItems implements ModelInterface, ArrayAccess, \
     }
 
     /**
-     * Gets available
+     * Gets accumulated_dep_account_item_id
      *
-     * @return bool
+     * @return int|null
      */
-    public function getAvailable()
+    public function getAccumulatedDepAccountItemId()
     {
-        return $this->container['available'];
+        return $this->container['accumulated_dep_account_item_id'];
     }
 
     /**
-     * Sets available
+     * Sets accumulated_dep_account_item_id
      *
-     * @param bool $available 勘定科目の使用設定（true: 使用する、false: 使用しない）
+     * @param int|null $accumulated_dep_account_item_id 減価償却累計額勘定科目ID（法人のみ利用可能）
      *
      * @return self
      */
-    public function setAvailable($available)
+    public function setAccumulatedDepAccountItemId($accumulated_dep_account_item_id)
     {
-        $this->container['available'] = $available;
-
-        return $this;
-    }
-
-    /**
-     * Gets categories
-     *
-     * @return string[]
-     */
-    public function getCategories()
-    {
-        return $this->container['categories'];
-    }
-
-    /**
-     * Sets categories
-     *
-     * @param string[] $categories categories
-     *
-     * @return self
-     */
-    public function setCategories($categories)
-    {
-        $this->container['categories'] = $categories;
+        $this->container['accumulated_dep_account_item_id'] = $accumulated_dep_account_item_id;
 
         return $this;
     }
@@ -477,7 +384,7 @@ class AccountItemsResponseAccountItems implements ModelInterface, ArrayAccess, \
     /**
      * Gets corresponding_expense_id
      *
-     * @return int|null
+     * @return int
      */
     public function getCorrespondingExpenseId()
     {
@@ -487,7 +394,7 @@ class AccountItemsResponseAccountItems implements ModelInterface, ArrayAccess, \
     /**
      * Sets corresponding_expense_id
      *
-     * @param int|null $corresponding_expense_id 支出取引相手勘定科目ID
+     * @param int $corresponding_expense_id 支出取引相手勘定科目ID
      *
      * @return self
      */
@@ -499,33 +406,9 @@ class AccountItemsResponseAccountItems implements ModelInterface, ArrayAccess, \
     }
 
     /**
-     * Gets corresponding_expense_name
-     *
-     * @return string|null
-     */
-    public function getCorrespondingExpenseName()
-    {
-        return $this->container['corresponding_expense_name'];
-    }
-
-    /**
-     * Sets corresponding_expense_name
-     *
-     * @param string|null $corresponding_expense_name 支出取引相手勘定科目名
-     *
-     * @return self
-     */
-    public function setCorrespondingExpenseName($corresponding_expense_name)
-    {
-        $this->container['corresponding_expense_name'] = $corresponding_expense_name;
-
-        return $this;
-    }
-
-    /**
      * Gets corresponding_income_id
      *
-     * @return int|null
+     * @return int
      */
     public function getCorrespondingIncomeId()
     {
@@ -535,7 +418,7 @@ class AccountItemsResponseAccountItems implements ModelInterface, ArrayAccess, \
     /**
      * Sets corresponding_income_id
      *
-     * @param int|null $corresponding_income_id 収入取引相手勘定科目ID
+     * @param int $corresponding_income_id 収入取引相手勘定科目ID
      *
      * @return self
      */
@@ -547,65 +430,9 @@ class AccountItemsResponseAccountItems implements ModelInterface, ArrayAccess, \
     }
 
     /**
-     * Gets corresponding_income_name
-     *
-     * @return string|null
-     */
-    public function getCorrespondingIncomeName()
-    {
-        return $this->container['corresponding_income_name'];
-    }
-
-    /**
-     * Sets corresponding_income_name
-     *
-     * @param string|null $corresponding_income_name 収入取引相手勘定科目名
-     *
-     * @return self
-     */
-    public function setCorrespondingIncomeName($corresponding_income_name)
-    {
-        $this->container['corresponding_income_name'] = $corresponding_income_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets default_tax_code
-     *
-     * @return int
-     */
-    public function getDefaultTaxCode()
-    {
-        return $this->container['default_tax_code'];
-    }
-
-    /**
-     * Sets default_tax_code
-     *
-     * @param int $default_tax_code デフォルト設定がされている税区分コード
-     *
-     * @return self
-     */
-    public function setDefaultTaxCode($default_tax_code)
-    {
-
-        if (($default_tax_code > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $default_tax_code when calling AccountItemsResponseAccountItems., must be smaller than or equal to 2147483647.');
-        }
-        if (($default_tax_code < 0)) {
-            throw new \InvalidArgumentException('invalid value for $default_tax_code when calling AccountItemsResponseAccountItems., must be bigger than or equal to 0.');
-        }
-
-        $this->container['default_tax_code'] = $default_tax_code;
-
-        return $this;
-    }
-
-    /**
      * Gets group_name
      *
-     * @return string|null
+     * @return string
      */
     public function getGroupName()
     {
@@ -615,7 +442,7 @@ class AccountItemsResponseAccountItems implements ModelInterface, ArrayAccess, \
     /**
      * Sets group_name
      *
-     * @param string|null $group_name 決算書表示名（小カテゴリー）
+     * @param string $group_name 決算書表示名（小カテゴリー） Selectablesフォーム用選択項目情報エンドポイント(account_groups.name)で取得可能です
      *
      * @return self
      */
@@ -627,33 +454,25 @@ class AccountItemsResponseAccountItems implements ModelInterface, ArrayAccess, \
     }
 
     /**
-     * Gets id
+     * Gets items
      *
-     * @return int
+     * @return \Freee\Accounting\Model\AccountItemCreateParamsAccountItemItems[]|null
      */
-    public function getId()
+    public function getItems()
     {
-        return $this->container['id'];
+        return $this->container['items'];
     }
 
     /**
-     * Sets id
+     * Sets items
      *
-     * @param int $id 勘定科目ID
+     * @param \Freee\Accounting\Model\AccountItemCreateParamsAccountItemItems[]|null $items 品目
      *
      * @return self
      */
-    public function setId($id)
+    public function setItems($items)
     {
-
-        if (($id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling AccountItemsResponseAccountItems., must be smaller than or equal to 2147483647.');
-        }
-        if (($id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling AccountItemsResponseAccountItems., must be bigger than or equal to 1.');
-        }
-
-        $this->container['id'] = $id;
+        $this->container['items'] = $items;
 
         return $this;
     }
@@ -677,7 +496,67 @@ class AccountItemsResponseAccountItems implements ModelInterface, ArrayAccess, \
      */
     public function setName($name)
     {
+        if ((mb_strlen($name) > 30)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling AccountItemCreateParamsAccountItem., must be smaller than or equal to 30.');
+        }
+
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets partners
+     *
+     * @return \Freee\Accounting\Model\AccountItemCreateParamsAccountItemItems[]|null
+     */
+    public function getPartners()
+    {
+        return $this->container['partners'];
+    }
+
+    /**
+     * Sets partners
+     *
+     * @param \Freee\Accounting\Model\AccountItemCreateParamsAccountItemItems[]|null $partners 取引先
+     *
+     * @return self
+     */
+    public function setPartners($partners)
+    {
+        $this->container['partners'] = $partners;
+
+        return $this;
+    }
+
+    /**
+     * Gets searchable
+     *
+     * @return int|null
+     */
+    public function getSearchable()
+    {
+        return $this->container['searchable'];
+    }
+
+    /**
+     * Sets searchable
+     *
+     * @param int|null $searchable 検索可能:2, 検索不可：3(登録時未指定の場合は2で登録されます。更新時未指定の場合はsearchableは変更されません。)
+     *
+     * @return self
+     */
+    public function setSearchable($searchable)
+    {
+
+        if (!is_null($searchable) && ($searchable > 3)) {
+            throw new \InvalidArgumentException('invalid value for $searchable when calling AccountItemCreateParamsAccountItem., must be smaller than or equal to 3.');
+        }
+        if (!is_null($searchable) && ($searchable < 2)) {
+            throw new \InvalidArgumentException('invalid value for $searchable when calling AccountItemCreateParamsAccountItem., must be bigger than or equal to 2.');
+        }
+
+        $this->container['searchable'] = $searchable;
 
         return $this;
     }
@@ -702,7 +581,7 @@ class AccountItemsResponseAccountItems implements ModelInterface, ArrayAccess, \
     public function setShortcut($shortcut)
     {
         if (!is_null($shortcut) && (mb_strlen($shortcut) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $shortcut when calling AccountItemsResponseAccountItems., must be smaller than or equal to 20.');
+            throw new \InvalidArgumentException('invalid length for $shortcut when calling AccountItemCreateParamsAccountItem., must be smaller than or equal to 20.');
         }
 
         $this->container['shortcut'] = $shortcut;
@@ -723,14 +602,14 @@ class AccountItemsResponseAccountItems implements ModelInterface, ArrayAccess, \
     /**
      * Sets shortcut_num
      *
-     * @param string|null $shortcut_num ショートカット2(勘定科目コード) (20文字以内)
+     * @param string|null $shortcut_num ショートカット2(勘定科目コード)(20文字以内)
      *
      * @return self
      */
     public function setShortcutNum($shortcut_num)
     {
         if (!is_null($shortcut_num) && (mb_strlen($shortcut_num) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $shortcut_num when calling AccountItemsResponseAccountItems., must be smaller than or equal to 20.');
+            throw new \InvalidArgumentException('invalid length for $shortcut_num when calling AccountItemCreateParamsAccountItem., must be smaller than or equal to 20.');
         }
 
         $this->container['shortcut_num'] = $shortcut_num;
@@ -759,45 +638,13 @@ class AccountItemsResponseAccountItems implements ModelInterface, ArrayAccess, \
     {
 
         if (($tax_code > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $tax_code when calling AccountItemsResponseAccountItems., must be smaller than or equal to 2147483647.');
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling AccountItemCreateParamsAccountItem., must be smaller than or equal to 2147483647.');
         }
         if (($tax_code < 0)) {
-            throw new \InvalidArgumentException('invalid value for $tax_code when calling AccountItemsResponseAccountItems., must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value for $tax_code when calling AccountItemCreateParamsAccountItem., must be bigger than or equal to 0.');
         }
 
         $this->container['tax_code'] = $tax_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets walletable_id
-     *
-     * @return int
-     */
-    public function getWalletableId()
-    {
-        return $this->container['walletable_id'];
-    }
-
-    /**
-     * Sets walletable_id
-     *
-     * @param int $walletable_id 口座ID
-     *
-     * @return self
-     */
-    public function setWalletableId($walletable_id)
-    {
-
-        if (($walletable_id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $walletable_id when calling AccountItemsResponseAccountItems., must be smaller than or equal to 2147483647.');
-        }
-        if (($walletable_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $walletable_id when calling AccountItemsResponseAccountItems., must be bigger than or equal to 1.');
-        }
-
-        $this->container['walletable_id'] = $walletable_id;
 
         return $this;
     }

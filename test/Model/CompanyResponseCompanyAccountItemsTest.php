@@ -89,15 +89,6 @@ class CompanyResponseCompanyAccountItemsTest extends TestCase
     }
 
     /**
-     * Test attribute "default_tax_id"
-     */
-    public function testPropertyDefaultTaxId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "id"
      */
     public function testPropertyId()
