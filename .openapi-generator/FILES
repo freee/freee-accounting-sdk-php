@@ -222,8 +222,10 @@ docs/Model/SelectablesIndexResponseAccountCategories.md
 docs/Model/SelectablesIndexResponseAccountGroups.md
 docs/Model/SelectablesIndexResponseAccountItems.md
 docs/Model/SelectablesIndexResponseDefaultTax.md
+docs/Model/SelectablesIndexResponseDefaultTaxTaxRate10.md
 docs/Model/SelectablesIndexResponseDefaultTaxTaxRate5.md
 docs/Model/SelectablesIndexResponseDefaultTaxTaxRate8.md
+docs/Model/SelectablesIndexResponseDefaultTaxTaxRateR8.md
 docs/Model/ServiceUnavailableError.md
 docs/Model/ServiceUnavailableErrorErrors.md
 docs/Model/Tag.md
@@ -536,8 +538,10 @@ lib/Model/SelectablesIndexResponseAccountCategories.php
 lib/Model/SelectablesIndexResponseAccountGroups.php
 lib/Model/SelectablesIndexResponseAccountItems.php
 lib/Model/SelectablesIndexResponseDefaultTax.php
+lib/Model/SelectablesIndexResponseDefaultTaxTaxRate10.php
 lib/Model/SelectablesIndexResponseDefaultTaxTaxRate5.php
 lib/Model/SelectablesIndexResponseDefaultTaxTaxRate8.php
+lib/Model/SelectablesIndexResponseDefaultTaxTaxRateR8.php
 lib/Model/ServiceUnavailableError.php
 lib/Model/ServiceUnavailableErrorErrors.php
 lib/Model/Tag.php
@@ -845,8 +849,10 @@ test/Model/SegmentTagTest.php
 test/Model/SelectablesIndexResponseAccountCategoriesTest.php
 test/Model/SelectablesIndexResponseAccountGroupsTest.php
 test/Model/SelectablesIndexResponseAccountItemsTest.php
+test/Model/SelectablesIndexResponseDefaultTaxTaxRate10Test.php
 test/Model/SelectablesIndexResponseDefaultTaxTaxRate5Test.php
 test/Model/SelectablesIndexResponseDefaultTaxTaxRate8Test.php
+test/Model/SelectablesIndexResponseDefaultTaxTaxRateR8Test.php
 test/Model/SelectablesIndexResponseDefaultTaxTest.php
 test/Model/SelectablesIndexResponseTest.php
 test/Model/ServiceUnavailableErrorErrorsTest.php

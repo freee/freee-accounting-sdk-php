@@ -219,7 +219,7 @@ $start_update_date = 'start_update_date_example'; // string | 更新日で絞り
 $end_update_date = 'end_update_date_example'; // string | 更新日で絞り込み：終了日(yyyy-mm-dd)
 $offset = 56; // int | 取得レコードのオフセット (デフォルト: 0)
 $limit = 56; // int | 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000)
-$keyword = 'keyword_example'; // string | 検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致
+$keyword = 'keyword_example'; // string | 検索キーワード<br> 取引先コード・取引先名・正式名称・カナ名称・ショートカットキー1・2のいずれかに対する部分一致。<br> 以下のいずれかで区切って複数キーワードを指定した場合はAND検索となります。 <ul> <li>半角スペース</li> <li>全角スペース</li> <li>タブ</li> </ul>
 
 try {
     $result = $apiInstance->getPartners($company_id, $start_update_date, $end_update_date, $offset, $limit, $keyword);
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
  **end_update_date** | **string**| 更新日で絞り込み：終了日(yyyy-mm-dd) | [optional]
  **offset** | **int**| 取得レコードのオフセット (デフォルト: 0) | [optional]
  **limit** | **int**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) | [optional]
- **keyword** | **string**| 検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 | [optional]
+ **keyword** | **string**| 検索キーワード&lt;br&gt; 取引先コード・取引先名・正式名称・カナ名称・ショートカットキー1・2のいずれかに対する部分一致。&lt;br&gt; 以下のいずれかで区切って複数キーワードを指定した場合はAND検索となります。 &lt;ul&gt; &lt;li&gt;半角スペース&lt;/li&gt; &lt;li&gt;全角スペース&lt;/li&gt; &lt;li&gt;タブ&lt;/li&gt; &lt;/ul&gt; | [optional]
 
 ### Return type
 

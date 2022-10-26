@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**code** | **int** | 税区分コード | [optional]
 **id** | **int** | 税区分ID | [optional]
 **name** | **string** | 税区分 | [optional]
 
