@@ -206,8 +206,8 @@ class PartnerResponsePartnerInvoicePaymentTermAttributes implements ModelInterfa
             $invalidProperties[] = "invalid value for 'additional_months', must be smaller than or equal to 6.";
         }
 
-        if (!is_null($this->container['additional_months']) && ($this->container['additional_months'] < 1)) {
-            $invalidProperties[] = "invalid value for 'additional_months', must be bigger than or equal to 1.";
+        if (!is_null($this->container['additional_months']) && ($this->container['additional_months'] < 0)) {
+            $invalidProperties[] = "invalid value for 'additional_months', must be bigger than or equal to 0.";
         }
 
         if (!is_null($this->container['cutoff_day']) && ($this->container['cutoff_day'] > 32)) {
@@ -254,7 +254,7 @@ class PartnerResponsePartnerInvoicePaymentTermAttributes implements ModelInterfa
     /**
      * Sets additional_months
      *
-     * @param int|null $additional_months 入金月
+     * @param int|null $additional_months 入金月（当月を指定する場合は、0を指定してください。）
      *
      * @return self
      */
@@ -264,8 +264,8 @@ class PartnerResponsePartnerInvoicePaymentTermAttributes implements ModelInterfa
         if (!is_null($additional_months) && ($additional_months > 6)) {
             throw new \InvalidArgumentException('invalid value for $additional_months when calling PartnerResponsePartnerInvoicePaymentTermAttributes., must be smaller than or equal to 6.');
         }
-        if (!is_null($additional_months) && ($additional_months < 1)) {
-            throw new \InvalidArgumentException('invalid value for $additional_months when calling PartnerResponsePartnerInvoicePaymentTermAttributes., must be bigger than or equal to 1.');
+        if (!is_null($additional_months) && ($additional_months < 0)) {
+            throw new \InvalidArgumentException('invalid value for $additional_months when calling PartnerResponsePartnerInvoicePaymentTermAttributes., must be bigger than or equal to 0.');
         }
 
         $this->container['additional_months'] = $additional_months;

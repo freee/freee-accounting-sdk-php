@@ -1,6 +1,6 @@
 <?php
 /**
- * SelectablesIndexResponseDefaultTaxTaxRate8Test
+ * SelectablesIndexResponseDefaultTaxTaxRate10Test
  *
  * PHP version 7.3
  *
@@ -31,15 +31,15 @@ namespace Freee\Accounting\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * SelectablesIndexResponseDefaultTaxTaxRate8Test Class Doc Comment
+ * SelectablesIndexResponseDefaultTaxTaxRate10Test Class Doc Comment
  *
  * @category    Class
- * @description SelectablesIndexResponseDefaultTaxTaxRate8
+ * @description SelectablesIndexResponseDefaultTaxTaxRate10
  * @package     Freee\Accounting
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class SelectablesIndexResponseDefaultTaxTaxRate8Test extends TestCase
+class SelectablesIndexResponseDefaultTaxTaxRate10Test extends TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class SelectablesIndexResponseDefaultTaxTaxRate8Test extends TestCase
     }
 
     /**
-     * Test "SelectablesIndexResponseDefaultTaxTaxRate8"
+     * Test "SelectablesIndexResponseDefaultTaxTaxRate10"
      */
-    public function testSelectablesIndexResponseDefaultTaxTaxRate8()
+    public function testSelectablesIndexResponseDefaultTaxTaxRate10()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

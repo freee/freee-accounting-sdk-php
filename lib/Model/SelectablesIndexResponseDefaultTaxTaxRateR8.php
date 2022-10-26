@@ -1,6 +1,6 @@
 <?php
 /**
- * SelectablesIndexResponseDefaultTaxTaxRate5
+ * SelectablesIndexResponseDefaultTaxTaxRateR8
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Freee\Accounting\ObjectSerializer;
 
 /**
- * SelectablesIndexResponseDefaultTaxTaxRate5 Class Doc Comment
+ * SelectablesIndexResponseDefaultTaxTaxRateR8 Class Doc Comment
  *
  * @category Class
  * @package  Freee\Accounting
@@ -42,7 +42,7 @@ use \Freee\Accounting\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class SelectablesIndexResponseDefaultTaxTaxRate5 implements ModelInterface, ArrayAccess, \JsonSerializable
+class SelectablesIndexResponseDefaultTaxTaxRateR8 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class SelectablesIndexResponseDefaultTaxTaxRate5 implements ModelInterface, Arra
       *
       * @var string
       */
-    protected static $openAPIModelName = 'selectablesIndexResponse_default_tax_tax_rate_5';
+    protected static $openAPIModelName = 'selectablesIndexResponse_default_tax_tax_rate_r8';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -254,10 +254,10 @@ class SelectablesIndexResponseDefaultTaxTaxRate5 implements ModelInterface, Arra
     {
 
         if (!is_null($code) && ($code > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $code when calling SelectablesIndexResponseDefaultTaxTaxRate5., must be smaller than or equal to 2147483647.');
+            throw new \InvalidArgumentException('invalid value for $code when calling SelectablesIndexResponseDefaultTaxTaxRateR8., must be smaller than or equal to 2147483647.');
         }
         if (!is_null($code) && ($code < 0)) {
-            throw new \InvalidArgumentException('invalid value for $code when calling SelectablesIndexResponseDefaultTaxTaxRate5., must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value for $code when calling SelectablesIndexResponseDefaultTaxTaxRateR8., must be bigger than or equal to 0.');
         }
 
         $this->container['code'] = $code;
@@ -288,10 +288,10 @@ class SelectablesIndexResponseDefaultTaxTaxRate5 implements ModelInterface, Arra
     {
 
         if (!is_null($id) && ($id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling SelectablesIndexResponseDefaultTaxTaxRate5., must be smaller than or equal to 2147483647.');
+            throw new \InvalidArgumentException('invalid value for $id when calling SelectablesIndexResponseDefaultTaxTaxRateR8., must be smaller than or equal to 2147483647.');
         }
         if (!is_null($id) && ($id < 0)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling SelectablesIndexResponseDefaultTaxTaxRate5., must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value for $id when calling SelectablesIndexResponseDefaultTaxTaxRateR8., must be bigger than or equal to 0.');
         }
 
         $this->container['id'] = $id;

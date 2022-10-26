@@ -496,7 +496,7 @@ class ExpenseApplicationLineTemplateParams implements ModelInterface, ArrayAcces
     /**
      * Sets required_receipt
      *
-     * @param bool|null $required_receipt 添付ファイルの必須/任意
+     * @param bool|null $required_receipt 添付ファイルの必須/任意<br> falseを指定した時は申請時の領収書の添付を任意とします。<br> trueを指定した時は申請時の領収書の添付を必須とします。<br> 未指定の時は申請時の領収書の添付を任意とします。
      *
      * @return self
      */

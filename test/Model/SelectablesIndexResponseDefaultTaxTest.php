@@ -80,6 +80,15 @@ class SelectablesIndexResponseDefaultTaxTest extends TestCase
     }
 
     /**
+     * Test attribute "tax_rate_10"
+     */
+    public function testPropertyTaxRate10()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "tax_rate_5"
      */
     public function testPropertyTaxRate5()
@@ -92,6 +101,15 @@ class SelectablesIndexResponseDefaultTaxTest extends TestCase
      * Test attribute "tax_rate_8"
      */
     public function testPropertyTaxRate8()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tax_rate_r8"
+     */
+    public function testPropertyTaxRateR8()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
