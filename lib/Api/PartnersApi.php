@@ -1654,7 +1654,7 @@ class PartnersApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\PartnerResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError
+     * @return \Freee\Accounting\Model\PartnerResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
      */
     public function updatePartner($id, $partner_update_params)
     {
@@ -1672,7 +1672,7 @@ class PartnersApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\PartnerResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Freee\Accounting\Model\PartnerResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function updatePartnerWithHttpInfo($id, $partner_update_params)
     {
@@ -1762,6 +1762,18 @@ class PartnersApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 404:
+                    if ('\Freee\Accounting\Model\BadRequestNotFoundError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestNotFoundError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 case 500:
                     if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -1819,6 +1831,14 @@ class PartnersApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Freee\Accounting\Model\ForbiddenError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Freee\Accounting\Model\BadRequestNotFoundError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2033,7 +2053,7 @@ class PartnersApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\PartnerResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError
+     * @return \Freee\Accounting\Model\PartnerResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
      */
     public function updatePartnerByCode($code, $partner_update_params)
     {
@@ -2051,7 +2071,7 @@ class PartnersApi
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\PartnerResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Freee\Accounting\Model\PartnerResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function updatePartnerByCodeWithHttpInfo($code, $partner_update_params)
     {
@@ -2141,6 +2161,18 @@ class PartnersApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 404:
+                    if ('\Freee\Accounting\Model\BadRequestNotFoundError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestNotFoundError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 case 500:
                     if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -2198,6 +2230,14 @@ class PartnersApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Freee\Accounting\Model\ForbiddenError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Freee\Accounting\Model\BadRequestNotFoundError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
