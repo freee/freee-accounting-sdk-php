@@ -207,27 +207,6 @@ class PartnerCreateParamsPartnerBankAccountAttributes implements ModelInterface,
         return self::$openAPIModelName;
     }
 
-    const ACCOUNT_TYPE_ORDINARY = 'ordinary';
-    const ACCOUNT_TYPE_CHECKING = 'checking';
-    const ACCOUNT_TYPE_EARMARKED = 'earmarked';
-    const ACCOUNT_TYPE_SAVINGS = 'savings';
-    const ACCOUNT_TYPE_OTHER = 'other';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getAccountTypeAllowableValues()
-    {
-        return [
-            self::ACCOUNT_TYPE_ORDINARY,
-            self::ACCOUNT_TYPE_CHECKING,
-            self::ACCOUNT_TYPE_EARMARKED,
-            self::ACCOUNT_TYPE_SAVINGS,
-            self::ACCOUNT_TYPE_OTHER,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -264,15 +243,6 @@ class PartnerCreateParamsPartnerBankAccountAttributes implements ModelInterface,
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        $allowedValues = $this->getAccountTypeAllowableValues();
-        if (!is_null($this->container['account_type']) && !in_array($this->container['account_type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'account_type', must be one of '%s'",
-                $this->container['account_type'],
-                implode("', '", $allowedValues)
-            );
-        }
 
         return $invalidProperties;
     }
@@ -356,16 +326,6 @@ class PartnerCreateParamsPartnerBankAccountAttributes implements ModelInterface,
      */
     public function setAccountType($account_type)
     {
-        $allowedValues = $this->getAccountTypeAllowableValues();
-        if (!is_null($account_type) && !in_array($account_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'account_type', must be one of '%s'",
-                    $account_type,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['account_type'] = $account_type;
 
         return $this;
