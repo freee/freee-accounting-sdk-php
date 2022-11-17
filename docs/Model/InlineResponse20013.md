@@ -60,8 +60,8 @@ Name | Type | Description | Notes
 **taxes** | [**\Freee\Accounting\Model\UserCapability**](UserCapability.md) |  |
 **transfers** | [**\Freee\Accounting\Model\UserCapabilityWithSelfOnly**](UserCapabilityWithSelfOnly.md) |  |
 **user_matchers** | [**\Freee\Accounting\Model\UserCapability**](UserCapability.md) |  |
-**wallet_txns** | [**\Freee\Accounting\Model\UserCapability**](UserCapability.md) |  |
-**walletables** | [**\Freee\Accounting\Model\UserCapability**](UserCapability.md) |  |
+**wallet_txns** | [**\Freee\Accounting\Model\UserCapabilityWithConfirm**](UserCapabilityWithConfirm.md) |  |
+**walletables** | [**\Freee\Accounting\Model\UserCapabilityWithSync**](UserCapabilityWithSync.md) |  |
 **workflows** | [**\Freee\Accounting\Model\UserCapability**](UserCapability.md) |  |
 **year_end** | [**\Freee\Accounting\Model\UserCapability**](UserCapability.md) |  |
 

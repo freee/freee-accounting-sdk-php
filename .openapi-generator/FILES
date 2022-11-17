@@ -303,7 +303,9 @@ docs/Model/TrialPlTwoYearsResponse.md
 docs/Model/UnauthorizedError.md
 docs/Model/User.md
 docs/Model/UserCapability.md
+docs/Model/UserCapabilityWithConfirm.md
 docs/Model/UserCapabilityWithSelfOnly.md
+docs/Model/UserCapabilityWithSync.md
 docs/Model/UserParams.md
 docs/Model/UserResponse.md
 docs/Model/WalletTxn.md
@@ -619,7 +621,9 @@ lib/Model/TrialPlTwoYearsResponse.php
 lib/Model/UnauthorizedError.php
 lib/Model/User.php
 lib/Model/UserCapability.php
+lib/Model/UserCapabilityWithConfirm.php
 lib/Model/UserCapabilityWithSelfOnly.php
+lib/Model/UserCapabilityWithSync.php
 lib/Model/UserParams.php
 lib/Model/UserResponse.php
 lib/Model/WalletTxn.php
@@ -931,7 +935,9 @@ test/Model/TrialPlThreeYearsResponseTest.php
 test/Model/TrialPlTwoYearsResponseTest.php
 test/Model/UnauthorizedErrorTest.php
 test/Model/UserCapabilityTest.php
+test/Model/UserCapabilityWithConfirmTest.php
 test/Model/UserCapabilityWithSelfOnlyTest.php
+test/Model/UserCapabilityWithSyncTest.php
 test/Model/UserParamsTest.php
 test/Model/UserResponseTest.php
 test/Model/UserTest.php
