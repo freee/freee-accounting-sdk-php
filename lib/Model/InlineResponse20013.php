@@ -115,8 +115,8 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
         'taxes' => '\Freee\Accounting\Model\UserCapability',
         'transfers' => '\Freee\Accounting\Model\UserCapabilityWithSelfOnly',
         'user_matchers' => '\Freee\Accounting\Model\UserCapability',
-        'wallet_txns' => '\Freee\Accounting\Model\UserCapability',
-        'walletables' => '\Freee\Accounting\Model\UserCapability',
+        'wallet_txns' => '\Freee\Accounting\Model\UserCapabilityWithConfirm',
+        'walletables' => '\Freee\Accounting\Model\UserCapabilityWithSync',
         'workflows' => '\Freee\Accounting\Model\UserCapability',
         'year_end' => '\Freee\Accounting\Model\UserCapability'
     ];
@@ -2086,7 +2086,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets wallet_txns
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityWithConfirm
      */
     public function getWalletTxns()
     {
@@ -2096,7 +2096,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets wallet_txns
      *
-     * @param \Freee\Accounting\Model\UserCapability $wallet_txns wallet_txns
+     * @param \Freee\Accounting\Model\UserCapabilityWithConfirm $wallet_txns wallet_txns
      *
      * @return self
      */
@@ -2110,7 +2110,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets walletables
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityWithSync
      */
     public function getWalletables()
     {
@@ -2120,7 +2120,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets walletables
      *
-     * @param \Freee\Accounting\Model\UserCapability $walletables walletables
+     * @param \Freee\Accounting\Model\UserCapabilityWithSync $walletables walletables
      *
      * @return self
      */
