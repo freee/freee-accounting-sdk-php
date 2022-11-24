@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address_attributes** | [**\Freee\Accounting\Model\PartnersResponseAddressAttributes**](PartnersResponseAddressAttributes.md) |  | [optional]
+**address_attributes** | [**\Freee\Accounting\Model\PartnerResponsePartnerAddressAttributes**](PartnerResponsePartnerAddressAttributes.md) |  | [optional]
 **available** | **bool** | 取引先の使用設定（true: 使用する、false: 使用しない） &lt;br&gt; &lt;ul&gt;   &lt;li&gt;     本APIでpartnerを作成した場合はtrueになります。   &lt;/li&gt;   &lt;li&gt;     falseにする場合はWeb画面から変更できます。   &lt;/li&gt;   &lt;li&gt;     trueの場合、Web画面での取引登録時などに入力候補として表示されます。   &lt;/li&gt;   &lt;li&gt;     falseの場合、取引先自体は削除せず、Web画面での取引登録時などに入力候補として表示されません。ただし取引（収入／支出）の作成APIなどでfalseの取引先をパラメータに指定すれば、取引などにfalseの取引先を設定できます。   &lt;/li&gt; &lt;/ul&gt; |
 **code** | **string** | 取引先コード |
 **company_id** | **int** | 事業所ID |

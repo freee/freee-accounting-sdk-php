@@ -59,7 +59,7 @@ class PartnerResponsePartnerAddressAttributes implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'prefecture_codes' => 'int',
+        'prefecture_code' => 'int',
         'street_name1' => 'string',
         'street_name2' => 'string',
         'zipcode' => 'string'
@@ -73,7 +73,7 @@ class PartnerResponsePartnerAddressAttributes implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'prefecture_codes' => null,
+        'prefecture_code' => null,
         'street_name1' => null,
         'street_name2' => null,
         'zipcode' => null
@@ -106,7 +106,7 @@ class PartnerResponsePartnerAddressAttributes implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $attributeMap = [
-        'prefecture_codes' => 'prefecture_codes',
+        'prefecture_code' => 'prefecture_code',
         'street_name1' => 'street_name1',
         'street_name2' => 'street_name2',
         'zipcode' => 'zipcode'
@@ -118,7 +118,7 @@ class PartnerResponsePartnerAddressAttributes implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-        'prefecture_codes' => 'setPrefectureCodes',
+        'prefecture_code' => 'setPrefectureCode',
         'street_name1' => 'setStreetName1',
         'street_name2' => 'setStreetName2',
         'zipcode' => 'setZipcode'
@@ -130,7 +130,7 @@ class PartnerResponsePartnerAddressAttributes implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $getters = [
-        'prefecture_codes' => 'getPrefectureCodes',
+        'prefecture_code' => 'getPrefectureCode',
         'street_name1' => 'getStreetName1',
         'street_name2' => 'getStreetName2',
         'zipcode' => 'getZipcode'
@@ -193,7 +193,7 @@ class PartnerResponsePartnerAddressAttributes implements ModelInterface, ArrayAc
      */
     public function __construct(array $data = null)
     {
-        $this->container['prefecture_codes'] = $data['prefecture_codes'] ?? null;
+        $this->container['prefecture_code'] = $data['prefecture_code'] ?? null;
         $this->container['street_name1'] = $data['street_name1'] ?? null;
         $this->container['street_name2'] = $data['street_name2'] ?? null;
         $this->container['zipcode'] = $data['zipcode'] ?? null;
@@ -208,12 +208,12 @@ class PartnerResponsePartnerAddressAttributes implements ModelInterface, ArrayAc
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['prefecture_codes']) && ($this->container['prefecture_codes'] > 46)) {
-            $invalidProperties[] = "invalid value for 'prefecture_codes', must be smaller than or equal to 46.";
+        if (!is_null($this->container['prefecture_code']) && ($this->container['prefecture_code'] > 46)) {
+            $invalidProperties[] = "invalid value for 'prefecture_code', must be smaller than or equal to 46.";
         }
 
-        if (!is_null($this->container['prefecture_codes']) && ($this->container['prefecture_codes'] < -1)) {
-            $invalidProperties[] = "invalid value for 'prefecture_codes', must be bigger than or equal to -1.";
+        if (!is_null($this->container['prefecture_code']) && ($this->container['prefecture_code'] < -1)) {
+            $invalidProperties[] = "invalid value for 'prefecture_code', must be bigger than or equal to -1.";
         }
 
         return $invalidProperties;
@@ -232,33 +232,33 @@ class PartnerResponsePartnerAddressAttributes implements ModelInterface, ArrayAc
 
 
     /**
-     * Gets prefecture_codes
+     * Gets prefecture_code
      *
      * @return int|null
      */
-    public function getPrefectureCodes()
+    public function getPrefectureCode()
     {
-        return $this->container['prefecture_codes'];
+        return $this->container['prefecture_code'];
     }
 
     /**
-     * Sets prefecture_codes
+     * Sets prefecture_code
      *
-     * @param int|null $prefecture_codes 都道府県コード（-1: 設定しない、0:北海道、1:青森、2:岩手、3:宮城、4:秋田、5:山形、6:福島、7:茨城、8:栃木、9:群馬、10:埼玉、11:千葉、12:東京、13:神奈川、14:新潟、15:富山、16:石川、17:福井、18:山梨、19:長野、20:岐阜、21:静岡、22:愛知、23:三重、24:滋賀、25:京都、26:大阪、27:兵庫、28:奈良、29:和歌山、30:鳥取、31:島根、32:岡山、33:広島、34:山口、35:徳島、36:香川、37:愛媛、38:高知、39:福岡、40:佐賀、41:長崎、42:熊本、43:大分、44:宮崎、45:鹿児島、46:沖縄
+     * @param int|null $prefecture_code 都道府県コード（-1: 設定しない、0:北海道、1:青森、2:岩手、3:宮城、4:秋田、5:山形、6:福島、7:茨城、8:栃木、9:群馬、10:埼玉、11:千葉、12:東京、13:神奈川、14:新潟、15:富山、16:石川、17:福井、18:山梨、19:長野、20:岐阜、21:静岡、22:愛知、23:三重、24:滋賀、25:京都、26:大阪、27:兵庫、28:奈良、29:和歌山、30:鳥取、31:島根、32:岡山、33:広島、34:山口、35:徳島、36:香川、37:愛媛、38:高知、39:福岡、40:佐賀、41:長崎、42:熊本、43:大分、44:宮崎、45:鹿児島、46:沖縄
      *
      * @return self
      */
-    public function setPrefectureCodes($prefecture_codes)
+    public function setPrefectureCode($prefecture_code)
     {
 
-        if (!is_null($prefecture_codes) && ($prefecture_codes > 46)) {
-            throw new \InvalidArgumentException('invalid value for $prefecture_codes when calling PartnerResponsePartnerAddressAttributes., must be smaller than or equal to 46.');
+        if (!is_null($prefecture_code) && ($prefecture_code > 46)) {
+            throw new \InvalidArgumentException('invalid value for $prefecture_code when calling PartnerResponsePartnerAddressAttributes., must be smaller than or equal to 46.');
         }
-        if (!is_null($prefecture_codes) && ($prefecture_codes < -1)) {
-            throw new \InvalidArgumentException('invalid value for $prefecture_codes when calling PartnerResponsePartnerAddressAttributes., must be bigger than or equal to -1.');
+        if (!is_null($prefecture_code) && ($prefecture_code < -1)) {
+            throw new \InvalidArgumentException('invalid value for $prefecture_code when calling PartnerResponsePartnerAddressAttributes., must be bigger than or equal to -1.');
         }
 
-        $this->container['prefecture_codes'] = $prefecture_codes;
+        $this->container['prefecture_code'] = $prefecture_code;
 
         return $this;
     }
