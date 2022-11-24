@@ -80,9 +80,9 @@ class PartnerResponsePartnerAddressAttributesTest extends TestCase
     }
 
     /**
-     * Test attribute "prefecture_codes"
+     * Test attribute "prefecture_code"
      */
-    public function testPropertyPrefectureCodes()
+    public function testPropertyPrefectureCode()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

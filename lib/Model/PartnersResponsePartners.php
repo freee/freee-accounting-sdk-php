@@ -59,7 +59,7 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'address_attributes' => '\Freee\Accounting\Model\PartnersResponseAddressAttributes',
+        'address_attributes' => '\Freee\Accounting\Model\PartnerResponsePartnerAddressAttributes',
         'available' => 'bool',
         'code' => 'string',
         'company_id' => 'int',
@@ -418,7 +418,7 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets address_attributes
      *
-     * @return \Freee\Accounting\Model\PartnersResponseAddressAttributes|null
+     * @return \Freee\Accounting\Model\PartnerResponsePartnerAddressAttributes|null
      */
     public function getAddressAttributes()
     {
@@ -428,7 +428,7 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets address_attributes
      *
-     * @param \Freee\Accounting\Model\PartnersResponseAddressAttributes|null $address_attributes address_attributes
+     * @param \Freee\Accounting\Model\PartnerResponsePartnerAddressAttributes|null $address_attributes address_attributes
      *
      * @return self
      */
