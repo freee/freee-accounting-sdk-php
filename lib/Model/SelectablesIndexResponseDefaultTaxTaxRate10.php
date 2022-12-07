@@ -60,7 +60,6 @@ class SelectablesIndexResponseDefaultTaxTaxRate10 implements ModelInterface, Arr
       */
     protected static $openAPITypes = [
         'code' => 'int',
-        'id' => 'int',
         'name' => 'string'
     ];
 
@@ -73,7 +72,6 @@ class SelectablesIndexResponseDefaultTaxTaxRate10 implements ModelInterface, Arr
       */
     protected static $openAPIFormats = [
         'code' => null,
-        'id' => null,
         'name' => null
     ];
 
@@ -105,7 +103,6 @@ class SelectablesIndexResponseDefaultTaxTaxRate10 implements ModelInterface, Arr
      */
     protected static $attributeMap = [
         'code' => 'code',
-        'id' => 'id',
         'name' => 'name'
     ];
 
@@ -116,7 +113,6 @@ class SelectablesIndexResponseDefaultTaxTaxRate10 implements ModelInterface, Arr
      */
     protected static $setters = [
         'code' => 'setCode',
-        'id' => 'setId',
         'name' => 'setName'
     ];
 
@@ -127,7 +123,6 @@ class SelectablesIndexResponseDefaultTaxTaxRate10 implements ModelInterface, Arr
      */
     protected static $getters = [
         'code' => 'getCode',
-        'id' => 'getId',
         'name' => 'getName'
     ];
 
@@ -189,7 +184,6 @@ class SelectablesIndexResponseDefaultTaxTaxRate10 implements ModelInterface, Arr
     public function __construct(array $data = null)
     {
         $this->container['code'] = $data['code'] ?? null;
-        $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
     }
 
@@ -208,14 +202,6 @@ class SelectablesIndexResponseDefaultTaxTaxRate10 implements ModelInterface, Arr
 
         if (!is_null($this->container['code']) && ($this->container['code'] < 0)) {
             $invalidProperties[] = "invalid value for 'code', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['id']) && ($this->container['id'] > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 2147483647.";
-        }
-
-        if (!is_null($this->container['id']) && ($this->container['id'] < 0)) {
-            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 0.";
         }
 
         return $invalidProperties;
@@ -261,40 +247,6 @@ class SelectablesIndexResponseDefaultTaxTaxRate10 implements ModelInterface, Arr
         }
 
         $this->container['code'] = $code;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return int|null
-     * @deprecated
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int|null $id 税区分ID
-     *
-     * @return self
-     * @deprecated
-     */
-    public function setId($id)
-    {
-
-        if (!is_null($id) && ($id > 2147483647)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling SelectablesIndexResponseDefaultTaxTaxRate10., must be smaller than or equal to 2147483647.');
-        }
-        if (!is_null($id) && ($id < 0)) {
-            throw new \InvalidArgumentException('invalid value for $id when calling SelectablesIndexResponseDefaultTaxTaxRate10., must be bigger than or equal to 0.');
-        }
-
-        $this->container['id'] = $id;
 
         return $this;
     }
