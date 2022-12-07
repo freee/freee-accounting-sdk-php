@@ -55,7 +55,7 @@ $end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年�
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
 $account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
-$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナルプラン, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向けエンタープライズプラン):segment_2_tag, セグメント3(法人向けエンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門、セグメント の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
  **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
- **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナルプラン, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向けエンタープライズプラン):segment_2_tag, セグメント3(法人向けエンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門、セグメント の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
@@ -139,7 +139,7 @@ $end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年�
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
 $account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
-$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナルプラン, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向けエンタープライズプラン):segment_2_tag, セグメント3(法人向けエンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門、セグメント の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
  **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
- **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナルプラン, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向けエンタープライズプラン):segment_2_tag, セグメント3(法人向けエンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門、セグメント の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
@@ -223,7 +223,7 @@ $end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年�
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
 $account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
-$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナルプラン, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向けエンタープライズプラン):segment_2_tag, セグメント3(法人向けエンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門、セグメント の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
  **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
- **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナルプラン, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向けエンタープライズプラン):segment_2_tag, セグメント3(法人向けエンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門、セグメント の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
@@ -307,7 +307,7 @@ $end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年�
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
 $account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
-$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナルプラン, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向けエンタープライズプラン):segment_2_tag, セグメント3(法人向けエンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門、セグメント の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
@@ -335,7 +335,7 @@ Name | Type | Description  | Notes
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
  **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
- **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナルプラン, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向けエンタープライズプラン):segment_2_tag, セグメント3(法人向けエンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門、セグメント の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
@@ -394,7 +394,7 @@ $end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年�
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
 $account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
-$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナルプラン, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向けエンタープライズプラン):segment_2_tag, セグメント3(法人向けエンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、セグメント の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
@@ -422,7 +422,7 @@ Name | Type | Description  | Notes
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
  **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
- **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナルプラン, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向けエンタープライズプラン):segment_2_tag, セグメント3(法人向けエンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、セグメント の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
@@ -480,7 +480,7 @@ $end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年�
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
 $account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
-$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門 の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
@@ -509,7 +509,7 @@ Name | Type | Description  | Notes
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
  **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
- **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門 の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
@@ -568,7 +568,7 @@ $end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年�
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
 $account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
-$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門 の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
@@ -597,7 +597,7 @@ Name | Type | Description  | Notes
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
  **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
- **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門 の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
@@ -656,7 +656,7 @@ $end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年�
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
 $account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
-$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門 の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
@@ -685,7 +685,7 @@ Name | Type | Description  | Notes
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
  **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
- **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門 の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
@@ -743,7 +743,7 @@ $end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年�
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
 $account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
-$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナルプラン, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向けエンタープライズプラン):segment_2_tag, セグメント3(法人向けエンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門、セグメント の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
@@ -771,7 +771,7 @@ Name | Type | Description  | Notes
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
  **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
- **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナルプラン, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向けエンタープライズプラン):segment_2_tag, セグメント3(法人向けエンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門、セグメント の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
@@ -829,7 +829,7 @@ $end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年�
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
 $account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
-$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナルプラン, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向けエンタープライズプラン):segment_2_tag, セグメント3(法人向けエンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門、セグメント の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
@@ -857,7 +857,7 @@ Name | Type | Description  | Notes
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
  **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
- **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナルプラン, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向けエンタープライズプラン):segment_2_tag, セグメント3(法人向けエンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門、セグメント の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
@@ -915,7 +915,7 @@ $end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年�
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
 $account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
-$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナルプラン, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向けエンタープライズプラン):segment_2_tag, セグメント3(法人向けエンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門、セグメント の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
@@ -943,7 +943,7 @@ Name | Type | Description  | Notes
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
  **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
- **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナルプラン, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向けエンタープライズプラン):segment_2_tag, セグメント3(法人向けエンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門、セグメント の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
@@ -1002,7 +1002,7 @@ $end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年�
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
 $account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
-$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナルプラン, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向けエンタープライズプラン):segment_2_tag, セグメント3(法人向けエンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、セグメント の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
@@ -1030,7 +1030,7 @@ Name | Type | Description  | Notes
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
  **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
- **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナルプラン, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向けエンタープライズプラン):segment_2_tag, セグメント3(法人向けエンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、セグメント の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
@@ -1088,7 +1088,7 @@ $end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年�
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
 $account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
-$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門 の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
@@ -1117,7 +1117,7 @@ Name | Type | Description  | Notes
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
  **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
- **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門 の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
@@ -1176,7 +1176,7 @@ $end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年�
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
 $account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
-$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門 の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
@@ -1205,7 +1205,7 @@ Name | Type | Description  | Notes
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
  **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
- **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門 の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
@@ -1264,7 +1264,7 @@ $end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年�
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
 $account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
-$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門 の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
@@ -1293,7 +1293,7 @@ Name | Type | Description  | Notes
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
  **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
- **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門 の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
@@ -1351,7 +1351,7 @@ $end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年�
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
 $account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
-$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナルプラン, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向けエンタープライズプラン):segment_2_tag, セグメント3(法人向けエンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門、セグメント の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
@@ -1379,7 +1379,7 @@ Name | Type | Description  | Notes
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
  **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
- **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナルプラン, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向けエンタープライズプラン):segment_2_tag, セグメント3(法人向けエンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門、セグメント の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
@@ -1437,7 +1437,7 @@ $end_month = 56; // int | 発生月で絞込：終了会計月(1-12)(会計年�
 $start_date = 'start_date_example'; // string | 発生日で絞込：開始日(yyyy-mm-dd)
 $end_date = 'end_date_example'; // string | 発生日で絞込：終了日(yyyy-mm-dd)
 $account_item_display_type = 'account_item_display_type_example'; // string | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。
-$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます
+$breakdown_display_type = 'breakdown_display_type_example'; // string | 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナルプラン, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向けエンタープライズプラン):segment_2_tag, セグメント3(法人向けエンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門、セグメント の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない
 $partner_id = 56; // int | 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます）
 $partner_code = 'partner_code_example'; // string | 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です）
 $item_id = 56; // int | 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます）
@@ -1465,7 +1465,7 @@ Name | Type | Description  | Notes
  **start_date** | **string**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
  **end_date** | **string**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
  **account_item_display_type** | **string**| 勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 | [optional]
- **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます | [optional]
+ **breakdown_display_type** | **string**| 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナルプラン, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向けエンタープライズプラン):segment_2_tag, セグメント3(法人向けエンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます。  取引先、品目、部門、セグメント の各項目が単独で1,000以上登録されている場合は、breakdown_display_type で該当項目を指定するとエラーになります。  例）取引先の登録数が1,000以上、品目の登録数が999以下の場合 * breakdown_display_type: 取引先を指定 → エラーになる * breakdown_display_type: 品目を指定 → エラーにならない | [optional]
  **partner_id** | **int**| 取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） | [optional]
  **partner_code** | **string**| 取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） | [optional]
  **item_id** | **int**| 品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） | [optional]
