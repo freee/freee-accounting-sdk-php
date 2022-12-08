@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * AccountItemUpdateParamsAccountItem Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -64,9 +64,9 @@ class AccountItemUpdateParamsAccountItem implements ModelInterface, ArrayAccess,
         'corresponding_expense_id' => 'int',
         'corresponding_income_id' => 'int',
         'group_name' => 'string',
-        'items' => '\Freee\Accounting\Model\AccountItemCreateParamsAccountItemItems[]',
+        'items' => '\OpenAPI\Client\Model\AccountItemCreateParamsAccountItemItems[]',
         'name' => 'string',
-        'partners' => '\Freee\Accounting\Model\AccountItemCreateParamsAccountItemItems[]',
+        'partners' => '\OpenAPI\Client\Model\AccountItemCreateParamsAccountItemItems[]',
         'searchable' => 'int',
         'shortcut' => 'string',
         'shortcut_num' => 'string',
@@ -453,7 +453,7 @@ class AccountItemUpdateParamsAccountItem implements ModelInterface, ArrayAccess,
     /**
      * Gets items
      *
-     * @return \Freee\Accounting\Model\AccountItemCreateParamsAccountItemItems[]|null
+     * @return \OpenAPI\Client\Model\AccountItemCreateParamsAccountItemItems[]|null
      */
     public function getItems()
     {
@@ -463,7 +463,7 @@ class AccountItemUpdateParamsAccountItem implements ModelInterface, ArrayAccess,
     /**
      * Sets items
      *
-     * @param \Freee\Accounting\Model\AccountItemCreateParamsAccountItemItems[]|null $items 品目
+     * @param \OpenAPI\Client\Model\AccountItemCreateParamsAccountItemItems[]|null $items 品目
      *
      * @return self
      */
@@ -505,7 +505,7 @@ class AccountItemUpdateParamsAccountItem implements ModelInterface, ArrayAccess,
     /**
      * Gets partners
      *
-     * @return \Freee\Accounting\Model\AccountItemCreateParamsAccountItemItems[]|null
+     * @return \OpenAPI\Client\Model\AccountItemCreateParamsAccountItemItems[]|null
      */
     public function getPartners()
     {
@@ -515,7 +515,7 @@ class AccountItemUpdateParamsAccountItem implements ModelInterface, ArrayAccess,
     /**
      * Sets partners
      *
-     * @param \Freee\Accounting\Model\AccountItemCreateParamsAccountItemItems[]|null $partners 取引先
+     * @param \OpenAPI\Client\Model\AccountItemCreateParamsAccountItemItems[]|null $partners 取引先
      *
      * @return self
      */

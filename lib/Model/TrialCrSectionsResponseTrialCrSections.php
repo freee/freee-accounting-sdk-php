@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * TrialCrSectionsResponseTrialCrSections Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -62,7 +62,7 @@ class TrialCrSectionsResponseTrialCrSections implements ModelInterface, ArrayAcc
         'account_item_display_type' => 'string',
         'adjustment' => 'string',
         'approval_flow_status' => 'string',
-        'balances' => '\Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSectionsBalances[]',
+        'balances' => '\OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSectionsBalances[]',
         'breakdown_display_type' => 'string',
         'company_id' => 'int',
         'cost_allocation' => 'string',
@@ -583,7 +583,7 @@ class TrialCrSectionsResponseTrialCrSections implements ModelInterface, ArrayAcc
     /**
      * Gets balances
      *
-     * @return \Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSectionsBalances[]
+     * @return \OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSectionsBalances[]
      */
     public function getBalances()
     {
@@ -593,7 +593,7 @@ class TrialCrSectionsResponseTrialCrSections implements ModelInterface, ArrayAcc
     /**
      * Sets balances
      *
-     * @param \Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSectionsBalances[] $balances balances
+     * @param \OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSectionsBalances[] $balances balances
      *
      * @return self
      */

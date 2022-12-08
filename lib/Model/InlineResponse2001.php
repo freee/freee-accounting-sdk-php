@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * InlineResponse2001 Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,8 +59,8 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'deals' => '\Freee\Accounting\Model\Deal[]',
-        'meta' => '\Freee\Accounting\Model\InlineResponse2001Meta'
+        'deals' => '\OpenAPI\Client\Model\Deal[]',
+        'meta' => '\OpenAPI\Client\Model\InlineResponse2001Meta'
     ];
 
     /**
@@ -220,7 +220,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets deals
      *
-     * @return \Freee\Accounting\Model\Deal[]
+     * @return \OpenAPI\Client\Model\Deal[]
      */
     public function getDeals()
     {
@@ -230,7 +230,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets deals
      *
-     * @param \Freee\Accounting\Model\Deal[] $deals deals
+     * @param \OpenAPI\Client\Model\Deal[] $deals deals
      *
      * @return self
      */
@@ -244,7 +244,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets meta
      *
-     * @return \Freee\Accounting\Model\InlineResponse2001Meta
+     * @return \OpenAPI\Client\Model\InlineResponse2001Meta
      */
     public function getMeta()
     {
@@ -254,7 +254,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets meta
      *
-     * @param \Freee\Accounting\Model\InlineResponse2001Meta $meta meta
+     * @param \OpenAPI\Client\Model\InlineResponse2001Meta $meta meta
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * QuotationCreateParams Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -79,7 +79,7 @@ class QuotationCreateParams implements ModelInterface, ArrayAccess, \JsonSeriali
         'partner_prefecture_code' => 'int',
         'partner_title' => 'string',
         'partner_zipcode' => 'string',
-        'quotation_contents' => '\Freee\Accounting\Model\InvoiceCreateParamsInvoiceContents[]',
+        'quotation_contents' => '\OpenAPI\Client\Model\InvoiceCreateParamsInvoiceContents[]',
         'quotation_layout' => 'string',
         'quotation_number' => 'string',
         'quotation_status' => 'string',
@@ -991,7 +991,7 @@ class QuotationCreateParams implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets quotation_contents
      *
-     * @return \Freee\Accounting\Model\InvoiceCreateParamsInvoiceContents[]|null
+     * @return \OpenAPI\Client\Model\InvoiceCreateParamsInvoiceContents[]|null
      */
     public function getQuotationContents()
     {
@@ -1001,7 +1001,7 @@ class QuotationCreateParams implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets quotation_contents
      *
-     * @param \Freee\Accounting\Model\InvoiceCreateParamsInvoiceContents[]|null $quotation_contents 見積内容
+     * @param \OpenAPI\Client\Model\InvoiceCreateParamsInvoiceContents[]|null $quotation_contents 見積内容
      *
      * @return self
      */

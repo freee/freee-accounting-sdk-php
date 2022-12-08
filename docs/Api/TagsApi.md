@@ -1,4 +1,4 @@
-# Freee\Accounting\TagsApi
+# OpenAPI\Client\TagsApi
 
 All URIs are relative to https://api.freee.co.jp.
 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 ## `createTag()`
 
 ```php
-createTag($tag_params): \Freee\Accounting\Model\TagResponse
+createTag($tag_params): \OpenAPI\Client\Model\TagResponse
 ```
 
 メモタグの作成
@@ -27,16 +27,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TagsApi(
+$apiInstance = new OpenAPI\Client\Api\TagsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$tag_params = new \Freee\Accounting\Model\TagParams(); // \Freee\Accounting\Model\TagParams | メモタグの作成
+$tag_params = new \OpenAPI\Client\Model\TagParams(); // \OpenAPI\Client\Model\TagParams | メモタグの作成
 
 try {
     $result = $apiInstance->createTag($tag_params);
@@ -50,11 +50,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tag_params** | [**\Freee\Accounting\Model\TagParams**](../Model/TagParams.md)| メモタグの作成 |
+ **tag_params** | [**\OpenAPI\Client\Model\TagParams**](../Model/TagParams.md)| メモタグの作成 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\TagResponse**](../Model/TagResponse.md)
+[**\OpenAPI\Client\Model\TagResponse**](../Model/TagResponse.md)
 
 ### Authorization
 
@@ -85,10 +85,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TagsApi(
+$apiInstance = new OpenAPI\Client\Api\TagsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -131,7 +131,7 @@ void (empty response body)
 ## `getTag()`
 
 ```php
-getTag($id, $company_id): \Freee\Accounting\Model\TagResponse
+getTag($id, $company_id): \OpenAPI\Client\Model\TagResponse
 ```
 
 メモタグの詳細情報の取得
@@ -144,10 +144,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TagsApi(
+$apiInstance = new OpenAPI\Client\Api\TagsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\TagResponse**](../Model/TagResponse.md)
+[**\OpenAPI\Client\Model\TagResponse**](../Model/TagResponse.md)
 
 ### Authorization
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 ## `getTags()`
 
 ```php
-getTags($company_id, $start_update_date, $end_update_date, $offset, $limit): \Freee\Accounting\Model\InlineResponse2008
+getTags($company_id, $start_update_date, $end_update_date, $offset, $limit): \OpenAPI\Client\Model\InlineResponse2008
 ```
 
 メモタグ一覧の取得
@@ -204,10 +204,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TagsApi(
+$apiInstance = new OpenAPI\Client\Api\TagsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse2008**](../Model/InlineResponse2008.md)
+[**\OpenAPI\Client\Model\InlineResponse2008**](../Model/InlineResponse2008.md)
 
 ### Authorization
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 ## `updateTag()`
 
 ```php
-updateTag($id, $tag_params): \Freee\Accounting\Model\TagResponse
+updateTag($id, $tag_params): \OpenAPI\Client\Model\TagResponse
 ```
 
 メモタグの更新
@@ -270,17 +270,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TagsApi(
+$apiInstance = new OpenAPI\Client\Api\TagsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | メモタグID
-$tag_params = new \Freee\Accounting\Model\TagParams(); // \Freee\Accounting\Model\TagParams | メモタグの更新
+$tag_params = new \OpenAPI\Client\Model\TagParams(); // \OpenAPI\Client\Model\TagParams | メモタグの更新
 
 try {
     $result = $apiInstance->updateTag($id, $tag_params);
@@ -295,11 +295,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| メモタグID |
- **tag_params** | [**\Freee\Accounting\Model\TagParams**](../Model/TagParams.md)| メモタグの更新 | [optional]
+ **tag_params** | [**\OpenAPI\Client\Model\TagParams**](../Model/TagParams.md)| メモタグの更新 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\TagResponse**](../Model/TagResponse.md)
+[**\OpenAPI\Client\Model\TagResponse**](../Model/TagResponse.md)
 
 ### Authorization
 

@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * InlineResponse2007 Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'segment_tags' => '\Freee\Accounting\Model\SegmentTag[]'
+        'segment_tags' => '\OpenAPI\Client\Model\SegmentTag[]'
     ];
 
     /**
@@ -211,7 +211,7 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets segment_tags
      *
-     * @return \Freee\Accounting\Model\SegmentTag[]
+     * @return \OpenAPI\Client\Model\SegmentTag[]
      */
     public function getSegmentTags()
     {
@@ -221,7 +221,7 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets segment_tags
      *
-     * @param \Freee\Accounting\Model\SegmentTag[] $segment_tags segment_tags
+     * @param \OpenAPI\Client\Model\SegmentTag[] $segment_tags segment_tags
      *
      * @return self
      */

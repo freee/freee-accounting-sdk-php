@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * TrialPlSegment3TagsResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,9 +59,9 @@ class TrialPlSegment3TagsResponse implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'trial_pl_segment_3_tags' => '\Freee\Accounting\Model\TrialCrSegment3TagsResponseTrialCrSegment3Tags',
+        'trial_pl_segment_3_tags' => '\OpenAPI\Client\Model\TrialCrSegment3TagsResponseTrialCrSegment3Tags',
         'up_to_date' => 'bool',
-        'up_to_date_reasons' => '\Freee\Accounting\Model\JournalsResponseJournalsUpToDateReasons[]'
+        'up_to_date_reasons' => '\OpenAPI\Client\Model\JournalsResponseJournalsUpToDateReasons[]'
     ];
 
     /**
@@ -226,7 +226,7 @@ class TrialPlSegment3TagsResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets trial_pl_segment_3_tags
      *
-     * @return \Freee\Accounting\Model\TrialCrSegment3TagsResponseTrialCrSegment3Tags
+     * @return \OpenAPI\Client\Model\TrialCrSegment3TagsResponseTrialCrSegment3Tags
      */
     public function getTrialPlSegment3Tags()
     {
@@ -236,7 +236,7 @@ class TrialPlSegment3TagsResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets trial_pl_segment_3_tags
      *
-     * @param \Freee\Accounting\Model\TrialCrSegment3TagsResponseTrialCrSegment3Tags $trial_pl_segment_3_tags trial_pl_segment_3_tags
+     * @param \OpenAPI\Client\Model\TrialCrSegment3TagsResponseTrialCrSegment3Tags $trial_pl_segment_3_tags trial_pl_segment_3_tags
      *
      * @return self
      */
@@ -274,7 +274,7 @@ class TrialPlSegment3TagsResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets up_to_date_reasons
      *
-     * @return \Freee\Accounting\Model\JournalsResponseJournalsUpToDateReasons[]|null
+     * @return \OpenAPI\Client\Model\JournalsResponseJournalsUpToDateReasons[]|null
      */
     public function getUpToDateReasons()
     {
@@ -284,7 +284,7 @@ class TrialPlSegment3TagsResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets up_to_date_reasons
      *
-     * @param \Freee\Accounting\Model\JournalsResponseJournalsUpToDateReasons[]|null $up_to_date_reasons 集計が最新でない場合の要因情報
+     * @param \OpenAPI\Client\Model\JournalsResponseJournalsUpToDateReasons[]|null $up_to_date_reasons 集計が最新でない場合の要因情報
      *
      * @return self
      */

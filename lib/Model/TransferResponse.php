@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * TransferResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class TransferResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'transfer' => '\Freee\Accounting\Model\Transfer'
+        'transfer' => '\OpenAPI\Client\Model\Transfer'
     ];
 
     /**
@@ -211,7 +211,7 @@ class TransferResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets transfer
      *
-     * @return \Freee\Accounting\Model\Transfer
+     * @return \OpenAPI\Client\Model\Transfer
      */
     public function getTransfer()
     {
@@ -221,7 +221,7 @@ class TransferResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transfer
      *
-     * @param \Freee\Accounting\Model\Transfer $transfer transfer
+     * @param \OpenAPI\Client\Model\Transfer $transfer transfer
      *
      * @return self
      */

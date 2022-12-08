@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * ManualJournal Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -61,7 +61,7 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'adjustment' => 'bool',
         'company_id' => 'int',
-        'details' => '\Freee\Accounting\Model\ManualJournalDetails[]',
+        'details' => '\OpenAPI\Client\Model\ManualJournalDetails[]',
         'id' => 'int',
         'issue_date' => 'string',
         'receipt_ids' => 'int[]',
@@ -334,7 +334,7 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets details
      *
-     * @return \Freee\Accounting\Model\ManualJournalDetails[]
+     * @return \OpenAPI\Client\Model\ManualJournalDetails[]
      */
     public function getDetails()
     {
@@ -344,7 +344,7 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets details
      *
-     * @param \Freee\Accounting\Model\ManualJournalDetails[] $details 貸借行一覧（配列）: 貸借合わせて100行まで登録できます。
+     * @param \OpenAPI\Client\Model\ManualJournalDetails[] $details 貸借行一覧（配列）: 貸借合わせて100行まで登録できます。
      *
      * @return self
      */

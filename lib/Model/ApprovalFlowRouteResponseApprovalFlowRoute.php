@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * ApprovalFlowRouteResponseApprovalFlowRoute Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -65,7 +65,7 @@ class ApprovalFlowRouteResponseApprovalFlowRoute implements ModelInterface, Arra
         'id' => 'int',
         'name' => 'string',
         'request_form_ids' => 'int[]',
-        'steps' => '\Freee\Accounting\Model\ApprovalFlowRouteResponseApprovalFlowRouteSteps[]',
+        'steps' => '\OpenAPI\Client\Model\ApprovalFlowRouteResponseApprovalFlowRouteSteps[]',
         'usages' => 'string[]',
         'user_id' => 'int'
     ];
@@ -467,7 +467,7 @@ class ApprovalFlowRouteResponseApprovalFlowRoute implements ModelInterface, Arra
     /**
      * Gets steps
      *
-     * @return \Freee\Accounting\Model\ApprovalFlowRouteResponseApprovalFlowRouteSteps[]|null
+     * @return \OpenAPI\Client\Model\ApprovalFlowRouteResponseApprovalFlowRouteSteps[]|null
      */
     public function getSteps()
     {
@@ -477,7 +477,7 @@ class ApprovalFlowRouteResponseApprovalFlowRoute implements ModelInterface, Arra
     /**
      * Sets steps
      *
-     * @param \Freee\Accounting\Model\ApprovalFlowRouteResponseApprovalFlowRouteSteps[]|null $steps 承認ステップ（配列）
+     * @param \OpenAPI\Client\Model\ApprovalFlowRouteResponseApprovalFlowRouteSteps[]|null $steps 承認ステップ（配列）
      *
      * @return self
      */

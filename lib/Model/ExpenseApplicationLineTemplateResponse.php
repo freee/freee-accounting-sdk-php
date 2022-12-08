@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * ExpenseApplicationLineTemplateResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class ExpenseApplicationLineTemplateResponse implements ModelInterface, ArrayAcc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'expense_application_line_template' => '\Freee\Accounting\Model\ExpenseApplicationLineTemplate'
+        'expense_application_line_template' => '\OpenAPI\Client\Model\ExpenseApplicationLineTemplate'
     ];
 
     /**
@@ -211,7 +211,7 @@ class ExpenseApplicationLineTemplateResponse implements ModelInterface, ArrayAcc
     /**
      * Gets expense_application_line_template
      *
-     * @return \Freee\Accounting\Model\ExpenseApplicationLineTemplate
+     * @return \OpenAPI\Client\Model\ExpenseApplicationLineTemplate
      */
     public function getExpenseApplicationLineTemplate()
     {
@@ -221,7 +221,7 @@ class ExpenseApplicationLineTemplateResponse implements ModelInterface, ArrayAcc
     /**
      * Sets expense_application_line_template
      *
-     * @param \Freee\Accounting\Model\ExpenseApplicationLineTemplate $expense_application_line_template expense_application_line_template
+     * @param \OpenAPI\Client\Model\ExpenseApplicationLineTemplate $expense_application_line_template expense_application_line_template
      *
      * @return self
      */

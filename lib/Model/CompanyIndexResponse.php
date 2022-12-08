@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * CompanyIndexResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class CompanyIndexResponse implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'companies' => '\Freee\Accounting\Model\CompanyIndexResponseCompanies[]'
+        'companies' => '\OpenAPI\Client\Model\CompanyIndexResponseCompanies[]'
     ];
 
     /**
@@ -211,7 +211,7 @@ class CompanyIndexResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets companies
      *
-     * @return \Freee\Accounting\Model\CompanyIndexResponseCompanies[]
+     * @return \OpenAPI\Client\Model\CompanyIndexResponseCompanies[]
      */
     public function getCompanies()
     {
@@ -221,7 +221,7 @@ class CompanyIndexResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets companies
      *
-     * @param \Freee\Accounting\Model\CompanyIndexResponseCompanies[] $companies companies
+     * @param \OpenAPI\Client\Model\CompanyIndexResponseCompanies[] $companies companies
      *
      * @return self
      */

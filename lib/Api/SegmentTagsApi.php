@@ -4,7 +4,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Api;
+namespace OpenAPI\Client\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Freee\Accounting\ApiException;
-use Freee\Accounting\Configuration;
-use Freee\Accounting\HeaderSelector;
-use Freee\Accounting\ObjectSerializer;
+use OpenAPI\Client\ApiException;
+use OpenAPI\Client\Configuration;
+use OpenAPI\Client\HeaderSelector;
+use OpenAPI\Client\ObjectSerializer;
 
 /**
  * SegmentTagsApi Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -121,11 +121,11 @@ class SegmentTagsApi
      * セグメントの作成
      *
      * @param  int $segment_id セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン (required)
-     * @param  \Freee\Accounting\Model\SegmentTagParams $segment_tag_params セグメントタグの作成 (required)
+     * @param  \OpenAPI\Client\Model\SegmentTagParams $segment_tag_params セグメントタグの作成 (required)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\SegmentTagResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\SegmentTagResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\InternalServerError
      */
     public function createSegmentTag($segment_id, $segment_tag_params)
     {
@@ -139,11 +139,11 @@ class SegmentTagsApi
      * セグメントの作成
      *
      * @param  int $segment_id セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン (required)
-     * @param  \Freee\Accounting\Model\SegmentTagParams $segment_tag_params セグメントタグの作成 (required)
+     * @param  \OpenAPI\Client\Model\SegmentTagParams $segment_tag_params セグメントタグの作成 (required)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\SegmentTagResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\SegmentTagResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSegmentTagWithHttpInfo($segment_id, $segment_tag_params)
     {
@@ -186,68 +186,68 @@ class SegmentTagsApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\Freee\Accounting\Model\SegmentTagResponse' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\SegmentTagResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\SegmentTagResponse', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\SegmentTagResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\UnauthorizedError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\UnauthorizedError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ForbiddenError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ForbiddenError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InternalServerError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InternalServerError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\SegmentTagResponse';
+            $returnType = '\OpenAPI\Client\Model\SegmentTagResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -265,7 +265,7 @@ class SegmentTagsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\SegmentTagResponse',
+                        '\OpenAPI\Client\Model\SegmentTagResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -273,7 +273,7 @@ class SegmentTagsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestError',
+                        '\OpenAPI\Client\Model\BadRequestError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -281,7 +281,7 @@ class SegmentTagsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\UnauthorizedError',
+                        '\OpenAPI\Client\Model\UnauthorizedError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -289,7 +289,7 @@ class SegmentTagsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ForbiddenError',
+                        '\OpenAPI\Client\Model\ForbiddenError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -297,7 +297,7 @@ class SegmentTagsApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InternalServerError',
+                        '\OpenAPI\Client\Model\InternalServerError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -313,7 +313,7 @@ class SegmentTagsApi
      * セグメントの作成
      *
      * @param  int $segment_id セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン (required)
-     * @param  \Freee\Accounting\Model\SegmentTagParams $segment_tag_params セグメントタグの作成 (required)
+     * @param  \OpenAPI\Client\Model\SegmentTagParams $segment_tag_params セグメントタグの作成 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -334,14 +334,14 @@ class SegmentTagsApi
      * セグメントの作成
      *
      * @param  int $segment_id セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン (required)
-     * @param  \Freee\Accounting\Model\SegmentTagParams $segment_tag_params セグメントタグの作成 (required)
+     * @param  \OpenAPI\Client\Model\SegmentTagParams $segment_tag_params セグメントタグの作成 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createSegmentTagAsyncWithHttpInfo($segment_id, $segment_tag_params)
     {
-        $returnType = '\Freee\Accounting\Model\SegmentTagResponse';
+        $returnType = '\OpenAPI\Client\Model\SegmentTagResponse';
         $request = $this->createSegmentTagRequest($segment_id, $segment_tag_params);
 
         return $this->client
@@ -381,7 +381,7 @@ class SegmentTagsApi
      * Create request for operation 'createSegmentTag'
      *
      * @param  int $segment_id セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン (required)
-     * @param  \Freee\Accounting\Model\SegmentTagParams $segment_tag_params セグメントタグの作成 (required)
+     * @param  \OpenAPI\Client\Model\SegmentTagParams $segment_tag_params セグメントタグの作成 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -503,7 +503,7 @@ class SegmentTagsApi
      * @param  int $id セグメントタグID (required)
      * @param  int $company_id 事業所ID (required)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -521,7 +521,7 @@ class SegmentTagsApi
      * @param  int $id セグメントタグID (required)
      * @param  int $company_id 事業所ID (required)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -571,7 +571,7 @@ class SegmentTagsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestError',
+                        '\OpenAPI\Client\Model\BadRequestError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -579,7 +579,7 @@ class SegmentTagsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\UnauthorizedError',
+                        '\OpenAPI\Client\Model\UnauthorizedError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -587,7 +587,7 @@ class SegmentTagsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ForbiddenError',
+                        '\OpenAPI\Client\Model\ForbiddenError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -595,7 +595,7 @@ class SegmentTagsApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InternalServerError',
+                        '\OpenAPI\Client\Model\InternalServerError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -828,9 +828,9 @@ class SegmentTagsApi
      * @param  int $offset 取得レコードのオフセット (デフォルト: 0) (optional)
      * @param  int $limit 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500) (optional)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\InlineResponse2007|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\InlineResponse2007|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\InternalServerError
      */
     public function getSegmentTags($company_id, $segment_id, $offset = null, $limit = null)
     {
@@ -848,9 +848,9 @@ class SegmentTagsApi
      * @param  int $offset 取得レコードのオフセット (デフォルト: 0) (optional)
      * @param  int $limit 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500) (optional)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\InlineResponse2007|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\InlineResponse2007|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSegmentTagsWithHttpInfo($company_id, $segment_id, $offset = null, $limit = null)
     {
@@ -893,68 +893,68 @@ class SegmentTagsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Freee\Accounting\Model\InlineResponse2007' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InlineResponse2007' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InlineResponse2007', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse2007', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\UnauthorizedError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\UnauthorizedError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ForbiddenError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ForbiddenError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InternalServerError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InternalServerError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\InlineResponse2007';
+            $returnType = '\OpenAPI\Client\Model\InlineResponse2007';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -972,7 +972,7 @@ class SegmentTagsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InlineResponse2007',
+                        '\OpenAPI\Client\Model\InlineResponse2007',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -980,7 +980,7 @@ class SegmentTagsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestError',
+                        '\OpenAPI\Client\Model\BadRequestError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -988,7 +988,7 @@ class SegmentTagsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\UnauthorizedError',
+                        '\OpenAPI\Client\Model\UnauthorizedError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -996,7 +996,7 @@ class SegmentTagsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ForbiddenError',
+                        '\OpenAPI\Client\Model\ForbiddenError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1004,7 +1004,7 @@ class SegmentTagsApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InternalServerError',
+                        '\OpenAPI\Client\Model\InternalServerError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1052,7 +1052,7 @@ class SegmentTagsApi
      */
     public function getSegmentTagsAsyncWithHttpInfo($company_id, $segment_id, $offset = null, $limit = null)
     {
-        $returnType = '\Freee\Accounting\Model\InlineResponse2007';
+        $returnType = '\OpenAPI\Client\Model\InlineResponse2007';
         $request = $this->getSegmentTagsRequest($company_id, $segment_id, $offset, $limit);
 
         return $this->client
@@ -1262,11 +1262,11 @@ class SegmentTagsApi
      *
      * @param  int $segment_id セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン (required)
      * @param  int $id セグメントタグID (required)
-     * @param  \Freee\Accounting\Model\SegmentTagParams $segment_tag_params セグメントタグの作成 (required)
+     * @param  \OpenAPI\Client\Model\SegmentTagParams $segment_tag_params セグメントタグの作成 (required)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\SegmentTagResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\SegmentTagResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\InternalServerError
      */
     public function updateSegmentTag($segment_id, $id, $segment_tag_params)
     {
@@ -1281,11 +1281,11 @@ class SegmentTagsApi
      *
      * @param  int $segment_id セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン (required)
      * @param  int $id セグメントタグID (required)
-     * @param  \Freee\Accounting\Model\SegmentTagParams $segment_tag_params セグメントタグの作成 (required)
+     * @param  \OpenAPI\Client\Model\SegmentTagParams $segment_tag_params セグメントタグの作成 (required)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\SegmentTagResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\SegmentTagResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateSegmentTagWithHttpInfo($segment_id, $id, $segment_tag_params)
     {
@@ -1328,68 +1328,68 @@ class SegmentTagsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Freee\Accounting\Model\SegmentTagResponse' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\SegmentTagResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\SegmentTagResponse', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\SegmentTagResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\UnauthorizedError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\UnauthorizedError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ForbiddenError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ForbiddenError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InternalServerError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InternalServerError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\SegmentTagResponse';
+            $returnType = '\OpenAPI\Client\Model\SegmentTagResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1407,7 +1407,7 @@ class SegmentTagsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\SegmentTagResponse',
+                        '\OpenAPI\Client\Model\SegmentTagResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1415,7 +1415,7 @@ class SegmentTagsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestError',
+                        '\OpenAPI\Client\Model\BadRequestError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1423,7 +1423,7 @@ class SegmentTagsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\UnauthorizedError',
+                        '\OpenAPI\Client\Model\UnauthorizedError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1431,7 +1431,7 @@ class SegmentTagsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ForbiddenError',
+                        '\OpenAPI\Client\Model\ForbiddenError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1439,7 +1439,7 @@ class SegmentTagsApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InternalServerError',
+                        '\OpenAPI\Client\Model\InternalServerError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1456,7 +1456,7 @@ class SegmentTagsApi
      *
      * @param  int $segment_id セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン (required)
      * @param  int $id セグメントタグID (required)
-     * @param  \Freee\Accounting\Model\SegmentTagParams $segment_tag_params セグメントタグの作成 (required)
+     * @param  \OpenAPI\Client\Model\SegmentTagParams $segment_tag_params セグメントタグの作成 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1478,14 +1478,14 @@ class SegmentTagsApi
      *
      * @param  int $segment_id セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン (required)
      * @param  int $id セグメントタグID (required)
-     * @param  \Freee\Accounting\Model\SegmentTagParams $segment_tag_params セグメントタグの作成 (required)
+     * @param  \OpenAPI\Client\Model\SegmentTagParams $segment_tag_params セグメントタグの作成 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateSegmentTagAsyncWithHttpInfo($segment_id, $id, $segment_tag_params)
     {
-        $returnType = '\Freee\Accounting\Model\SegmentTagResponse';
+        $returnType = '\OpenAPI\Client\Model\SegmentTagResponse';
         $request = $this->updateSegmentTagRequest($segment_id, $id, $segment_tag_params);
 
         return $this->client
@@ -1526,7 +1526,7 @@ class SegmentTagsApi
      *
      * @param  int $segment_id セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン (required)
      * @param  int $id セグメントタグID (required)
-     * @param  \Freee\Accounting\Model\SegmentTagParams $segment_tag_params セグメントタグの作成 (required)
+     * @param  \OpenAPI\Client\Model\SegmentTagParams $segment_tag_params セグメントタグの作成 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

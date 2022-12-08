@@ -1,4 +1,4 @@
-# Freee\Accounting\CompaniesApi
+# OpenAPI\Client\CompaniesApi
 
 All URIs are relative to https://api.freee.co.jp.
 
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 ## `getCompanies()`
 
 ```php
-getCompanies(): \Freee\Accounting\Model\CompanyIndexResponse
+getCompanies(): \OpenAPI\Client\Model\CompanyIndexResponse
 ```
 
 事業所一覧の取得
@@ -24,10 +24,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\CompaniesApi(
+$apiInstance = new OpenAPI\Client\Api\CompaniesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -48,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Freee\Accounting\Model\CompanyIndexResponse**](../Model/CompanyIndexResponse.md)
+[**\OpenAPI\Client\Model\CompanyIndexResponse**](../Model/CompanyIndexResponse.md)
 
 ### Authorization
 
@@ -66,7 +66,7 @@ This endpoint does not need any parameter.
 ## `getCompany()`
 
 ```php
-getCompany($id, $details, $account_items, $taxes, $items, $partners, $sections, $tags, $walletables): \Freee\Accounting\Model\CompanyResponse
+getCompany($id, $details, $account_items, $taxes, $items, $partners, $sections, $tags, $walletables): \OpenAPI\Client\Model\CompanyResponse
 ```
 
 事業所の詳細情報の取得
@@ -79,10 +79,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\CompaniesApi(
+$apiInstance = new OpenAPI\Client\Api\CompaniesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\CompanyResponse**](../Model/CompanyResponse.md)
+[**\OpenAPI\Client\Model\CompanyResponse**](../Model/CompanyResponse.md)
 
 ### Authorization
 

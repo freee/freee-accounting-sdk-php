@@ -4,7 +4,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Api;
+namespace OpenAPI\Client\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Freee\Accounting\ApiException;
-use Freee\Accounting\Configuration;
-use Freee\Accounting\HeaderSelector;
-use Freee\Accounting\ObjectSerializer;
+use OpenAPI\Client\ApiException;
+use OpenAPI\Client\Configuration;
+use OpenAPI\Client\HeaderSelector;
+use OpenAPI\Client\ObjectSerializer;
 
 /**
  * WalletablesApi Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -120,11 +120,11 @@ class WalletablesApi
      *
      * 口座の作成
      *
-     * @param  \Freee\Accounting\Model\WalletableCreateParams $walletable_create_params 口座の作成 (optional)
+     * @param  \OpenAPI\Client\Model\WalletableCreateParams $walletable_create_params 口座の作成 (optional)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\WalletableCreateResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\WalletableCreateResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\InternalServerError
      */
     public function createWalletable($walletable_create_params = null)
     {
@@ -137,11 +137,11 @@ class WalletablesApi
      *
      * 口座の作成
      *
-     * @param  \Freee\Accounting\Model\WalletableCreateParams $walletable_create_params 口座の作成 (optional)
+     * @param  \OpenAPI\Client\Model\WalletableCreateParams $walletable_create_params 口座の作成 (optional)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\WalletableCreateResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\WalletableCreateResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function createWalletableWithHttpInfo($walletable_create_params = null)
     {
@@ -184,68 +184,68 @@ class WalletablesApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\Freee\Accounting\Model\WalletableCreateResponse' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\WalletableCreateResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\WalletableCreateResponse', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\WalletableCreateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\UnauthorizedError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\UnauthorizedError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ForbiddenError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ForbiddenError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InternalServerError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InternalServerError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\WalletableCreateResponse';
+            $returnType = '\OpenAPI\Client\Model\WalletableCreateResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -263,7 +263,7 @@ class WalletablesApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\WalletableCreateResponse',
+                        '\OpenAPI\Client\Model\WalletableCreateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -271,7 +271,7 @@ class WalletablesApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestError',
+                        '\OpenAPI\Client\Model\BadRequestError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -279,7 +279,7 @@ class WalletablesApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\UnauthorizedError',
+                        '\OpenAPI\Client\Model\UnauthorizedError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -287,7 +287,7 @@ class WalletablesApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ForbiddenError',
+                        '\OpenAPI\Client\Model\ForbiddenError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -295,7 +295,7 @@ class WalletablesApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InternalServerError',
+                        '\OpenAPI\Client\Model\InternalServerError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -310,7 +310,7 @@ class WalletablesApi
      *
      * 口座の作成
      *
-     * @param  \Freee\Accounting\Model\WalletableCreateParams $walletable_create_params 口座の作成 (optional)
+     * @param  \OpenAPI\Client\Model\WalletableCreateParams $walletable_create_params 口座の作成 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -330,14 +330,14 @@ class WalletablesApi
      *
      * 口座の作成
      *
-     * @param  \Freee\Accounting\Model\WalletableCreateParams $walletable_create_params 口座の作成 (optional)
+     * @param  \OpenAPI\Client\Model\WalletableCreateParams $walletable_create_params 口座の作成 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWalletableAsyncWithHttpInfo($walletable_create_params = null)
     {
-        $returnType = '\Freee\Accounting\Model\WalletableCreateResponse';
+        $returnType = '\OpenAPI\Client\Model\WalletableCreateResponse';
         $request = $this->createWalletableRequest($walletable_create_params);
 
         return $this->client
@@ -376,7 +376,7 @@ class WalletablesApi
     /**
      * Create request for operation 'createWalletable'
      *
-     * @param  \Freee\Accounting\Model\WalletableCreateParams $walletable_create_params 口座の作成 (optional)
+     * @param  \OpenAPI\Client\Model\WalletableCreateParams $walletable_create_params 口座の作成 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -471,7 +471,7 @@ class WalletablesApi
      * @param  string $type 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） (required)
      * @param  int $company_id 事業所ID (required)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -489,7 +489,7 @@ class WalletablesApi
      * @param  string $type 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） (required)
      * @param  int $company_id 事業所ID (required)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -539,7 +539,7 @@ class WalletablesApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestError',
+                        '\OpenAPI\Client\Model\BadRequestError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -547,7 +547,7 @@ class WalletablesApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\UnauthorizedError',
+                        '\OpenAPI\Client\Model\UnauthorizedError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -555,7 +555,7 @@ class WalletablesApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ForbiddenError',
+                        '\OpenAPI\Client\Model\ForbiddenError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -563,7 +563,7 @@ class WalletablesApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestNotFoundError',
+                        '\OpenAPI\Client\Model\BadRequestNotFoundError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -571,7 +571,7 @@ class WalletablesApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InternalServerError',
+                        '\OpenAPI\Client\Model\InternalServerError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -796,9 +796,9 @@ class WalletablesApi
      * @param  string $type 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） (required)
      * @param  int $company_id 事業所ID (required)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\InlineResponse20016|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\InlineResponse20016|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\BadRequestNotFoundError|\OpenAPI\Client\Model\InternalServerError
      */
     public function getWalletable($id, $type, $company_id)
     {
@@ -815,9 +815,9 @@ class WalletablesApi
      * @param  string $type 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） (required)
      * @param  int $company_id 事業所ID (required)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\InlineResponse20016|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\InlineResponse20016|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\BadRequestNotFoundError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWalletableWithHttpInfo($id, $type, $company_id)
     {
@@ -860,80 +860,80 @@ class WalletablesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Freee\Accounting\Model\InlineResponse20016' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InlineResponse20016' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InlineResponse20016', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse20016', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\UnauthorizedError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\UnauthorizedError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ForbiddenError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ForbiddenError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Freee\Accounting\Model\BadRequestNotFoundError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestNotFoundError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestNotFoundError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestNotFoundError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InternalServerError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InternalServerError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\InlineResponse20016';
+            $returnType = '\OpenAPI\Client\Model\InlineResponse20016';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -951,7 +951,7 @@ class WalletablesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InlineResponse20016',
+                        '\OpenAPI\Client\Model\InlineResponse20016',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -959,7 +959,7 @@ class WalletablesApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestError',
+                        '\OpenAPI\Client\Model\BadRequestError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -967,7 +967,7 @@ class WalletablesApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\UnauthorizedError',
+                        '\OpenAPI\Client\Model\UnauthorizedError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -975,7 +975,7 @@ class WalletablesApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ForbiddenError',
+                        '\OpenAPI\Client\Model\ForbiddenError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -983,7 +983,7 @@ class WalletablesApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestNotFoundError',
+                        '\OpenAPI\Client\Model\BadRequestNotFoundError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -991,7 +991,7 @@ class WalletablesApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InternalServerError',
+                        '\OpenAPI\Client\Model\InternalServerError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1037,7 +1037,7 @@ class WalletablesApi
      */
     public function getWalletableAsyncWithHttpInfo($id, $type, $company_id)
     {
-        $returnType = '\Freee\Accounting\Model\InlineResponse20016';
+        $returnType = '\OpenAPI\Client\Model\InlineResponse20016';
         $request = $this->getWalletableRequest($id, $type, $company_id);
 
         return $this->client
@@ -1226,9 +1226,9 @@ class WalletablesApi
      * @param  bool $with_balance 残高情報を含める (optional)
      * @param  string $type 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） (optional)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\InlineResponse20015|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\InlineResponse20015|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\InternalServerError
      */
     public function getWalletables($company_id, $with_balance = null, $type = null)
     {
@@ -1245,9 +1245,9 @@ class WalletablesApi
      * @param  bool $with_balance 残高情報を含める (optional)
      * @param  string $type 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） (optional)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\InlineResponse20015|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\InlineResponse20015|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWalletablesWithHttpInfo($company_id, $with_balance = null, $type = null)
     {
@@ -1290,68 +1290,68 @@ class WalletablesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Freee\Accounting\Model\InlineResponse20015' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InlineResponse20015' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InlineResponse20015', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse20015', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\UnauthorizedError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\UnauthorizedError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ForbiddenError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ForbiddenError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InternalServerError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InternalServerError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\InlineResponse20015';
+            $returnType = '\OpenAPI\Client\Model\InlineResponse20015';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1369,7 +1369,7 @@ class WalletablesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InlineResponse20015',
+                        '\OpenAPI\Client\Model\InlineResponse20015',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1377,7 +1377,7 @@ class WalletablesApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestError',
+                        '\OpenAPI\Client\Model\BadRequestError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1385,7 +1385,7 @@ class WalletablesApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\UnauthorizedError',
+                        '\OpenAPI\Client\Model\UnauthorizedError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1393,7 +1393,7 @@ class WalletablesApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ForbiddenError',
+                        '\OpenAPI\Client\Model\ForbiddenError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1401,7 +1401,7 @@ class WalletablesApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InternalServerError',
+                        '\OpenAPI\Client\Model\InternalServerError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1447,7 +1447,7 @@ class WalletablesApi
      */
     public function getWalletablesAsyncWithHttpInfo($company_id, $with_balance = null, $type = null)
     {
-        $returnType = '\Freee\Accounting\Model\InlineResponse20015';
+        $returnType = '\OpenAPI\Client\Model\InlineResponse20015';
         $request = $this->getWalletablesRequest($company_id, $with_balance, $type);
 
         return $this->client
@@ -1621,11 +1621,11 @@ class WalletablesApi
      *
      * @param  int $id id (required)
      * @param  string $type 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） (required)
-     * @param  \Freee\Accounting\Model\WalletableUpdateParams $walletable_update_params 口座の更新 (optional)
+     * @param  \OpenAPI\Client\Model\WalletableUpdateParams $walletable_update_params 口座の更新 (optional)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\InlineResponse20016|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\InlineResponse20016|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\BadRequestNotFoundError|\OpenAPI\Client\Model\InternalServerError
      */
     public function updateWalletable($id, $type, $walletable_update_params = null)
     {
@@ -1640,11 +1640,11 @@ class WalletablesApi
      *
      * @param  int $id (required)
      * @param  string $type 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） (required)
-     * @param  \Freee\Accounting\Model\WalletableUpdateParams $walletable_update_params 口座の更新 (optional)
+     * @param  \OpenAPI\Client\Model\WalletableUpdateParams $walletable_update_params 口座の更新 (optional)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\InlineResponse20016|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\InlineResponse20016|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\BadRequestNotFoundError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateWalletableWithHttpInfo($id, $type, $walletable_update_params = null)
     {
@@ -1687,80 +1687,80 @@ class WalletablesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Freee\Accounting\Model\InlineResponse20016' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InlineResponse20016' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InlineResponse20016', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse20016', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\UnauthorizedError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\UnauthorizedError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ForbiddenError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ForbiddenError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Freee\Accounting\Model\BadRequestNotFoundError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestNotFoundError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestNotFoundError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestNotFoundError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InternalServerError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InternalServerError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\InlineResponse20016';
+            $returnType = '\OpenAPI\Client\Model\InlineResponse20016';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1778,7 +1778,7 @@ class WalletablesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InlineResponse20016',
+                        '\OpenAPI\Client\Model\InlineResponse20016',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1786,7 +1786,7 @@ class WalletablesApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestError',
+                        '\OpenAPI\Client\Model\BadRequestError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1794,7 +1794,7 @@ class WalletablesApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\UnauthorizedError',
+                        '\OpenAPI\Client\Model\UnauthorizedError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1802,7 +1802,7 @@ class WalletablesApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ForbiddenError',
+                        '\OpenAPI\Client\Model\ForbiddenError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1810,7 +1810,7 @@ class WalletablesApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestNotFoundError',
+                        '\OpenAPI\Client\Model\BadRequestNotFoundError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1818,7 +1818,7 @@ class WalletablesApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InternalServerError',
+                        '\OpenAPI\Client\Model\InternalServerError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1835,7 +1835,7 @@ class WalletablesApi
      *
      * @param  int $id (required)
      * @param  string $type 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） (required)
-     * @param  \Freee\Accounting\Model\WalletableUpdateParams $walletable_update_params 口座の更新 (optional)
+     * @param  \OpenAPI\Client\Model\WalletableUpdateParams $walletable_update_params 口座の更新 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1857,14 +1857,14 @@ class WalletablesApi
      *
      * @param  int $id (required)
      * @param  string $type 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） (required)
-     * @param  \Freee\Accounting\Model\WalletableUpdateParams $walletable_update_params 口座の更新 (optional)
+     * @param  \OpenAPI\Client\Model\WalletableUpdateParams $walletable_update_params 口座の更新 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWalletableAsyncWithHttpInfo($id, $type, $walletable_update_params = null)
     {
-        $returnType = '\Freee\Accounting\Model\InlineResponse20016';
+        $returnType = '\OpenAPI\Client\Model\InlineResponse20016';
         $request = $this->updateWalletableRequest($id, $type, $walletable_update_params);
 
         return $this->client
@@ -1905,7 +1905,7 @@ class WalletablesApi
      *
      * @param  int $id (required)
      * @param  string $type 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） (required)
-     * @param  \Freee\Accounting\Model\WalletableUpdateParams $walletable_update_params 口座の更新 (optional)
+     * @param  \OpenAPI\Client\Model\WalletableUpdateParams $walletable_update_params 口座の更新 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

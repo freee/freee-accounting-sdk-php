@@ -1,4 +1,4 @@
-# Freee\Accounting\TransfersApi
+# OpenAPI\Client\TransfersApi
 
 All URIs are relative to https://api.freee.co.jp.
 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 ## `createTransfer()`
 
 ```php
-createTransfer($transfer_params): \Freee\Accounting\Model\TransferResponse
+createTransfer($transfer_params): \OpenAPI\Client\Model\TransferResponse
 ```
 
 取引（振替）の作成
@@ -27,16 +27,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TransfersApi(
+$apiInstance = new OpenAPI\Client\Api\TransfersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$transfer_params = new \Freee\Accounting\Model\TransferParams(); // \Freee\Accounting\Model\TransferParams | 取引（振替）の作成
+$transfer_params = new \OpenAPI\Client\Model\TransferParams(); // \OpenAPI\Client\Model\TransferParams | 取引（振替）の作成
 
 try {
     $result = $apiInstance->createTransfer($transfer_params);
@@ -50,11 +50,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transfer_params** | [**\Freee\Accounting\Model\TransferParams**](../Model/TransferParams.md)| 取引（振替）の作成 | [optional]
+ **transfer_params** | [**\OpenAPI\Client\Model\TransferParams**](../Model/TransferParams.md)| 取引（振替）の作成 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\TransferResponse**](../Model/TransferResponse.md)
+[**\OpenAPI\Client\Model\TransferResponse**](../Model/TransferResponse.md)
 
 ### Authorization
 
@@ -85,10 +85,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TransfersApi(
+$apiInstance = new OpenAPI\Client\Api\TransfersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -131,7 +131,7 @@ void (empty response body)
 ## `getTransfer()`
 
 ```php
-getTransfer($id, $company_id): \Freee\Accounting\Model\TransferResponse
+getTransfer($id, $company_id): \OpenAPI\Client\Model\TransferResponse
 ```
 
 取引（振替）の取得
@@ -144,10 +144,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TransfersApi(
+$apiInstance = new OpenAPI\Client\Api\TransfersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\TransferResponse**](../Model/TransferResponse.md)
+[**\OpenAPI\Client\Model\TransferResponse**](../Model/TransferResponse.md)
 
 ### Authorization
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 ## `getTransfers()`
 
 ```php
-getTransfers($company_id, $start_date, $end_date, $offset, $limit): \Freee\Accounting\Model\InlineResponse20011
+getTransfers($company_id, $start_date, $end_date, $offset, $limit): \OpenAPI\Client\Model\InlineResponse20011
 ```
 
 取引（振替）一覧の取得
@@ -204,10 +204,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TransfersApi(
+$apiInstance = new OpenAPI\Client\Api\TransfersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse20011**](../Model/InlineResponse20011.md)
+[**\OpenAPI\Client\Model\InlineResponse20011**](../Model/InlineResponse20011.md)
 
 ### Authorization
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 ## `updateTransfer()`
 
 ```php
-updateTransfer($id, $transfer_params): \Freee\Accounting\Model\TransferResponse
+updateTransfer($id, $transfer_params): \OpenAPI\Client\Model\TransferResponse
 ```
 
 取引（振替）の更新
@@ -270,17 +270,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TransfersApi(
+$apiInstance = new OpenAPI\Client\Api\TransfersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | 取引(振替)ID
-$transfer_params = new \Freee\Accounting\Model\TransferParams(); // \Freee\Accounting\Model\TransferParams | 取引（振替）の更新
+$transfer_params = new \OpenAPI\Client\Model\TransferParams(); // \OpenAPI\Client\Model\TransferParams | 取引（振替）の更新
 
 try {
     $result = $apiInstance->updateTransfer($id, $transfer_params);
@@ -295,11 +295,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 取引(振替)ID |
- **transfer_params** | [**\Freee\Accounting\Model\TransferParams**](../Model/TransferParams.md)| 取引（振替）の更新 |
+ **transfer_params** | [**\OpenAPI\Client\Model\TransferParams**](../Model/TransferParams.md)| 取引（振替）の更新 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\TransferResponse**](../Model/TransferResponse.md)
+[**\OpenAPI\Client\Model\TransferResponse**](../Model/TransferResponse.md)
 
 ### Authorization
 

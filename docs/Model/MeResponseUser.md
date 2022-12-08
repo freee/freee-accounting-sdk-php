@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**companies** | [**\Freee\Accounting\Model\MeResponseUserCompanies[]**](MeResponseUserCompanies.md) |  | [optional]
+**companies** | [**\OpenAPI\Client\Model\MeResponseUserCompanies[]**](MeResponseUserCompanies.md) |  | [optional]
 **display_name** | **string** | 表示ユーザー名 | [optional]
 **email** | **string** | メールアドレス |
 **first_name** | **string** | 名 | [optional]

@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * CompanyResponseCompany Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,38 +59,38 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => '\Freee\Accounting\Model\CompanyResponseCompanyTags[]',
-        'account_items' => '\Freee\Accounting\Model\CompanyResponseCompanyAccountItems[]',
+        'tags' => '\OpenAPI\Client\Model\CompanyResponseCompanyTags[]',
+        'account_items' => '\OpenAPI\Client\Model\CompanyResponseCompanyAccountItems[]',
         'amount_fraction' => 'int',
         'contact_name' => 'string',
         'corporate_number' => 'string',
         'default_wallet_account_id' => 'int',
         'display_name' => 'string',
         'fax' => 'string',
-        'fiscal_years' => '\Freee\Accounting\Model\FiscalYears[]',
+        'fiscal_years' => '\OpenAPI\Client\Model\FiscalYears[]',
         'head_count' => 'int',
         'id' => 'int',
         'industry_class' => 'string',
         'industry_code' => 'string',
         'invoice_layout' => 'string',
-        'items' => '\Freee\Accounting\Model\CompanyResponseCompanyItems[]',
+        'items' => '\OpenAPI\Client\Model\CompanyResponseCompanyItems[]',
         'minus_format' => 'int',
         'name' => 'string',
         'name_kana' => 'string',
-        'partners' => '\Freee\Accounting\Model\CompanyResponseCompanyPartners[]',
+        'partners' => '\OpenAPI\Client\Model\CompanyResponseCompanyPartners[]',
         'phone1' => 'string',
         'phone2' => 'string',
         'prefecture_code' => 'int',
         'private_settlement' => 'bool',
         'role' => 'string',
-        'sections' => '\Freee\Accounting\Model\CompanyResponseCompanySections[]',
+        'sections' => '\OpenAPI\Client\Model\CompanyResponseCompanySections[]',
         'street_name1' => 'string',
         'street_name2' => 'string',
         'tax_at_source_calc_type' => 'int',
-        'tax_codes' => '\Freee\Accounting\Model\CompanyResponseCompanyTaxCodes[]',
+        'tax_codes' => '\OpenAPI\Client\Model\CompanyResponseCompanyTaxCodes[]',
         'txn_number_format' => 'string',
         'use_partner_code' => 'bool',
-        'walletables' => '\Freee\Accounting\Model\CompanyResponseCompanyWalletables[]',
+        'walletables' => '\OpenAPI\Client\Model\CompanyResponseCompanyWalletables[]',
         'workflow_setting' => 'string',
         'zipcode' => 'string'
     ];
@@ -1002,7 +1002,7 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets tags
      *
-     * @return \Freee\Accounting\Model\CompanyResponseCompanyTags[]|null
+     * @return \OpenAPI\Client\Model\CompanyResponseCompanyTags[]|null
      */
     public function getTags()
     {
@@ -1012,7 +1012,7 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets tags
      *
-     * @param \Freee\Accounting\Model\CompanyResponseCompanyTags[]|null $tags tags
+     * @param \OpenAPI\Client\Model\CompanyResponseCompanyTags[]|null $tags tags
      *
      * @return self
      */
@@ -1026,7 +1026,7 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets account_items
      *
-     * @return \Freee\Accounting\Model\CompanyResponseCompanyAccountItems[]|null
+     * @return \OpenAPI\Client\Model\CompanyResponseCompanyAccountItems[]|null
      */
     public function getAccountItems()
     {
@@ -1036,7 +1036,7 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets account_items
      *
-     * @param \Freee\Accounting\Model\CompanyResponseCompanyAccountItems[]|null $account_items account_items
+     * @param \OpenAPI\Client\Model\CompanyResponseCompanyAccountItems[]|null $account_items account_items
      *
      * @return self
      */
@@ -1214,7 +1214,7 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets fiscal_years
      *
-     * @return \Freee\Accounting\Model\FiscalYears[]
+     * @return \OpenAPI\Client\Model\FiscalYears[]
      */
     public function getFiscalYears()
     {
@@ -1224,7 +1224,7 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets fiscal_years
      *
-     * @param \Freee\Accounting\Model\FiscalYears[] $fiscal_years fiscal_years
+     * @param \OpenAPI\Client\Model\FiscalYears[] $fiscal_years fiscal_years
      *
      * @return self
      */
@@ -1404,7 +1404,7 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets items
      *
-     * @return \Freee\Accounting\Model\CompanyResponseCompanyItems[]|null
+     * @return \OpenAPI\Client\Model\CompanyResponseCompanyItems[]|null
      */
     public function getItems()
     {
@@ -1414,7 +1414,7 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets items
      *
-     * @param \Freee\Accounting\Model\CompanyResponseCompanyItems[]|null $items items
+     * @param \OpenAPI\Client\Model\CompanyResponseCompanyItems[]|null $items items
      *
      * @return self
      */
@@ -1516,7 +1516,7 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets partners
      *
-     * @return \Freee\Accounting\Model\CompanyResponseCompanyPartners[]|null
+     * @return \OpenAPI\Client\Model\CompanyResponseCompanyPartners[]|null
      */
     public function getPartners()
     {
@@ -1526,7 +1526,7 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets partners
      *
-     * @param \Freee\Accounting\Model\CompanyResponseCompanyPartners[]|null $partners partners
+     * @param \OpenAPI\Client\Model\CompanyResponseCompanyPartners[]|null $partners partners
      *
      * @return self
      */
@@ -1678,7 +1678,7 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets sections
      *
-     * @return \Freee\Accounting\Model\CompanyResponseCompanySections[]|null
+     * @return \OpenAPI\Client\Model\CompanyResponseCompanySections[]|null
      */
     public function getSections()
     {
@@ -1688,7 +1688,7 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets sections
      *
-     * @param \Freee\Accounting\Model\CompanyResponseCompanySections[]|null $sections sections
+     * @param \OpenAPI\Client\Model\CompanyResponseCompanySections[]|null $sections sections
      *
      * @return self
      */
@@ -1782,7 +1782,7 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets tax_codes
      *
-     * @return \Freee\Accounting\Model\CompanyResponseCompanyTaxCodes[]|null
+     * @return \OpenAPI\Client\Model\CompanyResponseCompanyTaxCodes[]|null
      */
     public function getTaxCodes()
     {
@@ -1792,7 +1792,7 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets tax_codes
      *
-     * @param \Freee\Accounting\Model\CompanyResponseCompanyTaxCodes[]|null $tax_codes tax_codes
+     * @param \OpenAPI\Client\Model\CompanyResponseCompanyTaxCodes[]|null $tax_codes tax_codes
      *
      * @return self
      */
@@ -1864,7 +1864,7 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets walletables
      *
-     * @return \Freee\Accounting\Model\CompanyResponseCompanyWalletables[]|null
+     * @return \OpenAPI\Client\Model\CompanyResponseCompanyWalletables[]|null
      */
     public function getWalletables()
     {
@@ -1874,7 +1874,7 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets walletables
      *
-     * @param \Freee\Accounting\Model\CompanyResponseCompanyWalletables[]|null $walletables walletables
+     * @param \OpenAPI\Client\Model\CompanyResponseCompanyWalletables[]|null $walletables walletables
      *
      * @return self
      */

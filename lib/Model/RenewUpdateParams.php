@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * RenewUpdateParams Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -60,7 +60,7 @@ class RenewUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPITypes = [
         'company_id' => 'int',
-        'details' => '\Freee\Accounting\Model\RenewUpdateParamsDetails[]',
+        'details' => '\OpenAPI\Client\Model\RenewUpdateParamsDetails[]',
         'update_date' => 'string'
     ];
 
@@ -269,7 +269,7 @@ class RenewUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets details
      *
-     * @return \Freee\Accounting\Model\RenewUpdateParamsDetails[]
+     * @return \OpenAPI\Client\Model\RenewUpdateParamsDetails[]
      */
     public function getDetails()
     {
@@ -279,7 +279,7 @@ class RenewUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets details
      *
-     * @param \Freee\Accounting\Model\RenewUpdateParamsDetails[] $details +更新の明細行
+     * @param \OpenAPI\Client\Model\RenewUpdateParamsDetails[] $details +更新の明細行
      *
      * @return self
      */

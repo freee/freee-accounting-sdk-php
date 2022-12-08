@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * PartnersResponsePartners Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'address_attributes' => '\Freee\Accounting\Model\PartnerResponsePartnerAddressAttributes',
+        'address_attributes' => '\OpenAPI\Client\Model\PartnerResponsePartnerAddressAttributes',
         'available' => 'bool',
         'code' => 'string',
         'company_id' => 'int',
@@ -72,8 +72,8 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess, \JsonSeri
         'name' => 'string',
         'name_kana' => 'string',
         'org_code' => 'int',
-        'partner_bank_account_attributes' => '\Freee\Accounting\Model\PartnerResponsePartnerPartnerBankAccountAttributes',
-        'partner_doc_setting_attributes' => '\Freee\Accounting\Model\PartnerCreateParamsPartnerDocSettingAttributes',
+        'partner_bank_account_attributes' => '\OpenAPI\Client\Model\PartnerResponsePartnerPartnerBankAccountAttributes',
+        'partner_doc_setting_attributes' => '\OpenAPI\Client\Model\PartnerCreateParamsPartnerDocSettingAttributes',
         'payer_walletable_id' => 'int',
         'phone' => 'string',
         'shortcut1' => 'string',
@@ -418,7 +418,7 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets address_attributes
      *
-     * @return \Freee\Accounting\Model\PartnerResponsePartnerAddressAttributes|null
+     * @return \OpenAPI\Client\Model\PartnerResponsePartnerAddressAttributes|null
      */
     public function getAddressAttributes()
     {
@@ -428,7 +428,7 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets address_attributes
      *
-     * @param \Freee\Accounting\Model\PartnerResponsePartnerAddressAttributes|null $address_attributes address_attributes
+     * @param \OpenAPI\Client\Model\PartnerResponsePartnerAddressAttributes|null $address_attributes address_attributes
      *
      * @return self
      */
@@ -762,7 +762,7 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets partner_bank_account_attributes
      *
-     * @return \Freee\Accounting\Model\PartnerResponsePartnerPartnerBankAccountAttributes|null
+     * @return \OpenAPI\Client\Model\PartnerResponsePartnerPartnerBankAccountAttributes|null
      */
     public function getPartnerBankAccountAttributes()
     {
@@ -772,7 +772,7 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets partner_bank_account_attributes
      *
-     * @param \Freee\Accounting\Model\PartnerResponsePartnerPartnerBankAccountAttributes|null $partner_bank_account_attributes partner_bank_account_attributes
+     * @param \OpenAPI\Client\Model\PartnerResponsePartnerPartnerBankAccountAttributes|null $partner_bank_account_attributes partner_bank_account_attributes
      *
      * @return self
      */
@@ -786,7 +786,7 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets partner_doc_setting_attributes
      *
-     * @return \Freee\Accounting\Model\PartnerCreateParamsPartnerDocSettingAttributes|null
+     * @return \OpenAPI\Client\Model\PartnerCreateParamsPartnerDocSettingAttributes|null
      */
     public function getPartnerDocSettingAttributes()
     {
@@ -796,7 +796,7 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets partner_doc_setting_attributes
      *
-     * @param \Freee\Accounting\Model\PartnerCreateParamsPartnerDocSettingAttributes|null $partner_doc_setting_attributes partner_doc_setting_attributes
+     * @param \OpenAPI\Client\Model\PartnerCreateParamsPartnerDocSettingAttributes|null $partner_doc_setting_attributes partner_doc_setting_attributes
      *
      * @return self
      */

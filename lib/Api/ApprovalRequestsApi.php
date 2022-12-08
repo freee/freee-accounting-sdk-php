@@ -4,7 +4,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Api;
+namespace OpenAPI\Client\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Freee\Accounting\ApiException;
-use Freee\Accounting\Configuration;
-use Freee\Accounting\HeaderSelector;
-use Freee\Accounting\ObjectSerializer;
+use OpenAPI\Client\ApiException;
+use OpenAPI\Client\Configuration;
+use OpenAPI\Client\HeaderSelector;
+use OpenAPI\Client\ObjectSerializer;
 
 /**
  * ApprovalRequestsApi Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -120,11 +120,11 @@ class ApprovalRequestsApi
      *
      * 各種申請の作成
      *
-     * @param  \Freee\Accounting\Model\ApprovalRequestCreateParams $approval_request_create_params 各種申請の作成 (optional)
+     * @param  \OpenAPI\Client\Model\ApprovalRequestCreateParams $approval_request_create_params 各種申請の作成 (optional)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\ApprovalRequestResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\ApprovalRequestResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\BadRequestNotFoundError|\OpenAPI\Client\Model\InternalServerError
      */
     public function createApprovalRequest($approval_request_create_params = null)
     {
@@ -137,11 +137,11 @@ class ApprovalRequestsApi
      *
      * 各種申請の作成
      *
-     * @param  \Freee\Accounting\Model\ApprovalRequestCreateParams $approval_request_create_params 各種申請の作成 (optional)
+     * @param  \OpenAPI\Client\Model\ApprovalRequestCreateParams $approval_request_create_params 各種申請の作成 (optional)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\ApprovalRequestResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ApprovalRequestResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\BadRequestNotFoundError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function createApprovalRequestWithHttpInfo($approval_request_create_params = null)
     {
@@ -184,80 +184,80 @@ class ApprovalRequestsApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\Freee\Accounting\Model\ApprovalRequestResponse' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ApprovalRequestResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ApprovalRequestResponse', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ApprovalRequestResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\UnauthorizedError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\UnauthorizedError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ForbiddenError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ForbiddenError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Freee\Accounting\Model\BadRequestNotFoundError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestNotFoundError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestNotFoundError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestNotFoundError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InternalServerError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InternalServerError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\ApprovalRequestResponse';
+            $returnType = '\OpenAPI\Client\Model\ApprovalRequestResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -275,7 +275,7 @@ class ApprovalRequestsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ApprovalRequestResponse',
+                        '\OpenAPI\Client\Model\ApprovalRequestResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -283,7 +283,7 @@ class ApprovalRequestsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestError',
+                        '\OpenAPI\Client\Model\BadRequestError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -291,7 +291,7 @@ class ApprovalRequestsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\UnauthorizedError',
+                        '\OpenAPI\Client\Model\UnauthorizedError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -299,7 +299,7 @@ class ApprovalRequestsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ForbiddenError',
+                        '\OpenAPI\Client\Model\ForbiddenError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -307,7 +307,7 @@ class ApprovalRequestsApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestNotFoundError',
+                        '\OpenAPI\Client\Model\BadRequestNotFoundError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -315,7 +315,7 @@ class ApprovalRequestsApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InternalServerError',
+                        '\OpenAPI\Client\Model\InternalServerError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -330,7 +330,7 @@ class ApprovalRequestsApi
      *
      * 各種申請の作成
      *
-     * @param  \Freee\Accounting\Model\ApprovalRequestCreateParams $approval_request_create_params 各種申請の作成 (optional)
+     * @param  \OpenAPI\Client\Model\ApprovalRequestCreateParams $approval_request_create_params 各種申請の作成 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -350,14 +350,14 @@ class ApprovalRequestsApi
      *
      * 各種申請の作成
      *
-     * @param  \Freee\Accounting\Model\ApprovalRequestCreateParams $approval_request_create_params 各種申請の作成 (optional)
+     * @param  \OpenAPI\Client\Model\ApprovalRequestCreateParams $approval_request_create_params 各種申請の作成 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createApprovalRequestAsyncWithHttpInfo($approval_request_create_params = null)
     {
-        $returnType = '\Freee\Accounting\Model\ApprovalRequestResponse';
+        $returnType = '\OpenAPI\Client\Model\ApprovalRequestResponse';
         $request = $this->createApprovalRequestRequest($approval_request_create_params);
 
         return $this->client
@@ -396,7 +396,7 @@ class ApprovalRequestsApi
     /**
      * Create request for operation 'createApprovalRequest'
      *
-     * @param  \Freee\Accounting\Model\ApprovalRequestCreateParams $approval_request_create_params 各種申請の作成 (optional)
+     * @param  \OpenAPI\Client\Model\ApprovalRequestCreateParams $approval_request_create_params 各種申請の作成 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -490,7 +490,7 @@ class ApprovalRequestsApi
      * @param  int $id 各種申請ID (required)
      * @param  int $company_id 事業所ID (required)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -507,7 +507,7 @@ class ApprovalRequestsApi
      * @param  int $id 各種申請ID (required)
      * @param  int $company_id 事業所ID (required)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -557,7 +557,7 @@ class ApprovalRequestsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestError',
+                        '\OpenAPI\Client\Model\BadRequestError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -565,7 +565,7 @@ class ApprovalRequestsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\UnauthorizedError',
+                        '\OpenAPI\Client\Model\UnauthorizedError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -573,7 +573,7 @@ class ApprovalRequestsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ForbiddenError',
+                        '\OpenAPI\Client\Model\ForbiddenError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -581,7 +581,7 @@ class ApprovalRequestsApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestNotFoundError',
+                        '\OpenAPI\Client\Model\BadRequestNotFoundError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -589,7 +589,7 @@ class ApprovalRequestsApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InternalServerError',
+                        '\OpenAPI\Client\Model\InternalServerError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -796,9 +796,9 @@ class ApprovalRequestsApi
      * @param  int $id 各種申請ID (required)
      * @param  int $company_id 事業所ID (required)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\ApprovalRequestResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\ApprovalRequestResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\BadRequestNotFoundError|\OpenAPI\Client\Model\InternalServerError
      */
     public function getApprovalRequest($id, $company_id)
     {
@@ -814,9 +814,9 @@ class ApprovalRequestsApi
      * @param  int $id 各種申請ID (required)
      * @param  int $company_id 事業所ID (required)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\ApprovalRequestResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ApprovalRequestResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\BadRequestNotFoundError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getApprovalRequestWithHttpInfo($id, $company_id)
     {
@@ -859,80 +859,80 @@ class ApprovalRequestsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Freee\Accounting\Model\ApprovalRequestResponse' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ApprovalRequestResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ApprovalRequestResponse', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ApprovalRequestResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\UnauthorizedError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\UnauthorizedError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ForbiddenError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ForbiddenError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Freee\Accounting\Model\BadRequestNotFoundError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestNotFoundError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestNotFoundError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestNotFoundError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InternalServerError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InternalServerError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\ApprovalRequestResponse';
+            $returnType = '\OpenAPI\Client\Model\ApprovalRequestResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -950,7 +950,7 @@ class ApprovalRequestsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ApprovalRequestResponse',
+                        '\OpenAPI\Client\Model\ApprovalRequestResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -958,7 +958,7 @@ class ApprovalRequestsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestError',
+                        '\OpenAPI\Client\Model\BadRequestError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -966,7 +966,7 @@ class ApprovalRequestsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\UnauthorizedError',
+                        '\OpenAPI\Client\Model\UnauthorizedError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -974,7 +974,7 @@ class ApprovalRequestsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ForbiddenError',
+                        '\OpenAPI\Client\Model\ForbiddenError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -982,7 +982,7 @@ class ApprovalRequestsApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestNotFoundError',
+                        '\OpenAPI\Client\Model\BadRequestNotFoundError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -990,7 +990,7 @@ class ApprovalRequestsApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InternalServerError',
+                        '\OpenAPI\Client\Model\InternalServerError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1034,7 +1034,7 @@ class ApprovalRequestsApi
      */
     public function getApprovalRequestAsyncWithHttpInfo($id, $company_id)
     {
-        $returnType = '\Freee\Accounting\Model\ApprovalRequestResponse';
+        $returnType = '\OpenAPI\Client\Model\ApprovalRequestResponse';
         $request = $this->getApprovalRequestRequest($id, $company_id);
 
         return $this->client
@@ -1207,9 +1207,9 @@ class ApprovalRequestsApi
      * @param  int $id 申請フォームID (required)
      * @param  int $company_id 事業所ID (required)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\ApprovalRequestFormResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\ApprovalRequestFormResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\BadRequestNotFoundError|\OpenAPI\Client\Model\InternalServerError
      */
     public function getApprovalRequestForm($id, $company_id)
     {
@@ -1225,9 +1225,9 @@ class ApprovalRequestsApi
      * @param  int $id 申請フォームID (required)
      * @param  int $company_id 事業所ID (required)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\ApprovalRequestFormResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ApprovalRequestFormResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\BadRequestNotFoundError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getApprovalRequestFormWithHttpInfo($id, $company_id)
     {
@@ -1270,80 +1270,80 @@ class ApprovalRequestsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Freee\Accounting\Model\ApprovalRequestFormResponse' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ApprovalRequestFormResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ApprovalRequestFormResponse', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ApprovalRequestFormResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\UnauthorizedError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\UnauthorizedError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ForbiddenError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ForbiddenError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Freee\Accounting\Model\BadRequestNotFoundError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestNotFoundError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestNotFoundError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestNotFoundError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InternalServerError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InternalServerError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\ApprovalRequestFormResponse';
+            $returnType = '\OpenAPI\Client\Model\ApprovalRequestFormResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1361,7 +1361,7 @@ class ApprovalRequestsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ApprovalRequestFormResponse',
+                        '\OpenAPI\Client\Model\ApprovalRequestFormResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1369,7 +1369,7 @@ class ApprovalRequestsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestError',
+                        '\OpenAPI\Client\Model\BadRequestError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1377,7 +1377,7 @@ class ApprovalRequestsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\UnauthorizedError',
+                        '\OpenAPI\Client\Model\UnauthorizedError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1385,7 +1385,7 @@ class ApprovalRequestsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ForbiddenError',
+                        '\OpenAPI\Client\Model\ForbiddenError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1393,7 +1393,7 @@ class ApprovalRequestsApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestNotFoundError',
+                        '\OpenAPI\Client\Model\BadRequestNotFoundError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1401,7 +1401,7 @@ class ApprovalRequestsApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InternalServerError',
+                        '\OpenAPI\Client\Model\InternalServerError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1445,7 +1445,7 @@ class ApprovalRequestsApi
      */
     public function getApprovalRequestFormAsyncWithHttpInfo($id, $company_id)
     {
-        $returnType = '\Freee\Accounting\Model\ApprovalRequestFormResponse';
+        $returnType = '\OpenAPI\Client\Model\ApprovalRequestFormResponse';
         $request = $this->getApprovalRequestFormRequest($id, $company_id);
 
         return $this->client
@@ -1617,9 +1617,9 @@ class ApprovalRequestsApi
      *
      * @param  int $company_id 事業所ID (required)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\ApprovalRequestFormIndexResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\ApprovalRequestFormIndexResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\BadRequestNotFoundError|\OpenAPI\Client\Model\InternalServerError
      */
     public function getApprovalRequestForms($company_id)
     {
@@ -1634,9 +1634,9 @@ class ApprovalRequestsApi
      *
      * @param  int $company_id 事業所ID (required)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\ApprovalRequestFormIndexResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ApprovalRequestFormIndexResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\BadRequestNotFoundError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getApprovalRequestFormsWithHttpInfo($company_id)
     {
@@ -1679,80 +1679,80 @@ class ApprovalRequestsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Freee\Accounting\Model\ApprovalRequestFormIndexResponse' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ApprovalRequestFormIndexResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ApprovalRequestFormIndexResponse', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ApprovalRequestFormIndexResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\UnauthorizedError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\UnauthorizedError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ForbiddenError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ForbiddenError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Freee\Accounting\Model\BadRequestNotFoundError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestNotFoundError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestNotFoundError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestNotFoundError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InternalServerError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InternalServerError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\ApprovalRequestFormIndexResponse';
+            $returnType = '\OpenAPI\Client\Model\ApprovalRequestFormIndexResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1770,7 +1770,7 @@ class ApprovalRequestsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ApprovalRequestFormIndexResponse',
+                        '\OpenAPI\Client\Model\ApprovalRequestFormIndexResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1778,7 +1778,7 @@ class ApprovalRequestsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestError',
+                        '\OpenAPI\Client\Model\BadRequestError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1786,7 +1786,7 @@ class ApprovalRequestsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\UnauthorizedError',
+                        '\OpenAPI\Client\Model\UnauthorizedError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1794,7 +1794,7 @@ class ApprovalRequestsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ForbiddenError',
+                        '\OpenAPI\Client\Model\ForbiddenError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1802,7 +1802,7 @@ class ApprovalRequestsApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestNotFoundError',
+                        '\OpenAPI\Client\Model\BadRequestNotFoundError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1810,7 +1810,7 @@ class ApprovalRequestsApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InternalServerError',
+                        '\OpenAPI\Client\Model\InternalServerError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1852,7 +1852,7 @@ class ApprovalRequestsApi
      */
     public function getApprovalRequestFormsAsyncWithHttpInfo($company_id)
     {
-        $returnType = '\Freee\Accounting\Model\ApprovalRequestFormIndexResponse';
+        $returnType = '\OpenAPI\Client\Model\ApprovalRequestFormIndexResponse';
         $request = $this->getApprovalRequestFormsRequest($company_id);
 
         return $this->client
@@ -2014,9 +2014,9 @@ class ApprovalRequestsApi
      * @param  int $offset 取得レコードのオフセット (デフォルト: 0) (optional)
      * @param  int $limit 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\ApprovalRequestsIndexResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\ApprovalRequestsIndexResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\BadRequestNotFoundError|\OpenAPI\Client\Model\InternalServerError
      */
     public function getApprovalRequests($company_id, $status = null, $application_number = null, $title = null, $form_id = null, $start_application_date = null, $end_application_date = null, $applicant_id = null, $min_amount = null, $max_amount = null, $approver_id = null, $offset = null, $limit = null)
     {
@@ -2043,9 +2043,9 @@ class ApprovalRequestsApi
      * @param  int $offset 取得レコードのオフセット (デフォルト: 0) (optional)
      * @param  int $limit 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\ApprovalRequestsIndexResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ApprovalRequestsIndexResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\BadRequestNotFoundError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getApprovalRequestsWithHttpInfo($company_id, $status = null, $application_number = null, $title = null, $form_id = null, $start_application_date = null, $end_application_date = null, $applicant_id = null, $min_amount = null, $max_amount = null, $approver_id = null, $offset = null, $limit = null)
     {
@@ -2088,80 +2088,80 @@ class ApprovalRequestsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Freee\Accounting\Model\ApprovalRequestsIndexResponse' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ApprovalRequestsIndexResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ApprovalRequestsIndexResponse', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ApprovalRequestsIndexResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\UnauthorizedError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\UnauthorizedError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ForbiddenError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ForbiddenError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Freee\Accounting\Model\BadRequestNotFoundError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestNotFoundError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestNotFoundError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestNotFoundError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InternalServerError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InternalServerError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\ApprovalRequestsIndexResponse';
+            $returnType = '\OpenAPI\Client\Model\ApprovalRequestsIndexResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2179,7 +2179,7 @@ class ApprovalRequestsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ApprovalRequestsIndexResponse',
+                        '\OpenAPI\Client\Model\ApprovalRequestsIndexResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2187,7 +2187,7 @@ class ApprovalRequestsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestError',
+                        '\OpenAPI\Client\Model\BadRequestError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2195,7 +2195,7 @@ class ApprovalRequestsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\UnauthorizedError',
+                        '\OpenAPI\Client\Model\UnauthorizedError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2203,7 +2203,7 @@ class ApprovalRequestsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ForbiddenError',
+                        '\OpenAPI\Client\Model\ForbiddenError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2211,7 +2211,7 @@ class ApprovalRequestsApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestNotFoundError',
+                        '\OpenAPI\Client\Model\BadRequestNotFoundError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2219,7 +2219,7 @@ class ApprovalRequestsApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InternalServerError',
+                        '\OpenAPI\Client\Model\InternalServerError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2285,7 +2285,7 @@ class ApprovalRequestsApi
      */
     public function getApprovalRequestsAsyncWithHttpInfo($company_id, $status = null, $application_number = null, $title = null, $form_id = null, $start_application_date = null, $end_application_date = null, $applicant_id = null, $min_amount = null, $max_amount = null, $approver_id = null, $offset = null, $limit = null)
     {
-        $returnType = '\Freee\Accounting\Model\ApprovalRequestsIndexResponse';
+        $returnType = '\OpenAPI\Client\Model\ApprovalRequestsIndexResponse';
         $request = $this->getApprovalRequestsRequest($company_id, $status, $application_number, $title, $form_id, $start_application_date, $end_application_date, $applicant_id, $min_amount, $max_amount, $approver_id, $offset, $limit);
 
         return $this->client
@@ -2634,11 +2634,11 @@ class ApprovalRequestsApi
      * 各種申請の更新
      *
      * @param  int $id 各種申請ID (required)
-     * @param  \Freee\Accounting\Model\ApprovalRequestUpdateParams $approval_request_update_params 各種申請の更新 (required)
+     * @param  \OpenAPI\Client\Model\ApprovalRequestUpdateParams $approval_request_update_params 各種申請の更新 (required)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\ApprovalRequestResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\ApprovalRequestResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\BadRequestNotFoundError|\OpenAPI\Client\Model\InternalServerError
      */
     public function updateApprovalRequest($id, $approval_request_update_params)
     {
@@ -2652,11 +2652,11 @@ class ApprovalRequestsApi
      * 各種申請の更新
      *
      * @param  int $id 各種申請ID (required)
-     * @param  \Freee\Accounting\Model\ApprovalRequestUpdateParams $approval_request_update_params 各種申請の更新 (required)
+     * @param  \OpenAPI\Client\Model\ApprovalRequestUpdateParams $approval_request_update_params 各種申請の更新 (required)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\ApprovalRequestResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ApprovalRequestResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\BadRequestNotFoundError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateApprovalRequestWithHttpInfo($id, $approval_request_update_params)
     {
@@ -2699,80 +2699,80 @@ class ApprovalRequestsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Freee\Accounting\Model\ApprovalRequestResponse' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ApprovalRequestResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ApprovalRequestResponse', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ApprovalRequestResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\UnauthorizedError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\UnauthorizedError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ForbiddenError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ForbiddenError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Freee\Accounting\Model\BadRequestNotFoundError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestNotFoundError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestNotFoundError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestNotFoundError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InternalServerError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InternalServerError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\ApprovalRequestResponse';
+            $returnType = '\OpenAPI\Client\Model\ApprovalRequestResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2790,7 +2790,7 @@ class ApprovalRequestsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ApprovalRequestResponse',
+                        '\OpenAPI\Client\Model\ApprovalRequestResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2798,7 +2798,7 @@ class ApprovalRequestsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestError',
+                        '\OpenAPI\Client\Model\BadRequestError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2806,7 +2806,7 @@ class ApprovalRequestsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\UnauthorizedError',
+                        '\OpenAPI\Client\Model\UnauthorizedError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2814,7 +2814,7 @@ class ApprovalRequestsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ForbiddenError',
+                        '\OpenAPI\Client\Model\ForbiddenError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2822,7 +2822,7 @@ class ApprovalRequestsApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestNotFoundError',
+                        '\OpenAPI\Client\Model\BadRequestNotFoundError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2830,7 +2830,7 @@ class ApprovalRequestsApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InternalServerError',
+                        '\OpenAPI\Client\Model\InternalServerError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2846,7 +2846,7 @@ class ApprovalRequestsApi
      * 各種申請の更新
      *
      * @param  int $id 各種申請ID (required)
-     * @param  \Freee\Accounting\Model\ApprovalRequestUpdateParams $approval_request_update_params 各種申請の更新 (required)
+     * @param  \OpenAPI\Client\Model\ApprovalRequestUpdateParams $approval_request_update_params 各種申請の更新 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2867,14 +2867,14 @@ class ApprovalRequestsApi
      * 各種申請の更新
      *
      * @param  int $id 各種申請ID (required)
-     * @param  \Freee\Accounting\Model\ApprovalRequestUpdateParams $approval_request_update_params 各種申請の更新 (required)
+     * @param  \OpenAPI\Client\Model\ApprovalRequestUpdateParams $approval_request_update_params 各種申請の更新 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateApprovalRequestAsyncWithHttpInfo($id, $approval_request_update_params)
     {
-        $returnType = '\Freee\Accounting\Model\ApprovalRequestResponse';
+        $returnType = '\OpenAPI\Client\Model\ApprovalRequestResponse';
         $request = $this->updateApprovalRequestRequest($id, $approval_request_update_params);
 
         return $this->client
@@ -2914,7 +2914,7 @@ class ApprovalRequestsApi
      * Create request for operation 'updateApprovalRequest'
      *
      * @param  int $id 各種申請ID (required)
-     * @param  \Freee\Accounting\Model\ApprovalRequestUpdateParams $approval_request_update_params 各種申請の更新 (required)
+     * @param  \OpenAPI\Client\Model\ApprovalRequestUpdateParams $approval_request_update_params 各種申請の更新 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3033,11 +3033,11 @@ class ApprovalRequestsApi
      * 各種申請の承認操作
      *
      * @param  int $id 各種申請ID (required)
-     * @param  \Freee\Accounting\Model\ApprovalRequestActionCreateParams $approval_request_action_create_params 各種申請の承認操作 (required)
+     * @param  \OpenAPI\Client\Model\ApprovalRequestActionCreateParams $approval_request_action_create_params 各種申請の承認操作 (required)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\ApprovalRequestResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\ApprovalRequestResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\BadRequestNotFoundError|\OpenAPI\Client\Model\InternalServerError
      */
     public function updateApprovalRequestAction($id, $approval_request_action_create_params)
     {
@@ -3051,11 +3051,11 @@ class ApprovalRequestsApi
      * 各種申請の承認操作
      *
      * @param  int $id 各種申請ID (required)
-     * @param  \Freee\Accounting\Model\ApprovalRequestActionCreateParams $approval_request_action_create_params 各種申請の承認操作 (required)
+     * @param  \OpenAPI\Client\Model\ApprovalRequestActionCreateParams $approval_request_action_create_params 各種申請の承認操作 (required)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\ApprovalRequestResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ApprovalRequestResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\BadRequestNotFoundError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateApprovalRequestActionWithHttpInfo($id, $approval_request_action_create_params)
     {
@@ -3098,80 +3098,80 @@ class ApprovalRequestsApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\Freee\Accounting\Model\ApprovalRequestResponse' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ApprovalRequestResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ApprovalRequestResponse', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ApprovalRequestResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\UnauthorizedError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\UnauthorizedError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ForbiddenError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ForbiddenError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Freee\Accounting\Model\BadRequestNotFoundError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestNotFoundError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestNotFoundError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestNotFoundError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InternalServerError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InternalServerError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\ApprovalRequestResponse';
+            $returnType = '\OpenAPI\Client\Model\ApprovalRequestResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3189,7 +3189,7 @@ class ApprovalRequestsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ApprovalRequestResponse',
+                        '\OpenAPI\Client\Model\ApprovalRequestResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3197,7 +3197,7 @@ class ApprovalRequestsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestError',
+                        '\OpenAPI\Client\Model\BadRequestError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3205,7 +3205,7 @@ class ApprovalRequestsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\UnauthorizedError',
+                        '\OpenAPI\Client\Model\UnauthorizedError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3213,7 +3213,7 @@ class ApprovalRequestsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ForbiddenError',
+                        '\OpenAPI\Client\Model\ForbiddenError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3221,7 +3221,7 @@ class ApprovalRequestsApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestNotFoundError',
+                        '\OpenAPI\Client\Model\BadRequestNotFoundError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3229,7 +3229,7 @@ class ApprovalRequestsApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InternalServerError',
+                        '\OpenAPI\Client\Model\InternalServerError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3245,7 +3245,7 @@ class ApprovalRequestsApi
      * 各種申請の承認操作
      *
      * @param  int $id 各種申請ID (required)
-     * @param  \Freee\Accounting\Model\ApprovalRequestActionCreateParams $approval_request_action_create_params 各種申請の承認操作 (required)
+     * @param  \OpenAPI\Client\Model\ApprovalRequestActionCreateParams $approval_request_action_create_params 各種申請の承認操作 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3266,14 +3266,14 @@ class ApprovalRequestsApi
      * 各種申請の承認操作
      *
      * @param  int $id 各種申請ID (required)
-     * @param  \Freee\Accounting\Model\ApprovalRequestActionCreateParams $approval_request_action_create_params 各種申請の承認操作 (required)
+     * @param  \OpenAPI\Client\Model\ApprovalRequestActionCreateParams $approval_request_action_create_params 各種申請の承認操作 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateApprovalRequestActionAsyncWithHttpInfo($id, $approval_request_action_create_params)
     {
-        $returnType = '\Freee\Accounting\Model\ApprovalRequestResponse';
+        $returnType = '\OpenAPI\Client\Model\ApprovalRequestResponse';
         $request = $this->updateApprovalRequestActionRequest($id, $approval_request_action_create_params);
 
         return $this->client
@@ -3313,7 +3313,7 @@ class ApprovalRequestsApi
      * Create request for operation 'updateApprovalRequestAction'
      *
      * @param  int $id 各種申請ID (required)
-     * @param  \Freee\Accounting\Model\ApprovalRequestActionCreateParams $approval_request_action_create_params 各種申請の承認操作 (required)
+     * @param  \OpenAPI\Client\Model\ApprovalRequestActionCreateParams $approval_request_action_create_params 各種申請の承認操作 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

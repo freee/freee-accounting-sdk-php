@@ -4,7 +4,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Api;
+namespace OpenAPI\Client\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Freee\Accounting\ApiException;
-use Freee\Accounting\Configuration;
-use Freee\Accounting\HeaderSelector;
-use Freee\Accounting\ObjectSerializer;
+use OpenAPI\Client\ApiException;
+use OpenAPI\Client\Configuration;
+use OpenAPI\Client\HeaderSelector;
+use OpenAPI\Client\ObjectSerializer;
 
 /**
  * QuotationsApi Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -120,11 +120,11 @@ class QuotationsApi
      *
      * 見積書の作成
      *
-     * @param  \Freee\Accounting\Model\QuotationCreateParams $quotation_create_params 見積書の作成 (optional)
+     * @param  \OpenAPI\Client\Model\QuotationCreateParams $quotation_create_params 見積書の作成 (optional)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\QuotationResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\QuotationResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\BadRequestNotFoundError|\OpenAPI\Client\Model\InternalServerError
      */
     public function createQuotation($quotation_create_params = null)
     {
@@ -137,11 +137,11 @@ class QuotationsApi
      *
      * 見積書の作成
      *
-     * @param  \Freee\Accounting\Model\QuotationCreateParams $quotation_create_params 見積書の作成 (optional)
+     * @param  \OpenAPI\Client\Model\QuotationCreateParams $quotation_create_params 見積書の作成 (optional)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\QuotationResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\QuotationResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\BadRequestNotFoundError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function createQuotationWithHttpInfo($quotation_create_params = null)
     {
@@ -184,80 +184,80 @@ class QuotationsApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\Freee\Accounting\Model\QuotationResponse' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\QuotationResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\QuotationResponse', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\QuotationResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\UnauthorizedError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\UnauthorizedError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ForbiddenError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ForbiddenError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Freee\Accounting\Model\BadRequestNotFoundError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestNotFoundError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestNotFoundError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestNotFoundError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InternalServerError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InternalServerError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\QuotationResponse';
+            $returnType = '\OpenAPI\Client\Model\QuotationResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -275,7 +275,7 @@ class QuotationsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\QuotationResponse',
+                        '\OpenAPI\Client\Model\QuotationResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -283,7 +283,7 @@ class QuotationsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestError',
+                        '\OpenAPI\Client\Model\BadRequestError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -291,7 +291,7 @@ class QuotationsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\UnauthorizedError',
+                        '\OpenAPI\Client\Model\UnauthorizedError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -299,7 +299,7 @@ class QuotationsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ForbiddenError',
+                        '\OpenAPI\Client\Model\ForbiddenError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -307,7 +307,7 @@ class QuotationsApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestNotFoundError',
+                        '\OpenAPI\Client\Model\BadRequestNotFoundError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -315,7 +315,7 @@ class QuotationsApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InternalServerError',
+                        '\OpenAPI\Client\Model\InternalServerError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -330,7 +330,7 @@ class QuotationsApi
      *
      * 見積書の作成
      *
-     * @param  \Freee\Accounting\Model\QuotationCreateParams $quotation_create_params 見積書の作成 (optional)
+     * @param  \OpenAPI\Client\Model\QuotationCreateParams $quotation_create_params 見積書の作成 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -350,14 +350,14 @@ class QuotationsApi
      *
      * 見積書の作成
      *
-     * @param  \Freee\Accounting\Model\QuotationCreateParams $quotation_create_params 見積書の作成 (optional)
+     * @param  \OpenAPI\Client\Model\QuotationCreateParams $quotation_create_params 見積書の作成 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createQuotationAsyncWithHttpInfo($quotation_create_params = null)
     {
-        $returnType = '\Freee\Accounting\Model\QuotationResponse';
+        $returnType = '\OpenAPI\Client\Model\QuotationResponse';
         $request = $this->createQuotationRequest($quotation_create_params);
 
         return $this->client
@@ -396,7 +396,7 @@ class QuotationsApi
     /**
      * Create request for operation 'createQuotation'
      *
-     * @param  \Freee\Accounting\Model\QuotationCreateParams $quotation_create_params 見積書の作成 (optional)
+     * @param  \OpenAPI\Client\Model\QuotationCreateParams $quotation_create_params 見積書の作成 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -490,7 +490,7 @@ class QuotationsApi
      * @param  int $id id (required)
      * @param  int $company_id 事業所ID (required)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -507,7 +507,7 @@ class QuotationsApi
      * @param  int $id (required)
      * @param  int $company_id 事業所ID (required)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -557,7 +557,7 @@ class QuotationsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestError',
+                        '\OpenAPI\Client\Model\BadRequestError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -565,7 +565,7 @@ class QuotationsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\UnauthorizedError',
+                        '\OpenAPI\Client\Model\UnauthorizedError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -573,7 +573,7 @@ class QuotationsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ForbiddenError',
+                        '\OpenAPI\Client\Model\ForbiddenError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -581,7 +581,7 @@ class QuotationsApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestNotFoundError',
+                        '\OpenAPI\Client\Model\BadRequestNotFoundError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -589,7 +589,7 @@ class QuotationsApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InternalServerError',
+                        '\OpenAPI\Client\Model\InternalServerError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -796,9 +796,9 @@ class QuotationsApi
      * @param  int $company_id 事業所ID (required)
      * @param  int $id 見積書ID (required)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\QuotationResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\QuotationResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\BadRequestNotFoundError|\OpenAPI\Client\Model\InternalServerError
      */
     public function getQuotation($company_id, $id)
     {
@@ -814,9 +814,9 @@ class QuotationsApi
      * @param  int $company_id 事業所ID (required)
      * @param  int $id 見積書ID (required)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\QuotationResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\QuotationResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\BadRequestNotFoundError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getQuotationWithHttpInfo($company_id, $id)
     {
@@ -859,80 +859,80 @@ class QuotationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Freee\Accounting\Model\QuotationResponse' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\QuotationResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\QuotationResponse', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\QuotationResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\UnauthorizedError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\UnauthorizedError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ForbiddenError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ForbiddenError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Freee\Accounting\Model\BadRequestNotFoundError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestNotFoundError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestNotFoundError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestNotFoundError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InternalServerError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InternalServerError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\QuotationResponse';
+            $returnType = '\OpenAPI\Client\Model\QuotationResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -950,7 +950,7 @@ class QuotationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\QuotationResponse',
+                        '\OpenAPI\Client\Model\QuotationResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -958,7 +958,7 @@ class QuotationsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestError',
+                        '\OpenAPI\Client\Model\BadRequestError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -966,7 +966,7 @@ class QuotationsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\UnauthorizedError',
+                        '\OpenAPI\Client\Model\UnauthorizedError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -974,7 +974,7 @@ class QuotationsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ForbiddenError',
+                        '\OpenAPI\Client\Model\ForbiddenError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -982,7 +982,7 @@ class QuotationsApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestNotFoundError',
+                        '\OpenAPI\Client\Model\BadRequestNotFoundError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -990,7 +990,7 @@ class QuotationsApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InternalServerError',
+                        '\OpenAPI\Client\Model\InternalServerError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1034,7 +1034,7 @@ class QuotationsApi
      */
     public function getQuotationAsyncWithHttpInfo($company_id, $id)
     {
-        $returnType = '\Freee\Accounting\Model\QuotationResponse';
+        $returnType = '\OpenAPI\Client\Model\QuotationResponse';
         $request = $this->getQuotationRequest($company_id, $id);
 
         return $this->client
@@ -1215,9 +1215,9 @@ class QuotationsApi
      * @param  int $offset 取得レコードのオフセット (デフォルト: 0) (optional)
      * @param  int $limit 取得レコードの件数 (デフォルト: 20, 最大: 100) (optional)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\QuotationIndexResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\QuotationIndexResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\BadRequestNotFoundError|\OpenAPI\Client\Model\InternalServerError
      */
     public function getQuotations($company_id, $partner_id = null, $partner_code = null, $start_issue_date = null, $end_issue_date = null, $quotation_number = null, $description = null, $quotation_status = null, $offset = null, $limit = null)
     {
@@ -1241,9 +1241,9 @@ class QuotationsApi
      * @param  int $offset 取得レコードのオフセット (デフォルト: 0) (optional)
      * @param  int $limit 取得レコードの件数 (デフォルト: 20, 最大: 100) (optional)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\QuotationIndexResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\QuotationIndexResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\BadRequestNotFoundError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getQuotationsWithHttpInfo($company_id, $partner_id = null, $partner_code = null, $start_issue_date = null, $end_issue_date = null, $quotation_number = null, $description = null, $quotation_status = null, $offset = null, $limit = null)
     {
@@ -1286,80 +1286,80 @@ class QuotationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Freee\Accounting\Model\QuotationIndexResponse' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\QuotationIndexResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\QuotationIndexResponse', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\QuotationIndexResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\UnauthorizedError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\UnauthorizedError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ForbiddenError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ForbiddenError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Freee\Accounting\Model\BadRequestNotFoundError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestNotFoundError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestNotFoundError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestNotFoundError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InternalServerError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InternalServerError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\QuotationIndexResponse';
+            $returnType = '\OpenAPI\Client\Model\QuotationIndexResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1377,7 +1377,7 @@ class QuotationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\QuotationIndexResponse',
+                        '\OpenAPI\Client\Model\QuotationIndexResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1385,7 +1385,7 @@ class QuotationsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestError',
+                        '\OpenAPI\Client\Model\BadRequestError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1393,7 +1393,7 @@ class QuotationsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\UnauthorizedError',
+                        '\OpenAPI\Client\Model\UnauthorizedError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1401,7 +1401,7 @@ class QuotationsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ForbiddenError',
+                        '\OpenAPI\Client\Model\ForbiddenError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1409,7 +1409,7 @@ class QuotationsApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestNotFoundError',
+                        '\OpenAPI\Client\Model\BadRequestNotFoundError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1417,7 +1417,7 @@ class QuotationsApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InternalServerError',
+                        '\OpenAPI\Client\Model\InternalServerError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1477,7 +1477,7 @@ class QuotationsApi
      */
     public function getQuotationsAsyncWithHttpInfo($company_id, $partner_id = null, $partner_code = null, $start_issue_date = null, $end_issue_date = null, $quotation_number = null, $description = null, $quotation_status = null, $offset = null, $limit = null)
     {
-        $returnType = '\Freee\Accounting\Model\QuotationIndexResponse';
+        $returnType = '\OpenAPI\Client\Model\QuotationIndexResponse';
         $request = $this->getQuotationsRequest($company_id, $partner_id, $partner_code, $start_issue_date, $end_issue_date, $quotation_number, $description, $quotation_status, $offset, $limit);
 
         return $this->client
@@ -1755,11 +1755,11 @@ class QuotationsApi
      * 見積書の更新
      *
      * @param  int $id 見積書ID (required)
-     * @param  \Freee\Accounting\Model\QuotationUpdateParams $quotation_update_params 見積書の更新 (optional)
+     * @param  \OpenAPI\Client\Model\QuotationUpdateParams $quotation_update_params 見積書の更新 (optional)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Freee\Accounting\Model\QuotationResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\QuotationResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\BadRequestNotFoundError|\OpenAPI\Client\Model\InternalServerError
      */
     public function updateQuotation($id, $quotation_update_params = null)
     {
@@ -1773,11 +1773,11 @@ class QuotationsApi
      * 見積書の更新
      *
      * @param  int $id 見積書ID (required)
-     * @param  \Freee\Accounting\Model\QuotationUpdateParams $quotation_update_params 見積書の更新 (optional)
+     * @param  \OpenAPI\Client\Model\QuotationUpdateParams $quotation_update_params 見積書の更新 (optional)
      *
-     * @throws \Freee\Accounting\ApiException on non-2xx response
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Freee\Accounting\Model\QuotationResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\BadRequestNotFoundError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\QuotationResponse|\OpenAPI\Client\Model\BadRequestError|\OpenAPI\Client\Model\UnauthorizedError|\OpenAPI\Client\Model\ForbiddenError|\OpenAPI\Client\Model\BadRequestNotFoundError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateQuotationWithHttpInfo($id, $quotation_update_params = null)
     {
@@ -1820,80 +1820,80 @@ class QuotationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Freee\Accounting\Model\QuotationResponse' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\QuotationResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\QuotationResponse', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\QuotationResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Freee\Accounting\Model\BadRequestError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Freee\Accounting\Model\UnauthorizedError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\UnauthorizedError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\UnauthorizedError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\UnauthorizedError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Freee\Accounting\Model\ForbiddenError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ForbiddenError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\ForbiddenError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ForbiddenError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Freee\Accounting\Model\BadRequestNotFoundError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\BadRequestNotFoundError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\BadRequestNotFoundError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BadRequestNotFoundError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Freee\Accounting\Model\InternalServerError' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InternalServerError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Freee\Accounting\Model\InternalServerError', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Freee\Accounting\Model\QuotationResponse';
+            $returnType = '\OpenAPI\Client\Model\QuotationResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1911,7 +1911,7 @@ class QuotationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\QuotationResponse',
+                        '\OpenAPI\Client\Model\QuotationResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1919,7 +1919,7 @@ class QuotationsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestError',
+                        '\OpenAPI\Client\Model\BadRequestError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1927,7 +1927,7 @@ class QuotationsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\UnauthorizedError',
+                        '\OpenAPI\Client\Model\UnauthorizedError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1935,7 +1935,7 @@ class QuotationsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\ForbiddenError',
+                        '\OpenAPI\Client\Model\ForbiddenError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1943,7 +1943,7 @@ class QuotationsApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\BadRequestNotFoundError',
+                        '\OpenAPI\Client\Model\BadRequestNotFoundError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1951,7 +1951,7 @@ class QuotationsApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Freee\Accounting\Model\InternalServerError',
+                        '\OpenAPI\Client\Model\InternalServerError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1967,7 +1967,7 @@ class QuotationsApi
      * 見積書の更新
      *
      * @param  int $id 見積書ID (required)
-     * @param  \Freee\Accounting\Model\QuotationUpdateParams $quotation_update_params 見積書の更新 (optional)
+     * @param  \OpenAPI\Client\Model\QuotationUpdateParams $quotation_update_params 見積書の更新 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1988,14 +1988,14 @@ class QuotationsApi
      * 見積書の更新
      *
      * @param  int $id 見積書ID (required)
-     * @param  \Freee\Accounting\Model\QuotationUpdateParams $quotation_update_params 見積書の更新 (optional)
+     * @param  \OpenAPI\Client\Model\QuotationUpdateParams $quotation_update_params 見積書の更新 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateQuotationAsyncWithHttpInfo($id, $quotation_update_params = null)
     {
-        $returnType = '\Freee\Accounting\Model\QuotationResponse';
+        $returnType = '\OpenAPI\Client\Model\QuotationResponse';
         $request = $this->updateQuotationRequest($id, $quotation_update_params);
 
         return $this->client
@@ -2035,7 +2035,7 @@ class QuotationsApi
      * Create request for operation 'updateQuotation'
      *
      * @param  int $id 見積書ID (required)
-     * @param  \Freee\Accounting\Model\QuotationUpdateParams $quotation_update_params 見積書の更新 (optional)
+     * @param  \OpenAPI\Client\Model\QuotationUpdateParams $quotation_update_params 見積書の更新 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

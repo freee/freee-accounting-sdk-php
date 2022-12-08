@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * SelectablesIndexResponseAccountCategories Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class SelectablesIndexResponseAccountCategories implements ModelInterface, Array
       * @var string[]
       */
     protected static $openAPITypes = [
-        'account_items' => '\Freee\Accounting\Model\SelectablesIndexResponseAccountItems[]',
+        'account_items' => '\OpenAPI\Client\Model\SelectablesIndexResponseAccountItems[]',
         'balance' => 'string',
         'desc' => 'string',
         'org_code' => 'string',
@@ -301,7 +301,7 @@ class SelectablesIndexResponseAccountCategories implements ModelInterface, Array
     /**
      * Gets account_items
      *
-     * @return \Freee\Accounting\Model\SelectablesIndexResponseAccountItems[]
+     * @return \OpenAPI\Client\Model\SelectablesIndexResponseAccountItems[]
      */
     public function getAccountItems()
     {
@@ -311,7 +311,7 @@ class SelectablesIndexResponseAccountCategories implements ModelInterface, Array
     /**
      * Sets account_items
      *
-     * @param \Freee\Accounting\Model\SelectablesIndexResponseAccountItems[] $account_items 勘定科目の一覧
+     * @param \OpenAPI\Client\Model\SelectablesIndexResponseAccountItems[] $account_items 勘定科目の一覧
      *
      * @return self
      */

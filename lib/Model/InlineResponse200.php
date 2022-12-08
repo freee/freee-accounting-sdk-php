@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * InlineResponse200 Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'banks' => '\Freee\Accounting\Model\Bank[]'
+        'banks' => '\OpenAPI\Client\Model\Bank[]'
     ];
 
     /**
@@ -211,7 +211,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets banks
      *
-     * @return \Freee\Accounting\Model\Bank[]
+     * @return \OpenAPI\Client\Model\Bank[]
      */
     public function getBanks()
     {
@@ -221,7 +221,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets banks
      *
-     * @param \Freee\Accounting\Model\Bank[] $banks banks
+     * @param \OpenAPI\Client\Model\Bank[] $banks banks
      *
      * @return self
      */

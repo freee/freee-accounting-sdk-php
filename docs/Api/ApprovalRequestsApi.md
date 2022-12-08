@@ -1,4 +1,4 @@
-# Freee\Accounting\ApprovalRequestsApi
+# OpenAPI\Client\ApprovalRequestsApi
 
 All URIs are relative to https://api.freee.co.jp.
 
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 ## `createApprovalRequest()`
 
 ```php
-createApprovalRequest($approval_request_create_params): \Freee\Accounting\Model\ApprovalRequestResponse
+createApprovalRequest($approval_request_create_params): \OpenAPI\Client\Model\ApprovalRequestResponse
 ```
 
 各種申請の作成
@@ -30,16 +30,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ApprovalRequestsApi(
+$apiInstance = new OpenAPI\Client\Api\ApprovalRequestsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$approval_request_create_params = new \Freee\Accounting\Model\ApprovalRequestCreateParams(); // \Freee\Accounting\Model\ApprovalRequestCreateParams | 各種申請の作成
+$approval_request_create_params = new \OpenAPI\Client\Model\ApprovalRequestCreateParams(); // \OpenAPI\Client\Model\ApprovalRequestCreateParams | 各種申請の作成
 
 try {
     $result = $apiInstance->createApprovalRequest($approval_request_create_params);
@@ -53,11 +53,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **approval_request_create_params** | [**\Freee\Accounting\Model\ApprovalRequestCreateParams**](../Model/ApprovalRequestCreateParams.md)| 各種申請の作成 | [optional]
+ **approval_request_create_params** | [**\OpenAPI\Client\Model\ApprovalRequestCreateParams**](../Model/ApprovalRequestCreateParams.md)| 各種申請の作成 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\ApprovalRequestResponse**](../Model/ApprovalRequestResponse.md)
+[**\OpenAPI\Client\Model\ApprovalRequestResponse**](../Model/ApprovalRequestResponse.md)
 
 ### Authorization
 
@@ -88,10 +88,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ApprovalRequestsApi(
+$apiInstance = new OpenAPI\Client\Api\ApprovalRequestsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -134,7 +134,7 @@ void (empty response body)
 ## `getApprovalRequest()`
 
 ```php
-getApprovalRequest($id, $company_id): \Freee\Accounting\Model\ApprovalRequestResponse
+getApprovalRequest($id, $company_id): \OpenAPI\Client\Model\ApprovalRequestResponse
 ```
 
 各種申請の取得
@@ -147,10 +147,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ApprovalRequestsApi(
+$apiInstance = new OpenAPI\Client\Api\ApprovalRequestsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\ApprovalRequestResponse**](../Model/ApprovalRequestResponse.md)
+[**\OpenAPI\Client\Model\ApprovalRequestResponse**](../Model/ApprovalRequestResponse.md)
 
 ### Authorization
 
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 ## `getApprovalRequestForm()`
 
 ```php
-getApprovalRequestForm($id, $company_id): \Freee\Accounting\Model\ApprovalRequestFormResponse
+getApprovalRequestForm($id, $company_id): \OpenAPI\Client\Model\ApprovalRequestFormResponse
 ```
 
 各種申請の申請フォームの取得
@@ -207,10 +207,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ApprovalRequestsApi(
+$apiInstance = new OpenAPI\Client\Api\ApprovalRequestsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\ApprovalRequestFormResponse**](../Model/ApprovalRequestFormResponse.md)
+[**\OpenAPI\Client\Model\ApprovalRequestFormResponse**](../Model/ApprovalRequestFormResponse.md)
 
 ### Authorization
 
@@ -254,7 +254,7 @@ Name | Type | Description  | Notes
 ## `getApprovalRequestForms()`
 
 ```php
-getApprovalRequestForms($company_id): \Freee\Accounting\Model\ApprovalRequestFormIndexResponse
+getApprovalRequestForms($company_id): \OpenAPI\Client\Model\ApprovalRequestFormIndexResponse
 ```
 
 各種申請の申請フォーム一覧の取得
@@ -267,10 +267,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ApprovalRequestsApi(
+$apiInstance = new OpenAPI\Client\Api\ApprovalRequestsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\ApprovalRequestFormIndexResponse**](../Model/ApprovalRequestFormIndexResponse.md)
+[**\OpenAPI\Client\Model\ApprovalRequestFormIndexResponse**](../Model/ApprovalRequestFormIndexResponse.md)
 
 ### Authorization
 
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 ## `getApprovalRequests()`
 
 ```php
-getApprovalRequests($company_id, $status, $application_number, $title, $form_id, $start_application_date, $end_application_date, $applicant_id, $min_amount, $max_amount, $approver_id, $offset, $limit): \Freee\Accounting\Model\ApprovalRequestsIndexResponse
+getApprovalRequests($company_id, $status, $application_number, $title, $form_id, $start_application_date, $end_application_date, $applicant_id, $min_amount, $max_amount, $approver_id, $offset, $limit): \OpenAPI\Client\Model\ApprovalRequestsIndexResponse
 ```
 
 各種申請の一覧
@@ -325,10 +325,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ApprovalRequestsApi(
+$apiInstance = new OpenAPI\Client\Api\ApprovalRequestsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -376,7 +376,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\ApprovalRequestsIndexResponse**](../Model/ApprovalRequestsIndexResponse.md)
+[**\OpenAPI\Client\Model\ApprovalRequestsIndexResponse**](../Model/ApprovalRequestsIndexResponse.md)
 
 ### Authorization
 
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 ## `updateApprovalRequest()`
 
 ```php
-updateApprovalRequest($id, $approval_request_update_params): \Freee\Accounting\Model\ApprovalRequestResponse
+updateApprovalRequest($id, $approval_request_update_params): \OpenAPI\Client\Model\ApprovalRequestResponse
 ```
 
 各種申請の更新
@@ -407,17 +407,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ApprovalRequestsApi(
+$apiInstance = new OpenAPI\Client\Api\ApprovalRequestsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | 各種申請ID
-$approval_request_update_params = new \Freee\Accounting\Model\ApprovalRequestUpdateParams(); // \Freee\Accounting\Model\ApprovalRequestUpdateParams | 各種申請の更新
+$approval_request_update_params = new \OpenAPI\Client\Model\ApprovalRequestUpdateParams(); // \OpenAPI\Client\Model\ApprovalRequestUpdateParams | 各種申請の更新
 
 try {
     $result = $apiInstance->updateApprovalRequest($id, $approval_request_update_params);
@@ -432,11 +432,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 各種申請ID |
- **approval_request_update_params** | [**\Freee\Accounting\Model\ApprovalRequestUpdateParams**](../Model/ApprovalRequestUpdateParams.md)| 各種申請の更新 |
+ **approval_request_update_params** | [**\OpenAPI\Client\Model\ApprovalRequestUpdateParams**](../Model/ApprovalRequestUpdateParams.md)| 各種申請の更新 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\ApprovalRequestResponse**](../Model/ApprovalRequestResponse.md)
+[**\OpenAPI\Client\Model\ApprovalRequestResponse**](../Model/ApprovalRequestResponse.md)
 
 ### Authorization
 
@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
 ## `updateApprovalRequestAction()`
 
 ```php
-updateApprovalRequestAction($id, $approval_request_action_create_params): \Freee\Accounting\Model\ApprovalRequestResponse
+updateApprovalRequestAction($id, $approval_request_action_create_params): \OpenAPI\Client\Model\ApprovalRequestResponse
 ```
 
 各種申請の承認操作
@@ -467,17 +467,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ApprovalRequestsApi(
+$apiInstance = new OpenAPI\Client\Api\ApprovalRequestsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | 各種申請ID
-$approval_request_action_create_params = new \Freee\Accounting\Model\ApprovalRequestActionCreateParams(); // \Freee\Accounting\Model\ApprovalRequestActionCreateParams | 各種申請の承認操作
+$approval_request_action_create_params = new \OpenAPI\Client\Model\ApprovalRequestActionCreateParams(); // \OpenAPI\Client\Model\ApprovalRequestActionCreateParams | 各種申請の承認操作
 
 try {
     $result = $apiInstance->updateApprovalRequestAction($id, $approval_request_action_create_params);
@@ -492,11 +492,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 各種申請ID |
- **approval_request_action_create_params** | [**\Freee\Accounting\Model\ApprovalRequestActionCreateParams**](../Model/ApprovalRequestActionCreateParams.md)| 各種申請の承認操作 |
+ **approval_request_action_create_params** | [**\OpenAPI\Client\Model\ApprovalRequestActionCreateParams**](../Model/ApprovalRequestActionCreateParams.md)| 各種申請の承認操作 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\ApprovalRequestResponse**](../Model/ApprovalRequestResponse.md)
+[**\OpenAPI\Client\Model\ApprovalRequestResponse**](../Model/ApprovalRequestResponse.md)
 
 ### Authorization
 

@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * InlineResponse2009 Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'taxes' => '\Freee\Accounting\Model\Tax[]'
+        'taxes' => '\OpenAPI\Client\Model\Tax[]'
     ];
 
     /**
@@ -211,7 +211,7 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets taxes
      *
-     * @return \Freee\Accounting\Model\Tax[]
+     * @return \OpenAPI\Client\Model\Tax[]
      */
     public function getTaxes()
     {
@@ -221,7 +221,7 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets taxes
      *
-     * @param \Freee\Accounting\Model\Tax[] $taxes taxes
+     * @param \OpenAPI\Client\Model\Tax[] $taxes taxes
      *
      * @return self
      */

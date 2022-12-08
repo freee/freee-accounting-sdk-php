@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * SelectablesIndexResponseAccountItems Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class SelectablesIndexResponseAccountItems implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'default_tax' => '\Freee\Accounting\Model\SelectablesIndexResponseDefaultTax',
+        'default_tax' => '\OpenAPI\Client\Model\SelectablesIndexResponseDefaultTax',
         'desc' => 'string',
         'help' => 'string',
         'id' => 'int',
@@ -249,7 +249,7 @@ class SelectablesIndexResponseAccountItems implements ModelInterface, ArrayAcces
     /**
      * Gets default_tax
      *
-     * @return \Freee\Accounting\Model\SelectablesIndexResponseDefaultTax|null
+     * @return \OpenAPI\Client\Model\SelectablesIndexResponseDefaultTax|null
      */
     public function getDefaultTax()
     {
@@ -259,7 +259,7 @@ class SelectablesIndexResponseAccountItems implements ModelInterface, ArrayAcces
     /**
      * Sets default_tax
      *
-     * @param \Freee\Accounting\Model\SelectablesIndexResponseDefaultTax|null $default_tax default_tax
+     * @param \OpenAPI\Client\Model\SelectablesIndexResponseDefaultTax|null $default_tax default_tax
      *
      * @return self
      */

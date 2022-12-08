@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * AccountItemResponseAccountItem Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -71,9 +71,9 @@ class AccountItemResponseAccountItem implements ModelInterface, ArrayAccess, \Js
         'corresponding_income_name' => 'string',
         'group_name' => 'string',
         'id' => 'int',
-        'items' => '\Freee\Accounting\Model\AccountItemResponseAccountItemItems[]',
+        'items' => '\OpenAPI\Client\Model\AccountItemResponseAccountItemItems[]',
         'name' => 'string',
-        'partners' => '\Freee\Accounting\Model\AccountItemResponseAccountItemPartners[]',
+        'partners' => '\OpenAPI\Client\Model\AccountItemResponseAccountItemPartners[]',
         'searchable' => 'int',
         'shortcut' => 'string',
         'shortcut_num' => 'string',
@@ -721,7 +721,7 @@ class AccountItemResponseAccountItem implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets items
      *
-     * @return \Freee\Accounting\Model\AccountItemResponseAccountItemItems[]|null
+     * @return \OpenAPI\Client\Model\AccountItemResponseAccountItemItems[]|null
      */
     public function getItems()
     {
@@ -731,7 +731,7 @@ class AccountItemResponseAccountItem implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets items
      *
-     * @param \Freee\Accounting\Model\AccountItemResponseAccountItemItems[]|null $items items
+     * @param \OpenAPI\Client\Model\AccountItemResponseAccountItemItems[]|null $items items
      *
      * @return self
      */
@@ -773,7 +773,7 @@ class AccountItemResponseAccountItem implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets partners
      *
-     * @return \Freee\Accounting\Model\AccountItemResponseAccountItemPartners[]|null
+     * @return \OpenAPI\Client\Model\AccountItemResponseAccountItemPartners[]|null
      */
     public function getPartners()
     {
@@ -783,7 +783,7 @@ class AccountItemResponseAccountItem implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets partners
      *
-     * @param \Freee\Accounting\Model\AccountItemResponseAccountItemPartners[]|null $partners partners
+     * @param \OpenAPI\Client\Model\AccountItemResponseAccountItemPartners[]|null $partners partners
      *
      * @return self
      */

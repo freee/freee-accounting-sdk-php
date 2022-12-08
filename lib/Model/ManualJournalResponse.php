@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * ManualJournalResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class ManualJournalResponse implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'manual_journal' => '\Freee\Accounting\Model\ManualJournal'
+        'manual_journal' => '\OpenAPI\Client\Model\ManualJournal'
     ];
 
     /**
@@ -211,7 +211,7 @@ class ManualJournalResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets manual_journal
      *
-     * @return \Freee\Accounting\Model\ManualJournal
+     * @return \OpenAPI\Client\Model\ManualJournal
      */
     public function getManualJournal()
     {
@@ -221,7 +221,7 @@ class ManualJournalResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets manual_journal
      *
-     * @param \Freee\Accounting\Model\ManualJournal $manual_journal manual_journal
+     * @param \OpenAPI\Client\Model\ManualJournal $manual_journal manual_journal
      *
      * @return self
      */

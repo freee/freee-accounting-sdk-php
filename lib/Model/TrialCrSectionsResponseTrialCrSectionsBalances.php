@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * TrialCrSectionsResponseTrialCrSectionsBalances Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -66,7 +66,7 @@ class TrialCrSectionsResponseTrialCrSectionsBalances implements ModelInterface, 
         'closing_balance' => 'int',
         'hierarchy_level' => 'int',
         'parent_account_category_name' => 'string',
-        'sections' => '\Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSectionsSections[]',
+        'sections' => '\OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSectionsSections[]',
         'total_line' => 'bool'
     ];
 
@@ -440,7 +440,7 @@ class TrialCrSectionsResponseTrialCrSectionsBalances implements ModelInterface, 
     /**
      * Gets sections
      *
-     * @return \Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSectionsSections[]|null
+     * @return \OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSectionsSections[]|null
      */
     public function getSections()
     {
@@ -450,7 +450,7 @@ class TrialCrSectionsResponseTrialCrSectionsBalances implements ModelInterface, 
     /**
      * Sets sections
      *
-     * @param \Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSectionsSections[]|null $sections 部門
+     * @param \OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSectionsSections[]|null $sections 部門
      *
      * @return self
      */

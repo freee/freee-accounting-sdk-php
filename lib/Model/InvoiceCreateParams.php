@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * InvoiceCreateParams Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -69,7 +69,7 @@ class InvoiceCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
         'company_zipcode' => 'string',
         'description' => 'string',
         'due_date' => 'string',
-        'invoice_contents' => '\Freee\Accounting\Model\InvoiceCreateParamsInvoiceContents[]',
+        'invoice_contents' => '\OpenAPI\Client\Model\InvoiceCreateParamsInvoiceContents[]',
         'invoice_layout' => 'string',
         'invoice_number' => 'string',
         'invoice_status' => 'string',
@@ -821,7 +821,7 @@ class InvoiceCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets invoice_contents
      *
-     * @return \Freee\Accounting\Model\InvoiceCreateParamsInvoiceContents[]|null
+     * @return \OpenAPI\Client\Model\InvoiceCreateParamsInvoiceContents[]|null
      */
     public function getInvoiceContents()
     {
@@ -831,7 +831,7 @@ class InvoiceCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets invoice_contents
      *
-     * @param \Freee\Accounting\Model\InvoiceCreateParamsInvoiceContents[]|null $invoice_contents 請求内容
+     * @param \OpenAPI\Client\Model\InvoiceCreateParamsInvoiceContents[]|null $invoice_contents 請求内容
      *
      * @return self
      */

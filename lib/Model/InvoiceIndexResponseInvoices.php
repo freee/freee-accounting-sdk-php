@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * InvoiceIndexResponseInvoices Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -72,7 +72,7 @@ class InvoiceIndexResponseInvoices implements ModelInterface, ArrayAccess, \Json
         'description' => 'string',
         'due_date' => 'string',
         'id' => 'int',
-        'invoice_contents' => '\Freee\Accounting\Model\InvoiceIndexResponseInvoiceContents[]',
+        'invoice_contents' => '\OpenAPI\Client\Model\InvoiceIndexResponseInvoiceContents[]',
         'invoice_layout' => 'string',
         'invoice_number' => 'string',
         'invoice_status' => 'string',
@@ -100,7 +100,7 @@ class InvoiceIndexResponseInvoices implements ModelInterface, ArrayAccess, \Json
         'tax_entry_method' => 'string',
         'title' => 'string',
         'total_amount' => 'int',
-        'total_amount_per_vat_rate' => '\Freee\Accounting\Model\InvoiceIndexResponseTotalAmountPerVatRate',
+        'total_amount_per_vat_rate' => '\OpenAPI\Client\Model\InvoiceIndexResponseTotalAmountPerVatRate',
         'total_vat' => 'int',
         'web_confirmed_at' => 'string',
         'web_downloaded_at' => 'string',
@@ -1095,7 +1095,7 @@ class InvoiceIndexResponseInvoices implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets invoice_contents
      *
-     * @return \Freee\Accounting\Model\InvoiceIndexResponseInvoiceContents[]|null
+     * @return \OpenAPI\Client\Model\InvoiceIndexResponseInvoiceContents[]|null
      */
     public function getInvoiceContents()
     {
@@ -1105,7 +1105,7 @@ class InvoiceIndexResponseInvoices implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets invoice_contents
      *
-     * @param \Freee\Accounting\Model\InvoiceIndexResponseInvoiceContents[]|null $invoice_contents 請求内容
+     * @param \OpenAPI\Client\Model\InvoiceIndexResponseInvoiceContents[]|null $invoice_contents 請求内容
      *
      * @return self
      */
@@ -1843,7 +1843,7 @@ class InvoiceIndexResponseInvoices implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets total_amount_per_vat_rate
      *
-     * @return \Freee\Accounting\Model\InvoiceIndexResponseTotalAmountPerVatRate
+     * @return \OpenAPI\Client\Model\InvoiceIndexResponseTotalAmountPerVatRate
      */
     public function getTotalAmountPerVatRate()
     {
@@ -1853,7 +1853,7 @@ class InvoiceIndexResponseInvoices implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets total_amount_per_vat_rate
      *
-     * @param \Freee\Accounting\Model\InvoiceIndexResponseTotalAmountPerVatRate $total_amount_per_vat_rate total_amount_per_vat_rate
+     * @param \OpenAPI\Client\Model\InvoiceIndexResponseTotalAmountPerVatRate $total_amount_per_vat_rate total_amount_per_vat_rate
      *
      * @return self
      */

@@ -1,4 +1,4 @@
-# Freee\Accounting\ExpenseApplicationsApi
+# OpenAPI\Client\ExpenseApplicationsApi
 
 All URIs are relative to https://api.freee.co.jp.
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 ## `createExpenseApplication()`
 
 ```php
-createExpenseApplication($expense_application_create_params): \Freee\Accounting\Model\ExpenseApplicationResponse
+createExpenseApplication($expense_application_create_params): \OpenAPI\Client\Model\ExpenseApplicationResponse
 ```
 
 経費申請の作成
@@ -28,16 +28,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ExpenseApplicationsApi(
+$apiInstance = new OpenAPI\Client\Api\ExpenseApplicationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$expense_application_create_params = new \Freee\Accounting\Model\ExpenseApplicationCreateParams(); // \Freee\Accounting\Model\ExpenseApplicationCreateParams | 経費申請の作成
+$expense_application_create_params = new \OpenAPI\Client\Model\ExpenseApplicationCreateParams(); // \OpenAPI\Client\Model\ExpenseApplicationCreateParams | 経費申請の作成
 
 try {
     $result = $apiInstance->createExpenseApplication($expense_application_create_params);
@@ -51,11 +51,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **expense_application_create_params** | [**\Freee\Accounting\Model\ExpenseApplicationCreateParams**](../Model/ExpenseApplicationCreateParams.md)| 経費申請の作成 | [optional]
+ **expense_application_create_params** | [**\OpenAPI\Client\Model\ExpenseApplicationCreateParams**](../Model/ExpenseApplicationCreateParams.md)| 経費申請の作成 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\ExpenseApplicationResponse**](../Model/ExpenseApplicationResponse.md)
+[**\OpenAPI\Client\Model\ExpenseApplicationResponse**](../Model/ExpenseApplicationResponse.md)
 
 ### Authorization
 
@@ -86,10 +86,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ExpenseApplicationsApi(
+$apiInstance = new OpenAPI\Client\Api\ExpenseApplicationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -132,7 +132,7 @@ void (empty response body)
 ## `getExpenseApplication()`
 
 ```php
-getExpenseApplication($id, $company_id): \Freee\Accounting\Model\ExpenseApplicationResponse
+getExpenseApplication($id, $company_id): \OpenAPI\Client\Model\ExpenseApplicationResponse
 ```
 
 経費申請詳細の取得
@@ -145,10 +145,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ExpenseApplicationsApi(
+$apiInstance = new OpenAPI\Client\Api\ExpenseApplicationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\ExpenseApplicationResponse**](../Model/ExpenseApplicationResponse.md)
+[**\OpenAPI\Client\Model\ExpenseApplicationResponse**](../Model/ExpenseApplicationResponse.md)
 
 ### Authorization
 
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 ## `getExpenseApplications()`
 
 ```php
-getExpenseApplications($company_id, $status, $payroll_attached, $start_transaction_date, $end_transaction_date, $application_number, $title, $start_issue_date, $end_issue_date, $applicant_id, $approver_id, $min_amount, $max_amount, $offset, $limit): \Freee\Accounting\Model\ExpenseApplicationsIndexResponse
+getExpenseApplications($company_id, $status, $payroll_attached, $start_transaction_date, $end_transaction_date, $application_number, $title, $start_issue_date, $end_issue_date, $applicant_id, $approver_id, $min_amount, $max_amount, $offset, $limit): \OpenAPI\Client\Model\ExpenseApplicationsIndexResponse
 ```
 
 経費申請一覧の取得
@@ -205,10 +205,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ExpenseApplicationsApi(
+$apiInstance = new OpenAPI\Client\Api\ExpenseApplicationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\ExpenseApplicationsIndexResponse**](../Model/ExpenseApplicationsIndexResponse.md)
+[**\OpenAPI\Client\Model\ExpenseApplicationsIndexResponse**](../Model/ExpenseApplicationsIndexResponse.md)
 
 ### Authorization
 
@@ -278,7 +278,7 @@ Name | Type | Description  | Notes
 ## `updateExpenseApplication()`
 
 ```php
-updateExpenseApplication($id, $expense_application_update_params): \Freee\Accounting\Model\ExpenseApplicationResponse
+updateExpenseApplication($id, $expense_application_update_params): \OpenAPI\Client\Model\ExpenseApplicationResponse
 ```
 
 経費申請の更新
@@ -291,17 +291,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ExpenseApplicationsApi(
+$apiInstance = new OpenAPI\Client\Api\ExpenseApplicationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | 経費申請ID
-$expense_application_update_params = new \Freee\Accounting\Model\ExpenseApplicationUpdateParams(); // \Freee\Accounting\Model\ExpenseApplicationUpdateParams | 経費申請の更新
+$expense_application_update_params = new \OpenAPI\Client\Model\ExpenseApplicationUpdateParams(); // \OpenAPI\Client\Model\ExpenseApplicationUpdateParams | 経費申請の更新
 
 try {
     $result = $apiInstance->updateExpenseApplication($id, $expense_application_update_params);
@@ -316,11 +316,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 経費申請ID |
- **expense_application_update_params** | [**\Freee\Accounting\Model\ExpenseApplicationUpdateParams**](../Model/ExpenseApplicationUpdateParams.md)| 経費申請の更新 | [optional]
+ **expense_application_update_params** | [**\OpenAPI\Client\Model\ExpenseApplicationUpdateParams**](../Model/ExpenseApplicationUpdateParams.md)| 経費申請の更新 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\ExpenseApplicationResponse**](../Model/ExpenseApplicationResponse.md)
+[**\OpenAPI\Client\Model\ExpenseApplicationResponse**](../Model/ExpenseApplicationResponse.md)
 
 ### Authorization
 
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 ## `updateExpenseApplicationAction()`
 
 ```php
-updateExpenseApplicationAction($id, $expense_application_action_create_params): \Freee\Accounting\Model\ExpenseApplicationResponse
+updateExpenseApplicationAction($id, $expense_application_action_create_params): \OpenAPI\Client\Model\ExpenseApplicationResponse
 ```
 
 経費申請の承認操作
@@ -351,17 +351,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ExpenseApplicationsApi(
+$apiInstance = new OpenAPI\Client\Api\ExpenseApplicationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | 経費申請ID
-$expense_application_action_create_params = new \Freee\Accounting\Model\ExpenseApplicationActionCreateParams(); // \Freee\Accounting\Model\ExpenseApplicationActionCreateParams | 経費申請の承認操作
+$expense_application_action_create_params = new \OpenAPI\Client\Model\ExpenseApplicationActionCreateParams(); // \OpenAPI\Client\Model\ExpenseApplicationActionCreateParams | 経費申請の承認操作
 
 try {
     $result = $apiInstance->updateExpenseApplicationAction($id, $expense_application_action_create_params);
@@ -376,11 +376,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 経費申請ID |
- **expense_application_action_create_params** | [**\Freee\Accounting\Model\ExpenseApplicationActionCreateParams**](../Model/ExpenseApplicationActionCreateParams.md)| 経費申請の承認操作 |
+ **expense_application_action_create_params** | [**\OpenAPI\Client\Model\ExpenseApplicationActionCreateParams**](../Model/ExpenseApplicationActionCreateParams.md)| 経費申請の承認操作 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\ExpenseApplicationResponse**](../Model/ExpenseApplicationResponse.md)
+[**\OpenAPI\Client\Model\ExpenseApplicationResponse**](../Model/ExpenseApplicationResponse.md)
 
 ### Authorization
 

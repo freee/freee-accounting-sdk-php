@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * TrialBsResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,9 +59,9 @@ class TrialBsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'trial_bs' => '\Freee\Accounting\Model\TrialBsResponseTrialBs',
+        'trial_bs' => '\OpenAPI\Client\Model\TrialBsResponseTrialBs',
         'up_to_date' => 'bool',
-        'up_to_date_reasons' => '\Freee\Accounting\Model\JournalsResponseJournalsUpToDateReasons[]'
+        'up_to_date_reasons' => '\OpenAPI\Client\Model\JournalsResponseJournalsUpToDateReasons[]'
     ];
 
     /**
@@ -226,7 +226,7 @@ class TrialBsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets trial_bs
      *
-     * @return \Freee\Accounting\Model\TrialBsResponseTrialBs
+     * @return \OpenAPI\Client\Model\TrialBsResponseTrialBs
      */
     public function getTrialBs()
     {
@@ -236,7 +236,7 @@ class TrialBsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets trial_bs
      *
-     * @param \Freee\Accounting\Model\TrialBsResponseTrialBs $trial_bs trial_bs
+     * @param \OpenAPI\Client\Model\TrialBsResponseTrialBs $trial_bs trial_bs
      *
      * @return self
      */
@@ -274,7 +274,7 @@ class TrialBsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets up_to_date_reasons
      *
-     * @return \Freee\Accounting\Model\JournalsResponseJournalsUpToDateReasons[]|null
+     * @return \OpenAPI\Client\Model\JournalsResponseJournalsUpToDateReasons[]|null
      */
     public function getUpToDateReasons()
     {
@@ -284,7 +284,7 @@ class TrialBsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets up_to_date_reasons
      *
-     * @param \Freee\Accounting\Model\JournalsResponseJournalsUpToDateReasons[]|null $up_to_date_reasons 集計が最新でない場合の要因情報
+     * @param \OpenAPI\Client\Model\JournalsResponseJournalsUpToDateReasons[]|null $up_to_date_reasons 集計が最新でない場合の要因情報
      *
      * @return self
      */

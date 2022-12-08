@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * BadRequestNotFoundError Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class BadRequestNotFoundError implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'errors' => '\Freee\Accounting\Model\BadRequestNotFoundErrorErrors[]',
+        'errors' => '\OpenAPI\Client\Model\BadRequestNotFoundErrorErrors[]',
         'status_code' => 'int'
     ];
 
@@ -214,7 +214,7 @@ class BadRequestNotFoundError implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets errors
      *
-     * @return \Freee\Accounting\Model\BadRequestNotFoundErrorErrors[]|null
+     * @return \OpenAPI\Client\Model\BadRequestNotFoundErrorErrors[]|null
      */
     public function getErrors()
     {
@@ -224,7 +224,7 @@ class BadRequestNotFoundError implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets errors
      *
-     * @param \Freee\Accounting\Model\BadRequestNotFoundErrorErrors[]|null $errors errors
+     * @param \OpenAPI\Client\Model\BadRequestNotFoundErrorErrors[]|null $errors errors
      *
      * @return self
      */

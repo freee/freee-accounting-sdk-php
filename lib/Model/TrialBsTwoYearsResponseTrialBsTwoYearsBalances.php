@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * TrialBsTwoYearsResponseTrialBsTwoYearsBalances Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -65,14 +65,14 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsBalances implements ModelInterface, 
         'account_item_name' => 'string',
         'closing_balance' => 'int',
         'hierarchy_level' => 'int',
-        'items' => '\Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsItems[]',
+        'items' => '\OpenAPI\Client\Model\TrialBsTwoYearsResponseTrialBsTwoYearsItems[]',
         'last_year_closing_balance' => 'int',
         'parent_account_category_name' => 'string',
-        'partners' => '\Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsPartners[]',
-        'sections' => '\Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSections[]',
-        'segment_1_tags' => '\Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSegment1Tags[]',
-        'segment_2_tags' => '\Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSegment2Tags[]',
-        'segment_3_tags' => '\Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSegment3Tags[]',
+        'partners' => '\OpenAPI\Client\Model\TrialBsTwoYearsResponseTrialBsTwoYearsPartners[]',
+        'sections' => '\OpenAPI\Client\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSections[]',
+        'segment_1_tags' => '\OpenAPI\Client\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSegment1Tags[]',
+        'segment_2_tags' => '\OpenAPI\Client\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSegment2Tags[]',
+        'segment_3_tags' => '\OpenAPI\Client\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSegment3Tags[]',
         'total_line' => 'bool',
         'year_on_year' => 'float'
     ];
@@ -458,7 +458,7 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsBalances implements ModelInterface, 
     /**
      * Gets items
      *
-     * @return \Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsItems[]|null
+     * @return \OpenAPI\Client\Model\TrialBsTwoYearsResponseTrialBsTwoYearsItems[]|null
      */
     public function getItems()
     {
@@ -468,7 +468,7 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsBalances implements ModelInterface, 
     /**
      * Sets items
      *
-     * @param \Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsItems[]|null $items breakdown_display_type:item, account_item_display_type:account_item指定時のみ含まれる
+     * @param \OpenAPI\Client\Model\TrialBsTwoYearsResponseTrialBsTwoYearsItems[]|null $items breakdown_display_type:item, account_item_display_type:account_item指定時のみ含まれる
      *
      * @return self
      */
@@ -530,7 +530,7 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsBalances implements ModelInterface, 
     /**
      * Gets partners
      *
-     * @return \Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsPartners[]|null
+     * @return \OpenAPI\Client\Model\TrialBsTwoYearsResponseTrialBsTwoYearsPartners[]|null
      */
     public function getPartners()
     {
@@ -540,7 +540,7 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsBalances implements ModelInterface, 
     /**
      * Sets partners
      *
-     * @param \Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsPartners[]|null $partners breakdown_display_type:partner, account_item_display_type:account_item指定時のみ含まれる
+     * @param \OpenAPI\Client\Model\TrialBsTwoYearsResponseTrialBsTwoYearsPartners[]|null $partners breakdown_display_type:partner, account_item_display_type:account_item指定時のみ含まれる
      *
      * @return self
      */
@@ -554,7 +554,7 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsBalances implements ModelInterface, 
     /**
      * Gets sections
      *
-     * @return \Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSections[]|null
+     * @return \OpenAPI\Client\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSections[]|null
      */
     public function getSections()
     {
@@ -564,7 +564,7 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsBalances implements ModelInterface, 
     /**
      * Sets sections
      *
-     * @param \Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSections[]|null $sections breakdown_display_type:section, account_item_display_type:account_item指定時のみ含まれる
+     * @param \OpenAPI\Client\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSections[]|null $sections breakdown_display_type:section, account_item_display_type:account_item指定時のみ含まれる
      *
      * @return self
      */
@@ -578,7 +578,7 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsBalances implements ModelInterface, 
     /**
      * Gets segment_1_tags
      *
-     * @return \Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSegment1Tags[]|null
+     * @return \OpenAPI\Client\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSegment1Tags[]|null
      */
     public function getSegment1Tags()
     {
@@ -588,7 +588,7 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsBalances implements ModelInterface, 
     /**
      * Sets segment_1_tags
      *
-     * @param \Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSegment1Tags[]|null $segment_1_tags breakdown_display_type:segment_1_tag, account_item_display_type:account_item指定時のみ含まれる
+     * @param \OpenAPI\Client\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSegment1Tags[]|null $segment_1_tags breakdown_display_type:segment_1_tag, account_item_display_type:account_item指定時のみ含まれる
      *
      * @return self
      */
@@ -602,7 +602,7 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsBalances implements ModelInterface, 
     /**
      * Gets segment_2_tags
      *
-     * @return \Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSegment2Tags[]|null
+     * @return \OpenAPI\Client\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSegment2Tags[]|null
      */
     public function getSegment2Tags()
     {
@@ -612,7 +612,7 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsBalances implements ModelInterface, 
     /**
      * Sets segment_2_tags
      *
-     * @param \Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSegment2Tags[]|null $segment_2_tags breakdown_display_type:segment_2_tag, account_item_display_type:account_item指定時のみ含まれる
+     * @param \OpenAPI\Client\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSegment2Tags[]|null $segment_2_tags breakdown_display_type:segment_2_tag, account_item_display_type:account_item指定時のみ含まれる
      *
      * @return self
      */
@@ -626,7 +626,7 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsBalances implements ModelInterface, 
     /**
      * Gets segment_3_tags
      *
-     * @return \Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSegment3Tags[]|null
+     * @return \OpenAPI\Client\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSegment3Tags[]|null
      */
     public function getSegment3Tags()
     {
@@ -636,7 +636,7 @@ class TrialBsTwoYearsResponseTrialBsTwoYearsBalances implements ModelInterface, 
     /**
      * Sets segment_3_tags
      *
-     * @param \Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSegment3Tags[]|null $segment_3_tags breakdown_display_type:segment_3_tag, account_item_display_type:account_item指定時のみ含まれる
+     * @param \OpenAPI\Client\Model\TrialBsTwoYearsResponseTrialBsTwoYearsSegment3Tags[]|null $segment_3_tags breakdown_display_type:segment_3_tag, account_item_display_type:account_item指定時のみ含まれる
      *
      * @return self
      */

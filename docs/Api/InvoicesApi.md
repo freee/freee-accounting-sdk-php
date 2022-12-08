@@ -1,4 +1,4 @@
-# Freee\Accounting\InvoicesApi
+# OpenAPI\Client\InvoicesApi
 
 All URIs are relative to https://api.freee.co.jp.
 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 ## `createInvoice()`
 
 ```php
-createInvoice($invoice_create_params): \Freee\Accounting\Model\InvoiceResponse
+createInvoice($invoice_create_params): \OpenAPI\Client\Model\InvoiceResponse
 ```
 
 請求書の作成
@@ -27,16 +27,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\InvoicesApi(
+$apiInstance = new OpenAPI\Client\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$invoice_create_params = new \Freee\Accounting\Model\InvoiceCreateParams(); // \Freee\Accounting\Model\InvoiceCreateParams | 請求書の作成
+$invoice_create_params = new \OpenAPI\Client\Model\InvoiceCreateParams(); // \OpenAPI\Client\Model\InvoiceCreateParams | 請求書の作成
 
 try {
     $result = $apiInstance->createInvoice($invoice_create_params);
@@ -50,11 +50,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invoice_create_params** | [**\Freee\Accounting\Model\InvoiceCreateParams**](../Model/InvoiceCreateParams.md)| 請求書の作成 | [optional]
+ **invoice_create_params** | [**\OpenAPI\Client\Model\InvoiceCreateParams**](../Model/InvoiceCreateParams.md)| 請求書の作成 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\InvoiceResponse**](../Model/InvoiceResponse.md)
+[**\OpenAPI\Client\Model\InvoiceResponse**](../Model/InvoiceResponse.md)
 
 ### Authorization
 
@@ -85,10 +85,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\InvoicesApi(
+$apiInstance = new OpenAPI\Client\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -131,7 +131,7 @@ void (empty response body)
 ## `getInvoice()`
 
 ```php
-getInvoice($company_id, $id): \Freee\Accounting\Model\InvoiceResponse
+getInvoice($company_id, $id): \OpenAPI\Client\Model\InvoiceResponse
 ```
 
 請求書の取得
@@ -144,10 +144,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\InvoicesApi(
+$apiInstance = new OpenAPI\Client\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InvoiceResponse**](../Model/InvoiceResponse.md)
+[**\OpenAPI\Client\Model\InvoiceResponse**](../Model/InvoiceResponse.md)
 
 ### Authorization
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 ## `getInvoices()`
 
 ```php
-getInvoices($company_id, $partner_id, $partner_code, $start_issue_date, $end_issue_date, $start_due_date, $end_due_date, $invoice_number, $description, $invoice_status, $payment_status, $offset, $limit): \Freee\Accounting\Model\InvoiceIndexResponse
+getInvoices($company_id, $partner_id, $partner_code, $start_issue_date, $end_issue_date, $start_due_date, $end_due_date, $invoice_number, $description, $invoice_status, $payment_status, $offset, $limit): \OpenAPI\Client\Model\InvoiceIndexResponse
 ```
 
 請求書一覧の取得
@@ -204,10 +204,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\InvoicesApi(
+$apiInstance = new OpenAPI\Client\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InvoiceIndexResponse**](../Model/InvoiceIndexResponse.md)
+[**\OpenAPI\Client\Model\InvoiceIndexResponse**](../Model/InvoiceIndexResponse.md)
 
 ### Authorization
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 ## `updateInvoice()`
 
 ```php
-updateInvoice($id, $invoice_update_params): \Freee\Accounting\Model\InvoiceResponse
+updateInvoice($id, $invoice_update_params): \OpenAPI\Client\Model\InvoiceResponse
 ```
 
 請求書の更新
@@ -286,17 +286,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\InvoicesApi(
+$apiInstance = new OpenAPI\Client\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | 請求書ID
-$invoice_update_params = new \Freee\Accounting\Model\InvoiceUpdateParams(); // \Freee\Accounting\Model\InvoiceUpdateParams | 請求書の更新
+$invoice_update_params = new \OpenAPI\Client\Model\InvoiceUpdateParams(); // \OpenAPI\Client\Model\InvoiceUpdateParams | 請求書の更新
 
 try {
     $result = $apiInstance->updateInvoice($id, $invoice_update_params);
@@ -311,11 +311,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 請求書ID |
- **invoice_update_params** | [**\Freee\Accounting\Model\InvoiceUpdateParams**](../Model/InvoiceUpdateParams.md)| 請求書の更新 | [optional]
+ **invoice_update_params** | [**\OpenAPI\Client\Model\InvoiceUpdateParams**](../Model/InvoiceUpdateParams.md)| 請求書の更新 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\InvoiceResponse**](../Model/InvoiceResponse.md)
+[**\OpenAPI\Client\Model\InvoiceResponse**](../Model/InvoiceResponse.md)
 
 ### Authorization
 

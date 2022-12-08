@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * ExpenseApplicationUpdateParams Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -64,7 +64,7 @@ class ExpenseApplicationUpdateParams implements ModelInterface, ArrayAccess, \Js
         'company_id' => 'int',
         'description' => 'string',
         'draft' => 'bool',
-        'expense_application_lines' => '\Freee\Accounting\Model\ExpenseApplicationUpdateParamsExpenseApplicationLines[]',
+        'expense_application_lines' => '\OpenAPI\Client\Model\ExpenseApplicationUpdateParamsExpenseApplicationLines[]',
         'issue_date' => 'string',
         'section_id' => 'int',
         'segment_1_tag_id' => 'int',
@@ -501,7 +501,7 @@ class ExpenseApplicationUpdateParams implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets expense_application_lines
      *
-     * @return \Freee\Accounting\Model\ExpenseApplicationUpdateParamsExpenseApplicationLines[]
+     * @return \OpenAPI\Client\Model\ExpenseApplicationUpdateParamsExpenseApplicationLines[]
      */
     public function getExpenseApplicationLines()
     {
@@ -511,7 +511,7 @@ class ExpenseApplicationUpdateParams implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets expense_application_lines
      *
-     * @param \Freee\Accounting\Model\ExpenseApplicationUpdateParamsExpenseApplicationLines[] $expense_application_lines expense_application_lines
+     * @param \OpenAPI\Client\Model\ExpenseApplicationUpdateParamsExpenseApplicationLines[] $expense_application_lines expense_application_lines
      *
      * @return self
      */

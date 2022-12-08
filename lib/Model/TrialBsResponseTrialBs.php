@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * TrialBsResponseTrialBs Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -62,7 +62,7 @@ class TrialBsResponseTrialBs implements ModelInterface, ArrayAccess, \JsonSerial
         'account_item_display_type' => 'string',
         'adjustment' => 'string',
         'approval_flow_status' => 'string',
-        'balances' => '\Freee\Accounting\Model\TrialBsResponseTrialBsBalances[]',
+        'balances' => '\OpenAPI\Client\Model\TrialBsResponseTrialBsBalances[]',
         'breakdown_display_type' => 'string',
         'company_id' => 'int',
         'created_at' => 'string',
@@ -560,7 +560,7 @@ class TrialBsResponseTrialBs implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets balances
      *
-     * @return \Freee\Accounting\Model\TrialBsResponseTrialBsBalances[]
+     * @return \OpenAPI\Client\Model\TrialBsResponseTrialBsBalances[]
      */
     public function getBalances()
     {
@@ -570,7 +570,7 @@ class TrialBsResponseTrialBs implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets balances
      *
-     * @param \Freee\Accounting\Model\TrialBsResponseTrialBsBalances[] $balances balances
+     * @param \OpenAPI\Client\Model\TrialBsResponseTrialBsBalances[] $balances balances
      *
      * @return self
      */

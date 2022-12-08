@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * DealRenews Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class DealRenews implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'details' => '\Freee\Accounting\Model\DealDetails1[]',
+        'details' => '\OpenAPI\Client\Model\DealDetails1[]',
         'id' => 'int',
         'renew_target_id' => 'int',
         'renew_target_type' => 'string',
@@ -289,7 +289,7 @@ class DealRenews implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets details
      *
-     * @return \Freee\Accounting\Model\DealDetails1[]
+     * @return \OpenAPI\Client\Model\DealDetails1[]
      */
     public function getDetails()
     {
@@ -299,7 +299,7 @@ class DealRenews implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets details
      *
-     * @param \Freee\Accounting\Model\DealDetails1[] $details +更新の明細行一覧（配列）
+     * @param \OpenAPI\Client\Model\DealDetails1[] $details +更新の明細行一覧（配列）
      *
      * @return self
      */

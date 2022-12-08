@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * ReceiptUpdateParams Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -62,7 +62,7 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
         'company_id' => 'int',
         'description' => 'string',
         'issue_date' => 'string',
-        'receipt_metadatum' => '\Freee\Accounting\Model\DealReceiptMetadatum'
+        'receipt_metadatum' => '\OpenAPI\Client\Model\DealReceiptMetadatum'
     ];
 
     /**
@@ -328,7 +328,7 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets receipt_metadatum
      *
-     * @return \Freee\Accounting\Model\DealReceiptMetadatum|null
+     * @return \OpenAPI\Client\Model\DealReceiptMetadatum|null
      */
     public function getReceiptMetadatum()
     {
@@ -338,7 +338,7 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets receipt_metadatum
      *
-     * @param \Freee\Accounting\Model\DealReceiptMetadatum|null $receipt_metadatum receipt_metadatum
+     * @param \OpenAPI\Client\Model\DealReceiptMetadatum|null $receipt_metadatum receipt_metadatum
      *
      * @return self
      */

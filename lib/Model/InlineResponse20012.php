@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * InlineResponse20012 Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class InlineResponse20012 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'users' => '\Freee\Accounting\Model\User[]'
+        'users' => '\OpenAPI\Client\Model\User[]'
     ];
 
     /**
@@ -211,7 +211,7 @@ class InlineResponse20012 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets users
      *
-     * @return \Freee\Accounting\Model\User[]
+     * @return \OpenAPI\Client\Model\User[]
      */
     public function getUsers()
     {
@@ -221,7 +221,7 @@ class InlineResponse20012 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets users
      *
-     * @param \Freee\Accounting\Model\User[] $users users
+     * @param \OpenAPI\Client\Model\User[] $users users
      *
      * @return self
      */

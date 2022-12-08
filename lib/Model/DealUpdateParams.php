@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * DealUpdateParams Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -60,7 +60,7 @@ class DealUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'company_id' => 'int',
-        'details' => '\Freee\Accounting\Model\DealUpdateParamsDetails[]',
+        'details' => '\OpenAPI\Client\Model\DealUpdateParamsDetails[]',
         'due_date' => 'string',
         'issue_date' => 'string',
         'partner_code' => 'string',
@@ -340,7 +340,7 @@ class DealUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets details
      *
-     * @return \Freee\Accounting\Model\DealUpdateParamsDetails[]
+     * @return \OpenAPI\Client\Model\DealUpdateParamsDetails[]
      */
     public function getDetails()
     {
@@ -350,7 +350,7 @@ class DealUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets details
      *
-     * @param \Freee\Accounting\Model\DealUpdateParamsDetails[] $details details
+     * @param \OpenAPI\Client\Model\DealUpdateParamsDetails[] $details details
      *
      * @return self
      */

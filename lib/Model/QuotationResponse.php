@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * QuotationResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class QuotationResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'quotation' => '\Freee\Accounting\Model\QuotationResponseQuotation'
+        'quotation' => '\OpenAPI\Client\Model\QuotationResponseQuotation'
     ];
 
     /**
@@ -211,7 +211,7 @@ class QuotationResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets quotation
      *
-     * @return \Freee\Accounting\Model\QuotationResponseQuotation
+     * @return \OpenAPI\Client\Model\QuotationResponseQuotation
      */
     public function getQuotation()
     {
@@ -221,7 +221,7 @@ class QuotationResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets quotation
      *
-     * @param \Freee\Accounting\Model\QuotationResponseQuotation $quotation quotation
+     * @param \OpenAPI\Client\Model\QuotationResponseQuotation $quotation quotation
      *
      * @return self
      */

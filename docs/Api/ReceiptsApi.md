@@ -1,4 +1,4 @@
-# Freee\Accounting\ReceiptsApi
+# OpenAPI\Client\ReceiptsApi
 
 All URIs are relative to https://api.freee.co.jp.
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 ## `createReceipt()`
 
 ```php
-createReceipt($company_id, $receipt, $description, $issue_date, $receipt_metadatum_amount, $receipt_metadatum_issue_date, $receipt_metadatum_partner_name): \Freee\Accounting\Model\ReceiptResponse
+createReceipt($company_id, $receipt, $description, $issue_date, $receipt_metadatum_amount, $receipt_metadatum_issue_date, $receipt_metadatum_partner_name): \OpenAPI\Client\Model\ReceiptResponse
 ```
 
 ファイルボックス 証憑ファイルアップロード
@@ -28,10 +28,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ReceiptsApi(
+$apiInstance = new OpenAPI\Client\Api\ReceiptsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\ReceiptResponse**](../Model/ReceiptResponse.md)
+[**\OpenAPI\Client\Model\ReceiptResponse**](../Model/ReceiptResponse.md)
 
 ### Authorization
 
@@ -98,10 +98,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ReceiptsApi(
+$apiInstance = new OpenAPI\Client\Api\ReceiptsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -157,10 +157,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ReceiptsApi(
+$apiInstance = new OpenAPI\Client\Api\ReceiptsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 ## `getReceipt()`
 
 ```php
-getReceipt($id, $company_id): \Freee\Accounting\Model\ReceiptResponse
+getReceipt($id, $company_id): \OpenAPI\Client\Model\ReceiptResponse
 ```
 
 ファイルボックス 証憑ファイルの取得
@@ -217,10 +217,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ReceiptsApi(
+$apiInstance = new OpenAPI\Client\Api\ReceiptsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\ReceiptResponse**](../Model/ReceiptResponse.md)
+[**\OpenAPI\Client\Model\ReceiptResponse**](../Model/ReceiptResponse.md)
 
 ### Authorization
 
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 ## `getReceipts()`
 
 ```php
-getReceipts($company_id, $start_date, $end_date, $user_name, $number, $comment_type, $comment_important, $category, $offset, $limit): \Freee\Accounting\Model\InlineResponse2005
+getReceipts($company_id, $start_date, $end_date, $user_name, $number, $comment_type, $comment_important, $category, $offset, $limit): \OpenAPI\Client\Model\InlineResponse2005
 ```
 
 ファイルボックス 証憑ファイル一覧の取得
@@ -277,10 +277,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ReceiptsApi(
+$apiInstance = new OpenAPI\Client\Api\ReceiptsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+[**\OpenAPI\Client\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
 
 ### Authorization
 
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 ## `updateReceipt()`
 
 ```php
-updateReceipt($id, $receipt_update_params): \Freee\Accounting\Model\ReceiptResponse
+updateReceipt($id, $receipt_update_params): \OpenAPI\Client\Model\ReceiptResponse
 ```
 
 ファイルボックス 証憑ファイル情報更新
@@ -353,17 +353,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ReceiptsApi(
+$apiInstance = new OpenAPI\Client\Api\ReceiptsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | 証憑ファイルID
-$receipt_update_params = new \Freee\Accounting\Model\ReceiptUpdateParams(); // \Freee\Accounting\Model\ReceiptUpdateParams
+$receipt_update_params = new \OpenAPI\Client\Model\ReceiptUpdateParams(); // \OpenAPI\Client\Model\ReceiptUpdateParams
 
 try {
     $result = $apiInstance->updateReceipt($id, $receipt_update_params);
@@ -378,11 +378,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 証憑ファイルID |
- **receipt_update_params** | [**\Freee\Accounting\Model\ReceiptUpdateParams**](../Model/ReceiptUpdateParams.md)|  |
+ **receipt_update_params** | [**\OpenAPI\Client\Model\ReceiptUpdateParams**](../Model/ReceiptUpdateParams.md)|  |
 
 ### Return type
 
-[**\Freee\Accounting\Model\ReceiptResponse**](../Model/ReceiptResponse.md)
+[**\OpenAPI\Client\Model\ReceiptResponse**](../Model/ReceiptResponse.md)
 
 ### Authorization
 

@@ -1,4 +1,4 @@
-# Freee\Accounting\SegmentTagsApi
+# OpenAPI\Client\SegmentTagsApi
 
 All URIs are relative to https://api.freee.co.jp.
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 ## `createSegmentTag()`
 
 ```php
-createSegmentTag($segment_id, $segment_tag_params): \Freee\Accounting\Model\SegmentTagResponse
+createSegmentTag($segment_id, $segment_tag_params): \OpenAPI\Client\Model\SegmentTagResponse
 ```
 
 セグメントの作成
@@ -26,17 +26,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\SegmentTagsApi(
+$apiInstance = new OpenAPI\Client\Api\SegmentTagsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $segment_id = 56; // int | セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン
-$segment_tag_params = new \Freee\Accounting\Model\SegmentTagParams(); // \Freee\Accounting\Model\SegmentTagParams | セグメントタグの作成
+$segment_tag_params = new \OpenAPI\Client\Model\SegmentTagParams(); // \OpenAPI\Client\Model\SegmentTagParams | セグメントタグの作成
 
 try {
     $result = $apiInstance->createSegmentTag($segment_id, $segment_tag_params);
@@ -51,11 +51,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **segment_id** | **int**| セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン |
- **segment_tag_params** | [**\Freee\Accounting\Model\SegmentTagParams**](../Model/SegmentTagParams.md)| セグメントタグの作成 |
+ **segment_tag_params** | [**\OpenAPI\Client\Model\SegmentTagParams**](../Model/SegmentTagParams.md)| セグメントタグの作成 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\SegmentTagResponse**](../Model/SegmentTagResponse.md)
+[**\OpenAPI\Client\Model\SegmentTagResponse**](../Model/SegmentTagResponse.md)
 
 ### Authorization
 
@@ -86,10 +86,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\SegmentTagsApi(
+$apiInstance = new OpenAPI\Client\Api\SegmentTagsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -134,7 +134,7 @@ void (empty response body)
 ## `getSegmentTags()`
 
 ```php
-getSegmentTags($company_id, $segment_id, $offset, $limit): \Freee\Accounting\Model\InlineResponse2007
+getSegmentTags($company_id, $segment_id, $offset, $limit): \OpenAPI\Client\Model\InlineResponse2007
 ```
 
 セグメントタグ一覧の取得
@@ -147,10 +147,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\SegmentTagsApi(
+$apiInstance = new OpenAPI\Client\Api\SegmentTagsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse2007**](../Model/InlineResponse2007.md)
+[**\OpenAPI\Client\Model\InlineResponse2007**](../Model/InlineResponse2007.md)
 
 ### Authorization
 
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 ## `updateSegmentTag()`
 
 ```php
-updateSegmentTag($segment_id, $id, $segment_tag_params): \Freee\Accounting\Model\SegmentTagResponse
+updateSegmentTag($segment_id, $id, $segment_tag_params): \OpenAPI\Client\Model\SegmentTagResponse
 ```
 
 セグメントタグの更新
@@ -211,10 +211,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\SegmentTagsApi(
+$apiInstance = new OpenAPI\Client\Api\SegmentTagsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -222,7 +222,7 @@ $apiInstance = new Freee\Accounting\Api\SegmentTagsApi(
 );
 $segment_id = 56; // int | セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン
 $id = 56; // int | セグメントタグID
-$segment_tag_params = new \Freee\Accounting\Model\SegmentTagParams(); // \Freee\Accounting\Model\SegmentTagParams | セグメントタグの作成
+$segment_tag_params = new \OpenAPI\Client\Model\SegmentTagParams(); // \OpenAPI\Client\Model\SegmentTagParams | セグメントタグの作成
 
 try {
     $result = $apiInstance->updateSegmentTag($segment_id, $id, $segment_tag_params);
@@ -238,11 +238,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **segment_id** | **int**| セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン |
  **id** | **int**| セグメントタグID |
- **segment_tag_params** | [**\Freee\Accounting\Model\SegmentTagParams**](../Model/SegmentTagParams.md)| セグメントタグの作成 |
+ **segment_tag_params** | [**\OpenAPI\Client\Model\SegmentTagParams**](../Model/SegmentTagParams.md)| セグメントタグの作成 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\SegmentTagResponse**](../Model/SegmentTagResponse.md)
+[**\OpenAPI\Client\Model\SegmentTagResponse**](../Model/SegmentTagResponse.md)
 
 ### Authorization
 

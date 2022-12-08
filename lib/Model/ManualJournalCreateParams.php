@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * ManualJournalCreateParams Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -61,7 +61,7 @@ class ManualJournalCreateParams implements ModelInterface, ArrayAccess, \JsonSer
     protected static $openAPITypes = [
         'adjustment' => 'bool',
         'company_id' => 'int',
-        'details' => '\Freee\Accounting\Model\ManualJournalCreateParamsDetails[]',
+        'details' => '\OpenAPI\Client\Model\ManualJournalCreateParamsDetails[]',
         'issue_date' => 'string',
         'receipt_ids' => 'int[]'
     ];
@@ -305,7 +305,7 @@ class ManualJournalCreateParams implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets details
      *
-     * @return \Freee\Accounting\Model\ManualJournalCreateParamsDetails[]
+     * @return \OpenAPI\Client\Model\ManualJournalCreateParamsDetails[]
      */
     public function getDetails()
     {
@@ -315,7 +315,7 @@ class ManualJournalCreateParams implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets details
      *
-     * @param \Freee\Accounting\Model\ManualJournalCreateParamsDetails[] $details details
+     * @param \OpenAPI\Client\Model\ManualJournalCreateParamsDetails[] $details details
      *
      * @return self
      */

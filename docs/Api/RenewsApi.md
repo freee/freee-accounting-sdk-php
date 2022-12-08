@@ -1,4 +1,4 @@
-# Freee\Accounting\RenewsApi
+# OpenAPI\Client\RenewsApi
 
 All URIs are relative to https://api.freee.co.jp.
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 ## `createDealRenew()`
 
 ```php
-createDealRenew($id, $renew_create_params): \Freee\Accounting\Model\DealResponse
+createDealRenew($id, $renew_create_params): \OpenAPI\Client\Model\DealResponse
 ```
 
 取引（収入／支出）に対する+更新の作成
@@ -25,17 +25,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\RenewsApi(
+$apiInstance = new OpenAPI\Client\Api\RenewsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | 取引ID
-$renew_create_params = new \Freee\Accounting\Model\RenewCreateParams(); // \Freee\Accounting\Model\RenewCreateParams | 取引（収入／支出）に対する+更新の情報
+$renew_create_params = new \OpenAPI\Client\Model\RenewCreateParams(); // \OpenAPI\Client\Model\RenewCreateParams | 取引（収入／支出）に対する+更新の情報
 
 try {
     $result = $apiInstance->createDealRenew($id, $renew_create_params);
@@ -50,11 +50,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 取引ID |
- **renew_create_params** | [**\Freee\Accounting\Model\RenewCreateParams**](../Model/RenewCreateParams.md)| 取引（収入／支出）に対する+更新の情報 |
+ **renew_create_params** | [**\OpenAPI\Client\Model\RenewCreateParams**](../Model/RenewCreateParams.md)| 取引（収入／支出）に対する+更新の情報 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\DealResponse**](../Model/DealResponse.md)
+[**\OpenAPI\Client\Model\DealResponse**](../Model/DealResponse.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 ## `deleteDealRenew()`
 
 ```php
-deleteDealRenew($id, $renew_id, $company_id): \Freee\Accounting\Model\DealResponse
+deleteDealRenew($id, $renew_id, $company_id): \OpenAPI\Client\Model\DealResponse
 ```
 
 取引（収入／支出）の+更新の削除
@@ -85,10 +85,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\RenewsApi(
+$apiInstance = new OpenAPI\Client\Api\RenewsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\DealResponse**](../Model/DealResponse.md)
+[**\OpenAPI\Client\Model\DealResponse**](../Model/DealResponse.md)
 
 ### Authorization
 
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 ## `updateDealRenew()`
 
 ```php
-updateDealRenew($id, $renew_id, $renew_update_params): \Freee\Accounting\Model\DealResponse
+updateDealRenew($id, $renew_id, $renew_update_params): \OpenAPI\Client\Model\DealResponse
 ```
 
 取引（収入／支出）の+更新の更新
@@ -147,10 +147,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\RenewsApi(
+$apiInstance = new OpenAPI\Client\Api\RenewsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -158,7 +158,7 @@ $apiInstance = new Freee\Accounting\Api\RenewsApi(
 );
 $id = 56; // int | 取引ID
 $renew_id = 56; // int | +更新ID
-$renew_update_params = new \Freee\Accounting\Model\RenewUpdateParams(); // \Freee\Accounting\Model\RenewUpdateParams | +更新の更新情報
+$renew_update_params = new \OpenAPI\Client\Model\RenewUpdateParams(); // \OpenAPI\Client\Model\RenewUpdateParams | +更新の更新情報
 
 try {
     $result = $apiInstance->updateDealRenew($id, $renew_id, $renew_update_params);
@@ -174,11 +174,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 取引ID |
  **renew_id** | **int**| +更新ID |
- **renew_update_params** | [**\Freee\Accounting\Model\RenewUpdateParams**](../Model/RenewUpdateParams.md)| +更新の更新情報 |
+ **renew_update_params** | [**\OpenAPI\Client\Model\RenewUpdateParams**](../Model/RenewUpdateParams.md)| +更新の更新情報 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\DealResponse**](../Model/DealResponse.md)
+[**\OpenAPI\Client\Model\DealResponse**](../Model/DealResponse.md)
 
 ### Authorization
 

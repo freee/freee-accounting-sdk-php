@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **adjustment** | **bool** | 決算整理仕訳フラグ（falseまたは未指定の場合: 日常仕訳） | [optional]
 **company_id** | **int** | 事業所ID |
-**details** | [**\Freee\Accounting\Model\ManualJournalUpdateParamsDetails[]**](ManualJournalUpdateParamsDetails.md) |  |
+**details** | [**\OpenAPI\Client\Model\ManualJournalUpdateParamsDetails[]**](ManualJournalUpdateParamsDetails.md) |  |
 **issue_date** | **string** | 発生日 (yyyy-mm-dd) |
 **receipt_ids** | **int[]** | 証憑ファイルID（ファイルボックスのファイルID）（配列） | [optional]
 

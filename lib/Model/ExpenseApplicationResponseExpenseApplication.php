@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * ExpenseApplicationResponseExpenseApplication Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -61,17 +61,17 @@ class ExpenseApplicationResponseExpenseApplication implements ModelInterface, Ar
     protected static $openAPITypes = [
         'applicant_id' => 'int',
         'application_number' => 'string',
-        'approval_flow_logs' => '\Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovalFlowLogs[]',
+        'approval_flow_logs' => '\OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestApprovalFlowLogs[]',
         'approval_flow_route_id' => 'int',
-        'approvers' => '\Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovers[]',
-        'comments' => '\Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestComments[]',
+        'approvers' => '\OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestApprovers[]',
+        'comments' => '\OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestComments[]',
         'company_id' => 'int',
         'current_round' => 'int',
         'current_step_id' => 'int',
         'deal_id' => 'int',
         'deal_status' => 'string',
         'description' => 'string',
-        'expense_application_lines' => '\Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines[]',
+        'expense_application_lines' => '\OpenAPI\Client\Model\ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines[]',
         'id' => 'int',
         'issue_date' => 'string',
         'section_id' => 'int',
@@ -586,7 +586,7 @@ class ExpenseApplicationResponseExpenseApplication implements ModelInterface, Ar
     /**
      * Gets approval_flow_logs
      *
-     * @return \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovalFlowLogs[]
+     * @return \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestApprovalFlowLogs[]
      */
     public function getApprovalFlowLogs()
     {
@@ -596,7 +596,7 @@ class ExpenseApplicationResponseExpenseApplication implements ModelInterface, Ar
     /**
      * Sets approval_flow_logs
      *
-     * @param \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovalFlowLogs[] $approval_flow_logs 経費申請の承認履歴（配列）
+     * @param \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestApprovalFlowLogs[] $approval_flow_logs 経費申請の承認履歴（配列）
      *
      * @return self
      */
@@ -642,7 +642,7 @@ class ExpenseApplicationResponseExpenseApplication implements ModelInterface, Ar
     /**
      * Gets approvers
      *
-     * @return \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovers[]
+     * @return \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestApprovers[]
      */
     public function getApprovers()
     {
@@ -652,7 +652,7 @@ class ExpenseApplicationResponseExpenseApplication implements ModelInterface, Ar
     /**
      * Sets approvers
      *
-     * @param \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovers[] $approvers 承認者（配列）   承認ステップのresource_typeがunspecified (指定なし)の場合はapproversはレスポンスに含まれません。   しかし、resource_typeがunspecifiedの承認ステップにおいて誰かが承認・却下・差し戻しのいずれかのアクションを取った後は、   approversはレスポンスに含まれるようになります。   その場合approversにはアクションを行ったステップのIDとアクションを行ったユーザーのIDが含まれます。
+     * @param \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestApprovers[] $approvers 承認者（配列）   承認ステップのresource_typeがunspecified (指定なし)の場合はapproversはレスポンスに含まれません。   しかし、resource_typeがunspecifiedの承認ステップにおいて誰かが承認・却下・差し戻しのいずれかのアクションを取った後は、   approversはレスポンスに含まれるようになります。   その場合approversにはアクションを行ったステップのIDとアクションを行ったユーザーのIDが含まれます。
      *
      * @return self
      */
@@ -666,7 +666,7 @@ class ExpenseApplicationResponseExpenseApplication implements ModelInterface, Ar
     /**
      * Gets comments
      *
-     * @return \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestComments[]
+     * @return \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestComments[]
      */
     public function getComments()
     {
@@ -676,7 +676,7 @@ class ExpenseApplicationResponseExpenseApplication implements ModelInterface, Ar
     /**
      * Sets comments
      *
-     * @param \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestComments[] $comments 経費申請のコメント一覧（配列）
+     * @param \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestComments[] $comments 経費申請のコメント一覧（配列）
      *
      * @return self
      */
@@ -876,7 +876,7 @@ class ExpenseApplicationResponseExpenseApplication implements ModelInterface, Ar
     /**
      * Gets expense_application_lines
      *
-     * @return \Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines[]
+     * @return \OpenAPI\Client\Model\ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines[]
      */
     public function getExpenseApplicationLines()
     {
@@ -886,7 +886,7 @@ class ExpenseApplicationResponseExpenseApplication implements ModelInterface, Ar
     /**
      * Sets expense_application_lines
      *
-     * @param \Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines[] $expense_application_lines 経費申請の項目行一覧（配列）
+     * @param \OpenAPI\Client\Model\ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines[] $expense_application_lines 経費申請の項目行一覧（配列）
      *
      * @return self
      */

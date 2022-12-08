@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **partner_prefecture_name** | **string** | 都道府県 | [optional]
 **partner_title** | **string** | 敬称（御中、様、(空白)の3つから選択） |
 **partner_zipcode** | **string** | 郵便番号 | [optional]
-**quotation_contents** | [**\Freee\Accounting\Model\QuotationIndexResponseQuotationContents[]**](QuotationIndexResponseQuotationContents.md) | 見積内容 | [optional]
+**quotation_contents** | [**\OpenAPI\Client\Model\QuotationIndexResponseQuotationContents[]**](QuotationIndexResponseQuotationContents.md) | 見積内容 | [optional]
 **quotation_layout** | **string** | 見積書レイアウト * &#x60;default_classic&#x60; - レイアウト１/クラシック (デフォルト)  * &#x60;standard_classic&#x60; - レイアウト２/クラシック  * &#x60;envelope_classic&#x60; - 封筒１/クラシック  * &#x60;default_modern&#x60; - レイアウト１/モダン  * &#x60;standard_modern&#x60; - レイアウト２/モダン  * &#x60;envelope_modern&#x60; - 封筒/モダン |
 **quotation_number** | **string** | 見積書番号 |
 **quotation_status** | **string** | 見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み, all: 全て) |
@@ -37,7 +37,7 @@ Name | Type | Description | Notes
 **tax_entry_method** | **string** | 見積書の消費税計算方法(inclusive: 内税, exclusive: 外税) |
 **title** | **string** | タイトル | [optional]
 **total_amount** | **int** | 合計金額 |
-**total_amount_per_vat_rate** | [**\Freee\Accounting\Model\InvoiceIndexResponseTotalAmountPerVatRate**](InvoiceIndexResponseTotalAmountPerVatRate.md) |  |
+**total_amount_per_vat_rate** | [**\OpenAPI\Client\Model\InvoiceIndexResponseTotalAmountPerVatRate**](InvoiceIndexResponseTotalAmountPerVatRate.md) |  |
 **total_vat** | **int** | 消費税 | [optional]
 **web_confirmed_at** | **string** | Web共有取引先確認日時(最新) | [optional]
 **web_downloaded_at** | **string** | Web共有ダウンロード日時(最新) | [optional]

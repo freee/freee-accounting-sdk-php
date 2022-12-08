@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **corresponding_expense_id** | **int** | 支出取引相手勘定科目ID |
 **corresponding_income_id** | **int** | 収入取引相手勘定科目ID |
 **group_name** | **string** | 決算書表示名（小カテゴリー） Selectablesフォーム用選択項目情報エンドポイント(account_groups.name)で取得可能です |
-**items** | [**\Freee\Accounting\Model\AccountItemCreateParamsAccountItemItems[]**](AccountItemCreateParamsAccountItemItems.md) | 品目 | [optional]
+**items** | [**\OpenAPI\Client\Model\AccountItemCreateParamsAccountItemItems[]**](AccountItemCreateParamsAccountItemItems.md) | 品目 | [optional]
 **name** | **string** | 勘定科目名 (30文字以内) |
-**partners** | [**\Freee\Accounting\Model\AccountItemCreateParamsAccountItemItems[]**](AccountItemCreateParamsAccountItemItems.md) | 取引先 | [optional]
+**partners** | [**\OpenAPI\Client\Model\AccountItemCreateParamsAccountItemItems[]**](AccountItemCreateParamsAccountItemItems.md) | 取引先 | [optional]
 **searchable** | **int** | 検索可能:2, 検索不可：3(登録時未指定の場合は2で登録されます。更新時未指定の場合はsearchableは変更されません。) | [optional]
 **shortcut** | **string** | ショートカット1 (20文字以内) | [optional]
 **shortcut_num** | **string** | ショートカット2(勘定科目コード)(20文字以内) | [optional]

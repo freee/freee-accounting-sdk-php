@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **company_zipcode** | **string** | 郵便番号 (デフォルトは事業所設定情報が補完されます) | [optional]
 **description** | **string** | 概要 | [optional]
 **due_date** | **string** | 期日 (yyyy-mm-dd) | [optional]
-**invoice_contents** | [**\Freee\Accounting\Model\InvoiceUpdateParamsInvoiceContents[]**](InvoiceUpdateParamsInvoiceContents.md) | 請求内容 | [optional]
+**invoice_contents** | [**\OpenAPI\Client\Model\InvoiceUpdateParamsInvoiceContents[]**](InvoiceUpdateParamsInvoiceContents.md) | 請求内容 | [optional]
 **invoice_layout** | **string** | 請求書レイアウト * &#x60;default_classic&#x60; - レイアウト１/クラシック (デフォルト)  * &#x60;standard_classic&#x60; - レイアウト２/クラシック  * &#x60;envelope_classic&#x60; - 封筒１/クラシック  * &#x60;carried_forward_standard_classic&#x60; - レイアウト３（繰越金額欄あり）/クラシック  * &#x60;carried_forward_envelope_classic&#x60; - 封筒２（繰越金額欄あり）/クラシック  * &#x60;default_modern&#x60; - レイアウト１/モダン  * &#x60;standard_modern&#x60; - レイアウト２/モダン  * &#x60;envelope_modern&#x60; - 封筒/モダン | [optional]
 **invoice_number** | **string** | 請求書番号 (デフォルト: 自動採番されます) | [optional]
 **invoice_status** | **string** | 請求書ステータス&lt;br&gt; &lt;ul&gt;   &lt;li&gt;draft: 下書き (デフォルト)&lt;/li&gt;   &lt;li&gt;(廃止予定) issue: 発行 (送付待ち (unsubmitted) と同じです。)&lt;/li&gt;   &lt;li&gt;unsubmitted: 送付待ち&lt;/li&gt;   &lt;li&gt;submitted: 送付済み&lt;/li&gt; &lt;/ul&gt; issue, unsubmitted は請求書承認ワークフローを利用している場合は、承認済みの請求書にのみ指定できます。&lt;br&gt; submitted は請求書承認ワークフローを利用している場合は、送付待ちの請求書にのみ指定できます。 | [optional]

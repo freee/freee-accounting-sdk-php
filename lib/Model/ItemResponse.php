@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * ItemResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class ItemResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'item' => '\Freee\Accounting\Model\Item'
+        'item' => '\OpenAPI\Client\Model\Item'
     ];
 
     /**
@@ -211,7 +211,7 @@ class ItemResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets item
      *
-     * @return \Freee\Accounting\Model\Item
+     * @return \OpenAPI\Client\Model\Item
      */
     public function getItem()
     {
@@ -221,7 +221,7 @@ class ItemResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets item
      *
-     * @param \Freee\Accounting\Model\Item $item item
+     * @param \OpenAPI\Client\Model\Item $item item
      *
      * @return self
      */

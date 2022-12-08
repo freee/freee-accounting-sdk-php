@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * ReceiptResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class ReceiptResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'receipt' => '\Freee\Accounting\Model\Receipt'
+        'receipt' => '\OpenAPI\Client\Model\Receipt'
     ];
 
     /**
@@ -211,7 +211,7 @@ class ReceiptResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets receipt
      *
-     * @return \Freee\Accounting\Model\Receipt
+     * @return \OpenAPI\Client\Model\Receipt
      */
     public function getReceipt()
     {
@@ -221,7 +221,7 @@ class ReceiptResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets receipt
      *
-     * @param \Freee\Accounting\Model\Receipt $receipt receipt
+     * @param \OpenAPI\Client\Model\Receipt $receipt receipt
      *
      * @return self
      */

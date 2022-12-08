@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * ExpenseApplicationResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class ExpenseApplicationResponse implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'expense_application' => '\Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplication'
+        'expense_application' => '\OpenAPI\Client\Model\ExpenseApplicationResponseExpenseApplication'
     ];
 
     /**
@@ -211,7 +211,7 @@ class ExpenseApplicationResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets expense_application
      *
-     * @return \Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplication
+     * @return \OpenAPI\Client\Model\ExpenseApplicationResponseExpenseApplication
      */
     public function getExpenseApplication()
     {
@@ -221,7 +221,7 @@ class ExpenseApplicationResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets expense_application
      *
-     * @param \Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplication $expense_application expense_application
+     * @param \OpenAPI\Client\Model\ExpenseApplicationResponseExpenseApplication $expense_application expense_application
      *
      * @return self
      */

@@ -1,4 +1,4 @@
-# Freee\Accounting\DealsApi
+# OpenAPI\Client\DealsApi
 
 All URIs are relative to https://api.freee.co.jp.
 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 ## `createDeal()`
 
 ```php
-createDeal($deal_create_params): \Freee\Accounting\Model\DealCreateResponse
+createDeal($deal_create_params): \OpenAPI\Client\Model\DealCreateResponse
 ```
 
 取引（収入／支出）の作成
@@ -27,16 +27,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\DealsApi(
+$apiInstance = new OpenAPI\Client\Api\DealsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$deal_create_params = new \Freee\Accounting\Model\DealCreateParams(); // \Freee\Accounting\Model\DealCreateParams | 取引（収入／支出）の作成
+$deal_create_params = new \OpenAPI\Client\Model\DealCreateParams(); // \OpenAPI\Client\Model\DealCreateParams | 取引（収入／支出）の作成
 
 try {
     $result = $apiInstance->createDeal($deal_create_params);
@@ -50,11 +50,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **deal_create_params** | [**\Freee\Accounting\Model\DealCreateParams**](../Model/DealCreateParams.md)| 取引（収入／支出）の作成 | [optional]
+ **deal_create_params** | [**\OpenAPI\Client\Model\DealCreateParams**](../Model/DealCreateParams.md)| 取引（収入／支出）の作成 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\DealCreateResponse**](../Model/DealCreateResponse.md)
+[**\OpenAPI\Client\Model\DealCreateResponse**](../Model/DealCreateResponse.md)
 
 ### Authorization
 
@@ -85,10 +85,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\DealsApi(
+$apiInstance = new OpenAPI\Client\Api\DealsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -131,7 +131,7 @@ void (empty response body)
 ## `getDeal()`
 
 ```php
-getDeal($company_id, $id, $accruals): \Freee\Accounting\Model\DealResponse
+getDeal($company_id, $id, $accruals): \OpenAPI\Client\Model\DealResponse
 ```
 
 取引（収入／支出）の取得
@@ -144,10 +144,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\DealsApi(
+$apiInstance = new OpenAPI\Client\Api\DealsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\DealResponse**](../Model/DealResponse.md)
+[**\OpenAPI\Client\Model\DealResponse**](../Model/DealResponse.md)
 
 ### Authorization
 
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 ## `getDeals()`
 
 ```php
-getDeals($company_id, $partner_id, $account_item_id, $partner_code, $status, $type, $start_issue_date, $end_issue_date, $start_due_date, $end_due_date, $start_renew_date, $end_renew_date, $offset, $limit, $registered_from, $accruals): \Freee\Accounting\Model\InlineResponse2001
+getDeals($company_id, $partner_id, $account_item_id, $partner_code, $status, $type, $start_issue_date, $end_issue_date, $start_due_date, $end_due_date, $start_renew_date, $end_renew_date, $offset, $limit, $registered_from, $accruals): \OpenAPI\Client\Model\InlineResponse2001
 ```
 
 取引（収入／支出）一覧の取得
@@ -206,10 +206,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\DealsApi(
+$apiInstance = new OpenAPI\Client\Api\DealsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -263,7 +263,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\OpenAPI\Client\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
 
 ### Authorization
 
@@ -281,7 +281,7 @@ Name | Type | Description  | Notes
 ## `updateDeal()`
 
 ```php
-updateDeal($id, $deal_update_params): \Freee\Accounting\Model\DealResponse
+updateDeal($id, $deal_update_params): \OpenAPI\Client\Model\DealResponse
 ```
 
 取引（収入／支出）の更新
@@ -294,17 +294,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\DealsApi(
+$apiInstance = new OpenAPI\Client\Api\DealsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | 取引ID
-$deal_update_params = new \Freee\Accounting\Model\DealUpdateParams(); // \Freee\Accounting\Model\DealUpdateParams | 取引（収入／支出）の更新
+$deal_update_params = new \OpenAPI\Client\Model\DealUpdateParams(); // \OpenAPI\Client\Model\DealUpdateParams | 取引（収入／支出）の更新
 
 try {
     $result = $apiInstance->updateDeal($id, $deal_update_params);
@@ -319,11 +319,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 取引ID |
- **deal_update_params** | [**\Freee\Accounting\Model\DealUpdateParams**](../Model/DealUpdateParams.md)| 取引（収入／支出）の更新 | [optional]
+ **deal_update_params** | [**\OpenAPI\Client\Model\DealUpdateParams**](../Model/DealUpdateParams.md)| 取引（収入／支出）の更新 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\DealResponse**](../Model/DealResponse.md)
+[**\OpenAPI\Client\Model\DealResponse**](../Model/DealResponse.md)
 
 ### Authorization
 

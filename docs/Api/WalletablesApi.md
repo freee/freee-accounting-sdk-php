@@ -1,4 +1,4 @@
-# Freee\Accounting\WalletablesApi
+# OpenAPI\Client\WalletablesApi
 
 All URIs are relative to https://api.freee.co.jp.
 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 ## `createWalletable()`
 
 ```php
-createWalletable($walletable_create_params): \Freee\Accounting\Model\WalletableCreateResponse
+createWalletable($walletable_create_params): \OpenAPI\Client\Model\WalletableCreateResponse
 ```
 
 口座の作成
@@ -27,16 +27,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\WalletablesApi(
+$apiInstance = new OpenAPI\Client\Api\WalletablesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$walletable_create_params = new \Freee\Accounting\Model\WalletableCreateParams(); // \Freee\Accounting\Model\WalletableCreateParams | 口座の作成
+$walletable_create_params = new \OpenAPI\Client\Model\WalletableCreateParams(); // \OpenAPI\Client\Model\WalletableCreateParams | 口座の作成
 
 try {
     $result = $apiInstance->createWalletable($walletable_create_params);
@@ -50,11 +50,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **walletable_create_params** | [**\Freee\Accounting\Model\WalletableCreateParams**](../Model/WalletableCreateParams.md)| 口座の作成 | [optional]
+ **walletable_create_params** | [**\OpenAPI\Client\Model\WalletableCreateParams**](../Model/WalletableCreateParams.md)| 口座の作成 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\WalletableCreateResponse**](../Model/WalletableCreateResponse.md)
+[**\OpenAPI\Client\Model\WalletableCreateResponse**](../Model/WalletableCreateResponse.md)
 
 ### Authorization
 
@@ -85,10 +85,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\WalletablesApi(
+$apiInstance = new OpenAPI\Client\Api\WalletablesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -133,7 +133,7 @@ void (empty response body)
 ## `getWalletable()`
 
 ```php
-getWalletable($id, $type, $company_id): \Freee\Accounting\Model\InlineResponse20016
+getWalletable($id, $type, $company_id): \OpenAPI\Client\Model\InlineResponse20016
 ```
 
 口座情報の取得
@@ -146,10 +146,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\WalletablesApi(
+$apiInstance = new OpenAPI\Client\Api\WalletablesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
+[**\OpenAPI\Client\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
 
 ### Authorization
 
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 ## `getWalletables()`
 
 ```php
-getWalletables($company_id, $with_balance, $type): \Freee\Accounting\Model\InlineResponse20015
+getWalletables($company_id, $with_balance, $type): \OpenAPI\Client\Model\InlineResponse20015
 ```
 
 口座一覧の取得
@@ -208,10 +208,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\WalletablesApi(
+$apiInstance = new OpenAPI\Client\Api\WalletablesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\OpenAPI\Client\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
 
 ### Authorization
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 ## `updateWalletable()`
 
 ```php
-updateWalletable($id, $type, $walletable_update_params): \Freee\Accounting\Model\InlineResponse20016
+updateWalletable($id, $type, $walletable_update_params): \OpenAPI\Client\Model\InlineResponse20016
 ```
 
 口座の更新
@@ -270,10 +270,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\WalletablesApi(
+$apiInstance = new OpenAPI\Client\Api\WalletablesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -281,7 +281,7 @@ $apiInstance = new Freee\Accounting\Api\WalletablesApi(
 );
 $id = 56; // int
 $type = 'type_example'; // string | 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座）
-$walletable_update_params = new \Freee\Accounting\Model\WalletableUpdateParams(); // \Freee\Accounting\Model\WalletableUpdateParams | 口座の更新
+$walletable_update_params = new \OpenAPI\Client\Model\WalletableUpdateParams(); // \OpenAPI\Client\Model\WalletableUpdateParams | 口座の更新
 
 try {
     $result = $apiInstance->updateWalletable($id, $type, $walletable_update_params);
@@ -297,11 +297,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
  **type** | **string**| 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） |
- **walletable_update_params** | [**\Freee\Accounting\Model\WalletableUpdateParams**](../Model/WalletableUpdateParams.md)| 口座の更新 | [optional]
+ **walletable_update_params** | [**\OpenAPI\Client\Model\WalletableUpdateParams**](../Model/WalletableUpdateParams.md)| 口座の更新 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
+[**\OpenAPI\Client\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
 
 ### Authorization
 

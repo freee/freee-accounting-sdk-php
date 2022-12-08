@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * TrialBsThreeYearsResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,9 +59,9 @@ class TrialBsThreeYearsResponse implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'trial_bs_three_years' => '\Freee\Accounting\Model\TrialBsThreeYearsResponseTrialBsThreeYears',
+        'trial_bs_three_years' => '\OpenAPI\Client\Model\TrialBsThreeYearsResponseTrialBsThreeYears',
         'up_to_date' => 'bool',
-        'up_to_date_reasons' => '\Freee\Accounting\Model\JournalsResponseJournalsUpToDateReasons[]'
+        'up_to_date_reasons' => '\OpenAPI\Client\Model\JournalsResponseJournalsUpToDateReasons[]'
     ];
 
     /**
@@ -226,7 +226,7 @@ class TrialBsThreeYearsResponse implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets trial_bs_three_years
      *
-     * @return \Freee\Accounting\Model\TrialBsThreeYearsResponseTrialBsThreeYears
+     * @return \OpenAPI\Client\Model\TrialBsThreeYearsResponseTrialBsThreeYears
      */
     public function getTrialBsThreeYears()
     {
@@ -236,7 +236,7 @@ class TrialBsThreeYearsResponse implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets trial_bs_three_years
      *
-     * @param \Freee\Accounting\Model\TrialBsThreeYearsResponseTrialBsThreeYears $trial_bs_three_years trial_bs_three_years
+     * @param \OpenAPI\Client\Model\TrialBsThreeYearsResponseTrialBsThreeYears $trial_bs_three_years trial_bs_three_years
      *
      * @return self
      */
@@ -274,7 +274,7 @@ class TrialBsThreeYearsResponse implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets up_to_date_reasons
      *
-     * @return \Freee\Accounting\Model\JournalsResponseJournalsUpToDateReasons[]|null
+     * @return \OpenAPI\Client\Model\JournalsResponseJournalsUpToDateReasons[]|null
      */
     public function getUpToDateReasons()
     {
@@ -284,7 +284,7 @@ class TrialBsThreeYearsResponse implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets up_to_date_reasons
      *
-     * @param \Freee\Accounting\Model\JournalsResponseJournalsUpToDateReasons[]|null $up_to_date_reasons 集計が最新でない場合の要因情報
+     * @param \OpenAPI\Client\Model\JournalsResponseJournalsUpToDateReasons[]|null $up_to_date_reasons 集計が最新でない場合の要因情報
      *
      * @return self
      */

@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **form_id** | **int** | 申請フォームID |
 **id** | **int** | 各種申請ID |
 **manual_journal_id** | **int** | 振替伝票のID (申請ステータス:statusがapprovedで、関連する振替伝票が存在する時のみmanual_journal_idが表示されます)  &lt;a href&#x3D;\&quot;https://support.freee.co.jp/hc/ja/articles/115003827683-#5\&quot; target&#x3D;\&quot;_blank\&quot;&gt;承認された各種申請から支払依頼等を作成する&lt;/a&gt; |
-**request_items** | [**\Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestRequestItems[]**](ApprovalRequestResponseApprovalRequestRequestItems.md) | 各種申請の項目一覧（配列） |
+**request_items** | [**\OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestRequestItems[]**](ApprovalRequestResponseApprovalRequestRequestItems.md) | 各種申請の項目一覧（配列） |
 **status** | **string** | 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) |
 **title** | **string** | 申請タイトル |
 

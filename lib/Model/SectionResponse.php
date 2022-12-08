@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * SectionResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class SectionResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'section' => '\Freee\Accounting\Model\Section'
+        'section' => '\OpenAPI\Client\Model\Section'
     ];
 
     /**
@@ -211,7 +211,7 @@ class SectionResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets section
      *
-     * @return \Freee\Accounting\Model\Section
+     * @return \OpenAPI\Client\Model\Section
      */
     public function getSection()
     {
@@ -221,7 +221,7 @@ class SectionResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets section
      *
-     * @param \Freee\Accounting\Model\Section $section section
+     * @param \OpenAPI\Client\Model\Section $section section
      *
      * @return self
      */

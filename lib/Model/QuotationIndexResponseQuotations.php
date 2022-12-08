@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * QuotationIndexResponseQuotations Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -84,7 +84,7 @@ class QuotationIndexResponseQuotations implements ModelInterface, ArrayAccess, \
         'partner_prefecture_name' => 'string',
         'partner_title' => 'string',
         'partner_zipcode' => 'string',
-        'quotation_contents' => '\Freee\Accounting\Model\QuotationIndexResponseQuotationContents[]',
+        'quotation_contents' => '\OpenAPI\Client\Model\QuotationIndexResponseQuotationContents[]',
         'quotation_layout' => 'string',
         'quotation_number' => 'string',
         'quotation_status' => 'string',
@@ -92,7 +92,7 @@ class QuotationIndexResponseQuotations implements ModelInterface, ArrayAccess, \
         'tax_entry_method' => 'string',
         'title' => 'string',
         'total_amount' => 'int',
-        'total_amount_per_vat_rate' => '\Freee\Accounting\Model\InvoiceIndexResponseTotalAmountPerVatRate',
+        'total_amount_per_vat_rate' => '\OpenAPI\Client\Model\InvoiceIndexResponseTotalAmountPerVatRate',
         'total_vat' => 'int',
         'web_confirmed_at' => 'string',
         'web_downloaded_at' => 'string',
@@ -1214,7 +1214,7 @@ class QuotationIndexResponseQuotations implements ModelInterface, ArrayAccess, \
     /**
      * Gets quotation_contents
      *
-     * @return \Freee\Accounting\Model\QuotationIndexResponseQuotationContents[]|null
+     * @return \OpenAPI\Client\Model\QuotationIndexResponseQuotationContents[]|null
      */
     public function getQuotationContents()
     {
@@ -1224,7 +1224,7 @@ class QuotationIndexResponseQuotations implements ModelInterface, ArrayAccess, \
     /**
      * Sets quotation_contents
      *
-     * @param \Freee\Accounting\Model\QuotationIndexResponseQuotationContents[]|null $quotation_contents 見積内容
+     * @param \OpenAPI\Client\Model\QuotationIndexResponseQuotationContents[]|null $quotation_contents 見積内容
      *
      * @return self
      */
@@ -1436,7 +1436,7 @@ class QuotationIndexResponseQuotations implements ModelInterface, ArrayAccess, \
     /**
      * Gets total_amount_per_vat_rate
      *
-     * @return \Freee\Accounting\Model\InvoiceIndexResponseTotalAmountPerVatRate
+     * @return \OpenAPI\Client\Model\InvoiceIndexResponseTotalAmountPerVatRate
      */
     public function getTotalAmountPerVatRate()
     {
@@ -1446,7 +1446,7 @@ class QuotationIndexResponseQuotations implements ModelInterface, ArrayAccess, \
     /**
      * Sets total_amount_per_vat_rate
      *
-     * @param \Freee\Accounting\Model\InvoiceIndexResponseTotalAmountPerVatRate $total_amount_per_vat_rate total_amount_per_vat_rate
+     * @param \OpenAPI\Client\Model\InvoiceIndexResponseTotalAmountPerVatRate $total_amount_per_vat_rate total_amount_per_vat_rate
      *
      * @return self
      */

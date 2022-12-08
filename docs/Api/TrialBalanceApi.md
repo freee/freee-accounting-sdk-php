@@ -1,4 +1,4 @@
-# Freee\Accounting\TrialBalanceApi
+# OpenAPI\Client\TrialBalanceApi
 
 All URIs are relative to https://api.freee.co.jp.
 
@@ -26,7 +26,7 @@ Method | HTTP request | Description
 ## `getTrialBs()`
 
 ```php
-getTrialBs($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $approval_flow_status): \Freee\Accounting\Model\TrialBsResponse
+getTrialBs($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $approval_flow_status): \OpenAPI\Client\Model\TrialBsResponse
 ```
 
 貸借対照表の取得
@@ -39,10 +39,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
+$apiInstance = new OpenAPI\Client\Api\TrialBalanceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\TrialBsResponse**](../Model/TrialBsResponse.md)
+[**\OpenAPI\Client\Model\TrialBsResponse**](../Model/TrialBsResponse.md)
 
 ### Authorization
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 ## `getTrialBsThreeYears()`
 
 ```php
-getTrialBsThreeYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $approval_flow_status): \Freee\Accounting\Model\TrialBsThreeYearsResponse
+getTrialBsThreeYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $approval_flow_status): \OpenAPI\Client\Model\TrialBsThreeYearsResponse
 ```
 
 貸借対照表(３期間比較)の取得
@@ -123,10 +123,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
+$apiInstance = new OpenAPI\Client\Api\TrialBalanceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\TrialBsThreeYearsResponse**](../Model/TrialBsThreeYearsResponse.md)
+[**\OpenAPI\Client\Model\TrialBsThreeYearsResponse**](../Model/TrialBsThreeYearsResponse.md)
 
 ### Authorization
 
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 ## `getTrialBsTwoYears()`
 
 ```php
-getTrialBsTwoYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $approval_flow_status): \Freee\Accounting\Model\TrialBsTwoYearsResponse
+getTrialBsTwoYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $approval_flow_status): \OpenAPI\Client\Model\TrialBsTwoYearsResponse
 ```
 
 貸借対照表(前年比較)の取得
@@ -207,10 +207,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
+$apiInstance = new OpenAPI\Client\Api\TrialBalanceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\TrialBsTwoYearsResponse**](../Model/TrialBsTwoYearsResponse.md)
+[**\OpenAPI\Client\Model\TrialBsTwoYearsResponse**](../Model/TrialBsTwoYearsResponse.md)
 
 ### Authorization
 
@@ -278,7 +278,7 @@ Name | Type | Description  | Notes
 ## `getTrialCr()`
 
 ```php
-getTrialCr($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialCrResponse
+getTrialCr($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \OpenAPI\Client\Model\TrialCrResponse
 ```
 
 製造原価報告書の取得
@@ -291,10 +291,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
+$apiInstance = new OpenAPI\Client\Api\TrialBalanceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\TrialCrResponse**](../Model/TrialCrResponse.md)
+[**\OpenAPI\Client\Model\TrialCrResponse**](../Model/TrialCrResponse.md)
 
 ### Authorization
 
@@ -364,7 +364,7 @@ Name | Type | Description  | Notes
 ## `getTrialCrSections()`
 
 ```php
-getTrialCrSections($company_id, $section_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialCrSectionsResponse
+getTrialCrSections($company_id, $section_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $adjustment, $cost_allocation, $approval_flow_status): \OpenAPI\Client\Model\TrialCrSectionsResponse
 ```
 
 製造原価報告書(部門比較)の取得
@@ -377,10 +377,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
+$apiInstance = new OpenAPI\Client\Api\TrialBalanceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -432,7 +432,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\TrialCrSectionsResponse**](../Model/TrialCrSectionsResponse.md)
+[**\OpenAPI\Client\Model\TrialCrSectionsResponse**](../Model/TrialCrSectionsResponse.md)
 
 ### Authorization
 
@@ -450,7 +450,7 @@ Name | Type | Description  | Notes
 ## `getTrialCrSegment1Tags()`
 
 ```php
-getTrialCrSegment1Tags($company_id, $segment_1_tag_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialCrSegment1TagsResponse
+getTrialCrSegment1Tags($company_id, $segment_1_tag_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \OpenAPI\Client\Model\TrialCrSegment1TagsResponse
 ```
 
 製造原価報告書(セグメント1比較)の取得
@@ -463,10 +463,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
+$apiInstance = new OpenAPI\Client\Api\TrialBalanceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -520,7 +520,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\TrialCrSegment1TagsResponse**](../Model/TrialCrSegment1TagsResponse.md)
+[**\OpenAPI\Client\Model\TrialCrSegment1TagsResponse**](../Model/TrialCrSegment1TagsResponse.md)
 
 ### Authorization
 
@@ -538,7 +538,7 @@ Name | Type | Description  | Notes
 ## `getTrialCrSegment2Tags()`
 
 ```php
-getTrialCrSegment2Tags($company_id, $segment_2_tag_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialCrSegment2TagsResponse
+getTrialCrSegment2Tags($company_id, $segment_2_tag_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \OpenAPI\Client\Model\TrialCrSegment2TagsResponse
 ```
 
 製造原価報告書(セグメント2比較)の取得
@@ -551,10 +551,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
+$apiInstance = new OpenAPI\Client\Api\TrialBalanceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -608,7 +608,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\TrialCrSegment2TagsResponse**](../Model/TrialCrSegment2TagsResponse.md)
+[**\OpenAPI\Client\Model\TrialCrSegment2TagsResponse**](../Model/TrialCrSegment2TagsResponse.md)
 
 ### Authorization
 
@@ -626,7 +626,7 @@ Name | Type | Description  | Notes
 ## `getTrialCrSegment3Tags()`
 
 ```php
-getTrialCrSegment3Tags($company_id, $segment_3_tag_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialCrSegment3TagsResponse
+getTrialCrSegment3Tags($company_id, $segment_3_tag_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \OpenAPI\Client\Model\TrialCrSegment3TagsResponse
 ```
 
 製造原価報告書(セグメント3比較)の取得
@@ -639,10 +639,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
+$apiInstance = new OpenAPI\Client\Api\TrialBalanceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -696,7 +696,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\TrialCrSegment3TagsResponse**](../Model/TrialCrSegment3TagsResponse.md)
+[**\OpenAPI\Client\Model\TrialCrSegment3TagsResponse**](../Model/TrialCrSegment3TagsResponse.md)
 
 ### Authorization
 
@@ -714,7 +714,7 @@ Name | Type | Description  | Notes
 ## `getTrialCrThreeYears()`
 
 ```php
-getTrialCrThreeYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialCrThreeYearsResponse
+getTrialCrThreeYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \OpenAPI\Client\Model\TrialCrThreeYearsResponse
 ```
 
 製造原価報告書(３期間比較)の取得
@@ -727,10 +727,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
+$apiInstance = new OpenAPI\Client\Api\TrialBalanceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -782,7 +782,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\TrialCrThreeYearsResponse**](../Model/TrialCrThreeYearsResponse.md)
+[**\OpenAPI\Client\Model\TrialCrThreeYearsResponse**](../Model/TrialCrThreeYearsResponse.md)
 
 ### Authorization
 
@@ -800,7 +800,7 @@ Name | Type | Description  | Notes
 ## `getTrialCrTwoYears()`
 
 ```php
-getTrialCrTwoYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialCrTwoYearsResponse
+getTrialCrTwoYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \OpenAPI\Client\Model\TrialCrTwoYearsResponse
 ```
 
 製造原価報告書(前年比較)の取得
@@ -813,10 +813,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
+$apiInstance = new OpenAPI\Client\Api\TrialBalanceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -868,7 +868,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\TrialCrTwoYearsResponse**](../Model/TrialCrTwoYearsResponse.md)
+[**\OpenAPI\Client\Model\TrialCrTwoYearsResponse**](../Model/TrialCrTwoYearsResponse.md)
 
 ### Authorization
 
@@ -886,7 +886,7 @@ Name | Type | Description  | Notes
 ## `getTrialPl()`
 
 ```php
-getTrialPl($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialPlResponse
+getTrialPl($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \OpenAPI\Client\Model\TrialPlResponse
 ```
 
 損益計算書の取得
@@ -899,10 +899,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
+$apiInstance = new OpenAPI\Client\Api\TrialBalanceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -954,7 +954,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\TrialPlResponse**](../Model/TrialPlResponse.md)
+[**\OpenAPI\Client\Model\TrialPlResponse**](../Model/TrialPlResponse.md)
 
 ### Authorization
 
@@ -972,7 +972,7 @@ Name | Type | Description  | Notes
 ## `getTrialPlSections()`
 
 ```php
-getTrialPlSections($company_id, $section_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialPlSectionsResponse
+getTrialPlSections($company_id, $section_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $adjustment, $cost_allocation, $approval_flow_status): \OpenAPI\Client\Model\TrialPlSectionsResponse
 ```
 
 損益計算書(部門比較)の取得
@@ -985,10 +985,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
+$apiInstance = new OpenAPI\Client\Api\TrialBalanceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1040,7 +1040,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\TrialPlSectionsResponse**](../Model/TrialPlSectionsResponse.md)
+[**\OpenAPI\Client\Model\TrialPlSectionsResponse**](../Model/TrialPlSectionsResponse.md)
 
 ### Authorization
 
@@ -1058,7 +1058,7 @@ Name | Type | Description  | Notes
 ## `getTrialPlSegment1Tags()`
 
 ```php
-getTrialPlSegment1Tags($company_id, $segment_1_tag_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialPlSegment1TagsResponse
+getTrialPlSegment1Tags($company_id, $segment_1_tag_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \OpenAPI\Client\Model\TrialPlSegment1TagsResponse
 ```
 
 損益計算書(セグメント1比較)の取得
@@ -1071,10 +1071,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
+$apiInstance = new OpenAPI\Client\Api\TrialBalanceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1128,7 +1128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\TrialPlSegment1TagsResponse**](../Model/TrialPlSegment1TagsResponse.md)
+[**\OpenAPI\Client\Model\TrialPlSegment1TagsResponse**](../Model/TrialPlSegment1TagsResponse.md)
 
 ### Authorization
 
@@ -1146,7 +1146,7 @@ Name | Type | Description  | Notes
 ## `getTrialPlSegment2Tags()`
 
 ```php
-getTrialPlSegment2Tags($company_id, $segment_2_tag_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialPlSegment2TagsResponse
+getTrialPlSegment2Tags($company_id, $segment_2_tag_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \OpenAPI\Client\Model\TrialPlSegment2TagsResponse
 ```
 
 損益計算書(セグメント2比較)の取得
@@ -1159,10 +1159,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
+$apiInstance = new OpenAPI\Client\Api\TrialBalanceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1216,7 +1216,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\TrialPlSegment2TagsResponse**](../Model/TrialPlSegment2TagsResponse.md)
+[**\OpenAPI\Client\Model\TrialPlSegment2TagsResponse**](../Model/TrialPlSegment2TagsResponse.md)
 
 ### Authorization
 
@@ -1234,7 +1234,7 @@ Name | Type | Description  | Notes
 ## `getTrialPlSegment3Tags()`
 
 ```php
-getTrialPlSegment3Tags($company_id, $segment_3_tag_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialPlSegment3TagsResponse
+getTrialPlSegment3Tags($company_id, $segment_3_tag_ids, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \OpenAPI\Client\Model\TrialPlSegment3TagsResponse
 ```
 
 損益計算書(セグメント3比較)の取得
@@ -1247,10 +1247,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
+$apiInstance = new OpenAPI\Client\Api\TrialBalanceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1304,7 +1304,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\TrialPlSegment3TagsResponse**](../Model/TrialPlSegment3TagsResponse.md)
+[**\OpenAPI\Client\Model\TrialPlSegment3TagsResponse**](../Model/TrialPlSegment3TagsResponse.md)
 
 ### Authorization
 
@@ -1322,7 +1322,7 @@ Name | Type | Description  | Notes
 ## `getTrialPlThreeYears()`
 
 ```php
-getTrialPlThreeYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialPlThreeYearsResponse
+getTrialPlThreeYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \OpenAPI\Client\Model\TrialPlThreeYearsResponse
 ```
 
 損益計算書(３期間比較)の取得
@@ -1335,10 +1335,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
+$apiInstance = new OpenAPI\Client\Api\TrialBalanceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1390,7 +1390,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\TrialPlThreeYearsResponse**](../Model/TrialPlThreeYearsResponse.md)
+[**\OpenAPI\Client\Model\TrialPlThreeYearsResponse**](../Model/TrialPlThreeYearsResponse.md)
 
 ### Authorization
 
@@ -1408,7 +1408,7 @@ Name | Type | Description  | Notes
 ## `getTrialPlTwoYears()`
 
 ```php
-getTrialPlTwoYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \Freee\Accounting\Model\TrialPlTwoYearsResponse
+getTrialPlTwoYears($company_id, $fiscal_year, $start_month, $end_month, $start_date, $end_date, $account_item_display_type, $breakdown_display_type, $partner_id, $partner_code, $item_id, $section_id, $adjustment, $cost_allocation, $approval_flow_status): \OpenAPI\Client\Model\TrialPlTwoYearsResponse
 ```
 
 損益計算書(前年比較)の取得
@@ -1421,10 +1421,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TrialBalanceApi(
+$apiInstance = new OpenAPI\Client\Api\TrialBalanceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1476,7 +1476,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\TrialPlTwoYearsResponse**](../Model/TrialPlTwoYearsResponse.md)
+[**\OpenAPI\Client\Model\TrialPlTwoYearsResponse**](../Model/TrialPlTwoYearsResponse.md)
 
 ### Authorization
 

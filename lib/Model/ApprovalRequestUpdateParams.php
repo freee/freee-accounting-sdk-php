@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * ApprovalRequestUpdateParams Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -64,7 +64,7 @@ class ApprovalRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonS
         'approver_id' => 'int',
         'company_id' => 'int',
         'draft' => 'bool',
-        'request_items' => '\Freee\Accounting\Model\ApprovalRequestCreateParamsRequestItems[]'
+        'request_items' => '\OpenAPI\Client\Model\ApprovalRequestCreateParamsRequestItems[]'
     ];
 
     /**
@@ -418,7 +418,7 @@ class ApprovalRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets request_items
      *
-     * @return \Freee\Accounting\Model\ApprovalRequestCreateParamsRequestItems[]
+     * @return \OpenAPI\Client\Model\ApprovalRequestCreateParamsRequestItems[]
      */
     public function getRequestItems()
     {
@@ -428,7 +428,7 @@ class ApprovalRequestUpdateParams implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets request_items
      *
-     * @param \Freee\Accounting\Model\ApprovalRequestCreateParamsRequestItems[] $request_items request_items
+     * @param \OpenAPI\Client\Model\ApprovalRequestCreateParamsRequestItems[] $request_items request_items
      *
      * @return self
      */

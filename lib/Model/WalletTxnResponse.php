@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * WalletTxnResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class WalletTxnResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'wallet_txn' => '\Freee\Accounting\Model\WalletTxn'
+        'wallet_txn' => '\OpenAPI\Client\Model\WalletTxn'
     ];
 
     /**
@@ -211,7 +211,7 @@ class WalletTxnResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets wallet_txn
      *
-     * @return \Freee\Accounting\Model\WalletTxn
+     * @return \OpenAPI\Client\Model\WalletTxn
      */
     public function getWalletTxn()
     {
@@ -221,7 +221,7 @@ class WalletTxnResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets wallet_txn
      *
-     * @param \Freee\Accounting\Model\WalletTxn $wallet_txn wallet_txn
+     * @param \OpenAPI\Client\Model\WalletTxn $wallet_txn wallet_txn
      *
      * @return self
      */

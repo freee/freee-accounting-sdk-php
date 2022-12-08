@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * ApprovalRequestResponseApprovalRequest Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -62,11 +62,11 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
         'applicant_id' => 'int',
         'application_date' => 'string',
         'application_number' => 'string',
-        'approval_flow_logs' => '\Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovalFlowLogs[]',
+        'approval_flow_logs' => '\OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestApprovalFlowLogs[]',
         'approval_flow_route_id' => 'int',
-        'approval_request_form' => '\Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovalRequestForm',
-        'approvers' => '\Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovers[]',
-        'comments' => '\Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestComments[]',
+        'approval_request_form' => '\OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestApprovalRequestForm',
+        'approvers' => '\OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestApprovers[]',
+        'comments' => '\OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestComments[]',
         'company_id' => 'int',
         'current_round' => 'int',
         'current_step_id' => 'int',
@@ -75,7 +75,7 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
         'form_id' => 'int',
         'id' => 'int',
         'manual_journal_id' => 'int',
-        'request_items' => '\Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestRequestItems[]',
+        'request_items' => '\OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestRequestItems[]',
         'status' => 'string',
         'title' => 'string'
     ];
@@ -579,7 +579,7 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
     /**
      * Gets approval_flow_logs
      *
-     * @return \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovalFlowLogs[]
+     * @return \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestApprovalFlowLogs[]
      */
     public function getApprovalFlowLogs()
     {
@@ -589,7 +589,7 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
     /**
      * Sets approval_flow_logs
      *
-     * @param \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovalFlowLogs[] $approval_flow_logs 各種申請の承認履歴（配列）
+     * @param \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestApprovalFlowLogs[] $approval_flow_logs 各種申請の承認履歴（配列）
      *
      * @return self
      */
@@ -635,7 +635,7 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
     /**
      * Gets approval_request_form
      *
-     * @return \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovalRequestForm
+     * @return \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestApprovalRequestForm
      */
     public function getApprovalRequestForm()
     {
@@ -645,7 +645,7 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
     /**
      * Sets approval_request_form
      *
-     * @param \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovalRequestForm $approval_request_form approval_request_form
+     * @param \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestApprovalRequestForm $approval_request_form approval_request_form
      *
      * @return self
      */
@@ -659,7 +659,7 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
     /**
      * Gets approvers
      *
-     * @return \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovers[]
+     * @return \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestApprovers[]
      */
     public function getApprovers()
     {
@@ -669,7 +669,7 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
     /**
      * Sets approvers
      *
-     * @param \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovers[] $approvers 承認者（配列）   承認ステップのresource_typeがunspecified (指定なし)の場合はapproversはレスポンスに含まれません。   しかし、resource_typeがunspecifiedの承認ステップにおいて誰かが承認・却下・差し戻しのいずれかのアクションを取った後は、   approversはレスポンスに含まれるようになります。   その場合approversにはアクションを行ったステップのIDとアクションを行ったユーザーのIDが含まれます。
+     * @param \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestApprovers[] $approvers 承認者（配列）   承認ステップのresource_typeがunspecified (指定なし)の場合はapproversはレスポンスに含まれません。   しかし、resource_typeがunspecifiedの承認ステップにおいて誰かが承認・却下・差し戻しのいずれかのアクションを取った後は、   approversはレスポンスに含まれるようになります。   その場合approversにはアクションを行ったステップのIDとアクションを行ったユーザーのIDが含まれます。
      *
      * @return self
      */
@@ -683,7 +683,7 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
     /**
      * Gets comments
      *
-     * @return \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestComments[]
+     * @return \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestComments[]
      */
     public function getComments()
     {
@@ -693,7 +693,7 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
     /**
      * Sets comments
      *
-     * @param \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestComments[] $comments 各種申請のコメント一覧（配列）
+     * @param \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestComments[] $comments 各種申請のコメント一覧（配列）
      *
      * @return self
      */
@@ -965,7 +965,7 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
     /**
      * Gets request_items
      *
-     * @return \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestRequestItems[]
+     * @return \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestRequestItems[]
      */
     public function getRequestItems()
     {
@@ -975,7 +975,7 @@ class ApprovalRequestResponseApprovalRequest implements ModelInterface, ArrayAcc
     /**
      * Sets request_items
      *
-     * @param \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestRequestItems[] $request_items 各種申請の項目一覧（配列）
+     * @param \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestRequestItems[] $request_items 各種申請の項目一覧（配列）
      *
      * @return self
      */

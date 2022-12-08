@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * SelectablesIndexResponseDefaultTax Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,10 +59,10 @@ class SelectablesIndexResponseDefaultTax implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tax_rate_10' => '\Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate10',
-        'tax_rate_5' => '\Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate5',
-        'tax_rate_8' => '\Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate8',
-        'tax_rate_r8' => '\Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRateR8'
+        'tax_rate_10' => '\OpenAPI\Client\Model\SelectablesIndexResponseDefaultTaxTaxRate10',
+        'tax_rate_5' => '\OpenAPI\Client\Model\SelectablesIndexResponseDefaultTaxTaxRate5',
+        'tax_rate_8' => '\OpenAPI\Client\Model\SelectablesIndexResponseDefaultTaxTaxRate8',
+        'tax_rate_r8' => '\OpenAPI\Client\Model\SelectablesIndexResponseDefaultTaxTaxRateR8'
     ];
 
     /**
@@ -226,7 +226,7 @@ class SelectablesIndexResponseDefaultTax implements ModelInterface, ArrayAccess,
     /**
      * Gets tax_rate_10
      *
-     * @return \Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate10|null
+     * @return \OpenAPI\Client\Model\SelectablesIndexResponseDefaultTaxTaxRate10|null
      */
     public function getTaxRate10()
     {
@@ -236,7 +236,7 @@ class SelectablesIndexResponseDefaultTax implements ModelInterface, ArrayAccess,
     /**
      * Sets tax_rate_10
      *
-     * @param \Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate10|null $tax_rate_10 tax_rate_10
+     * @param \OpenAPI\Client\Model\SelectablesIndexResponseDefaultTaxTaxRate10|null $tax_rate_10 tax_rate_10
      *
      * @return self
      */
@@ -250,7 +250,7 @@ class SelectablesIndexResponseDefaultTax implements ModelInterface, ArrayAccess,
     /**
      * Gets tax_rate_5
      *
-     * @return \Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate5|null
+     * @return \OpenAPI\Client\Model\SelectablesIndexResponseDefaultTaxTaxRate5|null
      */
     public function getTaxRate5()
     {
@@ -260,7 +260,7 @@ class SelectablesIndexResponseDefaultTax implements ModelInterface, ArrayAccess,
     /**
      * Sets tax_rate_5
      *
-     * @param \Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate5|null $tax_rate_5 tax_rate_5
+     * @param \OpenAPI\Client\Model\SelectablesIndexResponseDefaultTaxTaxRate5|null $tax_rate_5 tax_rate_5
      *
      * @return self
      */
@@ -274,7 +274,7 @@ class SelectablesIndexResponseDefaultTax implements ModelInterface, ArrayAccess,
     /**
      * Gets tax_rate_8
      *
-     * @return \Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate8|null
+     * @return \OpenAPI\Client\Model\SelectablesIndexResponseDefaultTaxTaxRate8|null
      */
     public function getTaxRate8()
     {
@@ -284,7 +284,7 @@ class SelectablesIndexResponseDefaultTax implements ModelInterface, ArrayAccess,
     /**
      * Sets tax_rate_8
      *
-     * @param \Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate8|null $tax_rate_8 tax_rate_8
+     * @param \OpenAPI\Client\Model\SelectablesIndexResponseDefaultTaxTaxRate8|null $tax_rate_8 tax_rate_8
      *
      * @return self
      */
@@ -298,7 +298,7 @@ class SelectablesIndexResponseDefaultTax implements ModelInterface, ArrayAccess,
     /**
      * Gets tax_rate_r8
      *
-     * @return \Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRateR8|null
+     * @return \OpenAPI\Client\Model\SelectablesIndexResponseDefaultTaxTaxRateR8|null
      */
     public function getTaxRateR8()
     {
@@ -308,7 +308,7 @@ class SelectablesIndexResponseDefaultTax implements ModelInterface, ArrayAccess,
     /**
      * Sets tax_rate_r8
      *
-     * @param \Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRateR8|null $tax_rate_r8 tax_rate_r8
+     * @param \OpenAPI\Client\Model\SelectablesIndexResponseDefaultTaxTaxRateR8|null $tax_rate_r8 tax_rate_r8
      *
      * @return self
      */

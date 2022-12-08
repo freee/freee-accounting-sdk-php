@@ -1,4 +1,4 @@
-# Freee\Accounting\ApprovalFlowRoutesApi
+# OpenAPI\Client\ApprovalFlowRoutesApi
 
 All URIs are relative to https://api.freee.co.jp.
 
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 ## `getApprovalFlowRoute()`
 
 ```php
-getApprovalFlowRoute($id, $company_id): \Freee\Accounting\Model\ApprovalFlowRouteResponse
+getApprovalFlowRoute($id, $company_id): \OpenAPI\Client\Model\ApprovalFlowRouteResponse
 ```
 
 申請経路の取得
@@ -24,10 +24,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ApprovalFlowRoutesApi(
+$apiInstance = new OpenAPI\Client\Api\ApprovalFlowRoutesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\ApprovalFlowRouteResponse**](../Model/ApprovalFlowRouteResponse.md)
+[**\OpenAPI\Client\Model\ApprovalFlowRouteResponse**](../Model/ApprovalFlowRouteResponse.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 ## `getApprovalFlowRoutes()`
 
 ```php
-getApprovalFlowRoutes($company_id, $included_user_id, $usage, $request_form_id): \Freee\Accounting\Model\ApprovalFlowRoutesIndexResponse
+getApprovalFlowRoutes($company_id, $included_user_id, $usage, $request_form_id): \OpenAPI\Client\Model\ApprovalFlowRoutesIndexResponse
 ```
 
 申請経路一覧の取得
@@ -84,10 +84,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ApprovalFlowRoutesApi(
+$apiInstance = new OpenAPI\Client\Api\ApprovalFlowRoutesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\ApprovalFlowRoutesIndexResponse**](../Model/ApprovalFlowRoutesIndexResponse.md)
+[**\OpenAPI\Client\Model\ApprovalFlowRoutesIndexResponse**](../Model/ApprovalFlowRoutesIndexResponse.md)
 
 ### Authorization
 

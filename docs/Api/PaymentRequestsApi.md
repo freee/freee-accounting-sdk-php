@@ -1,4 +1,4 @@
-# Freee\Accounting\PaymentRequestsApi
+# OpenAPI\Client\PaymentRequestsApi
 
 All URIs are relative to https://api.freee.co.jp.
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 ## `createPaymentRequest()`
 
 ```php
-createPaymentRequest($payment_request_create_params): \Freee\Accounting\Model\PaymentRequestResponse
+createPaymentRequest($payment_request_create_params): \OpenAPI\Client\Model\PaymentRequestResponse
 ```
 
 支払依頼の作成
@@ -28,16 +28,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\PaymentRequestsApi(
+$apiInstance = new OpenAPI\Client\Api\PaymentRequestsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$payment_request_create_params = new \Freee\Accounting\Model\PaymentRequestCreateParams(); // \Freee\Accounting\Model\PaymentRequestCreateParams | 支払依頼の作成
+$payment_request_create_params = new \OpenAPI\Client\Model\PaymentRequestCreateParams(); // \OpenAPI\Client\Model\PaymentRequestCreateParams | 支払依頼の作成
 
 try {
     $result = $apiInstance->createPaymentRequest($payment_request_create_params);
@@ -51,11 +51,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payment_request_create_params** | [**\Freee\Accounting\Model\PaymentRequestCreateParams**](../Model/PaymentRequestCreateParams.md)| 支払依頼の作成 | [optional]
+ **payment_request_create_params** | [**\OpenAPI\Client\Model\PaymentRequestCreateParams**](../Model/PaymentRequestCreateParams.md)| 支払依頼の作成 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\PaymentRequestResponse**](../Model/PaymentRequestResponse.md)
+[**\OpenAPI\Client\Model\PaymentRequestResponse**](../Model/PaymentRequestResponse.md)
 
 ### Authorization
 
@@ -86,10 +86,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\PaymentRequestsApi(
+$apiInstance = new OpenAPI\Client\Api\PaymentRequestsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -132,7 +132,7 @@ void (empty response body)
 ## `getPaymentRequest()`
 
 ```php
-getPaymentRequest($id, $company_id): \Freee\Accounting\Model\PaymentRequestResponse
+getPaymentRequest($id, $company_id): \OpenAPI\Client\Model\PaymentRequestResponse
 ```
 
 支払依頼詳細の取得
@@ -145,10 +145,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\PaymentRequestsApi(
+$apiInstance = new OpenAPI\Client\Api\PaymentRequestsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\PaymentRequestResponse**](../Model/PaymentRequestResponse.md)
+[**\OpenAPI\Client\Model\PaymentRequestResponse**](../Model/PaymentRequestResponse.md)
 
 ### Authorization
 
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 ## `getPaymentRequests()`
 
 ```php
-getPaymentRequests($company_id, $status, $start_application_date, $end_application_date, $start_issue_date, $end_issue_date, $application_number, $title, $applicant_id, $approver_id, $min_amount, $max_amount, $partner_id, $partner_code, $payment_method, $start_payment_date, $end_payment_date, $document_code, $offset, $limit): \Freee\Accounting\Model\PaymentRequestsIndexResponse
+getPaymentRequests($company_id, $status, $start_application_date, $end_application_date, $start_issue_date, $end_issue_date, $application_number, $title, $applicant_id, $approver_id, $min_amount, $max_amount, $partner_id, $partner_code, $payment_method, $start_payment_date, $end_payment_date, $document_code, $offset, $limit): \OpenAPI\Client\Model\PaymentRequestsIndexResponse
 ```
 
 支払依頼一覧の取得
@@ -205,10 +205,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\PaymentRequestsApi(
+$apiInstance = new OpenAPI\Client\Api\PaymentRequestsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\PaymentRequestsIndexResponse**](../Model/PaymentRequestsIndexResponse.md)
+[**\OpenAPI\Client\Model\PaymentRequestsIndexResponse**](../Model/PaymentRequestsIndexResponse.md)
 
 ### Authorization
 
@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
 ## `updatePaymentRequest()`
 
 ```php
-updatePaymentRequest($id, $payment_request_update_params): \Freee\Accounting\Model\PaymentRequestResponse
+updatePaymentRequest($id, $payment_request_update_params): \OpenAPI\Client\Model\PaymentRequestResponse
 ```
 
 支払依頼の更新
@@ -301,17 +301,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\PaymentRequestsApi(
+$apiInstance = new OpenAPI\Client\Api\PaymentRequestsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | 支払依頼ID
-$payment_request_update_params = new \Freee\Accounting\Model\PaymentRequestUpdateParams(); // \Freee\Accounting\Model\PaymentRequestUpdateParams | 支払依頼の更新
+$payment_request_update_params = new \OpenAPI\Client\Model\PaymentRequestUpdateParams(); // \OpenAPI\Client\Model\PaymentRequestUpdateParams | 支払依頼の更新
 
 try {
     $result = $apiInstance->updatePaymentRequest($id, $payment_request_update_params);
@@ -326,11 +326,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 支払依頼ID |
- **payment_request_update_params** | [**\Freee\Accounting\Model\PaymentRequestUpdateParams**](../Model/PaymentRequestUpdateParams.md)| 支払依頼の更新 | [optional]
+ **payment_request_update_params** | [**\OpenAPI\Client\Model\PaymentRequestUpdateParams**](../Model/PaymentRequestUpdateParams.md)| 支払依頼の更新 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\PaymentRequestResponse**](../Model/PaymentRequestResponse.md)
+[**\OpenAPI\Client\Model\PaymentRequestResponse**](../Model/PaymentRequestResponse.md)
 
 ### Authorization
 
@@ -348,7 +348,7 @@ Name | Type | Description  | Notes
 ## `updatePaymentRequestAction()`
 
 ```php
-updatePaymentRequestAction($id, $payment_request_action_create_params): \Freee\Accounting\Model\PaymentRequestResponse
+updatePaymentRequestAction($id, $payment_request_action_create_params): \OpenAPI\Client\Model\PaymentRequestResponse
 ```
 
 支払依頼の承認操作
@@ -361,17 +361,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\PaymentRequestsApi(
+$apiInstance = new OpenAPI\Client\Api\PaymentRequestsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | 支払依頼ID
-$payment_request_action_create_params = new \Freee\Accounting\Model\PaymentRequestActionCreateParams(); // \Freee\Accounting\Model\PaymentRequestActionCreateParams | 支払依頼の承認操作
+$payment_request_action_create_params = new \OpenAPI\Client\Model\PaymentRequestActionCreateParams(); // \OpenAPI\Client\Model\PaymentRequestActionCreateParams | 支払依頼の承認操作
 
 try {
     $result = $apiInstance->updatePaymentRequestAction($id, $payment_request_action_create_params);
@@ -386,11 +386,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 支払依頼ID |
- **payment_request_action_create_params** | [**\Freee\Accounting\Model\PaymentRequestActionCreateParams**](../Model/PaymentRequestActionCreateParams.md)| 支払依頼の承認操作 |
+ **payment_request_action_create_params** | [**\OpenAPI\Client\Model\PaymentRequestActionCreateParams**](../Model/PaymentRequestActionCreateParams.md)| 支払依頼の承認操作 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\PaymentRequestResponse**](../Model/PaymentRequestResponse.md)
+[**\OpenAPI\Client\Model\PaymentRequestResponse**](../Model/PaymentRequestResponse.md)
 
 ### Authorization
 

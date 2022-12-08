@@ -1,4 +1,4 @@
-# Freee\Accounting\TaxesApi
+# OpenAPI\Client\TaxesApi
 
 All URIs are relative to https://api.freee.co.jp.
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 ## `getTaxCode()`
 
 ```php
-getTaxCode($code): \Freee\Accounting\Model\TaxResponse
+getTaxCode($code): \OpenAPI\Client\Model\TaxResponse
 ```
 
 税区分コードの取得
@@ -25,10 +25,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TaxesApi(
+$apiInstance = new OpenAPI\Client\Api\TaxesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\TaxResponse**](../Model/TaxResponse.md)
+[**\OpenAPI\Client\Model\TaxResponse**](../Model/TaxResponse.md)
 
 ### Authorization
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 ## `getTaxCodes()`
 
 ```php
-getTaxCodes(): \Freee\Accounting\Model\InlineResponse2009
+getTaxCodes(): \OpenAPI\Client\Model\InlineResponse2009
 ```
 
 税区分コード一覧の取得
@@ -83,10 +83,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TaxesApi(
+$apiInstance = new OpenAPI\Client\Api\TaxesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -107,7 +107,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse2009**](../Model/InlineResponse2009.md)
+[**\OpenAPI\Client\Model\InlineResponse2009**](../Model/InlineResponse2009.md)
 
 ### Authorization
 
@@ -125,7 +125,7 @@ This endpoint does not need any parameter.
 ## `getTaxesCompanies()`
 
 ```php
-getTaxesCompanies($company_id): \Freee\Accounting\Model\InlineResponse20010
+getTaxesCompanies($company_id): \OpenAPI\Client\Model\InlineResponse20010
 ```
 
 税区分コード詳細一覧の取得
@@ -138,10 +138,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\TaxesApi(
+$apiInstance = new OpenAPI\Client\Api\TaxesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse20010**](../Model/InlineResponse20010.md)
+[**\OpenAPI\Client\Model\InlineResponse20010**](../Model/InlineResponse20010.md)
 
 ### Authorization
 

@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * ApprovalFlowRoutesIndexResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class ApprovalFlowRoutesIndexResponse implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'approval_flow_routes' => '\Freee\Accounting\Model\ApprovalFlowRoutesIndexResponseApprovalFlowRoutes[]'
+        'approval_flow_routes' => '\OpenAPI\Client\Model\ApprovalFlowRoutesIndexResponseApprovalFlowRoutes[]'
     ];
 
     /**
@@ -211,7 +211,7 @@ class ApprovalFlowRoutesIndexResponse implements ModelInterface, ArrayAccess, \J
     /**
      * Gets approval_flow_routes
      *
-     * @return \Freee\Accounting\Model\ApprovalFlowRoutesIndexResponseApprovalFlowRoutes[]
+     * @return \OpenAPI\Client\Model\ApprovalFlowRoutesIndexResponseApprovalFlowRoutes[]
      */
     public function getApprovalFlowRoutes()
     {
@@ -221,7 +221,7 @@ class ApprovalFlowRoutesIndexResponse implements ModelInterface, ArrayAccess, \J
     /**
      * Sets approval_flow_routes
      *
-     * @param \Freee\Accounting\Model\ApprovalFlowRoutesIndexResponseApprovalFlowRoutes[] $approval_flow_routes approval_flow_routes
+     * @param \OpenAPI\Client\Model\ApprovalFlowRoutesIndexResponseApprovalFlowRoutes[] $approval_flow_routes approval_flow_routes
      *
      * @return self
      */

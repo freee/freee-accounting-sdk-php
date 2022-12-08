@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * ApprovalRequestsIndexResponseApprovalRequests Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -70,7 +70,7 @@ class ApprovalRequestsIndexResponseApprovalRequests implements ModelInterface, A
         'form_id' => 'int',
         'id' => 'int',
         'manual_journal_id' => 'int',
-        'request_items' => '\Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestRequestItems[]',
+        'request_items' => '\OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestRequestItems[]',
         'status' => 'string',
         'title' => 'string'
     ];
@@ -784,7 +784,7 @@ class ApprovalRequestsIndexResponseApprovalRequests implements ModelInterface, A
     /**
      * Gets request_items
      *
-     * @return \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestRequestItems[]
+     * @return \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestRequestItems[]
      */
     public function getRequestItems()
     {
@@ -794,7 +794,7 @@ class ApprovalRequestsIndexResponseApprovalRequests implements ModelInterface, A
     /**
      * Sets request_items
      *
-     * @param \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestRequestItems[] $request_items 各種申請の項目一覧（配列）
+     * @param \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestRequestItems[] $request_items 各種申請の項目一覧（配列）
      *
      * @return self
      */

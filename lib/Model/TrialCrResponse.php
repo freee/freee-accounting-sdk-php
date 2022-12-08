@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * TrialCrResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,9 +59,9 @@ class TrialCrResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'trial_cr' => '\Freee\Accounting\Model\TrialCrResponseTrialCr',
+        'trial_cr' => '\OpenAPI\Client\Model\TrialCrResponseTrialCr',
         'up_to_date' => 'bool',
-        'up_to_date_reasons' => '\Freee\Accounting\Model\JournalsResponseJournalsUpToDateReasons[]'
+        'up_to_date_reasons' => '\OpenAPI\Client\Model\JournalsResponseJournalsUpToDateReasons[]'
     ];
 
     /**
@@ -226,7 +226,7 @@ class TrialCrResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets trial_cr
      *
-     * @return \Freee\Accounting\Model\TrialCrResponseTrialCr
+     * @return \OpenAPI\Client\Model\TrialCrResponseTrialCr
      */
     public function getTrialCr()
     {
@@ -236,7 +236,7 @@ class TrialCrResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets trial_cr
      *
-     * @param \Freee\Accounting\Model\TrialCrResponseTrialCr $trial_cr trial_cr
+     * @param \OpenAPI\Client\Model\TrialCrResponseTrialCr $trial_cr trial_cr
      *
      * @return self
      */
@@ -274,7 +274,7 @@ class TrialCrResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets up_to_date_reasons
      *
-     * @return \Freee\Accounting\Model\JournalsResponseJournalsUpToDateReasons[]|null
+     * @return \OpenAPI\Client\Model\JournalsResponseJournalsUpToDateReasons[]|null
      */
     public function getUpToDateReasons()
     {
@@ -284,7 +284,7 @@ class TrialCrResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets up_to_date_reasons
      *
-     * @param \Freee\Accounting\Model\JournalsResponseJournalsUpToDateReasons[]|null $up_to_date_reasons 集計が最新でない場合の要因情報
+     * @param \OpenAPI\Client\Model\JournalsResponseJournalsUpToDateReasons[]|null $up_to_date_reasons 集計が最新でない場合の要因情報
      *
      * @return self
      */

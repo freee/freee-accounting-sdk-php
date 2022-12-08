@@ -11,6 +11,6 @@ Name | Type | Description | Notes
 **draft** | **bool** | 各種申請のステータス&lt;br&gt; falseを指定した時は申請中（in_progress）で各種申請を作成します。&lt;br&gt; trueを指定した時は下書き（draft）で各種申請を作成します。 |
 **form_id** | **int** | 申請フォームID |
 **parent_id** | **int** | 親申請ID(既存各種申請IDのみ指定可能です。) | [optional]
-**request_items** | [**\Freee\Accounting\Model\ApprovalRequestCreateParamsRequestItems[]**](ApprovalRequestCreateParamsRequestItems.md) |  |
+**request_items** | [**\OpenAPI\Client\Model\ApprovalRequestCreateParamsRequestItems[]**](ApprovalRequestCreateParamsRequestItems.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

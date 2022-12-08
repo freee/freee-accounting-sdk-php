@@ -1,4 +1,4 @@
-# Freee\Accounting\ExpenseApplicationLineTemplatesApi
+# OpenAPI\Client\ExpenseApplicationLineTemplatesApi
 
 All URIs are relative to https://api.freee.co.jp.
 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 ## `createExpenseApplicationLineTemplate()`
 
 ```php
-createExpenseApplicationLineTemplate($expense_application_line_template_params): \Freee\Accounting\Model\ExpenseApplicationLineTemplateResponse
+createExpenseApplicationLineTemplate($expense_application_line_template_params): \OpenAPI\Client\Model\ExpenseApplicationLineTemplateResponse
 ```
 
 経費科目の作成
@@ -27,16 +27,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ExpenseApplicationLineTemplatesApi(
+$apiInstance = new OpenAPI\Client\Api\ExpenseApplicationLineTemplatesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$expense_application_line_template_params = new \Freee\Accounting\Model\ExpenseApplicationLineTemplateParams(); // \Freee\Accounting\Model\ExpenseApplicationLineTemplateParams | 経費科目の作成
+$expense_application_line_template_params = new \OpenAPI\Client\Model\ExpenseApplicationLineTemplateParams(); // \OpenAPI\Client\Model\ExpenseApplicationLineTemplateParams | 経費科目の作成
 
 try {
     $result = $apiInstance->createExpenseApplicationLineTemplate($expense_application_line_template_params);
@@ -50,11 +50,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **expense_application_line_template_params** | [**\Freee\Accounting\Model\ExpenseApplicationLineTemplateParams**](../Model/ExpenseApplicationLineTemplateParams.md)| 経費科目の作成 |
+ **expense_application_line_template_params** | [**\OpenAPI\Client\Model\ExpenseApplicationLineTemplateParams**](../Model/ExpenseApplicationLineTemplateParams.md)| 経費科目の作成 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\ExpenseApplicationLineTemplateResponse**](../Model/ExpenseApplicationLineTemplateResponse.md)
+[**\OpenAPI\Client\Model\ExpenseApplicationLineTemplateResponse**](../Model/ExpenseApplicationLineTemplateResponse.md)
 
 ### Authorization
 
@@ -85,10 +85,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ExpenseApplicationLineTemplatesApi(
+$apiInstance = new OpenAPI\Client\Api\ExpenseApplicationLineTemplatesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -131,7 +131,7 @@ void (empty response body)
 ## `getExpenseApplicationLineTemplate()`
 
 ```php
-getExpenseApplicationLineTemplate($id, $company_id): \Freee\Accounting\Model\ExpenseApplicationLineTemplateResponse
+getExpenseApplicationLineTemplate($id, $company_id): \OpenAPI\Client\Model\ExpenseApplicationLineTemplateResponse
 ```
 
 経費科目の取得
@@ -144,10 +144,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ExpenseApplicationLineTemplatesApi(
+$apiInstance = new OpenAPI\Client\Api\ExpenseApplicationLineTemplatesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\ExpenseApplicationLineTemplateResponse**](../Model/ExpenseApplicationLineTemplateResponse.md)
+[**\OpenAPI\Client\Model\ExpenseApplicationLineTemplateResponse**](../Model/ExpenseApplicationLineTemplateResponse.md)
 
 ### Authorization
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 ## `getExpenseApplicationLineTemplates()`
 
 ```php
-getExpenseApplicationLineTemplates($company_id, $offset, $limit): \Freee\Accounting\Model\InlineResponse2002
+getExpenseApplicationLineTemplates($company_id, $offset, $limit): \OpenAPI\Client\Model\InlineResponse2002
 ```
 
 経費科目一覧の取得
@@ -204,10 +204,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ExpenseApplicationLineTemplatesApi(
+$apiInstance = new OpenAPI\Client\Api\ExpenseApplicationLineTemplatesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\OpenAPI\Client\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
 
 ### Authorization
 
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 ## `updateExpenseApplicationLineTemplate()`
 
 ```php
-updateExpenseApplicationLineTemplate($id, $expense_application_line_template_params): \Freee\Accounting\Model\ExpenseApplicationLineTemplateResponse
+updateExpenseApplicationLineTemplate($id, $expense_application_line_template_params): \OpenAPI\Client\Model\ExpenseApplicationLineTemplateResponse
 ```
 
 経費科目の更新
@@ -266,17 +266,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ExpenseApplicationLineTemplatesApi(
+$apiInstance = new OpenAPI\Client\Api\ExpenseApplicationLineTemplatesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | 経費科目ID
-$expense_application_line_template_params = new \Freee\Accounting\Model\ExpenseApplicationLineTemplateParams(); // \Freee\Accounting\Model\ExpenseApplicationLineTemplateParams | 経費科目の更新
+$expense_application_line_template_params = new \OpenAPI\Client\Model\ExpenseApplicationLineTemplateParams(); // \OpenAPI\Client\Model\ExpenseApplicationLineTemplateParams | 経費科目の更新
 
 try {
     $result = $apiInstance->updateExpenseApplicationLineTemplate($id, $expense_application_line_template_params);
@@ -291,11 +291,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 経費科目ID |
- **expense_application_line_template_params** | [**\Freee\Accounting\Model\ExpenseApplicationLineTemplateParams**](../Model/ExpenseApplicationLineTemplateParams.md)| 経費科目の更新 |
+ **expense_application_line_template_params** | [**\OpenAPI\Client\Model\ExpenseApplicationLineTemplateParams**](../Model/ExpenseApplicationLineTemplateParams.md)| 経費科目の更新 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\ExpenseApplicationLineTemplateResponse**](../Model/ExpenseApplicationLineTemplateResponse.md)
+[**\OpenAPI\Client\Model\ExpenseApplicationLineTemplateResponse**](../Model/ExpenseApplicationLineTemplateResponse.md)
 
 ### Authorization
 

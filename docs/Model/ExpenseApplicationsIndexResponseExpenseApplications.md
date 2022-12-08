@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **deal_id** | **int** | 取引ID (申請ステータス:statusがapprovedで、取引が存在する時のみdeal_idが表示されます) |
 **deal_status** | **string** | 取引ステータス (申請ステータス:statusがapprovedで、取引が存在する時のみdeal_statusが表示されます settled:精算済み, unsettled:清算待ち) |
 **description** | **string** | 備考 | [optional]
-**expense_application_lines** | [**\Freee\Accounting\Model\ExpenseApplicationsIndexResponseExpenseApplicationLines[]**](ExpenseApplicationsIndexResponseExpenseApplicationLines.md) | 経費申請の項目行一覧（配列） |
+**expense_application_lines** | [**\OpenAPI\Client\Model\ExpenseApplicationsIndexResponseExpenseApplicationLines[]**](ExpenseApplicationsIndexResponseExpenseApplicationLines.md) | 経費申請の項目行一覧（配列） |
 **id** | **int** | 経費申請ID |
 **issue_date** | **string** | 申請日 (yyyy-mm-dd) |
 **section_id** | **int** | 部門ID | [optional]

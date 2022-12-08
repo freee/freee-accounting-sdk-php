@@ -1,4 +1,4 @@
-# Freee\Accounting\PaymentsApi
+# OpenAPI\Client\PaymentsApi
 
 All URIs are relative to https://api.freee.co.jp.
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 ## `createDealPayment()`
 
 ```php
-createDealPayment($id, $payment_params): \Freee\Accounting\Model\DealResponse
+createDealPayment($id, $payment_params): \OpenAPI\Client\Model\DealResponse
 ```
 
 取引（収入／支出）の支払行作成
@@ -25,17 +25,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\PaymentsApi(
+$apiInstance = new OpenAPI\Client\Api\PaymentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | 取引ID
-$payment_params = new \Freee\Accounting\Model\PaymentParams(); // \Freee\Accounting\Model\PaymentParams | 取引（収入／支出）の支払行作成
+$payment_params = new \OpenAPI\Client\Model\PaymentParams(); // \OpenAPI\Client\Model\PaymentParams | 取引（収入／支出）の支払行作成
 
 try {
     $result = $apiInstance->createDealPayment($id, $payment_params);
@@ -50,11 +50,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 取引ID |
- **payment_params** | [**\Freee\Accounting\Model\PaymentParams**](../Model/PaymentParams.md)| 取引（収入／支出）の支払行作成 |
+ **payment_params** | [**\OpenAPI\Client\Model\PaymentParams**](../Model/PaymentParams.md)| 取引（収入／支出）の支払行作成 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\DealResponse**](../Model/DealResponse.md)
+[**\OpenAPI\Client\Model\DealResponse**](../Model/DealResponse.md)
 
 ### Authorization
 
@@ -85,10 +85,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\PaymentsApi(
+$apiInstance = new OpenAPI\Client\Api\PaymentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -133,7 +133,7 @@ void (empty response body)
 ## `updateDealPayment()`
 
 ```php
-updateDealPayment($id, $payment_id, $payment_params): \Freee\Accounting\Model\DealResponse
+updateDealPayment($id, $payment_id, $payment_params): \OpenAPI\Client\Model\DealResponse
 ```
 
 取引（収入／支出）の支払行更新
@@ -146,10 +146,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\PaymentsApi(
+$apiInstance = new OpenAPI\Client\Api\PaymentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -157,7 +157,7 @@ $apiInstance = new Freee\Accounting\Api\PaymentsApi(
 );
 $id = 56; // int | 取引ID
 $payment_id = 56; // int | 決済ID
-$payment_params = new \Freee\Accounting\Model\PaymentParams(); // \Freee\Accounting\Model\PaymentParams | 取引（収入／支出）の支払行更新
+$payment_params = new \OpenAPI\Client\Model\PaymentParams(); // \OpenAPI\Client\Model\PaymentParams | 取引（収入／支出）の支払行更新
 
 try {
     $result = $apiInstance->updateDealPayment($id, $payment_id, $payment_params);
@@ -173,11 +173,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 取引ID |
  **payment_id** | **int**| 決済ID |
- **payment_params** | [**\Freee\Accounting\Model\PaymentParams**](../Model/PaymentParams.md)| 取引（収入／支出）の支払行更新 |
+ **payment_params** | [**\OpenAPI\Client\Model\PaymentParams**](../Model/PaymentParams.md)| 取引（収入／支出）の支払行更新 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\DealResponse**](../Model/DealResponse.md)
+[**\OpenAPI\Client\Model\DealResponse**](../Model/DealResponse.md)
 
 ### Authorization
 

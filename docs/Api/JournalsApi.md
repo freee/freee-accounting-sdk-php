@@ -1,4 +1,4 @@
-# Freee\Accounting\JournalsApi
+# OpenAPI\Client\JournalsApi
 
 All URIs are relative to https://api.freee.co.jp.
 
@@ -25,10 +25,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\JournalsApi(
+$apiInstance = new OpenAPI\Client\Api\JournalsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 ## `getJournalStatus()`
 
 ```php
-getJournalStatus($company_id, $id): \Freee\Accounting\Model\JournalStatusResponse
+getJournalStatus($company_id, $id): \OpenAPI\Client\Model\JournalStatusResponse
 ```
 
 ステータス確認
@@ -85,10 +85,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\JournalsApi(
+$apiInstance = new OpenAPI\Client\Api\JournalsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\JournalStatusResponse**](../Model/JournalStatusResponse.md)
+[**\OpenAPI\Client\Model\JournalStatusResponse**](../Model/JournalStatusResponse.md)
 
 ### Authorization
 
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 ## `getJournals()`
 
 ```php
-getJournals($download_type, $company_id, $visible_tags, $visible_ids, $start_date, $end_date): \Freee\Accounting\Model\JournalsResponse
+getJournals($download_type, $company_id, $visible_tags, $visible_ids, $start_date, $end_date): \OpenAPI\Client\Model\JournalsResponse
 ```
 
 ダウンロード要求
@@ -145,10 +145,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\JournalsApi(
+$apiInstance = new OpenAPI\Client\Api\JournalsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\JournalsResponse**](../Model/JournalsResponse.md)
+[**\OpenAPI\Client\Model\JournalsResponse**](../Model/JournalsResponse.md)
 
 ### Authorization
 

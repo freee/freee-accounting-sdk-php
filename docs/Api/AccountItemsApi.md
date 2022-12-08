@@ -1,4 +1,4 @@
-# Freee\Accounting\AccountItemsApi
+# OpenAPI\Client\AccountItemsApi
 
 All URIs are relative to https://api.freee.co.jp.
 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 ## `createAccountItem()`
 
 ```php
-createAccountItem($account_item_create_params): \Freee\Accounting\Model\AccountItemResponse
+createAccountItem($account_item_create_params): \OpenAPI\Client\Model\AccountItemResponse
 ```
 
 勘定科目の作成
@@ -27,16 +27,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\AccountItemsApi(
+$apiInstance = new OpenAPI\Client\Api\AccountItemsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$account_item_create_params = new \Freee\Accounting\Model\AccountItemCreateParams(); // \Freee\Accounting\Model\AccountItemCreateParams | 勘定科目の作成
+$account_item_create_params = new \OpenAPI\Client\Model\AccountItemCreateParams(); // \OpenAPI\Client\Model\AccountItemCreateParams | 勘定科目の作成
 
 try {
     $result = $apiInstance->createAccountItem($account_item_create_params);
@@ -50,11 +50,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_item_create_params** | [**\Freee\Accounting\Model\AccountItemCreateParams**](../Model/AccountItemCreateParams.md)| 勘定科目の作成 |
+ **account_item_create_params** | [**\OpenAPI\Client\Model\AccountItemCreateParams**](../Model/AccountItemCreateParams.md)| 勘定科目の作成 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\AccountItemResponse**](../Model/AccountItemResponse.md)
+[**\OpenAPI\Client\Model\AccountItemResponse**](../Model/AccountItemResponse.md)
 
 ### Authorization
 
@@ -85,10 +85,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\AccountItemsApi(
+$apiInstance = new OpenAPI\Client\Api\AccountItemsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -131,7 +131,7 @@ void (empty response body)
 ## `getAccountItem()`
 
 ```php
-getAccountItem($company_id, $id): \Freee\Accounting\Model\AccountItemResponse
+getAccountItem($company_id, $id): \OpenAPI\Client\Model\AccountItemResponse
 ```
 
 勘定科目の詳細情報の取得
@@ -144,10 +144,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\AccountItemsApi(
+$apiInstance = new OpenAPI\Client\Api\AccountItemsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\AccountItemResponse**](../Model/AccountItemResponse.md)
+[**\OpenAPI\Client\Model\AccountItemResponse**](../Model/AccountItemResponse.md)
 
 ### Authorization
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 ## `getAccountItems()`
 
 ```php
-getAccountItems($company_id, $base_date): \Freee\Accounting\Model\AccountItemsResponse
+getAccountItems($company_id, $base_date): \OpenAPI\Client\Model\AccountItemsResponse
 ```
 
 勘定科目一覧の取得
@@ -204,10 +204,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\AccountItemsApi(
+$apiInstance = new OpenAPI\Client\Api\AccountItemsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\AccountItemsResponse**](../Model/AccountItemsResponse.md)
+[**\OpenAPI\Client\Model\AccountItemsResponse**](../Model/AccountItemsResponse.md)
 
 ### Authorization
 
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 ## `updateAccountItem()`
 
 ```php
-updateAccountItem($id, $account_item_update_params): \Freee\Accounting\Model\AccountItemResponse
+updateAccountItem($id, $account_item_update_params): \OpenAPI\Client\Model\AccountItemResponse
 ```
 
 勘定科目の更新
@@ -264,17 +264,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\AccountItemsApi(
+$apiInstance = new OpenAPI\Client\Api\AccountItemsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int
-$account_item_update_params = new \Freee\Accounting\Model\AccountItemUpdateParams(); // \Freee\Accounting\Model\AccountItemUpdateParams | 勘定科目の更新
+$account_item_update_params = new \OpenAPI\Client\Model\AccountItemUpdateParams(); // \OpenAPI\Client\Model\AccountItemUpdateParams | 勘定科目の更新
 
 try {
     $result = $apiInstance->updateAccountItem($id, $account_item_update_params);
@@ -289,11 +289,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **account_item_update_params** | [**\Freee\Accounting\Model\AccountItemUpdateParams**](../Model/AccountItemUpdateParams.md)| 勘定科目の更新 |
+ **account_item_update_params** | [**\OpenAPI\Client\Model\AccountItemUpdateParams**](../Model/AccountItemUpdateParams.md)| 勘定科目の更新 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\AccountItemResponse**](../Model/AccountItemResponse.md)
+[**\OpenAPI\Client\Model\AccountItemResponse**](../Model/AccountItemResponse.md)
 
 ### Authorization
 

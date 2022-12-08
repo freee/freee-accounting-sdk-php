@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * SelectablesIndexResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,8 +59,8 @@ class SelectablesIndexResponse implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'account_categories' => '\Freee\Accounting\Model\SelectablesIndexResponseAccountCategories[]',
-        'account_groups' => '\Freee\Accounting\Model\SelectablesIndexResponseAccountGroups[]'
+        'account_categories' => '\OpenAPI\Client\Model\SelectablesIndexResponseAccountCategories[]',
+        'account_groups' => '\OpenAPI\Client\Model\SelectablesIndexResponseAccountGroups[]'
     ];
 
     /**
@@ -214,7 +214,7 @@ class SelectablesIndexResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets account_categories
      *
-     * @return \Freee\Accounting\Model\SelectablesIndexResponseAccountCategories[]|null
+     * @return \OpenAPI\Client\Model\SelectablesIndexResponseAccountCategories[]|null
      */
     public function getAccountCategories()
     {
@@ -224,7 +224,7 @@ class SelectablesIndexResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets account_categories
      *
-     * @param \Freee\Accounting\Model\SelectablesIndexResponseAccountCategories[]|null $account_categories account_categories
+     * @param \OpenAPI\Client\Model\SelectablesIndexResponseAccountCategories[]|null $account_categories account_categories
      *
      * @return self
      */
@@ -238,7 +238,7 @@ class SelectablesIndexResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets account_groups
      *
-     * @return \Freee\Accounting\Model\SelectablesIndexResponseAccountGroups[]|null
+     * @return \OpenAPI\Client\Model\SelectablesIndexResponseAccountGroups[]|null
      */
     public function getAccountGroups()
     {
@@ -248,7 +248,7 @@ class SelectablesIndexResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets account_groups
      *
-     * @param \Freee\Accounting\Model\SelectablesIndexResponseAccountGroups[]|null $account_groups 決算書表示名（小カテゴリー）
+     * @param \OpenAPI\Client\Model\SelectablesIndexResponseAccountGroups[]|null $account_groups 決算書表示名（小カテゴリー）
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * ApprovalRequestsIndexResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class ApprovalRequestsIndexResponse implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'approval_requests' => '\Freee\Accounting\Model\ApprovalRequestsIndexResponseApprovalRequests[]'
+        'approval_requests' => '\OpenAPI\Client\Model\ApprovalRequestsIndexResponseApprovalRequests[]'
     ];
 
     /**
@@ -211,7 +211,7 @@ class ApprovalRequestsIndexResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets approval_requests
      *
-     * @return \Freee\Accounting\Model\ApprovalRequestsIndexResponseApprovalRequests[]
+     * @return \OpenAPI\Client\Model\ApprovalRequestsIndexResponseApprovalRequests[]
      */
     public function getApprovalRequests()
     {
@@ -221,7 +221,7 @@ class ApprovalRequestsIndexResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets approval_requests
      *
-     * @param \Freee\Accounting\Model\ApprovalRequestsIndexResponseApprovalRequests[] $approval_requests approval_requests
+     * @param \OpenAPI\Client\Model\ApprovalRequestsIndexResponseApprovalRequests[] $approval_requests approval_requests
      *
      * @return self
      */

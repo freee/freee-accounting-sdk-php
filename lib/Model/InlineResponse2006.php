@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * InlineResponse2006 Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'sections' => '\Freee\Accounting\Model\Section[]'
+        'sections' => '\OpenAPI\Client\Model\Section[]'
     ];
 
     /**
@@ -211,7 +211,7 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets sections
      *
-     * @return \Freee\Accounting\Model\Section[]
+     * @return \OpenAPI\Client\Model\Section[]
      */
     public function getSections()
     {
@@ -221,7 +221,7 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets sections
      *
-     * @param \Freee\Accounting\Model\Section[] $sections sections
+     * @param \OpenAPI\Client\Model\Section[] $sections sections
      *
      * @return self
      */

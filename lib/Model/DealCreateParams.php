@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * DealCreateParams Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -60,12 +60,12 @@ class DealCreateParams implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'company_id' => 'int',
-        'details' => '\Freee\Accounting\Model\DealCreateParamsDetails[]',
+        'details' => '\OpenAPI\Client\Model\DealCreateParamsDetails[]',
         'due_date' => 'string',
         'issue_date' => 'string',
         'partner_code' => 'string',
         'partner_id' => 'int',
-        'payments' => '\Freee\Accounting\Model\DealCreateParamsPayments[]',
+        'payments' => '\OpenAPI\Client\Model\DealCreateParamsPayments[]',
         'receipt_ids' => 'int[]',
         'ref_number' => 'string',
         'type' => 'string'
@@ -346,7 +346,7 @@ class DealCreateParams implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets details
      *
-     * @return \Freee\Accounting\Model\DealCreateParamsDetails[]
+     * @return \OpenAPI\Client\Model\DealCreateParamsDetails[]
      */
     public function getDetails()
     {
@@ -356,7 +356,7 @@ class DealCreateParams implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets details
      *
-     * @param \Freee\Accounting\Model\DealCreateParamsDetails[] $details details
+     * @param \OpenAPI\Client\Model\DealCreateParamsDetails[] $details details
      *
      * @return self
      */
@@ -474,7 +474,7 @@ class DealCreateParams implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets payments
      *
-     * @return \Freee\Accounting\Model\DealCreateParamsPayments[]|null
+     * @return \OpenAPI\Client\Model\DealCreateParamsPayments[]|null
      */
     public function getPayments()
     {
@@ -484,7 +484,7 @@ class DealCreateParams implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets payments
      *
-     * @param \Freee\Accounting\Model\DealCreateParamsPayments[]|null $payments 支払行一覧（配列）：未指定の場合、未決済の取引を作成します。
+     * @param \OpenAPI\Client\Model\DealCreateParamsPayments[]|null $payments 支払行一覧（配列）：未指定の場合、未決済の取引を作成します。
      *
      * @return self
      */

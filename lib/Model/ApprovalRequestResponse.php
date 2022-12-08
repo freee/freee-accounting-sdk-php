@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * ApprovalRequestResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class ApprovalRequestResponse implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'approval_request' => '\Freee\Accounting\Model\ApprovalRequestResponseApprovalRequest'
+        'approval_request' => '\OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequest'
     ];
 
     /**
@@ -211,7 +211,7 @@ class ApprovalRequestResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets approval_request
      *
-     * @return \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequest
+     * @return \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequest
      */
     public function getApprovalRequest()
     {
@@ -221,7 +221,7 @@ class ApprovalRequestResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets approval_request
      *
-     * @param \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequest $approval_request approval_request
+     * @param \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequest $approval_request approval_request
      *
      * @return self
      */

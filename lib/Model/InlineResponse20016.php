@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * InlineResponse20016 Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,8 +59,8 @@ class InlineResponse20016 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'meta' => '\Freee\Accounting\Model\InlineResponse20015Meta',
-        'walletable' => '\Freee\Accounting\Model\Walletable'
+        'meta' => '\OpenAPI\Client\Model\InlineResponse20015Meta',
+        'walletable' => '\OpenAPI\Client\Model\Walletable'
     ];
 
     /**
@@ -217,7 +217,7 @@ class InlineResponse20016 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets meta
      *
-     * @return \Freee\Accounting\Model\InlineResponse20015Meta|null
+     * @return \OpenAPI\Client\Model\InlineResponse20015Meta|null
      */
     public function getMeta()
     {
@@ -227,7 +227,7 @@ class InlineResponse20016 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets meta
      *
-     * @param \Freee\Accounting\Model\InlineResponse20015Meta|null $meta meta
+     * @param \OpenAPI\Client\Model\InlineResponse20015Meta|null $meta meta
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class InlineResponse20016 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets walletable
      *
-     * @return \Freee\Accounting\Model\Walletable
+     * @return \OpenAPI\Client\Model\Walletable
      */
     public function getWalletable()
     {
@@ -251,7 +251,7 @@ class InlineResponse20016 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets walletable
      *
-     * @param \Freee\Accounting\Model\Walletable $walletable walletable
+     * @param \OpenAPI\Client\Model\Walletable $walletable walletable
      *
      * @return self
      */

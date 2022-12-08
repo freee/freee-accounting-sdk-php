@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * WalletableCreateResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class WalletableCreateResponse implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'walletable' => '\Freee\Accounting\Model\WalletableCreateResponseWalletable'
+        'walletable' => '\OpenAPI\Client\Model\WalletableCreateResponseWalletable'
     ];
 
     /**
@@ -211,7 +211,7 @@ class WalletableCreateResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets walletable
      *
-     * @return \Freee\Accounting\Model\WalletableCreateResponseWalletable
+     * @return \OpenAPI\Client\Model\WalletableCreateResponseWalletable
      */
     public function getWalletable()
     {
@@ -221,7 +221,7 @@ class WalletableCreateResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets walletable
      *
-     * @param \Freee\Accounting\Model\WalletableCreateResponseWalletable $walletable walletable
+     * @param \OpenAPI\Client\Model\WalletableCreateResponseWalletable $walletable walletable
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * PaymentRequestResponsePaymentRequest Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -65,16 +65,16 @@ class PaymentRequestResponsePaymentRequest implements ModelInterface, ArrayAcces
         'applicant_id' => 'int',
         'application_date' => 'string',
         'application_number' => 'string',
-        'approval_flow_logs' => '\Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovalFlowLogs[]',
+        'approval_flow_logs' => '\OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestApprovalFlowLogs[]',
         'approval_flow_route_id' => 'int',
-        'approvers' => '\Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovers[]',
+        'approvers' => '\OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestApprovers[]',
         'bank_code' => 'string',
         'bank_name' => 'string',
         'bank_name_kana' => 'string',
         'branch_code' => 'string',
         'branch_kana' => 'string',
         'branch_name' => 'string',
-        'comments' => '\Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestComments[]',
+        'comments' => '\OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestComments[]',
         'company_id' => 'int',
         'current_round' => 'int',
         'current_step_id' => 'int',
@@ -89,7 +89,7 @@ class PaymentRequestResponsePaymentRequest implements ModelInterface, ArrayAcces
         'partner_name' => 'string',
         'payment_date' => 'string',
         'payment_method' => 'string',
-        'payment_request_lines' => '\Freee\Accounting\Model\PaymentRequestResponsePaymentRequestPaymentRequestLines[]',
+        'payment_request_lines' => '\OpenAPI\Client\Model\PaymentRequestResponsePaymentRequestPaymentRequestLines[]',
         'receipt_ids' => 'int[]',
         'status' => 'string',
         'title' => 'string',
@@ -854,7 +854,7 @@ class PaymentRequestResponsePaymentRequest implements ModelInterface, ArrayAcces
     /**
      * Gets approval_flow_logs
      *
-     * @return \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovalFlowLogs[]
+     * @return \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestApprovalFlowLogs[]
      */
     public function getApprovalFlowLogs()
     {
@@ -864,7 +864,7 @@ class PaymentRequestResponsePaymentRequest implements ModelInterface, ArrayAcces
     /**
      * Sets approval_flow_logs
      *
-     * @param \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovalFlowLogs[] $approval_flow_logs 支払依頼の承認履歴（配列）
+     * @param \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestApprovalFlowLogs[] $approval_flow_logs 支払依頼の承認履歴（配列）
      *
      * @return self
      */
@@ -910,7 +910,7 @@ class PaymentRequestResponsePaymentRequest implements ModelInterface, ArrayAcces
     /**
      * Gets approvers
      *
-     * @return \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovers[]
+     * @return \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestApprovers[]
      */
     public function getApprovers()
     {
@@ -920,7 +920,7 @@ class PaymentRequestResponsePaymentRequest implements ModelInterface, ArrayAcces
     /**
      * Sets approvers
      *
-     * @param \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovers[] $approvers 承認者（配列）   承認ステップのresource_typeがunspecified (指定なし)の場合はapproversはレスポンスに含まれません。   しかし、resource_typeがunspecifiedの承認ステップにおいて誰かが承認・却下・差し戻しのいずれかのアクションを取った後は、   approversはレスポンスに含まれるようになります。   その場合approversにはアクションを行ったステップのIDとアクションを行ったユーザーのIDが含まれます。
+     * @param \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestApprovers[] $approvers 承認者（配列）   承認ステップのresource_typeがunspecified (指定なし)の場合はapproversはレスポンスに含まれません。   しかし、resource_typeがunspecifiedの承認ステップにおいて誰かが承認・却下・差し戻しのいずれかのアクションを取った後は、   approversはレスポンスに含まれるようになります。   その場合approversにはアクションを行ったステップのIDとアクションを行ったユーザーのIDが含まれます。
      *
      * @return self
      */
@@ -1078,7 +1078,7 @@ class PaymentRequestResponsePaymentRequest implements ModelInterface, ArrayAcces
     /**
      * Gets comments
      *
-     * @return \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestComments[]
+     * @return \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestComments[]
      */
     public function getComments()
     {
@@ -1088,7 +1088,7 @@ class PaymentRequestResponsePaymentRequest implements ModelInterface, ArrayAcces
     /**
      * Sets comments
      *
-     * @param \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestComments[] $comments 支払依頼のコメント一覧（配列）
+     * @param \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestComments[] $comments 支払依頼のコメント一覧（配列）
      *
      * @return self
      */
@@ -1506,7 +1506,7 @@ class PaymentRequestResponsePaymentRequest implements ModelInterface, ArrayAcces
     /**
      * Gets payment_request_lines
      *
-     * @return \Freee\Accounting\Model\PaymentRequestResponsePaymentRequestPaymentRequestLines[]
+     * @return \OpenAPI\Client\Model\PaymentRequestResponsePaymentRequestPaymentRequestLines[]
      */
     public function getPaymentRequestLines()
     {
@@ -1516,7 +1516,7 @@ class PaymentRequestResponsePaymentRequest implements ModelInterface, ArrayAcces
     /**
      * Sets payment_request_lines
      *
-     * @param \Freee\Accounting\Model\PaymentRequestResponsePaymentRequestPaymentRequestLines[] $payment_request_lines 支払依頼の項目行一覧（配列）
+     * @param \OpenAPI\Client\Model\PaymentRequestResponsePaymentRequestPaymentRequestLines[] $payment_request_lines 支払依頼の項目行一覧（配列）
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * TrialPlSectionsResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,9 +59,9 @@ class TrialPlSectionsResponse implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'trial_pl_sections' => '\Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSections',
+        'trial_pl_sections' => '\OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSections',
         'up_to_date' => 'bool',
-        'up_to_date_reasons' => '\Freee\Accounting\Model\JournalsResponseJournalsUpToDateReasons[]'
+        'up_to_date_reasons' => '\OpenAPI\Client\Model\JournalsResponseJournalsUpToDateReasons[]'
     ];
 
     /**
@@ -226,7 +226,7 @@ class TrialPlSectionsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets trial_pl_sections
      *
-     * @return \Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSections
+     * @return \OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSections
      */
     public function getTrialPlSections()
     {
@@ -236,7 +236,7 @@ class TrialPlSectionsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets trial_pl_sections
      *
-     * @param \Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSections $trial_pl_sections trial_pl_sections
+     * @param \OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSections $trial_pl_sections trial_pl_sections
      *
      * @return self
      */
@@ -274,7 +274,7 @@ class TrialPlSectionsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets up_to_date_reasons
      *
-     * @return \Freee\Accounting\Model\JournalsResponseJournalsUpToDateReasons[]|null
+     * @return \OpenAPI\Client\Model\JournalsResponseJournalsUpToDateReasons[]|null
      */
     public function getUpToDateReasons()
     {
@@ -284,7 +284,7 @@ class TrialPlSectionsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets up_to_date_reasons
      *
-     * @param \Freee\Accounting\Model\JournalsResponseJournalsUpToDateReasons[]|null $up_to_date_reasons 集計が最新でない場合の要因情報
+     * @param \OpenAPI\Client\Model\JournalsResponseJournalsUpToDateReasons[]|null $up_to_date_reasons 集計が最新でない場合の要因情報
      *
      * @return self
      */

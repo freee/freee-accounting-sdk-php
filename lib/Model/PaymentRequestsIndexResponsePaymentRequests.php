@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * PaymentRequestsIndexResponsePaymentRequests Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -62,7 +62,7 @@ class PaymentRequestsIndexResponsePaymentRequests implements ModelInterface, Arr
         'applicant_id' => 'int',
         'application_date' => 'string',
         'application_number' => 'string',
-        'approvers' => '\Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovers[]',
+        'approvers' => '\OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestApprovers[]',
         'company_id' => 'int',
         'current_round' => 'int',
         'current_step_id' => 'int',
@@ -596,7 +596,7 @@ class PaymentRequestsIndexResponsePaymentRequests implements ModelInterface, Arr
     /**
      * Gets approvers
      *
-     * @return \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovers[]
+     * @return \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestApprovers[]
      */
     public function getApprovers()
     {
@@ -606,7 +606,7 @@ class PaymentRequestsIndexResponsePaymentRequests implements ModelInterface, Arr
     /**
      * Sets approvers
      *
-     * @param \Freee\Accounting\Model\ApprovalRequestResponseApprovalRequestApprovers[] $approvers 承認者（配列）   承認ステップのresource_typeがunspecified (指定なし)の場合はapproversはレスポンスに含まれません。   しかし、resource_typeがunspecifiedの承認ステップにおいて誰かが承認・却下・差し戻しのいずれかのアクションを取った後は、   approversはレスポンスに含まれるようになります。   その場合approversにはアクションを行ったステップのIDとアクションを行ったユーザーのIDが含まれます。
+     * @param \OpenAPI\Client\Model\ApprovalRequestResponseApprovalRequestApprovers[] $approvers 承認者（配列）   承認ステップのresource_typeがunspecified (指定なし)の場合はapproversはレスポンスに含まれません。   しかし、resource_typeがunspecifiedの承認ステップにおいて誰かが承認・却下・差し戻しのいずれかのアクションを取った後は、   approversはレスポンスに含まれるようになります。   その場合approversにはアクションを行ったステップのIDとアクションを行ったユーザーのIDが含まれます。
      *
      * @return self
      */

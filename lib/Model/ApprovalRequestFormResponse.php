@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * ApprovalRequestFormResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class ApprovalRequestFormResponse implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'approval_request_form' => '\Freee\Accounting\Model\ApprovalRequestFormResponseApprovalRequestForm'
+        'approval_request_form' => '\OpenAPI\Client\Model\ApprovalRequestFormResponseApprovalRequestForm'
     ];
 
     /**
@@ -211,7 +211,7 @@ class ApprovalRequestFormResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets approval_request_form
      *
-     * @return \Freee\Accounting\Model\ApprovalRequestFormResponseApprovalRequestForm
+     * @return \OpenAPI\Client\Model\ApprovalRequestFormResponseApprovalRequestForm
      */
     public function getApprovalRequestForm()
     {
@@ -221,7 +221,7 @@ class ApprovalRequestFormResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets approval_request_form
      *
-     * @param \Freee\Accounting\Model\ApprovalRequestFormResponseApprovalRequestForm $approval_request_form approval_request_form
+     * @param \OpenAPI\Client\Model\ApprovalRequestFormResponseApprovalRequestForm $approval_request_form approval_request_form
      *
      * @return self
      */

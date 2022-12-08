@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * ExpenseApplicationsIndexResponseExpenseApplications Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -67,7 +67,7 @@ class ExpenseApplicationsIndexResponseExpenseApplications implements ModelInterf
         'deal_id' => 'int',
         'deal_status' => 'string',
         'description' => 'string',
-        'expense_application_lines' => '\Freee\Accounting\Model\ExpenseApplicationsIndexResponseExpenseApplicationLines[]',
+        'expense_application_lines' => '\OpenAPI\Client\Model\ExpenseApplicationsIndexResponseExpenseApplicationLines[]',
         'id' => 'int',
         'issue_date' => 'string',
         'section_id' => 'int',
@@ -722,7 +722,7 @@ class ExpenseApplicationsIndexResponseExpenseApplications implements ModelInterf
     /**
      * Gets expense_application_lines
      *
-     * @return \Freee\Accounting\Model\ExpenseApplicationsIndexResponseExpenseApplicationLines[]
+     * @return \OpenAPI\Client\Model\ExpenseApplicationsIndexResponseExpenseApplicationLines[]
      */
     public function getExpenseApplicationLines()
     {
@@ -732,7 +732,7 @@ class ExpenseApplicationsIndexResponseExpenseApplications implements ModelInterf
     /**
      * Sets expense_application_lines
      *
-     * @param \Freee\Accounting\Model\ExpenseApplicationsIndexResponseExpenseApplicationLines[] $expense_application_lines 経費申請の項目行一覧（配列）
+     * @param \OpenAPI\Client\Model\ExpenseApplicationsIndexResponseExpenseApplicationLines[] $expense_application_lines 経費申請の項目行一覧（配列）
      *
      * @return self
      */

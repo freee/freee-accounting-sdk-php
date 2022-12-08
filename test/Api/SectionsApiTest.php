@@ -4,7 +4,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,18 +25,18 @@
  * Please update the test case below to test the endpoint.
  */
 
-namespace Freee\Accounting\Test\Api;
+namespace OpenAPI\Client\Test\Api;
 
-use \Freee\Accounting\Configuration;
-use \Freee\Accounting\ApiException;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\Configuration;
+use \OpenAPI\Client\ApiException;
+use \OpenAPI\Client\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
  * SectionsApiTest Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */

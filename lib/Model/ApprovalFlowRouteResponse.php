@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * ApprovalFlowRouteResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class ApprovalFlowRouteResponse implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'approval_flow_route' => '\Freee\Accounting\Model\ApprovalFlowRouteResponseApprovalFlowRoute'
+        'approval_flow_route' => '\OpenAPI\Client\Model\ApprovalFlowRouteResponseApprovalFlowRoute'
     ];
 
     /**
@@ -211,7 +211,7 @@ class ApprovalFlowRouteResponse implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets approval_flow_route
      *
-     * @return \Freee\Accounting\Model\ApprovalFlowRouteResponseApprovalFlowRoute
+     * @return \OpenAPI\Client\Model\ApprovalFlowRouteResponseApprovalFlowRoute
      */
     public function getApprovalFlowRoute()
     {
@@ -221,7 +221,7 @@ class ApprovalFlowRouteResponse implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets approval_flow_route
      *
-     * @param \Freee\Accounting\Model\ApprovalFlowRouteResponseApprovalFlowRoute $approval_flow_route approval_flow_route
+     * @param \OpenAPI\Client\Model\ApprovalFlowRouteResponseApprovalFlowRoute $approval_flow_route approval_flow_route
      *
      * @return self
      */

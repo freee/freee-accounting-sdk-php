@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * InlineResponse20013 Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,66 +59,66 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => '\Freee\Accounting\Model\UserCapability',
-        'account_item_statements' => '\Freee\Accounting\Model\UserCapability',
-        'account_items' => '\Freee\Accounting\Model\UserCapability',
-        'annual_reports' => '\Freee\Accounting\Model\UserCapability',
-        'approval_flow_routes' => '\Freee\Accounting\Model\UserCapability',
-        'approval_requests' => '\Freee\Accounting\Model\UserCapabilityWithSelfOnly',
-        'backups' => '\Freee\Accounting\Model\UserCapability',
-        'bank_accountant_staff_users' => '\Freee\Accounting\Model\UserCapability',
-        'biz_allocations' => '\Freee\Accounting\Model\UserCapability',
-        'companies' => '\Freee\Accounting\Model\UserCapability',
-        'consumption_entries' => '\Freee\Accounting\Model\UserCapability',
-        'cost_allocations' => '\Freee\Accounting\Model\UserCapability',
-        'deal_templates' => '\Freee\Accounting\Model\UserCapability',
-        'deals' => '\Freee\Accounting\Model\UserCapabilityWithSelfOnly',
-        'doc_postings' => '\Freee\Accounting\Model\UserCapability',
-        'docs' => '\Freee\Accounting\Model\UserCapabilityWithSelfOnly',
-        'expense_application_templates' => '\Freee\Accounting\Model\UserCapability',
-        'expense_applications' => '\Freee\Accounting\Model\UserCapabilityWithSelfOnly',
-        'fixed_assets' => '\Freee\Accounting\Model\UserCapability',
-        'inventory_refreshes' => '\Freee\Accounting\Model\UserCapability',
-        'invitations' => '\Freee\Accounting\Model\UserCapability',
-        'items' => '\Freee\Accounting\Model\UserCapability',
-        'manual_journal_templates' => '\Freee\Accounting\Model\UserCapability',
-        'manual_journals' => '\Freee\Accounting\Model\UserCapabilityWithSelfOnly',
-        'month_end' => '\Freee\Accounting\Model\UserCapability',
-        'oauth_applications' => '\Freee\Accounting\Model\UserCapability',
-        'oauth_authorizations' => '\Freee\Accounting\Model\UserCapability',
-        'opening_balances' => '\Freee\Accounting\Model\UserCapability',
-        'partners' => '\Freee\Accounting\Model\UserCapability',
-        'payment_records' => '\Freee\Accounting\Model\UserCapability',
-        'payment_requests' => '\Freee\Accounting\Model\UserCapabilityWithSelfOnly',
-        'receipt_stream_editor' => '\Freee\Accounting\Model\UserCapability',
-        'receipts' => '\Freee\Accounting\Model\UserCapabilityWithSelfOnly',
-        'reports' => '\Freee\Accounting\Model\UserCapability',
-        'reports_bs' => '\Freee\Accounting\Model\UserCapability',
-        'reports_cash_balance' => '\Freee\Accounting\Model\UserCapability',
-        'reports_crosstabs' => '\Freee\Accounting\Model\UserCapability',
-        'reports_general_ledgers' => '\Freee\Accounting\Model\UserCapability',
-        'reports_income_expense' => '\Freee\Accounting\Model\UserCapability',
-        'reports_journals' => '\Freee\Accounting\Model\UserCapability',
-        'reports_managements_navigation' => '\Freee\Accounting\Model\UserCapability',
-        'reports_managements_planning' => '\Freee\Accounting\Model\UserCapability',
-        'reports_payables' => '\Freee\Accounting\Model\UserCapability',
-        'reports_pl' => '\Freee\Accounting\Model\UserCapability',
-        'reports_receivables' => '\Freee\Accounting\Model\UserCapability',
-        'request_forms' => '\Freee\Accounting\Model\UserCapability',
-        'resets' => '\Freee\Accounting\Model\UserCapability',
-        'sections' => '\Freee\Accounting\Model\UserCapability',
-        'sign_in_logs' => '\Freee\Accounting\Model\UserCapability',
-        'spreadsheets' => '\Freee\Accounting\Model\UserCapability',
-        'system_conversion' => '\Freee\Accounting\Model\UserCapability',
-        'tax_reports' => '\Freee\Accounting\Model\UserCapability',
-        'tax_return' => '\Freee\Accounting\Model\UserCapability',
-        'taxes' => '\Freee\Accounting\Model\UserCapability',
-        'transfers' => '\Freee\Accounting\Model\UserCapabilityWithSelfOnly',
-        'user_matchers' => '\Freee\Accounting\Model\UserCapability',
-        'wallet_txns' => '\Freee\Accounting\Model\UserCapabilityWithConfirm',
-        'walletables' => '\Freee\Accounting\Model\UserCapabilityWithSync',
-        'workflows' => '\Freee\Accounting\Model\UserCapability',
-        'year_end' => '\Freee\Accounting\Model\UserCapability'
+        'tags' => '\OpenAPI\Client\Model\UserCapability',
+        'account_item_statements' => '\OpenAPI\Client\Model\UserCapability',
+        'account_items' => '\OpenAPI\Client\Model\UserCapability',
+        'annual_reports' => '\OpenAPI\Client\Model\UserCapability',
+        'approval_flow_routes' => '\OpenAPI\Client\Model\UserCapability',
+        'approval_requests' => '\OpenAPI\Client\Model\UserCapabilityWithSelfOnly',
+        'backups' => '\OpenAPI\Client\Model\UserCapability',
+        'bank_accountant_staff_users' => '\OpenAPI\Client\Model\UserCapability',
+        'biz_allocations' => '\OpenAPI\Client\Model\UserCapability',
+        'companies' => '\OpenAPI\Client\Model\UserCapability',
+        'consumption_entries' => '\OpenAPI\Client\Model\UserCapability',
+        'cost_allocations' => '\OpenAPI\Client\Model\UserCapability',
+        'deal_templates' => '\OpenAPI\Client\Model\UserCapability',
+        'deals' => '\OpenAPI\Client\Model\UserCapabilityWithSelfOnly',
+        'doc_postings' => '\OpenAPI\Client\Model\UserCapability',
+        'docs' => '\OpenAPI\Client\Model\UserCapabilityWithSelfOnly',
+        'expense_application_templates' => '\OpenAPI\Client\Model\UserCapability',
+        'expense_applications' => '\OpenAPI\Client\Model\UserCapabilityWithSelfOnly',
+        'fixed_assets' => '\OpenAPI\Client\Model\UserCapability',
+        'inventory_refreshes' => '\OpenAPI\Client\Model\UserCapability',
+        'invitations' => '\OpenAPI\Client\Model\UserCapability',
+        'items' => '\OpenAPI\Client\Model\UserCapability',
+        'manual_journal_templates' => '\OpenAPI\Client\Model\UserCapability',
+        'manual_journals' => '\OpenAPI\Client\Model\UserCapabilityWithSelfOnly',
+        'month_end' => '\OpenAPI\Client\Model\UserCapability',
+        'oauth_applications' => '\OpenAPI\Client\Model\UserCapability',
+        'oauth_authorizations' => '\OpenAPI\Client\Model\UserCapability',
+        'opening_balances' => '\OpenAPI\Client\Model\UserCapability',
+        'partners' => '\OpenAPI\Client\Model\UserCapability',
+        'payment_records' => '\OpenAPI\Client\Model\UserCapability',
+        'payment_requests' => '\OpenAPI\Client\Model\UserCapabilityWithSelfOnly',
+        'receipt_stream_editor' => '\OpenAPI\Client\Model\UserCapability',
+        'receipts' => '\OpenAPI\Client\Model\UserCapabilityWithSelfOnly',
+        'reports' => '\OpenAPI\Client\Model\UserCapability',
+        'reports_bs' => '\OpenAPI\Client\Model\UserCapability',
+        'reports_cash_balance' => '\OpenAPI\Client\Model\UserCapability',
+        'reports_crosstabs' => '\OpenAPI\Client\Model\UserCapability',
+        'reports_general_ledgers' => '\OpenAPI\Client\Model\UserCapability',
+        'reports_income_expense' => '\OpenAPI\Client\Model\UserCapability',
+        'reports_journals' => '\OpenAPI\Client\Model\UserCapability',
+        'reports_managements_navigation' => '\OpenAPI\Client\Model\UserCapability',
+        'reports_managements_planning' => '\OpenAPI\Client\Model\UserCapability',
+        'reports_payables' => '\OpenAPI\Client\Model\UserCapability',
+        'reports_pl' => '\OpenAPI\Client\Model\UserCapability',
+        'reports_receivables' => '\OpenAPI\Client\Model\UserCapability',
+        'request_forms' => '\OpenAPI\Client\Model\UserCapability',
+        'resets' => '\OpenAPI\Client\Model\UserCapability',
+        'sections' => '\OpenAPI\Client\Model\UserCapability',
+        'sign_in_logs' => '\OpenAPI\Client\Model\UserCapability',
+        'spreadsheets' => '\OpenAPI\Client\Model\UserCapability',
+        'system_conversion' => '\OpenAPI\Client\Model\UserCapability',
+        'tax_reports' => '\OpenAPI\Client\Model\UserCapability',
+        'tax_return' => '\OpenAPI\Client\Model\UserCapability',
+        'taxes' => '\OpenAPI\Client\Model\UserCapability',
+        'transfers' => '\OpenAPI\Client\Model\UserCapabilityWithSelfOnly',
+        'user_matchers' => '\OpenAPI\Client\Model\UserCapability',
+        'wallet_txns' => '\OpenAPI\Client\Model\UserCapabilityWithConfirm',
+        'walletables' => '\OpenAPI\Client\Model\UserCapabilityWithSync',
+        'workflows' => '\OpenAPI\Client\Model\UserCapability',
+        'year_end' => '\OpenAPI\Client\Model\UserCapability'
     ];
 
     /**
@@ -742,7 +742,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets tags
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getTags()
     {
@@ -752,7 +752,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets tags
      *
-     * @param \Freee\Accounting\Model\UserCapability $tags tags
+     * @param \OpenAPI\Client\Model\UserCapability $tags tags
      *
      * @return self
      */
@@ -766,7 +766,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets account_item_statements
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getAccountItemStatements()
     {
@@ -776,7 +776,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets account_item_statements
      *
-     * @param \Freee\Accounting\Model\UserCapability $account_item_statements account_item_statements
+     * @param \OpenAPI\Client\Model\UserCapability $account_item_statements account_item_statements
      *
      * @return self
      */
@@ -790,7 +790,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets account_items
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getAccountItems()
     {
@@ -800,7 +800,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets account_items
      *
-     * @param \Freee\Accounting\Model\UserCapability $account_items account_items
+     * @param \OpenAPI\Client\Model\UserCapability $account_items account_items
      *
      * @return self
      */
@@ -814,7 +814,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets annual_reports
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getAnnualReports()
     {
@@ -824,7 +824,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets annual_reports
      *
-     * @param \Freee\Accounting\Model\UserCapability $annual_reports annual_reports
+     * @param \OpenAPI\Client\Model\UserCapability $annual_reports annual_reports
      *
      * @return self
      */
@@ -838,7 +838,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets approval_flow_routes
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getApprovalFlowRoutes()
     {
@@ -848,7 +848,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets approval_flow_routes
      *
-     * @param \Freee\Accounting\Model\UserCapability $approval_flow_routes approval_flow_routes
+     * @param \OpenAPI\Client\Model\UserCapability $approval_flow_routes approval_flow_routes
      *
      * @return self
      */
@@ -862,7 +862,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets approval_requests
      *
-     * @return \Freee\Accounting\Model\UserCapabilityWithSelfOnly
+     * @return \OpenAPI\Client\Model\UserCapabilityWithSelfOnly
      */
     public function getApprovalRequests()
     {
@@ -872,7 +872,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets approval_requests
      *
-     * @param \Freee\Accounting\Model\UserCapabilityWithSelfOnly $approval_requests approval_requests
+     * @param \OpenAPI\Client\Model\UserCapabilityWithSelfOnly $approval_requests approval_requests
      *
      * @return self
      */
@@ -886,7 +886,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets backups
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getBackups()
     {
@@ -896,7 +896,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets backups
      *
-     * @param \Freee\Accounting\Model\UserCapability $backups backups
+     * @param \OpenAPI\Client\Model\UserCapability $backups backups
      *
      * @return self
      */
@@ -910,7 +910,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets bank_accountant_staff_users
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getBankAccountantStaffUsers()
     {
@@ -920,7 +920,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets bank_accountant_staff_users
      *
-     * @param \Freee\Accounting\Model\UserCapability $bank_accountant_staff_users bank_accountant_staff_users
+     * @param \OpenAPI\Client\Model\UserCapability $bank_accountant_staff_users bank_accountant_staff_users
      *
      * @return self
      */
@@ -934,7 +934,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets biz_allocations
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getBizAllocations()
     {
@@ -944,7 +944,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets biz_allocations
      *
-     * @param \Freee\Accounting\Model\UserCapability $biz_allocations biz_allocations
+     * @param \OpenAPI\Client\Model\UserCapability $biz_allocations biz_allocations
      *
      * @return self
      */
@@ -958,7 +958,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets companies
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getCompanies()
     {
@@ -968,7 +968,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets companies
      *
-     * @param \Freee\Accounting\Model\UserCapability $companies companies
+     * @param \OpenAPI\Client\Model\UserCapability $companies companies
      *
      * @return self
      */
@@ -982,7 +982,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets consumption_entries
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getConsumptionEntries()
     {
@@ -992,7 +992,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets consumption_entries
      *
-     * @param \Freee\Accounting\Model\UserCapability $consumption_entries consumption_entries
+     * @param \OpenAPI\Client\Model\UserCapability $consumption_entries consumption_entries
      *
      * @return self
      */
@@ -1006,7 +1006,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets cost_allocations
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getCostAllocations()
     {
@@ -1016,7 +1016,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets cost_allocations
      *
-     * @param \Freee\Accounting\Model\UserCapability $cost_allocations cost_allocations
+     * @param \OpenAPI\Client\Model\UserCapability $cost_allocations cost_allocations
      *
      * @return self
      */
@@ -1030,7 +1030,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets deal_templates
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getDealTemplates()
     {
@@ -1040,7 +1040,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets deal_templates
      *
-     * @param \Freee\Accounting\Model\UserCapability $deal_templates deal_templates
+     * @param \OpenAPI\Client\Model\UserCapability $deal_templates deal_templates
      *
      * @return self
      */
@@ -1054,7 +1054,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets deals
      *
-     * @return \Freee\Accounting\Model\UserCapabilityWithSelfOnly
+     * @return \OpenAPI\Client\Model\UserCapabilityWithSelfOnly
      */
     public function getDeals()
     {
@@ -1064,7 +1064,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets deals
      *
-     * @param \Freee\Accounting\Model\UserCapabilityWithSelfOnly $deals deals
+     * @param \OpenAPI\Client\Model\UserCapabilityWithSelfOnly $deals deals
      *
      * @return self
      */
@@ -1078,7 +1078,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets doc_postings
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getDocPostings()
     {
@@ -1088,7 +1088,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets doc_postings
      *
-     * @param \Freee\Accounting\Model\UserCapability $doc_postings doc_postings
+     * @param \OpenAPI\Client\Model\UserCapability $doc_postings doc_postings
      *
      * @return self
      */
@@ -1102,7 +1102,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets docs
      *
-     * @return \Freee\Accounting\Model\UserCapabilityWithSelfOnly
+     * @return \OpenAPI\Client\Model\UserCapabilityWithSelfOnly
      */
     public function getDocs()
     {
@@ -1112,7 +1112,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets docs
      *
-     * @param \Freee\Accounting\Model\UserCapabilityWithSelfOnly $docs docs
+     * @param \OpenAPI\Client\Model\UserCapabilityWithSelfOnly $docs docs
      *
      * @return self
      */
@@ -1126,7 +1126,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets expense_application_templates
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getExpenseApplicationTemplates()
     {
@@ -1136,7 +1136,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets expense_application_templates
      *
-     * @param \Freee\Accounting\Model\UserCapability $expense_application_templates expense_application_templates
+     * @param \OpenAPI\Client\Model\UserCapability $expense_application_templates expense_application_templates
      *
      * @return self
      */
@@ -1150,7 +1150,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets expense_applications
      *
-     * @return \Freee\Accounting\Model\UserCapabilityWithSelfOnly
+     * @return \OpenAPI\Client\Model\UserCapabilityWithSelfOnly
      */
     public function getExpenseApplications()
     {
@@ -1160,7 +1160,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets expense_applications
      *
-     * @param \Freee\Accounting\Model\UserCapabilityWithSelfOnly $expense_applications expense_applications
+     * @param \OpenAPI\Client\Model\UserCapabilityWithSelfOnly $expense_applications expense_applications
      *
      * @return self
      */
@@ -1174,7 +1174,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets fixed_assets
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getFixedAssets()
     {
@@ -1184,7 +1184,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets fixed_assets
      *
-     * @param \Freee\Accounting\Model\UserCapability $fixed_assets fixed_assets
+     * @param \OpenAPI\Client\Model\UserCapability $fixed_assets fixed_assets
      *
      * @return self
      */
@@ -1198,7 +1198,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets inventory_refreshes
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getInventoryRefreshes()
     {
@@ -1208,7 +1208,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets inventory_refreshes
      *
-     * @param \Freee\Accounting\Model\UserCapability $inventory_refreshes inventory_refreshes
+     * @param \OpenAPI\Client\Model\UserCapability $inventory_refreshes inventory_refreshes
      *
      * @return self
      */
@@ -1222,7 +1222,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets invitations
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getInvitations()
     {
@@ -1232,7 +1232,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets invitations
      *
-     * @param \Freee\Accounting\Model\UserCapability $invitations invitations
+     * @param \OpenAPI\Client\Model\UserCapability $invitations invitations
      *
      * @return self
      */
@@ -1246,7 +1246,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets items
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getItems()
     {
@@ -1256,7 +1256,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets items
      *
-     * @param \Freee\Accounting\Model\UserCapability $items items
+     * @param \OpenAPI\Client\Model\UserCapability $items items
      *
      * @return self
      */
@@ -1270,7 +1270,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets manual_journal_templates
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getManualJournalTemplates()
     {
@@ -1280,7 +1280,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets manual_journal_templates
      *
-     * @param \Freee\Accounting\Model\UserCapability $manual_journal_templates manual_journal_templates
+     * @param \OpenAPI\Client\Model\UserCapability $manual_journal_templates manual_journal_templates
      *
      * @return self
      */
@@ -1294,7 +1294,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets manual_journals
      *
-     * @return \Freee\Accounting\Model\UserCapabilityWithSelfOnly
+     * @return \OpenAPI\Client\Model\UserCapabilityWithSelfOnly
      */
     public function getManualJournals()
     {
@@ -1304,7 +1304,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets manual_journals
      *
-     * @param \Freee\Accounting\Model\UserCapabilityWithSelfOnly $manual_journals manual_journals
+     * @param \OpenAPI\Client\Model\UserCapabilityWithSelfOnly $manual_journals manual_journals
      *
      * @return self
      */
@@ -1318,7 +1318,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets month_end
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getMonthEnd()
     {
@@ -1328,7 +1328,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets month_end
      *
-     * @param \Freee\Accounting\Model\UserCapability $month_end month_end
+     * @param \OpenAPI\Client\Model\UserCapability $month_end month_end
      *
      * @return self
      */
@@ -1342,7 +1342,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets oauth_applications
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getOauthApplications()
     {
@@ -1352,7 +1352,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets oauth_applications
      *
-     * @param \Freee\Accounting\Model\UserCapability $oauth_applications oauth_applications
+     * @param \OpenAPI\Client\Model\UserCapability $oauth_applications oauth_applications
      *
      * @return self
      */
@@ -1366,7 +1366,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets oauth_authorizations
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getOauthAuthorizations()
     {
@@ -1376,7 +1376,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets oauth_authorizations
      *
-     * @param \Freee\Accounting\Model\UserCapability $oauth_authorizations oauth_authorizations
+     * @param \OpenAPI\Client\Model\UserCapability $oauth_authorizations oauth_authorizations
      *
      * @return self
      */
@@ -1390,7 +1390,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets opening_balances
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getOpeningBalances()
     {
@@ -1400,7 +1400,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets opening_balances
      *
-     * @param \Freee\Accounting\Model\UserCapability $opening_balances opening_balances
+     * @param \OpenAPI\Client\Model\UserCapability $opening_balances opening_balances
      *
      * @return self
      */
@@ -1414,7 +1414,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets partners
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getPartners()
     {
@@ -1424,7 +1424,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets partners
      *
-     * @param \Freee\Accounting\Model\UserCapability $partners partners
+     * @param \OpenAPI\Client\Model\UserCapability $partners partners
      *
      * @return self
      */
@@ -1438,7 +1438,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets payment_records
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getPaymentRecords()
     {
@@ -1448,7 +1448,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets payment_records
      *
-     * @param \Freee\Accounting\Model\UserCapability $payment_records payment_records
+     * @param \OpenAPI\Client\Model\UserCapability $payment_records payment_records
      *
      * @return self
      */
@@ -1462,7 +1462,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets payment_requests
      *
-     * @return \Freee\Accounting\Model\UserCapabilityWithSelfOnly
+     * @return \OpenAPI\Client\Model\UserCapabilityWithSelfOnly
      */
     public function getPaymentRequests()
     {
@@ -1472,7 +1472,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets payment_requests
      *
-     * @param \Freee\Accounting\Model\UserCapabilityWithSelfOnly $payment_requests payment_requests
+     * @param \OpenAPI\Client\Model\UserCapabilityWithSelfOnly $payment_requests payment_requests
      *
      * @return self
      */
@@ -1486,7 +1486,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets receipt_stream_editor
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getReceiptStreamEditor()
     {
@@ -1496,7 +1496,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets receipt_stream_editor
      *
-     * @param \Freee\Accounting\Model\UserCapability $receipt_stream_editor receipt_stream_editor
+     * @param \OpenAPI\Client\Model\UserCapability $receipt_stream_editor receipt_stream_editor
      *
      * @return self
      */
@@ -1510,7 +1510,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets receipts
      *
-     * @return \Freee\Accounting\Model\UserCapabilityWithSelfOnly
+     * @return \OpenAPI\Client\Model\UserCapabilityWithSelfOnly
      */
     public function getReceipts()
     {
@@ -1520,7 +1520,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets receipts
      *
-     * @param \Freee\Accounting\Model\UserCapabilityWithSelfOnly $receipts receipts
+     * @param \OpenAPI\Client\Model\UserCapabilityWithSelfOnly $receipts receipts
      *
      * @return self
      */
@@ -1534,7 +1534,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets reports
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getReports()
     {
@@ -1544,7 +1544,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets reports
      *
-     * @param \Freee\Accounting\Model\UserCapability $reports reports
+     * @param \OpenAPI\Client\Model\UserCapability $reports reports
      *
      * @return self
      */
@@ -1558,7 +1558,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets reports_bs
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getReportsBs()
     {
@@ -1568,7 +1568,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets reports_bs
      *
-     * @param \Freee\Accounting\Model\UserCapability $reports_bs reports_bs
+     * @param \OpenAPI\Client\Model\UserCapability $reports_bs reports_bs
      *
      * @return self
      */
@@ -1582,7 +1582,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets reports_cash_balance
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getReportsCashBalance()
     {
@@ -1592,7 +1592,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets reports_cash_balance
      *
-     * @param \Freee\Accounting\Model\UserCapability $reports_cash_balance reports_cash_balance
+     * @param \OpenAPI\Client\Model\UserCapability $reports_cash_balance reports_cash_balance
      *
      * @return self
      */
@@ -1606,7 +1606,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets reports_crosstabs
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getReportsCrosstabs()
     {
@@ -1616,7 +1616,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets reports_crosstabs
      *
-     * @param \Freee\Accounting\Model\UserCapability $reports_crosstabs reports_crosstabs
+     * @param \OpenAPI\Client\Model\UserCapability $reports_crosstabs reports_crosstabs
      *
      * @return self
      */
@@ -1630,7 +1630,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets reports_general_ledgers
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getReportsGeneralLedgers()
     {
@@ -1640,7 +1640,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets reports_general_ledgers
      *
-     * @param \Freee\Accounting\Model\UserCapability $reports_general_ledgers reports_general_ledgers
+     * @param \OpenAPI\Client\Model\UserCapability $reports_general_ledgers reports_general_ledgers
      *
      * @return self
      */
@@ -1654,7 +1654,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets reports_income_expense
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getReportsIncomeExpense()
     {
@@ -1664,7 +1664,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets reports_income_expense
      *
-     * @param \Freee\Accounting\Model\UserCapability $reports_income_expense reports_income_expense
+     * @param \OpenAPI\Client\Model\UserCapability $reports_income_expense reports_income_expense
      *
      * @return self
      */
@@ -1678,7 +1678,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets reports_journals
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getReportsJournals()
     {
@@ -1688,7 +1688,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets reports_journals
      *
-     * @param \Freee\Accounting\Model\UserCapability $reports_journals reports_journals
+     * @param \OpenAPI\Client\Model\UserCapability $reports_journals reports_journals
      *
      * @return self
      */
@@ -1702,7 +1702,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets reports_managements_navigation
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getReportsManagementsNavigation()
     {
@@ -1712,7 +1712,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets reports_managements_navigation
      *
-     * @param \Freee\Accounting\Model\UserCapability $reports_managements_navigation reports_managements_navigation
+     * @param \OpenAPI\Client\Model\UserCapability $reports_managements_navigation reports_managements_navigation
      *
      * @return self
      */
@@ -1726,7 +1726,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets reports_managements_planning
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getReportsManagementsPlanning()
     {
@@ -1736,7 +1736,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets reports_managements_planning
      *
-     * @param \Freee\Accounting\Model\UserCapability $reports_managements_planning reports_managements_planning
+     * @param \OpenAPI\Client\Model\UserCapability $reports_managements_planning reports_managements_planning
      *
      * @return self
      */
@@ -1750,7 +1750,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets reports_payables
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getReportsPayables()
     {
@@ -1760,7 +1760,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets reports_payables
      *
-     * @param \Freee\Accounting\Model\UserCapability $reports_payables reports_payables
+     * @param \OpenAPI\Client\Model\UserCapability $reports_payables reports_payables
      *
      * @return self
      */
@@ -1774,7 +1774,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets reports_pl
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getReportsPl()
     {
@@ -1784,7 +1784,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets reports_pl
      *
-     * @param \Freee\Accounting\Model\UserCapability $reports_pl reports_pl
+     * @param \OpenAPI\Client\Model\UserCapability $reports_pl reports_pl
      *
      * @return self
      */
@@ -1798,7 +1798,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets reports_receivables
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getReportsReceivables()
     {
@@ -1808,7 +1808,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets reports_receivables
      *
-     * @param \Freee\Accounting\Model\UserCapability $reports_receivables reports_receivables
+     * @param \OpenAPI\Client\Model\UserCapability $reports_receivables reports_receivables
      *
      * @return self
      */
@@ -1822,7 +1822,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets request_forms
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getRequestForms()
     {
@@ -1832,7 +1832,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets request_forms
      *
-     * @param \Freee\Accounting\Model\UserCapability $request_forms request_forms
+     * @param \OpenAPI\Client\Model\UserCapability $request_forms request_forms
      *
      * @return self
      */
@@ -1846,7 +1846,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets resets
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getResets()
     {
@@ -1856,7 +1856,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets resets
      *
-     * @param \Freee\Accounting\Model\UserCapability $resets resets
+     * @param \OpenAPI\Client\Model\UserCapability $resets resets
      *
      * @return self
      */
@@ -1870,7 +1870,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets sections
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getSections()
     {
@@ -1880,7 +1880,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets sections
      *
-     * @param \Freee\Accounting\Model\UserCapability $sections sections
+     * @param \OpenAPI\Client\Model\UserCapability $sections sections
      *
      * @return self
      */
@@ -1894,7 +1894,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets sign_in_logs
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getSignInLogs()
     {
@@ -1904,7 +1904,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets sign_in_logs
      *
-     * @param \Freee\Accounting\Model\UserCapability $sign_in_logs sign_in_logs
+     * @param \OpenAPI\Client\Model\UserCapability $sign_in_logs sign_in_logs
      *
      * @return self
      */
@@ -1918,7 +1918,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets spreadsheets
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getSpreadsheets()
     {
@@ -1928,7 +1928,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets spreadsheets
      *
-     * @param \Freee\Accounting\Model\UserCapability $spreadsheets spreadsheets
+     * @param \OpenAPI\Client\Model\UserCapability $spreadsheets spreadsheets
      *
      * @return self
      */
@@ -1942,7 +1942,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets system_conversion
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getSystemConversion()
     {
@@ -1952,7 +1952,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets system_conversion
      *
-     * @param \Freee\Accounting\Model\UserCapability $system_conversion system_conversion
+     * @param \OpenAPI\Client\Model\UserCapability $system_conversion system_conversion
      *
      * @return self
      */
@@ -1966,7 +1966,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets tax_reports
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getTaxReports()
     {
@@ -1976,7 +1976,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets tax_reports
      *
-     * @param \Freee\Accounting\Model\UserCapability $tax_reports tax_reports
+     * @param \OpenAPI\Client\Model\UserCapability $tax_reports tax_reports
      *
      * @return self
      */
@@ -1990,7 +1990,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets tax_return
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getTaxReturn()
     {
@@ -2000,7 +2000,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets tax_return
      *
-     * @param \Freee\Accounting\Model\UserCapability $tax_return tax_return
+     * @param \OpenAPI\Client\Model\UserCapability $tax_return tax_return
      *
      * @return self
      */
@@ -2014,7 +2014,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets taxes
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getTaxes()
     {
@@ -2024,7 +2024,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets taxes
      *
-     * @param \Freee\Accounting\Model\UserCapability $taxes taxes
+     * @param \OpenAPI\Client\Model\UserCapability $taxes taxes
      *
      * @return self
      */
@@ -2038,7 +2038,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets transfers
      *
-     * @return \Freee\Accounting\Model\UserCapabilityWithSelfOnly
+     * @return \OpenAPI\Client\Model\UserCapabilityWithSelfOnly
      */
     public function getTransfers()
     {
@@ -2048,7 +2048,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets transfers
      *
-     * @param \Freee\Accounting\Model\UserCapabilityWithSelfOnly $transfers transfers
+     * @param \OpenAPI\Client\Model\UserCapabilityWithSelfOnly $transfers transfers
      *
      * @return self
      */
@@ -2062,7 +2062,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets user_matchers
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getUserMatchers()
     {
@@ -2072,7 +2072,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets user_matchers
      *
-     * @param \Freee\Accounting\Model\UserCapability $user_matchers user_matchers
+     * @param \OpenAPI\Client\Model\UserCapability $user_matchers user_matchers
      *
      * @return self
      */
@@ -2086,7 +2086,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets wallet_txns
      *
-     * @return \Freee\Accounting\Model\UserCapabilityWithConfirm
+     * @return \OpenAPI\Client\Model\UserCapabilityWithConfirm
      */
     public function getWalletTxns()
     {
@@ -2096,7 +2096,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets wallet_txns
      *
-     * @param \Freee\Accounting\Model\UserCapabilityWithConfirm $wallet_txns wallet_txns
+     * @param \OpenAPI\Client\Model\UserCapabilityWithConfirm $wallet_txns wallet_txns
      *
      * @return self
      */
@@ -2110,7 +2110,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets walletables
      *
-     * @return \Freee\Accounting\Model\UserCapabilityWithSync
+     * @return \OpenAPI\Client\Model\UserCapabilityWithSync
      */
     public function getWalletables()
     {
@@ -2120,7 +2120,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets walletables
      *
-     * @param \Freee\Accounting\Model\UserCapabilityWithSync $walletables walletables
+     * @param \OpenAPI\Client\Model\UserCapabilityWithSync $walletables walletables
      *
      * @return self
      */
@@ -2134,7 +2134,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets workflows
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getWorkflows()
     {
@@ -2144,7 +2144,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets workflows
      *
-     * @param \Freee\Accounting\Model\UserCapability $workflows workflows
+     * @param \OpenAPI\Client\Model\UserCapability $workflows workflows
      *
      * @return self
      */
@@ -2158,7 +2158,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets year_end
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \OpenAPI\Client\Model\UserCapability
      */
     public function getYearEnd()
     {
@@ -2168,7 +2168,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets year_end
      *
-     * @param \Freee\Accounting\Model\UserCapability $year_end year_end
+     * @param \OpenAPI\Client\Model\UserCapability $year_end year_end
      *
      * @return self
      */

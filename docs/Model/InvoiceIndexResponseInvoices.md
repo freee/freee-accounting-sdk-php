@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **description** | **string** | 概要 | [optional]
 **due_date** | **string** | 期日 (yyyy-mm-dd) | [optional]
 **id** | **int** | 請求書ID |
-**invoice_contents** | [**\Freee\Accounting\Model\InvoiceIndexResponseInvoiceContents[]**](InvoiceIndexResponseInvoiceContents.md) | 請求内容 | [optional]
+**invoice_contents** | [**\OpenAPI\Client\Model\InvoiceIndexResponseInvoiceContents[]**](InvoiceIndexResponseInvoiceContents.md) | 請求内容 | [optional]
 **invoice_layout** | **string** | 請求書レイアウト * &#x60;default_classic&#x60; - レイアウト１/クラシック (デフォルト)  * &#x60;standard_classic&#x60; - レイアウト２/クラシック  * &#x60;envelope_classic&#x60; - 封筒１/クラシック  * &#x60;carried_forward_standard_classic&#x60; - レイアウト３（繰越金額欄あり）/クラシック  * &#x60;carried_forward_envelope_classic&#x60; - 封筒２（繰越金額欄あり）/クラシック  * &#x60;default_modern&#x60; - レイアウト１/モダン  * &#x60;standard_modern&#x60; - レイアウト２/モダン  * &#x60;envelope_modern&#x60; - 封筒/モダン |
 **invoice_number** | **string** | 請求書番号 |
 **invoice_status** | **string** | 請求書ステータス  (draft: 下書き, applying: 申請中, remanded: 差し戻し, rejected: 却下, approved: 承認済み, submitted: 送付済み, unsubmitted: 請求書の承認フローが無効の場合のみ、unsubmitted（送付待ち）の値をとります) |
@@ -45,7 +45,7 @@ Name | Type | Description | Notes
 **tax_entry_method** | **string** | 請求書の消費税計算方法(inclusive: 内税, exclusive: 外税) |
 **title** | **string** | タイトル | [optional]
 **total_amount** | **int** | 合計金額 |
-**total_amount_per_vat_rate** | [**\Freee\Accounting\Model\InvoiceIndexResponseTotalAmountPerVatRate**](InvoiceIndexResponseTotalAmountPerVatRate.md) |  |
+**total_amount_per_vat_rate** | [**\OpenAPI\Client\Model\InvoiceIndexResponseTotalAmountPerVatRate**](InvoiceIndexResponseTotalAmountPerVatRate.md) |  |
 **total_vat** | **int** | 合計金額 | [optional]
 **web_confirmed_at** | **string** | Web共有取引先確認日時(最新) | [optional]
 **web_downloaded_at** | **string** | Web共有ダウンロード日時(最新) | [optional]

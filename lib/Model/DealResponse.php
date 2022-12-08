@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * DealResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class DealResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'deal' => '\Freee\Accounting\Model\Deal'
+        'deal' => '\OpenAPI\Client\Model\Deal'
     ];
 
     /**
@@ -211,7 +211,7 @@ class DealResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets deal
      *
-     * @return \Freee\Accounting\Model\Deal
+     * @return \OpenAPI\Client\Model\Deal
      */
     public function getDeal()
     {
@@ -221,7 +221,7 @@ class DealResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets deal
      *
-     * @param \Freee\Accounting\Model\Deal $deal deal
+     * @param \OpenAPI\Client\Model\Deal $deal deal
      *
      * @return self
      */

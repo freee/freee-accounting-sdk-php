@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * JournalsResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class JournalsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'journals' => '\Freee\Accounting\Model\JournalsResponseJournals'
+        'journals' => '\OpenAPI\Client\Model\JournalsResponseJournals'
     ];
 
     /**
@@ -211,7 +211,7 @@ class JournalsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets journals
      *
-     * @return \Freee\Accounting\Model\JournalsResponseJournals
+     * @return \OpenAPI\Client\Model\JournalsResponseJournals
      */
     public function getJournals()
     {
@@ -221,7 +221,7 @@ class JournalsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets journals
      *
-     * @param \Freee\Accounting\Model\JournalsResponseJournals $journals journals
+     * @param \OpenAPI\Client\Model\JournalsResponseJournals $journals journals
      *
      * @return self
      */

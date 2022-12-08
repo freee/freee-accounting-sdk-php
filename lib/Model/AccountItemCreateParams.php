@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * AccountItemCreateParams Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class AccountItemCreateParams implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'account_item' => '\Freee\Accounting\Model\AccountItemCreateParamsAccountItem',
+        'account_item' => '\OpenAPI\Client\Model\AccountItemCreateParamsAccountItem',
         'company_id' => 'int'
     ];
 
@@ -228,7 +228,7 @@ class AccountItemCreateParams implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets account_item
      *
-     * @return \Freee\Accounting\Model\AccountItemCreateParamsAccountItem
+     * @return \OpenAPI\Client\Model\AccountItemCreateParamsAccountItem
      */
     public function getAccountItem()
     {
@@ -238,7 +238,7 @@ class AccountItemCreateParams implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets account_item
      *
-     * @param \Freee\Accounting\Model\AccountItemCreateParamsAccountItem $account_item account_item
+     * @param \OpenAPI\Client\Model\AccountItemCreateParamsAccountItem $account_item account_item
      *
      * @return self
      */

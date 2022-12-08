@@ -1,4 +1,4 @@
-# Freee\Accounting\PartnersApi
+# OpenAPI\Client\PartnersApi
 
 All URIs are relative to https://api.freee.co.jp.
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 ## `createPartner()`
 
 ```php
-createPartner($partner_create_params): \Freee\Accounting\Model\PartnerResponse
+createPartner($partner_create_params): \OpenAPI\Client\Model\PartnerResponse
 ```
 
 取引先の作成
@@ -28,16 +28,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\PartnersApi(
+$apiInstance = new OpenAPI\Client\Api\PartnersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$partner_create_params = new \Freee\Accounting\Model\PartnerCreateParams(); // \Freee\Accounting\Model\PartnerCreateParams | 取引先の作成
+$partner_create_params = new \OpenAPI\Client\Model\PartnerCreateParams(); // \OpenAPI\Client\Model\PartnerCreateParams | 取引先の作成
 
 try {
     $result = $apiInstance->createPartner($partner_create_params);
@@ -51,11 +51,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **partner_create_params** | [**\Freee\Accounting\Model\PartnerCreateParams**](../Model/PartnerCreateParams.md)| 取引先の作成 |
+ **partner_create_params** | [**\OpenAPI\Client\Model\PartnerCreateParams**](../Model/PartnerCreateParams.md)| 取引先の作成 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\PartnerResponse**](../Model/PartnerResponse.md)
+[**\OpenAPI\Client\Model\PartnerResponse**](../Model/PartnerResponse.md)
 
 ### Authorization
 
@@ -86,10 +86,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\PartnersApi(
+$apiInstance = new OpenAPI\Client\Api\PartnersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -132,7 +132,7 @@ void (empty response body)
 ## `getPartner()`
 
 ```php
-getPartner($id, $company_id): \Freee\Accounting\Model\PartnerResponse
+getPartner($id, $company_id): \OpenAPI\Client\Model\PartnerResponse
 ```
 
 取引先の取得
@@ -145,10 +145,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\PartnersApi(
+$apiInstance = new OpenAPI\Client\Api\PartnersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\PartnerResponse**](../Model/PartnerResponse.md)
+[**\OpenAPI\Client\Model\PartnerResponse**](../Model/PartnerResponse.md)
 
 ### Authorization
 
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 ## `getPartners()`
 
 ```php
-getPartners($company_id, $start_update_date, $end_update_date, $offset, $limit, $keyword): \Freee\Accounting\Model\PartnersResponse
+getPartners($company_id, $start_update_date, $end_update_date, $offset, $limit, $keyword): \OpenAPI\Client\Model\PartnersResponse
 ```
 
 取引先一覧の取得
@@ -205,10 +205,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\PartnersApi(
+$apiInstance = new OpenAPI\Client\Api\PartnersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\PartnersResponse**](../Model/PartnersResponse.md)
+[**\OpenAPI\Client\Model\PartnersResponse**](../Model/PartnersResponse.md)
 
 ### Authorization
 
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 ## `updatePartner()`
 
 ```php
-updatePartner($id, $partner_update_params): \Freee\Accounting\Model\PartnerResponse
+updatePartner($id, $partner_update_params): \OpenAPI\Client\Model\PartnerResponse
 ```
 
 取引先の更新
@@ -273,17 +273,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\PartnersApi(
+$apiInstance = new OpenAPI\Client\Api\PartnersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | 取引先ID
-$partner_update_params = new \Freee\Accounting\Model\PartnerUpdateParams(); // \Freee\Accounting\Model\PartnerUpdateParams | 取引先の更新
+$partner_update_params = new \OpenAPI\Client\Model\PartnerUpdateParams(); // \OpenAPI\Client\Model\PartnerUpdateParams | 取引先の更新
 
 try {
     $result = $apiInstance->updatePartner($id, $partner_update_params);
@@ -298,11 +298,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 取引先ID |
- **partner_update_params** | [**\Freee\Accounting\Model\PartnerUpdateParams**](../Model/PartnerUpdateParams.md)| 取引先の更新 |
+ **partner_update_params** | [**\OpenAPI\Client\Model\PartnerUpdateParams**](../Model/PartnerUpdateParams.md)| 取引先の更新 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\PartnerResponse**](../Model/PartnerResponse.md)
+[**\OpenAPI\Client\Model\PartnerResponse**](../Model/PartnerResponse.md)
 
 ### Authorization
 
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 ## `updatePartnerByCode()`
 
 ```php
-updatePartnerByCode($code, $partner_update_params): \Freee\Accounting\Model\PartnerResponse
+updatePartnerByCode($code, $partner_update_params): \OpenAPI\Client\Model\PartnerResponse
 ```
 
 取引先の更新
@@ -333,17 +333,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\PartnersApi(
+$apiInstance = new OpenAPI\Client\Api\PartnersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $code = 'code_example'; // string | 取引先コード
-$partner_update_params = new \Freee\Accounting\Model\PartnerUpdateParams(); // \Freee\Accounting\Model\PartnerUpdateParams | 取引先の更新
+$partner_update_params = new \OpenAPI\Client\Model\PartnerUpdateParams(); // \OpenAPI\Client\Model\PartnerUpdateParams | 取引先の更新
 
 try {
     $result = $apiInstance->updatePartnerByCode($code, $partner_update_params);
@@ -358,11 +358,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **code** | **string**| 取引先コード |
- **partner_update_params** | [**\Freee\Accounting\Model\PartnerUpdateParams**](../Model/PartnerUpdateParams.md)| 取引先の更新 |
+ **partner_update_params** | [**\OpenAPI\Client\Model\PartnerUpdateParams**](../Model/PartnerUpdateParams.md)| 取引先の更新 |
 
 ### Return type
 
-[**\Freee\Accounting\Model\PartnerResponse**](../Model/PartnerResponse.md)
+[**\OpenAPI\Client\Model\PartnerResponse**](../Model/PartnerResponse.md)
 
 ### Authorization
 

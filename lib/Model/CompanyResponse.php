@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * CompanyResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class CompanyResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'company' => '\Freee\Accounting\Model\CompanyResponseCompany'
+        'company' => '\OpenAPI\Client\Model\CompanyResponseCompany'
     ];
 
     /**
@@ -211,7 +211,7 @@ class CompanyResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets company
      *
-     * @return \Freee\Accounting\Model\CompanyResponseCompany
+     * @return \OpenAPI\Client\Model\CompanyResponseCompany
      */
     public function getCompany()
     {
@@ -221,7 +221,7 @@ class CompanyResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets company
      *
-     * @param \Freee\Accounting\Model\CompanyResponseCompany $company company
+     * @param \OpenAPI\Client\Model\CompanyResponseCompany $company company
      *
      * @return self
      */

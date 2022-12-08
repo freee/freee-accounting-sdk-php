@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * InvoiceResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class InvoiceResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'invoice' => '\Freee\Accounting\Model\InvoiceResponseInvoice'
+        'invoice' => '\OpenAPI\Client\Model\InvoiceResponseInvoice'
     ];
 
     /**
@@ -211,7 +211,7 @@ class InvoiceResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets invoice
      *
-     * @return \Freee\Accounting\Model\InvoiceResponseInvoice
+     * @return \OpenAPI\Client\Model\InvoiceResponseInvoice
      */
     public function getInvoice()
     {
@@ -221,7 +221,7 @@ class InvoiceResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets invoice
      *
-     * @param \Freee\Accounting\Model\InvoiceResponseInvoice $invoice invoice
+     * @param \OpenAPI\Client\Model\InvoiceResponseInvoice $invoice invoice
      *
      * @return self
      */

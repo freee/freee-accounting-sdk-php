@@ -1,4 +1,4 @@
-# Freee\Accounting\BanksApi
+# OpenAPI\Client\BanksApi
 
 All URIs are relative to https://api.freee.co.jp.
 
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 ## `getBank()`
 
 ```php
-getBank($id): \Freee\Accounting\Model\BankResponse
+getBank($id): \OpenAPI\Client\Model\BankResponse
 ```
 
 連携サービスの取得
@@ -24,10 +24,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\BanksApi(
+$apiInstance = new OpenAPI\Client\Api\BanksApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\BankResponse**](../Model/BankResponse.md)
+[**\OpenAPI\Client\Model\BankResponse**](../Model/BankResponse.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 ## `getBanks()`
 
 ```php
-getBanks($offset, $limit, $type): \Freee\Accounting\Model\InlineResponse200
+getBanks($offset, $limit, $type): \OpenAPI\Client\Model\InlineResponse200
 ```
 
 連携サービス一覧の取得
@@ -82,10 +82,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\BanksApi(
+$apiInstance = new OpenAPI\Client\Api\BanksApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse200**](../Model/InlineResponse200.md)
+[**\OpenAPI\Client\Model\InlineResponse200**](../Model/InlineResponse200.md)
 
 ### Authorization
 

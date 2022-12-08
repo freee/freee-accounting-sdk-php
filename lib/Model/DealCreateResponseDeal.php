@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * DealCreateResponseDeal Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -61,15 +61,15 @@ class DealCreateResponseDeal implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPITypes = [
         'amount' => 'int',
         'company_id' => 'int',
-        'details' => '\Freee\Accounting\Model\DealDetails[]',
+        'details' => '\OpenAPI\Client\Model\DealDetails[]',
         'due_amount' => 'int',
         'due_date' => 'string',
         'id' => 'int',
         'issue_date' => 'string',
         'partner_code' => 'string',
         'partner_id' => 'int',
-        'payments' => '\Freee\Accounting\Model\DealPayments[]',
-        'receipts' => '\Freee\Accounting\Model\DealCreateResponseDealReceipts[]',
+        'payments' => '\OpenAPI\Client\Model\DealPayments[]',
+        'receipts' => '\OpenAPI\Client\Model\DealCreateResponseDealReceipts[]',
         'ref_number' => 'string',
         'status' => 'string',
         'type' => 'string'
@@ -448,7 +448,7 @@ class DealCreateResponseDeal implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets details
      *
-     * @return \Freee\Accounting\Model\DealDetails[]|null
+     * @return \OpenAPI\Client\Model\DealDetails[]|null
      */
     public function getDetails()
     {
@@ -458,7 +458,7 @@ class DealCreateResponseDeal implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets details
      *
-     * @param \Freee\Accounting\Model\DealDetails[]|null $details 取引の明細行
+     * @param \OpenAPI\Client\Model\DealDetails[]|null $details 取引の明細行
      *
      * @return self
      */
@@ -632,7 +632,7 @@ class DealCreateResponseDeal implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets payments
      *
-     * @return \Freee\Accounting\Model\DealPayments[]|null
+     * @return \OpenAPI\Client\Model\DealPayments[]|null
      */
     public function getPayments()
     {
@@ -642,7 +642,7 @@ class DealCreateResponseDeal implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets payments
      *
-     * @param \Freee\Accounting\Model\DealPayments[]|null $payments 取引の支払行
+     * @param \OpenAPI\Client\Model\DealPayments[]|null $payments 取引の支払行
      *
      * @return self
      */
@@ -656,7 +656,7 @@ class DealCreateResponseDeal implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets receipts
      *
-     * @return \Freee\Accounting\Model\DealCreateResponseDealReceipts[]|null
+     * @return \OpenAPI\Client\Model\DealCreateResponseDealReceipts[]|null
      */
     public function getReceipts()
     {
@@ -666,7 +666,7 @@ class DealCreateResponseDeal implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets receipts
      *
-     * @param \Freee\Accounting\Model\DealCreateResponseDealReceipts[]|null $receipts 証憑ファイル（ファイルボックスのファイル）
+     * @param \OpenAPI\Client\Model\DealCreateResponseDealReceipts[]|null $receipts 証憑ファイル（ファイルボックスのファイル）
      *
      * @return self
      */

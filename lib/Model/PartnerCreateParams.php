@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * PartnerCreateParams Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,22 +59,22 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'address_attributes' => '\Freee\Accounting\Model\PartnerCreateParamsAddressAttributes',
+        'address_attributes' => '\OpenAPI\Client\Model\PartnerCreateParamsAddressAttributes',
         'code' => 'string',
         'company_id' => 'int',
         'contact_name' => 'string',
         'country_code' => 'string',
         'default_title' => 'string',
         'email' => 'string',
-        'invoice_payment_term_attributes' => '\Freee\Accounting\Model\PartnerCreateParamsInvoicePaymentTermAttributes',
+        'invoice_payment_term_attributes' => '\OpenAPI\Client\Model\PartnerCreateParamsInvoicePaymentTermAttributes',
         'long_name' => 'string',
         'name' => 'string',
         'name_kana' => 'string',
         'org_code' => 'int',
-        'partner_bank_account_attributes' => '\Freee\Accounting\Model\PartnerCreateParamsPartnerBankAccountAttributes',
-        'partner_doc_setting_attributes' => '\Freee\Accounting\Model\PartnerCreateParamsPartnerDocSettingAttributes',
+        'partner_bank_account_attributes' => '\OpenAPI\Client\Model\PartnerCreateParamsPartnerBankAccountAttributes',
+        'partner_doc_setting_attributes' => '\OpenAPI\Client\Model\PartnerCreateParamsPartnerDocSettingAttributes',
         'payer_walletable_id' => 'int',
-        'payment_term_attributes' => '\Freee\Accounting\Model\PartnerCreateParamsPaymentTermAttributes',
+        'payment_term_attributes' => '\OpenAPI\Client\Model\PartnerCreateParamsPaymentTermAttributes',
         'phone' => 'string',
         'shortcut1' => 'string',
         'shortcut2' => 'string',
@@ -444,7 +444,7 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets address_attributes
      *
-     * @return \Freee\Accounting\Model\PartnerCreateParamsAddressAttributes|null
+     * @return \OpenAPI\Client\Model\PartnerCreateParamsAddressAttributes|null
      */
     public function getAddressAttributes()
     {
@@ -454,7 +454,7 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets address_attributes
      *
-     * @param \Freee\Accounting\Model\PartnerCreateParamsAddressAttributes|null $address_attributes address_attributes
+     * @param \OpenAPI\Client\Model\PartnerCreateParamsAddressAttributes|null $address_attributes address_attributes
      *
      * @return self
      */
@@ -638,7 +638,7 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets invoice_payment_term_attributes
      *
-     * @return \Freee\Accounting\Model\PartnerCreateParamsInvoicePaymentTermAttributes|null
+     * @return \OpenAPI\Client\Model\PartnerCreateParamsInvoicePaymentTermAttributes|null
      */
     public function getInvoicePaymentTermAttributes()
     {
@@ -648,7 +648,7 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets invoice_payment_term_attributes
      *
-     * @param \Freee\Accounting\Model\PartnerCreateParamsInvoicePaymentTermAttributes|null $invoice_payment_term_attributes invoice_payment_term_attributes
+     * @param \OpenAPI\Client\Model\PartnerCreateParamsInvoicePaymentTermAttributes|null $invoice_payment_term_attributes invoice_payment_term_attributes
      *
      * @return self
      */
@@ -780,7 +780,7 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets partner_bank_account_attributes
      *
-     * @return \Freee\Accounting\Model\PartnerCreateParamsPartnerBankAccountAttributes|null
+     * @return \OpenAPI\Client\Model\PartnerCreateParamsPartnerBankAccountAttributes|null
      */
     public function getPartnerBankAccountAttributes()
     {
@@ -790,7 +790,7 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets partner_bank_account_attributes
      *
-     * @param \Freee\Accounting\Model\PartnerCreateParamsPartnerBankAccountAttributes|null $partner_bank_account_attributes partner_bank_account_attributes
+     * @param \OpenAPI\Client\Model\PartnerCreateParamsPartnerBankAccountAttributes|null $partner_bank_account_attributes partner_bank_account_attributes
      *
      * @return self
      */
@@ -804,7 +804,7 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets partner_doc_setting_attributes
      *
-     * @return \Freee\Accounting\Model\PartnerCreateParamsPartnerDocSettingAttributes|null
+     * @return \OpenAPI\Client\Model\PartnerCreateParamsPartnerDocSettingAttributes|null
      */
     public function getPartnerDocSettingAttributes()
     {
@@ -814,7 +814,7 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets partner_doc_setting_attributes
      *
-     * @param \Freee\Accounting\Model\PartnerCreateParamsPartnerDocSettingAttributes|null $partner_doc_setting_attributes partner_doc_setting_attributes
+     * @param \OpenAPI\Client\Model\PartnerCreateParamsPartnerDocSettingAttributes|null $partner_doc_setting_attributes partner_doc_setting_attributes
      *
      * @return self
      */
@@ -860,7 +860,7 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets payment_term_attributes
      *
-     * @return \Freee\Accounting\Model\PartnerCreateParamsPaymentTermAttributes|null
+     * @return \OpenAPI\Client\Model\PartnerCreateParamsPaymentTermAttributes|null
      */
     public function getPaymentTermAttributes()
     {
@@ -870,7 +870,7 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets payment_term_attributes
      *
-     * @param \Freee\Accounting\Model\PartnerCreateParamsPaymentTermAttributes|null $payment_term_attributes payment_term_attributes
+     * @param \OpenAPI\Client\Model\PartnerCreateParamsPaymentTermAttributes|null $payment_term_attributes payment_term_attributes
      *
      * @return self
      */

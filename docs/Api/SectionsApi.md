@@ -1,4 +1,4 @@
-# Freee\Accounting\SectionsApi
+# OpenAPI\Client\SectionsApi
 
 All URIs are relative to https://api.freee.co.jp.
 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 ## `createSection()`
 
 ```php
-createSection($section_params): \Freee\Accounting\Model\SectionResponse
+createSection($section_params): \OpenAPI\Client\Model\SectionResponse
 ```
 
 部門の作成
@@ -27,16 +27,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\SectionsApi(
+$apiInstance = new OpenAPI\Client\Api\SectionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$section_params = new \Freee\Accounting\Model\SectionParams(); // \Freee\Accounting\Model\SectionParams | 部門の作成
+$section_params = new \OpenAPI\Client\Model\SectionParams(); // \OpenAPI\Client\Model\SectionParams | 部門の作成
 
 try {
     $result = $apiInstance->createSection($section_params);
@@ -50,11 +50,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **section_params** | [**\Freee\Accounting\Model\SectionParams**](../Model/SectionParams.md)| 部門の作成 | [optional]
+ **section_params** | [**\OpenAPI\Client\Model\SectionParams**](../Model/SectionParams.md)| 部門の作成 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\SectionResponse**](../Model/SectionResponse.md)
+[**\OpenAPI\Client\Model\SectionResponse**](../Model/SectionResponse.md)
 
 ### Authorization
 
@@ -85,10 +85,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\SectionsApi(
+$apiInstance = new OpenAPI\Client\Api\SectionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -131,7 +131,7 @@ void (empty response body)
 ## `getSection()`
 
 ```php
-getSection($id, $company_id): \Freee\Accounting\Model\SectionResponse
+getSection($id, $company_id): \OpenAPI\Client\Model\SectionResponse
 ```
 
 
@@ -144,10 +144,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\SectionsApi(
+$apiInstance = new OpenAPI\Client\Api\SectionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\SectionResponse**](../Model/SectionResponse.md)
+[**\OpenAPI\Client\Model\SectionResponse**](../Model/SectionResponse.md)
 
 ### Authorization
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 ## `getSections()`
 
 ```php
-getSections($company_id): \Freee\Accounting\Model\InlineResponse2006
+getSections($company_id): \OpenAPI\Client\Model\InlineResponse2006
 ```
 
 部門一覧の取得
@@ -204,10 +204,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\SectionsApi(
+$apiInstance = new OpenAPI\Client\Api\SectionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
+[**\OpenAPI\Client\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
 
 ### Authorization
 
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 ## `updateSection()`
 
 ```php
-updateSection($id, $section_params): \Freee\Accounting\Model\SectionResponse
+updateSection($id, $section_params): \OpenAPI\Client\Model\SectionResponse
 ```
 
 部門の更新
@@ -262,17 +262,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\SectionsApi(
+$apiInstance = new OpenAPI\Client\Api\SectionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int
-$section_params = new \Freee\Accounting\Model\SectionParams(); // \Freee\Accounting\Model\SectionParams | 部門の更新
+$section_params = new \OpenAPI\Client\Model\SectionParams(); // \OpenAPI\Client\Model\SectionParams | 部門の更新
 
 try {
     $result = $apiInstance->updateSection($id, $section_params);
@@ -287,11 +287,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **section_params** | [**\Freee\Accounting\Model\SectionParams**](../Model/SectionParams.md)| 部門の更新 | [optional]
+ **section_params** | [**\OpenAPI\Client\Model\SectionParams**](../Model/SectionParams.md)| 部門の更新 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\SectionResponse**](../Model/SectionResponse.md)
+[**\OpenAPI\Client\Model\SectionResponse**](../Model/SectionResponse.md)
 
 ### Authorization
 

@@ -1,4 +1,4 @@
-# Freee\Accounting\ManualJournalsApi
+# OpenAPI\Client\ManualJournalsApi
 
 All URIs are relative to https://api.freee.co.jp.
 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 ## `createManualJournal()`
 
 ```php
-createManualJournal($manual_journal_create_params): \Freee\Accounting\Model\ManualJournalResponse
+createManualJournal($manual_journal_create_params): \OpenAPI\Client\Model\ManualJournalResponse
 ```
 
 振替伝票の作成
@@ -27,16 +27,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ManualJournalsApi(
+$apiInstance = new OpenAPI\Client\Api\ManualJournalsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$manual_journal_create_params = new \Freee\Accounting\Model\ManualJournalCreateParams(); // \Freee\Accounting\Model\ManualJournalCreateParams | 振替伝票の作成
+$manual_journal_create_params = new \OpenAPI\Client\Model\ManualJournalCreateParams(); // \OpenAPI\Client\Model\ManualJournalCreateParams | 振替伝票の作成
 
 try {
     $result = $apiInstance->createManualJournal($manual_journal_create_params);
@@ -50,11 +50,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **manual_journal_create_params** | [**\Freee\Accounting\Model\ManualJournalCreateParams**](../Model/ManualJournalCreateParams.md)| 振替伝票の作成 | [optional]
+ **manual_journal_create_params** | [**\OpenAPI\Client\Model\ManualJournalCreateParams**](../Model/ManualJournalCreateParams.md)| 振替伝票の作成 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\ManualJournalResponse**](../Model/ManualJournalResponse.md)
+[**\OpenAPI\Client\Model\ManualJournalResponse**](../Model/ManualJournalResponse.md)
 
 ### Authorization
 
@@ -85,10 +85,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ManualJournalsApi(
+$apiInstance = new OpenAPI\Client\Api\ManualJournalsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -131,7 +131,7 @@ void (empty response body)
 ## `getManualJournal()`
 
 ```php
-getManualJournal($company_id, $id): \Freee\Accounting\Model\ManualJournalResponse
+getManualJournal($company_id, $id): \OpenAPI\Client\Model\ManualJournalResponse
 ```
 
 振替伝票の取得
@@ -144,10 +144,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ManualJournalsApi(
+$apiInstance = new OpenAPI\Client\Api\ManualJournalsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\ManualJournalResponse**](../Model/ManualJournalResponse.md)
+[**\OpenAPI\Client\Model\ManualJournalResponse**](../Model/ManualJournalResponse.md)
 
 ### Authorization
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 ## `getManualJournals()`
 
 ```php
-getManualJournals($company_id, $start_issue_date, $end_issue_date, $entry_side, $account_item_id, $min_amount, $max_amount, $partner_id, $partner_code, $item_id, $section_id, $segment_1_tag_id, $segment_2_tag_id, $segment_3_tag_id, $comment_status, $comment_important, $adjustment, $txn_number, $offset, $limit): \Freee\Accounting\Model\InlineResponse2004
+getManualJournals($company_id, $start_issue_date, $end_issue_date, $entry_side, $account_item_id, $min_amount, $max_amount, $partner_id, $partner_code, $item_id, $section_id, $segment_1_tag_id, $segment_2_tag_id, $segment_3_tag_id, $comment_status, $comment_important, $adjustment, $txn_number, $offset, $limit): \OpenAPI\Client\Model\InlineResponse2004
 ```
 
 振替伝票一覧の取得
@@ -204,10 +204,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ManualJournalsApi(
+$apiInstance = new OpenAPI\Client\Api\ManualJournalsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
+[**\OpenAPI\Client\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
 
 ### Authorization
 
@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 ## `updateManualJournal()`
 
 ```php
-updateManualJournal($id, $manual_journal_update_params): \Freee\Accounting\Model\ManualJournalResponse
+updateManualJournal($id, $manual_journal_update_params): \OpenAPI\Client\Model\ManualJournalResponse
 ```
 
 振替伝票の更新
@@ -300,17 +300,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ManualJournalsApi(
+$apiInstance = new OpenAPI\Client\Api\ManualJournalsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int
-$manual_journal_update_params = new \Freee\Accounting\Model\ManualJournalUpdateParams(); // \Freee\Accounting\Model\ManualJournalUpdateParams | 振替伝票の更新
+$manual_journal_update_params = new \OpenAPI\Client\Model\ManualJournalUpdateParams(); // \OpenAPI\Client\Model\ManualJournalUpdateParams | 振替伝票の更新
 
 try {
     $result = $apiInstance->updateManualJournal($id, $manual_journal_update_params);
@@ -325,11 +325,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **manual_journal_update_params** | [**\Freee\Accounting\Model\ManualJournalUpdateParams**](../Model/ManualJournalUpdateParams.md)| 振替伝票の更新 | [optional]
+ **manual_journal_update_params** | [**\OpenAPI\Client\Model\ManualJournalUpdateParams**](../Model/ManualJournalUpdateParams.md)| 振替伝票の更新 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\ManualJournalResponse**](../Model/ManualJournalResponse.md)
+[**\OpenAPI\Client\Model\ManualJournalResponse**](../Model/ManualJournalResponse.md)
 
 ### Authorization
 

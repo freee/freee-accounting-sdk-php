@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * TagResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class TagResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tag' => '\Freee\Accounting\Model\Tag'
+        'tag' => '\OpenAPI\Client\Model\Tag'
     ];
 
     /**
@@ -211,7 +211,7 @@ class TagResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets tag
      *
-     * @return \Freee\Accounting\Model\Tag
+     * @return \OpenAPI\Client\Model\Tag
      */
     public function getTag()
     {
@@ -221,7 +221,7 @@ class TagResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tag
      *
-     * @param \Freee\Accounting\Model\Tag $tag tag
+     * @param \OpenAPI\Client\Model\Tag $tag tag
      *
      * @return self
      */

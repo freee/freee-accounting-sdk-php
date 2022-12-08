@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * MeResponseUser Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class MeResponseUser implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'companies' => '\Freee\Accounting\Model\MeResponseUserCompanies[]',
+        'companies' => '\OpenAPI\Client\Model\MeResponseUserCompanies[]',
         'display_name' => 'string',
         'email' => 'string',
         'first_name' => 'string',
@@ -264,7 +264,7 @@ class MeResponseUser implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets companies
      *
-     * @return \Freee\Accounting\Model\MeResponseUserCompanies[]|null
+     * @return \OpenAPI\Client\Model\MeResponseUserCompanies[]|null
      */
     public function getCompanies()
     {
@@ -274,7 +274,7 @@ class MeResponseUser implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets companies
      *
-     * @param \Freee\Accounting\Model\MeResponseUserCompanies[]|null $companies companies
+     * @param \OpenAPI\Client\Model\MeResponseUserCompanies[]|null $companies companies
      *
      * @return self
      */

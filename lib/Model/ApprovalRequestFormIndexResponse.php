@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * ApprovalRequestFormIndexResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class ApprovalRequestFormIndexResponse implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'approval_request_forms' => '\Freee\Accounting\Model\ApprovalRequestFormIndexResponseApprovalRequestForms[]'
+        'approval_request_forms' => '\OpenAPI\Client\Model\ApprovalRequestFormIndexResponseApprovalRequestForms[]'
     ];
 
     /**
@@ -211,7 +211,7 @@ class ApprovalRequestFormIndexResponse implements ModelInterface, ArrayAccess, \
     /**
      * Gets approval_request_forms
      *
-     * @return \Freee\Accounting\Model\ApprovalRequestFormIndexResponseApprovalRequestForms[]
+     * @return \OpenAPI\Client\Model\ApprovalRequestFormIndexResponseApprovalRequestForms[]
      */
     public function getApprovalRequestForms()
     {
@@ -221,7 +221,7 @@ class ApprovalRequestFormIndexResponse implements ModelInterface, ArrayAccess, \
     /**
      * Sets approval_request_forms
      *
-     * @param \Freee\Accounting\Model\ApprovalRequestFormIndexResponseApprovalRequestForms[] $approval_request_forms approval_request_forms
+     * @param \OpenAPI\Client\Model\ApprovalRequestFormIndexResponseApprovalRequestForms[] $approval_request_forms approval_request_forms
      *
      * @return self
      */

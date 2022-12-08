@@ -16,9 +16,9 @@ Name | Type | Description | Notes
 **corresponding_income_name** | **string** | 収入取引相手勘定科目名 | [optional]
 **group_name** | **string** | 決算書表示名（小カテゴリー） | [optional]
 **id** | **int** | 勘定科目ID |
-**items** | [**\Freee\Accounting\Model\AccountItemResponseAccountItemItems[]**](AccountItemResponseAccountItemItems.md) |  | [optional]
+**items** | [**\OpenAPI\Client\Model\AccountItemResponseAccountItemItems[]**](AccountItemResponseAccountItemItems.md) |  | [optional]
 **name** | **string** | 勘定科目名 (30文字以内) |
-**partners** | [**\Freee\Accounting\Model\AccountItemResponseAccountItemPartners[]**](AccountItemResponseAccountItemPartners.md) |  | [optional]
+**partners** | [**\OpenAPI\Client\Model\AccountItemResponseAccountItemPartners[]**](AccountItemResponseAccountItemPartners.md) |  | [optional]
 **searchable** | **int** | 検索可能:2, 検索不可：3 |
 **shortcut** | **string** | ショートカット1 (20文字以内) | [optional]
 **shortcut_num** | **string** | ショートカット2(勘定科目コード) (20文字以内) | [optional]

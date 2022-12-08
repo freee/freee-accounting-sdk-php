@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * ApprovalRequestFormResponseApprovalRequestForm Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -65,7 +65,7 @@ class ApprovalRequestFormResponseApprovalRequestForm implements ModelInterface, 
         'form_order' => 'int',
         'id' => 'int',
         'name' => 'string',
-        'parts' => '\Freee\Accounting\Model\ApprovalRequestFormResponseApprovalRequestFormParts[]',
+        'parts' => '\OpenAPI\Client\Model\ApprovalRequestFormResponseApprovalRequestFormParts[]',
         'route_setting_count' => 'int',
         'status' => 'string'
     ];
@@ -504,7 +504,7 @@ class ApprovalRequestFormResponseApprovalRequestForm implements ModelInterface, 
     /**
      * Gets parts
      *
-     * @return \Freee\Accounting\Model\ApprovalRequestFormResponseApprovalRequestFormParts[]|null
+     * @return \OpenAPI\Client\Model\ApprovalRequestFormResponseApprovalRequestFormParts[]|null
      */
     public function getParts()
     {
@@ -514,7 +514,7 @@ class ApprovalRequestFormResponseApprovalRequestForm implements ModelInterface, 
     /**
      * Sets parts
      *
-     * @param \Freee\Accounting\Model\ApprovalRequestFormResponseApprovalRequestFormParts[]|null $parts 申請フォームの項目
+     * @param \OpenAPI\Client\Model\ApprovalRequestFormResponseApprovalRequestFormParts[]|null $parts 申請フォームの項目
      *
      * @return self
      */

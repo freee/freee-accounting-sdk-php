@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **closing_balance** | **int** | 期末残高 | [optional]
 **hierarchy_level** | **int** | 階層レベル | [optional]
 **parent_account_category_name** | **string** | 上位勘定科目カテゴリー名(勘定科目カテゴリーの時のみ、上層が存在する場合含まれる) | [optional]
-**segment_1_tags** | [**\Freee\Accounting\Model\TrialCrSegment1TagsResponseTrialCrSegment1TagsSegment1Tags[]**](TrialCrSegment1TagsResponseTrialCrSegment1TagsSegment1Tags.md) | セグメント1タグ | [optional]
+**segment_1_tags** | [**\OpenAPI\Client\Model\TrialCrSegment1TagsResponseTrialCrSegment1TagsSegment1Tags[]**](TrialCrSegment1TagsResponseTrialCrSegment1TagsSegment1Tags.md) | セグメント1タグ | [optional]
 **total_line** | **bool** | 合計行(勘定科目カテゴリーの時のみ含まれる) | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

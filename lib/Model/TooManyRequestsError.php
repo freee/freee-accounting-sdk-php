@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * TooManyRequestsError Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class TooManyRequestsError implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'meta' => '\Freee\Accounting\Model\TooManyRequestsErrorMeta',
+        'meta' => '\OpenAPI\Client\Model\TooManyRequestsErrorMeta',
         'status_code' => 'int'
     ];
 
@@ -220,7 +220,7 @@ class TooManyRequestsError implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets meta
      *
-     * @return \Freee\Accounting\Model\TooManyRequestsErrorMeta
+     * @return \OpenAPI\Client\Model\TooManyRequestsErrorMeta
      */
     public function getMeta()
     {
@@ -230,7 +230,7 @@ class TooManyRequestsError implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets meta
      *
-     * @param \Freee\Accounting\Model\TooManyRequestsErrorMeta $meta meta
+     * @param \OpenAPI\Client\Model\TooManyRequestsErrorMeta $meta meta
      *
      * @return self
      */

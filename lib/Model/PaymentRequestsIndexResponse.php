@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * PaymentRequestsIndexResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class PaymentRequestsIndexResponse implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payment_requests' => '\Freee\Accounting\Model\PaymentRequestsIndexResponsePaymentRequests[]'
+        'payment_requests' => '\OpenAPI\Client\Model\PaymentRequestsIndexResponsePaymentRequests[]'
     ];
 
     /**
@@ -211,7 +211,7 @@ class PaymentRequestsIndexResponse implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets payment_requests
      *
-     * @return \Freee\Accounting\Model\PaymentRequestsIndexResponsePaymentRequests[]
+     * @return \OpenAPI\Client\Model\PaymentRequestsIndexResponsePaymentRequests[]
      */
     public function getPaymentRequests()
     {
@@ -221,7 +221,7 @@ class PaymentRequestsIndexResponse implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets payment_requests
      *
-     * @param \Freee\Accounting\Model\PaymentRequestsIndexResponsePaymentRequests[] $payment_requests payment_requests
+     * @param \OpenAPI\Client\Model\PaymentRequestsIndexResponsePaymentRequests[] $payment_requests payment_requests
      *
      * @return self
      */

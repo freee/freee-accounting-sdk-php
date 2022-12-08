@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * TrialCrSectionsResponseTrialCrSectionsSections Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -61,12 +61,12 @@ class TrialCrSectionsResponseTrialCrSectionsSections implements ModelInterface, 
     protected static $openAPITypes = [
         'closing_balance' => 'int',
         'id' => 'int',
-        'items' => '\Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSectionsItems[]',
+        'items' => '\OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSectionsItems[]',
         'name' => 'string',
-        'partners' => '\Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSectionsPartners[]',
-        'segment_1_tags' => '\Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSectionsSegment1Tags[]',
-        'segment_2_tags' => '\Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSectionsSegment2Tags[]',
-        'segment_3_tags' => '\Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSectionsSegment3Tags[]'
+        'partners' => '\OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSectionsPartners[]',
+        'segment_1_tags' => '\OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSectionsSegment1Tags[]',
+        'segment_2_tags' => '\OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSectionsSegment2Tags[]',
+        'segment_3_tags' => '\OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSectionsSegment3Tags[]'
     ];
 
     /**
@@ -317,7 +317,7 @@ class TrialCrSectionsResponseTrialCrSectionsSections implements ModelInterface, 
     /**
      * Gets items
      *
-     * @return \Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSectionsItems[]|null
+     * @return \OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSectionsItems[]|null
      */
     public function getItems()
     {
@@ -327,7 +327,7 @@ class TrialCrSectionsResponseTrialCrSectionsSections implements ModelInterface, 
     /**
      * Sets items
      *
-     * @param \Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSectionsItems[]|null $items breakdown_display_type:item, account_item_display_type:account_item指定時のみ含まれる
+     * @param \OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSectionsItems[]|null $items breakdown_display_type:item, account_item_display_type:account_item指定時のみ含まれる
      *
      * @return self
      */
@@ -365,7 +365,7 @@ class TrialCrSectionsResponseTrialCrSectionsSections implements ModelInterface, 
     /**
      * Gets partners
      *
-     * @return \Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSectionsPartners[]|null
+     * @return \OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSectionsPartners[]|null
      */
     public function getPartners()
     {
@@ -375,7 +375,7 @@ class TrialCrSectionsResponseTrialCrSectionsSections implements ModelInterface, 
     /**
      * Sets partners
      *
-     * @param \Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSectionsPartners[]|null $partners breakdown_display_type:partner, account_item_display_type:account_item指定時のみ含まれる
+     * @param \OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSectionsPartners[]|null $partners breakdown_display_type:partner, account_item_display_type:account_item指定時のみ含まれる
      *
      * @return self
      */
@@ -389,7 +389,7 @@ class TrialCrSectionsResponseTrialCrSectionsSections implements ModelInterface, 
     /**
      * Gets segment_1_tags
      *
-     * @return \Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSectionsSegment1Tags[]|null
+     * @return \OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSectionsSegment1Tags[]|null
      */
     public function getSegment1Tags()
     {
@@ -399,7 +399,7 @@ class TrialCrSectionsResponseTrialCrSectionsSections implements ModelInterface, 
     /**
      * Sets segment_1_tags
      *
-     * @param \Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSectionsSegment1Tags[]|null $segment_1_tags breakdown_display_type:segment_1_tag, account_item_display_type:account_item指定時のみ含まれる
+     * @param \OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSectionsSegment1Tags[]|null $segment_1_tags breakdown_display_type:segment_1_tag, account_item_display_type:account_item指定時のみ含まれる
      *
      * @return self
      */
@@ -413,7 +413,7 @@ class TrialCrSectionsResponseTrialCrSectionsSections implements ModelInterface, 
     /**
      * Gets segment_2_tags
      *
-     * @return \Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSectionsSegment2Tags[]|null
+     * @return \OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSectionsSegment2Tags[]|null
      */
     public function getSegment2Tags()
     {
@@ -423,7 +423,7 @@ class TrialCrSectionsResponseTrialCrSectionsSections implements ModelInterface, 
     /**
      * Sets segment_2_tags
      *
-     * @param \Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSectionsSegment2Tags[]|null $segment_2_tags breakdown_display_type:segment_2_tag, account_item_display_type:account_item指定時のみ含まれる
+     * @param \OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSectionsSegment2Tags[]|null $segment_2_tags breakdown_display_type:segment_2_tag, account_item_display_type:account_item指定時のみ含まれる
      *
      * @return self
      */
@@ -437,7 +437,7 @@ class TrialCrSectionsResponseTrialCrSectionsSections implements ModelInterface, 
     /**
      * Gets segment_3_tags
      *
-     * @return \Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSectionsSegment3Tags[]|null
+     * @return \OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSectionsSegment3Tags[]|null
      */
     public function getSegment3Tags()
     {
@@ -447,7 +447,7 @@ class TrialCrSectionsResponseTrialCrSectionsSections implements ModelInterface, 
     /**
      * Sets segment_3_tags
      *
-     * @param \Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSectionsSegment3Tags[]|null $segment_3_tags breakdown_display_type:segment_3_tag, account_item_display_type:account_item指定時のみ含まれる
+     * @param \OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSectionsSegment3Tags[]|null $segment_3_tags breakdown_display_type:segment_3_tag, account_item_display_type:account_item指定時のみ含まれる
      *
      * @return self
      */

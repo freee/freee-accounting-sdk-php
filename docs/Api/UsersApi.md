@@ -1,4 +1,4 @@
-# Freee\Accounting\UsersApi
+# OpenAPI\Client\UsersApi
 
 All URIs are relative to https://api.freee.co.jp.
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 ## `getUsers()`
 
 ```php
-getUsers($company_id, $limit): \Freee\Accounting\Model\InlineResponse20012
+getUsers($company_id, $limit): \OpenAPI\Client\Model\InlineResponse20012
 ```
 
 事業所に所属するユーザー一覧の取得
@@ -26,10 +26,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\UsersApi(
+$apiInstance = new OpenAPI\Client\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse20012**](../Model/InlineResponse20012.md)
+[**\OpenAPI\Client\Model\InlineResponse20012**](../Model/InlineResponse20012.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 ## `getUsersCapabilities()`
 
 ```php
-getUsersCapabilities($company_id): \Freee\Accounting\Model\InlineResponse20013
+getUsersCapabilities($company_id): \OpenAPI\Client\Model\InlineResponse20013
 ```
 
 ログインユーザーの権限の取得
@@ -86,10 +86,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\UsersApi(
+$apiInstance = new OpenAPI\Client\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse20013**](../Model/InlineResponse20013.md)
+[**\OpenAPI\Client\Model\InlineResponse20013**](../Model/InlineResponse20013.md)
 
 ### Authorization
 
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 ## `getUsersMe()`
 
 ```php
-getUsersMe($companies, $advisor): \Freee\Accounting\Model\MeResponse
+getUsersMe($companies, $advisor): \OpenAPI\Client\Model\MeResponse
 ```
 
 ログインユーザー情報の取得
@@ -144,10 +144,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\UsersApi(
+$apiInstance = new OpenAPI\Client\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\MeResponse**](../Model/MeResponse.md)
+[**\OpenAPI\Client\Model\MeResponse**](../Model/MeResponse.md)
 
 ### Authorization
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 ## `updateUser()`
 
 ```php
-updateUser($user_params): \Freee\Accounting\Model\UserResponse
+updateUser($user_params): \OpenAPI\Client\Model\UserResponse
 ```
 
 ユーザー情報の更新
@@ -204,16 +204,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\UsersApi(
+$apiInstance = new OpenAPI\Client\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$user_params = new \Freee\Accounting\Model\UserParams(); // \Freee\Accounting\Model\UserParams | ユーザー情報の更新
+$user_params = new \OpenAPI\Client\Model\UserParams(); // \OpenAPI\Client\Model\UserParams | ユーザー情報の更新
 
 try {
     $result = $apiInstance->updateUser($user_params);
@@ -227,11 +227,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_params** | [**\Freee\Accounting\Model\UserParams**](../Model/UserParams.md)| ユーザー情報の更新 | [optional]
+ **user_params** | [**\OpenAPI\Client\Model\UserParams**](../Model/UserParams.md)| ユーザー情報の更新 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\UserResponse**](../Model/UserResponse.md)
+[**\OpenAPI\Client\Model\UserResponse**](../Model/UserResponse.md)
 
 ### Authorization
 

@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * AccountItemResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class AccountItemResponse implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'account_item' => '\Freee\Accounting\Model\AccountItemResponseAccountItem'
+        'account_item' => '\OpenAPI\Client\Model\AccountItemResponseAccountItem'
     ];
 
     /**
@@ -211,7 +211,7 @@ class AccountItemResponse implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets account_item
      *
-     * @return \Freee\Accounting\Model\AccountItemResponseAccountItem
+     * @return \OpenAPI\Client\Model\AccountItemResponseAccountItem
      */
     public function getAccountItem()
     {
@@ -221,7 +221,7 @@ class AccountItemResponse implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets account_item
      *
-     * @param \Freee\Accounting\Model\AccountItemResponseAccountItem $account_item account_item
+     * @param \OpenAPI\Client\Model\AccountItemResponseAccountItem $account_item account_item
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * PartnerResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class PartnerResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'partner' => '\Freee\Accounting\Model\PartnerResponsePartner'
+        'partner' => '\OpenAPI\Client\Model\PartnerResponsePartner'
     ];
 
     /**
@@ -211,7 +211,7 @@ class PartnerResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets partner
      *
-     * @return \Freee\Accounting\Model\PartnerResponsePartner
+     * @return \OpenAPI\Client\Model\PartnerResponsePartner
      */
     public function getPartner()
     {
@@ -221,7 +221,7 @@ class PartnerResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets partner
      *
-     * @param \Freee\Accounting\Model\PartnerResponsePartner $partner partner
+     * @param \OpenAPI\Client\Model\PartnerResponsePartner $partner partner
      *
      * @return self
      */

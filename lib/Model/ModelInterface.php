@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting\Model
+ * @package  OpenAPI\Client\Model
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,12 +26,12 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 /**
  * Interface abstracting model access.
  *
- * @package Freee\Accounting\Model
+ * @package OpenAPI\Client\Model
  * @author  OpenAPI Generator team
  */
 interface ModelInterface

@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * MeResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class MeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'user' => '\Freee\Accounting\Model\MeResponseUser'
+        'user' => '\OpenAPI\Client\Model\MeResponseUser'
     ];
 
     /**
@@ -211,7 +211,7 @@ class MeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets user
      *
-     * @return \Freee\Accounting\Model\MeResponseUser
+     * @return \OpenAPI\Client\Model\MeResponseUser
      */
     public function getUser()
     {
@@ -221,7 +221,7 @@ class MeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets user
      *
-     * @param \Freee\Accounting\Model\MeResponseUser $user user
+     * @param \OpenAPI\Client\Model\MeResponseUser $user user
      *
      * @return self
      */

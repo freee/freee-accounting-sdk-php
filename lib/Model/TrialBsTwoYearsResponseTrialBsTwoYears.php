@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * TrialBsTwoYearsResponseTrialBsTwoYears Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -62,7 +62,7 @@ class TrialBsTwoYearsResponseTrialBsTwoYears implements ModelInterface, ArrayAcc
         'account_item_display_type' => 'string',
         'adjustment' => 'string',
         'approval_flow_status' => 'string',
-        'balances' => '\Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsBalances[]',
+        'balances' => '\OpenAPI\Client\Model\TrialBsTwoYearsResponseTrialBsTwoYearsBalances[]',
         'breakdown_display_type' => 'string',
         'company_id' => 'int',
         'created_at' => 'string',
@@ -560,7 +560,7 @@ class TrialBsTwoYearsResponseTrialBsTwoYears implements ModelInterface, ArrayAcc
     /**
      * Gets balances
      *
-     * @return \Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsBalances[]
+     * @return \OpenAPI\Client\Model\TrialBsTwoYearsResponseTrialBsTwoYearsBalances[]
      */
     public function getBalances()
     {
@@ -570,7 +570,7 @@ class TrialBsTwoYearsResponseTrialBsTwoYears implements ModelInterface, ArrayAcc
     /**
      * Sets balances
      *
-     * @param \Freee\Accounting\Model\TrialBsTwoYearsResponseTrialBsTwoYearsBalances[] $balances balances
+     * @param \OpenAPI\Client\Model\TrialBsTwoYearsResponseTrialBsTwoYearsBalances[] $balances balances
      *
      * @return self
      */

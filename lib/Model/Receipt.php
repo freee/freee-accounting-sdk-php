@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * Receipt Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -66,9 +66,9 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
         'issue_date' => 'string',
         'mime_type' => 'string',
         'origin' => 'string',
-        'receipt_metadatum' => '\Freee\Accounting\Model\DealReceiptMetadatum',
+        'receipt_metadatum' => '\OpenAPI\Client\Model\DealReceiptMetadatum',
         'status' => 'string',
-        'user' => '\Freee\Accounting\Model\DealUser'
+        'user' => '\OpenAPI\Client\Model\DealUser'
     ];
 
     /**
@@ -545,7 +545,7 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets receipt_metadatum
      *
-     * @return \Freee\Accounting\Model\DealReceiptMetadatum|null
+     * @return \OpenAPI\Client\Model\DealReceiptMetadatum|null
      */
     public function getReceiptMetadatum()
     {
@@ -555,7 +555,7 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets receipt_metadatum
      *
-     * @param \Freee\Accounting\Model\DealReceiptMetadatum|null $receipt_metadatum receipt_metadatum
+     * @param \OpenAPI\Client\Model\DealReceiptMetadatum|null $receipt_metadatum receipt_metadatum
      *
      * @return self
      */
@@ -603,7 +603,7 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets user
      *
-     * @return \Freee\Accounting\Model\DealUser
+     * @return \OpenAPI\Client\Model\DealUser
      */
     public function getUser()
     {
@@ -613,7 +613,7 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets user
      *
-     * @param \Freee\Accounting\Model\DealUser $user user
+     * @param \OpenAPI\Client\Model\DealUser $user user
      *
      * @return self
      */

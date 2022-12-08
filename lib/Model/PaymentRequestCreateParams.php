@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * PaymentRequestCreateParams Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -81,7 +81,7 @@ class PaymentRequestCreateParams implements ModelInterface, ArrayAccess, \JsonSe
         'partner_id' => 'int',
         'payment_date' => 'string',
         'payment_method' => 'string',
-        'payment_request_lines' => '\Freee\Accounting\Model\PaymentRequestCreateParamsPaymentRequestLines[]',
+        'payment_request_lines' => '\OpenAPI\Client\Model\PaymentRequestCreateParamsPaymentRequestLines[]',
         'receipt_ids' => 'int[]',
         'title' => 'string'
     ];
@@ -1130,7 +1130,7 @@ class PaymentRequestCreateParams implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets payment_request_lines
      *
-     * @return \Freee\Accounting\Model\PaymentRequestCreateParamsPaymentRequestLines[]
+     * @return \OpenAPI\Client\Model\PaymentRequestCreateParamsPaymentRequestLines[]
      */
     public function getPaymentRequestLines()
     {
@@ -1140,7 +1140,7 @@ class PaymentRequestCreateParams implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets payment_request_lines
      *
-     * @param \Freee\Accounting\Model\PaymentRequestCreateParamsPaymentRequestLines[] $payment_request_lines 支払依頼の項目行一覧（配列）
+     * @param \OpenAPI\Client\Model\PaymentRequestCreateParamsPaymentRequestLines[] $payment_request_lines 支払依頼の項目行一覧（配列）
      *
      * @return self
      */

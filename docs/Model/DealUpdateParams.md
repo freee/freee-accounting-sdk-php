@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **company_id** | **int** | 事業所ID |
-**details** | [**\Freee\Accounting\Model\DealUpdateParamsDetails[]**](DealUpdateParamsDetails.md) |  |
+**details** | [**\OpenAPI\Client\Model\DealUpdateParamsDetails[]**](DealUpdateParamsDetails.md) |  |
 **due_date** | **string** | 支払期日(yyyy-mm-dd) | [optional]
 **issue_date** | **string** | 発生日 (yyyy-mm-dd) |
 **partner_code** | **string** | 取引先コード | [optional]

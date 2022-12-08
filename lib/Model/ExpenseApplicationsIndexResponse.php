@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * ExpenseApplicationsIndexResponse Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class ExpenseApplicationsIndexResponse implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'expense_applications' => '\Freee\Accounting\Model\ExpenseApplicationsIndexResponseExpenseApplications[]'
+        'expense_applications' => '\OpenAPI\Client\Model\ExpenseApplicationsIndexResponseExpenseApplications[]'
     ];
 
     /**
@@ -211,7 +211,7 @@ class ExpenseApplicationsIndexResponse implements ModelInterface, ArrayAccess, \
     /**
      * Gets expense_applications
      *
-     * @return \Freee\Accounting\Model\ExpenseApplicationsIndexResponseExpenseApplications[]
+     * @return \OpenAPI\Client\Model\ExpenseApplicationsIndexResponseExpenseApplications[]
      */
     public function getExpenseApplications()
     {
@@ -221,7 +221,7 @@ class ExpenseApplicationsIndexResponse implements ModelInterface, ArrayAccess, \
     /**
      * Sets expense_applications
      *
-     * @param \Freee\Accounting\Model\ExpenseApplicationsIndexResponseExpenseApplications[] $expense_applications expense_applications
+     * @param \OpenAPI\Client\Model\ExpenseApplicationsIndexResponseExpenseApplications[] $expense_applications expense_applications
      *
      * @return self
      */

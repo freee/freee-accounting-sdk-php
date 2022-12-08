@@ -1,4 +1,4 @@
-# Freee\Accounting\ItemsApi
+# OpenAPI\Client\ItemsApi
 
 All URIs are relative to https://api.freee.co.jp.
 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 ## `createItem()`
 
 ```php
-createItem($item_params): \Freee\Accounting\Model\ItemResponse
+createItem($item_params): \OpenAPI\Client\Model\ItemResponse
 ```
 
 品目の作成
@@ -27,16 +27,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ItemsApi(
+$apiInstance = new OpenAPI\Client\Api\ItemsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$item_params = new \Freee\Accounting\Model\ItemParams(); // \Freee\Accounting\Model\ItemParams | 品目の作成
+$item_params = new \OpenAPI\Client\Model\ItemParams(); // \OpenAPI\Client\Model\ItemParams | 品目の作成
 
 try {
     $result = $apiInstance->createItem($item_params);
@@ -50,11 +50,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **item_params** | [**\Freee\Accounting\Model\ItemParams**](../Model/ItemParams.md)| 品目の作成 | [optional]
+ **item_params** | [**\OpenAPI\Client\Model\ItemParams**](../Model/ItemParams.md)| 品目の作成 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\ItemResponse**](../Model/ItemResponse.md)
+[**\OpenAPI\Client\Model\ItemResponse**](../Model/ItemResponse.md)
 
 ### Authorization
 
@@ -85,10 +85,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ItemsApi(
+$apiInstance = new OpenAPI\Client\Api\ItemsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -131,7 +131,7 @@ void (empty response body)
 ## `getItem()`
 
 ```php
-getItem($company_id, $id): \Freee\Accounting\Model\ItemResponse
+getItem($company_id, $id): \OpenAPI\Client\Model\ItemResponse
 ```
 
 品目の取得
@@ -144,10 +144,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ItemsApi(
+$apiInstance = new OpenAPI\Client\Api\ItemsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\ItemResponse**](../Model/ItemResponse.md)
+[**\OpenAPI\Client\Model\ItemResponse**](../Model/ItemResponse.md)
 
 ### Authorization
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 ## `getItems()`
 
 ```php
-getItems($company_id, $start_update_date, $end_update_date, $offset, $limit): \Freee\Accounting\Model\InlineResponse2003
+getItems($company_id, $start_update_date, $end_update_date, $offset, $limit): \OpenAPI\Client\Model\InlineResponse2003
 ```
 
 品目一覧の取得
@@ -204,10 +204,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ItemsApi(
+$apiInstance = new OpenAPI\Client\Api\ItemsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\OpenAPI\Client\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
 
 ### Authorization
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 ## `updateItem()`
 
 ```php
-updateItem($id, $item_params): \Freee\Accounting\Model\ItemResponse
+updateItem($id, $item_params): \OpenAPI\Client\Model\ItemResponse
 ```
 
 品目の更新
@@ -270,17 +270,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\ItemsApi(
+$apiInstance = new OpenAPI\Client\Api\ItemsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | 品目ID
-$item_params = new \Freee\Accounting\Model\ItemParams(); // \Freee\Accounting\Model\ItemParams | 品目の更新
+$item_params = new \OpenAPI\Client\Model\ItemParams(); // \OpenAPI\Client\Model\ItemParams | 品目の更新
 
 try {
     $result = $apiInstance->updateItem($id, $item_params);
@@ -295,11 +295,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 品目ID |
- **item_params** | [**\Freee\Accounting\Model\ItemParams**](../Model/ItemParams.md)| 品目の更新 | [optional]
+ **item_params** | [**\OpenAPI\Client\Model\ItemParams**](../Model/ItemParams.md)| 品目の更新 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\ItemResponse**](../Model/ItemResponse.md)
+[**\OpenAPI\Client\Model\ItemResponse**](../Model/ItemResponse.md)
 
 ### Authorization
 

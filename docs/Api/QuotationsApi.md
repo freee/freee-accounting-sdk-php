@@ -1,4 +1,4 @@
-# Freee\Accounting\QuotationsApi
+# OpenAPI\Client\QuotationsApi
 
 All URIs are relative to https://api.freee.co.jp.
 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 ## `createQuotation()`
 
 ```php
-createQuotation($quotation_create_params): \Freee\Accounting\Model\QuotationResponse
+createQuotation($quotation_create_params): \OpenAPI\Client\Model\QuotationResponse
 ```
 
 見積書の作成
@@ -27,16 +27,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\QuotationsApi(
+$apiInstance = new OpenAPI\Client\Api\QuotationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$quotation_create_params = new \Freee\Accounting\Model\QuotationCreateParams(); // \Freee\Accounting\Model\QuotationCreateParams | 見積書の作成
+$quotation_create_params = new \OpenAPI\Client\Model\QuotationCreateParams(); // \OpenAPI\Client\Model\QuotationCreateParams | 見積書の作成
 
 try {
     $result = $apiInstance->createQuotation($quotation_create_params);
@@ -50,11 +50,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **quotation_create_params** | [**\Freee\Accounting\Model\QuotationCreateParams**](../Model/QuotationCreateParams.md)| 見積書の作成 | [optional]
+ **quotation_create_params** | [**\OpenAPI\Client\Model\QuotationCreateParams**](../Model/QuotationCreateParams.md)| 見積書の作成 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\QuotationResponse**](../Model/QuotationResponse.md)
+[**\OpenAPI\Client\Model\QuotationResponse**](../Model/QuotationResponse.md)
 
 ### Authorization
 
@@ -85,10 +85,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\QuotationsApi(
+$apiInstance = new OpenAPI\Client\Api\QuotationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -131,7 +131,7 @@ void (empty response body)
 ## `getQuotation()`
 
 ```php
-getQuotation($company_id, $id): \Freee\Accounting\Model\QuotationResponse
+getQuotation($company_id, $id): \OpenAPI\Client\Model\QuotationResponse
 ```
 
 見積書の取得
@@ -144,10 +144,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\QuotationsApi(
+$apiInstance = new OpenAPI\Client\Api\QuotationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\QuotationResponse**](../Model/QuotationResponse.md)
+[**\OpenAPI\Client\Model\QuotationResponse**](../Model/QuotationResponse.md)
 
 ### Authorization
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 ## `getQuotations()`
 
 ```php
-getQuotations($company_id, $partner_id, $partner_code, $start_issue_date, $end_issue_date, $quotation_number, $description, $quotation_status, $offset, $limit): \Freee\Accounting\Model\QuotationIndexResponse
+getQuotations($company_id, $partner_id, $partner_code, $start_issue_date, $end_issue_date, $quotation_number, $description, $quotation_status, $offset, $limit): \OpenAPI\Client\Model\QuotationIndexResponse
 ```
 
 見積書一覧の取得
@@ -204,10 +204,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\QuotationsApi(
+$apiInstance = new OpenAPI\Client\Api\QuotationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\QuotationIndexResponse**](../Model/QuotationIndexResponse.md)
+[**\OpenAPI\Client\Model\QuotationIndexResponse**](../Model/QuotationIndexResponse.md)
 
 ### Authorization
 
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 ## `updateQuotation()`
 
 ```php
-updateQuotation($id, $quotation_update_params): \Freee\Accounting\Model\QuotationResponse
+updateQuotation($id, $quotation_update_params): \OpenAPI\Client\Model\QuotationResponse
 ```
 
 見積書の更新
@@ -280,17 +280,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\QuotationsApi(
+$apiInstance = new OpenAPI\Client\Api\QuotationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | 見積書ID
-$quotation_update_params = new \Freee\Accounting\Model\QuotationUpdateParams(); // \Freee\Accounting\Model\QuotationUpdateParams | 見積書の更新
+$quotation_update_params = new \OpenAPI\Client\Model\QuotationUpdateParams(); // \OpenAPI\Client\Model\QuotationUpdateParams | 見積書の更新
 
 try {
     $result = $apiInstance->updateQuotation($id, $quotation_update_params);
@@ -305,11 +305,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 見積書ID |
- **quotation_update_params** | [**\Freee\Accounting\Model\QuotationUpdateParams**](../Model/QuotationUpdateParams.md)| 見積書の更新 | [optional]
+ **quotation_update_params** | [**\OpenAPI\Client\Model\QuotationUpdateParams**](../Model/QuotationUpdateParams.md)| 見積書の更新 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\QuotationResponse**](../Model/QuotationResponse.md)
+[**\OpenAPI\Client\Model\QuotationResponse**](../Model/QuotationResponse.md)
 
 ### Authorization
 

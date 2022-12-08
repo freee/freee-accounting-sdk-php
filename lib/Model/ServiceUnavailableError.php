@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * ServiceUnavailableError Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class ServiceUnavailableError implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'errors' => '\Freee\Accounting\Model\ServiceUnavailableErrorErrors[]',
+        'errors' => '\OpenAPI\Client\Model\ServiceUnavailableErrorErrors[]',
         'status_code' => 'int'
     ];
 
@@ -220,7 +220,7 @@ class ServiceUnavailableError implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets errors
      *
-     * @return \Freee\Accounting\Model\ServiceUnavailableErrorErrors[]
+     * @return \OpenAPI\Client\Model\ServiceUnavailableErrorErrors[]
      */
     public function getErrors()
     {
@@ -230,7 +230,7 @@ class ServiceUnavailableError implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets errors
      *
-     * @param \Freee\Accounting\Model\ServiceUnavailableErrorErrors[] $errors errors
+     * @param \OpenAPI\Client\Model\ServiceUnavailableErrorErrors[] $errors errors
      *
      * @return self
      */

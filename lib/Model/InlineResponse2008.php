@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * InlineResponse2008 Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,7 +59,7 @@ class InlineResponse2008 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => '\Freee\Accounting\Model\Tag[]'
+        'tags' => '\OpenAPI\Client\Model\Tag[]'
     ];
 
     /**
@@ -211,7 +211,7 @@ class InlineResponse2008 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets tags
      *
-     * @return \Freee\Accounting\Model\Tag[]
+     * @return \OpenAPI\Client\Model\Tag[]
      */
     public function getTags()
     {
@@ -221,7 +221,7 @@ class InlineResponse2008 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets tags
      *
-     * @param \Freee\Accounting\Model\Tag[] $tags tags
+     * @param \OpenAPI\Client\Model\Tag[] $tags tags
      *
      * @return self
      */

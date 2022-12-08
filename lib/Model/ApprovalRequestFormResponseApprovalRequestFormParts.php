@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * ApprovalRequestFormResponseApprovalRequestFormParts Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -67,7 +67,7 @@ class ApprovalRequestFormResponseApprovalRequestFormParts implements ModelInterf
         'order' => 'int',
         'required' => 'bool',
         'type' => 'string',
-        'values' => '\Freee\Accounting\Model\ApprovalRequestFormResponseApprovalRequestFormValues[]'
+        'values' => '\OpenAPI\Client\Model\ApprovalRequestFormResponseApprovalRequestFormValues[]'
     ];
 
     /**
@@ -565,7 +565,7 @@ class ApprovalRequestFormResponseApprovalRequestFormParts implements ModelInterf
     /**
      * Gets values
      *
-     * @return \Freee\Accounting\Model\ApprovalRequestFormResponseApprovalRequestFormValues[]|null
+     * @return \OpenAPI\Client\Model\ApprovalRequestFormResponseApprovalRequestFormValues[]|null
      */
     public function getValues()
     {
@@ -575,7 +575,7 @@ class ApprovalRequestFormResponseApprovalRequestFormParts implements ModelInterf
     /**
      * Sets values
      *
-     * @param \Freee\Accounting\Model\ApprovalRequestFormResponseApprovalRequestFormValues[]|null $values 選択項目
+     * @param \OpenAPI\Client\Model\ApprovalRequestFormResponseApprovalRequestFormValues[]|null $values 選択項目
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * TrialCrSegment2TagsResponseTrialCrSegment2TagsBalances Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -66,7 +66,7 @@ class TrialCrSegment2TagsResponseTrialCrSegment2TagsBalances implements ModelInt
         'closing_balance' => 'int',
         'hierarchy_level' => 'int',
         'parent_account_category_name' => 'string',
-        'segment_2_tags' => '\Freee\Accounting\Model\TrialCrSegment2TagsResponseTrialCrSegment2TagsSegment2Tags[]',
+        'segment_2_tags' => '\OpenAPI\Client\Model\TrialCrSegment2TagsResponseTrialCrSegment2TagsSegment2Tags[]',
         'total_line' => 'bool'
     ];
 
@@ -440,7 +440,7 @@ class TrialCrSegment2TagsResponseTrialCrSegment2TagsBalances implements ModelInt
     /**
      * Gets segment_2_tags
      *
-     * @return \Freee\Accounting\Model\TrialCrSegment2TagsResponseTrialCrSegment2TagsSegment2Tags[]|null
+     * @return \OpenAPI\Client\Model\TrialCrSegment2TagsResponseTrialCrSegment2TagsSegment2Tags[]|null
      */
     public function getSegment2Tags()
     {
@@ -450,7 +450,7 @@ class TrialCrSegment2TagsResponseTrialCrSegment2TagsBalances implements ModelInt
     /**
      * Sets segment_2_tags
      *
-     * @param \Freee\Accounting\Model\TrialCrSegment2TagsResponseTrialCrSegment2TagsSegment2Tags[]|null $segment_2_tags セグメント2タグ
+     * @param \OpenAPI\Client\Model\TrialCrSegment2TagsResponseTrialCrSegment2TagsSegment2Tags[]|null $segment_2_tags セグメント2タグ
      *
      * @return self
      */

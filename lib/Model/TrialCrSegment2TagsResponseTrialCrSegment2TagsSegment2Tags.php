@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Freee\Accounting\Model;
+namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \Freee\Accounting\ObjectSerializer;
+use \OpenAPI\Client\ObjectSerializer;
 
 /**
  * TrialCrSegment2TagsResponseTrialCrSegment2TagsSegment2Tags Class Doc Comment
  *
  * @category Class
- * @package  Freee\Accounting
+ * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -61,10 +61,10 @@ class TrialCrSegment2TagsResponseTrialCrSegment2TagsSegment2Tags implements Mode
     protected static $openAPITypes = [
         'closing_balance' => 'int',
         'id' => 'int',
-        'items' => '\Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSectionsItems[]',
+        'items' => '\OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSectionsItems[]',
         'name' => 'string',
-        'partners' => '\Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSectionsPartners[]',
-        'sections' => '\Freee\Accounting\Model\TrialCrSegment1TagsResponseTrialCrSegment1TagsSections[]'
+        'partners' => '\OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSectionsPartners[]',
+        'sections' => '\OpenAPI\Client\Model\TrialCrSegment1TagsResponseTrialCrSegment1TagsSections[]'
     ];
 
     /**
@@ -305,7 +305,7 @@ class TrialCrSegment2TagsResponseTrialCrSegment2TagsSegment2Tags implements Mode
     /**
      * Gets items
      *
-     * @return \Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSectionsItems[]|null
+     * @return \OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSectionsItems[]|null
      */
     public function getItems()
     {
@@ -315,7 +315,7 @@ class TrialCrSegment2TagsResponseTrialCrSegment2TagsSegment2Tags implements Mode
     /**
      * Sets items
      *
-     * @param \Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSectionsItems[]|null $items breakdown_display_type:item, account_item_display_type:account_item指定時のみ含まれる
+     * @param \OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSectionsItems[]|null $items breakdown_display_type:item, account_item_display_type:account_item指定時のみ含まれる
      *
      * @return self
      */
@@ -353,7 +353,7 @@ class TrialCrSegment2TagsResponseTrialCrSegment2TagsSegment2Tags implements Mode
     /**
      * Gets partners
      *
-     * @return \Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSectionsPartners[]|null
+     * @return \OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSectionsPartners[]|null
      */
     public function getPartners()
     {
@@ -363,7 +363,7 @@ class TrialCrSegment2TagsResponseTrialCrSegment2TagsSegment2Tags implements Mode
     /**
      * Sets partners
      *
-     * @param \Freee\Accounting\Model\TrialCrSectionsResponseTrialCrSectionsPartners[]|null $partners breakdown_display_type:partner, account_item_display_type:account_item指定時のみ含まれる
+     * @param \OpenAPI\Client\Model\TrialCrSectionsResponseTrialCrSectionsPartners[]|null $partners breakdown_display_type:partner, account_item_display_type:account_item指定時のみ含まれる
      *
      * @return self
      */
@@ -377,7 +377,7 @@ class TrialCrSegment2TagsResponseTrialCrSegment2TagsSegment2Tags implements Mode
     /**
      * Gets sections
      *
-     * @return \Freee\Accounting\Model\TrialCrSegment1TagsResponseTrialCrSegment1TagsSections[]|null
+     * @return \OpenAPI\Client\Model\TrialCrSegment1TagsResponseTrialCrSegment1TagsSections[]|null
      */
     public function getSections()
     {
@@ -387,7 +387,7 @@ class TrialCrSegment2TagsResponseTrialCrSegment2TagsSegment2Tags implements Mode
     /**
      * Sets sections
      *
-     * @param \Freee\Accounting\Model\TrialCrSegment1TagsResponseTrialCrSegment1TagsSections[]|null $sections breakdown_display_type:section, account_item_display_type:account_item指定時のみ含まれる
+     * @param \OpenAPI\Client\Model\TrialCrSegment1TagsResponseTrialCrSegment1TagsSections[]|null $sections breakdown_display_type:section, account_item_display_type:account_item指定時のみ含まれる
      *
      * @return self
      */

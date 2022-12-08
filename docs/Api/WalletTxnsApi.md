@@ -1,4 +1,4 @@
-# Freee\Accounting\WalletTxnsApi
+# OpenAPI\Client\WalletTxnsApi
 
 All URIs are relative to https://api.freee.co.jp.
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 ## `createWalletTxn()`
 
 ```php
-createWalletTxn($wallet_txn_params): \Freee\Accounting\Model\WalletTxnResponse
+createWalletTxn($wallet_txn_params): \OpenAPI\Client\Model\WalletTxnResponse
 ```
 
 明細の作成
@@ -26,16 +26,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\WalletTxnsApi(
+$apiInstance = new OpenAPI\Client\Api\WalletTxnsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$wallet_txn_params = new \Freee\Accounting\Model\WalletTxnParams(); // \Freee\Accounting\Model\WalletTxnParams | 明細の作成
+$wallet_txn_params = new \OpenAPI\Client\Model\WalletTxnParams(); // \OpenAPI\Client\Model\WalletTxnParams | 明細の作成
 
 try {
     $result = $apiInstance->createWalletTxn($wallet_txn_params);
@@ -49,11 +49,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wallet_txn_params** | [**\Freee\Accounting\Model\WalletTxnParams**](../Model/WalletTxnParams.md)| 明細の作成 | [optional]
+ **wallet_txn_params** | [**\OpenAPI\Client\Model\WalletTxnParams**](../Model/WalletTxnParams.md)| 明細の作成 | [optional]
 
 ### Return type
 
-[**\Freee\Accounting\Model\WalletTxnResponse**](../Model/WalletTxnResponse.md)
+[**\OpenAPI\Client\Model\WalletTxnResponse**](../Model/WalletTxnResponse.md)
 
 ### Authorization
 
@@ -84,10 +84,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\WalletTxnsApi(
+$apiInstance = new OpenAPI\Client\Api\WalletTxnsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -130,7 +130,7 @@ void (empty response body)
 ## `getWalletTxn()`
 
 ```php
-getWalletTxn($id, $company_id): \Freee\Accounting\Model\WalletTxnResponse
+getWalletTxn($id, $company_id): \OpenAPI\Client\Model\WalletTxnResponse
 ```
 
 明細の取得
@@ -143,10 +143,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\WalletTxnsApi(
+$apiInstance = new OpenAPI\Client\Api\WalletTxnsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\WalletTxnResponse**](../Model/WalletTxnResponse.md)
+[**\OpenAPI\Client\Model\WalletTxnResponse**](../Model/WalletTxnResponse.md)
 
 ### Authorization
 
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 ## `getWalletTxns()`
 
 ```php
-getWalletTxns($company_id, $walletable_type, $walletable_id, $start_date, $end_date, $entry_side, $offset, $limit): \Freee\Accounting\Model\InlineResponse20014
+getWalletTxns($company_id, $walletable_type, $walletable_id, $start_date, $end_date, $entry_side, $offset, $limit): \OpenAPI\Client\Model\InlineResponse20014
 ```
 
 明細一覧の取得
@@ -203,10 +203,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2
-$config = Freee\Accounting\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Freee\Accounting\Api\WalletTxnsApi(
+$apiInstance = new OpenAPI\Client\Api\WalletTxnsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Freee\Accounting\Model\InlineResponse20014**](../Model/InlineResponse20014.md)
+[**\OpenAPI\Client\Model\InlineResponse20014**](../Model/InlineResponse20014.md)
 
 ### Authorization
 
