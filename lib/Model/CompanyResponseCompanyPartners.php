@@ -214,9 +214,6 @@ class CompanyResponseCompanyPartners implements ModelInterface, ArrayAccess, \Js
     {
         $invalidProperties = [];
 
-        if ($this->container['code'] === null) {
-            $invalidProperties[] = "'code' can't be null";
-        }
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
@@ -257,7 +254,7 @@ class CompanyResponseCompanyPartners implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets code
      *
-     * @return string
+     * @return string|null
      */
     public function getCode()
     {
@@ -267,7 +264,7 @@ class CompanyResponseCompanyPartners implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets code
      *
-     * @param string $code 取引先コード
+     * @param string|null $code 取引先コード
      *
      * @return self
      */

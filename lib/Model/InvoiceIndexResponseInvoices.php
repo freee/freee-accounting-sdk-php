@@ -1877,7 +1877,7 @@ class InvoiceIndexResponseInvoices implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets total_vat
      *
-     * @param int|null $total_vat 合計金額
+     * @param int|null $total_vat 消費税
      *
      * @return self
      */

@@ -46,7 +46,7 @@ Name | Type | Description | Notes
 **title** | **string** | タイトル | [optional]
 **total_amount** | **int** | 合計金額 |
 **total_amount_per_vat_rate** | [**\Freee\Accounting\Model\InvoiceIndexResponseTotalAmountPerVatRate**](InvoiceIndexResponseTotalAmountPerVatRate.md) |  |
-**total_vat** | **int** | 合計金額 | [optional]
+**total_vat** | **int** | 消費税 | [optional]
 **web_confirmed_at** | **string** | Web共有取引先確認日時(最新) | [optional]
 **web_downloaded_at** | **string** | Web共有ダウンロード日時(最新) | [optional]
 **web_published_at** | **string** | Web共有日時(最新) | [optional]

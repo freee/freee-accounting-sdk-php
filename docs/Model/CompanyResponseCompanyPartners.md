@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**code** | **string** | 取引先コード |
+**code** | **string** | 取引先コード | [optional]
 **id** | **int** | 取引先ID |
 **name** | **string** | 取引先名 |
 **shortcut1** | **string** | ショートカット1 (255文字以内) | [optional]
