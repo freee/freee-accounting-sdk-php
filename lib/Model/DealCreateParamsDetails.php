@@ -383,7 +383,7 @@ class DealCreateParamsDetails implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets amount
      *
-     * @param int $amount 取引金額（税込で指定してください）
+     * @param int $amount 取引金額（税込で指定してください）<br> マイナスの値を指定した場合、控除・マイナス行として登録されます。<br> 上記以外の値を指定した場合、通常行として登録されます。
      *
      * @return self
      */

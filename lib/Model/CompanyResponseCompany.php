@@ -343,6 +343,7 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     const INDUSTRY_CLASS_EDUCATION = 'education';
     const INDUSTRY_CLASS_MEDICAL_WELFARE = 'medical_welfare';
     const INDUSTRY_CLASS_OTHER_SERVICES = 'other_services';
+    const INDUSTRY_CLASS_OTHER_ASSOCIATION = 'other_association';
     const INDUSTRY_CLASS_OTHER = 'other';
     const INDUSTRY_CLASS_EMPTY = '';
     const INDUSTRY_CODE_EMPTY = '';
@@ -517,6 +518,7 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
             self::INDUSTRY_CLASS_EDUCATION,
             self::INDUSTRY_CLASS_MEDICAL_WELFARE,
             self::INDUSTRY_CLASS_OTHER_SERVICES,
+            self::INDUSTRY_CLASS_OTHER_ASSOCIATION,
             self::INDUSTRY_CLASS_OTHER,
             self::INDUSTRY_CLASS_EMPTY,
         ];
@@ -1144,7 +1146,7 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets default_wallet_account_id
      *
-     * @param int|null $default_wallet_account_id 決済口座のデフォルト
+     * @param int|null $default_wallet_account_id デフォルトの決済口座が紐づく勘定科目ID
      *
      * @return self
      */
@@ -1312,7 +1314,7 @@ class CompanyResponseCompany implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets industry_class
      *
-     * @param string $industry_class 種別（agriculture_forestry_fisheries_ore: 農林水産業/鉱業、construction: 建設、manufacturing_processing: 製造/加工、it: IT、transportation_logistics: 運輸/物流、retail_wholesale: 小売/卸売、finance_insurance: 金融/保険、real_estate_rental: 不動産/レンタル、profession: 士業/学術/専門技術サービス、design_production: デザイン/制作、food: 飲食、leisure_entertainment: レジャー/娯楽、lifestyle: 生活関連サービス、education: 教育/学習支援、medical_welfare: 医療/福祉、other_services: その他サービス、other: その他, \"\": 未選択）
+     * @param string $industry_class 種別（agriculture_forestry_fisheries_ore: 農林水産業/鉱業,construction: 建設,manufacturing_processing: 製造/加工,it: IT,transportation_logistics: 運輸/物流,retail_wholesale: 小売/卸売,finance_insurance: 金融/保険,real_estate_rental: 不動産/レンタル,profession: 士業/学術/専門技術サービス,design_production: デザイン/制作,food: 飲食,leisure_entertainment: レジャー/娯楽,lifestyle: 生活関連サービス,education: 教育/学習支援,medical_welfare: 医療/福祉,other_services: その他サービス,other_association: NPO、一般社団法人等,other: その他, \"\": 未選択）
      *
      * @return self
      */
