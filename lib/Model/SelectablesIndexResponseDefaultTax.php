@@ -60,9 +60,17 @@ class SelectablesIndexResponseDefaultTax implements ModelInterface, ArrayAccess,
       */
     protected static $openAPITypes = [
         'tax_rate_10' => '\Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate10',
+        'tax_rate_10_exempt_50' => '\Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate10Exempt50',
+        'tax_rate_10_exempt_80' => '\Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate10Exempt80',
         'tax_rate_5' => '\Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate5',
+        'tax_rate_5_exempt_50' => '\Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate5Exempt50',
+        'tax_rate_5_exempt_80' => '\Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate5Exempt80',
         'tax_rate_8' => '\Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate8',
-        'tax_rate_r8' => '\Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRateR8'
+        'tax_rate_8_exempt_50' => '\Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate8Exempt50',
+        'tax_rate_8_exempt_80' => '\Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate8Exempt80',
+        'tax_rate_r8' => '\Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRateR8',
+        'tax_rate_r8_exempt_50' => '\Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRateR8Exempt50',
+        'tax_rate_r8_exempt_80' => '\Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRateR8Exempt80'
     ];
 
     /**
@@ -74,9 +82,17 @@ class SelectablesIndexResponseDefaultTax implements ModelInterface, ArrayAccess,
       */
     protected static $openAPIFormats = [
         'tax_rate_10' => null,
+        'tax_rate_10_exempt_50' => null,
+        'tax_rate_10_exempt_80' => null,
         'tax_rate_5' => null,
+        'tax_rate_5_exempt_50' => null,
+        'tax_rate_5_exempt_80' => null,
         'tax_rate_8' => null,
-        'tax_rate_r8' => null
+        'tax_rate_8_exempt_50' => null,
+        'tax_rate_8_exempt_80' => null,
+        'tax_rate_r8' => null,
+        'tax_rate_r8_exempt_50' => null,
+        'tax_rate_r8_exempt_80' => null
     ];
 
     /**
@@ -107,9 +123,17 @@ class SelectablesIndexResponseDefaultTax implements ModelInterface, ArrayAccess,
      */
     protected static $attributeMap = [
         'tax_rate_10' => 'tax_rate_10',
+        'tax_rate_10_exempt_50' => 'tax_rate_10_exempt_50',
+        'tax_rate_10_exempt_80' => 'tax_rate_10_exempt_80',
         'tax_rate_5' => 'tax_rate_5',
+        'tax_rate_5_exempt_50' => 'tax_rate_5_exempt_50',
+        'tax_rate_5_exempt_80' => 'tax_rate_5_exempt_80',
         'tax_rate_8' => 'tax_rate_8',
-        'tax_rate_r8' => 'tax_rate_r8'
+        'tax_rate_8_exempt_50' => 'tax_rate_8_exempt_50',
+        'tax_rate_8_exempt_80' => 'tax_rate_8_exempt_80',
+        'tax_rate_r8' => 'tax_rate_r8',
+        'tax_rate_r8_exempt_50' => 'tax_rate_r8_exempt_50',
+        'tax_rate_r8_exempt_80' => 'tax_rate_r8_exempt_80'
     ];
 
     /**
@@ -119,9 +143,17 @@ class SelectablesIndexResponseDefaultTax implements ModelInterface, ArrayAccess,
      */
     protected static $setters = [
         'tax_rate_10' => 'setTaxRate10',
+        'tax_rate_10_exempt_50' => 'setTaxRate10Exempt50',
+        'tax_rate_10_exempt_80' => 'setTaxRate10Exempt80',
         'tax_rate_5' => 'setTaxRate5',
+        'tax_rate_5_exempt_50' => 'setTaxRate5Exempt50',
+        'tax_rate_5_exempt_80' => 'setTaxRate5Exempt80',
         'tax_rate_8' => 'setTaxRate8',
-        'tax_rate_r8' => 'setTaxRateR8'
+        'tax_rate_8_exempt_50' => 'setTaxRate8Exempt50',
+        'tax_rate_8_exempt_80' => 'setTaxRate8Exempt80',
+        'tax_rate_r8' => 'setTaxRateR8',
+        'tax_rate_r8_exempt_50' => 'setTaxRateR8Exempt50',
+        'tax_rate_r8_exempt_80' => 'setTaxRateR8Exempt80'
     ];
 
     /**
@@ -131,9 +163,17 @@ class SelectablesIndexResponseDefaultTax implements ModelInterface, ArrayAccess,
      */
     protected static $getters = [
         'tax_rate_10' => 'getTaxRate10',
+        'tax_rate_10_exempt_50' => 'getTaxRate10Exempt50',
+        'tax_rate_10_exempt_80' => 'getTaxRate10Exempt80',
         'tax_rate_5' => 'getTaxRate5',
+        'tax_rate_5_exempt_50' => 'getTaxRate5Exempt50',
+        'tax_rate_5_exempt_80' => 'getTaxRate5Exempt80',
         'tax_rate_8' => 'getTaxRate8',
-        'tax_rate_r8' => 'getTaxRateR8'
+        'tax_rate_8_exempt_50' => 'getTaxRate8Exempt50',
+        'tax_rate_8_exempt_80' => 'getTaxRate8Exempt80',
+        'tax_rate_r8' => 'getTaxRateR8',
+        'tax_rate_r8_exempt_50' => 'getTaxRateR8Exempt50',
+        'tax_rate_r8_exempt_80' => 'getTaxRateR8Exempt80'
     ];
 
     /**
@@ -194,9 +234,17 @@ class SelectablesIndexResponseDefaultTax implements ModelInterface, ArrayAccess,
     public function __construct(array $data = null)
     {
         $this->container['tax_rate_10'] = $data['tax_rate_10'] ?? null;
+        $this->container['tax_rate_10_exempt_50'] = $data['tax_rate_10_exempt_50'] ?? null;
+        $this->container['tax_rate_10_exempt_80'] = $data['tax_rate_10_exempt_80'] ?? null;
         $this->container['tax_rate_5'] = $data['tax_rate_5'] ?? null;
+        $this->container['tax_rate_5_exempt_50'] = $data['tax_rate_5_exempt_50'] ?? null;
+        $this->container['tax_rate_5_exempt_80'] = $data['tax_rate_5_exempt_80'] ?? null;
         $this->container['tax_rate_8'] = $data['tax_rate_8'] ?? null;
+        $this->container['tax_rate_8_exempt_50'] = $data['tax_rate_8_exempt_50'] ?? null;
+        $this->container['tax_rate_8_exempt_80'] = $data['tax_rate_8_exempt_80'] ?? null;
         $this->container['tax_rate_r8'] = $data['tax_rate_r8'] ?? null;
+        $this->container['tax_rate_r8_exempt_50'] = $data['tax_rate_r8_exempt_50'] ?? null;
+        $this->container['tax_rate_r8_exempt_80'] = $data['tax_rate_r8_exempt_80'] ?? null;
     }
 
     /**
@@ -248,6 +296,54 @@ class SelectablesIndexResponseDefaultTax implements ModelInterface, ArrayAccess,
     }
 
     /**
+     * Gets tax_rate_10_exempt_50
+     *
+     * @return \Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate10Exempt50|null
+     */
+    public function getTaxRate10Exempt50()
+    {
+        return $this->container['tax_rate_10_exempt_50'];
+    }
+
+    /**
+     * Sets tax_rate_10_exempt_50
+     *
+     * @param \Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate10Exempt50|null $tax_rate_10_exempt_50 tax_rate_10_exempt_50
+     *
+     * @return self
+     */
+    public function setTaxRate10Exempt50($tax_rate_10_exempt_50)
+    {
+        $this->container['tax_rate_10_exempt_50'] = $tax_rate_10_exempt_50;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_rate_10_exempt_80
+     *
+     * @return \Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate10Exempt80|null
+     */
+    public function getTaxRate10Exempt80()
+    {
+        return $this->container['tax_rate_10_exempt_80'];
+    }
+
+    /**
+     * Sets tax_rate_10_exempt_80
+     *
+     * @param \Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate10Exempt80|null $tax_rate_10_exempt_80 tax_rate_10_exempt_80
+     *
+     * @return self
+     */
+    public function setTaxRate10Exempt80($tax_rate_10_exempt_80)
+    {
+        $this->container['tax_rate_10_exempt_80'] = $tax_rate_10_exempt_80;
+
+        return $this;
+    }
+
+    /**
      * Gets tax_rate_5
      *
      * @return \Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate5|null
@@ -267,6 +363,54 @@ class SelectablesIndexResponseDefaultTax implements ModelInterface, ArrayAccess,
     public function setTaxRate5($tax_rate_5)
     {
         $this->container['tax_rate_5'] = $tax_rate_5;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_rate_5_exempt_50
+     *
+     * @return \Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate5Exempt50|null
+     */
+    public function getTaxRate5Exempt50()
+    {
+        return $this->container['tax_rate_5_exempt_50'];
+    }
+
+    /**
+     * Sets tax_rate_5_exempt_50
+     *
+     * @param \Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate5Exempt50|null $tax_rate_5_exempt_50 tax_rate_5_exempt_50
+     *
+     * @return self
+     */
+    public function setTaxRate5Exempt50($tax_rate_5_exempt_50)
+    {
+        $this->container['tax_rate_5_exempt_50'] = $tax_rate_5_exempt_50;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_rate_5_exempt_80
+     *
+     * @return \Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate5Exempt80|null
+     */
+    public function getTaxRate5Exempt80()
+    {
+        return $this->container['tax_rate_5_exempt_80'];
+    }
+
+    /**
+     * Sets tax_rate_5_exempt_80
+     *
+     * @param \Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate5Exempt80|null $tax_rate_5_exempt_80 tax_rate_5_exempt_80
+     *
+     * @return self
+     */
+    public function setTaxRate5Exempt80($tax_rate_5_exempt_80)
+    {
+        $this->container['tax_rate_5_exempt_80'] = $tax_rate_5_exempt_80;
 
         return $this;
     }
@@ -296,6 +440,54 @@ class SelectablesIndexResponseDefaultTax implements ModelInterface, ArrayAccess,
     }
 
     /**
+     * Gets tax_rate_8_exempt_50
+     *
+     * @return \Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate8Exempt50|null
+     */
+    public function getTaxRate8Exempt50()
+    {
+        return $this->container['tax_rate_8_exempt_50'];
+    }
+
+    /**
+     * Sets tax_rate_8_exempt_50
+     *
+     * @param \Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate8Exempt50|null $tax_rate_8_exempt_50 tax_rate_8_exempt_50
+     *
+     * @return self
+     */
+    public function setTaxRate8Exempt50($tax_rate_8_exempt_50)
+    {
+        $this->container['tax_rate_8_exempt_50'] = $tax_rate_8_exempt_50;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_rate_8_exempt_80
+     *
+     * @return \Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate8Exempt80|null
+     */
+    public function getTaxRate8Exempt80()
+    {
+        return $this->container['tax_rate_8_exempt_80'];
+    }
+
+    /**
+     * Sets tax_rate_8_exempt_80
+     *
+     * @param \Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRate8Exempt80|null $tax_rate_8_exempt_80 tax_rate_8_exempt_80
+     *
+     * @return self
+     */
+    public function setTaxRate8Exempt80($tax_rate_8_exempt_80)
+    {
+        $this->container['tax_rate_8_exempt_80'] = $tax_rate_8_exempt_80;
+
+        return $this;
+    }
+
+    /**
      * Gets tax_rate_r8
      *
      * @return \Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRateR8|null
@@ -315,6 +507,54 @@ class SelectablesIndexResponseDefaultTax implements ModelInterface, ArrayAccess,
     public function setTaxRateR8($tax_rate_r8)
     {
         $this->container['tax_rate_r8'] = $tax_rate_r8;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_rate_r8_exempt_50
+     *
+     * @return \Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRateR8Exempt50|null
+     */
+    public function getTaxRateR8Exempt50()
+    {
+        return $this->container['tax_rate_r8_exempt_50'];
+    }
+
+    /**
+     * Sets tax_rate_r8_exempt_50
+     *
+     * @param \Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRateR8Exempt50|null $tax_rate_r8_exempt_50 tax_rate_r8_exempt_50
+     *
+     * @return self
+     */
+    public function setTaxRateR8Exempt50($tax_rate_r8_exempt_50)
+    {
+        $this->container['tax_rate_r8_exempt_50'] = $tax_rate_r8_exempt_50;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_rate_r8_exempt_80
+     *
+     * @return \Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRateR8Exempt80|null
+     */
+    public function getTaxRateR8Exempt80()
+    {
+        return $this->container['tax_rate_r8_exempt_80'];
+    }
+
+    /**
+     * Sets tax_rate_r8_exempt_80
+     *
+     * @param \Freee\Accounting\Model\SelectablesIndexResponseDefaultTaxTaxRateR8Exempt80|null $tax_rate_r8_exempt_80 tax_rate_r8_exempt_80
+     *
+     * @return self
+     */
+    public function setTaxRateR8Exempt80($tax_rate_r8_exempt_80)
+    {
+        $this->container['tax_rate_r8_exempt_80'] = $tax_rate_r8_exempt_80;
 
         return $this;
     }

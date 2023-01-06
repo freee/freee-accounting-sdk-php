@@ -89,9 +89,45 @@ class SelectablesIndexResponseDefaultTaxTest extends TestCase
     }
 
     /**
+     * Test attribute "tax_rate_10_exempt_50"
+     */
+    public function testPropertyTaxRate10Exempt50()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tax_rate_10_exempt_80"
+     */
+    public function testPropertyTaxRate10Exempt80()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "tax_rate_5"
      */
     public function testPropertyTaxRate5()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tax_rate_5_exempt_50"
+     */
+    public function testPropertyTaxRate5Exempt50()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tax_rate_5_exempt_80"
+     */
+    public function testPropertyTaxRate5Exempt80()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -107,9 +143,45 @@ class SelectablesIndexResponseDefaultTaxTest extends TestCase
     }
 
     /**
+     * Test attribute "tax_rate_8_exempt_50"
+     */
+    public function testPropertyTaxRate8Exempt50()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tax_rate_8_exempt_80"
+     */
+    public function testPropertyTaxRate8Exempt80()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "tax_rate_r8"
      */
     public function testPropertyTaxRateR8()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tax_rate_r8_exempt_50"
+     */
+    public function testPropertyTaxRateR8Exempt50()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tax_rate_r8_exempt_80"
+     */
+    public function testPropertyTaxRateR8Exempt80()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
