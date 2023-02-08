@@ -489,7 +489,7 @@ class PaymentRequestCreateParamsPaymentRequestLines implements ModelInterface, A
     /**
      * Sets line_type
      *
-     * @param string|null $line_type '行の種類 (deal_line: 支払依頼, withholding_tax: 源泉徴収税)'<br> 'デフォルトは deal_line: 支払依頼 です'
+     * @param string|null $line_type '行の種類 (deal_line: 支払依頼の通常取引行, withholding_tax: 源泉所得税行)'<br> 'デフォルトは deal_line: 支払依頼の通常取引行 です'
      *
      * @return self
      */

@@ -478,7 +478,7 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets code
      *
-     * @param string|null $code 取引先コード（取引先コードの利用を有効にしている場合は、codeの指定は必須です。）
+     * @param string|null $code 取引先コード（取引先コードの利用を有効にしている場合は、codeの指定は必須です。ただし重複は不可。）
      *
      * @return self
      */

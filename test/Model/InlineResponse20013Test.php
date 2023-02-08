@@ -89,6 +89,15 @@ class InlineResponse20013Test extends TestCase
     }
 
     /**
+     * Test attribute "access_controls"
+     */
+    public function testPropertyAccessControls()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "account_item_statements"
      */
     public function testPropertyAccountItemStatements()
@@ -110,6 +119,15 @@ class InlineResponse20013Test extends TestCase
      * Test attribute "annual_reports"
      */
     public function testPropertyAnnualReports()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "app_role_logs"
+     */
+    public function testPropertyAppRoleLogs()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -170,6 +188,15 @@ class InlineResponse20013Test extends TestCase
     }
 
     /**
+     * Test attribute "company_internal_announcements"
+     */
+    public function testPropertyCompanyInternalAnnouncements()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "consumption_entries"
      */
     public function testPropertyConsumptionEntries()
@@ -206,6 +233,15 @@ class InlineResponse20013Test extends TestCase
     }
 
     /**
+     * Test attribute "doc_change_logs"
+     */
+    public function testPropertyDocChangeLogs()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "doc_postings"
      */
     public function testPropertyDocPostings()
@@ -218,6 +254,15 @@ class InlineResponse20013Test extends TestCase
      * Test attribute "docs"
      */
     public function testPropertyDocs()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "expense_application_sync_payroll"
+     */
+    public function testPropertyExpenseApplicationSyncPayroll()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -359,6 +404,15 @@ class InlineResponse20013Test extends TestCase
     }
 
     /**
+     * Test attribute "payroll_item_sets"
+     */
+    public function testPropertyPayrollItemSets()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "receipt_stream_editor"
      */
     public function testPropertyReceiptStreamEditor()
@@ -407,6 +461,15 @@ class InlineResponse20013Test extends TestCase
      * Test attribute "reports_crosstabs"
      */
     public function testPropertyReportsCrosstabs()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "reports_custom_reports_aggregate"
+     */
+    public function testPropertyReportsCustomReportsAggregate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -539,6 +602,15 @@ class InlineResponse20013Test extends TestCase
     }
 
     /**
+     * Test attribute "system_messages_for_admin"
+     */
+    public function testPropertySystemMessagesForAdmin()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "tax_reports"
      */
     public function testPropertyTaxReports()
@@ -569,6 +641,24 @@ class InlineResponse20013Test extends TestCase
      * Test attribute "transfers"
      */
     public function testPropertyTransfers()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "txn_relationship_logs"
+     */
+    public function testPropertyTxnRelationshipLogs()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "user_attribute_logs"
+     */
+    public function testPropertyUserAttributeLogs()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

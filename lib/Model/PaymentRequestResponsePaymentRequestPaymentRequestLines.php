@@ -559,7 +559,7 @@ class PaymentRequestResponsePaymentRequestPaymentRequestLines implements ModelIn
     /**
      * Sets line_type
      *
-     * @param string $line_type 行の種類 (deal_line: 支払依頼, withholding_tax: 源泉徴収税)
+     * @param string $line_type 行の種類 (deal_line: 支払依頼の通常取引行, withholding_tax: 源泉所得税行)
      *
      * @return self
      */
