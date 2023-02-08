@@ -832,14 +832,16 @@ class TaxesApi
      * 税区分コード詳細一覧の取得
      *
      * @param  int $company_id 事業所ID (required)
+     * @param  string $display_category この項目はインボイス制度で利用する項目です。2023年7月頃から利用できる予定です。税区分の表示カテゴリ（ tax_5: 5%表示の税区分、 tax_8: 8%表示の税区分、 tax_r8: 軽減税率8%表示の税区分、 tax_10: 10%表示の税区分、 tax_5_e80: インボイス経過措置5%表示80%控除の税区分、 tax_5_e50: インボイス経過措置5%表示50%控除の税区分、 tax_8_e80: インボイス経過措置8%表示80%控除の税区分、 tax_8_e50: インボイス経過措置8%表示50%控除の税区分、 tax_r8_e80: インボイス経過措置軽減税率8%表示80%控除の税区分、 tax_r8_e50: インボイス経過措置軽減税率8%表示50%控除の税区分、 tax_10_e80: インボイス経過措置10%表示80%控除の税区分、 tax_10_e50: インボイス経過措置10%表示50%控除の税区分） (optional)
+     * @param  bool $available この項目はインボイス制度で利用する項目です。2023年7月頃から利用できる予定です。税区分の使用設定。true: 使用する、false: 使用しない (optional)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Freee\Accounting\Model\InlineResponse20010|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError
      */
-    public function getTaxesCompanies($company_id)
+    public function getTaxesCompanies($company_id, $display_category = null, $available = null)
     {
-        list($response) = $this->getTaxesCompaniesWithHttpInfo($company_id);
+        list($response) = $this->getTaxesCompaniesWithHttpInfo($company_id, $display_category, $available);
         return $response;
     }
 
@@ -849,14 +851,16 @@ class TaxesApi
      * 税区分コード詳細一覧の取得
      *
      * @param  int $company_id 事業所ID (required)
+     * @param  string $display_category この項目はインボイス制度で利用する項目です。2023年7月頃から利用できる予定です。税区分の表示カテゴリ（ tax_5: 5%表示の税区分、 tax_8: 8%表示の税区分、 tax_r8: 軽減税率8%表示の税区分、 tax_10: 10%表示の税区分、 tax_5_e80: インボイス経過措置5%表示80%控除の税区分、 tax_5_e50: インボイス経過措置5%表示50%控除の税区分、 tax_8_e80: インボイス経過措置8%表示80%控除の税区分、 tax_8_e50: インボイス経過措置8%表示50%控除の税区分、 tax_r8_e80: インボイス経過措置軽減税率8%表示80%控除の税区分、 tax_r8_e50: インボイス経過措置軽減税率8%表示50%控除の税区分、 tax_10_e80: インボイス経過措置10%表示80%控除の税区分、 tax_10_e50: インボイス経過措置10%表示50%控除の税区分） (optional)
+     * @param  bool $available この項目はインボイス制度で利用する項目です。2023年7月頃から利用できる予定です。税区分の使用設定。true: 使用する、false: 使用しない (optional)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Freee\Accounting\Model\InlineResponse20010|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTaxesCompaniesWithHttpInfo($company_id)
+    public function getTaxesCompaniesWithHttpInfo($company_id, $display_category = null, $available = null)
     {
-        $request = $this->getTaxesCompaniesRequest($company_id);
+        $request = $this->getTaxesCompaniesRequest($company_id, $display_category, $available);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1022,13 +1026,15 @@ class TaxesApi
      * 税区分コード詳細一覧の取得
      *
      * @param  int $company_id 事業所ID (required)
+     * @param  string $display_category この項目はインボイス制度で利用する項目です。2023年7月頃から利用できる予定です。税区分の表示カテゴリ（ tax_5: 5%表示の税区分、 tax_8: 8%表示の税区分、 tax_r8: 軽減税率8%表示の税区分、 tax_10: 10%表示の税区分、 tax_5_e80: インボイス経過措置5%表示80%控除の税区分、 tax_5_e50: インボイス経過措置5%表示50%控除の税区分、 tax_8_e80: インボイス経過措置8%表示80%控除の税区分、 tax_8_e50: インボイス経過措置8%表示50%控除の税区分、 tax_r8_e80: インボイス経過措置軽減税率8%表示80%控除の税区分、 tax_r8_e50: インボイス経過措置軽減税率8%表示50%控除の税区分、 tax_10_e80: インボイス経過措置10%表示80%控除の税区分、 tax_10_e50: インボイス経過措置10%表示50%控除の税区分） (optional)
+     * @param  bool $available この項目はインボイス制度で利用する項目です。2023年7月頃から利用できる予定です。税区分の使用設定。true: 使用する、false: 使用しない (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTaxesCompaniesAsync($company_id)
+    public function getTaxesCompaniesAsync($company_id, $display_category = null, $available = null)
     {
-        return $this->getTaxesCompaniesAsyncWithHttpInfo($company_id)
+        return $this->getTaxesCompaniesAsyncWithHttpInfo($company_id, $display_category, $available)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1042,14 +1048,16 @@ class TaxesApi
      * 税区分コード詳細一覧の取得
      *
      * @param  int $company_id 事業所ID (required)
+     * @param  string $display_category この項目はインボイス制度で利用する項目です。2023年7月頃から利用できる予定です。税区分の表示カテゴリ（ tax_5: 5%表示の税区分、 tax_8: 8%表示の税区分、 tax_r8: 軽減税率8%表示の税区分、 tax_10: 10%表示の税区分、 tax_5_e80: インボイス経過措置5%表示80%控除の税区分、 tax_5_e50: インボイス経過措置5%表示50%控除の税区分、 tax_8_e80: インボイス経過措置8%表示80%控除の税区分、 tax_8_e50: インボイス経過措置8%表示50%控除の税区分、 tax_r8_e80: インボイス経過措置軽減税率8%表示80%控除の税区分、 tax_r8_e50: インボイス経過措置軽減税率8%表示50%控除の税区分、 tax_10_e80: インボイス経過措置10%表示80%控除の税区分、 tax_10_e50: インボイス経過措置10%表示50%控除の税区分） (optional)
+     * @param  bool $available この項目はインボイス制度で利用する項目です。2023年7月頃から利用できる予定です。税区分の使用設定。true: 使用する、false: 使用しない (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTaxesCompaniesAsyncWithHttpInfo($company_id)
+    public function getTaxesCompaniesAsyncWithHttpInfo($company_id, $display_category = null, $available = null)
     {
         $returnType = '\Freee\Accounting\Model\InlineResponse20010';
-        $request = $this->getTaxesCompaniesRequest($company_id);
+        $request = $this->getTaxesCompaniesRequest($company_id, $display_category, $available);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1088,11 +1096,13 @@ class TaxesApi
      * Create request for operation 'getTaxesCompanies'
      *
      * @param  int $company_id 事業所ID (required)
+     * @param  string $display_category この項目はインボイス制度で利用する項目です。2023年7月頃から利用できる予定です。税区分の表示カテゴリ（ tax_5: 5%表示の税区分、 tax_8: 8%表示の税区分、 tax_r8: 軽減税率8%表示の税区分、 tax_10: 10%表示の税区分、 tax_5_e80: インボイス経過措置5%表示80%控除の税区分、 tax_5_e50: インボイス経過措置5%表示50%控除の税区分、 tax_8_e80: インボイス経過措置8%表示80%控除の税区分、 tax_8_e50: インボイス経過措置8%表示50%控除の税区分、 tax_r8_e80: インボイス経過措置軽減税率8%表示80%控除の税区分、 tax_r8_e50: インボイス経過措置軽減税率8%表示50%控除の税区分、 tax_10_e80: インボイス経過措置10%表示80%控除の税区分、 tax_10_e50: インボイス経過措置10%表示50%控除の税区分） (optional)
+     * @param  bool $available この項目はインボイス制度で利用する項目です。2023年7月頃から利用できる予定です。税区分の使用設定。true: 使用する、false: 使用しない (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getTaxesCompaniesRequest($company_id)
+    public function getTaxesCompaniesRequest($company_id, $display_category = null, $available = null)
     {
         // verify the required parameter 'company_id' is set
         if ($company_id === null || (is_array($company_id) && count($company_id) === 0)) {
@@ -1115,6 +1125,28 @@ class TaxesApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($display_category !== null) {
+            if('form' === 'form' && is_array($display_category)) {
+                foreach($display_category as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['display_category'] = $display_category;
+            }
+        }
+        // query params
+        if ($available !== null) {
+            if('form' === 'form' && is_array($available)) {
+                foreach($available as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['available'] = $available;
+            }
+        }
 
 
         // path params

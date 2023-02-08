@@ -60,21 +60,26 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPITypes = [
         'tags' => '\Freee\Accounting\Model\UserCapability',
-        'account_item_statements' => '\Freee\Accounting\Model\UserCapability',
+        'access_controls' => '\Freee\Accounting\Model\UserCapabilityWithWrite',
+        'account_item_statements' => '\Freee\Accounting\Model\UserCapabilityJustRead',
         'account_items' => '\Freee\Accounting\Model\UserCapability',
-        'annual_reports' => '\Freee\Accounting\Model\UserCapability',
+        'annual_reports' => '\Freee\Accounting\Model\UserCapabilityJustRead',
+        'app_role_logs' => '\Freee\Accounting\Model\UserCapabilityJustRead',
         'approval_flow_routes' => '\Freee\Accounting\Model\UserCapability',
         'approval_requests' => '\Freee\Accounting\Model\UserCapabilityWithSelfOnly',
-        'backups' => '\Freee\Accounting\Model\UserCapability',
+        'backups' => '\Freee\Accounting\Model\UserCapabilityJustRead',
         'bank_accountant_staff_users' => '\Freee\Accounting\Model\UserCapability',
         'biz_allocations' => '\Freee\Accounting\Model\UserCapability',
-        'companies' => '\Freee\Accounting\Model\UserCapability',
-        'consumption_entries' => '\Freee\Accounting\Model\UserCapability',
-        'cost_allocations' => '\Freee\Accounting\Model\UserCapability',
+        'companies' => '\Freee\Accounting\Model\UserCapabilityJustReadUpdate',
+        'company_internal_announcements' => '\Freee\Accounting\Model\UserCapabilityJustUpdate',
+        'consumption_entries' => '\Freee\Accounting\Model\UserCapabilityJustRead',
+        'cost_allocations' => '\Freee\Accounting\Model\UserCapabilityJustReadUpdate',
         'deal_templates' => '\Freee\Accounting\Model\UserCapability',
         'deals' => '\Freee\Accounting\Model\UserCapabilityWithSelfOnly',
-        'doc_postings' => '\Freee\Accounting\Model\UserCapability',
+        'doc_change_logs' => '\Freee\Accounting\Model\UserCapabilityJustRead',
+        'doc_postings' => '\Freee\Accounting\Model\UserCapabilityJustCreate',
         'docs' => '\Freee\Accounting\Model\UserCapabilityWithSelfOnly',
+        'expense_application_sync_payroll' => '\Freee\Accounting\Model\UserCapabilityJustCreate',
         'expense_application_templates' => '\Freee\Accounting\Model\UserCapability',
         'expense_applications' => '\Freee\Accounting\Model\UserCapabilityWithSelfOnly',
         'fixed_assets' => '\Freee\Accounting\Model\UserCapability',
@@ -83,42 +88,47 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
         'items' => '\Freee\Accounting\Model\UserCapability',
         'manual_journal_templates' => '\Freee\Accounting\Model\UserCapability',
         'manual_journals' => '\Freee\Accounting\Model\UserCapabilityWithSelfOnly',
-        'month_end' => '\Freee\Accounting\Model\UserCapability',
+        'month_end' => '\Freee\Accounting\Model\UserCapabilityJustRead',
         'oauth_applications' => '\Freee\Accounting\Model\UserCapability',
         'oauth_authorizations' => '\Freee\Accounting\Model\UserCapability',
-        'opening_balances' => '\Freee\Accounting\Model\UserCapability',
+        'opening_balances' => '\Freee\Accounting\Model\UserCapabilityJustReadUpdate',
         'partners' => '\Freee\Accounting\Model\UserCapability',
         'payment_records' => '\Freee\Accounting\Model\UserCapability',
         'payment_requests' => '\Freee\Accounting\Model\UserCapabilityWithSelfOnly',
-        'receipt_stream_editor' => '\Freee\Accounting\Model\UserCapability',
+        'payroll_item_sets' => '\Freee\Accounting\Model\UserCapability',
+        'receipt_stream_editor' => '\Freee\Accounting\Model\UserCapabilityJustRead',
         'receipts' => '\Freee\Accounting\Model\UserCapabilityWithSelfOnly',
-        'reports' => '\Freee\Accounting\Model\UserCapability',
-        'reports_bs' => '\Freee\Accounting\Model\UserCapability',
-        'reports_cash_balance' => '\Freee\Accounting\Model\UserCapability',
-        'reports_crosstabs' => '\Freee\Accounting\Model\UserCapability',
-        'reports_general_ledgers' => '\Freee\Accounting\Model\UserCapability',
-        'reports_income_expense' => '\Freee\Accounting\Model\UserCapability',
-        'reports_journals' => '\Freee\Accounting\Model\UserCapability',
-        'reports_managements_navigation' => '\Freee\Accounting\Model\UserCapability',
-        'reports_managements_planning' => '\Freee\Accounting\Model\UserCapability',
-        'reports_payables' => '\Freee\Accounting\Model\UserCapability',
-        'reports_pl' => '\Freee\Accounting\Model\UserCapability',
-        'reports_receivables' => '\Freee\Accounting\Model\UserCapability',
+        'reports' => '\Freee\Accounting\Model\UserCapabilityJustRead',
+        'reports_bs' => '\Freee\Accounting\Model\UserCapabilityJustRead',
+        'reports_cash_balance' => '\Freee\Accounting\Model\UserCapabilityJustRead',
+        'reports_crosstabs' => '\Freee\Accounting\Model\UserCapabilityJustRead',
+        'reports_custom_reports_aggregate' => '\Freee\Accounting\Model\UserCapabilityJustRead',
+        'reports_general_ledgers' => '\Freee\Accounting\Model\UserCapabilityJustRead',
+        'reports_income_expense' => '\Freee\Accounting\Model\UserCapabilityJustRead',
+        'reports_journals' => '\Freee\Accounting\Model\UserCapabilityJustRead',
+        'reports_managements_navigation' => '\Freee\Accounting\Model\UserCapabilityJustReadWrite',
+        'reports_managements_planning' => '\Freee\Accounting\Model\UserCapabilityJustReadWrite',
+        'reports_payables' => '\Freee\Accounting\Model\UserCapabilityJustReadWrite',
+        'reports_pl' => '\Freee\Accounting\Model\UserCapabilityJustRead',
+        'reports_receivables' => '\Freee\Accounting\Model\UserCapabilityJustRead',
         'request_forms' => '\Freee\Accounting\Model\UserCapability',
-        'resets' => '\Freee\Accounting\Model\UserCapability',
+        'resets' => '\Freee\Accounting\Model\UserCapabilityJustRead',
         'sections' => '\Freee\Accounting\Model\UserCapability',
-        'sign_in_logs' => '\Freee\Accounting\Model\UserCapability',
-        'spreadsheets' => '\Freee\Accounting\Model\UserCapability',
-        'system_conversion' => '\Freee\Accounting\Model\UserCapability',
-        'tax_reports' => '\Freee\Accounting\Model\UserCapability',
-        'tax_return' => '\Freee\Accounting\Model\UserCapability',
-        'taxes' => '\Freee\Accounting\Model\UserCapability',
+        'sign_in_logs' => '\Freee\Accounting\Model\UserCapabilityJustRead',
+        'spreadsheets' => '\Freee\Accounting\Model\UserCapabilityJustCreateRead',
+        'system_conversion' => '\Freee\Accounting\Model\UserCapabilityJustRead',
+        'system_messages_for_admin' => '\Freee\Accounting\Model\UserCapabilityJustRead',
+        'tax_reports' => '\Freee\Accounting\Model\UserCapabilityJustRead',
+        'tax_return' => '\Freee\Accounting\Model\UserCapabilityJustRead',
+        'taxes' => '\Freee\Accounting\Model\UserCapabilityJustReadUpdate',
         'transfers' => '\Freee\Accounting\Model\UserCapabilityWithSelfOnly',
+        'txn_relationship_logs' => '\Freee\Accounting\Model\UserCapabilityJustRead',
+        'user_attribute_logs' => '\Freee\Accounting\Model\UserCapabilityJustRead',
         'user_matchers' => '\Freee\Accounting\Model\UserCapability',
         'wallet_txns' => '\Freee\Accounting\Model\UserCapabilityWithConfirm',
         'walletables' => '\Freee\Accounting\Model\UserCapabilityWithSync',
-        'workflows' => '\Freee\Accounting\Model\UserCapability',
-        'year_end' => '\Freee\Accounting\Model\UserCapability'
+        'workflows' => '\Freee\Accounting\Model\UserCapabilityJustReadUpdateDestroy',
+        'year_end' => '\Freee\Accounting\Model\UserCapabilityJustReadUpdate'
     ];
 
     /**
@@ -130,21 +140,26 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPIFormats = [
         'tags' => null,
+        'access_controls' => null,
         'account_item_statements' => null,
         'account_items' => null,
         'annual_reports' => null,
+        'app_role_logs' => null,
         'approval_flow_routes' => null,
         'approval_requests' => null,
         'backups' => null,
         'bank_accountant_staff_users' => null,
         'biz_allocations' => null,
         'companies' => null,
+        'company_internal_announcements' => null,
         'consumption_entries' => null,
         'cost_allocations' => null,
         'deal_templates' => null,
         'deals' => null,
+        'doc_change_logs' => null,
         'doc_postings' => null,
         'docs' => null,
+        'expense_application_sync_payroll' => null,
         'expense_application_templates' => null,
         'expense_applications' => null,
         'fixed_assets' => null,
@@ -160,12 +175,14 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
         'partners' => null,
         'payment_records' => null,
         'payment_requests' => null,
+        'payroll_item_sets' => null,
         'receipt_stream_editor' => null,
         'receipts' => null,
         'reports' => null,
         'reports_bs' => null,
         'reports_cash_balance' => null,
         'reports_crosstabs' => null,
+        'reports_custom_reports_aggregate' => null,
         'reports_general_ledgers' => null,
         'reports_income_expense' => null,
         'reports_journals' => null,
@@ -180,10 +197,13 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
         'sign_in_logs' => null,
         'spreadsheets' => null,
         'system_conversion' => null,
+        'system_messages_for_admin' => null,
         'tax_reports' => null,
         'tax_return' => null,
         'taxes' => null,
         'transfers' => null,
+        'txn_relationship_logs' => null,
+        'user_attribute_logs' => null,
         'user_matchers' => null,
         'wallet_txns' => null,
         'walletables' => null,
@@ -219,21 +239,26 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $attributeMap = [
         'tags' => 'tags',
+        'access_controls' => 'access_controls',
         'account_item_statements' => 'account_item_statements',
         'account_items' => 'account_items',
         'annual_reports' => 'annual_reports',
+        'app_role_logs' => 'app_role_logs',
         'approval_flow_routes' => 'approval_flow_routes',
         'approval_requests' => 'approval_requests',
         'backups' => 'backups',
         'bank_accountant_staff_users' => 'bank_accountant_staff_users',
         'biz_allocations' => 'biz_allocations',
         'companies' => 'companies',
+        'company_internal_announcements' => 'company_internal_announcements',
         'consumption_entries' => 'consumption_entries',
         'cost_allocations' => 'cost_allocations',
         'deal_templates' => 'deal_templates',
         'deals' => 'deals',
+        'doc_change_logs' => 'doc_change_logs',
         'doc_postings' => 'doc_postings',
         'docs' => 'docs',
+        'expense_application_sync_payroll' => 'expense_application_sync_payroll',
         'expense_application_templates' => 'expense_application_templates',
         'expense_applications' => 'expense_applications',
         'fixed_assets' => 'fixed_assets',
@@ -249,12 +274,14 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
         'partners' => 'partners',
         'payment_records' => 'payment_records',
         'payment_requests' => 'payment_requests',
+        'payroll_item_sets' => 'payroll_item_sets',
         'receipt_stream_editor' => 'receipt_stream_editor',
         'receipts' => 'receipts',
         'reports' => 'reports',
         'reports_bs' => 'reports_bs',
         'reports_cash_balance' => 'reports_cash_balance',
         'reports_crosstabs' => 'reports_crosstabs',
+        'reports_custom_reports_aggregate' => 'reports_custom_reports_aggregate',
         'reports_general_ledgers' => 'reports_general_ledgers',
         'reports_income_expense' => 'reports_income_expense',
         'reports_journals' => 'reports_journals',
@@ -269,10 +296,13 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
         'sign_in_logs' => 'sign_in_logs',
         'spreadsheets' => 'spreadsheets',
         'system_conversion' => 'system_conversion',
+        'system_messages_for_admin' => 'system_messages_for_admin',
         'tax_reports' => 'tax_reports',
         'tax_return' => 'tax_return',
         'taxes' => 'taxes',
         'transfers' => 'transfers',
+        'txn_relationship_logs' => 'txn_relationship_logs',
+        'user_attribute_logs' => 'user_attribute_logs',
         'user_matchers' => 'user_matchers',
         'wallet_txns' => 'wallet_txns',
         'walletables' => 'walletables',
@@ -287,21 +317,26 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $setters = [
         'tags' => 'setTags',
+        'access_controls' => 'setAccessControls',
         'account_item_statements' => 'setAccountItemStatements',
         'account_items' => 'setAccountItems',
         'annual_reports' => 'setAnnualReports',
+        'app_role_logs' => 'setAppRoleLogs',
         'approval_flow_routes' => 'setApprovalFlowRoutes',
         'approval_requests' => 'setApprovalRequests',
         'backups' => 'setBackups',
         'bank_accountant_staff_users' => 'setBankAccountantStaffUsers',
         'biz_allocations' => 'setBizAllocations',
         'companies' => 'setCompanies',
+        'company_internal_announcements' => 'setCompanyInternalAnnouncements',
         'consumption_entries' => 'setConsumptionEntries',
         'cost_allocations' => 'setCostAllocations',
         'deal_templates' => 'setDealTemplates',
         'deals' => 'setDeals',
+        'doc_change_logs' => 'setDocChangeLogs',
         'doc_postings' => 'setDocPostings',
         'docs' => 'setDocs',
+        'expense_application_sync_payroll' => 'setExpenseApplicationSyncPayroll',
         'expense_application_templates' => 'setExpenseApplicationTemplates',
         'expense_applications' => 'setExpenseApplications',
         'fixed_assets' => 'setFixedAssets',
@@ -317,12 +352,14 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
         'partners' => 'setPartners',
         'payment_records' => 'setPaymentRecords',
         'payment_requests' => 'setPaymentRequests',
+        'payroll_item_sets' => 'setPayrollItemSets',
         'receipt_stream_editor' => 'setReceiptStreamEditor',
         'receipts' => 'setReceipts',
         'reports' => 'setReports',
         'reports_bs' => 'setReportsBs',
         'reports_cash_balance' => 'setReportsCashBalance',
         'reports_crosstabs' => 'setReportsCrosstabs',
+        'reports_custom_reports_aggregate' => 'setReportsCustomReportsAggregate',
         'reports_general_ledgers' => 'setReportsGeneralLedgers',
         'reports_income_expense' => 'setReportsIncomeExpense',
         'reports_journals' => 'setReportsJournals',
@@ -337,10 +374,13 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
         'sign_in_logs' => 'setSignInLogs',
         'spreadsheets' => 'setSpreadsheets',
         'system_conversion' => 'setSystemConversion',
+        'system_messages_for_admin' => 'setSystemMessagesForAdmin',
         'tax_reports' => 'setTaxReports',
         'tax_return' => 'setTaxReturn',
         'taxes' => 'setTaxes',
         'transfers' => 'setTransfers',
+        'txn_relationship_logs' => 'setTxnRelationshipLogs',
+        'user_attribute_logs' => 'setUserAttributeLogs',
         'user_matchers' => 'setUserMatchers',
         'wallet_txns' => 'setWalletTxns',
         'walletables' => 'setWalletables',
@@ -355,21 +395,26 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $getters = [
         'tags' => 'getTags',
+        'access_controls' => 'getAccessControls',
         'account_item_statements' => 'getAccountItemStatements',
         'account_items' => 'getAccountItems',
         'annual_reports' => 'getAnnualReports',
+        'app_role_logs' => 'getAppRoleLogs',
         'approval_flow_routes' => 'getApprovalFlowRoutes',
         'approval_requests' => 'getApprovalRequests',
         'backups' => 'getBackups',
         'bank_accountant_staff_users' => 'getBankAccountantStaffUsers',
         'biz_allocations' => 'getBizAllocations',
         'companies' => 'getCompanies',
+        'company_internal_announcements' => 'getCompanyInternalAnnouncements',
         'consumption_entries' => 'getConsumptionEntries',
         'cost_allocations' => 'getCostAllocations',
         'deal_templates' => 'getDealTemplates',
         'deals' => 'getDeals',
+        'doc_change_logs' => 'getDocChangeLogs',
         'doc_postings' => 'getDocPostings',
         'docs' => 'getDocs',
+        'expense_application_sync_payroll' => 'getExpenseApplicationSyncPayroll',
         'expense_application_templates' => 'getExpenseApplicationTemplates',
         'expense_applications' => 'getExpenseApplications',
         'fixed_assets' => 'getFixedAssets',
@@ -385,12 +430,14 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
         'partners' => 'getPartners',
         'payment_records' => 'getPaymentRecords',
         'payment_requests' => 'getPaymentRequests',
+        'payroll_item_sets' => 'getPayrollItemSets',
         'receipt_stream_editor' => 'getReceiptStreamEditor',
         'receipts' => 'getReceipts',
         'reports' => 'getReports',
         'reports_bs' => 'getReportsBs',
         'reports_cash_balance' => 'getReportsCashBalance',
         'reports_crosstabs' => 'getReportsCrosstabs',
+        'reports_custom_reports_aggregate' => 'getReportsCustomReportsAggregate',
         'reports_general_ledgers' => 'getReportsGeneralLedgers',
         'reports_income_expense' => 'getReportsIncomeExpense',
         'reports_journals' => 'getReportsJournals',
@@ -405,10 +452,13 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
         'sign_in_logs' => 'getSignInLogs',
         'spreadsheets' => 'getSpreadsheets',
         'system_conversion' => 'getSystemConversion',
+        'system_messages_for_admin' => 'getSystemMessagesForAdmin',
         'tax_reports' => 'getTaxReports',
         'tax_return' => 'getTaxReturn',
         'taxes' => 'getTaxes',
         'transfers' => 'getTransfers',
+        'txn_relationship_logs' => 'getTxnRelationshipLogs',
+        'user_attribute_logs' => 'getUserAttributeLogs',
         'user_matchers' => 'getUserMatchers',
         'wallet_txns' => 'getWalletTxns',
         'walletables' => 'getWalletables',
@@ -474,21 +524,26 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     public function __construct(array $data = null)
     {
         $this->container['tags'] = $data['tags'] ?? null;
+        $this->container['access_controls'] = $data['access_controls'] ?? null;
         $this->container['account_item_statements'] = $data['account_item_statements'] ?? null;
         $this->container['account_items'] = $data['account_items'] ?? null;
         $this->container['annual_reports'] = $data['annual_reports'] ?? null;
+        $this->container['app_role_logs'] = $data['app_role_logs'] ?? null;
         $this->container['approval_flow_routes'] = $data['approval_flow_routes'] ?? null;
         $this->container['approval_requests'] = $data['approval_requests'] ?? null;
         $this->container['backups'] = $data['backups'] ?? null;
         $this->container['bank_accountant_staff_users'] = $data['bank_accountant_staff_users'] ?? null;
         $this->container['biz_allocations'] = $data['biz_allocations'] ?? null;
         $this->container['companies'] = $data['companies'] ?? null;
+        $this->container['company_internal_announcements'] = $data['company_internal_announcements'] ?? null;
         $this->container['consumption_entries'] = $data['consumption_entries'] ?? null;
         $this->container['cost_allocations'] = $data['cost_allocations'] ?? null;
         $this->container['deal_templates'] = $data['deal_templates'] ?? null;
         $this->container['deals'] = $data['deals'] ?? null;
+        $this->container['doc_change_logs'] = $data['doc_change_logs'] ?? null;
         $this->container['doc_postings'] = $data['doc_postings'] ?? null;
         $this->container['docs'] = $data['docs'] ?? null;
+        $this->container['expense_application_sync_payroll'] = $data['expense_application_sync_payroll'] ?? null;
         $this->container['expense_application_templates'] = $data['expense_application_templates'] ?? null;
         $this->container['expense_applications'] = $data['expense_applications'] ?? null;
         $this->container['fixed_assets'] = $data['fixed_assets'] ?? null;
@@ -504,12 +559,14 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->container['partners'] = $data['partners'] ?? null;
         $this->container['payment_records'] = $data['payment_records'] ?? null;
         $this->container['payment_requests'] = $data['payment_requests'] ?? null;
+        $this->container['payroll_item_sets'] = $data['payroll_item_sets'] ?? null;
         $this->container['receipt_stream_editor'] = $data['receipt_stream_editor'] ?? null;
         $this->container['receipts'] = $data['receipts'] ?? null;
         $this->container['reports'] = $data['reports'] ?? null;
         $this->container['reports_bs'] = $data['reports_bs'] ?? null;
         $this->container['reports_cash_balance'] = $data['reports_cash_balance'] ?? null;
         $this->container['reports_crosstabs'] = $data['reports_crosstabs'] ?? null;
+        $this->container['reports_custom_reports_aggregate'] = $data['reports_custom_reports_aggregate'] ?? null;
         $this->container['reports_general_ledgers'] = $data['reports_general_ledgers'] ?? null;
         $this->container['reports_income_expense'] = $data['reports_income_expense'] ?? null;
         $this->container['reports_journals'] = $data['reports_journals'] ?? null;
@@ -524,10 +581,13 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->container['sign_in_logs'] = $data['sign_in_logs'] ?? null;
         $this->container['spreadsheets'] = $data['spreadsheets'] ?? null;
         $this->container['system_conversion'] = $data['system_conversion'] ?? null;
+        $this->container['system_messages_for_admin'] = $data['system_messages_for_admin'] ?? null;
         $this->container['tax_reports'] = $data['tax_reports'] ?? null;
         $this->container['tax_return'] = $data['tax_return'] ?? null;
         $this->container['taxes'] = $data['taxes'] ?? null;
         $this->container['transfers'] = $data['transfers'] ?? null;
+        $this->container['txn_relationship_logs'] = $data['txn_relationship_logs'] ?? null;
+        $this->container['user_attribute_logs'] = $data['user_attribute_logs'] ?? null;
         $this->container['user_matchers'] = $data['user_matchers'] ?? null;
         $this->container['wallet_txns'] = $data['wallet_txns'] ?? null;
         $this->container['walletables'] = $data['walletables'] ?? null;
@@ -547,6 +607,9 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
         if ($this->container['tags'] === null) {
             $invalidProperties[] = "'tags' can't be null";
         }
+        if ($this->container['access_controls'] === null) {
+            $invalidProperties[] = "'access_controls' can't be null";
+        }
         if ($this->container['account_item_statements'] === null) {
             $invalidProperties[] = "'account_item_statements' can't be null";
         }
@@ -555,6 +618,9 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
         }
         if ($this->container['annual_reports'] === null) {
             $invalidProperties[] = "'annual_reports' can't be null";
+        }
+        if ($this->container['app_role_logs'] === null) {
+            $invalidProperties[] = "'app_role_logs' can't be null";
         }
         if ($this->container['approval_flow_routes'] === null) {
             $invalidProperties[] = "'approval_flow_routes' can't be null";
@@ -574,6 +640,9 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
         if ($this->container['companies'] === null) {
             $invalidProperties[] = "'companies' can't be null";
         }
+        if ($this->container['company_internal_announcements'] === null) {
+            $invalidProperties[] = "'company_internal_announcements' can't be null";
+        }
         if ($this->container['consumption_entries'] === null) {
             $invalidProperties[] = "'consumption_entries' can't be null";
         }
@@ -586,11 +655,17 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
         if ($this->container['deals'] === null) {
             $invalidProperties[] = "'deals' can't be null";
         }
+        if ($this->container['doc_change_logs'] === null) {
+            $invalidProperties[] = "'doc_change_logs' can't be null";
+        }
         if ($this->container['doc_postings'] === null) {
             $invalidProperties[] = "'doc_postings' can't be null";
         }
         if ($this->container['docs'] === null) {
             $invalidProperties[] = "'docs' can't be null";
+        }
+        if ($this->container['expense_application_sync_payroll'] === null) {
+            $invalidProperties[] = "'expense_application_sync_payroll' can't be null";
         }
         if ($this->container['expense_application_templates'] === null) {
             $invalidProperties[] = "'expense_application_templates' can't be null";
@@ -637,6 +712,9 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
         if ($this->container['payment_requests'] === null) {
             $invalidProperties[] = "'payment_requests' can't be null";
         }
+        if ($this->container['payroll_item_sets'] === null) {
+            $invalidProperties[] = "'payroll_item_sets' can't be null";
+        }
         if ($this->container['receipt_stream_editor'] === null) {
             $invalidProperties[] = "'receipt_stream_editor' can't be null";
         }
@@ -654,6 +732,9 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
         }
         if ($this->container['reports_crosstabs'] === null) {
             $invalidProperties[] = "'reports_crosstabs' can't be null";
+        }
+        if ($this->container['reports_custom_reports_aggregate'] === null) {
+            $invalidProperties[] = "'reports_custom_reports_aggregate' can't be null";
         }
         if ($this->container['reports_general_ledgers'] === null) {
             $invalidProperties[] = "'reports_general_ledgers' can't be null";
@@ -697,6 +778,9 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
         if ($this->container['system_conversion'] === null) {
             $invalidProperties[] = "'system_conversion' can't be null";
         }
+        if ($this->container['system_messages_for_admin'] === null) {
+            $invalidProperties[] = "'system_messages_for_admin' can't be null";
+        }
         if ($this->container['tax_reports'] === null) {
             $invalidProperties[] = "'tax_reports' can't be null";
         }
@@ -708,6 +792,12 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
         }
         if ($this->container['transfers'] === null) {
             $invalidProperties[] = "'transfers' can't be null";
+        }
+        if ($this->container['txn_relationship_logs'] === null) {
+            $invalidProperties[] = "'txn_relationship_logs' can't be null";
+        }
+        if ($this->container['user_attribute_logs'] === null) {
+            $invalidProperties[] = "'user_attribute_logs' can't be null";
         }
         if ($this->container['user_matchers'] === null) {
             $invalidProperties[] = "'user_matchers' can't be null";
@@ -764,9 +854,33 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
+     * Gets access_controls
+     *
+     * @return \Freee\Accounting\Model\UserCapabilityWithWrite
+     */
+    public function getAccessControls()
+    {
+        return $this->container['access_controls'];
+    }
+
+    /**
+     * Sets access_controls
+     *
+     * @param \Freee\Accounting\Model\UserCapabilityWithWrite $access_controls access_controls
+     *
+     * @return self
+     */
+    public function setAccessControls($access_controls)
+    {
+        $this->container['access_controls'] = $access_controls;
+
+        return $this;
+    }
+
+    /**
      * Gets account_item_statements
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustRead
      */
     public function getAccountItemStatements()
     {
@@ -776,7 +890,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets account_item_statements
      *
-     * @param \Freee\Accounting\Model\UserCapability $account_item_statements account_item_statements
+     * @param \Freee\Accounting\Model\UserCapabilityJustRead $account_item_statements account_item_statements
      *
      * @return self
      */
@@ -814,7 +928,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets annual_reports
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustRead
      */
     public function getAnnualReports()
     {
@@ -824,13 +938,37 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets annual_reports
      *
-     * @param \Freee\Accounting\Model\UserCapability $annual_reports annual_reports
+     * @param \Freee\Accounting\Model\UserCapabilityJustRead $annual_reports annual_reports
      *
      * @return self
      */
     public function setAnnualReports($annual_reports)
     {
         $this->container['annual_reports'] = $annual_reports;
+
+        return $this;
+    }
+
+    /**
+     * Gets app_role_logs
+     *
+     * @return \Freee\Accounting\Model\UserCapabilityJustRead
+     */
+    public function getAppRoleLogs()
+    {
+        return $this->container['app_role_logs'];
+    }
+
+    /**
+     * Sets app_role_logs
+     *
+     * @param \Freee\Accounting\Model\UserCapabilityJustRead $app_role_logs app_role_logs
+     *
+     * @return self
+     */
+    public function setAppRoleLogs($app_role_logs)
+    {
+        $this->container['app_role_logs'] = $app_role_logs;
 
         return $this;
     }
@@ -886,7 +1024,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets backups
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustRead
      */
     public function getBackups()
     {
@@ -896,7 +1034,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets backups
      *
-     * @param \Freee\Accounting\Model\UserCapability $backups backups
+     * @param \Freee\Accounting\Model\UserCapabilityJustRead $backups backups
      *
      * @return self
      */
@@ -958,7 +1096,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets companies
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustReadUpdate
      */
     public function getCompanies()
     {
@@ -968,7 +1106,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets companies
      *
-     * @param \Freee\Accounting\Model\UserCapability $companies companies
+     * @param \Freee\Accounting\Model\UserCapabilityJustReadUpdate $companies companies
      *
      * @return self
      */
@@ -980,9 +1118,33 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
+     * Gets company_internal_announcements
+     *
+     * @return \Freee\Accounting\Model\UserCapabilityJustUpdate
+     */
+    public function getCompanyInternalAnnouncements()
+    {
+        return $this->container['company_internal_announcements'];
+    }
+
+    /**
+     * Sets company_internal_announcements
+     *
+     * @param \Freee\Accounting\Model\UserCapabilityJustUpdate $company_internal_announcements company_internal_announcements
+     *
+     * @return self
+     */
+    public function setCompanyInternalAnnouncements($company_internal_announcements)
+    {
+        $this->container['company_internal_announcements'] = $company_internal_announcements;
+
+        return $this;
+    }
+
+    /**
      * Gets consumption_entries
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustRead
      */
     public function getConsumptionEntries()
     {
@@ -992,7 +1154,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets consumption_entries
      *
-     * @param \Freee\Accounting\Model\UserCapability $consumption_entries consumption_entries
+     * @param \Freee\Accounting\Model\UserCapabilityJustRead $consumption_entries consumption_entries
      *
      * @return self
      */
@@ -1006,7 +1168,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets cost_allocations
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustReadUpdate
      */
     public function getCostAllocations()
     {
@@ -1016,7 +1178,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets cost_allocations
      *
-     * @param \Freee\Accounting\Model\UserCapability $cost_allocations cost_allocations
+     * @param \Freee\Accounting\Model\UserCapabilityJustReadUpdate $cost_allocations cost_allocations
      *
      * @return self
      */
@@ -1076,9 +1238,33 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
+     * Gets doc_change_logs
+     *
+     * @return \Freee\Accounting\Model\UserCapabilityJustRead
+     */
+    public function getDocChangeLogs()
+    {
+        return $this->container['doc_change_logs'];
+    }
+
+    /**
+     * Sets doc_change_logs
+     *
+     * @param \Freee\Accounting\Model\UserCapabilityJustRead $doc_change_logs doc_change_logs
+     *
+     * @return self
+     */
+    public function setDocChangeLogs($doc_change_logs)
+    {
+        $this->container['doc_change_logs'] = $doc_change_logs;
+
+        return $this;
+    }
+
+    /**
      * Gets doc_postings
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustCreate
      */
     public function getDocPostings()
     {
@@ -1088,7 +1274,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets doc_postings
      *
-     * @param \Freee\Accounting\Model\UserCapability $doc_postings doc_postings
+     * @param \Freee\Accounting\Model\UserCapabilityJustCreate $doc_postings doc_postings
      *
      * @return self
      */
@@ -1119,6 +1305,30 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setDocs($docs)
     {
         $this->container['docs'] = $docs;
+
+        return $this;
+    }
+
+    /**
+     * Gets expense_application_sync_payroll
+     *
+     * @return \Freee\Accounting\Model\UserCapabilityJustCreate
+     */
+    public function getExpenseApplicationSyncPayroll()
+    {
+        return $this->container['expense_application_sync_payroll'];
+    }
+
+    /**
+     * Sets expense_application_sync_payroll
+     *
+     * @param \Freee\Accounting\Model\UserCapabilityJustCreate $expense_application_sync_payroll expense_application_sync_payroll
+     *
+     * @return self
+     */
+    public function setExpenseApplicationSyncPayroll($expense_application_sync_payroll)
+    {
+        $this->container['expense_application_sync_payroll'] = $expense_application_sync_payroll;
 
         return $this;
     }
@@ -1318,7 +1528,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets month_end
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustRead
      */
     public function getMonthEnd()
     {
@@ -1328,7 +1538,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets month_end
      *
-     * @param \Freee\Accounting\Model\UserCapability $month_end month_end
+     * @param \Freee\Accounting\Model\UserCapabilityJustRead $month_end month_end
      *
      * @return self
      */
@@ -1390,7 +1600,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets opening_balances
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustReadUpdate
      */
     public function getOpeningBalances()
     {
@@ -1400,7 +1610,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets opening_balances
      *
-     * @param \Freee\Accounting\Model\UserCapability $opening_balances opening_balances
+     * @param \Freee\Accounting\Model\UserCapabilityJustReadUpdate $opening_balances opening_balances
      *
      * @return self
      */
@@ -1484,9 +1694,33 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets receipt_stream_editor
+     * Gets payroll_item_sets
      *
      * @return \Freee\Accounting\Model\UserCapability
+     */
+    public function getPayrollItemSets()
+    {
+        return $this->container['payroll_item_sets'];
+    }
+
+    /**
+     * Sets payroll_item_sets
+     *
+     * @param \Freee\Accounting\Model\UserCapability $payroll_item_sets payroll_item_sets
+     *
+     * @return self
+     */
+    public function setPayrollItemSets($payroll_item_sets)
+    {
+        $this->container['payroll_item_sets'] = $payroll_item_sets;
+
+        return $this;
+    }
+
+    /**
+     * Gets receipt_stream_editor
+     *
+     * @return \Freee\Accounting\Model\UserCapabilityJustRead
      */
     public function getReceiptStreamEditor()
     {
@@ -1496,7 +1730,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets receipt_stream_editor
      *
-     * @param \Freee\Accounting\Model\UserCapability $receipt_stream_editor receipt_stream_editor
+     * @param \Freee\Accounting\Model\UserCapabilityJustRead $receipt_stream_editor receipt_stream_editor
      *
      * @return self
      */
@@ -1534,7 +1768,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets reports
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustRead
      */
     public function getReports()
     {
@@ -1544,7 +1778,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets reports
      *
-     * @param \Freee\Accounting\Model\UserCapability $reports reports
+     * @param \Freee\Accounting\Model\UserCapabilityJustRead $reports reports
      *
      * @return self
      */
@@ -1558,7 +1792,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets reports_bs
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustRead
      */
     public function getReportsBs()
     {
@@ -1568,7 +1802,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets reports_bs
      *
-     * @param \Freee\Accounting\Model\UserCapability $reports_bs reports_bs
+     * @param \Freee\Accounting\Model\UserCapabilityJustRead $reports_bs reports_bs
      *
      * @return self
      */
@@ -1582,7 +1816,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets reports_cash_balance
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustRead
      */
     public function getReportsCashBalance()
     {
@@ -1592,7 +1826,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets reports_cash_balance
      *
-     * @param \Freee\Accounting\Model\UserCapability $reports_cash_balance reports_cash_balance
+     * @param \Freee\Accounting\Model\UserCapabilityJustRead $reports_cash_balance reports_cash_balance
      *
      * @return self
      */
@@ -1606,7 +1840,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets reports_crosstabs
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustRead
      */
     public function getReportsCrosstabs()
     {
@@ -1616,7 +1850,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets reports_crosstabs
      *
-     * @param \Freee\Accounting\Model\UserCapability $reports_crosstabs reports_crosstabs
+     * @param \Freee\Accounting\Model\UserCapabilityJustRead $reports_crosstabs reports_crosstabs
      *
      * @return self
      */
@@ -1628,9 +1862,33 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
+     * Gets reports_custom_reports_aggregate
+     *
+     * @return \Freee\Accounting\Model\UserCapabilityJustRead
+     */
+    public function getReportsCustomReportsAggregate()
+    {
+        return $this->container['reports_custom_reports_aggregate'];
+    }
+
+    /**
+     * Sets reports_custom_reports_aggregate
+     *
+     * @param \Freee\Accounting\Model\UserCapabilityJustRead $reports_custom_reports_aggregate reports_custom_reports_aggregate
+     *
+     * @return self
+     */
+    public function setReportsCustomReportsAggregate($reports_custom_reports_aggregate)
+    {
+        $this->container['reports_custom_reports_aggregate'] = $reports_custom_reports_aggregate;
+
+        return $this;
+    }
+
+    /**
      * Gets reports_general_ledgers
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustRead
      */
     public function getReportsGeneralLedgers()
     {
@@ -1640,7 +1898,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets reports_general_ledgers
      *
-     * @param \Freee\Accounting\Model\UserCapability $reports_general_ledgers reports_general_ledgers
+     * @param \Freee\Accounting\Model\UserCapabilityJustRead $reports_general_ledgers reports_general_ledgers
      *
      * @return self
      */
@@ -1654,7 +1912,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets reports_income_expense
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustRead
      */
     public function getReportsIncomeExpense()
     {
@@ -1664,7 +1922,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets reports_income_expense
      *
-     * @param \Freee\Accounting\Model\UserCapability $reports_income_expense reports_income_expense
+     * @param \Freee\Accounting\Model\UserCapabilityJustRead $reports_income_expense reports_income_expense
      *
      * @return self
      */
@@ -1678,7 +1936,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets reports_journals
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustRead
      */
     public function getReportsJournals()
     {
@@ -1688,7 +1946,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets reports_journals
      *
-     * @param \Freee\Accounting\Model\UserCapability $reports_journals reports_journals
+     * @param \Freee\Accounting\Model\UserCapabilityJustRead $reports_journals reports_journals
      *
      * @return self
      */
@@ -1702,7 +1960,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets reports_managements_navigation
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustReadWrite
      */
     public function getReportsManagementsNavigation()
     {
@@ -1712,7 +1970,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets reports_managements_navigation
      *
-     * @param \Freee\Accounting\Model\UserCapability $reports_managements_navigation reports_managements_navigation
+     * @param \Freee\Accounting\Model\UserCapabilityJustReadWrite $reports_managements_navigation reports_managements_navigation
      *
      * @return self
      */
@@ -1726,7 +1984,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets reports_managements_planning
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustReadWrite
      */
     public function getReportsManagementsPlanning()
     {
@@ -1736,7 +1994,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets reports_managements_planning
      *
-     * @param \Freee\Accounting\Model\UserCapability $reports_managements_planning reports_managements_planning
+     * @param \Freee\Accounting\Model\UserCapabilityJustReadWrite $reports_managements_planning reports_managements_planning
      *
      * @return self
      */
@@ -1750,7 +2008,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets reports_payables
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustReadWrite
      */
     public function getReportsPayables()
     {
@@ -1760,7 +2018,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets reports_payables
      *
-     * @param \Freee\Accounting\Model\UserCapability $reports_payables reports_payables
+     * @param \Freee\Accounting\Model\UserCapabilityJustReadWrite $reports_payables reports_payables
      *
      * @return self
      */
@@ -1774,7 +2032,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets reports_pl
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustRead
      */
     public function getReportsPl()
     {
@@ -1784,7 +2042,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets reports_pl
      *
-     * @param \Freee\Accounting\Model\UserCapability $reports_pl reports_pl
+     * @param \Freee\Accounting\Model\UserCapabilityJustRead $reports_pl reports_pl
      *
      * @return self
      */
@@ -1798,7 +2056,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets reports_receivables
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustRead
      */
     public function getReportsReceivables()
     {
@@ -1808,7 +2066,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets reports_receivables
      *
-     * @param \Freee\Accounting\Model\UserCapability $reports_receivables reports_receivables
+     * @param \Freee\Accounting\Model\UserCapabilityJustRead $reports_receivables reports_receivables
      *
      * @return self
      */
@@ -1846,7 +2104,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets resets
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustRead
      */
     public function getResets()
     {
@@ -1856,7 +2114,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets resets
      *
-     * @param \Freee\Accounting\Model\UserCapability $resets resets
+     * @param \Freee\Accounting\Model\UserCapabilityJustRead $resets resets
      *
      * @return self
      */
@@ -1894,7 +2152,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets sign_in_logs
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustRead
      */
     public function getSignInLogs()
     {
@@ -1904,7 +2162,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets sign_in_logs
      *
-     * @param \Freee\Accounting\Model\UserCapability $sign_in_logs sign_in_logs
+     * @param \Freee\Accounting\Model\UserCapabilityJustRead $sign_in_logs sign_in_logs
      *
      * @return self
      */
@@ -1918,7 +2176,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets spreadsheets
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustCreateRead
      */
     public function getSpreadsheets()
     {
@@ -1928,7 +2186,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets spreadsheets
      *
-     * @param \Freee\Accounting\Model\UserCapability $spreadsheets spreadsheets
+     * @param \Freee\Accounting\Model\UserCapabilityJustCreateRead $spreadsheets spreadsheets
      *
      * @return self
      */
@@ -1942,7 +2200,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets system_conversion
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustRead
      */
     public function getSystemConversion()
     {
@@ -1952,7 +2210,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets system_conversion
      *
-     * @param \Freee\Accounting\Model\UserCapability $system_conversion system_conversion
+     * @param \Freee\Accounting\Model\UserCapabilityJustRead $system_conversion system_conversion
      *
      * @return self
      */
@@ -1964,9 +2222,33 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
+     * Gets system_messages_for_admin
+     *
+     * @return \Freee\Accounting\Model\UserCapabilityJustRead
+     */
+    public function getSystemMessagesForAdmin()
+    {
+        return $this->container['system_messages_for_admin'];
+    }
+
+    /**
+     * Sets system_messages_for_admin
+     *
+     * @param \Freee\Accounting\Model\UserCapabilityJustRead $system_messages_for_admin system_messages_for_admin
+     *
+     * @return self
+     */
+    public function setSystemMessagesForAdmin($system_messages_for_admin)
+    {
+        $this->container['system_messages_for_admin'] = $system_messages_for_admin;
+
+        return $this;
+    }
+
+    /**
      * Gets tax_reports
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustRead
      */
     public function getTaxReports()
     {
@@ -1976,7 +2258,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets tax_reports
      *
-     * @param \Freee\Accounting\Model\UserCapability $tax_reports tax_reports
+     * @param \Freee\Accounting\Model\UserCapabilityJustRead $tax_reports tax_reports
      *
      * @return self
      */
@@ -1990,7 +2272,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets tax_return
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustRead
      */
     public function getTaxReturn()
     {
@@ -2000,7 +2282,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets tax_return
      *
-     * @param \Freee\Accounting\Model\UserCapability $tax_return tax_return
+     * @param \Freee\Accounting\Model\UserCapabilityJustRead $tax_return tax_return
      *
      * @return self
      */
@@ -2014,7 +2296,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets taxes
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustReadUpdate
      */
     public function getTaxes()
     {
@@ -2024,7 +2306,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets taxes
      *
-     * @param \Freee\Accounting\Model\UserCapability $taxes taxes
+     * @param \Freee\Accounting\Model\UserCapabilityJustReadUpdate $taxes taxes
      *
      * @return self
      */
@@ -2055,6 +2337,54 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setTransfers($transfers)
     {
         $this->container['transfers'] = $transfers;
+
+        return $this;
+    }
+
+    /**
+     * Gets txn_relationship_logs
+     *
+     * @return \Freee\Accounting\Model\UserCapabilityJustRead
+     */
+    public function getTxnRelationshipLogs()
+    {
+        return $this->container['txn_relationship_logs'];
+    }
+
+    /**
+     * Sets txn_relationship_logs
+     *
+     * @param \Freee\Accounting\Model\UserCapabilityJustRead $txn_relationship_logs txn_relationship_logs
+     *
+     * @return self
+     */
+    public function setTxnRelationshipLogs($txn_relationship_logs)
+    {
+        $this->container['txn_relationship_logs'] = $txn_relationship_logs;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_attribute_logs
+     *
+     * @return \Freee\Accounting\Model\UserCapabilityJustRead
+     */
+    public function getUserAttributeLogs()
+    {
+        return $this->container['user_attribute_logs'];
+    }
+
+    /**
+     * Sets user_attribute_logs
+     *
+     * @param \Freee\Accounting\Model\UserCapabilityJustRead $user_attribute_logs user_attribute_logs
+     *
+     * @return self
+     */
+    public function setUserAttributeLogs($user_attribute_logs)
+    {
+        $this->container['user_attribute_logs'] = $user_attribute_logs;
 
         return $this;
     }
@@ -2134,7 +2464,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets workflows
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustReadUpdateDestroy
      */
     public function getWorkflows()
     {
@@ -2144,7 +2474,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets workflows
      *
-     * @param \Freee\Accounting\Model\UserCapability $workflows workflows
+     * @param \Freee\Accounting\Model\UserCapabilityJustReadUpdateDestroy $workflows workflows
      *
      * @return self
      */
@@ -2158,7 +2488,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets year_end
      *
-     * @return \Freee\Accounting\Model\UserCapability
+     * @return \Freee\Accounting\Model\UserCapabilityJustReadUpdate
      */
     public function getYearEnd()
     {
@@ -2168,7 +2498,7 @@ class InlineResponse20013 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets year_end
      *
-     * @param \Freee\Accounting\Model\UserCapability $year_end year_end
+     * @param \Freee\Accounting\Model\UserCapabilityJustReadUpdate $year_end year_end
      *
      * @return self
      */

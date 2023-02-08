@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **description** | **string** | 内容 |
 **id** | **int** | 支払依頼の項目行ID |
 **item_id** | **int** | 品目ID |
-**line_type** | **string** | 行の種類 (deal_line: 支払依頼, withholding_tax: 源泉徴収税) |
+**line_type** | **string** | 行の種類 (deal_line: 支払依頼の通常取引行, withholding_tax: 源泉所得税行) |
 **section_id** | **int** | 部門ID |
 **segment_1_tag_id** | **int** | セグメント１ID。セグメント１が使用可能なプランの時のみレスポンスに含まれます。 | [optional]
 **segment_2_tag_id** | **int** | セグメント２ID。セグメント２が使用可能なプランの時のみレスポンスに含まれます。 | [optional]

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address_attributes** | [**\Freee\Accounting\Model\PartnerCreateParamsAddressAttributes**](PartnerCreateParamsAddressAttributes.md) |  | [optional]
-**code** | **string** | 取引先コード（取引先コードの利用を有効にしている場合は、codeの指定は必須です。） | [optional]
+**code** | **string** | 取引先コード（取引先コードの利用を有効にしている場合は、codeの指定は必須です。ただし重複は不可。） | [optional]
 **company_id** | **int** | 事業所ID |
 **contact_name** | **string** | 担当者 氏名 (255文字以内) | [optional]
 **country_code** | **string** | 地域（JP: 国内、ZZ:国外）、指定しない場合JPになります。 | [optional]
