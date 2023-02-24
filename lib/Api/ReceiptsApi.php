@@ -118,12 +118,14 @@ class ReceiptsApi
     /**
      * Operation createReceipt
      *
-     * ファイルボックス 証憑ファイルアップロード
+     * ファイルボックス（証憑ファイル）のアップロード
      *
      * @param  int $company_id 事業所ID (required)
      * @param  \SplFileObject $receipt 証憑ファイル (required)
      * @param  string $description メモ (255文字以内) (optional)
+     * @param  string $document_type この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） (optional)
      * @param  string $issue_date 取引日 (yyyy-mm-dd) (optional)
+     * @param  string $qualified_invoice この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） (optional)
      * @param  int $receipt_metadatum_amount 金額 (optional)
      * @param  string $receipt_metadatum_issue_date 発行日 (yyyy-mm-dd) (optional)
      * @param  string $receipt_metadatum_partner_name 発行元 (optional)
@@ -132,21 +134,23 @@ class ReceiptsApi
      * @throws \InvalidArgumentException
      * @return \Freee\Accounting\Model\ReceiptResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError
      */
-    public function createReceipt($company_id, $receipt, $description = null, $issue_date = null, $receipt_metadatum_amount = null, $receipt_metadatum_issue_date = null, $receipt_metadatum_partner_name = null)
+    public function createReceipt($company_id, $receipt, $description = null, $document_type = null, $issue_date = null, $qualified_invoice = null, $receipt_metadatum_amount = null, $receipt_metadatum_issue_date = null, $receipt_metadatum_partner_name = null)
     {
-        list($response) = $this->createReceiptWithHttpInfo($company_id, $receipt, $description, $issue_date, $receipt_metadatum_amount, $receipt_metadatum_issue_date, $receipt_metadatum_partner_name);
+        list($response) = $this->createReceiptWithHttpInfo($company_id, $receipt, $description, $document_type, $issue_date, $qualified_invoice, $receipt_metadatum_amount, $receipt_metadatum_issue_date, $receipt_metadatum_partner_name);
         return $response;
     }
 
     /**
      * Operation createReceiptWithHttpInfo
      *
-     * ファイルボックス 証憑ファイルアップロード
+     * ファイルボックス（証憑ファイル）のアップロード
      *
      * @param  int $company_id 事業所ID (required)
      * @param  \SplFileObject $receipt 証憑ファイル (required)
      * @param  string $description メモ (255文字以内) (optional)
+     * @param  string $document_type この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） (optional)
      * @param  string $issue_date 取引日 (yyyy-mm-dd) (optional)
+     * @param  string $qualified_invoice この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） (optional)
      * @param  int $receipt_metadatum_amount 金額 (optional)
      * @param  string $receipt_metadatum_issue_date 発行日 (yyyy-mm-dd) (optional)
      * @param  string $receipt_metadatum_partner_name 発行元 (optional)
@@ -155,9 +159,9 @@ class ReceiptsApi
      * @throws \InvalidArgumentException
      * @return array of \Freee\Accounting\Model\ReceiptResponse|\Freee\Accounting\Model\BadRequestError|\Freee\Accounting\Model\UnauthorizedError|\Freee\Accounting\Model\ForbiddenError|\Freee\Accounting\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createReceiptWithHttpInfo($company_id, $receipt, $description = null, $issue_date = null, $receipt_metadatum_amount = null, $receipt_metadatum_issue_date = null, $receipt_metadatum_partner_name = null)
+    public function createReceiptWithHttpInfo($company_id, $receipt, $description = null, $document_type = null, $issue_date = null, $qualified_invoice = null, $receipt_metadatum_amount = null, $receipt_metadatum_issue_date = null, $receipt_metadatum_partner_name = null)
     {
-        $request = $this->createReceiptRequest($company_id, $receipt, $description, $issue_date, $receipt_metadatum_amount, $receipt_metadatum_issue_date, $receipt_metadatum_partner_name);
+        $request = $this->createReceiptRequest($company_id, $receipt, $description, $document_type, $issue_date, $qualified_invoice, $receipt_metadatum_amount, $receipt_metadatum_issue_date, $receipt_metadatum_partner_name);
 
         try {
             $options = $this->createHttpClientOption();
@@ -320,12 +324,14 @@ class ReceiptsApi
     /**
      * Operation createReceiptAsync
      *
-     * ファイルボックス 証憑ファイルアップロード
+     * ファイルボックス（証憑ファイル）のアップロード
      *
      * @param  int $company_id 事業所ID (required)
      * @param  \SplFileObject $receipt 証憑ファイル (required)
      * @param  string $description メモ (255文字以内) (optional)
+     * @param  string $document_type この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） (optional)
      * @param  string $issue_date 取引日 (yyyy-mm-dd) (optional)
+     * @param  string $qualified_invoice この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） (optional)
      * @param  int $receipt_metadatum_amount 金額 (optional)
      * @param  string $receipt_metadatum_issue_date 発行日 (yyyy-mm-dd) (optional)
      * @param  string $receipt_metadatum_partner_name 発行元 (optional)
@@ -333,9 +339,9 @@ class ReceiptsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createReceiptAsync($company_id, $receipt, $description = null, $issue_date = null, $receipt_metadatum_amount = null, $receipt_metadatum_issue_date = null, $receipt_metadatum_partner_name = null)
+    public function createReceiptAsync($company_id, $receipt, $description = null, $document_type = null, $issue_date = null, $qualified_invoice = null, $receipt_metadatum_amount = null, $receipt_metadatum_issue_date = null, $receipt_metadatum_partner_name = null)
     {
-        return $this->createReceiptAsyncWithHttpInfo($company_id, $receipt, $description, $issue_date, $receipt_metadatum_amount, $receipt_metadatum_issue_date, $receipt_metadatum_partner_name)
+        return $this->createReceiptAsyncWithHttpInfo($company_id, $receipt, $description, $document_type, $issue_date, $qualified_invoice, $receipt_metadatum_amount, $receipt_metadatum_issue_date, $receipt_metadatum_partner_name)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -346,12 +352,14 @@ class ReceiptsApi
     /**
      * Operation createReceiptAsyncWithHttpInfo
      *
-     * ファイルボックス 証憑ファイルアップロード
+     * ファイルボックス（証憑ファイル）のアップロード
      *
      * @param  int $company_id 事業所ID (required)
      * @param  \SplFileObject $receipt 証憑ファイル (required)
      * @param  string $description メモ (255文字以内) (optional)
+     * @param  string $document_type この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） (optional)
      * @param  string $issue_date 取引日 (yyyy-mm-dd) (optional)
+     * @param  string $qualified_invoice この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） (optional)
      * @param  int $receipt_metadatum_amount 金額 (optional)
      * @param  string $receipt_metadatum_issue_date 発行日 (yyyy-mm-dd) (optional)
      * @param  string $receipt_metadatum_partner_name 発行元 (optional)
@@ -359,10 +367,10 @@ class ReceiptsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createReceiptAsyncWithHttpInfo($company_id, $receipt, $description = null, $issue_date = null, $receipt_metadatum_amount = null, $receipt_metadatum_issue_date = null, $receipt_metadatum_partner_name = null)
+    public function createReceiptAsyncWithHttpInfo($company_id, $receipt, $description = null, $document_type = null, $issue_date = null, $qualified_invoice = null, $receipt_metadatum_amount = null, $receipt_metadatum_issue_date = null, $receipt_metadatum_partner_name = null)
     {
         $returnType = '\Freee\Accounting\Model\ReceiptResponse';
-        $request = $this->createReceiptRequest($company_id, $receipt, $description, $issue_date, $receipt_metadatum_amount, $receipt_metadatum_issue_date, $receipt_metadatum_partner_name);
+        $request = $this->createReceiptRequest($company_id, $receipt, $description, $document_type, $issue_date, $qualified_invoice, $receipt_metadatum_amount, $receipt_metadatum_issue_date, $receipt_metadatum_partner_name);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -403,7 +411,9 @@ class ReceiptsApi
      * @param  int $company_id 事業所ID (required)
      * @param  \SplFileObject $receipt 証憑ファイル (required)
      * @param  string $description メモ (255文字以内) (optional)
+     * @param  string $document_type この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） (optional)
      * @param  string $issue_date 取引日 (yyyy-mm-dd) (optional)
+     * @param  string $qualified_invoice この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） (optional)
      * @param  int $receipt_metadatum_amount 金額 (optional)
      * @param  string $receipt_metadatum_issue_date 発行日 (yyyy-mm-dd) (optional)
      * @param  string $receipt_metadatum_partner_name 発行元 (optional)
@@ -411,7 +421,7 @@ class ReceiptsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createReceiptRequest($company_id, $receipt, $description = null, $issue_date = null, $receipt_metadatum_amount = null, $receipt_metadatum_issue_date = null, $receipt_metadatum_partner_name = null)
+    public function createReceiptRequest($company_id, $receipt, $description = null, $document_type = null, $issue_date = null, $qualified_invoice = null, $receipt_metadatum_amount = null, $receipt_metadatum_issue_date = null, $receipt_metadatum_partner_name = null)
     {
         // verify the required parameter 'company_id' is set
         if ($company_id === null || (is_array($company_id) && count($company_id) === 0)) {
@@ -467,8 +477,16 @@ class ReceiptsApi
             $formParams['description'] = ObjectSerializer::toFormValue($description);
         }
         // form params
+        if ($document_type !== null) {
+            $formParams['document_type'] = ObjectSerializer::toFormValue($document_type);
+        }
+        // form params
         if ($issue_date !== null) {
             $formParams['issue_date'] = ObjectSerializer::toFormValue($issue_date);
+        }
+        // form params
+        if ($qualified_invoice !== null) {
+            $formParams['qualified_invoice'] = ObjectSerializer::toFormValue($qualified_invoice);
         }
         // form params
         if ($receipt !== null) {
@@ -559,9 +577,9 @@ class ReceiptsApi
     /**
      * Operation destroyReceipt
      *
-     * ファイルボックス 証憑ファイルを削除する
+     * ファイルボックス（証憑ファイル）の削除
      *
-     * @param  int $id 証憑ファイルID (required)
+     * @param  int $id ファイルボックス（証憑ファイル）ID (required)
      * @param  int $company_id 事業所ID (required)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
@@ -576,9 +594,9 @@ class ReceiptsApi
     /**
      * Operation destroyReceiptWithHttpInfo
      *
-     * ファイルボックス 証憑ファイルを削除する
+     * ファイルボックス（証憑ファイル）の削除
      *
-     * @param  int $id 証憑ファイルID (required)
+     * @param  int $id ファイルボックス（証憑ファイル）ID (required)
      * @param  int $company_id 事業所ID (required)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
@@ -676,9 +694,9 @@ class ReceiptsApi
     /**
      * Operation destroyReceiptAsync
      *
-     * ファイルボックス 証憑ファイルを削除する
+     * ファイルボックス（証憑ファイル）の削除
      *
-     * @param  int $id 証憑ファイルID (required)
+     * @param  int $id ファイルボックス（証憑ファイル）ID (required)
      * @param  int $company_id 事業所ID (required)
      *
      * @throws \InvalidArgumentException
@@ -697,9 +715,9 @@ class ReceiptsApi
     /**
      * Operation destroyReceiptAsyncWithHttpInfo
      *
-     * ファイルボックス 証憑ファイルを削除する
+     * ファイルボックス（証憑ファイル）の削除
      *
-     * @param  int $id 証憑ファイルID (required)
+     * @param  int $id ファイルボックス（証憑ファイル）ID (required)
      * @param  int $company_id 事業所ID (required)
      *
      * @throws \InvalidArgumentException
@@ -736,7 +754,7 @@ class ReceiptsApi
     /**
      * Create request for operation 'destroyReceipt'
      *
-     * @param  int $id 証憑ファイルID (required)
+     * @param  int $id ファイルボックス（証憑ファイル）ID (required)
      * @param  int $company_id 事業所ID (required)
      *
      * @throws \InvalidArgumentException
@@ -865,9 +883,9 @@ class ReceiptsApi
     /**
      * Operation downloadReceipt
      *
-     * ファイルボックス 証憑ファイルのダウンロード
+     * ファイルボックス（証憑ファイル）のダウンロード
      *
-     * @param  int $id 証憑ファイルID (required)
+     * @param  int $id ファイルボックス（証憑ファイル）ID (required)
      * @param  int $company_id 事業所ID (required)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
@@ -883,9 +901,9 @@ class ReceiptsApi
     /**
      * Operation downloadReceiptWithHttpInfo
      *
-     * ファイルボックス 証憑ファイルのダウンロード
+     * ファイルボックス（証憑ファイル）のダウンロード
      *
-     * @param  int $id 証憑ファイルID (required)
+     * @param  int $id ファイルボックス（証憑ファイル）ID (required)
      * @param  int $company_id 事業所ID (required)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
@@ -1077,9 +1095,9 @@ class ReceiptsApi
     /**
      * Operation downloadReceiptAsync
      *
-     * ファイルボックス 証憑ファイルのダウンロード
+     * ファイルボックス（証憑ファイル）のダウンロード
      *
-     * @param  int $id 証憑ファイルID (required)
+     * @param  int $id ファイルボックス（証憑ファイル）ID (required)
      * @param  int $company_id 事業所ID (required)
      *
      * @throws \InvalidArgumentException
@@ -1098,9 +1116,9 @@ class ReceiptsApi
     /**
      * Operation downloadReceiptAsyncWithHttpInfo
      *
-     * ファイルボックス 証憑ファイルのダウンロード
+     * ファイルボックス（証憑ファイル）のダウンロード
      *
-     * @param  int $id 証憑ファイルID (required)
+     * @param  int $id ファイルボックス（証憑ファイル）ID (required)
      * @param  int $company_id 事業所ID (required)
      *
      * @throws \InvalidArgumentException
@@ -1147,7 +1165,7 @@ class ReceiptsApi
     /**
      * Create request for operation 'downloadReceipt'
      *
-     * @param  int $id 証憑ファイルID (required)
+     * @param  int $id ファイルボックス（証憑ファイル）ID (required)
      * @param  int $company_id 事業所ID (required)
      *
      * @throws \InvalidArgumentException
@@ -1276,9 +1294,9 @@ class ReceiptsApi
     /**
      * Operation getReceipt
      *
-     * ファイルボックス 証憑ファイルの取得
+     * ファイルボックス（証憑ファイル）の取得
      *
-     * @param  int $id 証憑ファイルID (required)
+     * @param  int $id ファイルボックス（証憑ファイル）ID (required)
      * @param  int $company_id 事業所ID (required)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
@@ -1294,9 +1312,9 @@ class ReceiptsApi
     /**
      * Operation getReceiptWithHttpInfo
      *
-     * ファイルボックス 証憑ファイルの取得
+     * ファイルボックス（証憑ファイル）の取得
      *
-     * @param  int $id 証憑ファイルID (required)
+     * @param  int $id ファイルボックス（証憑ファイル）ID (required)
      * @param  int $company_id 事業所ID (required)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
@@ -1488,9 +1506,9 @@ class ReceiptsApi
     /**
      * Operation getReceiptAsync
      *
-     * ファイルボックス 証憑ファイルの取得
+     * ファイルボックス（証憑ファイル）の取得
      *
-     * @param  int $id 証憑ファイルID (required)
+     * @param  int $id ファイルボックス（証憑ファイル）ID (required)
      * @param  int $company_id 事業所ID (required)
      *
      * @throws \InvalidArgumentException
@@ -1509,9 +1527,9 @@ class ReceiptsApi
     /**
      * Operation getReceiptAsyncWithHttpInfo
      *
-     * ファイルボックス 証憑ファイルの取得
+     * ファイルボックス（証憑ファイル）の取得
      *
-     * @param  int $id 証憑ファイルID (required)
+     * @param  int $id ファイルボックス（証憑ファイル）ID (required)
      * @param  int $company_id 事業所ID (required)
      *
      * @throws \InvalidArgumentException
@@ -1558,7 +1576,7 @@ class ReceiptsApi
     /**
      * Create request for operation 'getReceipt'
      *
-     * @param  int $id 証憑ファイルID (required)
+     * @param  int $id ファイルボックス（証憑ファイル）ID (required)
      * @param  int $company_id 事業所ID (required)
      *
      * @throws \InvalidArgumentException
@@ -1687,7 +1705,7 @@ class ReceiptsApi
     /**
      * Operation getReceipts
      *
-     * ファイルボックス 証憑ファイル一覧の取得
+     * ファイルボックス（証憑ファイル）一覧の取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  string $start_date アップロード日 (yyyy-mm-dd) (required)
@@ -1713,7 +1731,7 @@ class ReceiptsApi
     /**
      * Operation getReceiptsWithHttpInfo
      *
-     * ファイルボックス 証憑ファイル一覧の取得
+     * ファイルボックス（証憑ファイル）一覧の取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  string $start_date アップロード日 (yyyy-mm-dd) (required)
@@ -1895,7 +1913,7 @@ class ReceiptsApi
     /**
      * Operation getReceiptsAsync
      *
-     * ファイルボックス 証憑ファイル一覧の取得
+     * ファイルボックス（証憑ファイル）一覧の取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  string $start_date アップロード日 (yyyy-mm-dd) (required)
@@ -1924,7 +1942,7 @@ class ReceiptsApi
     /**
      * Operation getReceiptsAsyncWithHttpInfo
      *
-     * ファイルボックス 証憑ファイル一覧の取得
+     * ファイルボックス（証憑ファイル）一覧の取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  string $start_date アップロード日 (yyyy-mm-dd) (required)
@@ -2229,9 +2247,9 @@ class ReceiptsApi
     /**
      * Operation updateReceipt
      *
-     * ファイルボックス 証憑ファイル情報更新
+     * ファイルボックス（証憑ファイル）の更新
      *
-     * @param  int $id 証憑ファイルID (required)
+     * @param  int $id ファイルボックス（証憑ファイル）ID (required)
      * @param  \Freee\Accounting\Model\ReceiptUpdateParams $receipt_update_params receipt_update_params (required)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
@@ -2247,9 +2265,9 @@ class ReceiptsApi
     /**
      * Operation updateReceiptWithHttpInfo
      *
-     * ファイルボックス 証憑ファイル情報更新
+     * ファイルボックス（証憑ファイル）の更新
      *
-     * @param  int $id 証憑ファイルID (required)
+     * @param  int $id ファイルボックス（証憑ファイル）ID (required)
      * @param  \Freee\Accounting\Model\ReceiptUpdateParams $receipt_update_params (required)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
@@ -2441,9 +2459,9 @@ class ReceiptsApi
     /**
      * Operation updateReceiptAsync
      *
-     * ファイルボックス 証憑ファイル情報更新
+     * ファイルボックス（証憑ファイル）の更新
      *
-     * @param  int $id 証憑ファイルID (required)
+     * @param  int $id ファイルボックス（証憑ファイル）ID (required)
      * @param  \Freee\Accounting\Model\ReceiptUpdateParams $receipt_update_params (required)
      *
      * @throws \InvalidArgumentException
@@ -2462,9 +2480,9 @@ class ReceiptsApi
     /**
      * Operation updateReceiptAsyncWithHttpInfo
      *
-     * ファイルボックス 証憑ファイル情報更新
+     * ファイルボックス（証憑ファイル）の更新
      *
-     * @param  int $id 証憑ファイルID (required)
+     * @param  int $id ファイルボックス（証憑ファイル）ID (required)
      * @param  \Freee\Accounting\Model\ReceiptUpdateParams $receipt_update_params (required)
      *
      * @throws \InvalidArgumentException
@@ -2511,7 +2529,7 @@ class ReceiptsApi
     /**
      * Create request for operation 'updateReceipt'
      *
-     * @param  int $id 証憑ファイルID (required)
+     * @param  int $id ファイルボックス（証憑ファイル）ID (required)
      * @param  \Freee\Accounting\Model\ReceiptUpdateParams $receipt_update_params (required)
      *
      * @throws \InvalidArgumentException

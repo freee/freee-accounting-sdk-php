@@ -98,9 +98,36 @@ class ReceiptUpdateParamsTest extends TestCase
     }
 
     /**
+     * Test attribute "document_type"
+     */
+    public function testPropertyDocumentType()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "invoice_registration_number"
+     */
+    public function testPropertyInvoiceRegistrationNumber()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "issue_date"
      */
     public function testPropertyIssueDate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "qualified_invoice"
+     */
+    public function testPropertyQualifiedInvoice()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

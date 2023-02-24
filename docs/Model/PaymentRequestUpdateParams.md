@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **payment_date** | **string** | 支払期限 (yyyy-mm-dd) | [optional]
 **payment_method** | **string** | &#39;支払方法(none: 指定なし, domestic_bank_transfer: 国内振込, abroad_bank_transfer: 国外振込, account_transfer: 口座振替, credit_card: クレジットカード)&#39;&lt;br&gt; &#39;デフォルトは none: 指定なし です。&#39; | [optional]
 **payment_request_lines** | [**\Freee\Accounting\Model\PaymentRequestUpdateParamsPaymentRequestLines[]**](PaymentRequestUpdateParamsPaymentRequestLines.md) | 支払依頼の項目行一覧（配列） |
-**receipt_ids** | **int[]** | 証憑ファイルID（ファイルボックスのファイルID）（配列） | [optional]
+**receipt_ids** | **int[]** | ファイルボックス（証憑ファイル）ID（配列） | [optional]
 **title** | **string** | 申請タイトル&lt;br&gt; 申請者が、下書き状態もしくは差戻し状態の支払依頼に対して指定する場合のみ有効 |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

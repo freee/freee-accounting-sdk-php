@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 **payment_date** | **string** | 支払期限 (yyyy-mm-dd) |
 **payment_method** | **string** | 支払方法(none: 指定なし, domestic_bank_transfer: 国内振込, abroad_bank_transfer: 国外振込, account_transfer: 口座振替, credit_card: クレジットカード) |
 **payment_request_lines** | [**\Freee\Accounting\Model\PaymentRequestResponsePaymentRequestPaymentRequestLines[]**](PaymentRequestResponsePaymentRequestPaymentRequestLines.md) | 支払依頼の項目行一覧（配列） |
-**receipt_ids** | **int[]** | 証憑ファイルID（ファイルボックスのファイルID） |
+**receipt_ids** | **int[]** | ファイルボックス（証憑ファイル）ID |
 **status** | **string** | 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) |
 **title** | **string** | 申請タイトル |
 **total_amount** | **int** | 合計金額 |

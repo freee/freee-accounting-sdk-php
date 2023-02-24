@@ -134,7 +134,7 @@ class ApprovalRequestsApiTest extends TestCase
     /**
      * Test case for getApprovalRequests
      *
-     * 各種申請の一覧.
+     * 各種申請一覧の取得.
      *
      */
     public function testGetApprovalRequests()

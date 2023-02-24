@@ -74,7 +74,7 @@ class ReceiptsApiTest extends TestCase
     /**
      * Test case for createReceipt
      *
-     * ファイルボックス 証憑ファイルアップロード.
+     * ファイルボックス（証憑ファイル）のアップロード.
      *
      */
     public function testCreateReceipt()
@@ -86,7 +86,7 @@ class ReceiptsApiTest extends TestCase
     /**
      * Test case for destroyReceipt
      *
-     * ファイルボックス 証憑ファイルを削除する.
+     * ファイルボックス（証憑ファイル）の削除.
      *
      */
     public function testDestroyReceipt()
@@ -98,7 +98,7 @@ class ReceiptsApiTest extends TestCase
     /**
      * Test case for downloadReceipt
      *
-     * ファイルボックス 証憑ファイルのダウンロード.
+     * ファイルボックス（証憑ファイル）のダウンロード.
      *
      */
     public function testDownloadReceipt()
@@ -110,7 +110,7 @@ class ReceiptsApiTest extends TestCase
     /**
      * Test case for getReceipt
      *
-     * ファイルボックス 証憑ファイルの取得.
+     * ファイルボックス（証憑ファイル）の取得.
      *
      */
     public function testGetReceipt()
@@ -122,7 +122,7 @@ class ReceiptsApiTest extends TestCase
     /**
      * Test case for getReceipts
      *
-     * ファイルボックス 証憑ファイル一覧の取得.
+     * ファイルボックス（証憑ファイル）一覧の取得.
      *
      */
     public function testGetReceipts()
@@ -134,7 +134,7 @@ class ReceiptsApiTest extends TestCase
     /**
      * Test case for updateReceipt
      *
-     * ファイルボックス 証憑ファイル情報更新.
+     * ファイルボックス（証憑ファイル）の更新.
      *
      */
     public function testUpdateReceipt()

@@ -4,10 +4,10 @@ All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createWalletTxn()**](WalletTxnsApi.md#createWalletTxn) | **POST** /api/1/wallet_txns | 明細の作成
-[**destroyWalletTxn()**](WalletTxnsApi.md#destroyWalletTxn) | **DELETE** /api/1/wallet_txns/{id} | 明細の削除
-[**getWalletTxn()**](WalletTxnsApi.md#getWalletTxn) | **GET** /api/1/wallet_txns/{id} | 明細の取得
-[**getWalletTxns()**](WalletTxnsApi.md#getWalletTxns) | **GET** /api/1/wallet_txns | 明細一覧の取得
+[**createWalletTxn()**](WalletTxnsApi.md#createWalletTxn) | **POST** /api/1/wallet_txns | 口座明細の作成
+[**destroyWalletTxn()**](WalletTxnsApi.md#destroyWalletTxn) | **DELETE** /api/1/wallet_txns/{id} | 口座明細の削除
+[**getWalletTxn()**](WalletTxnsApi.md#getWalletTxn) | **GET** /api/1/wallet_txns/{id} | 口座明細の取得
+[**getWalletTxns()**](WalletTxnsApi.md#getWalletTxns) | **GET** /api/1/wallet_txns | 口座明細一覧の取得
 
 
 ## `createWalletTxn()`
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 createWalletTxn($wallet_txn_params): \Freee\Accounting\Model\WalletTxnResponse
 ```
 
-明細の作成
+口座明細の作成
 
 ### Example
 
@@ -35,7 +35,7 @@ $apiInstance = new Freee\Accounting\Api\WalletTxnsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$wallet_txn_params = new \Freee\Accounting\Model\WalletTxnParams(); // \Freee\Accounting\Model\WalletTxnParams | 明細の作成
+$wallet_txn_params = new \Freee\Accounting\Model\WalletTxnParams(); // \Freee\Accounting\Model\WalletTxnParams | 口座明細の作成
 
 try {
     $result = $apiInstance->createWalletTxn($wallet_txn_params);
@@ -49,7 +49,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wallet_txn_params** | [**\Freee\Accounting\Model\WalletTxnParams**](../Model/WalletTxnParams.md)| 明細の作成 | [optional]
+ **wallet_txn_params** | [**\Freee\Accounting\Model\WalletTxnParams**](../Model/WalletTxnParams.md)| 口座明細の作成 | [optional]
 
 ### Return type
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 destroyWalletTxn($id, $company_id)
 ```
 
-明細の削除
+口座明細の削除
 
 ### Example
 
@@ -133,7 +133,7 @@ void (empty response body)
 getWalletTxn($id, $company_id): \Freee\Accounting\Model\WalletTxnResponse
 ```
 
-明細の取得
+口座明細の取得
 
 ### Example
 
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 getWalletTxns($company_id, $walletable_type, $walletable_id, $start_date, $end_date, $entry_side, $offset, $limit): \Freee\Accounting\Model\InlineResponse20014
 ```
 
-明細一覧の取得
+口座明細一覧の取得
 
 ### Example
 

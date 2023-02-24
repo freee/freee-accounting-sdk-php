@@ -769,7 +769,7 @@ class AccountItemsApi
     /**
      * Operation getAccountItem
      *
-     * 勘定科目の詳細情報の取得
+     * 勘定科目の取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $id 勘定科目ID (required)
@@ -787,7 +787,7 @@ class AccountItemsApi
     /**
      * Operation getAccountItemWithHttpInfo
      *
-     * 勘定科目の詳細情報の取得
+     * 勘定科目の取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $id 勘定科目ID (required)
@@ -981,7 +981,7 @@ class AccountItemsApi
     /**
      * Operation getAccountItemAsync
      *
-     * 勘定科目の詳細情報の取得
+     * 勘定科目の取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $id 勘定科目ID (required)
@@ -1002,7 +1002,7 @@ class AccountItemsApi
     /**
      * Operation getAccountItemAsyncWithHttpInfo
      *
-     * 勘定科目の詳細情報の取得
+     * 勘定科目の取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $id 勘定科目ID (required)

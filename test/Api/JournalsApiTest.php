@@ -74,7 +74,7 @@ class JournalsApiTest extends TestCase
     /**
      * Test case for downloadJournal
      *
-     * ダウンロード実行.
+     * 仕訳帳のダウンロード.
      *
      */
     public function testDownloadJournal()
@@ -86,7 +86,7 @@ class JournalsApiTest extends TestCase
     /**
      * Test case for getJournalStatus
      *
-     * ステータス確認.
+     * 仕訳帳のステータスの取得.
      *
      */
     public function testGetJournalStatus()
@@ -98,7 +98,7 @@ class JournalsApiTest extends TestCase
     /**
      * Test case for getJournals
      *
-     * ダウンロード要求.
+     * 仕訳帳のダウンロード要求.
      *
      */
     public function testGetJournals()

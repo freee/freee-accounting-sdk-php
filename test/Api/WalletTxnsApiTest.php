@@ -74,7 +74,7 @@ class WalletTxnsApiTest extends TestCase
     /**
      * Test case for createWalletTxn
      *
-     * 明細の作成.
+     * 口座明細の作成.
      *
      */
     public function testCreateWalletTxn()
@@ -86,7 +86,7 @@ class WalletTxnsApiTest extends TestCase
     /**
      * Test case for destroyWalletTxn
      *
-     * 明細の削除.
+     * 口座明細の削除.
      *
      */
     public function testDestroyWalletTxn()
@@ -98,7 +98,7 @@ class WalletTxnsApiTest extends TestCase
     /**
      * Test case for getWalletTxn
      *
-     * 明細の取得.
+     * 口座明細の取得.
      *
      */
     public function testGetWalletTxn()
@@ -110,7 +110,7 @@ class WalletTxnsApiTest extends TestCase
     /**
      * Test case for getWalletTxns
      *
-     * 明細一覧の取得.
+     * 口座明細一覧の取得.
      *
      */
     public function testGetWalletTxns()

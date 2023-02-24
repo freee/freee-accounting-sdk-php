@@ -771,7 +771,7 @@ class PaymentRequestsApi
     /**
      * Operation getPaymentRequest
      *
-     * 支払依頼詳細の取得
+     * 支払依頼の取得
      *
      * @param  int $id 支払依頼ID (required)
      * @param  int $company_id 事業所ID (required)
@@ -789,7 +789,7 @@ class PaymentRequestsApi
     /**
      * Operation getPaymentRequestWithHttpInfo
      *
-     * 支払依頼詳細の取得
+     * 支払依頼の取得
      *
      * @param  int $id 支払依頼ID (required)
      * @param  int $company_id 事業所ID (required)
@@ -983,7 +983,7 @@ class PaymentRequestsApi
     /**
      * Operation getPaymentRequestAsync
      *
-     * 支払依頼詳細の取得
+     * 支払依頼の取得
      *
      * @param  int $id 支払依頼ID (required)
      * @param  int $company_id 事業所ID (required)
@@ -1004,7 +1004,7 @@ class PaymentRequestsApi
     /**
      * Operation getPaymentRequestAsyncWithHttpInfo
      *
-     * 支払依頼詳細の取得
+     * 支払依頼の取得
      *
      * @param  int $id 支払依頼ID (required)
      * @param  int $company_id 事業所ID (required)

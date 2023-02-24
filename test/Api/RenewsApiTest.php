@@ -74,7 +74,7 @@ class RenewsApiTest extends TestCase
     /**
      * Test case for createDealRenew
      *
-     * 取引（収入／支出）に対する+更新の作成.
+     * 取引（収入・支出）の+更新の作成.
      *
      */
     public function testCreateDealRenew()
@@ -86,7 +86,7 @@ class RenewsApiTest extends TestCase
     /**
      * Test case for deleteDealRenew
      *
-     * 取引（収入／支出）の+更新の削除.
+     * 取引（収入・支出）の+更新の削除.
      *
      */
     public function testDeleteDealRenew()
@@ -98,7 +98,7 @@ class RenewsApiTest extends TestCase
     /**
      * Test case for updateDealRenew
      *
-     * 取引（収入／支出）の+更新の更新.
+     * 取引（収入・支出）の+更新の更新.
      *
      */
     public function testUpdateDealRenew()

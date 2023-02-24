@@ -790,7 +790,7 @@ class WalletablesApi
     /**
      * Operation getWalletable
      *
-     * 口座情報の取得
+     * 口座の取得
      *
      * @param  int $id 口座ID (required)
      * @param  string $type 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） (required)
@@ -809,7 +809,7 @@ class WalletablesApi
     /**
      * Operation getWalletableWithHttpInfo
      *
-     * 口座情報の取得
+     * 口座の取得
      *
      * @param  int $id 口座ID (required)
      * @param  string $type 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） (required)
@@ -1004,7 +1004,7 @@ class WalletablesApi
     /**
      * Operation getWalletableAsync
      *
-     * 口座情報の取得
+     * 口座の取得
      *
      * @param  int $id 口座ID (required)
      * @param  string $type 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） (required)
@@ -1026,7 +1026,7 @@ class WalletablesApi
     /**
      * Operation getWalletableAsyncWithHttpInfo
      *
-     * 口座情報の取得
+     * 口座の取得
      *
      * @param  int $id 口座ID (required)
      * @param  string $type 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） (required)

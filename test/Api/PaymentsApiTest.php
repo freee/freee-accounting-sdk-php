@@ -74,7 +74,7 @@ class PaymentsApiTest extends TestCase
     /**
      * Test case for createDealPayment
      *
-     * 取引（収入／支出）の支払行作成.
+     * 取引（収入・支出）の支払行の作成.
      *
      */
     public function testCreateDealPayment()
@@ -86,7 +86,7 @@ class PaymentsApiTest extends TestCase
     /**
      * Test case for destroyDealPayment
      *
-     * 取引（収入／支出）の支払行削除.
+     * 取引（収入・支出）の支払行の削除.
      *
      */
     public function testDestroyDealPayment()
@@ -98,7 +98,7 @@ class PaymentsApiTest extends TestCase
     /**
      * Test case for updateDealPayment
      *
-     * 取引（収入／支出）の支払行更新.
+     * 取引（収入・支出）の支払行の更新.
      *
      */
     public function testUpdateDealPayment()

@@ -61,7 +61,10 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPITypes = [
         'company_id' => 'int',
         'description' => 'string',
+        'document_type' => 'string',
+        'invoice_registration_number' => 'string',
         'issue_date' => 'string',
+        'qualified_invoice' => 'string',
         'receipt_metadatum' => '\Freee\Accounting\Model\DealReceiptMetadatum'
     ];
 
@@ -75,7 +78,10 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPIFormats = [
         'company_id' => null,
         'description' => null,
+        'document_type' => null,
+        'invoice_registration_number' => null,
         'issue_date' => null,
+        'qualified_invoice' => null,
         'receipt_metadatum' => null
     ];
 
@@ -108,7 +114,10 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $attributeMap = [
         'company_id' => 'company_id',
         'description' => 'description',
+        'document_type' => 'document_type',
+        'invoice_registration_number' => 'invoice_registration_number',
         'issue_date' => 'issue_date',
+        'qualified_invoice' => 'qualified_invoice',
         'receipt_metadatum' => 'receipt_metadatum'
     ];
 
@@ -120,7 +129,10 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $setters = [
         'company_id' => 'setCompanyId',
         'description' => 'setDescription',
+        'document_type' => 'setDocumentType',
+        'invoice_registration_number' => 'setInvoiceRegistrationNumber',
         'issue_date' => 'setIssueDate',
+        'qualified_invoice' => 'setQualifiedInvoice',
         'receipt_metadatum' => 'setReceiptMetadatum'
     ];
 
@@ -132,7 +144,10 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $getters = [
         'company_id' => 'getCompanyId',
         'description' => 'getDescription',
+        'document_type' => 'getDocumentType',
+        'invoice_registration_number' => 'getInvoiceRegistrationNumber',
         'issue_date' => 'getIssueDate',
+        'qualified_invoice' => 'getQualifiedInvoice',
         'receipt_metadatum' => 'getReceiptMetadatum'
     ];
 
@@ -177,6 +192,38 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
         return self::$openAPIModelName;
     }
 
+    const DOCUMENT_TYPE_RECEIPT = 'receipt';
+    const DOCUMENT_TYPE_INVOICE = 'invoice';
+    const DOCUMENT_TYPE_OTHER = 'other';
+    const QUALIFIED_INVOICE_QUALIFIED = 'qualified';
+    const QUALIFIED_INVOICE_NOT_QUALIFIED = 'not_qualified';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getDocumentTypeAllowableValues()
+    {
+        return [
+            self::DOCUMENT_TYPE_RECEIPT,
+            self::DOCUMENT_TYPE_INVOICE,
+            self::DOCUMENT_TYPE_OTHER,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getQualifiedInvoiceAllowableValues()
+    {
+        return [
+            self::QUALIFIED_INVOICE_QUALIFIED,
+            self::QUALIFIED_INVOICE_NOT_QUALIFIED,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -195,7 +242,10 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $this->container['company_id'] = $data['company_id'] ?? null;
         $this->container['description'] = $data['description'] ?? null;
+        $this->container['document_type'] = $data['document_type'] ?? null;
+        $this->container['invoice_registration_number'] = $data['invoice_registration_number'] ?? null;
         $this->container['issue_date'] = $data['issue_date'] ?? null;
+        $this->container['qualified_invoice'] = $data['qualified_invoice'] ?? null;
         $this->container['receipt_metadatum'] = $data['receipt_metadatum'] ?? null;
     }
 
@@ -223,9 +273,39 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
             $invalidProperties[] = "invalid value for 'description', the character length must be smaller than or equal to 255.";
         }
 
+        $allowedValues = $this->getDocumentTypeAllowableValues();
+        if (!is_null($this->container['document_type']) && !in_array($this->container['document_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'document_type', must be one of '%s'",
+                $this->container['document_type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if (!is_null($this->container['invoice_registration_number']) && (mb_strlen($this->container['invoice_registration_number']) > 14)) {
+            $invalidProperties[] = "invalid value for 'invoice_registration_number', the character length must be smaller than or equal to 14.";
+        }
+
+        if (!is_null($this->container['invoice_registration_number']) && (mb_strlen($this->container['invoice_registration_number']) < 13)) {
+            $invalidProperties[] = "invalid value for 'invoice_registration_number', the character length must be bigger than or equal to 13.";
+        }
+
+        if (!is_null($this->container['invoice_registration_number']) && !preg_match("/^T?[1-9][0-9]{12}$/", $this->container['invoice_registration_number'])) {
+            $invalidProperties[] = "invalid value for 'invoice_registration_number', must be conform to the pattern /^T?[1-9][0-9]{12}$/.";
+        }
+
         if ($this->container['issue_date'] === null) {
             $invalidProperties[] = "'issue_date' can't be null";
         }
+        $allowedValues = $this->getQualifiedInvoiceAllowableValues();
+        if (!is_null($this->container['qualified_invoice']) && !in_array($this->container['qualified_invoice'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'qualified_invoice', must be one of '%s'",
+                $this->container['qualified_invoice'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -302,6 +382,74 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
+     * Gets document_type
+     *
+     * @return string|null
+     */
+    public function getDocumentType()
+    {
+        return $this->container['document_type'];
+    }
+
+    /**
+     * Sets document_type
+     *
+     * @param string|null $document_type この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他）
+     *
+     * @return self
+     */
+    public function setDocumentType($document_type)
+    {
+        $allowedValues = $this->getDocumentTypeAllowableValues();
+        if (!is_null($document_type) && !in_array($document_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'document_type', must be one of '%s'",
+                    $document_type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['document_type'] = $document_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoice_registration_number
+     *
+     * @return string|null
+     */
+    public function getInvoiceRegistrationNumber()
+    {
+        return $this->container['invoice_registration_number'];
+    }
+
+    /**
+     * Sets invoice_registration_number
+     *
+     * @param string|null $invoice_registration_number この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号 - 先頭T数字13桁の固定14桁の文字列 <a target=\"_blank\" href=\"https://www.invoice-kohyo.nta.go.jp/index.html\">国税庁インボイス制度適格請求書発行事業者公表サイト</a>
+     *
+     * @return self
+     */
+    public function setInvoiceRegistrationNumber($invoice_registration_number)
+    {
+        if (!is_null($invoice_registration_number) && (mb_strlen($invoice_registration_number) > 14)) {
+            throw new \InvalidArgumentException('invalid length for $invoice_registration_number when calling ReceiptUpdateParams., must be smaller than or equal to 14.');
+        }
+        if (!is_null($invoice_registration_number) && (mb_strlen($invoice_registration_number) < 13)) {
+            throw new \InvalidArgumentException('invalid length for $invoice_registration_number when calling ReceiptUpdateParams., must be bigger than or equal to 13.');
+        }
+        if (!is_null($invoice_registration_number) && (!preg_match("/^T?[1-9][0-9]{12}$/", $invoice_registration_number))) {
+            throw new \InvalidArgumentException("invalid value for $invoice_registration_number when calling ReceiptUpdateParams., must conform to the pattern /^T?[1-9][0-9]{12}$/.");
+        }
+
+        $this->container['invoice_registration_number'] = $invoice_registration_number;
+
+        return $this;
+    }
+
+    /**
      * Gets issue_date
      *
      * @return string
@@ -321,6 +469,40 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setIssueDate($issue_date)
     {
         $this->container['issue_date'] = $issue_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets qualified_invoice
+     *
+     * @return string|null
+     */
+    public function getQualifiedInvoice()
+    {
+        return $this->container['qualified_invoice'];
+    }
+
+    /**
+     * Sets qualified_invoice
+     *
+     * @param string|null $qualified_invoice この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない）
+     *
+     * @return self
+     */
+    public function setQualifiedInvoice($qualified_invoice)
+    {
+        $allowedValues = $this->getQualifiedInvoiceAllowableValues();
+        if (!is_null($qualified_invoice) && !in_array($qualified_invoice, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'qualified_invoice', must be one of '%s'",
+                    $qualified_invoice,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['qualified_invoice'] = $qualified_invoice;
 
         return $this;
     }

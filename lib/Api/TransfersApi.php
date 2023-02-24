@@ -465,7 +465,7 @@ class TransfersApi
     /**
      * Operation destroyTransfer
      *
-     * 取引（振替）の削除する
+     * 取引（振替）の削除
      *
      * @param  int $id 取引(振替)ID (required)
      * @param  int $company_id 事業所ID (required)
@@ -482,7 +482,7 @@ class TransfersApi
     /**
      * Operation destroyTransferWithHttpInfo
      *
-     * 取引（振替）の削除する
+     * 取引（振替）の削除
      *
      * @param  int $id 取引(振替)ID (required)
      * @param  int $company_id 事業所ID (required)
@@ -582,7 +582,7 @@ class TransfersApi
     /**
      * Operation destroyTransferAsync
      *
-     * 取引（振替）の削除する
+     * 取引（振替）の削除
      *
      * @param  int $id 取引(振替)ID (required)
      * @param  int $company_id 事業所ID (required)
@@ -603,7 +603,7 @@ class TransfersApi
     /**
      * Operation destroyTransferAsyncWithHttpInfo
      *
-     * 取引（振替）の削除する
+     * 取引（振替）の削除
      *
      * @param  int $id 取引(振替)ID (required)
      * @param  int $company_id 事業所ID (required)

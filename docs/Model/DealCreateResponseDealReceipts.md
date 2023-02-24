@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_at** | **string** | 作成日時（ISO8601形式） |
 **description** | **string** | メモ | [optional]
-**id** | **int** | 証憑ファイルID（ファイルボックスのファイルID） |
+**id** | **int** | ファイルボックス（証憑ファイル）ID |
 **issue_date** | **string** | 発生日 | [optional]
 **mime_type** | **string** | MIMEタイプ |
 **origin** | **string** | アップロード元種別 |

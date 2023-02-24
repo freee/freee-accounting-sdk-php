@@ -4,9 +4,9 @@ All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**downloadJournal()**](JournalsApi.md#downloadJournal) | **GET** /api/1/journals/reports/{id}/download | ダウンロード実行
-[**getJournalStatus()**](JournalsApi.md#getJournalStatus) | **GET** /api/1/journals/reports/{id}/status | ステータス確認
-[**getJournals()**](JournalsApi.md#getJournals) | **GET** /api/1/journals | ダウンロード要求
+[**downloadJournal()**](JournalsApi.md#downloadJournal) | **GET** /api/1/journals/reports/{id}/download | 仕訳帳のダウンロード
+[**getJournalStatus()**](JournalsApi.md#getJournalStatus) | **GET** /api/1/journals/reports/{id}/status | 仕訳帳のステータスの取得
+[**getJournals()**](JournalsApi.md#getJournals) | **GET** /api/1/journals | 仕訳帳のダウンロード要求
 
 
 ## `downloadJournal()`
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 downloadJournal($id, $company_id): \SplFileObject
 ```
 
-ダウンロード実行
+仕訳帳のダウンロード
 
 ### Example
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 getJournalStatus($company_id, $id): \Freee\Accounting\Model\JournalStatusResponse
 ```
 
-ステータス確認
+仕訳帳のステータスの取得
 
 ### Example
 
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 getJournals($download_type, $company_id, $visible_tags, $visible_ids, $start_date, $end_date): \Freee\Accounting\Model\JournalsResponse
 ```
 
-ダウンロード要求
+仕訳帳のダウンロード要求
 
 ### Example
 

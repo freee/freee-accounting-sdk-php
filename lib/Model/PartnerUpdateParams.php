@@ -670,7 +670,7 @@ class PartnerUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets name
      *
-     * @param string $name 取引先名 (255文字以内)
+     * @param string $name 取引先名 (255文字以内、重複不可)
      *
      * @return self
      */

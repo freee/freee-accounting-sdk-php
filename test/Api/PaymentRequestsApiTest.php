@@ -98,7 +98,7 @@ class PaymentRequestsApiTest extends TestCase
     /**
      * Test case for getPaymentRequest
      *
-     * 支払依頼詳細の取得.
+     * 支払依頼の取得.
      *
      */
     public function testGetPaymentRequest()

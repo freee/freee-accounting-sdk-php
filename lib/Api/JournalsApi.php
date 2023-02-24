@@ -118,7 +118,7 @@ class JournalsApi
     /**
      * Operation downloadJournal
      *
-     * ダウンロード実行
+     * 仕訳帳のダウンロード
      *
      * @param  int $id 受け付けID (required)
      * @param  int $company_id 事業所ID (required)
@@ -136,7 +136,7 @@ class JournalsApi
     /**
      * Operation downloadJournalWithHttpInfo
      *
-     * ダウンロード実行
+     * 仕訳帳のダウンロード
      *
      * @param  int $id 受け付けID (required)
      * @param  int $company_id 事業所ID (required)
@@ -330,7 +330,7 @@ class JournalsApi
     /**
      * Operation downloadJournalAsync
      *
-     * ダウンロード実行
+     * 仕訳帳のダウンロード
      *
      * @param  int $id 受け付けID (required)
      * @param  int $company_id 事業所ID (required)
@@ -351,7 +351,7 @@ class JournalsApi
     /**
      * Operation downloadJournalAsyncWithHttpInfo
      *
-     * ダウンロード実行
+     * 仕訳帳のダウンロード
      *
      * @param  int $id 受け付けID (required)
      * @param  int $company_id 事業所ID (required)
@@ -529,7 +529,7 @@ class JournalsApi
     /**
      * Operation getJournalStatus
      *
-     * ステータス確認
+     * 仕訳帳のステータスの取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $id 受け付けID (required)
@@ -547,7 +547,7 @@ class JournalsApi
     /**
      * Operation getJournalStatusWithHttpInfo
      *
-     * ステータス確認
+     * 仕訳帳のステータスの取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $id 受け付けID (required)
@@ -741,7 +741,7 @@ class JournalsApi
     /**
      * Operation getJournalStatusAsync
      *
-     * ステータス確認
+     * 仕訳帳のステータスの取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $id 受け付けID (required)
@@ -762,7 +762,7 @@ class JournalsApi
     /**
      * Operation getJournalStatusAsyncWithHttpInfo
      *
-     * ステータス確認
+     * 仕訳帳のステータスの取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $id 受け付けID (required)
@@ -940,7 +940,7 @@ class JournalsApi
     /**
      * Operation getJournals
      *
-     * ダウンロード要求
+     * 仕訳帳のダウンロード要求
      *
      * @param  string $download_type ダウンロード形式 (required)
      * @param  int $company_id 事業所ID (required)
@@ -962,7 +962,7 @@ class JournalsApi
     /**
      * Operation getJournalsWithHttpInfo
      *
-     * ダウンロード要求
+     * 仕訳帳のダウンロード要求
      *
      * @param  string $download_type ダウンロード形式 (required)
      * @param  int $company_id 事業所ID (required)
@@ -1140,7 +1140,7 @@ class JournalsApi
     /**
      * Operation getJournalsAsync
      *
-     * ダウンロード要求
+     * 仕訳帳のダウンロード要求
      *
      * @param  string $download_type ダウンロード形式 (required)
      * @param  int $company_id 事業所ID (required)
@@ -1165,7 +1165,7 @@ class JournalsApi
     /**
      * Operation getJournalsAsyncWithHttpInfo
      *
-     * ダウンロード要求
+     * 仕訳帳のダウンロード要求
      *
      * @param  string $download_type ダウンロード形式 (required)
      * @param  int $company_id 事業所ID (required)

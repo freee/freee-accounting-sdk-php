@@ -118,10 +118,10 @@ class RenewsApi
     /**
      * Operation createDealRenew
      *
-     * 取引（収入／支出）に対する+更新の作成
+     * 取引（収入・支出）の+更新の作成
      *
      * @param  int $id 取引ID (required)
-     * @param  \Freee\Accounting\Model\RenewCreateParams $renew_create_params 取引（収入／支出）に対する+更新の情報 (required)
+     * @param  \Freee\Accounting\Model\RenewCreateParams $renew_create_params 取引（収入・支出）の+更新の作成 (required)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -136,10 +136,10 @@ class RenewsApi
     /**
      * Operation createDealRenewWithHttpInfo
      *
-     * 取引（収入／支出）に対する+更新の作成
+     * 取引（収入・支出）の+更新の作成
      *
      * @param  int $id 取引ID (required)
-     * @param  \Freee\Accounting\Model\RenewCreateParams $renew_create_params 取引（収入／支出）に対する+更新の情報 (required)
+     * @param  \Freee\Accounting\Model\RenewCreateParams $renew_create_params 取引（収入・支出）の+更新の作成 (required)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -310,10 +310,10 @@ class RenewsApi
     /**
      * Operation createDealRenewAsync
      *
-     * 取引（収入／支出）に対する+更新の作成
+     * 取引（収入・支出）の+更新の作成
      *
      * @param  int $id 取引ID (required)
-     * @param  \Freee\Accounting\Model\RenewCreateParams $renew_create_params 取引（収入／支出）に対する+更新の情報 (required)
+     * @param  \Freee\Accounting\Model\RenewCreateParams $renew_create_params 取引（収入・支出）の+更新の作成 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -331,10 +331,10 @@ class RenewsApi
     /**
      * Operation createDealRenewAsyncWithHttpInfo
      *
-     * 取引（収入／支出）に対する+更新の作成
+     * 取引（収入・支出）の+更新の作成
      *
      * @param  int $id 取引ID (required)
-     * @param  \Freee\Accounting\Model\RenewCreateParams $renew_create_params 取引（収入／支出）に対する+更新の情報 (required)
+     * @param  \Freee\Accounting\Model\RenewCreateParams $renew_create_params 取引（収入・支出）の+更新の作成 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -381,7 +381,7 @@ class RenewsApi
      * Create request for operation 'createDealRenew'
      *
      * @param  int $id 取引ID (required)
-     * @param  \Freee\Accounting\Model\RenewCreateParams $renew_create_params 取引（収入／支出）に対する+更新の情報 (required)
+     * @param  \Freee\Accounting\Model\RenewCreateParams $renew_create_params 取引（収入・支出）の+更新の作成 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -497,7 +497,7 @@ class RenewsApi
     /**
      * Operation deleteDealRenew
      *
-     * 取引（収入／支出）の+更新の削除
+     * 取引（収入・支出）の+更新の削除
      *
      * @param  int $id 取引ID (required)
      * @param  int $renew_id +更新ID (required)
@@ -516,7 +516,7 @@ class RenewsApi
     /**
      * Operation deleteDealRenewWithHttpInfo
      *
-     * 取引（収入／支出）の+更新の削除
+     * 取引（収入・支出）の+更新の削除
      *
      * @param  int $id 取引ID (required)
      * @param  int $renew_id +更新ID (required)
@@ -691,7 +691,7 @@ class RenewsApi
     /**
      * Operation deleteDealRenewAsync
      *
-     * 取引（収入／支出）の+更新の削除
+     * 取引（収入・支出）の+更新の削除
      *
      * @param  int $id 取引ID (required)
      * @param  int $renew_id +更新ID (required)
@@ -713,7 +713,7 @@ class RenewsApi
     /**
      * Operation deleteDealRenewAsyncWithHttpInfo
      *
-     * 取引（収入／支出）の+更新の削除
+     * 取引（収入・支出）の+更新の削除
      *
      * @param  int $id 取引ID (required)
      * @param  int $renew_id +更新ID (required)
@@ -914,11 +914,11 @@ class RenewsApi
     /**
      * Operation updateDealRenew
      *
-     * 取引（収入／支出）の+更新の更新
+     * 取引（収入・支出）の+更新の更新
      *
      * @param  int $id 取引ID (required)
      * @param  int $renew_id +更新ID (required)
-     * @param  \Freee\Accounting\Model\RenewUpdateParams $renew_update_params +更新の更新情報 (required)
+     * @param  \Freee\Accounting\Model\RenewUpdateParams $renew_update_params 取引（収入・支出）の+更新の更新 (required)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -933,11 +933,11 @@ class RenewsApi
     /**
      * Operation updateDealRenewWithHttpInfo
      *
-     * 取引（収入／支出）の+更新の更新
+     * 取引（収入・支出）の+更新の更新
      *
      * @param  int $id 取引ID (required)
      * @param  int $renew_id +更新ID (required)
-     * @param  \Freee\Accounting\Model\RenewUpdateParams $renew_update_params +更新の更新情報 (required)
+     * @param  \Freee\Accounting\Model\RenewUpdateParams $renew_update_params 取引（収入・支出）の+更新の更新 (required)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1108,11 +1108,11 @@ class RenewsApi
     /**
      * Operation updateDealRenewAsync
      *
-     * 取引（収入／支出）の+更新の更新
+     * 取引（収入・支出）の+更新の更新
      *
      * @param  int $id 取引ID (required)
      * @param  int $renew_id +更新ID (required)
-     * @param  \Freee\Accounting\Model\RenewUpdateParams $renew_update_params +更新の更新情報 (required)
+     * @param  \Freee\Accounting\Model\RenewUpdateParams $renew_update_params 取引（収入・支出）の+更新の更新 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1130,11 +1130,11 @@ class RenewsApi
     /**
      * Operation updateDealRenewAsyncWithHttpInfo
      *
-     * 取引（収入／支出）の+更新の更新
+     * 取引（収入・支出）の+更新の更新
      *
      * @param  int $id 取引ID (required)
      * @param  int $renew_id +更新ID (required)
-     * @param  \Freee\Accounting\Model\RenewUpdateParams $renew_update_params +更新の更新情報 (required)
+     * @param  \Freee\Accounting\Model\RenewUpdateParams $renew_update_params 取引（収入・支出）の+更新の更新 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1182,7 +1182,7 @@ class RenewsApi
      *
      * @param  int $id 取引ID (required)
      * @param  int $renew_id +更新ID (required)
-     * @param  \Freee\Accounting\Model\RenewUpdateParams $renew_update_params +更新の更新情報 (required)
+     * @param  \Freee\Accounting\Model\RenewUpdateParams $renew_update_params 取引（収入・支出）の+更新の更新 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

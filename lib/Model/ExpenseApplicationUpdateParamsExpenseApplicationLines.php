@@ -408,7 +408,7 @@ class ExpenseApplicationUpdateParamsExpenseApplicationLines implements ModelInte
     /**
      * Sets receipt_id
      *
-     * @param int|null $receipt_id 証憑ファイルID（ファイルボックスのファイルID）
+     * @param int|null $receipt_id ファイルボックス（証憑ファイル）ID
      *
      * @return self
      */

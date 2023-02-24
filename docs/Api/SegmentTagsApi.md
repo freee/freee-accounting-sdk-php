@@ -4,7 +4,7 @@ All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createSegmentTag()**](SegmentTagsApi.md#createSegmentTag) | **POST** /api/1/segments/{segment_id}/tags | セグメントの作成
+[**createSegmentTag()**](SegmentTagsApi.md#createSegmentTag) | **POST** /api/1/segments/{segment_id}/tags | セグメントタグの作成
 [**destroySegmentsTag()**](SegmentTagsApi.md#destroySegmentsTag) | **DELETE** /api/1/segments/{segment_id}/tags/{id} | セグメントタグの削除
 [**getSegmentTags()**](SegmentTagsApi.md#getSegmentTags) | **GET** /api/1/segments/{segment_id}/tags | セグメントタグ一覧の取得
 [**updateSegmentTag()**](SegmentTagsApi.md#updateSegmentTag) | **PUT** /api/1/segments/{segment_id}/tags/{id} | セグメントタグの更新
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 createSegmentTag($segment_id, $segment_tag_params): \Freee\Accounting\Model\SegmentTagResponse
 ```
 
-セグメントの作成
+セグメントタグの作成
 
 ### Example
 

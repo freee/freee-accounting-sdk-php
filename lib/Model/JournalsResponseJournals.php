@@ -544,7 +544,7 @@ class JournalsResponseJournals implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets status_url
      *
-     * @param string|null $status_url ステータス確認用URL
+     * @param string|null $status_url 仕訳帳のステータスの取得用URL
      *
      * @return self
      */

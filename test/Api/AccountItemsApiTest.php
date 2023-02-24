@@ -98,7 +98,7 @@ class AccountItemsApiTest extends TestCase
     /**
      * Test case for getAccountItem
      *
-     * 勘定科目の詳細情報の取得.
+     * 勘定科目の取得.
      *
      */
     public function testGetAccountItem()

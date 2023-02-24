@@ -1998,7 +1998,7 @@ class ApprovalRequestsApi
     /**
      * Operation getApprovalRequests
      *
-     * 各種申請の一覧
+     * 各種申請一覧の取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  string $status 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) 承認者指定時には無効です。 (optional)
@@ -2027,7 +2027,7 @@ class ApprovalRequestsApi
     /**
      * Operation getApprovalRequestsWithHttpInfo
      *
-     * 各種申請の一覧
+     * 各種申請一覧の取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  string $status 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) 承認者指定時には無効です。 (optional)
@@ -2232,7 +2232,7 @@ class ApprovalRequestsApi
     /**
      * Operation getApprovalRequestsAsync
      *
-     * 各種申請の一覧
+     * 各種申請一覧の取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  string $status 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) 承認者指定時には無効です。 (optional)
@@ -2264,7 +2264,7 @@ class ApprovalRequestsApi
     /**
      * Operation getApprovalRequestsAsyncWithHttpInfo
      *
-     * 各種申請の一覧
+     * 各種申請一覧の取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  string $status 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) 承認者指定時には無効です。 (optional)

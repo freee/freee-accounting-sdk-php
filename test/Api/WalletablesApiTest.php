@@ -98,7 +98,7 @@ class WalletablesApiTest extends TestCase
     /**
      * Test case for getWalletable
      *
-     * 口座情報の取得.
+     * 口座の取得.
      *
      */
     public function testGetWalletable()

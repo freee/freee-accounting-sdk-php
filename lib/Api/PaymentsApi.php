@@ -118,10 +118,10 @@ class PaymentsApi
     /**
      * Operation createDealPayment
      *
-     * 取引（収入／支出）の支払行作成
+     * 取引（収入・支出）の支払行の作成
      *
      * @param  int $id 取引ID (required)
-     * @param  \Freee\Accounting\Model\PaymentParams $payment_params 取引（収入／支出）の支払行作成 (required)
+     * @param  \Freee\Accounting\Model\PaymentParams $payment_params 取引（収入・支出）の支払行の作成 (required)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -136,10 +136,10 @@ class PaymentsApi
     /**
      * Operation createDealPaymentWithHttpInfo
      *
-     * 取引（収入／支出）の支払行作成
+     * 取引（収入・支出）の支払行の作成
      *
      * @param  int $id 取引ID (required)
-     * @param  \Freee\Accounting\Model\PaymentParams $payment_params 取引（収入／支出）の支払行作成 (required)
+     * @param  \Freee\Accounting\Model\PaymentParams $payment_params 取引（収入・支出）の支払行の作成 (required)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -330,10 +330,10 @@ class PaymentsApi
     /**
      * Operation createDealPaymentAsync
      *
-     * 取引（収入／支出）の支払行作成
+     * 取引（収入・支出）の支払行の作成
      *
      * @param  int $id 取引ID (required)
-     * @param  \Freee\Accounting\Model\PaymentParams $payment_params 取引（収入／支出）の支払行作成 (required)
+     * @param  \Freee\Accounting\Model\PaymentParams $payment_params 取引（収入・支出）の支払行の作成 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -351,10 +351,10 @@ class PaymentsApi
     /**
      * Operation createDealPaymentAsyncWithHttpInfo
      *
-     * 取引（収入／支出）の支払行作成
+     * 取引（収入・支出）の支払行の作成
      *
      * @param  int $id 取引ID (required)
-     * @param  \Freee\Accounting\Model\PaymentParams $payment_params 取引（収入／支出）の支払行作成 (required)
+     * @param  \Freee\Accounting\Model\PaymentParams $payment_params 取引（収入・支出）の支払行の作成 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -401,7 +401,7 @@ class PaymentsApi
      * Create request for operation 'createDealPayment'
      *
      * @param  int $id 取引ID (required)
-     * @param  \Freee\Accounting\Model\PaymentParams $payment_params 取引（収入／支出）の支払行作成 (required)
+     * @param  \Freee\Accounting\Model\PaymentParams $payment_params 取引（収入・支出）の支払行の作成 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -517,7 +517,7 @@ class PaymentsApi
     /**
      * Operation destroyDealPayment
      *
-     * 取引（収入／支出）の支払行削除
+     * 取引（収入・支出）の支払行の削除
      *
      * @param  int $id 取引ID (required)
      * @param  int $payment_id 決済ID (required)
@@ -535,7 +535,7 @@ class PaymentsApi
     /**
      * Operation destroyDealPaymentWithHttpInfo
      *
-     * 取引（収入／支出）の支払行削除
+     * 取引（収入・支出）の支払行の削除
      *
      * @param  int $id 取引ID (required)
      * @param  int $payment_id 決済ID (required)
@@ -636,7 +636,7 @@ class PaymentsApi
     /**
      * Operation destroyDealPaymentAsync
      *
-     * 取引（収入／支出）の支払行削除
+     * 取引（収入・支出）の支払行の削除
      *
      * @param  int $id 取引ID (required)
      * @param  int $payment_id 決済ID (required)
@@ -658,7 +658,7 @@ class PaymentsApi
     /**
      * Operation destroyDealPaymentAsyncWithHttpInfo
      *
-     * 取引（収入／支出）の支払行削除
+     * 取引（収入・支出）の支払行の削除
      *
      * @param  int $id 取引ID (required)
      * @param  int $payment_id 決済ID (required)
@@ -849,11 +849,11 @@ class PaymentsApi
     /**
      * Operation updateDealPayment
      *
-     * 取引（収入／支出）の支払行更新
+     * 取引（収入・支出）の支払行の更新
      *
      * @param  int $id 取引ID (required)
      * @param  int $payment_id 決済ID (required)
-     * @param  \Freee\Accounting\Model\PaymentParams $payment_params 取引（収入／支出）の支払行更新 (required)
+     * @param  \Freee\Accounting\Model\PaymentParams $payment_params 取引（収入・支出）の支払行の更新 (required)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -868,11 +868,11 @@ class PaymentsApi
     /**
      * Operation updateDealPaymentWithHttpInfo
      *
-     * 取引（収入／支出）の支払行更新
+     * 取引（収入・支出）の支払行の更新
      *
      * @param  int $id 取引ID (required)
      * @param  int $payment_id 決済ID (required)
-     * @param  \Freee\Accounting\Model\PaymentParams $payment_params 取引（収入／支出）の支払行更新 (required)
+     * @param  \Freee\Accounting\Model\PaymentParams $payment_params 取引（収入・支出）の支払行の更新 (required)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1063,11 +1063,11 @@ class PaymentsApi
     /**
      * Operation updateDealPaymentAsync
      *
-     * 取引（収入／支出）の支払行更新
+     * 取引（収入・支出）の支払行の更新
      *
      * @param  int $id 取引ID (required)
      * @param  int $payment_id 決済ID (required)
-     * @param  \Freee\Accounting\Model\PaymentParams $payment_params 取引（収入／支出）の支払行更新 (required)
+     * @param  \Freee\Accounting\Model\PaymentParams $payment_params 取引（収入・支出）の支払行の更新 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1085,11 +1085,11 @@ class PaymentsApi
     /**
      * Operation updateDealPaymentAsyncWithHttpInfo
      *
-     * 取引（収入／支出）の支払行更新
+     * 取引（収入・支出）の支払行の更新
      *
      * @param  int $id 取引ID (required)
      * @param  int $payment_id 決済ID (required)
-     * @param  \Freee\Accounting\Model\PaymentParams $payment_params 取引（収入／支出）の支払行更新 (required)
+     * @param  \Freee\Accounting\Model\PaymentParams $payment_params 取引（収入・支出）の支払行の更新 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1137,7 +1137,7 @@ class PaymentsApi
      *
      * @param  int $id 取引ID (required)
      * @param  int $payment_id 決済ID (required)
-     * @param  \Freee\Accounting\Model\PaymentParams $payment_params 取引（収入／支出）の支払行更新 (required)
+     * @param  \Freee\Accounting\Model\PaymentParams $payment_params 取引（収入・支出）の支払行の更新 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

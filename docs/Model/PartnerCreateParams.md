@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **email** | **string** | 担当者 メールアドレス (255文字以内) | [optional]
 **invoice_payment_term_attributes** | [**\Freee\Accounting\Model\PartnerCreateParamsInvoicePaymentTermAttributes**](PartnerCreateParamsInvoicePaymentTermAttributes.md) |  | [optional]
 **long_name** | **string** | 正式名称（255文字以内） | [optional]
-**name** | **string** | 取引先名 (255文字以内) |
+**name** | **string** | 取引先名 (255文字以内、重複不可) |
 **name_kana** | **string** | カナ名称（255文字以内） | [optional]
 **org_code** | **int** | 事業所種別（null: 未設定、1: 法人、2: 個人） | [optional]
 **partner_bank_account_attributes** | [**\Freee\Accounting\Model\PartnerCreateParamsPartnerBankAccountAttributes**](PartnerCreateParamsPartnerBankAccountAttributes.md) |  | [optional]

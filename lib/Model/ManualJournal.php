@@ -424,7 +424,7 @@ class ManualJournal implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets receipt_ids
      *
-     * @param int[]|null $receipt_ids 証憑ファイルID（ファイルボックスのファイルID）
+     * @param int[]|null $receipt_ids ファイルボックス（証憑ファイル）ID
      *
      * @return self
      */

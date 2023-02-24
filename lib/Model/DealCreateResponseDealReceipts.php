@@ -406,7 +406,7 @@ class DealCreateResponseDealReceipts implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets id
      *
-     * @param int $id 証憑ファイルID（ファイルボックスのファイルID）
+     * @param int $id ファイルボックス（証憑ファイル）ID
      *
      * @return self
      */
