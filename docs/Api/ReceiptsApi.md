@@ -4,21 +4,21 @@ All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createReceipt()**](ReceiptsApi.md#createReceipt) | **POST** /api/1/receipts | ファイルボックス 証憑ファイルアップロード
-[**destroyReceipt()**](ReceiptsApi.md#destroyReceipt) | **DELETE** /api/1/receipts/{id} | ファイルボックス 証憑ファイルを削除する
-[**downloadReceipt()**](ReceiptsApi.md#downloadReceipt) | **GET** /api/1/receipts/{id}/download | ファイルボックス 証憑ファイルのダウンロード
-[**getReceipt()**](ReceiptsApi.md#getReceipt) | **GET** /api/1/receipts/{id} | ファイルボックス 証憑ファイルの取得
-[**getReceipts()**](ReceiptsApi.md#getReceipts) | **GET** /api/1/receipts | ファイルボックス 証憑ファイル一覧の取得
-[**updateReceipt()**](ReceiptsApi.md#updateReceipt) | **PUT** /api/1/receipts/{id} | ファイルボックス 証憑ファイル情報更新
+[**createReceipt()**](ReceiptsApi.md#createReceipt) | **POST** /api/1/receipts | ファイルボックス（証憑ファイル）のアップロード
+[**destroyReceipt()**](ReceiptsApi.md#destroyReceipt) | **DELETE** /api/1/receipts/{id} | ファイルボックス（証憑ファイル）の削除
+[**downloadReceipt()**](ReceiptsApi.md#downloadReceipt) | **GET** /api/1/receipts/{id}/download | ファイルボックス（証憑ファイル）のダウンロード
+[**getReceipt()**](ReceiptsApi.md#getReceipt) | **GET** /api/1/receipts/{id} | ファイルボックス（証憑ファイル）の取得
+[**getReceipts()**](ReceiptsApi.md#getReceipts) | **GET** /api/1/receipts | ファイルボックス（証憑ファイル）一覧の取得
+[**updateReceipt()**](ReceiptsApi.md#updateReceipt) | **PUT** /api/1/receipts/{id} | ファイルボックス（証憑ファイル）の更新
 
 
 ## `createReceipt()`
 
 ```php
-createReceipt($company_id, $receipt, $description, $issue_date, $receipt_metadatum_amount, $receipt_metadatum_issue_date, $receipt_metadatum_partner_name): \Freee\Accounting\Model\ReceiptResponse
+createReceipt($company_id, $receipt, $description, $document_type, $issue_date, $qualified_invoice, $receipt_metadatum_amount, $receipt_metadatum_issue_date, $receipt_metadatum_partner_name): \Freee\Accounting\Model\ReceiptResponse
 ```
 
-ファイルボックス 証憑ファイルアップロード
+ファイルボックス（証憑ファイル）のアップロード
 
 ### Example
 
@@ -40,13 +40,15 @@ $apiInstance = new Freee\Accounting\Api\ReceiptsApi(
 $company_id = 56; // int | 事業所ID
 $receipt = "/path/to/file.txt"; // \SplFileObject | 証憑ファイル
 $description = 'description_example'; // string | メモ (255文字以内)
+$document_type = 'document_type_example'; // string | この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他）
 $issue_date = 'issue_date_example'; // string | 取引日 (yyyy-mm-dd)
+$qualified_invoice = 'qualified_invoice_example'; // string | この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない）
 $receipt_metadatum_amount = 56; // int | 金額
 $receipt_metadatum_issue_date = 'receipt_metadatum_issue_date_example'; // string | 発行日 (yyyy-mm-dd)
 $receipt_metadatum_partner_name = 'receipt_metadatum_partner_name_example'; // string | 発行元
 
 try {
-    $result = $apiInstance->createReceipt($company_id, $receipt, $description, $issue_date, $receipt_metadatum_amount, $receipt_metadatum_issue_date, $receipt_metadatum_partner_name);
+    $result = $apiInstance->createReceipt($company_id, $receipt, $description, $document_type, $issue_date, $qualified_invoice, $receipt_metadatum_amount, $receipt_metadatum_issue_date, $receipt_metadatum_partner_name);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ReceiptsApi->createReceipt: ', $e->getMessage(), PHP_EOL;
@@ -60,7 +62,9 @@ Name | Type | Description  | Notes
  **company_id** | **int**| 事業所ID |
  **receipt** | **\SplFileObject****\SplFileObject**| 証憑ファイル |
  **description** | **string**| メモ (255文字以内) | [optional]
+ **document_type** | **string**| この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） | [optional]
  **issue_date** | **string**| 取引日 (yyyy-mm-dd) | [optional]
+ **qualified_invoice** | **string**| この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） | [optional]
  **receipt_metadatum_amount** | **int**| 金額 | [optional]
  **receipt_metadatum_issue_date** | **string**| 発行日 (yyyy-mm-dd) | [optional]
  **receipt_metadatum_partner_name** | **string**| 発行元 | [optional]
@@ -88,7 +92,7 @@ Name | Type | Description  | Notes
 destroyReceipt($id, $company_id)
 ```
 
-ファイルボックス 証憑ファイルを削除する
+ファイルボックス（証憑ファイル）の削除
 
 ### Example
 
@@ -107,7 +111,7 @@ $apiInstance = new Freee\Accounting\Api\ReceiptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 56; // int | 証憑ファイルID
+$id = 56; // int | ファイルボックス（証憑ファイル）ID
 $company_id = 56; // int | 事業所ID
 
 try {
@@ -121,7 +125,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| 証憑ファイルID |
+ **id** | **int**| ファイルボックス（証憑ファイル）ID |
  **company_id** | **int**| 事業所ID |
 
 ### Return type
@@ -147,7 +151,7 @@ void (empty response body)
 downloadReceipt($id, $company_id): \SplFileObject
 ```
 
-ファイルボックス 証憑ファイルのダウンロード
+ファイルボックス（証憑ファイル）のダウンロード
 
 ### Example
 
@@ -166,7 +170,7 @@ $apiInstance = new Freee\Accounting\Api\ReceiptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 56; // int | 証憑ファイルID
+$id = 56; // int | ファイルボックス（証憑ファイル）ID
 $company_id = 56; // int | 事業所ID
 
 try {
@@ -181,7 +185,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| 証憑ファイルID |
+ **id** | **int**| ファイルボックス（証憑ファイル）ID |
  **company_id** | **int**| 事業所ID |
 
 ### Return type
@@ -207,7 +211,7 @@ Name | Type | Description  | Notes
 getReceipt($id, $company_id): \Freee\Accounting\Model\ReceiptResponse
 ```
 
-ファイルボックス 証憑ファイルの取得
+ファイルボックス（証憑ファイル）の取得
 
 ### Example
 
@@ -226,7 +230,7 @@ $apiInstance = new Freee\Accounting\Api\ReceiptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 56; // int | 証憑ファイルID
+$id = 56; // int | ファイルボックス（証憑ファイル）ID
 $company_id = 56; // int | 事業所ID
 
 try {
@@ -241,7 +245,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| 証憑ファイルID |
+ **id** | **int**| ファイルボックス（証憑ファイル）ID |
  **company_id** | **int**| 事業所ID |
 
 ### Return type
@@ -267,7 +271,7 @@ Name | Type | Description  | Notes
 getReceipts($company_id, $start_date, $end_date, $user_name, $number, $comment_type, $comment_important, $category, $offset, $limit): \Freee\Accounting\Model\InlineResponse2005
 ```
 
-ファイルボックス 証憑ファイル一覧の取得
+ファイルボックス（証憑ファイル）一覧の取得
 
 ### Example
 
@@ -343,7 +347,7 @@ Name | Type | Description  | Notes
 updateReceipt($id, $receipt_update_params): \Freee\Accounting\Model\ReceiptResponse
 ```
 
-ファイルボックス 証憑ファイル情報更新
+ファイルボックス（証憑ファイル）の更新
 
 ### Example
 
@@ -362,7 +366,7 @@ $apiInstance = new Freee\Accounting\Api\ReceiptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 56; // int | 証憑ファイルID
+$id = 56; // int | ファイルボックス（証憑ファイル）ID
 $receipt_update_params = new \Freee\Accounting\Model\ReceiptUpdateParams(); // \Freee\Accounting\Model\ReceiptUpdateParams
 
 try {
@@ -377,7 +381,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| 証憑ファイルID |
+ **id** | **int**| ファイルボックス（証憑ファイル）ID |
  **receipt_update_params** | [**\Freee\Accounting\Model\ReceiptUpdateParams**](../Model/ReceiptUpdateParams.md)|  |
 
 ### Return type

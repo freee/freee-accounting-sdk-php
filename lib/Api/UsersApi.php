@@ -911,7 +911,7 @@ class UsersApi
     /**
      * Operation getUsersMe
      *
-     * ログインユーザー情報の取得
+     * ログインユーザーの取得
      *
      * @param  bool $companies 取得情報にユーザーが所属する事業所一覧を含める (optional)
      * @param  bool $advisor 取得情報に事業がアドバイザー事象所の場合は事業所毎の一意なプロフィールIDを含める (optional)
@@ -929,7 +929,7 @@ class UsersApi
     /**
      * Operation getUsersMeWithHttpInfo
      *
-     * ログインユーザー情報の取得
+     * ログインユーザーの取得
      *
      * @param  bool $companies 取得情報にユーザーが所属する事業所一覧を含める (optional)
      * @param  bool $advisor 取得情報に事業がアドバイザー事象所の場合は事業所毎の一意なプロフィールIDを含める (optional)
@@ -1123,7 +1123,7 @@ class UsersApi
     /**
      * Operation getUsersMeAsync
      *
-     * ログインユーザー情報の取得
+     * ログインユーザーの取得
      *
      * @param  bool $companies 取得情報にユーザーが所属する事業所一覧を含める (optional)
      * @param  bool $advisor 取得情報に事業がアドバイザー事象所の場合は事業所毎の一意なプロフィールIDを含める (optional)
@@ -1144,7 +1144,7 @@ class UsersApi
     /**
      * Operation getUsersMeAsyncWithHttpInfo
      *
-     * ログインユーザー情報の取得
+     * ログインユーザーの取得
      *
      * @param  bool $companies 取得情報にユーザーが所属する事業所一覧を含める (optional)
      * @param  bool $advisor 取得情報に事業がアドバイザー事象所の場合は事業所毎の一意なプロフィールIDを含める (optional)
@@ -1299,9 +1299,9 @@ class UsersApi
     /**
      * Operation updateUser
      *
-     * ユーザー情報の更新
+     * ログインユーザーの更新
      *
-     * @param  \Freee\Accounting\Model\UserParams $user_params ユーザー情報の更新 (optional)
+     * @param  \Freee\Accounting\Model\UserParams $user_params ログインユーザーの更新 (optional)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1316,9 +1316,9 @@ class UsersApi
     /**
      * Operation updateUserWithHttpInfo
      *
-     * ユーザー情報の更新
+     * ログインユーザーの更新
      *
-     * @param  \Freee\Accounting\Model\UserParams $user_params ユーザー情報の更新 (optional)
+     * @param  \Freee\Accounting\Model\UserParams $user_params ログインユーザーの更新 (optional)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1509,9 +1509,9 @@ class UsersApi
     /**
      * Operation updateUserAsync
      *
-     * ユーザー情報の更新
+     * ログインユーザーの更新
      *
-     * @param  \Freee\Accounting\Model\UserParams $user_params ユーザー情報の更新 (optional)
+     * @param  \Freee\Accounting\Model\UserParams $user_params ログインユーザーの更新 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1529,9 +1529,9 @@ class UsersApi
     /**
      * Operation updateUserAsyncWithHttpInfo
      *
-     * ユーザー情報の更新
+     * ログインユーザーの更新
      *
-     * @param  \Freee\Accounting\Model\UserParams $user_params ユーザー情報の更新 (optional)
+     * @param  \Freee\Accounting\Model\UserParams $user_params ログインユーザーの更新 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1577,7 +1577,7 @@ class UsersApi
     /**
      * Create request for operation 'updateUser'
      *
-     * @param  \Freee\Accounting\Model\UserParams $user_params ユーザー情報の更新 (optional)
+     * @param  \Freee\Accounting\Model\UserParams $user_params ログインユーザーの更新 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

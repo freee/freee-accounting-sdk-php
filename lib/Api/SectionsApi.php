@@ -763,6 +763,8 @@ class SectionsApi
     /**
      * Operation getSection
      *
+     * 部門の取得
+     *
      * @param  int $id 部門ID (required)
      * @param  int $company_id 事業所ID (required)
      *
@@ -778,6 +780,8 @@ class SectionsApi
 
     /**
      * Operation getSectionWithHttpInfo
+     *
+     * 部門の取得
      *
      * @param  int $id 部門ID (required)
      * @param  int $company_id 事業所ID (required)
@@ -971,6 +975,8 @@ class SectionsApi
     /**
      * Operation getSectionAsync
      *
+     * 部門の取得
+     *
      * @param  int $id 部門ID (required)
      * @param  int $company_id 事業所ID (required)
      *
@@ -989,6 +995,8 @@ class SectionsApi
 
     /**
      * Operation getSectionAsyncWithHttpInfo
+     *
+     * 部門の取得
      *
      * @param  int $id 部門ID (required)
      * @param  int $company_id 事業所ID (required)

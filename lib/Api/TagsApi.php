@@ -777,7 +777,7 @@ class TagsApi
     /**
      * Operation getTag
      *
-     * メモタグの詳細情報の取得
+     * メモタグの取得
      *
      * @param  int $id タグID (required)
      * @param  int $company_id 事業所ID (required)
@@ -795,7 +795,7 @@ class TagsApi
     /**
      * Operation getTagWithHttpInfo
      *
-     * メモタグの詳細情報の取得
+     * メモタグの取得
      *
      * @param  int $id タグID (required)
      * @param  int $company_id 事業所ID (required)
@@ -989,7 +989,7 @@ class TagsApi
     /**
      * Operation getTagAsync
      *
-     * メモタグの詳細情報の取得
+     * メモタグの取得
      *
      * @param  int $id タグID (required)
      * @param  int $company_id 事業所ID (required)
@@ -1010,7 +1010,7 @@ class TagsApi
     /**
      * Operation getTagAsyncWithHttpInfo
      *
-     * メモタグの詳細情報の取得
+     * メモタグの取得
      *
      * @param  int $id タグID (required)
      * @param  int $company_id 事業所ID (required)

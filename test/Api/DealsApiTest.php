@@ -74,7 +74,7 @@ class DealsApiTest extends TestCase
     /**
      * Test case for createDeal
      *
-     * 取引（収入／支出）の作成.
+     * 取引（収入・支出）の作成.
      *
      */
     public function testCreateDeal()
@@ -86,7 +86,7 @@ class DealsApiTest extends TestCase
     /**
      * Test case for destroyDeal
      *
-     * 取引（収入／支出）の削除.
+     * 取引（収入・支出）の削除.
      *
      */
     public function testDestroyDeal()
@@ -98,7 +98,7 @@ class DealsApiTest extends TestCase
     /**
      * Test case for getDeal
      *
-     * 取引（収入／支出）の取得.
+     * 取引（収入・支出）の取得.
      *
      */
     public function testGetDeal()
@@ -110,7 +110,7 @@ class DealsApiTest extends TestCase
     /**
      * Test case for getDeals
      *
-     * 取引（収入／支出）一覧の取得.
+     * 取引（収入・支出）一覧の取得.
      *
      */
     public function testGetDeals()
@@ -122,7 +122,7 @@ class DealsApiTest extends TestCase
     /**
      * Test case for updateDeal
      *
-     * 取引（収入／支出）の更新.
+     * 取引（収入・支出）の更新.
      *
      */
     public function testUpdateDeal()

@@ -4,9 +4,9 @@ All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getTaxCode()**](TaxesApi.md#getTaxCode) | **GET** /api/1/taxes/codes/{code} | 税区分コードの取得
-[**getTaxCodes()**](TaxesApi.md#getTaxCodes) | **GET** /api/1/taxes/codes | 税区分コード一覧の取得
-[**getTaxesCompanies()**](TaxesApi.md#getTaxesCompanies) | **GET** /api/1/taxes/companies/{company_id} | 税区分コード詳細一覧の取得
+[**getTaxCode()**](TaxesApi.md#getTaxCode) | **GET** /api/1/taxes/codes/{code} | 税区分の取得
+[**getTaxCodes()**](TaxesApi.md#getTaxCodes) | **GET** /api/1/taxes/codes | 税区分一覧の取得
+[**getTaxesCompanies()**](TaxesApi.md#getTaxesCompanies) | **GET** /api/1/taxes/companies/{company_id} | 指定した事業所の税区分一覧の取得
 
 
 ## `getTaxCode()`
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 getTaxCode($code): \Freee\Accounting\Model\TaxResponse
 ```
 
-税区分コードの取得
+税区分の取得
 
 ### Example
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 getTaxCodes(): \Freee\Accounting\Model\InlineResponse2009
 ```
 
-税区分コード一覧の取得
+税区分一覧の取得
 
 ### Example
 
@@ -128,7 +128,7 @@ This endpoint does not need any parameter.
 getTaxesCompanies($company_id, $display_category, $available): \Freee\Accounting\Model\InlineResponse20010
 ```
 
-税区分コード詳細一覧の取得
+指定した事業所の税区分一覧の取得
 
 ### Example
 

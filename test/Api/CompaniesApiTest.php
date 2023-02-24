@@ -86,7 +86,7 @@ class CompaniesApiTest extends TestCase
     /**
      * Test case for getCompany
      *
-     * 事業所の詳細情報の取得.
+     * 事業所の取得.
      *
      */
     public function testGetCompany()

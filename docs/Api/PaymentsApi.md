@@ -4,9 +4,9 @@ All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createDealPayment()**](PaymentsApi.md#createDealPayment) | **POST** /api/1/deals/{id}/payments | 取引（収入／支出）の支払行作成
-[**destroyDealPayment()**](PaymentsApi.md#destroyDealPayment) | **DELETE** /api/1/deals/{id}/payments/{payment_id} | 取引（収入／支出）の支払行削除
-[**updateDealPayment()**](PaymentsApi.md#updateDealPayment) | **PUT** /api/1/deals/{id}/payments/{payment_id} | 取引（収入／支出）の支払行更新
+[**createDealPayment()**](PaymentsApi.md#createDealPayment) | **POST** /api/1/deals/{id}/payments | 取引（収入・支出）の支払行の作成
+[**destroyDealPayment()**](PaymentsApi.md#destroyDealPayment) | **DELETE** /api/1/deals/{id}/payments/{payment_id} | 取引（収入・支出）の支払行の削除
+[**updateDealPayment()**](PaymentsApi.md#updateDealPayment) | **PUT** /api/1/deals/{id}/payments/{payment_id} | 取引（収入・支出）の支払行の更新
 
 
 ## `createDealPayment()`
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 createDealPayment($id, $payment_params): \Freee\Accounting\Model\DealResponse
 ```
 
-取引（収入／支出）の支払行作成
+取引（収入・支出）の支払行の作成
 
 ### Example
 
@@ -35,7 +35,7 @@ $apiInstance = new Freee\Accounting\Api\PaymentsApi(
     $config
 );
 $id = 56; // int | 取引ID
-$payment_params = new \Freee\Accounting\Model\PaymentParams(); // \Freee\Accounting\Model\PaymentParams | 取引（収入／支出）の支払行作成
+$payment_params = new \Freee\Accounting\Model\PaymentParams(); // \Freee\Accounting\Model\PaymentParams | 取引（収入・支出）の支払行の作成
 
 try {
     $result = $apiInstance->createDealPayment($id, $payment_params);
@@ -50,7 +50,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 取引ID |
- **payment_params** | [**\Freee\Accounting\Model\PaymentParams**](../Model/PaymentParams.md)| 取引（収入／支出）の支払行作成 |
+ **payment_params** | [**\Freee\Accounting\Model\PaymentParams**](../Model/PaymentParams.md)| 取引（収入・支出）の支払行の作成 |
 
 ### Return type
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 destroyDealPayment($id, $payment_id, $company_id)
 ```
 
-取引（収入／支出）の支払行削除
+取引（収入・支出）の支払行の削除
 
 ### Example
 
@@ -136,7 +136,7 @@ void (empty response body)
 updateDealPayment($id, $payment_id, $payment_params): \Freee\Accounting\Model\DealResponse
 ```
 
-取引（収入／支出）の支払行更新
+取引（収入・支出）の支払行の更新
 
 ### Example
 
@@ -157,7 +157,7 @@ $apiInstance = new Freee\Accounting\Api\PaymentsApi(
 );
 $id = 56; // int | 取引ID
 $payment_id = 56; // int | 決済ID
-$payment_params = new \Freee\Accounting\Model\PaymentParams(); // \Freee\Accounting\Model\PaymentParams | 取引（収入／支出）の支払行更新
+$payment_params = new \Freee\Accounting\Model\PaymentParams(); // \Freee\Accounting\Model\PaymentParams | 取引（収入・支出）の支払行の更新
 
 try {
     $result = $apiInstance->updateDealPayment($id, $payment_id, $payment_params);
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 取引ID |
  **payment_id** | **int**| 決済ID |
- **payment_params** | [**\Freee\Accounting\Model\PaymentParams**](../Model/PaymentParams.md)| 取引（収入／支出）の支払行更新 |
+ **payment_params** | [**\Freee\Accounting\Model\PaymentParams**](../Model/PaymentParams.md)| 取引（収入・支出）の支払行の更新 |
 
 ### Return type
 

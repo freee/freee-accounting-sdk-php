@@ -1164,7 +1164,7 @@ class PaymentRequestCreateParams implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets receipt_ids
      *
-     * @param int[]|null $receipt_ids 証憑ファイルID（ファイルボックスのファイルID）（配列）
+     * @param int[]|null $receipt_ids ファイルボックス（証憑ファイル）ID（配列）
      *
      * @return self
      */

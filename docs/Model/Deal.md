@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **partner_code** | **string** | 取引先コード | [optional]
 **partner_id** | **int** | 取引先ID |
 **payments** | [**\Freee\Accounting\Model\DealPayments[]**](DealPayments.md) | 取引の支払行 | [optional]
-**receipts** | [**\Freee\Accounting\Model\DealReceipts[]**](DealReceipts.md) | 証憑ファイル（ファイルボックスのファイル） | [optional]
+**receipts** | [**\Freee\Accounting\Model\DealReceipts[]**](DealReceipts.md) | ファイルボックス（証憑ファイル） | [optional]
 **ref_number** | **string** | 管理番号 | [optional]
 **renews** | [**\Freee\Accounting\Model\DealRenews[]**](DealRenews.md) | 取引の+更新行 | [optional]
 **status** | **string** | 決済状況 (未決済: unsettled, 完了: settled) |

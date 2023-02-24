@@ -1540,7 +1540,7 @@ class PaymentRequestResponsePaymentRequest implements ModelInterface, ArrayAcces
     /**
      * Sets receipt_ids
      *
-     * @param int[] $receipt_ids 証憑ファイルID（ファイルボックスのファイルID）
+     * @param int[] $receipt_ids ファイルボックス（証憑ファイル）ID
      *
      * @return self
      */

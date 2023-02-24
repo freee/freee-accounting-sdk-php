@@ -74,7 +74,7 @@ class SegmentTagsApiTest extends TestCase
     /**
      * Test case for createSegmentTag
      *
-     * セグメントの作成.
+     * セグメントタグの作成.
      *
      */
     public function testCreateSegmentTag()

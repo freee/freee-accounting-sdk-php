@@ -4,9 +4,9 @@ All URIs are relative to https://api.freee.co.jp.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createDealRenew()**](RenewsApi.md#createDealRenew) | **POST** /api/1/deals/{id}/renews | 取引（収入／支出）に対する+更新の作成
-[**deleteDealRenew()**](RenewsApi.md#deleteDealRenew) | **DELETE** /api/1/deals/{id}/renews/{renew_id} | 取引（収入／支出）の+更新の削除
-[**updateDealRenew()**](RenewsApi.md#updateDealRenew) | **PUT** /api/1/deals/{id}/renews/{renew_id} | 取引（収入／支出）の+更新の更新
+[**createDealRenew()**](RenewsApi.md#createDealRenew) | **POST** /api/1/deals/{id}/renews | 取引（収入・支出）の+更新の作成
+[**deleteDealRenew()**](RenewsApi.md#deleteDealRenew) | **DELETE** /api/1/deals/{id}/renews/{renew_id} | 取引（収入・支出）の+更新の削除
+[**updateDealRenew()**](RenewsApi.md#updateDealRenew) | **PUT** /api/1/deals/{id}/renews/{renew_id} | 取引（収入・支出）の+更新の更新
 
 
 ## `createDealRenew()`
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 createDealRenew($id, $renew_create_params): \Freee\Accounting\Model\DealResponse
 ```
 
-取引（収入／支出）に対する+更新の作成
+取引（収入・支出）の+更新の作成
 
 ### Example
 
@@ -35,7 +35,7 @@ $apiInstance = new Freee\Accounting\Api\RenewsApi(
     $config
 );
 $id = 56; // int | 取引ID
-$renew_create_params = new \Freee\Accounting\Model\RenewCreateParams(); // \Freee\Accounting\Model\RenewCreateParams | 取引（収入／支出）に対する+更新の情報
+$renew_create_params = new \Freee\Accounting\Model\RenewCreateParams(); // \Freee\Accounting\Model\RenewCreateParams | 取引（収入・支出）の+更新の作成
 
 try {
     $result = $apiInstance->createDealRenew($id, $renew_create_params);
@@ -50,7 +50,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 取引ID |
- **renew_create_params** | [**\Freee\Accounting\Model\RenewCreateParams**](../Model/RenewCreateParams.md)| 取引（収入／支出）に対する+更新の情報 |
+ **renew_create_params** | [**\Freee\Accounting\Model\RenewCreateParams**](../Model/RenewCreateParams.md)| 取引（収入・支出）の+更新の作成 |
 
 ### Return type
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 deleteDealRenew($id, $renew_id, $company_id): \Freee\Accounting\Model\DealResponse
 ```
 
-取引（収入／支出）の+更新の削除
+取引（収入・支出）の+更新の削除
 
 ### Example
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 updateDealRenew($id, $renew_id, $renew_update_params): \Freee\Accounting\Model\DealResponse
 ```
 
-取引（収入／支出）の+更新の更新
+取引（収入・支出）の+更新の更新
 
 ### Example
 
@@ -158,7 +158,7 @@ $apiInstance = new Freee\Accounting\Api\RenewsApi(
 );
 $id = 56; // int | 取引ID
 $renew_id = 56; // int | +更新ID
-$renew_update_params = new \Freee\Accounting\Model\RenewUpdateParams(); // \Freee\Accounting\Model\RenewUpdateParams | +更新の更新情報
+$renew_update_params = new \Freee\Accounting\Model\RenewUpdateParams(); // \Freee\Accounting\Model\RenewUpdateParams | 取引（収入・支出）の+更新の更新
 
 try {
     $result = $apiInstance->updateDealRenew($id, $renew_id, $renew_update_params);
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| 取引ID |
  **renew_id** | **int**| +更新ID |
- **renew_update_params** | [**\Freee\Accounting\Model\RenewUpdateParams**](../Model/RenewUpdateParams.md)| +更新の更新情報 |
+ **renew_update_params** | [**\Freee\Accounting\Model\RenewUpdateParams**](../Model/RenewUpdateParams.md)| 取引（収入・支出）の+更新の更新 |
 
 ### Return type
 

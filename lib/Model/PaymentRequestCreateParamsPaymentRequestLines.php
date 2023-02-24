@@ -555,7 +555,7 @@ class PaymentRequestCreateParamsPaymentRequestLines implements ModelInterface, A
     /**
      * Sets segment_1_tag_id
      *
-     * @param int|null $segment_1_tag_id セグメント１ID<br> セグメントタグ一覧APIを利用して取得してください。<br> <a href=\"https://support.freee.co.jp/hc/ja/articles/360020679611\" target=\"_blank\">セグメント（分析用タグ）の設定</a><br>
+     * @param int|null $segment_1_tag_id セグメント１ID<br> セグメントタグ一覧の取得APIを利用して取得してください。<br> <a href=\"https://support.freee.co.jp/hc/ja/articles/360020679611\" target=\"_blank\">セグメント（分析用タグ）の設定</a><br>
      *
      * @return self
      */
@@ -587,7 +587,7 @@ class PaymentRequestCreateParamsPaymentRequestLines implements ModelInterface, A
     /**
      * Sets segment_2_tag_id
      *
-     * @param int|null $segment_2_tag_id セグメント２ID(法人向けエンタープライズプラン)<br> セグメントタグ一覧APIを利用して取得してください。<br> <a href=\"https://support.freee.co.jp/hc/ja/articles/360020679611\" target=\"_blank\">セグメント（分析用タグ）の設定</a><br>
+     * @param int|null $segment_2_tag_id セグメント２ID(法人向けエンタープライズプラン)<br> セグメントタグ一覧の取得APIを利用して取得してください。<br> <a href=\"https://support.freee.co.jp/hc/ja/articles/360020679611\" target=\"_blank\">セグメント（分析用タグ）の設定</a><br>
      *
      * @return self
      */
@@ -619,7 +619,7 @@ class PaymentRequestCreateParamsPaymentRequestLines implements ModelInterface, A
     /**
      * Sets segment_3_tag_id
      *
-     * @param int|null $segment_3_tag_id セグメント３ID(法人向けエンタープライズプラン)<br> セグメントタグ一覧APIを利用して取得してください。<br> <a href=\"https://support.freee.co.jp/hc/ja/articles/360020679611\" target=\"_blank\">セグメント（分析用タグ）の設定</a><br>
+     * @param int|null $segment_3_tag_id セグメント３ID(法人向けエンタープライズプラン)<br> セグメントタグ一覧の取得APIを利用して取得してください。<br> <a href=\"https://support.freee.co.jp/hc/ja/articles/360020679611\" target=\"_blank\">セグメント（分析用タグ）の設定</a><br>
      *
      * @return self
      */

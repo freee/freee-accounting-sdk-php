@@ -78,7 +78,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AccountItemsApi* | [**createAccountItem**](docs/Api/AccountItemsApi.md#createaccountitem) | **POST** /api/1/account_items | 勘定科目の作成
 *AccountItemsApi* | [**destroyAccountItem**](docs/Api/AccountItemsApi.md#destroyaccountitem) | **DELETE** /api/1/account_items/{id} | 勘定科目の削除
-*AccountItemsApi* | [**getAccountItem**](docs/Api/AccountItemsApi.md#getaccountitem) | **GET** /api/1/account_items/{id} | 勘定科目の詳細情報の取得
+*AccountItemsApi* | [**getAccountItem**](docs/Api/AccountItemsApi.md#getaccountitem) | **GET** /api/1/account_items/{id} | 勘定科目の取得
 *AccountItemsApi* | [**getAccountItems**](docs/Api/AccountItemsApi.md#getaccountitems) | **GET** /api/1/account_items | 勘定科目一覧の取得
 *AccountItemsApi* | [**updateAccountItem**](docs/Api/AccountItemsApi.md#updateaccountitem) | **PUT** /api/1/account_items/{id} | 勘定科目の更新
 *ApprovalFlowRoutesApi* | [**getApprovalFlowRoute**](docs/Api/ApprovalFlowRoutesApi.md#getapprovalflowroute) | **GET** /api/1/approval_flow_routes/{id} | 申請経路の取得
@@ -88,18 +88,18 @@ Class | Method | HTTP request | Description
 *ApprovalRequestsApi* | [**getApprovalRequest**](docs/Api/ApprovalRequestsApi.md#getapprovalrequest) | **GET** /api/1/approval_requests/{id} | 各種申請の取得
 *ApprovalRequestsApi* | [**getApprovalRequestForm**](docs/Api/ApprovalRequestsApi.md#getapprovalrequestform) | **GET** /api/1/approval_requests/forms/{id} | 各種申請の申請フォームの取得
 *ApprovalRequestsApi* | [**getApprovalRequestForms**](docs/Api/ApprovalRequestsApi.md#getapprovalrequestforms) | **GET** /api/1/approval_requests/forms | 各種申請の申請フォーム一覧の取得
-*ApprovalRequestsApi* | [**getApprovalRequests**](docs/Api/ApprovalRequestsApi.md#getapprovalrequests) | **GET** /api/1/approval_requests | 各種申請の一覧
+*ApprovalRequestsApi* | [**getApprovalRequests**](docs/Api/ApprovalRequestsApi.md#getapprovalrequests) | **GET** /api/1/approval_requests | 各種申請一覧の取得
 *ApprovalRequestsApi* | [**updateApprovalRequest**](docs/Api/ApprovalRequestsApi.md#updateapprovalrequest) | **PUT** /api/1/approval_requests/{id} | 各種申請の更新
 *ApprovalRequestsApi* | [**updateApprovalRequestAction**](docs/Api/ApprovalRequestsApi.md#updateapprovalrequestaction) | **POST** /api/1/approval_requests/{id}/actions | 各種申請の承認操作
 *BanksApi* | [**getBank**](docs/Api/BanksApi.md#getbank) | **GET** /api/1/banks/{id} | 連携サービスの取得
 *BanksApi* | [**getBanks**](docs/Api/BanksApi.md#getbanks) | **GET** /api/1/banks | 連携サービス一覧の取得
 *CompaniesApi* | [**getCompanies**](docs/Api/CompaniesApi.md#getcompanies) | **GET** /api/1/companies | 事業所一覧の取得
-*CompaniesApi* | [**getCompany**](docs/Api/CompaniesApi.md#getcompany) | **GET** /api/1/companies/{id} | 事業所の詳細情報の取得
-*DealsApi* | [**createDeal**](docs/Api/DealsApi.md#createdeal) | **POST** /api/1/deals | 取引（収入／支出）の作成
-*DealsApi* | [**destroyDeal**](docs/Api/DealsApi.md#destroydeal) | **DELETE** /api/1/deals/{id} | 取引（収入／支出）の削除
-*DealsApi* | [**getDeal**](docs/Api/DealsApi.md#getdeal) | **GET** /api/1/deals/{id} | 取引（収入／支出）の取得
-*DealsApi* | [**getDeals**](docs/Api/DealsApi.md#getdeals) | **GET** /api/1/deals | 取引（収入／支出）一覧の取得
-*DealsApi* | [**updateDeal**](docs/Api/DealsApi.md#updatedeal) | **PUT** /api/1/deals/{id} | 取引（収入／支出）の更新
+*CompaniesApi* | [**getCompany**](docs/Api/CompaniesApi.md#getcompany) | **GET** /api/1/companies/{id} | 事業所の取得
+*DealsApi* | [**createDeal**](docs/Api/DealsApi.md#createdeal) | **POST** /api/1/deals | 取引（収入・支出）の作成
+*DealsApi* | [**destroyDeal**](docs/Api/DealsApi.md#destroydeal) | **DELETE** /api/1/deals/{id} | 取引（収入・支出）の削除
+*DealsApi* | [**getDeal**](docs/Api/DealsApi.md#getdeal) | **GET** /api/1/deals/{id} | 取引（収入・支出）の取得
+*DealsApi* | [**getDeals**](docs/Api/DealsApi.md#getdeals) | **GET** /api/1/deals | 取引（収入・支出）一覧の取得
+*DealsApi* | [**updateDeal**](docs/Api/DealsApi.md#updatedeal) | **PUT** /api/1/deals/{id} | 取引（収入・支出）の更新
 *ExpenseApplicationLineTemplatesApi* | [**createExpenseApplicationLineTemplate**](docs/Api/ExpenseApplicationLineTemplatesApi.md#createexpenseapplicationlinetemplate) | **POST** /api/1/expense_application_line_templates | 経費科目の作成
 *ExpenseApplicationLineTemplatesApi* | [**destroyExpenseApplicationLineTemplate**](docs/Api/ExpenseApplicationLineTemplatesApi.md#destroyexpenseapplicationlinetemplate) | **DELETE** /api/1/expense_application_line_templates/{id} | 経費科目の削除
 *ExpenseApplicationLineTemplatesApi* | [**getExpenseApplicationLineTemplate**](docs/Api/ExpenseApplicationLineTemplatesApi.md#getexpenseapplicationlinetemplate) | **GET** /api/1/expense_application_line_templates/{id} | 経費科目の取得
@@ -121,9 +121,9 @@ Class | Method | HTTP request | Description
 *ItemsApi* | [**getItem**](docs/Api/ItemsApi.md#getitem) | **GET** /api/1/items/{id} | 品目の取得
 *ItemsApi* | [**getItems**](docs/Api/ItemsApi.md#getitems) | **GET** /api/1/items | 品目一覧の取得
 *ItemsApi* | [**updateItem**](docs/Api/ItemsApi.md#updateitem) | **PUT** /api/1/items/{id} | 品目の更新
-*JournalsApi* | [**downloadJournal**](docs/Api/JournalsApi.md#downloadjournal) | **GET** /api/1/journals/reports/{id}/download | ダウンロード実行
-*JournalsApi* | [**getJournalStatus**](docs/Api/JournalsApi.md#getjournalstatus) | **GET** /api/1/journals/reports/{id}/status | ステータス確認
-*JournalsApi* | [**getJournals**](docs/Api/JournalsApi.md#getjournals) | **GET** /api/1/journals | ダウンロード要求
+*JournalsApi* | [**downloadJournal**](docs/Api/JournalsApi.md#downloadjournal) | **GET** /api/1/journals/reports/{id}/download | 仕訳帳のダウンロード
+*JournalsApi* | [**getJournalStatus**](docs/Api/JournalsApi.md#getjournalstatus) | **GET** /api/1/journals/reports/{id}/status | 仕訳帳のステータスの取得
+*JournalsApi* | [**getJournals**](docs/Api/JournalsApi.md#getjournals) | **GET** /api/1/journals | 仕訳帳のダウンロード要求
 *ManualJournalsApi* | [**createManualJournal**](docs/Api/ManualJournalsApi.md#createmanualjournal) | **POST** /api/1/manual_journals | 振替伝票の作成
 *ManualJournalsApi* | [**destroyManualJournal**](docs/Api/ManualJournalsApi.md#destroymanualjournal) | **DELETE** /api/1/manual_journals/{id} | 振替伝票の削除
 *ManualJournalsApi* | [**getManualJournal**](docs/Api/ManualJournalsApi.md#getmanualjournal) | **GET** /api/1/manual_journals/{id} | 振替伝票の取得
@@ -137,47 +137,47 @@ Class | Method | HTTP request | Description
 *PartnersApi* | [**updatePartnerByCode**](docs/Api/PartnersApi.md#updatepartnerbycode) | **PUT** /api/1/partners/code/{code} | 取引先の更新
 *PaymentRequestsApi* | [**createPaymentRequest**](docs/Api/PaymentRequestsApi.md#createpaymentrequest) | **POST** /api/1/payment_requests | 支払依頼の作成
 *PaymentRequestsApi* | [**destroyPaymentRequest**](docs/Api/PaymentRequestsApi.md#destroypaymentrequest) | **DELETE** /api/1/payment_requests/{id} | 支払依頼の削除
-*PaymentRequestsApi* | [**getPaymentRequest**](docs/Api/PaymentRequestsApi.md#getpaymentrequest) | **GET** /api/1/payment_requests/{id} | 支払依頼詳細の取得
+*PaymentRequestsApi* | [**getPaymentRequest**](docs/Api/PaymentRequestsApi.md#getpaymentrequest) | **GET** /api/1/payment_requests/{id} | 支払依頼の取得
 *PaymentRequestsApi* | [**getPaymentRequests**](docs/Api/PaymentRequestsApi.md#getpaymentrequests) | **GET** /api/1/payment_requests | 支払依頼一覧の取得
 *PaymentRequestsApi* | [**updatePaymentRequest**](docs/Api/PaymentRequestsApi.md#updatepaymentrequest) | **PUT** /api/1/payment_requests/{id} | 支払依頼の更新
 *PaymentRequestsApi* | [**updatePaymentRequestAction**](docs/Api/PaymentRequestsApi.md#updatepaymentrequestaction) | **POST** /api/1/payment_requests/{id}/actions | 支払依頼の承認操作
-*PaymentsApi* | [**createDealPayment**](docs/Api/PaymentsApi.md#createdealpayment) | **POST** /api/1/deals/{id}/payments | 取引（収入／支出）の支払行作成
-*PaymentsApi* | [**destroyDealPayment**](docs/Api/PaymentsApi.md#destroydealpayment) | **DELETE** /api/1/deals/{id}/payments/{payment_id} | 取引（収入／支出）の支払行削除
-*PaymentsApi* | [**updateDealPayment**](docs/Api/PaymentsApi.md#updatedealpayment) | **PUT** /api/1/deals/{id}/payments/{payment_id} | 取引（収入／支出）の支払行更新
+*PaymentsApi* | [**createDealPayment**](docs/Api/PaymentsApi.md#createdealpayment) | **POST** /api/1/deals/{id}/payments | 取引（収入・支出）の支払行の作成
+*PaymentsApi* | [**destroyDealPayment**](docs/Api/PaymentsApi.md#destroydealpayment) | **DELETE** /api/1/deals/{id}/payments/{payment_id} | 取引（収入・支出）の支払行の削除
+*PaymentsApi* | [**updateDealPayment**](docs/Api/PaymentsApi.md#updatedealpayment) | **PUT** /api/1/deals/{id}/payments/{payment_id} | 取引（収入・支出）の支払行の更新
 *QuotationsApi* | [**createQuotation**](docs/Api/QuotationsApi.md#createquotation) | **POST** /api/1/quotations | 見積書の作成
 *QuotationsApi* | [**destroyQuotation**](docs/Api/QuotationsApi.md#destroyquotation) | **DELETE** /api/1/quotations/{id} | 見積書の削除
 *QuotationsApi* | [**getQuotation**](docs/Api/QuotationsApi.md#getquotation) | **GET** /api/1/quotations/{id} | 見積書の取得
 *QuotationsApi* | [**getQuotations**](docs/Api/QuotationsApi.md#getquotations) | **GET** /api/1/quotations | 見積書一覧の取得
 *QuotationsApi* | [**updateQuotation**](docs/Api/QuotationsApi.md#updatequotation) | **PUT** /api/1/quotations/{id} | 見積書の更新
-*ReceiptsApi* | [**createReceipt**](docs/Api/ReceiptsApi.md#createreceipt) | **POST** /api/1/receipts | ファイルボックス 証憑ファイルアップロード
-*ReceiptsApi* | [**destroyReceipt**](docs/Api/ReceiptsApi.md#destroyreceipt) | **DELETE** /api/1/receipts/{id} | ファイルボックス 証憑ファイルを削除する
-*ReceiptsApi* | [**downloadReceipt**](docs/Api/ReceiptsApi.md#downloadreceipt) | **GET** /api/1/receipts/{id}/download | ファイルボックス 証憑ファイルのダウンロード
-*ReceiptsApi* | [**getReceipt**](docs/Api/ReceiptsApi.md#getreceipt) | **GET** /api/1/receipts/{id} | ファイルボックス 証憑ファイルの取得
-*ReceiptsApi* | [**getReceipts**](docs/Api/ReceiptsApi.md#getreceipts) | **GET** /api/1/receipts | ファイルボックス 証憑ファイル一覧の取得
-*ReceiptsApi* | [**updateReceipt**](docs/Api/ReceiptsApi.md#updatereceipt) | **PUT** /api/1/receipts/{id} | ファイルボックス 証憑ファイル情報更新
-*RenewsApi* | [**createDealRenew**](docs/Api/RenewsApi.md#createdealrenew) | **POST** /api/1/deals/{id}/renews | 取引（収入／支出）に対する+更新の作成
-*RenewsApi* | [**deleteDealRenew**](docs/Api/RenewsApi.md#deletedealrenew) | **DELETE** /api/1/deals/{id}/renews/{renew_id} | 取引（収入／支出）の+更新の削除
-*RenewsApi* | [**updateDealRenew**](docs/Api/RenewsApi.md#updatedealrenew) | **PUT** /api/1/deals/{id}/renews/{renew_id} | 取引（収入／支出）の+更新の更新
+*ReceiptsApi* | [**createReceipt**](docs/Api/ReceiptsApi.md#createreceipt) | **POST** /api/1/receipts | ファイルボックス（証憑ファイル）のアップロード
+*ReceiptsApi* | [**destroyReceipt**](docs/Api/ReceiptsApi.md#destroyreceipt) | **DELETE** /api/1/receipts/{id} | ファイルボックス（証憑ファイル）の削除
+*ReceiptsApi* | [**downloadReceipt**](docs/Api/ReceiptsApi.md#downloadreceipt) | **GET** /api/1/receipts/{id}/download | ファイルボックス（証憑ファイル）のダウンロード
+*ReceiptsApi* | [**getReceipt**](docs/Api/ReceiptsApi.md#getreceipt) | **GET** /api/1/receipts/{id} | ファイルボックス（証憑ファイル）の取得
+*ReceiptsApi* | [**getReceipts**](docs/Api/ReceiptsApi.md#getreceipts) | **GET** /api/1/receipts | ファイルボックス（証憑ファイル）一覧の取得
+*ReceiptsApi* | [**updateReceipt**](docs/Api/ReceiptsApi.md#updatereceipt) | **PUT** /api/1/receipts/{id} | ファイルボックス（証憑ファイル）の更新
+*RenewsApi* | [**createDealRenew**](docs/Api/RenewsApi.md#createdealrenew) | **POST** /api/1/deals/{id}/renews | 取引（収入・支出）の+更新の作成
+*RenewsApi* | [**deleteDealRenew**](docs/Api/RenewsApi.md#deletedealrenew) | **DELETE** /api/1/deals/{id}/renews/{renew_id} | 取引（収入・支出）の+更新の削除
+*RenewsApi* | [**updateDealRenew**](docs/Api/RenewsApi.md#updatedealrenew) | **PUT** /api/1/deals/{id}/renews/{renew_id} | 取引（収入・支出）の+更新の更新
 *SectionsApi* | [**createSection**](docs/Api/SectionsApi.md#createsection) | **POST** /api/1/sections | 部門の作成
 *SectionsApi* | [**destroySection**](docs/Api/SectionsApi.md#destroysection) | **DELETE** /api/1/sections/{id} | 部門の削除
-*SectionsApi* | [**getSection**](docs/Api/SectionsApi.md#getsection) | **GET** /api/1/sections/{id} | 
+*SectionsApi* | [**getSection**](docs/Api/SectionsApi.md#getsection) | **GET** /api/1/sections/{id} | 部門の取得
 *SectionsApi* | [**getSections**](docs/Api/SectionsApi.md#getsections) | **GET** /api/1/sections | 部門一覧の取得
 *SectionsApi* | [**updateSection**](docs/Api/SectionsApi.md#updatesection) | **PUT** /api/1/sections/{id} | 部門の更新
-*SegmentTagsApi* | [**createSegmentTag**](docs/Api/SegmentTagsApi.md#createsegmenttag) | **POST** /api/1/segments/{segment_id}/tags | セグメントの作成
+*SegmentTagsApi* | [**createSegmentTag**](docs/Api/SegmentTagsApi.md#createsegmenttag) | **POST** /api/1/segments/{segment_id}/tags | セグメントタグの作成
 *SegmentTagsApi* | [**destroySegmentsTag**](docs/Api/SegmentTagsApi.md#destroysegmentstag) | **DELETE** /api/1/segments/{segment_id}/tags/{id} | セグメントタグの削除
 *SegmentTagsApi* | [**getSegmentTags**](docs/Api/SegmentTagsApi.md#getsegmenttags) | **GET** /api/1/segments/{segment_id}/tags | セグメントタグ一覧の取得
 *SegmentTagsApi* | [**updateSegmentTag**](docs/Api/SegmentTagsApi.md#updatesegmenttag) | **PUT** /api/1/segments/{segment_id}/tags/{id} | セグメントタグの更新
 *SelectablesApi* | [**getFormsSelectables**](docs/Api/SelectablesApi.md#getformsselectables) | **GET** /api/1/forms/selectables | フォーム用選択項目情報の取得
 *TagsApi* | [**createTag**](docs/Api/TagsApi.md#createtag) | **POST** /api/1/tags | メモタグの作成
 *TagsApi* | [**destroyTag**](docs/Api/TagsApi.md#destroytag) | **DELETE** /api/1/tags/{id} | メモタグの削除
-*TagsApi* | [**getTag**](docs/Api/TagsApi.md#gettag) | **GET** /api/1/tags/{id} | メモタグの詳細情報の取得
+*TagsApi* | [**getTag**](docs/Api/TagsApi.md#gettag) | **GET** /api/1/tags/{id} | メモタグの取得
 *TagsApi* | [**getTags**](docs/Api/TagsApi.md#gettags) | **GET** /api/1/tags | メモタグ一覧の取得
 *TagsApi* | [**updateTag**](docs/Api/TagsApi.md#updatetag) | **PUT** /api/1/tags/{id} | メモタグの更新
-*TaxesApi* | [**getTaxCode**](docs/Api/TaxesApi.md#gettaxcode) | **GET** /api/1/taxes/codes/{code} | 税区分コードの取得
-*TaxesApi* | [**getTaxCodes**](docs/Api/TaxesApi.md#gettaxcodes) | **GET** /api/1/taxes/codes | 税区分コード一覧の取得
-*TaxesApi* | [**getTaxesCompanies**](docs/Api/TaxesApi.md#gettaxescompanies) | **GET** /api/1/taxes/companies/{company_id} | 税区分コード詳細一覧の取得
+*TaxesApi* | [**getTaxCode**](docs/Api/TaxesApi.md#gettaxcode) | **GET** /api/1/taxes/codes/{code} | 税区分の取得
+*TaxesApi* | [**getTaxCodes**](docs/Api/TaxesApi.md#gettaxcodes) | **GET** /api/1/taxes/codes | 税区分一覧の取得
+*TaxesApi* | [**getTaxesCompanies**](docs/Api/TaxesApi.md#gettaxescompanies) | **GET** /api/1/taxes/companies/{company_id} | 指定した事業所の税区分一覧の取得
 *TransfersApi* | [**createTransfer**](docs/Api/TransfersApi.md#createtransfer) | **POST** /api/1/transfers | 取引（振替）の作成
-*TransfersApi* | [**destroyTransfer**](docs/Api/TransfersApi.md#destroytransfer) | **DELETE** /api/1/transfers/{id} | 取引（振替）の削除する
+*TransfersApi* | [**destroyTransfer**](docs/Api/TransfersApi.md#destroytransfer) | **DELETE** /api/1/transfers/{id} | 取引（振替）の削除
 *TransfersApi* | [**getTransfer**](docs/Api/TransfersApi.md#gettransfer) | **GET** /api/1/transfers/{id} | 取引（振替）の取得
 *TransfersApi* | [**getTransfers**](docs/Api/TransfersApi.md#gettransfers) | **GET** /api/1/transfers | 取引（振替）一覧の取得
 *TransfersApi* | [**updateTransfer**](docs/Api/TransfersApi.md#updatetransfer) | **PUT** /api/1/transfers/{id} | 取引（振替）の更新
@@ -200,15 +200,15 @@ Class | Method | HTTP request | Description
 *TrialBalanceApi* | [**getTrialPlTwoYears**](docs/Api/TrialBalanceApi.md#gettrialpltwoyears) | **GET** /api/1/reports/trial_pl_two_years | 損益計算書(前年比較)の取得
 *UsersApi* | [**getUsers**](docs/Api/UsersApi.md#getusers) | **GET** /api/1/users | 事業所に所属するユーザー一覧の取得
 *UsersApi* | [**getUsersCapabilities**](docs/Api/UsersApi.md#getuserscapabilities) | **GET** /api/1/users/capabilities | ログインユーザーの権限の取得
-*UsersApi* | [**getUsersMe**](docs/Api/UsersApi.md#getusersme) | **GET** /api/1/users/me | ログインユーザー情報の取得
-*UsersApi* | [**updateUser**](docs/Api/UsersApi.md#updateuser) | **PUT** /api/1/users/me | ユーザー情報の更新
-*WalletTxnsApi* | [**createWalletTxn**](docs/Api/WalletTxnsApi.md#createwallettxn) | **POST** /api/1/wallet_txns | 明細の作成
-*WalletTxnsApi* | [**destroyWalletTxn**](docs/Api/WalletTxnsApi.md#destroywallettxn) | **DELETE** /api/1/wallet_txns/{id} | 明細の削除
-*WalletTxnsApi* | [**getWalletTxn**](docs/Api/WalletTxnsApi.md#getwallettxn) | **GET** /api/1/wallet_txns/{id} | 明細の取得
-*WalletTxnsApi* | [**getWalletTxns**](docs/Api/WalletTxnsApi.md#getwallettxns) | **GET** /api/1/wallet_txns | 明細一覧の取得
+*UsersApi* | [**getUsersMe**](docs/Api/UsersApi.md#getusersme) | **GET** /api/1/users/me | ログインユーザーの取得
+*UsersApi* | [**updateUser**](docs/Api/UsersApi.md#updateuser) | **PUT** /api/1/users/me | ログインユーザーの更新
+*WalletTxnsApi* | [**createWalletTxn**](docs/Api/WalletTxnsApi.md#createwallettxn) | **POST** /api/1/wallet_txns | 口座明細の作成
+*WalletTxnsApi* | [**destroyWalletTxn**](docs/Api/WalletTxnsApi.md#destroywallettxn) | **DELETE** /api/1/wallet_txns/{id} | 口座明細の削除
+*WalletTxnsApi* | [**getWalletTxn**](docs/Api/WalletTxnsApi.md#getwallettxn) | **GET** /api/1/wallet_txns/{id} | 口座明細の取得
+*WalletTxnsApi* | [**getWalletTxns**](docs/Api/WalletTxnsApi.md#getwallettxns) | **GET** /api/1/wallet_txns | 口座明細一覧の取得
 *WalletablesApi* | [**createWalletable**](docs/Api/WalletablesApi.md#createwalletable) | **POST** /api/1/walletables | 口座の作成
 *WalletablesApi* | [**destroyWalletable**](docs/Api/WalletablesApi.md#destroywalletable) | **DELETE** /api/1/walletables/{type}/{id} | 口座の削除
-*WalletablesApi* | [**getWalletable**](docs/Api/WalletablesApi.md#getwalletable) | **GET** /api/1/walletables/{type}/{id} | 口座情報の取得
+*WalletablesApi* | [**getWalletable**](docs/Api/WalletablesApi.md#getwalletable) | **GET** /api/1/walletables/{type}/{id} | 口座の取得
 *WalletablesApi* | [**getWalletables**](docs/Api/WalletablesApi.md#getwalletables) | **GET** /api/1/walletables | 口座一覧の取得
 *WalletablesApi* | [**updateWalletable**](docs/Api/WalletablesApi.md#updatewalletable) | **PUT** /api/1/walletables/{type}/{id} | 口座の更新
 
@@ -545,5 +545,5 @@ vendor/bin/phpunit
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
 - API version: `v1.0`
-    - Package version: `v2.24.0`
+    - Package version: `v2.25.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

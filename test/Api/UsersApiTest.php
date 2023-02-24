@@ -98,7 +98,7 @@ class UsersApiTest extends TestCase
     /**
      * Test case for getUsersMe
      *
-     * ログインユーザー情報の取得.
+     * ログインユーザーの取得.
      *
      */
     public function testGetUsersMe()
@@ -110,7 +110,7 @@ class UsersApiTest extends TestCase
     /**
      * Test case for updateUser
      *
-     * ユーザー情報の更新.
+     * ログインユーザーの更新.
      *
      */
     public function testUpdateUser()

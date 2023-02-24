@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createAccountItem()**](AccountItemsApi.md#createAccountItem) | **POST** /api/1/account_items | 勘定科目の作成
 [**destroyAccountItem()**](AccountItemsApi.md#destroyAccountItem) | **DELETE** /api/1/account_items/{id} | 勘定科目の削除
-[**getAccountItem()**](AccountItemsApi.md#getAccountItem) | **GET** /api/1/account_items/{id} | 勘定科目の詳細情報の取得
+[**getAccountItem()**](AccountItemsApi.md#getAccountItem) | **GET** /api/1/account_items/{id} | 勘定科目の取得
 [**getAccountItems()**](AccountItemsApi.md#getAccountItems) | **GET** /api/1/account_items | 勘定科目一覧の取得
 [**updateAccountItem()**](AccountItemsApi.md#updateAccountItem) | **PUT** /api/1/account_items/{id} | 勘定科目の更新
 
@@ -134,7 +134,7 @@ void (empty response body)
 getAccountItem($company_id, $id): \Freee\Accounting\Model\AccountItemResponse
 ```
 
-勘定科目の詳細情報の取得
+勘定科目の取得
 
 ### Example
 

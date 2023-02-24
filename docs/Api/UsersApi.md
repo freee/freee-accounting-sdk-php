@@ -6,8 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getUsers()**](UsersApi.md#getUsers) | **GET** /api/1/users | 事業所に所属するユーザー一覧の取得
 [**getUsersCapabilities()**](UsersApi.md#getUsersCapabilities) | **GET** /api/1/users/capabilities | ログインユーザーの権限の取得
-[**getUsersMe()**](UsersApi.md#getUsersMe) | **GET** /api/1/users/me | ログインユーザー情報の取得
-[**updateUser()**](UsersApi.md#updateUser) | **PUT** /api/1/users/me | ユーザー情報の更新
+[**getUsersMe()**](UsersApi.md#getUsersMe) | **GET** /api/1/users/me | ログインユーザーの取得
+[**updateUser()**](UsersApi.md#updateUser) | **PUT** /api/1/users/me | ログインユーザーの更新
 
 
 ## `getUsers()`
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 getUsersMe($companies, $advisor): \Freee\Accounting\Model\MeResponse
 ```
 
-ログインユーザー情報の取得
+ログインユーザーの取得
 
 ### Example
 
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 updateUser($user_params): \Freee\Accounting\Model\UserResponse
 ```
 
-ユーザー情報の更新
+ログインユーザーの更新
 
 ### Example
 
@@ -213,7 +213,7 @@ $apiInstance = new Freee\Accounting\Api\UsersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$user_params = new \Freee\Accounting\Model\UserParams(); // \Freee\Accounting\Model\UserParams | ユーザー情報の更新
+$user_params = new \Freee\Accounting\Model\UserParams(); // \Freee\Accounting\Model\UserParams | ログインユーザーの更新
 
 try {
     $result = $apiInstance->updateUser($user_params);
@@ -227,7 +227,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_params** | [**\Freee\Accounting\Model\UserParams**](../Model/UserParams.md)| ユーザー情報の更新 | [optional]
+ **user_params** | [**\Freee\Accounting\Model\UserParams**](../Model/UserParams.md)| ログインユーザーの更新 | [optional]
 
 ### Return type
 

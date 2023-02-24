@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createSection()**](SectionsApi.md#createSection) | **POST** /api/1/sections | 部門の作成
 [**destroySection()**](SectionsApi.md#destroySection) | **DELETE** /api/1/sections/{id} | 部門の削除
-[**getSection()**](SectionsApi.md#getSection) | **GET** /api/1/sections/{id} | 
+[**getSection()**](SectionsApi.md#getSection) | **GET** /api/1/sections/{id} | 部門の取得
 [**getSections()**](SectionsApi.md#getSections) | **GET** /api/1/sections | 部門一覧の取得
 [**updateSection()**](SectionsApi.md#updateSection) | **PUT** /api/1/sections/{id} | 部門の更新
 
@@ -134,7 +134,7 @@ void (empty response body)
 getSection($id, $company_id): \Freee\Accounting\Model\SectionResponse
 ```
 
-
+部門の取得
 
 ### Example
 

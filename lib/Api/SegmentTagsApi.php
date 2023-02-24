@@ -118,7 +118,7 @@ class SegmentTagsApi
     /**
      * Operation createSegmentTag
      *
-     * セグメントの作成
+     * セグメントタグの作成
      *
      * @param  int $segment_id セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン (required)
      * @param  \Freee\Accounting\Model\SegmentTagParams $segment_tag_params セグメントタグの作成 (required)
@@ -136,7 +136,7 @@ class SegmentTagsApi
     /**
      * Operation createSegmentTagWithHttpInfo
      *
-     * セグメントの作成
+     * セグメントタグの作成
      *
      * @param  int $segment_id セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン (required)
      * @param  \Freee\Accounting\Model\SegmentTagParams $segment_tag_params セグメントタグの作成 (required)
@@ -310,7 +310,7 @@ class SegmentTagsApi
     /**
      * Operation createSegmentTagAsync
      *
-     * セグメントの作成
+     * セグメントタグの作成
      *
      * @param  int $segment_id セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン (required)
      * @param  \Freee\Accounting\Model\SegmentTagParams $segment_tag_params セグメントタグの作成 (required)
@@ -331,7 +331,7 @@ class SegmentTagsApi
     /**
      * Operation createSegmentTagAsyncWithHttpInfo
      *
-     * セグメントの作成
+     * セグメントタグの作成
      *
      * @param  int $segment_id セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン (required)
      * @param  \Freee\Accounting\Model\SegmentTagParams $segment_tag_params セグメントタグの作成 (required)

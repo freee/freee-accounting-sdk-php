@@ -5,7 +5,7 @@ All URIs are relative to https://api.freee.co.jp.
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createTransfer()**](TransfersApi.md#createTransfer) | **POST** /api/1/transfers | 取引（振替）の作成
-[**destroyTransfer()**](TransfersApi.md#destroyTransfer) | **DELETE** /api/1/transfers/{id} | 取引（振替）の削除する
+[**destroyTransfer()**](TransfersApi.md#destroyTransfer) | **DELETE** /api/1/transfers/{id} | 取引（振替）の削除
 [**getTransfer()**](TransfersApi.md#getTransfer) | **GET** /api/1/transfers/{id} | 取引（振替）の取得
 [**getTransfers()**](TransfersApi.md#getTransfers) | **GET** /api/1/transfers | 取引（振替）一覧の取得
 [**updateTransfer()**](TransfersApi.md#updateTransfer) | **PUT** /api/1/transfers/{id} | 取引（振替）の更新
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 destroyTransfer($id, $company_id)
 ```
 
-取引（振替）の削除する
+取引（振替）の削除
 
 ### Example
 

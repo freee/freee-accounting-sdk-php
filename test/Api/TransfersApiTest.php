@@ -86,7 +86,7 @@ class TransfersApiTest extends TestCase
     /**
      * Test case for destroyTransfer
      *
-     * 取引（振替）の削除する.
+     * 取引（振替）の削除.
      *
      */
     public function testDestroyTransfer()

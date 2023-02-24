@@ -416,7 +416,7 @@ class DealReceipts implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets file_src
      *
-     * @param string $file_src ファイルのダウンロードURL（freeeにログインした状態でのみ閲覧可能です。） <br> <br> file_srcは廃止予定の属性になります。<br> file_srcに替わり、証憑ファイル（ファイルボックスのファイル）のダウンロード APIをご利用ください。<br> 証憑ファイル（ファイルボックスのファイル）のダウンロードAPIを利用することで、以下のようになります。 <ul>   <li>アプリケーション利用者はfreee APIアプリケーションにログインしていれば、証憑ダウンロード毎にfreeeに改めてログインすることなくファイルが参照できるようになります。</li> </ul>
+     * @param string $file_src ファイルのダウンロードURL（freeeにログインした状態でのみ閲覧可能です。） <br> <br> file_srcは廃止予定の属性になります。<br> file_srcに替わり、ファイルボックス（証憑ファイル）のダウンロード APIをご利用ください。<br> ファイルボックス（証憑ファイル）のダウンロードAPIを利用することで、以下のようになります。 <ul>   <li>アプリケーション利用者はfreee APIアプリケーションにログインしていれば、証憑ダウンロード毎にfreeeに改めてログインすることなくファイルが参照できるようになります。</li> </ul>
      *
      * @return self
      * @deprecated
@@ -441,7 +441,7 @@ class DealReceipts implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param int $id 証憑ファイルID（ファイルボックスのファイルID）
+     * @param int $id ファイルボックス（証憑ファイル）ID
      *
      * @return self
      */

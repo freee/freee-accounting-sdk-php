@@ -98,7 +98,7 @@ class TagsApiTest extends TestCase
     /**
      * Test case for getTag
      *
-     * メモタグの詳細情報の取得.
+     * メモタグの取得.
      *
      */
     public function testGetTag()

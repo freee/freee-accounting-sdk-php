@@ -454,7 +454,7 @@ class CompaniesApi
     /**
      * Operation getCompany
      *
-     * 事業所の詳細情報の取得
+     * 事業所の取得
      *
      * @param  int $id 事業所ID (required)
      * @param  bool $details 取得情報に勘定科目・税区分コード・品目・取引先・部門・メモタグ・口座の一覧を含める (optional)
@@ -479,7 +479,7 @@ class CompaniesApi
     /**
      * Operation getCompanyWithHttpInfo
      *
-     * 事業所の詳細情報の取得
+     * 事業所の取得
      *
      * @param  int $id 事業所ID (required)
      * @param  bool $details 取得情報に勘定科目・税区分コード・品目・取引先・部門・メモタグ・口座の一覧を含める (optional)
@@ -660,7 +660,7 @@ class CompaniesApi
     /**
      * Operation getCompanyAsync
      *
-     * 事業所の詳細情報の取得
+     * 事業所の取得
      *
      * @param  int $id 事業所ID (required)
      * @param  bool $details 取得情報に勘定科目・税区分コード・品目・取引先・部門・メモタグ・口座の一覧を含める (optional)
@@ -688,7 +688,7 @@ class CompaniesApi
     /**
      * Operation getCompanyAsyncWithHttpInfo
      *
-     * 事業所の詳細情報の取得
+     * 事業所の取得
      *
      * @param  int $id 事業所ID (required)
      * @param  bool $details 取得情報に勘定科目・税区分コード・品目・取引先・部門・メモタグ・口座の一覧を含める (optional)

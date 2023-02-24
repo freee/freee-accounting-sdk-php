@@ -118,9 +118,9 @@ class DealsApi
     /**
      * Operation createDeal
      *
-     * 取引（収入／支出）の作成
+     * 取引（収入・支出）の作成
      *
-     * @param  \Freee\Accounting\Model\DealCreateParams $deal_create_params 取引（収入／支出）の作成 (optional)
+     * @param  \Freee\Accounting\Model\DealCreateParams $deal_create_params 取引（収入・支出）の作成 (optional)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -135,9 +135,9 @@ class DealsApi
     /**
      * Operation createDealWithHttpInfo
      *
-     * 取引（収入／支出）の作成
+     * 取引（収入・支出）の作成
      *
-     * @param  \Freee\Accounting\Model\DealCreateParams $deal_create_params 取引（収入／支出）の作成 (optional)
+     * @param  \Freee\Accounting\Model\DealCreateParams $deal_create_params 取引（収入・支出）の作成 (optional)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -328,9 +328,9 @@ class DealsApi
     /**
      * Operation createDealAsync
      *
-     * 取引（収入／支出）の作成
+     * 取引（収入・支出）の作成
      *
-     * @param  \Freee\Accounting\Model\DealCreateParams $deal_create_params 取引（収入／支出）の作成 (optional)
+     * @param  \Freee\Accounting\Model\DealCreateParams $deal_create_params 取引（収入・支出）の作成 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -348,9 +348,9 @@ class DealsApi
     /**
      * Operation createDealAsyncWithHttpInfo
      *
-     * 取引（収入／支出）の作成
+     * 取引（収入・支出）の作成
      *
-     * @param  \Freee\Accounting\Model\DealCreateParams $deal_create_params 取引（収入／支出）の作成 (optional)
+     * @param  \Freee\Accounting\Model\DealCreateParams $deal_create_params 取引（収入・支出）の作成 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -396,7 +396,7 @@ class DealsApi
     /**
      * Create request for operation 'createDeal'
      *
-     * @param  \Freee\Accounting\Model\DealCreateParams $deal_create_params 取引（収入／支出）の作成 (optional)
+     * @param  \Freee\Accounting\Model\DealCreateParams $deal_create_params 取引（収入・支出）の作成 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -485,7 +485,7 @@ class DealsApi
     /**
      * Operation destroyDeal
      *
-     * 取引（収入／支出）の削除
+     * 取引（収入・支出）の削除
      *
      * @param  int $id 取引ID (required)
      * @param  int $company_id 事業所ID (required)
@@ -502,7 +502,7 @@ class DealsApi
     /**
      * Operation destroyDealWithHttpInfo
      *
-     * 取引（収入／支出）の削除
+     * 取引（収入・支出）の削除
      *
      * @param  int $id 取引ID (required)
      * @param  int $company_id 事業所ID (required)
@@ -602,7 +602,7 @@ class DealsApi
     /**
      * Operation destroyDealAsync
      *
-     * 取引（収入／支出）の削除
+     * 取引（収入・支出）の削除
      *
      * @param  int $id 取引ID (required)
      * @param  int $company_id 事業所ID (required)
@@ -623,7 +623,7 @@ class DealsApi
     /**
      * Operation destroyDealAsyncWithHttpInfo
      *
-     * 取引（収入／支出）の削除
+     * 取引（収入・支出）の削除
      *
      * @param  int $id 取引ID (required)
      * @param  int $company_id 事業所ID (required)
@@ -791,7 +791,7 @@ class DealsApi
     /**
      * Operation getDeal
      *
-     * 取引（収入／支出）の取得
+     * 取引（収入・支出）の取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $id id (required)
@@ -810,7 +810,7 @@ class DealsApi
     /**
      * Operation getDealWithHttpInfo
      *
-     * 取引（収入／支出）の取得
+     * 取引（収入・支出）の取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $id (required)
@@ -1005,7 +1005,7 @@ class DealsApi
     /**
      * Operation getDealAsync
      *
-     * 取引（収入／支出）の取得
+     * 取引（収入・支出）の取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $id (required)
@@ -1027,7 +1027,7 @@ class DealsApi
     /**
      * Operation getDealAsyncWithHttpInfo
      *
-     * 取引（収入／支出）の取得
+     * 取引（収入・支出）の取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $id (required)
@@ -1218,7 +1218,7 @@ class DealsApi
     /**
      * Operation getDeals
      *
-     * 取引（収入／支出）一覧の取得
+     * 取引（収入・支出）一覧の取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $partner_id 取引先IDで絞込 (optional)
@@ -1250,7 +1250,7 @@ class DealsApi
     /**
      * Operation getDealsWithHttpInfo
      *
-     * 取引（収入／支出）一覧の取得
+     * 取引（収入・支出）一覧の取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $partner_id 取引先IDで絞込 (optional)
@@ -1458,7 +1458,7 @@ class DealsApi
     /**
      * Operation getDealsAsync
      *
-     * 取引（収入／支出）一覧の取得
+     * 取引（収入・支出）一覧の取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $partner_id 取引先IDで絞込 (optional)
@@ -1493,7 +1493,7 @@ class DealsApi
     /**
      * Operation getDealsAsyncWithHttpInfo
      *
-     * 取引（収入／支出）一覧の取得
+     * 取引（収入・支出）一覧の取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  int $partner_id 取引先IDで絞込 (optional)
@@ -1871,10 +1871,10 @@ class DealsApi
     /**
      * Operation updateDeal
      *
-     * 取引（収入／支出）の更新
+     * 取引（収入・支出）の更新
      *
      * @param  int $id 取引ID (required)
-     * @param  \Freee\Accounting\Model\DealUpdateParams $deal_update_params 取引（収入／支出）の更新 (optional)
+     * @param  \Freee\Accounting\Model\DealUpdateParams $deal_update_params 取引（収入・支出）の更新 (optional)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1889,10 +1889,10 @@ class DealsApi
     /**
      * Operation updateDealWithHttpInfo
      *
-     * 取引（収入／支出）の更新
+     * 取引（収入・支出）の更新
      *
      * @param  int $id 取引ID (required)
-     * @param  \Freee\Accounting\Model\DealUpdateParams $deal_update_params 取引（収入／支出）の更新 (optional)
+     * @param  \Freee\Accounting\Model\DealUpdateParams $deal_update_params 取引（収入・支出）の更新 (optional)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2083,10 +2083,10 @@ class DealsApi
     /**
      * Operation updateDealAsync
      *
-     * 取引（収入／支出）の更新
+     * 取引（収入・支出）の更新
      *
      * @param  int $id 取引ID (required)
-     * @param  \Freee\Accounting\Model\DealUpdateParams $deal_update_params 取引（収入／支出）の更新 (optional)
+     * @param  \Freee\Accounting\Model\DealUpdateParams $deal_update_params 取引（収入・支出）の更新 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2104,10 +2104,10 @@ class DealsApi
     /**
      * Operation updateDealAsyncWithHttpInfo
      *
-     * 取引（収入／支出）の更新
+     * 取引（収入・支出）の更新
      *
      * @param  int $id 取引ID (required)
-     * @param  \Freee\Accounting\Model\DealUpdateParams $deal_update_params 取引（収入／支出）の更新 (optional)
+     * @param  \Freee\Accounting\Model\DealUpdateParams $deal_update_params 取引（収入・支出）の更新 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2154,7 +2154,7 @@ class DealsApi
      * Create request for operation 'updateDeal'
      *
      * @param  int $id 取引ID (required)
-     * @param  \Freee\Accounting\Model\DealUpdateParams $deal_update_params 取引（収入／支出）の更新 (optional)
+     * @param  \Freee\Accounting\Model\DealUpdateParams $deal_update_params 取引（収入・支出）の更新 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

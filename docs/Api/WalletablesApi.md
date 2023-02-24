@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createWalletable()**](WalletablesApi.md#createWalletable) | **POST** /api/1/walletables | 口座の作成
 [**destroyWalletable()**](WalletablesApi.md#destroyWalletable) | **DELETE** /api/1/walletables/{type}/{id} | 口座の削除
-[**getWalletable()**](WalletablesApi.md#getWalletable) | **GET** /api/1/walletables/{type}/{id} | 口座情報の取得
+[**getWalletable()**](WalletablesApi.md#getWalletable) | **GET** /api/1/walletables/{type}/{id} | 口座の取得
 [**getWalletables()**](WalletablesApi.md#getWalletables) | **GET** /api/1/walletables | 口座一覧の取得
 [**updateWalletable()**](WalletablesApi.md#updateWalletable) | **PUT** /api/1/walletables/{type}/{id} | 口座の更新
 
@@ -136,7 +136,7 @@ void (empty response body)
 getWalletable($id, $type, $company_id): \Freee\Accounting\Model\InlineResponse20016
 ```
 
-口座情報の取得
+口座の取得
 
 ### Example
 

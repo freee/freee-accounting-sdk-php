@@ -98,7 +98,7 @@ class SectionsApiTest extends TestCase
     /**
      * Test case for getSection
      *
-     * .
+     * 部門の取得.
      *
      */
     public function testGetSection()

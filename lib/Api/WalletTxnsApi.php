@@ -118,9 +118,9 @@ class WalletTxnsApi
     /**
      * Operation createWalletTxn
      *
-     * 明細の作成
+     * 口座明細の作成
      *
-     * @param  \Freee\Accounting\Model\WalletTxnParams $wallet_txn_params 明細の作成 (optional)
+     * @param  \Freee\Accounting\Model\WalletTxnParams $wallet_txn_params 口座明細の作成 (optional)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -135,9 +135,9 @@ class WalletTxnsApi
     /**
      * Operation createWalletTxnWithHttpInfo
      *
-     * 明細の作成
+     * 口座明細の作成
      *
-     * @param  \Freee\Accounting\Model\WalletTxnParams $wallet_txn_params 明細の作成 (optional)
+     * @param  \Freee\Accounting\Model\WalletTxnParams $wallet_txn_params 口座明細の作成 (optional)
      *
      * @throws \Freee\Accounting\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -308,9 +308,9 @@ class WalletTxnsApi
     /**
      * Operation createWalletTxnAsync
      *
-     * 明細の作成
+     * 口座明細の作成
      *
-     * @param  \Freee\Accounting\Model\WalletTxnParams $wallet_txn_params 明細の作成 (optional)
+     * @param  \Freee\Accounting\Model\WalletTxnParams $wallet_txn_params 口座明細の作成 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -328,9 +328,9 @@ class WalletTxnsApi
     /**
      * Operation createWalletTxnAsyncWithHttpInfo
      *
-     * 明細の作成
+     * 口座明細の作成
      *
-     * @param  \Freee\Accounting\Model\WalletTxnParams $wallet_txn_params 明細の作成 (optional)
+     * @param  \Freee\Accounting\Model\WalletTxnParams $wallet_txn_params 口座明細の作成 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -376,7 +376,7 @@ class WalletTxnsApi
     /**
      * Create request for operation 'createWalletTxn'
      *
-     * @param  \Freee\Accounting\Model\WalletTxnParams $wallet_txn_params 明細の作成 (optional)
+     * @param  \Freee\Accounting\Model\WalletTxnParams $wallet_txn_params 口座明細の作成 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -465,7 +465,7 @@ class WalletTxnsApi
     /**
      * Operation destroyWalletTxn
      *
-     * 明細の削除
+     * 口座明細の削除
      *
      * @param  int $id 明細ID (required)
      * @param  int $company_id 事業所ID (required)
@@ -482,7 +482,7 @@ class WalletTxnsApi
     /**
      * Operation destroyWalletTxnWithHttpInfo
      *
-     * 明細の削除
+     * 口座明細の削除
      *
      * @param  int $id 明細ID (required)
      * @param  int $company_id 事業所ID (required)
@@ -582,7 +582,7 @@ class WalletTxnsApi
     /**
      * Operation destroyWalletTxnAsync
      *
-     * 明細の削除
+     * 口座明細の削除
      *
      * @param  int $id 明細ID (required)
      * @param  int $company_id 事業所ID (required)
@@ -603,7 +603,7 @@ class WalletTxnsApi
     /**
      * Operation destroyWalletTxnAsyncWithHttpInfo
      *
-     * 明細の削除
+     * 口座明細の削除
      *
      * @param  int $id 明細ID (required)
      * @param  int $company_id 事業所ID (required)
@@ -771,7 +771,7 @@ class WalletTxnsApi
     /**
      * Operation getWalletTxn
      *
-     * 明細の取得
+     * 口座明細の取得
      *
      * @param  int $id 明細ID (required)
      * @param  int $company_id 事業所ID (required)
@@ -789,7 +789,7 @@ class WalletTxnsApi
     /**
      * Operation getWalletTxnWithHttpInfo
      *
-     * 明細の取得
+     * 口座明細の取得
      *
      * @param  int $id 明細ID (required)
      * @param  int $company_id 事業所ID (required)
@@ -983,7 +983,7 @@ class WalletTxnsApi
     /**
      * Operation getWalletTxnAsync
      *
-     * 明細の取得
+     * 口座明細の取得
      *
      * @param  int $id 明細ID (required)
      * @param  int $company_id 事業所ID (required)
@@ -1004,7 +1004,7 @@ class WalletTxnsApi
     /**
      * Operation getWalletTxnAsyncWithHttpInfo
      *
-     * 明細の取得
+     * 口座明細の取得
      *
      * @param  int $id 明細ID (required)
      * @param  int $company_id 事業所ID (required)
@@ -1182,7 +1182,7 @@ class WalletTxnsApi
     /**
      * Operation getWalletTxns
      *
-     * 明細一覧の取得
+     * 口座明細一覧の取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  string $walletable_type 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) walletable_type、walletable_idは同時に指定が必要です。 (optional)
@@ -1206,7 +1206,7 @@ class WalletTxnsApi
     /**
      * Operation getWalletTxnsWithHttpInfo
      *
-     * 明細一覧の取得
+     * 口座明細一覧の取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  string $walletable_type 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) walletable_type、walletable_idは同時に指定が必要です。 (optional)
@@ -1386,7 +1386,7 @@ class WalletTxnsApi
     /**
      * Operation getWalletTxnsAsync
      *
-     * 明細一覧の取得
+     * 口座明細一覧の取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  string $walletable_type 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) walletable_type、walletable_idは同時に指定が必要です。 (optional)
@@ -1413,7 +1413,7 @@ class WalletTxnsApi
     /**
      * Operation getWalletTxnsAsyncWithHttpInfo
      *
-     * 明細一覧の取得
+     * 口座明細一覧の取得
      *
      * @param  int $company_id 事業所ID (required)
      * @param  string $walletable_type 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) walletable_type、walletable_idは同時に指定が必要です。 (optional)

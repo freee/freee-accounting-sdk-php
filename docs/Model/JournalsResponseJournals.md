@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **id** | **int** | 受け付けID |
 **messages** | **string[]** |  | [optional]
 **start_date** | **string** | 取得開始日 (yyyy-mm-dd) | [optional]
-**status_url** | **string** | ステータス確認用URL | [optional]
+**status_url** | **string** | 仕訳帳のステータスの取得用URL | [optional]
 **up_to_date** | **bool** | 集計結果が最新かどうか | [optional]
 **up_to_date_reasons** | [**\Freee\Accounting\Model\JournalsResponseJournalsUpToDateReasons[]**](JournalsResponseJournalsUpToDateReasons.md) | 集計が最新でない場合の要因情報 | [optional]
 **visible_ids** | **string[]** |  | [optional]

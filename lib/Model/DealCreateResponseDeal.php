@@ -666,7 +666,7 @@ class DealCreateResponseDeal implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets receipts
      *
-     * @param \Freee\Accounting\Model\DealCreateResponseDealReceipts[]|null $receipts 証憑ファイル（ファイルボックスのファイル）
+     * @param \Freee\Accounting\Model\DealCreateResponseDealReceipts[]|null $receipts ファイルボックス（証憑ファイル）
      *
      * @return self
      */

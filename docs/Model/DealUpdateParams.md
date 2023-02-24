@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **issue_date** | **string** | 発生日 (yyyy-mm-dd) |
 **partner_code** | **string** | 取引先コード | [optional]
 **partner_id** | **int** | 取引先ID | [optional]
-**receipt_ids** | **int[]** | 証憑ファイルID（ファイルボックスのファイルID）（配列） | [optional]
+**receipt_ids** | **int[]** | ファイルボックス（証憑ファイル）ID（配列） | [optional]
 **ref_number** | **string** | 管理番号 | [optional]
 **type** | **string** | 収支区分 (収入: income, 支出: expense) |
 
