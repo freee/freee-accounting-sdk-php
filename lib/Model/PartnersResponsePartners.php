@@ -68,6 +68,7 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess, \JsonSeri
         'default_title' => 'string',
         'email' => 'string',
         'id' => 'int',
+        'invoice_registration_number' => 'string',
         'long_name' => 'string',
         'name' => 'string',
         'name_kana' => 'string',
@@ -76,6 +77,7 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess, \JsonSeri
         'partner_doc_setting_attributes' => '\Freee\Accounting\Model\PartnerCreateParamsPartnerDocSettingAttributes',
         'payer_walletable_id' => 'int',
         'phone' => 'string',
+        'qualified_invoice_issuer' => 'bool',
         'shortcut1' => 'string',
         'shortcut2' => 'string',
         'transfer_fee_handling_side' => 'string',
@@ -99,6 +101,7 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess, \JsonSeri
         'default_title' => null,
         'email' => null,
         'id' => null,
+        'invoice_registration_number' => null,
         'long_name' => null,
         'name' => null,
         'name_kana' => null,
@@ -107,6 +110,7 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess, \JsonSeri
         'partner_doc_setting_attributes' => null,
         'payer_walletable_id' => null,
         'phone' => null,
+        'qualified_invoice_issuer' => null,
         'shortcut1' => null,
         'shortcut2' => null,
         'transfer_fee_handling_side' => null,
@@ -149,6 +153,7 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess, \JsonSeri
         'default_title' => 'default_title',
         'email' => 'email',
         'id' => 'id',
+        'invoice_registration_number' => 'invoice_registration_number',
         'long_name' => 'long_name',
         'name' => 'name',
         'name_kana' => 'name_kana',
@@ -157,6 +162,7 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess, \JsonSeri
         'partner_doc_setting_attributes' => 'partner_doc_setting_attributes',
         'payer_walletable_id' => 'payer_walletable_id',
         'phone' => 'phone',
+        'qualified_invoice_issuer' => 'qualified_invoice_issuer',
         'shortcut1' => 'shortcut1',
         'shortcut2' => 'shortcut2',
         'transfer_fee_handling_side' => 'transfer_fee_handling_side',
@@ -178,6 +184,7 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess, \JsonSeri
         'default_title' => 'setDefaultTitle',
         'email' => 'setEmail',
         'id' => 'setId',
+        'invoice_registration_number' => 'setInvoiceRegistrationNumber',
         'long_name' => 'setLongName',
         'name' => 'setName',
         'name_kana' => 'setNameKana',
@@ -186,6 +193,7 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess, \JsonSeri
         'partner_doc_setting_attributes' => 'setPartnerDocSettingAttributes',
         'payer_walletable_id' => 'setPayerWalletableId',
         'phone' => 'setPhone',
+        'qualified_invoice_issuer' => 'setQualifiedInvoiceIssuer',
         'shortcut1' => 'setShortcut1',
         'shortcut2' => 'setShortcut2',
         'transfer_fee_handling_side' => 'setTransferFeeHandlingSide',
@@ -207,6 +215,7 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess, \JsonSeri
         'default_title' => 'getDefaultTitle',
         'email' => 'getEmail',
         'id' => 'getId',
+        'invoice_registration_number' => 'getInvoiceRegistrationNumber',
         'long_name' => 'getLongName',
         'name' => 'getName',
         'name_kana' => 'getNameKana',
@@ -215,6 +224,7 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess, \JsonSeri
         'partner_doc_setting_attributes' => 'getPartnerDocSettingAttributes',
         'payer_walletable_id' => 'getPayerWalletableId',
         'phone' => 'getPhone',
+        'qualified_invoice_issuer' => 'getQualifiedInvoiceIssuer',
         'shortcut1' => 'getShortcut1',
         'shortcut2' => 'getShortcut2',
         'transfer_fee_handling_side' => 'getTransferFeeHandlingSide',
@@ -302,6 +312,7 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess, \JsonSeri
         $this->container['default_title'] = $data['default_title'] ?? null;
         $this->container['email'] = $data['email'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
+        $this->container['invoice_registration_number'] = $data['invoice_registration_number'] ?? null;
         $this->container['long_name'] = $data['long_name'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['name_kana'] = $data['name_kana'] ?? null;
@@ -310,6 +321,7 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess, \JsonSeri
         $this->container['partner_doc_setting_attributes'] = $data['partner_doc_setting_attributes'] ?? null;
         $this->container['payer_walletable_id'] = $data['payer_walletable_id'] ?? null;
         $this->container['phone'] = $data['phone'] ?? null;
+        $this->container['qualified_invoice_issuer'] = $data['qualified_invoice_issuer'] ?? null;
         $this->container['shortcut1'] = $data['shortcut1'] ?? null;
         $this->container['shortcut2'] = $data['shortcut2'] ?? null;
         $this->container['transfer_fee_handling_side'] = $data['transfer_fee_handling_side'] ?? null;
@@ -648,6 +660,30 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
+     * Gets invoice_registration_number
+     *
+     * @return string|null
+     */
+    public function getInvoiceRegistrationNumber()
+    {
+        return $this->container['invoice_registration_number'];
+    }
+
+    /**
+     * Sets invoice_registration_number
+     *
+     * @param string|null $invoice_registration_number この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号 - 先頭T数字13桁の固定14桁の文字列 <a target=\"_blank\" href=\"https://www.invoice-kohyo.nta.go.jp/index.html\">国税庁インボイス制度適格請求書発行事業者公表サイト</a>
+     *
+     * @return self
+     */
+    public function setInvoiceRegistrationNumber($invoice_registration_number)
+    {
+        $this->container['invoice_registration_number'] = $invoice_registration_number;
+
+        return $this;
+    }
+
+    /**
      * Gets long_name
      *
      * @return string|null
@@ -859,6 +895,30 @@ class PartnersResponsePartners implements ModelInterface, ArrayAccess, \JsonSeri
     public function setPhone($phone)
     {
         $this->container['phone'] = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets qualified_invoice_issuer
+     *
+     * @return bool|null
+     */
+    public function getQualifiedInvoiceIssuer()
+    {
+        return $this->container['qualified_invoice_issuer'];
+    }
+
+    /**
+     * Sets qualified_invoice_issuer
+     *
+     * @param bool|null $qualified_invoice_issuer この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者（true: 対象事業者、false: 非対象事業者） <a target=\"_blank\" href=\"https://www.invoice-kohyo.nta.go.jp/index.html\">国税庁インボイス制度適格請求書発行事業者公表サイト</a>
+     *
+     * @return self
+     */
+    public function setQualifiedInvoiceIssuer($qualified_invoice_issuer)
+    {
+        $this->container['qualified_invoice_issuer'] = $qualified_invoice_issuer;
 
         return $this;
     }

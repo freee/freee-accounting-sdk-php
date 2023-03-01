@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **email** | **string** | 担当者 メールアドレス | [optional]
 **id** | **int** | 取引先ID |
 **invoice_payment_term_attributes** | [**\Freee\Accounting\Model\PartnerResponsePartnerInvoicePaymentTermAttributes**](PartnerResponsePartnerInvoicePaymentTermAttributes.md) |  | [optional]
+**invoice_registration_number** | **string** | この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号 - 先頭T数字13桁の固定14桁の文字列 &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;https://www.invoice-kohyo.nta.go.jp/index.html\&quot;&gt;国税庁インボイス制度適格請求書発行事業者公表サイト&lt;/a&gt; | [optional]
 **long_name** | **string** | 正式名称（255文字以内） | [optional]
 **name** | **string** | 取引先名 |
 **name_kana** | **string** | カナ名称（255文字以内） | [optional]
@@ -23,6 +24,7 @@ Name | Type | Description | Notes
 **payer_walletable_id** | **int** | 振込元口座ID（一括振込ファイル用）:（未設定の場合は、nullです。） | [optional]
 **payment_term_attributes** | [**\Freee\Accounting\Model\PartnerResponsePartnerPaymentTermAttributes**](PartnerResponsePartnerPaymentTermAttributes.md) |  | [optional]
 **phone** | **string** | 電話番号 | [optional]
+**qualified_invoice_issuer** | **bool** | この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者（true: 対象事業者、false: 非対象事業者） &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;https://www.invoice-kohyo.nta.go.jp/index.html\&quot;&gt;国税庁インボイス制度適格請求書発行事業者公表サイト&lt;/a&gt; | [optional]
 **shortcut1** | **string** | ショートカット1 (255文字以内) | [optional]
 **shortcut2** | **string** | ショートカット2 (255文字以内) | [optional]
 **transfer_fee_handling_side** | **string** | 振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee) | [optional]

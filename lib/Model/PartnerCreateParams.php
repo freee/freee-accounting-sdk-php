@@ -67,6 +67,7 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
         'default_title' => 'string',
         'email' => 'string',
         'invoice_payment_term_attributes' => '\Freee\Accounting\Model\PartnerCreateParamsInvoicePaymentTermAttributes',
+        'invoice_registration_number' => 'string',
         'long_name' => 'string',
         'name' => 'string',
         'name_kana' => 'string',
@@ -76,6 +77,7 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
         'payer_walletable_id' => 'int',
         'payment_term_attributes' => '\Freee\Accounting\Model\PartnerCreateParamsPaymentTermAttributes',
         'phone' => 'string',
+        'qualified_invoice_issuer' => 'bool',
         'shortcut1' => 'string',
         'shortcut2' => 'string',
         'transfer_fee_handling_side' => 'string'
@@ -97,6 +99,7 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
         'default_title' => null,
         'email' => null,
         'invoice_payment_term_attributes' => null,
+        'invoice_registration_number' => null,
         'long_name' => null,
         'name' => null,
         'name_kana' => null,
@@ -106,6 +109,7 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
         'payer_walletable_id' => null,
         'payment_term_attributes' => null,
         'phone' => null,
+        'qualified_invoice_issuer' => null,
         'shortcut1' => null,
         'shortcut2' => null,
         'transfer_fee_handling_side' => null
@@ -146,6 +150,7 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
         'default_title' => 'default_title',
         'email' => 'email',
         'invoice_payment_term_attributes' => 'invoice_payment_term_attributes',
+        'invoice_registration_number' => 'invoice_registration_number',
         'long_name' => 'long_name',
         'name' => 'name',
         'name_kana' => 'name_kana',
@@ -155,6 +160,7 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
         'payer_walletable_id' => 'payer_walletable_id',
         'payment_term_attributes' => 'payment_term_attributes',
         'phone' => 'phone',
+        'qualified_invoice_issuer' => 'qualified_invoice_issuer',
         'shortcut1' => 'shortcut1',
         'shortcut2' => 'shortcut2',
         'transfer_fee_handling_side' => 'transfer_fee_handling_side'
@@ -174,6 +180,7 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
         'default_title' => 'setDefaultTitle',
         'email' => 'setEmail',
         'invoice_payment_term_attributes' => 'setInvoicePaymentTermAttributes',
+        'invoice_registration_number' => 'setInvoiceRegistrationNumber',
         'long_name' => 'setLongName',
         'name' => 'setName',
         'name_kana' => 'setNameKana',
@@ -183,6 +190,7 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
         'payer_walletable_id' => 'setPayerWalletableId',
         'payment_term_attributes' => 'setPaymentTermAttributes',
         'phone' => 'setPhone',
+        'qualified_invoice_issuer' => 'setQualifiedInvoiceIssuer',
         'shortcut1' => 'setShortcut1',
         'shortcut2' => 'setShortcut2',
         'transfer_fee_handling_side' => 'setTransferFeeHandlingSide'
@@ -202,6 +210,7 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
         'default_title' => 'getDefaultTitle',
         'email' => 'getEmail',
         'invoice_payment_term_attributes' => 'getInvoicePaymentTermAttributes',
+        'invoice_registration_number' => 'getInvoiceRegistrationNumber',
         'long_name' => 'getLongName',
         'name' => 'getName',
         'name_kana' => 'getNameKana',
@@ -211,6 +220,7 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
         'payer_walletable_id' => 'getPayerWalletableId',
         'payment_term_attributes' => 'getPaymentTermAttributes',
         'phone' => 'getPhone',
+        'qualified_invoice_issuer' => 'getQualifiedInvoiceIssuer',
         'shortcut1' => 'getShortcut1',
         'shortcut2' => 'getShortcut2',
         'transfer_fee_handling_side' => 'getTransferFeeHandlingSide'
@@ -326,6 +336,7 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->container['default_title'] = $data['default_title'] ?? null;
         $this->container['email'] = $data['email'] ?? null;
         $this->container['invoice_payment_term_attributes'] = $data['invoice_payment_term_attributes'] ?? null;
+        $this->container['invoice_registration_number'] = $data['invoice_registration_number'] ?? null;
         $this->container['long_name'] = $data['long_name'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['name_kana'] = $data['name_kana'] ?? null;
@@ -335,6 +346,7 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->container['payer_walletable_id'] = $data['payer_walletable_id'] ?? null;
         $this->container['payment_term_attributes'] = $data['payment_term_attributes'] ?? null;
         $this->container['phone'] = $data['phone'] ?? null;
+        $this->container['qualified_invoice_issuer'] = $data['qualified_invoice_issuer'] ?? false;
         $this->container['shortcut1'] = $data['shortcut1'] ?? null;
         $this->container['shortcut2'] = $data['shortcut2'] ?? null;
         $this->container['transfer_fee_handling_side'] = $data['transfer_fee_handling_side'] ?? null;
@@ -375,6 +387,18 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
 
         if (!is_null($this->container['email']) && (mb_strlen($this->container['email']) > 255)) {
             $invalidProperties[] = "invalid value for 'email', the character length must be smaller than or equal to 255.";
+        }
+
+        if (!is_null($this->container['invoice_registration_number']) && (mb_strlen($this->container['invoice_registration_number']) > 14)) {
+            $invalidProperties[] = "invalid value for 'invoice_registration_number', the character length must be smaller than or equal to 14.";
+        }
+
+        if (!is_null($this->container['invoice_registration_number']) && (mb_strlen($this->container['invoice_registration_number']) < 13)) {
+            $invalidProperties[] = "invalid value for 'invoice_registration_number', the character length must be bigger than or equal to 13.";
+        }
+
+        if (!is_null($this->container['invoice_registration_number']) && !preg_match("/^T?[1-9][0-9]{12}$/", $this->container['invoice_registration_number'])) {
+            $invalidProperties[] = "invalid value for 'invoice_registration_number', must be conform to the pattern /^T?[1-9][0-9]{12}$/.";
         }
 
         if (!is_null($this->container['long_name']) && (mb_strlen($this->container['long_name']) > 255)) {
@@ -660,6 +684,40 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
+     * Gets invoice_registration_number
+     *
+     * @return string|null
+     */
+    public function getInvoiceRegistrationNumber()
+    {
+        return $this->container['invoice_registration_number'];
+    }
+
+    /**
+     * Sets invoice_registration_number
+     *
+     * @param string|null $invoice_registration_number この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号 - 先頭T数字13桁の固定14桁の文字列 <a target=\"_blank\" href=\"https://www.invoice-kohyo.nta.go.jp/index.html\">国税庁インボイス制度適格請求書発行事業者公表サイト</a>
+     *
+     * @return self
+     */
+    public function setInvoiceRegistrationNumber($invoice_registration_number)
+    {
+        if (!is_null($invoice_registration_number) && (mb_strlen($invoice_registration_number) > 14)) {
+            throw new \InvalidArgumentException('invalid length for $invoice_registration_number when calling PartnerCreateParams., must be smaller than or equal to 14.');
+        }
+        if (!is_null($invoice_registration_number) && (mb_strlen($invoice_registration_number) < 13)) {
+            throw new \InvalidArgumentException('invalid length for $invoice_registration_number when calling PartnerCreateParams., must be bigger than or equal to 13.');
+        }
+        if (!is_null($invoice_registration_number) && (!preg_match("/^T?[1-9][0-9]{12}$/", $invoice_registration_number))) {
+            throw new \InvalidArgumentException("invalid value for $invoice_registration_number when calling PartnerCreateParams., must conform to the pattern /^T?[1-9][0-9]{12}$/.");
+        }
+
+        $this->container['invoice_registration_number'] = $invoice_registration_number;
+
+        return $this;
+    }
+
+    /**
      * Gets long_name
      *
      * @return string|null
@@ -901,6 +959,30 @@ class PartnerCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setPhone($phone)
     {
         $this->container['phone'] = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets qualified_invoice_issuer
+     *
+     * @return bool|null
+     */
+    public function getQualifiedInvoiceIssuer()
+    {
+        return $this->container['qualified_invoice_issuer'];
+    }
+
+    /**
+     * Sets qualified_invoice_issuer
+     *
+     * @param bool|null $qualified_invoice_issuer この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者（true: 対象事業者、false: 非対象事業者） <a target=\"_blank\" href=\"https://www.invoice-kohyo.nta.go.jp/index.html\">国税庁インボイス制度適格請求書発行事業者公表サイト</a>
+     *
+     * @return self
+     */
+    public function setQualifiedInvoiceIssuer($qualified_invoice_issuer)
+    {
+        $this->container['qualified_invoice_issuer'] = $qualified_invoice_issuer;
 
         return $this;
     }
