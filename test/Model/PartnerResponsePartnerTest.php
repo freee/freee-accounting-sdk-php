@@ -170,6 +170,15 @@ class PartnerResponsePartnerTest extends TestCase
     }
 
     /**
+     * Test attribute "invoice_registration_number"
+     */
+    public function testPropertyInvoiceRegistrationNumber()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "long_name"
      */
     public function testPropertyLongName()
@@ -245,6 +254,15 @@ class PartnerResponsePartnerTest extends TestCase
      * Test attribute "phone"
      */
     public function testPropertyPhone()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "qualified_invoice_issuer"
+     */
+    public function testPropertyQualifiedInvoiceIssuer()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
