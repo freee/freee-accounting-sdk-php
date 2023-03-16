@@ -213,6 +213,7 @@ class PaymentRequestCreateParamsPaymentRequestLines implements ModelInterface, A
     }
 
     const LINE_TYPE_DEAL_LINE = 'deal_line';
+    const LINE_TYPE_NEGATIVE_LINE = 'negative_line';
     const LINE_TYPE_WITHHOLDING_TAX = 'withholding_tax';
 
     /**
@@ -224,6 +225,7 @@ class PaymentRequestCreateParamsPaymentRequestLines implements ModelInterface, A
     {
         return [
             self::LINE_TYPE_DEAL_LINE,
+            self::LINE_TYPE_NEGATIVE_LINE,
             self::LINE_TYPE_WITHHOLDING_TAX,
         ];
     }
@@ -489,7 +491,7 @@ class PaymentRequestCreateParamsPaymentRequestLines implements ModelInterface, A
     /**
      * Sets line_type
      *
-     * @param string|null $line_type '行の種類 (deal_line: 支払依頼の通常取引行, withholding_tax: 源泉所得税行)'<br> 'デフォルトは deal_line: 支払依頼の通常取引行 です'
+     * @param string|null $line_type '行の種類 (deal_line: 支払依頼の通常取引行, negative_line: 支払依頼の控除・マイナス行, withholding_tax: 源泉所得税行)'<br> 'デフォルトは deal_line: 支払依頼の通常取引行 です'<br> '※ negative_line は2023年3月下旬から利用できる予定です'
      *
      * @return self
      */
