@@ -237,6 +237,7 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
     const ORIGIN_PUBLIC_API = 'public_api';
     const QUALIFIED_INVOICE_QUALIFIED = 'qualified';
     const QUALIFIED_INVOICE_NOT_QUALIFIED = 'not_qualified';
+    const QUALIFIED_INVOICE_UNSELECTED = 'unselected';
     const STATUS_CONFIRMED = 'confirmed';
     const STATUS_DELETED = 'deleted';
     const STATUS_IGNORED = 'ignored';
@@ -286,6 +287,7 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
         return [
             self::QUALIFIED_INVOICE_QUALIFIED,
             self::QUALIFIED_INVOICE_NOT_QUALIFIED,
+            self::QUALIFIED_INVOICE_UNSELECTED,
         ];
     }
 
@@ -495,7 +497,7 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets document_type
      *
-     * @param string|null $document_type この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他）
+     * @param string|null $document_type この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他、null: OCR解析結果が保存されている時等）
      *
      * @return self
      */
@@ -587,7 +589,7 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets invoice_registration_number
      *
-     * @param string|null $invoice_registration_number この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号 - 先頭T数字13桁の固定14桁の文字列 <a target=\"_blank\" href=\"https://www.invoice-kohyo.nta.go.jp/index.html\">国税庁インボイス制度適格請求書発行事業者公表サイト</a>
+     * @param string|null $invoice_registration_number この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号（null: OCR解析結果が保存されている時等） - 先頭T数字13桁の固定14桁の文字列 <a target=\"_blank\" href=\"https://www.invoice-kohyo.nta.go.jp/index.html\">国税庁インボイス制度適格請求書発行事業者公表サイト</a>
      *
      * @return self
      */
@@ -703,7 +705,7 @@ class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets qualified_invoice
      *
-     * @param string|null $qualified_invoice この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない）
+     * @param string|null $qualified_invoice この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択、null: OCR解析結果が保存されている時等）
      *
      * @return self
      */

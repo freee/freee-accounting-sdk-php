@@ -143,6 +143,15 @@ class ExpenseApplicationUpdateParamsTest extends TestCase
     }
 
     /**
+     * Test attribute "purchase_lines"
+     */
+    public function testPropertyPurchaseLines()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "section_id"
      */
     public function testPropertySectionId()

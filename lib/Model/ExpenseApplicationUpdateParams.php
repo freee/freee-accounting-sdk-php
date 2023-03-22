@@ -66,6 +66,7 @@ class ExpenseApplicationUpdateParams implements ModelInterface, ArrayAccess, \Js
         'draft' => 'bool',
         'expense_application_lines' => '\Freee\Accounting\Model\ExpenseApplicationUpdateParamsExpenseApplicationLines[]',
         'issue_date' => 'string',
+        'purchase_lines' => '\Freee\Accounting\Model\ExpenseApplicationUpdateParamsPurchaseLines[]',
         'section_id' => 'int',
         'segment_1_tag_id' => 'int',
         'segment_2_tag_id' => 'int',
@@ -89,6 +90,7 @@ class ExpenseApplicationUpdateParams implements ModelInterface, ArrayAccess, \Js
         'draft' => null,
         'expense_application_lines' => null,
         'issue_date' => null,
+        'purchase_lines' => null,
         'section_id' => null,
         'segment_1_tag_id' => 'int64',
         'segment_2_tag_id' => 'int64',
@@ -131,6 +133,7 @@ class ExpenseApplicationUpdateParams implements ModelInterface, ArrayAccess, \Js
         'draft' => 'draft',
         'expense_application_lines' => 'expense_application_lines',
         'issue_date' => 'issue_date',
+        'purchase_lines' => 'purchase_lines',
         'section_id' => 'section_id',
         'segment_1_tag_id' => 'segment_1_tag_id',
         'segment_2_tag_id' => 'segment_2_tag_id',
@@ -152,6 +155,7 @@ class ExpenseApplicationUpdateParams implements ModelInterface, ArrayAccess, \Js
         'draft' => 'setDraft',
         'expense_application_lines' => 'setExpenseApplicationLines',
         'issue_date' => 'setIssueDate',
+        'purchase_lines' => 'setPurchaseLines',
         'section_id' => 'setSectionId',
         'segment_1_tag_id' => 'setSegment1TagId',
         'segment_2_tag_id' => 'setSegment2TagId',
@@ -173,6 +177,7 @@ class ExpenseApplicationUpdateParams implements ModelInterface, ArrayAccess, \Js
         'draft' => 'getDraft',
         'expense_application_lines' => 'getExpenseApplicationLines',
         'issue_date' => 'getIssueDate',
+        'purchase_lines' => 'getPurchaseLines',
         'section_id' => 'getSectionId',
         'segment_1_tag_id' => 'getSegment1TagId',
         'segment_2_tag_id' => 'getSegment2TagId',
@@ -245,6 +250,7 @@ class ExpenseApplicationUpdateParams implements ModelInterface, ArrayAccess, \Js
         $this->container['draft'] = $data['draft'] ?? null;
         $this->container['expense_application_lines'] = $data['expense_application_lines'] ?? null;
         $this->container['issue_date'] = $data['issue_date'] ?? null;
+        $this->container['purchase_lines'] = $data['purchase_lines'] ?? null;
         $this->container['section_id'] = $data['section_id'] ?? null;
         $this->container['segment_1_tag_id'] = $data['segment_1_tag_id'] ?? null;
         $this->container['segment_2_tag_id'] = $data['segment_2_tag_id'] ?? null;
@@ -293,9 +299,6 @@ class ExpenseApplicationUpdateParams implements ModelInterface, ArrayAccess, \Js
             $invalidProperties[] = "invalid value for 'description', the character length must be smaller than or equal to 10000.";
         }
 
-        if ($this->container['expense_application_lines'] === null) {
-            $invalidProperties[] = "'expense_application_lines' can't be null";
-        }
         if (!is_null($this->container['section_id']) && ($this->container['section_id'] > 2147483647)) {
             $invalidProperties[] = "invalid value for 'section_id', must be smaller than or equal to 2147483647.";
         }
@@ -501,7 +504,7 @@ class ExpenseApplicationUpdateParams implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets expense_application_lines
      *
-     * @return \Freee\Accounting\Model\ExpenseApplicationUpdateParamsExpenseApplicationLines[]
+     * @return \Freee\Accounting\Model\ExpenseApplicationUpdateParamsExpenseApplicationLines[]|null
      */
     public function getExpenseApplicationLines()
     {
@@ -511,7 +514,7 @@ class ExpenseApplicationUpdateParams implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets expense_application_lines
      *
-     * @param \Freee\Accounting\Model\ExpenseApplicationUpdateParamsExpenseApplicationLines[] $expense_application_lines expense_application_lines
+     * @param \Freee\Accounting\Model\ExpenseApplicationUpdateParamsExpenseApplicationLines[]|null $expense_application_lines expense_application_lines
      *
      * @return self
      */
@@ -542,6 +545,30 @@ class ExpenseApplicationUpdateParams implements ModelInterface, ArrayAccess, \Js
     public function setIssueDate($issue_date)
     {
         $this->container['issue_date'] = $issue_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets purchase_lines
+     *
+     * @return \Freee\Accounting\Model\ExpenseApplicationUpdateParamsPurchaseLines[]|null
+     */
+    public function getPurchaseLines()
+    {
+        return $this->container['purchase_lines'];
+    }
+
+    /**
+     * Sets purchase_lines
+     *
+     * @param \Freee\Accounting\Model\ExpenseApplicationUpdateParamsPurchaseLines[]|null $purchase_lines この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。利用可能となる前に予告なく変更がある場合があります。<br> 経費申請の申請行一覧（配列）
+     *
+     * @return self
+     */
+    public function setPurchaseLines($purchase_lines)
+    {
+        $this->container['purchase_lines'] = $purchase_lines;
 
         return $this;
     }
