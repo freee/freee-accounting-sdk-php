@@ -42,7 +42,7 @@ $receipt = "/path/to/file.txt"; // \SplFileObject | 証憑ファイル
 $description = 'description_example'; // string | メモ (255文字以内)
 $document_type = 'document_type_example'; // string | この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他）
 $issue_date = 'issue_date_example'; // string | 取引日 (yyyy-mm-dd)
-$qualified_invoice = 'qualified_invoice_example'; // string | この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない）
+$qualified_invoice = 'qualified_invoice_example'; // string | この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択）
 $receipt_metadatum_amount = 56; // int | 金額
 $receipt_metadatum_issue_date = 'receipt_metadatum_issue_date_example'; // string | 発行日 (yyyy-mm-dd)
 $receipt_metadatum_partner_name = 'receipt_metadatum_partner_name_example'; // string | 発行元
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
  **description** | **string**| メモ (255文字以内) | [optional]
  **document_type** | **string**| この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） | [optional]
  **issue_date** | **string**| 取引日 (yyyy-mm-dd) | [optional]
- **qualified_invoice** | **string**| この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） | [optional]
+ **qualified_invoice** | **string**| この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択） | [optional]
  **receipt_metadatum_amount** | **int**| 金額 | [optional]
  **receipt_metadatum_issue_date** | **string**| 発行日 (yyyy-mm-dd) | [optional]
  **receipt_metadatum_partner_name** | **string**| 発行元 | [optional]

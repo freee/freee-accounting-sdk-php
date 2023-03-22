@@ -74,6 +74,7 @@ class ExpenseApplicationResponseExpenseApplication implements ModelInterface, Ar
         'expense_application_lines' => '\Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines[]',
         'id' => 'int',
         'issue_date' => 'string',
+        'purchase_lines' => '\Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplicationPurchaseLines[]',
         'section_id' => 'int',
         'segment_1_tag_id' => 'int',
         'segment_2_tag_id' => 'int',
@@ -107,6 +108,7 @@ class ExpenseApplicationResponseExpenseApplication implements ModelInterface, Ar
         'expense_application_lines' => null,
         'id' => null,
         'issue_date' => null,
+        'purchase_lines' => null,
         'section_id' => null,
         'segment_1_tag_id' => 'int64',
         'segment_2_tag_id' => 'int64',
@@ -159,6 +161,7 @@ class ExpenseApplicationResponseExpenseApplication implements ModelInterface, Ar
         'expense_application_lines' => 'expense_application_lines',
         'id' => 'id',
         'issue_date' => 'issue_date',
+        'purchase_lines' => 'purchase_lines',
         'section_id' => 'section_id',
         'segment_1_tag_id' => 'segment_1_tag_id',
         'segment_2_tag_id' => 'segment_2_tag_id',
@@ -190,6 +193,7 @@ class ExpenseApplicationResponseExpenseApplication implements ModelInterface, Ar
         'expense_application_lines' => 'setExpenseApplicationLines',
         'id' => 'setId',
         'issue_date' => 'setIssueDate',
+        'purchase_lines' => 'setPurchaseLines',
         'section_id' => 'setSectionId',
         'segment_1_tag_id' => 'setSegment1TagId',
         'segment_2_tag_id' => 'setSegment2TagId',
@@ -221,6 +225,7 @@ class ExpenseApplicationResponseExpenseApplication implements ModelInterface, Ar
         'expense_application_lines' => 'getExpenseApplicationLines',
         'id' => 'getId',
         'issue_date' => 'getIssueDate',
+        'purchase_lines' => 'getPurchaseLines',
         'section_id' => 'getSectionId',
         'segment_1_tag_id' => 'getSegment1TagId',
         'segment_2_tag_id' => 'getSegment2TagId',
@@ -339,6 +344,7 @@ class ExpenseApplicationResponseExpenseApplication implements ModelInterface, Ar
         $this->container['expense_application_lines'] = $data['expense_application_lines'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['issue_date'] = $data['issue_date'] ?? null;
+        $this->container['purchase_lines'] = $data['purchase_lines'] ?? null;
         $this->container['section_id'] = $data['section_id'] ?? null;
         $this->container['segment_1_tag_id'] = $data['segment_1_tag_id'] ?? null;
         $this->container['segment_2_tag_id'] = $data['segment_2_tag_id'] ?? null;
@@ -448,9 +454,6 @@ class ExpenseApplicationResponseExpenseApplication implements ModelInterface, Ar
             );
         }
 
-        if ($this->container['expense_application_lines'] === null) {
-            $invalidProperties[] = "'expense_application_lines' can't be null";
-        }
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
@@ -876,7 +879,7 @@ class ExpenseApplicationResponseExpenseApplication implements ModelInterface, Ar
     /**
      * Gets expense_application_lines
      *
-     * @return \Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines[]
+     * @return \Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines[]|null
      */
     public function getExpenseApplicationLines()
     {
@@ -886,7 +889,7 @@ class ExpenseApplicationResponseExpenseApplication implements ModelInterface, Ar
     /**
      * Sets expense_application_lines
      *
-     * @param \Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines[] $expense_application_lines 経費申請の項目行一覧（配列）
+     * @param \Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines[]|null $expense_application_lines 経費申請の項目行一覧（配列）
      *
      * @return self
      */
@@ -949,6 +952,30 @@ class ExpenseApplicationResponseExpenseApplication implements ModelInterface, Ar
     public function setIssueDate($issue_date)
     {
         $this->container['issue_date'] = $issue_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets purchase_lines
+     *
+     * @return \Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplicationPurchaseLines[]|null
+     */
+    public function getPurchaseLines()
+    {
+        return $this->container['purchase_lines'];
+    }
+
+    /**
+     * Sets purchase_lines
+     *
+     * @param \Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplicationPurchaseLines[]|null $purchase_lines この項目はインボイス制度で利用する項目です。2023年4月上旬から利用できる予定です。利用可能となる前に予告なく変更がある場合があります。<br> 経費申請の申請行一覧（配列）
+     *
+     * @return self
+     */
+    public function setPurchaseLines($purchase_lines)
+    {
+        $this->container['purchase_lines'] = $purchase_lines;
 
         return $this;
     }
