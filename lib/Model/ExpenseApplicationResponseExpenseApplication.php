@@ -969,7 +969,7 @@ class ExpenseApplicationResponseExpenseApplication implements ModelInterface, Ar
     /**
      * Sets purchase_lines
      *
-     * @param \Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplicationPurchaseLines[]|null $purchase_lines この項目はインボイス制度で利用する項目です。2023年4月上旬から利用できる予定です。利用可能となる前に予告なく変更がある場合があります。<br> 経費申請の申請行一覧（配列）
+     * @param \Freee\Accounting\Model\ExpenseApplicationResponseExpenseApplicationPurchaseLines[]|null $purchase_lines この項目はインボイス制度で利用する項目です。2023年4月下旬から利用できる予定です。利用可能となる前に予告なく変更がある場合があります。<br> 経費申請の申請行一覧（配列）
      *
      * @return self
      */
