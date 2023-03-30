@@ -1,4 +1,9 @@
 ## 2.29.0
+リリース日時 2023-03-30 10:10:23  
+対象差分  
+https://github.com/freee/freee-api-schema/releases/tag/v0.0.115
+
+## 2.29.0
 リリース日時 2023-03-30 10:07:42  
 対象差分  
 https://github.com/freee/freee-api-schema/releases/tag/v0.0.115
