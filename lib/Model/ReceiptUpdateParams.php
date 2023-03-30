@@ -197,6 +197,7 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     const DOCUMENT_TYPE_OTHER = 'other';
     const QUALIFIED_INVOICE_QUALIFIED = 'qualified';
     const QUALIFIED_INVOICE_NOT_QUALIFIED = 'not_qualified';
+    const QUALIFIED_INVOICE_UNSELECTED = 'unselected';
 
     /**
      * Gets allowable values of the enum
@@ -222,6 +223,7 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
         return [
             self::QUALIFIED_INVOICE_QUALIFIED,
             self::QUALIFIED_INVOICE_NOT_QUALIFIED,
+            self::QUALIFIED_INVOICE_UNSELECTED,
         ];
     }
 
@@ -486,7 +488,7 @@ class ReceiptUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets qualified_invoice
      *
-     * @param string|null $qualified_invoice この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない）
+     * @param string|null $qualified_invoice この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択）
      *
      * @return self
      */
